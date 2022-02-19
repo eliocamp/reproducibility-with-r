@@ -1,0 +1,17 @@
+---
+title: "Day 0"
+subtitle: ""
+weight: 1
+excerpt: "How to prepare ahead of time."
+draft: false
+---
+
+
+
+## get R
+
+
+## Get RStudio
+
+
+## Packages
