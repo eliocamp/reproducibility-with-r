@@ -2,11 +2,11 @@
 title: "Elio Campitelli"
 subtitle: "Meteorologist and Educator"
 excerpt: >
-  **Instructor**<br>PhD student in atmospheric sciences. Love R, teaching and teaching R. I do puzzles.
+  **Instructor**<br>PhD student in atmospheric sciences. Sometimes knit, sometimes knead.
 type: people
 show_post_image: true
 weight: 2
-author: "Pao Corrales"
+author: "Elio Campitelli"
 draft: false
 categories:
   - people
@@ -15,28 +15,20 @@ layout: single
 links:
 - icon: handshake
   icon_pack: fas
-  name: she/her
-  url: https://pronoun.is/she
+  name: they
+  url: https://pronoun.is/they
 - icon: home
   icon_pack: fas
-  name: paocorrales.github.io
-  url: https://paocorrales.github.io
+  name: eliocamp.github.io
+  url: https://eliocamp.github.io
 - icon: twitter
   icon_pack: fab
-  name: paobcorrales
-  url: https://twitter.com/paobcorrales
+  name: d_olivaw
+  url: https://twitter.com/d_olivaw
 - icon: github
   icon_pack: fab
-  name: paocorrales
-  url: https://github.com/paocorrales
-- icon: instagram
-  icon_pack: fab
-  name: paobcorrales
-  url: https://www.instagram.com/paobcorrales
+  name: eiocamp
+  url: https://github.com/eiocamp
 ---
 
-I'm a Ph.D. student at the University of Buenos Aires. I study atmospheric sciences applying data assimilation techniques to improve short-term forecasts of severe events in Argentina. Also, I'm a Trainer and instructor for The Carpentries and an RStudio certified instructor. I co-funded MetaDocencia, a Spanish-speaking community to help teachers and educator to apply science-based techniques to their clase.s
-
-I develops openly licensed materials to teach and learn R from scratch.
-
-More information about me and what I do: https://paocorrales.github.io/
+I'm a Ph.D. student at the University of Buenos Aires in atmospheric sciences and an R package developer. I apply open science principles with a strong emphasis on reproducibility by publicly making all the code and data available. I'm a founding member of the R User Group in Buenos Aires and an outstanding contributor to the LatinR conference (as recognized by LatinR founding chairs). I maintain several open-source R packages (e.g., ggnewscale; metR) and contribute to other packages, such as data.table and ggplot2.
