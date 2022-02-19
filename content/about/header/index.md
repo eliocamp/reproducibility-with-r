@@ -7,4 +7,4 @@ headline: |
 ---
 
 <!-- this is a subheadline -->
-A workshop developed for Physalia Courses with Creative Commons Attribution-ShareAlike 4.0 International License. Help yourself!
+This course is [licensed](/license) with Creative Commons Attribution-ShareAlike 4.0 International License. Help yourself!
