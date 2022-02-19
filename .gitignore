@@ -1,4 +1,3 @@
-
 # Created by https://www.toptal.com/developers/gitignore/api/r
 # Edit at https://www.toptal.com/developers/gitignore?templates=r
 
@@ -60,3 +59,4 @@ rsconnect/
 # End of https://www.toptal.com/developers/gitignore/api/r
 
 *.*~
+>>>>>>> 603d733464f50d496791df52cd9e057169c77826
