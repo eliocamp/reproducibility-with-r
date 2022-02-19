@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Day 3 on An R reproducibility toolkit for the practical researcher</title>
-    <link>/materials/day3/</link>
+    <link>https://eliocamp.github.io/reproducibility-with-r/materials/day3/</link>
     <description>Recent content in Day 3 on An R reproducibility toolkit for the practical researcher</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 15 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="/materials/day3/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://eliocamp.github.io/reproducibility-with-r/materials/day3/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>01: Setting the stage</title>
-      <link>/materials/day3/01-introdution/</link>
+      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-introdution/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>/materials/day3/01-introdution/</guid>
+      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-introdution/</guid>
       <description>Blablablabla
 Image by Manfred Steger from Pixabay</description>
     </item>

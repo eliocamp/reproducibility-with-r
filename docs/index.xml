@@ -2,75 +2,75 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>An R reproducibility toolkit for the practical researcher</title>
-    <link>/</link>
+    <link>https://eliocamp.github.io/reproducibility-with-r/</link>
     <description>Recent content on An R reproducibility toolkit for the practical researcher</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 15 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 15 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://eliocamp.github.io/reproducibility-with-r/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>01: Setting the stage</title>
-      <link>/materials/day1/01-introdution/</link>
+      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day1/01-introdution/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>/materials/day1/01-introdution/</guid>
+      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day1/01-introdution/</guid>
       <description>Blablablabla
 Image by Manfred Steger from Pixabay</description>
     </item>
     
     <item>
       <title>01: Setting the stage</title>
-      <link>/materials/day2/01-introdution/</link>
+      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day2/01-introdution/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>/materials/day2/01-introdution/</guid>
+      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day2/01-introdution/</guid>
       <description>Blablablabla
 Image by Manfred Steger from Pixabay</description>
     </item>
     
     <item>
       <title>01: Setting the stage</title>
-      <link>/materials/day3/01-introdution/</link>
+      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-introdution/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>/materials/day3/01-introdution/</guid>
+      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-introdution/</guid>
       <description>Blablablabla
 Image by Manfred Steger from Pixabay</description>
     </item>
     
     <item>
       <title>Day 0</title>
-      <link>/materials/day0/</link>
+      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day0/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>/materials/day0/</guid>
+      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day0/</guid>
       <description>  get R  Get RStudio  Packages  </description>
     </item>
     
     <item>
       <title>Elio Campitelli</title>
-      <link>/people/eliocampitelli/</link>
+      <link>https://eliocamp.github.io/reproducibility-with-r/people/eliocampitelli/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/people/eliocampitelli/</guid>
+      <guid>https://eliocamp.github.io/reproducibility-with-r/people/eliocampitelli/</guid>
       <description>I&amp;rsquo;m a Ph.D. student at the University of Buenos Aires in atmospheric sciences and an R package developer. I apply open science principles with a strong emphasis on reproducibility by publicly making all the code and data available. I&amp;rsquo;m a founding member of the R User Group in Buenos Aires and an outstanding contributor to the LatinR conference (as recognized by LatinR founding chairs). I maintain several open-source R packages (e.</description>
     </item>
     
     <item>
       <title>Paola Corrales</title>
-      <link>/people/paocorrales/</link>
+      <link>https://eliocamp.github.io/reproducibility-with-r/people/paocorrales/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/people/paocorrales/</guid>
+      <guid>https://eliocamp.github.io/reproducibility-with-r/people/paocorrales/</guid>
       <description>I&amp;rsquo;m a Ph.D. student at the University of Buenos Aires. I study atmospheric sciences applying data assimilation techniques to improve short-term forecasts of severe events in Argentina. Also, I&amp;rsquo;m a Trainer and instructor for The Carpentries and an RStudio certified instructor. I co-funded MetaDocencia, a Spanish-speaking community to help teachers and educator to apply science-based techniques to their clase.s
 I develops openly licensed materials to teach and learn R from scratch.</description>
     </item>
     
     <item>
       <title>Attribution</title>
-      <link>/attribution/</link>
+      <link>https://eliocamp.github.io/reproducibility-with-r/attribution/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/attribution/</guid>
+      <guid>https://eliocamp.github.io/reproducibility-with-r/attribution/</guid>
       <description>Sheep drawing by Gordon Johnson from Pixabay
 Pixel Cells by Manfred Steger from Pixabay
 Icon: Sheep by Adriansyah from NounProject.com</description>
@@ -78,10 +78,10 @@ Icon: Sheep by Adriansyah from NounProject.com</description>
     
     <item>
       <title>License</title>
-      <link>/license/</link>
+      <link>https://eliocamp.github.io/reproducibility-with-r/license/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/license/</guid>
+      <guid>https://eliocamp.github.io/reproducibility-with-r/license/</guid>
       <description>My blog posts are released under a Creative Commons Attribution-ShareAlike 4.0 International License.
   </description>
     </item>
