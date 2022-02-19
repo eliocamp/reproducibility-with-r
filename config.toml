@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://eliocamp.github.io/reproducibility-with-r/"
 theme = "hugo-apero"
 languageCode = "en"
 title = "An R reproducibility toolkit for the practical researcher"
@@ -13,7 +13,7 @@ paginate = 5
 preserveTaxonomyNames = true
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_cache$", "\\.knit\\.md$", "\\.utf8\\.md$"]
 enableEmoji = true
-publishDir = "docs"
+
 [markup]
   defaultMarkdownHandler = "goldmark"
   [markup.goldmark.renderer]

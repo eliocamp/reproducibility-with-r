@@ -1,0 +1,52 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//ical.marudot.com//iCal Event Maker
+CALSCALE:GREGORIAN
+BEGIN:VTIMEZONE
+TZID:Europe/Berlin
+LAST-MODIFIED:20201011T015911Z
+TZURL:http://tzurl.org/zoneinfo-outlook/Europe/Berlin
+X-LIC-LOCATION:Europe/Berlin
+BEGIN:DAYLIGHT
+TZNAME:CEST
+TZOFFSETFROM:+0100
+TZOFFSETTO:+0200
+DTSTART:19700329T020000
+RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU
+END:DAYLIGHT
+BEGIN:STANDARD
+TZNAME:CET
+TZOFFSETFROM:+0200
+TZOFFSETTO:+0100
+DTSTART:19701025T030000
+RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU
+END:STANDARD
+END:VTIMEZONE
+BEGIN:VEVENT
+DTSTAMP:20220219T215106Z
+UID:1645307343014-52606@ical.marudot.com
+DTSTART;TZID=Europe/Berlin:20220314T150000
+DTEND;TZID=Europe/Berlin:20220314T180000
+SUMMARY:An R reproducibility toolkit for the practical researcher (Day 1)
+URL:https://www.physalia-courses.org/courses-workshops/r-reproducibility/
+DESCRIPTION:Course on reproducibility with R. 
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20220219T215106Z
+UID:1645307398125-52328@ical.marudot.com
+DTSTART;TZID=Europe/Berlin:20220316T150000
+DTEND;TZID=Europe/Berlin:20220316T180000
+SUMMARY:An R reproducibility toolkit for the practical researcher (Day 2)
+URL:https://www.physalia-courses.org/courses-workshops/r-reproducibility/
+DESCRIPTION:Course on reproducibility with R. 
+END:VEVENT
+BEGIN:VEVENT
+DTSTAMP:20220219T215106Z
+UID:1645307421073-23722@ical.marudot.com
+DTSTART;TZID=Europe/Berlin:20220318T150000
+DTEND;TZID=Europe/Berlin:20220318T180000
+SUMMARY:An R reproducibility toolkit for the practical researcher (Day 3)
+URL:https://www.physalia-courses.org/courses-workshops/r-reproducibility/
+DESCRIPTION:Course on reproducibility with R. 
+END:VEVENT
+END:VCALENDAR
