@@ -91,12 +91,12 @@ enableEmoji = true
       url       = "https://github.com/eliocamp/reproducibility-with-r/"
   [[params.social]]
       title     = "@d_olivaw on Twiter"
-      icon      = "twitter" # icon name without the 'fa-'
+      icon      = "twitter purple" # icon name without the 'fa-'
       icon_pack = "fab"
       url       = "https://twitter.com/d_olivaw"
   [[params.social]]
       title     = "@paobcorrales on Twiter"
-      icon      = "twitter" # icon name without the 'fa-'
+      icon      = "twitter green" # icon name without the 'fa-'
       icon_pack = "fab"
       url       = "https://twitter.com/paobcorrales"
 
