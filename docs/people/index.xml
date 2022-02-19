@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Meet the Team on An R reproducibility toolkit for the practical researcher</title>
+    <link>/people/</link>
+    <description>Recent content in Meet the Team on An R reproducibility toolkit for the practical researcher</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="/people/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Elio Campitelli</title>
+      <link>/people/eliocampitelli/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/people/eliocampitelli/</guid>
+      <description>I&amp;rsquo;m a Ph.D. student at the University of Buenos Aires in atmospheric sciences and an R package developer. I apply open science principles with a strong emphasis on reproducibility by publicly making all the code and data available. I&amp;rsquo;m a founding member of the R User Group in Buenos Aires and an outstanding contributor to the LatinR conference (as recognized by LatinR founding chairs). I maintain several open-source R packages (e.</description>
+    </item>
+    
+    <item>
+      <title>Paola Corrales</title>
+      <link>/people/paocorrales/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/people/paocorrales/</guid>
+      <description>I&amp;rsquo;m a Ph.D. student at the University of Buenos Aires. I study atmospheric sciences applying data assimilation techniques to improve short-term forecasts of severe events in Argentina. Also, I&amp;rsquo;m a Trainer and instructor for The Carpentries and an RStudio certified instructor. I co-funded MetaDocencia, a Spanish-speaking community to help teachers and educator to apply science-based techniques to their clase.s
+I develops openly licensed materials to teach and learn R from scratch.</description>
+    </item>
+    
+  </channel>
+</rss>
