@@ -31,8 +31,8 @@ enableEmoji = true
   orgName = ""
   orgLocal = ""
   description = "Reproducibility course in R"
-  favicon = "/img/favicon.ico"
-  logo = "/img/blogophonic-mark-dark.png"
+  favicon = "/favicon.ico"
+  logo = "/logo.png"
   mainSections = ["blog", "project", "talk"]
   navallcaps = true
   # show/hide social icons in site header & footer
@@ -130,7 +130,11 @@ enableEmoji = true
     title = "License"
     url = "/license/"
     weight = 1
-
+  [[menu.footer]]
+    name = "Attributions"
+    title = "Attributions"
+    url = "/attribution/"
+    weight = 2
 
 # see https://gohugo.io/about/hugo-and-gdpr/
 [privacy]
