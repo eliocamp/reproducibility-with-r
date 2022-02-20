@@ -3,7 +3,7 @@ title: "Day 1"
 # list or single layouts are possible
 layout: single-series # list, list-sidebar, single-series
 weight: 2
-subtitle: "Project structure"
+subtitle: "The workbench"
 description: |
   An organised project is a happy project
 cascade:
@@ -13,5 +13,10 @@ cascade:
 ---
 
 ## Learning objectives
+
+* Create R project with an specific and useful structure
+* Extend the use of RMarkdown files for reports and papers
+* Use LaTex templates to customize reports
+* Manage package dependencies inside a project. 
 
 ## Materials

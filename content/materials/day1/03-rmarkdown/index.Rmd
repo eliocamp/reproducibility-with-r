@@ -1,0 +1,65 @@
+---
+title: "03: Reporting with RMarkdown"
+weight: 1
+show_post_date: false
+publishDate: 2022-02-19
+excerpt: ""
+links:
+- icon: images
+  icon_pack: fas
+  name: slides
+  url: "/slides/01-introduction.html"
+- icon: theater-masks
+  icon_pack: fas
+  name: activity
+  url: "/materials/act-01/01-introduction/#activity"
+---
+
+## RMarkdown files
+
+An RMarkdown file is a plain text file, with some rules and special syntax that allow us to write code and text together. When it is “knited,” the code will be evaluated and executed and the text formatted so that it creates a reproducible report or document that is nice to read and contains all your work.
+
+This is really critical to reproducibility. It also saves us time and can help with automation tasks. This document will recreate the figures for you in the same document where you are writing the text that explain them. This will save you the effort of doing some analysis, saving a plot on a file, copy-pasting that plot into Word, LaTex or Power Point or Google Slides, and having to do it all over again after discovering a typo.
+
+Now let's see how a RMarkdown file looks like. 
+
+
+::: instructions
+Open up your style guide and find the section or sections that describe recommended **colors** and **fonts**.
+
+If you don't have a style guide on hand, [check out our list of recommended style guides](/materials/prework/#bring-a-style-guide).
+:::
+
+* The top part has the Title and the output type (which in this case is an HTML document).
+* Below that there are alternating _white_ and _grey_ sections. These are the two main sections that make up an RMarkdown file:
+      * Grey sections are R code
+      * White sections are Markdown text
+* There is black, blue text and green text.
+
+> Let’s go ahead and “Knit” the document by clicking the blue yarn (<img src="img/knit-boton.png">) at the top of the RMarkdown file. 
+We've just made an html file! This is a single webpage that we are viewing locally on our own computers. By knitting this RMarkdown document, R has formatted the markdown text and ran the R code.
+
+<img src="img/markdown-knit.png" alt="Rmarkdown in the left. Knit document on the rigth"/>
+
+### Markdown text
+
+You can get a guide to rmarkdown [in this](add link) cheat sheet, but here is a minimum syntax to get you started:
+
+* headers start with `# `or `## `and so on (it's important to put a space after the last `#`).
+* bold words are surrounded with `**`
+* and italics, with `_`
+
+### R Code
+
+```{r include=FALSE}
+chunk_start <- "```{r label}"
+chunk_end <- "```"
+```
+
+The R code is written inside code "chunks". Code chunks start with `` `r chunk_start` `` (where "label" is an optional, unique name) and end with  `` `r chunk_end` ``. In RStudio, you can create a new chunk with the `Ctrl + Alt + I` keboard shortcut.
+
+This report shows information about the Gentoo penguins but we could change a few code lines to create the same analysis for the other two species, Adelie and Chinstrap.
+
+> Now is your turn. Go ahead and look through the code, if you find any mention of `"gentoo"`, change it to any of the other species. 
+This task is a bit cumbersome if you have to change many things any time we want to re-run the analysis for different species. But don't worry, we'll learn how to make everything more automatic by the end of the workshop. 
+
