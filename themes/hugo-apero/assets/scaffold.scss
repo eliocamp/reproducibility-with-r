@@ -92,7 +92,8 @@ h1, h2, h3, h4, h5, h6 {
 
 // apply tachyons classes to blog post and single page markdown
 .post-body,
-.page-body {
+.page-body,
+.section {
 
   h1, h2, h3, h4, h5, h6 { @extend .lh-title ; }
   h1 { @extend .f1 ; }
