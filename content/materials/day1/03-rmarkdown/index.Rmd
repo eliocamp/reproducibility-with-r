@@ -17,49 +17,114 @@ links:
 
 ## RMarkdown files
 
-An RMarkdown file is a plain text file, with some rules and special syntax that allow us to write code and text together. When it is “knited,” the code will be evaluated and executed and the text formatted so that it creates a reproducible report or document that is nice to read and contains all your work.
+An RMarkdown file is a plain text file, with some rules and special syntax that allow us to write code and text together.
+When it is "knited," the code will be evaluated and executed and the text formatted so that it creates a reproducible report or document that is nice to read and contains all your work.
 
-This is really critical to reproducibility. It also saves us time and can help with automation tasks. This document will recreate the figures for you in the same document where you are writing the text that explain them. This will save you the effort of doing some analysis, saving a plot on a file, copy-pasting that plot into Word, LaTex or Power Point or Google Slides, and having to do it all over again after discovering a typo.
+This is really critical to reproducibility.
+It also saves us time and can help with automation tasks.
+This document will recreate the figures for you in the same document where you are writing the text that explain them.
+This will save you the effort of doing some analysis, saving a plot on a file, copy-pasting that plot into Word, LaTex or Power Point or Google Slides, and having to do it all over again after discovering a typo.
 
-Now let's see how a RMarkdown file looks like. 
-
+Now let's create a new RMarkdown file.
+In RStudio you can use the menu bar:
 
 ::: instructions
-Open up your style guide and find the section or sections that describe recommended **colors** and **fonts**.
-
-If you don't have a style guide on hand, [check out our list of recommended style guides](/materials/prework/#bring-a-style-guide).
+File → New File → R Markdown
 :::
 
-* The top part has the Title and the output type (which in this case is an HTML document).
-* Below that there are alternating _white_ and _grey_ sections. These are the two main sections that make up an RMarkdown file:
-      * Grey sections are R code
-      * White sections are Markdown text
-* There is black, blue text and green text.
+A new window will open where you can *optionaly* complete with your name, author and the output format.
+Let try first HTML.
+By doing click on th ok button, the new file will open showing the template.
+This is great, you can try to "knit" the file to see the output document.
 
-> Let’s go ahead and “Knit” the document by clicking the blue yarn (<img src="img/knit-boton.png">) at the top of the RMarkdown file. 
-We've just made an html file! This is a single webpage that we are viewing locally on our own computers. By knitting this RMarkdown document, R has formatted the markdown text and ran the R code.
+::: activity
+Your turn
 
-<img src="img/markdown-knit.png" alt="Rmarkdown in the left. Knit document on the rigth"/>
+1.  Create a new RMarkdown file.
+    You can choose the output format.
 
-### Markdown text
+2.  Knit the document.
 
-You can get a guide to rmarkdown [in this](add link) cheat sheet, but here is a minimum syntax to get you started:
+3.  Compare the "source file" with the "output file".
+    Can you identify the different sections of the file?
+:::
 
-* headers start with `# `or `## `and so on (it's important to put a space after the last `#`).
-* bold words are surrounded with `**`
-* and italics, with `_`
+### File structure
 
-### R Code
+Any .Rmd file will have 3 sections or areas:
+
+<img src="img/markdown-knit.png" alt="Rmarkdown file in the left. Knited document on the right. The YAML, chunk codes and text areas are highlighted on the file."/>
+
+-   The top part uses YAML sintaxis and includes the title and the output type (which in this case is an HTML document).
+-   Below that there are alternating *white* and *grey* sections. These are the two main sections that make up an RMarkdown file: \* Grey sections are code chunks. They are usually R chunks but there are many languages suported. \* White sections are text sections and support markdown for styling.
+
+#### Header
+
+The header is a series of instructions organized between three dashes (`---`) that define the global properties of the document, such as the title, the output format, authorship information, etc.
+The heather will contain many many more options when you use templates and customised reports.
+You can aslo change options associated with the output format, such as the style of the table of contents or index.
+
+The YAML format allows you to define hierarchical lists in a humanly readable way.
+For example:
+
+``` yaml
+---
+title: "Mi primer RMarkdown"
+output: 
+  html_document:
+    code_download: true
+    toc: true
+    toc_float: false
+---
+```
+
+::: notes
+Keep in mind the indentation!
+
+It is very important to maintain the identation of the elements, since it defines the hierarchy of each element.
+Many of the errors you'll find when knitting occur because the file has problems in the header identation.
+:::
+
+#### Code chunks
 
 ```{r include=FALSE}
 chunk_start <- "```{r label}"
 chunk_end <- "```"
 ```
 
-The R code is written inside code "chunks". Code chunks start with `` `r chunk_start` `` (where "label" is an optional, unique name) and end with  `` `r chunk_end` ``. In RStudio, you can create a new chunk with the `Ctrl + Alt + I` keboard shortcut.
+The R code is written inside code "chunks".
+Code chunks start with `` `r chunk_start` `` (where "label" is an optional and unique name) and end with `` `r chunk_end` ``.
+Everything you include between these delimiters will be interpreted by R as code and will try to execute it when the file is knited.
+Any output (graphics, tables, text, etc.) will be inserted into the final document in the same order as they are in the R Markdown file.
 
-This report shows information about the Gentoo penguins but we could change a few code lines to create the same analysis for the other two species, Adelie and Chinstrap.
+::: instructions
+You can create a new chunk with:
 
-> Now is your turn. Go ahead and look through the code, if you find any mention of `"gentoo"`, change it to any of the other species. 
-This task is a bit cumbersome if you have to change many things any time we want to re-run the analysis for different species. But don't worry, we'll learn how to make everything more automatic by the end of the workshop. 
+1.  The "+C" green bottom on the top right of the document
+2.  A very handy shortcut: `Ctrl + Alt + I`
+3.  Writing the \`\`\` by hand (but why would you?)
+:::
 
+While the code will run when you knit, if you are analysing data and writing a report it is very convenient to run individual chunks interactively as if it were in the console.
+
+To run the line where your cursor is use the shortcut:
+
+::: instructions
+Ctrl + Enter
+:::
+
+But you can also run the code of the whole chunk with:
+
+::: instructions
+Ctrl + Shift + Enter
+:::
+
+By default, the output will appear immediately below the block.
+
+### Markdown text
+
+You can get a guide to rmarkdown [in this](add%20link) cheat sheet, but here is a minimum syntax to get you started:
+
+-   headers start with `#`or `##`and so on (it's important to put a space after the last `#`).
+-   bold words are surrounded with `**`
+-   and italics, with `_`
