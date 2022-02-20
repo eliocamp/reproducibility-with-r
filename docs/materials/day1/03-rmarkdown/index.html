@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="generator" content="Hugo 0.80.0" />
-<title>Day 1 | An R reproducibility toolkit for the practical researcher</title>
+<title>03: Reporting with RMarkdown | An R reproducibility toolkit for the practical researcher</title>
 
 
 
@@ -21,37 +21,39 @@
   
     
   
-<meta name="description" content="An organised project is a happy project
-">
+<meta name="description" content="Reproducibility course in R">
 
 
 <meta property="og:site_name" content="An R reproducibility toolkit for the practical researcher">
-<meta property="og:title" content="Day 1 | An R reproducibility toolkit for the practical researcher">
-<meta property="og:description" content="An organised project is a happy project
-" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://eliocamp.github.io/reproducibility-with-r/materials/day1/" />
+<meta property="og:title" content="03: Reporting with RMarkdown | An R reproducibility toolkit for the practical researcher">
+<meta property="og:description" content="Reproducibility course in R" />
+<meta property="og:type" content="page" />
+<meta property="og:url" content="https://eliocamp.github.io/reproducibility-with-r/materials/day1/03-rmarkdown/" />
 <meta property="og:locale" content="en">
 
 
 
 
       
-          <meta property="og:image" content="https://eliocamp.github.io/reproducibility-with-r/materials/day1/featured.png" >
+          <meta property="og:image" content="https://eliocamp.github.io/img/papillons.jpg" >
           <meta property="twitter:card" content="summary_large_image">
-          <meta name="twitter:image" content="https://eliocamp.github.io/reproducibility-with-r/materials/day1/featured.png" >
+          <meta name="twitter:image" content="https://eliocamp.github.io/img/papillons.jpg" >
       
-      
-  <meta itemprop="name" content="Day 1">
-<meta itemprop="description" content="An organised project is a happy project
-">
+  <meta itemprop="name" content="03: Reporting with RMarkdown">
+<meta itemprop="description" content="RMarkdown files An RMarkdown file is a plain text file, with some rules and special syntax that allow us to write code and text together. When it is “knited,” the code will be evaluated and executed and the text formatted so that it creates a reproducible report or document that is nice to read and contains all your work.
+This is really critical to reproducibility. It also saves us time and can help with automation tasks.">
+<meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
+<meta itemprop="wordCount" content="702">
+
+
+
+<meta itemprop="keywords" content="" />
 
   
   <!--[if IE]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  
-    <link rel="alternate" type="application/rss+xml" href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/index.xml" title="An R reproducibility toolkit for the practical researcher" />
   
   
   <link rel="stylesheet" href="/reproducibility-with-r/style.main.min.5c14ccb91905d450469e4040c74b4193d2441462e073a51188cded19e3799fd6.css" integrity="sha256-XBTMuRkF1FBGnkBAx0tBk9JEFGLgc6URiM3tGeN5n9Y=" media="screen">
@@ -107,6 +109,9 @@
  
     
  
+ 
+    
+ 
 
   
     
@@ -116,7 +121,13 @@
 
   
     
-      Day 1
+      <a href="/reproducibility-with-r/materials/day1/">Day 1</a> >
+    
+
+
+  
+    
+      03: Reporting with RMarkdown
     
 
 
@@ -126,45 +137,151 @@
 
 
         
-        <h1 class="i fw1 f1 tc mb0">Day 1</h1>
-        <h2 class="pb4 mt2 f4 fw4 ttu tracked bb bw1 tc">The workbench</h2>
+        <h1 class="f1 lh-solid measure-narrow mb3 fw4">03: Reporting with RMarkdown</h1>
+        
+        <p class="f6 measure lh-copy mv1">By Paola Corrales and Elio Campitelli</p>
         
         
+        
+      
+      <div class="ph0 pt5">
+        
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+      
+  <a class="btn-links mr2 ba dib" href="/reproducibility-with-r/slides/01-introduction.html" ><i class="fas fa-images fa-lg fa-fw mr2"></i>slides</a>
+
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+      
+  <a class="btn-links mr2 ba dib" href="/reproducibility-with-r/materials/act-01/01-introduction/#activity" ><i class="fas fa-theater-masks fa-lg fa-fw mr2"></i>activity</a>
+
+
+      </div>
       
         
       </header>
       <section class="post-body pt5 pb4">
         
+<script src="https://eliocamp.github.io/reproducibility-with-r/materials/day1/03-rmarkdown/index_files/header-attrs/header-attrs.js"></script>
 
 
-
-<h2 id="learning-objectives">Learning objectives
-  <a href="#learning-objectives"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 0h24v24H0z" fill="currentColor"></path>
-      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
-    </svg></a>
-</h2>
+<div id="rmarkdown-files" class="section level2">
+<h2>RMarkdown files</h2>
+<p>An RMarkdown file is a plain text file, with some rules and special syntax that allow us to write code and text together.
+When it is “knited,” the code will be evaluated and executed and the text formatted so that it creates a reproducible report or document that is nice to read and contains all your work.</p>
+<p>This is really critical to reproducibility.
+It also saves us time and can help with automation tasks.
+This document will recreate the figures for you in the same document where you are writing the text that explain them.
+This will save you the effort of doing some analysis, saving a plot on a file, copy-pasting that plot into Word, LaTex or Power Point or Google Slides, and having to do it all over again after discovering a typo.</p>
+<p>Now let’s create a new RMarkdown file.
+In RStudio you can use the menu bar:</p>
+<div class="instructions">
+<p>File → New File → R Markdown</p>
+</div>
+<p>A new window will open where you can <em>optionaly</em> complete with your name, author and the output format.
+Let try first HTML.
+By doing click on th ok button, the new file will open showing the template.
+This is great, you can try to “knit” the file to see the output document.</p>
+<div class="activity">
+<p>Your turn</p>
+<ol style="list-style-type: decimal">
+<li><p>Create a new RMarkdown file.
+You can choose the output format.</p></li>
+<li><p>Knit the document.</p></li>
+<li><p>Compare the “source file” with the “output file”.
+Can you identify the different sections of the file?</p></li>
+</ol>
+</div>
+<div id="file-structure" class="section level3">
+<h3>File structure</h3>
+<p>Any .Rmd file will have 3 sections or areas:</p>
+<p><img src="img/markdown-knit.png" alt="Rmarkdown file in the left. Knited document on the right. The YAML, chunk codes and text areas are highlighted on the file."/></p>
 <ul>
-<li>Create R project with an specific and useful structure</li>
-<li>Extend the use of RMarkdown files for reports and papers</li>
-<li>Use LaTex templates to customize reports</li>
-<li>Manage package dependencies inside a project.</li>
+<li>The top part uses YAML sintaxis and includes the title and the output type (which in this case is an HTML document).</li>
+<li>Below that there are alternating <em>white</em> and <em>grey</em> sections. These are the two main sections that make up an RMarkdown file: * Grey sections are code chunks. They are usually R chunks but there are many languages suported. * White sections are text sections and support markdown for styling.</li>
 </ul>
-
-
-
-
-<h2 id="materials">Materials
-  <a href="#materials"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 0h24v24H0z" fill="currentColor"></path>
-      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
-    </svg></a>
-</h2>
+<div id="header" class="section level4">
+<h4>Header</h4>
+<p>The header is a series of instructions organized between three dashes (<code>---</code>) that define the global properties of the document, such as the title, the output format, authorship information, etc.
+The heather will contain many many more options when you use templates and customised reports.
+You can aslo change options associated with the output format, such as the style of the table of contents or index.</p>
+<p>The YAML format allows you to define hierarchical lists in a humanly readable way.
+For example:</p>
+<pre class="yaml"><code>---
+title: &quot;Mi primer RMarkdown&quot;
+output: 
+  html_document:
+    code_download: true
+    toc: true
+    toc_float: false
+---</code></pre>
+<div class="notes">
+<p>Keep in mind the indentation!</p>
+<p>It is very important to maintain the identation of the elements, since it defines the hierarchy of each element.
+Many of the errors you’ll find when knitting occur because the file has problems in the header identation.</p>
+</div>
+</div>
+<div id="code-chunks" class="section level4">
+<h4>Code chunks</h4>
+<p>The R code is written inside code “chunks”.
+Code chunks start with <code>```{r label}</code> (where “label” is an optional and unique name) and end with <code>```</code>.
+Everything you include between these delimiters will be interpreted by R as code and will try to execute it when the file is knited.
+Any output (graphics, tables, text, etc.) will be inserted into the final document in the same order as they are in the R Markdown file.</p>
+<div class="instructions">
+<p>You can create a new chunk with:</p>
+<ol style="list-style-type: decimal">
+<li>The “+C” green bottom on the top right of the document</li>
+<li>A very handy shortcut: <code>Ctrl + Alt + I</code></li>
+<li>Writing the ``` by hand (but why would you?)</li>
+</ol>
+</div>
+<p>While the code will run when you knit, if you are analysing data and writing a report it is very convenient to run individual chunks interactively as if it were in the console.</p>
+<p>To run the line where your cursor is use the shortcut:</p>
+<div class="instructions">
+<p>Ctrl + Enter</p>
+</div>
+<p>But you can also run the code of the whole chunk with:</p>
+<div class="instructions">
+<p>Ctrl + Shift + Enter</p>
+</div>
+<p>By default, the output will appear immediately below the block.</p>
+</div>
+</div>
+<div id="markdown-text" class="section level3">
+<h3>Markdown text</h3>
+<p>You can get a guide to rmarkdown <a href="add%20link">in this</a> cheat sheet, but here is a minimum syntax to get you started:</p>
+<ul>
+<li>headers start with <code>#</code>or <code>##</code>and so on (it’s important to put a space after the last <code>#</code>).</li>
+<li>bold words are surrounded with <code>**</code></li>
+<li>and italics, with <code>_</code></li>
+</ul>
+</div>
+</div>
 
       </section>
       <footer class="post-footer">
         <div class="post-pagination dt w-100 mt4 mb2">
   
+  
+    <a class="prev dtc pr2 tl v-top fw6"
+    href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/01-introdution/">&larr; 01: Setting the stage</a>
   
   
   
@@ -219,7 +336,7 @@
               <li class="" hugo-nav="/reproducibility-with-r/materials/day1/01-introdution/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/01-introdution/">01: Setting the stage</a></li>
             
               
-              <li class="" hugo-nav="/reproducibility-with-r/materials/day1/03-rmarkdown/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/03-rmarkdown/">03: Reporting with RMarkdown</a></li>
+              <li class="active" hugo-nav="/reproducibility-with-r/materials/day1/03-rmarkdown/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/03-rmarkdown/">03: Reporting with RMarkdown</a></li>
             
           </details>
           
@@ -257,12 +374,7 @@
   <details id="PageTableOfContents">
     <summary><h2 class="mv0 f5 fw7 ttu tracked dib">On this page<h2></summary>
     <div class="pl2 pr0 mh0">
-    <nav id="TableOfContents">
-  <ul>
-    <li><a href="#learning-objectives">Learning objectives</a></li>
-    <li><a href="#materials">Materials</a></li>
-  </ul>
-</nav>
+    
     </div>
   </details>
   
