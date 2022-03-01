@@ -8,13 +8,19 @@
     <language>en</language>
     <lastBuildDate>Tue, 15 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://eliocamp.github.io/reproducibility-with-r/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>01: Setting the stage</title>
-      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day1/01-introdution/</link>
+      <title>01 - What is repdoducibilty anyway?</title>
+      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day1/01-introduction/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day1/01-introdution/</guid>
-      <description>Blablablabla
-Image by Manfred Steger from Pixabay</description>
+      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day1/01-introduction/</guid>
+      <description>  Why is it important.
+Why would you want to make your code reproducible.
+Reproducibilty vs. replicability.
+Limits of reproducibility.
+Reproducibilty-transparency trade-off
+Reproducibility doesn’t mean correct code, nor replicability means correct science!
+What is real
+Exercises  </description>
     </item>
     
     <item>
@@ -57,6 +63,17 @@ This is really critical to reproducibility. It also saves us time and can help w
     </item>
     
     <item>
+      <title>02 - A tidy project is a happy project</title>
+      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day1/02-projects/</link>
+      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day1/02-projects/</guid>
+      <description>Imagine that you read some interesting paper or analysis. To your delight, all the code and data is available in a public repository. You then are itching to sink your teeth on it; to see how they implemented the methods, or to run it with your own similar data.
+You download the all the files and you find something like this.
+# TODO: mover esto para que la ruta de la carpeta no sea tan larga?</description>
+    </item>
+    
+    <item>
       <title>Elio Campitelli</title>
       <link>https://eliocamp.github.io/reproducibility-with-r/people/eliocampitelli/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -83,7 +100,8 @@ I develops openly licensed materials to teach and learn R from scratch.</descrip
       <guid>https://eliocamp.github.io/reproducibility-with-r/attribution/</guid>
       <description>Sheep drawing by Gordon Johnson from Pixabay
 Pixel Cells by Manfred Steger from Pixabay
-Icon: Sheep by Adriansyah from NounProject.com</description>
+Icon: Sheep by Adriansyah from NounProject.com
+Day 1 sheep: Image by OpenClipart-Vectors from Pixabay</description>
     </item>
     
     <item>

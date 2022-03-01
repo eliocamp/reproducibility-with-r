@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head>
+  
+                           
+     
+
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.80.0" />
+<title>02 - A tidy project is a happy project | An R reproducibility toolkit for the practical researcher</title>
+
+
+
+
+
+
+
+
+  
+    
+  
+<meta name="description" content="Reproducibility course in R">
+
+
+<meta property="og:site_name" content="An R reproducibility toolkit for the practical researcher">
+<meta property="og:title" content="02 - A tidy project is a happy project | An R reproducibility toolkit for the practical researcher">
+<meta property="og:description" content="Reproducibility course in R" />
+<meta property="og:type" content="page" />
+<meta property="og:url" content="https://eliocamp.github.io/reproducibility-with-r/materials/day1/02-projects/" />
+<meta property="og:locale" content="en">
+
+
+
+
+      
+          <meta property="og:image" content="https://eliocamp.github.io/reproducibility-with-r/materials/day1/sidebar.png" >
+          <meta property="twitter:card" content="summary_large_image">
+          <meta name="twitter:image" content="https://eliocamp.github.io/reproducibility-with-r/materials/day1/sidebar.png" >
+      
+      
+  <meta itemprop="name" content="02 - A tidy project is a happy project">
+<meta itemprop="description" content="Imagine that you read some interesting paper or analysis. To your delight, all the code and data is available in a public repository. You then are itching to sink your teeth on it; to see how they implemented the methods, or to run it with your own similar data.
+You download the all the files and you find something like this.
+# TODO: mover esto para que la ruta de la carpeta no sea tan larga?">
+<meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1847">
+
+
+
+<meta itemprop="keywords" content="" />
+
+  
+  <!--[if IE]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  
+  
+  <link rel="stylesheet" href="/reproducibility-with-r/style.main.min.5c14ccb91905d450469e4040c74b4193d2441462e073a51188cded19e3799fd6.css" integrity="sha256-XBTMuRkF1FBGnkBAx0tBk9JEFGLgc6URiM3tGeN5n9Y=" media="screen">
+  
+  
+  <script src="/reproducibility-with-r/panelset.min.41f62c42d5f25dd80e81136866f4f1baa1bc17669edfd002e75c0e107953789b.js" type="text/javascript"></script>
+  
+  
+  <script src="/reproducibility-with-r/main.min.07ec8e08cbb63db3a2cf7d4a7df6f7be00c715f13b64d8df6a2c48441ba8b14b.js" type="text/javascript"></script>
+  
+  
+</head>
+<body>
+      <div class="grid-container single-series">
+<header class="site-header pt4 pb2 mb4 bb b--transparent ph5 headroom z-max" role="banner">
+  <nav class="site-nav db dt-l w-100" role="navigation">
+    <a class="site-brand db dtc-l v-mid link no-underline w-100 w-33-l tc tl-l" href="https://eliocamp.github.io/reproducibility-with-r/" title="Home">
+      <img src="/reproducibility-with-r/logo.png" class="dib db-l h2 w-auto" alt="An R reproducibility toolkit for the practical researcher">
+    </a>
+    <div class="site-links db dtc-l v-mid w-100 w-47-l tc tr-l mt3 mt0-l ttu tracked">
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/reproducibility-with-r/about/" title="About this course">About this course</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/reproducibility-with-r/materials/" title="Materials">Materials</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/reproducibility-with-r/people/" title="About us">About us</a>
+      
+      
+    </div>
+  </nav>
+</header>
+
+
+<main class="page-main ph4 pt4" role="main">
+  <section class="page-content mw7 center">
+    <article class="post-content pa0 pr3-l">
+      <header class="post-header">
+        <h4 class="breadcrumb pb5">
+
+ 
+ 
+    
+ 
+ 
+    
+ 
+ 
+    
+ 
+
+  
+    
+      <a href="/reproducibility-with-r/materials/">An R reproducibility toolkit for the practical researcher</a> >
+    
+
+
+  
+    
+      <a href="/reproducibility-with-r/materials/day1/">Day 1</a> >
+    
+
+
+  
+    
+      02 - A tidy project is a happy project
+    
+
+
+</h4>
+
+
+
+
+        
+        <h1 class="f1 lh-solid measure-narrow mb3 fw4">02 - A tidy project is a happy project</h1>
+        
+        <p class="f6 measure lh-copy mv1">By Paola Corrales and Elio Campitelli</p>
+        
+        
+        
+      
+      <div class="ph0 pt5">
+        
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+      
+  <a class="btn-links mr2 ba dib" href="/reproducibility-with-r/slides/01-introduction.html" ><i class="fas fa-images fa-lg fa-fw mr2"></i>slides</a>
+
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+      
+  <a class="btn-links mr2 ba dib" href="/reproducibility-with-r/materials/act-01/01-introduction/#activity" ><i class="fas fa-theater-masks fa-lg fa-fw mr2"></i>activity</a>
+
+
+      </div>
+      
+        
+      </header>
+      <section class="post-body pt5 pb4">
+        
+<script src="https://eliocamp.github.io/reproducibility-with-r/materials/day1/02-projects/index_files/header-attrs/header-attrs.js"></script>
+
+
+<p>Imagine that you read some interesting paper or analysis.
+To your delight, all the code and data is available in a public repository.
+You then are itching to sink your teeth on it; to see how they implemented the methods, or to run it with your own similar data.</p>
+<p>You download the all the files and you find something like this.</p>
+<pre class="r"><code># TODO: mover esto para que la ruta de la carpeta no sea tan larga?
+fs::dir_tree(here::here(&quot;content&quot;, &quot;materials&quot;, &quot;day1&quot;, &quot;02-projects&quot;, &quot;bad_project&quot;))</code></pre>
+<pre><code>## /home/elio/Documents/cursos/reproducibility-with-r/content/materials/day1/02-projects/bad_project
+## ├── abstract.R
+## ├── correlation.png
+## ├── data.csv
+## ├── data2.csv
+## ├── fig1.png
+## ├── figure 2 (copy).png
+## ├── figure.png
+## ├── figure1.png
+## ├── figure10.png
+## ├── partial data.csv
+## ├── script.R
+## └── script_final.R</code></pre>
+<p>And you have no idea what to do with it.
+There’s three <code>.R</code> files which could be the main script, several possible files containing some unspecified “data” and a bunch of image files with names that give little information on their contents.
+With no README file or any other documentation to help you sort out this mess, you might well decide that your time is better spent somewhere else.</p>
+<p>(Joke’s on you: you are the author and it was your past self that left this mess.)</p>
+<p>Reproducibility is as much as about the humans that interact with the code as the machines that need to run it.
+Remember that a big reason to make your code reproducible is to enable other people to check and expand your code.
+That anyone will want to do that is nothing short of a miracle, so you want to make their lives as easy as possible so they don’t desist.</p>
+<div id="creating-an-organised-project" class="section level2">
+<h2>Creating an organised project</h2>
+<p>What counts as “organised” is highly personal, but the main… Folder structure and file names should be:</p>
+<ol style="list-style-type: decimal">
+<li>self-documenting</li>
+<li>easy to code with.</li>
+<li>all necessary files are inside the root folder</li>
+</ol>
+<div id="files-that-document-themselves" class="section level3">
+<h3>Files that document themselves</h3>
+<p>Take advantage of folders to self-document the various parts of your analysis.</p>
+<p>Put your data in <code>data</code>, pre-processing scripts in <code>scripts</code>, and your analysis in <code>analysis</code>.
+Also use sub-folders, such as <code>data/raw</code> for raw data from the source and <code>data/derived</code> for pre-processed, cleaned-up data.</p>
+<p>Name your files so that you can know what they are even if you came home at 3am after drinking a few beers.</p>
+<p>Use slugs (short descriptions of what’s inside).</p>
+<div class="activity">
+<p>Describe what do you think are the contents of these files:</p>
+<ul>
+<li><p><code>data/raw/madrid-minimum_temperature.csv</code></p></li>
+<li><p><code>scripts/02-compute_mean_temperature.csv</code></p></li>
+<li><p><code>analysis/01-madrid-minimum_temperature-descriptive_statistics.Rmd</code></p></li>
+</ul>
+</div>
+<div class="activity">
+<p>Come up with good file names and folders for:</p>
+<ul>
+<li><p>a dataset that</p></li>
+<li><p>a script that downloads data from Spotify</p></li>
+<li><p>asdfsd</p></li>
+</ul>
+</div>
+<div class="notes">
+<p>Use a familiar folder structure</p>
+<p>There is no single one objectively best folder structure.
+When in doubt, try to follow the conventions of your research community.
+This will minimise any friction between you and your potential audience.</p>
+</div>
+</div>
+<div id="files-you-can-code-with" class="section level3">
+<h3>Files you can code with</h3>
+<p>Always remember that machines are quite dumb, so be gentle and use file names machines can easily understand.</p>
+<p>In some cases, file names with spaces confuse machines, so in general is much easier to code if file names use underscores and hyphens to split words.
+Similarly, some machines can’t handle “special characters” such as “ñ” or tildes.
+Some symbols (“.”, “*”, an others) are also best avoided because they have special meaning in regular expressions.</p>
+<p>Some file systems are case insensitive, so <code>Madrid-Temperature.csv</code> and <code>madrid-temperature.csv</code> might be the same file!</p>
+<p>To avoid any headaches, it is best to be conservative and just use lower-case latin characters, numbers and hyphens (“_” and “-”).</p>
+<p>Use hyphens as separators.
+You can use “_” to separate words that are part of the same concept and “-” to separate concepts.
+For instance <code>buenos_aires-minimum_temperature.csv</code>.
+You can also use them the other way around, but what’s important is consistency.</p>
+<div class="instructions">
+<p>By using separators consistently and smartly you can parse file names programmatically very easily.
+For example, if you have</p>
+<pre class="r"><code>files</code></pre>
+<pre><code>## [1] &quot;madrid-minimum_temperature&quot;       &quot;buenos_aires-minimum_temperature&quot;
+## [3] &quot;madrid-maximum_temperature&quot;       &quot;buenos_aires-maximum_temperature&quot;</code></pre>
+<p>You could extract cities and variable names by just</p>
+<pre class="r"><code>strsplit(files, &quot;-&quot;)</code></pre>
+<pre><code>## [[1]]
+## [1] &quot;madrid&quot;              &quot;minimum_temperature&quot;
+## 
+## [[2]]
+## [1] &quot;buenos_aires&quot;        &quot;minimum_temperature&quot;
+## 
+## [[3]]
+## [1] &quot;madrid&quot;              &quot;maximum_temperature&quot;
+## 
+## [[4]]
+## [1] &quot;buenos_aires&quot;        &quot;maximum_temperature&quot;</code></pre>
+</div>
+<p>Finally, if you can try to make your files easily sortable.
+Put numbers with enough zero-padding and, if relevant, use dates in YYYY-MM-DD format at the beginning of the file name so that sorting by name coincide with sorting by date.</p>
+</div>
+<div id="making-it-portable" class="section level3">
+<h3>Making it portable</h3>
+<p>An important aspect of thinking about your project is that all scripts, data, figures, and whatever else is needed to (re)create the analysis is inside the same root folder.
+That way you can ensure that the only thing you need to give to someone else to successfully run your code is that single folder.
+It also makes your life easier if you work on the same project in different computers, as it enables you to sync a single folder.</p>
+<p>One extra step to consider is that you cannot make your work portable is your code is not portable too.
+Perhaps the main culprit of non-portable code is using absolute paths to manipulate files in your code.</p>
+<p>Think about this piece of code:</p>
+<pre class="r"><code>read.csv(&quot;/home/dorothy/Documents/research/black-hole/data/data.csv&quot;)</code></pre>
+<p>Even if you correctly downloaded the <code>myresearch</code> folder, this code wouldn’t run because it is unlikely that you saved that folder inside <code>Documents/research</code> and that your username is “dorothy”.</p>
+<p>Instead, you can use a relative path such as</p>
+<pre class="r"><code>read.csv(&quot;data/data.csv&quot;)</code></pre>
+<p>And this will run no matter where the root folder is located.
+The only catch is that you need to make sure that the working directory is set to the root of the project.
+This is easier said than done, especially due to knitr’s default behaviour of setting the location of the .Rmd file as the working directory.
+We will see that a simple solution is to use the <strong>here</strong> package.</p>
+</div>
+</div>
+<div id="rstudio-projects" class="section level2">
+<h2>RStudio Projects</h2>
+<p>RStudio provides a neat, structured way of separating your projects into different contexts.
+They don’t strictly help with reproducibility of the final product, but they will help you streamline your workflow by encapsulating things like the list of open files, R command history and RStudio settings for each project.</p>
+<p>Opening an RStudio Project also ensures that you start a new R session every time and sets your working directory to the project root directory.</p>
+<div class="instructions">
+<p>Create a new RStudio Project</p>
+<ol style="list-style-type: decimal">
+<li>Click on “File” and then in “New Project…”.</li>
+<li>Cilck on “New directory”.</li>
+<li>You’ll see a list of various templates. Select “New Project”.</li>
+<li>Type the name of the root folder in which your project will live and the directory where you want this folder to be created in by clicking “Browse..”</li>
+<li>Click on “Create Project”.</li>
+</ol>
+</div>
+<p>If everything went well, you should have a new folder with your desired name.
+This is a normal garden-variety folder; what singles it out as an RStudio Project is the .Rproj file that holds project-specific RStudio options and the hidden folder .Rproj.user where project-specific temporary files are located.</p>
+<p>Each RStudio Project has its own set of options that you can change without altering global options or other project’s options.</p>
+</div>
+<div id="opening-a-project" class="section level2">
+<h2>Opening a project</h2>
+<p>The simplest way to open a project is to open the folder that contains it and double-click on the .Rproj file.
+You can also quickly open a recently-used project by clicking on the project icon on the left-hand side of the RStudio toolbar.</p>
+<p>This will open a new RStudio window with its own clean R process with the project folder as the working directory.
+By default, it will also open any previously-opened files.
+It will even preserve changes not This helps keep your work tidy and makes it easy to pick up or share what you’ve done later.</p>
+<p>RStudio allows you to have multiple projects open, and this is possible because each project has its own folder.
+You can work with multiple projects in parallel without code or results of one analysis interfering with the other’s.</p>
+<div class="instructions">
+<p>Open your project</p>
+<ol style="list-style-type: decimal">
+<li>On your new project, create a new file (any file) and write some code on it (e.g. <code>print("Hello world")</code>).</li>
+<li>Close the RStudio window.</li>
+<li>Now open a new RStudio window and open the RStudio Project you just closed (depending on your global options, it might open by default).</li>
+</ol>
+</div>
+</div>
+<div id="a-clean-slate-every-day" class="section level2">
+<h2>A clean slate… every day</h2>
+<p>How do we ensure that the analysis is truly reproducible?
+This is quite a broad question and there are many tools to solve this problem.
+For now we are going to concentrate on at least on your computer being able to repeat the calculations or analysis from scratch.
+And besides organising projects and not modifying the original data, how can you make sure that you saved all the code you were writing and used?
+The most direct way is to restart the R session and run the code again, if it gives an error or doesn’t return what you expected it means you missed a step.</p>
+<div class="notes">
+<p>You can restart the R session with the shortcut Ctrl+Shif+F10.</p>
+</div>
+<p>This can happen if for example you read data into memory by running a command in the console.
+While we are working, R will have that data in memory and you will be able to make calculations and graphs, but your code will not be reproducible because it’s missing the important step of reading the data.</p>
+<p>The best way of ensuring this doesn’t happen is to re-run your code on a fresh R session early and often so you can be sure that your code is reproducible at every step of the analysis.
+However, be default RStudio will save the environment in a hidden file called .RData and restore it on startup, so that data will still be in memory.
+And while this comes in handy so that you can boot up your work exactly where you left it each time you open your project, it might lead to a situation in which you never realise that you missed saving a key line of code in your analysis.</p>
+<div class="instructions">
+<p>Configure your project</p>
+<ul>
+<li><p>Go to “Tools” -&gt; “Project options…”</p></li>
+<li><p>In the “General” tab</p>
+<ul>
+<li><p>“Restore .RData into workspace at startup”: Select “No” from the dropdown menu.</p></li>
+<li><p>“Save workspace to .RData on exit”: Select “No” from the dropdown menu</p></li>
+</ul></li>
+</ul>
+</div>
+<div class="notes">
+<p>You can change these preferences at the gobal level with “Tools” -&gt; “Global options” in the “General” subheading</p>
+</div>
+</div>
+<div id="research-compendia-with-rrtools" class="section level2">
+<h2>Research compendia with <strong>rrtools</strong></h2>
+<p>There’s a tool to automate a lot of this so you don’t need to think about it so much.
+The <strong>rrtools</strong> package can automate a lot of these steps (and more) and the <strong>rrtools.addin</strong> package offers a GUI for the main functionality.
+These packages are not on CRAN, so you need to install them with</p>
+<pre class="r"><code>remotes::install_github(&quot;benmarwick/rrtools&quot;)
+remotes::install_github(&quot;nevrome/rrtools.addin&quot;)</code></pre>
+<p>rrtools provides a relatively rich and strict template which has the advantage of liberating you from some decisions but, as it usually goes with these things, it also forces some decision onto you which might not be optimal for your specific use-case.
+In any case, it provides a very solid starting point that follows some best practices.
+However, it can be a bit overwhelming because it has many moving parts, so in this course we will go over each part “by hand” before automatising.</p>
+</div>
+<div id="resources" class="section level2">
+<h2>Resources</h2>
+<p><a href="https://slides.djnavarro.net/project-structure/#25">https://slides.djnavarro.net/project-structure</a>/</p>
+<p><a href="https://peerj.com/preprints/3192v1/" class="uri">https://peerj.com/preprints/3192v1/</a></p>
+<p><a href="https://mbjoseph.github.io/intro-research-compendia/#9">https://mbjoseph.github.io/intro-research-compendia</a></p>
+</div>
+
+      </section>
+      <footer class="post-footer">
+        <div class="post-pagination dt w-100 mt4 mb2">
+  
+  
+    <a class="prev dtc pr2 tl v-top fw6"
+    href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/03-rmarkdown/">&larr; 03: Reporting with RMarkdown</a>
+  
+  
+  
+</div>
+
+      </footer>
+    </article>
+    
+  </section>
+</main>
+
+<aside class="page-sidebar" role="complementary">
+                         
+ 
+
+
+
+
+
+
+
+
+
+
+
+  <img src="/reproducibility-with-r/materials/day1/sidebar.png" class="db ma0">
+
+                         
+ 
+
+
+
+<div class="flex items-start sticky ph4 pb4 flex-row">
+  <div class="w-two-thirds w-50-l ph0">
+    <h2 class="mv3 f5 fw7 ttu tracked">
+      <a class="no-underline dim" href="/reproducibility-with-r/materials/">Outline</a></h2>
+    <nav id="SectionTableOfContents" aria-label="SectionTableOfContents">
+        <ul>
+        
+          
+          
+          <li class="" hugo-nav="/reproducibility-with-r/materials/day0/">
+            <a href="https://eliocamp.github.io/reproducibility-with-r/materials/day0/">Day 0</a></li>
+          
+          </li>
+        
+          
+          
+          
+          <details open class="active">
+            <summary class="active" hugo-nav="/reproducibility-with-r/materials/day1/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/">Day 1</a></summary>
+            
+              
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day1/01-introduction/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/01-introduction/">01 - What is repdoducibilty anyway?</a></li>
+            
+              
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day1/03-rmarkdown/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/03-rmarkdown/">03: Reporting with RMarkdown</a></li>
+            
+              
+              <li class="active" hugo-nav="/reproducibility-with-r/materials/day1/02-projects/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/02-projects/">02 - A tidy project is a happy project</a></li>
+            
+          </details>
+          
+          </li>
+        
+          
+          
+          
+          <details  class="">
+            <summary class="" hugo-nav="/reproducibility-with-r/materials/day2/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/">Day 2</a></summary>
+            
+              
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day2/01-introdution/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/01-introdution/">01: Setting the stage</a></li>
+            
+          </details>
+          
+          </li>
+        
+          
+          
+          
+          <details  class="">
+            <summary class="" hugo-nav="/reproducibility-with-r/materials/day3/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day3/">Day 3</a></summary>
+            
+              
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day3/01-introdution/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-introdution/">01: Setting the stage</a></li>
+            
+          </details>
+          
+          </li>
+        
+        </ul>
+    </nav>
+  </div>
+  <details id="PageTableOfContents">
+    <summary><h2 class="mv0 f5 fw7 ttu tracked dib">On this page<h2></summary>
+    <div class="pl2 pr0 mh0">
+    
+    </div>
+  </details>
+  
+</div>
+
+</aside>
+
+<footer class="site-footer pv4 bt b--transparent ph5" role="contentinfo">
+  <nav class="db dt-l w-100">
+    <p class="site-copyright f7 db dtc-l v-mid w-100 w-33-l tc tl-l pv2 pv0-l mv0 lh-copy">
+      &copy; 2022
+      <span class="middot-divider"></span>
+      Made with <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/hugo-apero/" rel="dct:source">Hugo Apéro</a></span>.
+      <br />
+      
+Based on <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/formspree/blogophonic-hugo" rel="dct:source">Blogophonic</a></span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://formspree.io" property="cc:attributionName" rel="cc:attributionURL">Formspree</a>.
+    </p>
+    
+    <div class="site-social-links db dtc-l v-mid w-100 w-33-l tc pv2 pv0-l mv0">
+      <div class="social-icon-links" aria-hidden="true">
+  
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 ml0 mr2 f3 o-90 glow grow" href="https://github.com/eliocamp/reproducibility-with-r/" title="github" target="_blank" rel="noopener">
+      <i class="fab fa-github fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 ml0 mr2 f3 o-90 glow grow" href="https://twitter.com/d_olivaw" title="@d_olivaw on Twiter" target="_blank" rel="noopener">
+      <i class="fab fa-twitter purple fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 ml0 mr2 f3 o-90 glow grow" href="https://twitter.com/paobcorrales" title="@paobcorrales on Twiter" target="_blank" rel="noopener">
+      <i class="fab fa-twitter green fa-lg fa-fw"></i>
+    </a>
+  
+</div>
+
+    </div>
+    
+    <div class="site-links f6 db dtc-l v-mid w-100 w-67-l tc tr-l pv2 pv0-l mv0">
+      
+      <a class="dib pv1 ph2 link" href="/reproducibility-with-r/license/" title="License">License</a>
+      
+      <a class="dib pv1 ph2 link" href="/reproducibility-with-r/attribution/" title="Attributions">Attributions</a>
+      
+    </div>
+  </nav>
+  
+    <script>
+
+    var i, text, code, codes = document.getElementsByTagName('code');
+    for (let i = 0; i < codes.length;) {
+      code = codes[i];
+      if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+        text = code.textContent;
+        if (/^\$[^$]/.test(text) && /[^$]\$$/.test(text)) {
+          text = text.replace(/^\$/, '\\(').replace(/\$$/, '\\)');
+          code.textContent = text;
+        }
+        if (/^\\\((.|\s)+\\\)$/.test(text) ||
+            /^\\\[(.|\s)+\\\]$/.test(text) ||
+            /^\$(.|\s)+\$$/.test(text) ||
+            /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+          code.outerHTML = code.innerHTML;  
+          continue;
+        }
+      }
+      i++;
+    }
+</script>
+
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js" integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+
+
+    
+  
+  
+</footer>
+
+      </div>
+    </body>
+</html>
