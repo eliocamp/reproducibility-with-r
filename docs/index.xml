@@ -59,7 +59,8 @@ This is really critical to reproducibility. It also saves us time and can help w
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day0/</guid>
-      <description>  get R  Get RStudio  Packages  </description>
+      <description>Hi! In this workshop we will be introducing in many tools to help make your work as reproducible as possible. That means that you’ll need to have several programs installed and set up before we begin. Please, follow these instructions before the workshop.
+R At the very least you need to have R installed on your computer. If possible, try to have it upgraded to the latest version. We developed the materials using R version 4.</description>
     </item>
     
     <item>

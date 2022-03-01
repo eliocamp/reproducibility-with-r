@@ -41,10 +41,11 @@
       
       
   <meta itemprop="name" content="Day 0">
-<meta itemprop="description" content="  get R  Get RStudio  Packages  ">
+<meta itemprop="description" content="Hi! In this workshop we will be introducing in many tools to help make your work as reproducible as possible. That means that you’ll need to have several programs installed and set up before we begin. Please, follow these instructions before the workshop.
+R At the very least you need to have R installed on your computer. If possible, try to have it upgraded to the latest version. We developed the materials using R version 4.">
 <meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="5">
+<meta itemprop="wordCount" content="616">
 <meta itemprop="image" content="https://eliocamp.github.io/reproducibility-with-r/materials/day0/featured.png">
 
 
@@ -132,7 +133,7 @@
         <h1 class="f1 lh-solid measure-narrow mb3 fw4">Day 0</h1>
         
         <p class="f6 measure lh-copy mv1">By Paola Corrales and Elio Campitelli</p>
-        <p class="f7 db mv0 ttu">February 19, 2022</p>
+        
         
         
       
@@ -143,14 +144,82 @@
 <script src="https://eliocamp.github.io/reproducibility-with-r/materials/day0/index_files/header-attrs/header-attrs.js"></script>
 
 
-<div id="get-r" class="section level2">
-<h2>get R</h2>
+<p>Hi!
+In this workshop we will be introducing in many tools to help make your work as reproducible as possible.
+That means that you’ll need to have several programs installed and set up before we begin.
+Please, follow these instructions before the workshop.</p>
+<div id="r" class="section level2">
+<h2>R</h2>
+<p>At the very least you need to have R installed on your computer.
+If possible, try to have it upgraded to the latest version.
+We developed the materials using R version 4.1.2 (2021-11-01).
+To the best of our abilities, we don’t think there’s anything that requires this particular version, but to avoid potential issues, it would be best if you have at least a R 4.something.</p>
+<p>Go to <a href="https://cloud.r-project.org/" class="uri">https://cloud.r-project.org/</a> and follow the steps for your Operating System.</p>
 </div>
-<div id="get-rstudio" class="section level2">
-<h2>Get RStudio</h2>
+<div id="rstudio" class="section level2">
+<h2>RStudio</h2>
+<p>We will be using RStudio as IDE.
+Again, try to update it to the latest version.
+The new visual editor will be particularly helpful for those without a lot of experience with markdown (and probably for the markdown experts as well).
+Also, old versions of RStudio do not work well with new versions of R (ggplot2 plots will crash your session).</p>
+<p>Go to <a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a> and download the latest version.</p>
 </div>
-<div id="packages" class="section level2">
-<h2>Packages</h2>
+<div id="r-packages" class="section level2">
+<h2>R Packages</h2>
+<p>You will need to install the packages required to use <strong>knitr</strong>.
+The easiest way to do this is to let RStudio do that for you.</p>
+<ul>
+<li><p>Open RStudio</p></li>
+<li><p>Go to to File -&gt; New File -&gt; R Markdown.</p></li>
+<li><p>If you get a pop up saying that you need to install some packages, click “Ok”.
+RStudio will install the packages and then open a sample document.</p></li>
+<li><p>Click on the “Knit” button (the blue yarn) to test your installation; everything went well, you should see a new window with an HTML file.</p></li>
+</ul>
+<p>Other important packages are <strong>here</strong>, <strong>renv</strong>, <strong>rticles</strong>, and <strong>devtools</strong> and <strong>roxygen2</strong>.
+These are on CRAN so you can install them with the usual</p>
+<pre class="r"><code>install.packages(c(&quot;here&quot;, &quot;renv&quot;, &quot;rticles&quot;, &quot;devtools&quot;, &quot;roxygen2&quot;))</code></pre>
+<p>The packages <strong>rrtools</strong> and <strong>rrtools.addin</strong> will also be useful.
+They are not on CRAN, so you need so install them from github</p>
+<pre class="r"><code>if (!require(&quot;remotes&quot;)) install.packages(&quot;remotes&quot;)
+remotes::install_github(&quot;benmarwick/rrtools&quot;)
+remotes::install_github(&quot;nevrome/rrtools.addin&quot;)</code></pre>
+</div>
+<div id="latex" class="section level2">
+<h2>LaTeX</h2>
+<p>You’ll need a working LaTeX installation to render PDFs.
+If you didn’t feel chills down your spine at the sight of that sentence, consider yourself lucky!</p>
+<p>The easiest (and painless) way to do this is to use the <a href="https://yihui.org/tinytex/">tinytex</a> R package.
+You should be up and running with these two commands:</p>
+<pre class="r"><code>install.packages(&#39;tinytex&#39;)
+tinytex::install_tinytex()</code></pre>
+</div>
+<div id="git-and-github" class="section level2">
+<h2>Git and GitHub</h2>
+<p>On the second day of the workshop we will start using Git for version control and GitHub as a remote repository.
+Details on how to do this are best described in Jenny Bryan’s fantastic <a href="https://happygitwithr.com/install-intro.html">Happy Git with R book</a>.
+The core steps are:</p>
+<ol style="list-style-type: decimal">
+<li><p>Install git on your machine.<br />
+The instructions depend on your Operating System.
+Follow the instructions at <a href="https://happygitwithr.com/install-git.html" class="uri">https://happygitwithr.com/install-git.html</a>.</p></li>
+<li><p>Create a GitHub account.<br />
+Go to <a href="github.com">github.com</a> and create your free account.</p></li>
+<li><p>Set up git so it can work with GitHUb and RStudio.<br />
+This can be, unfortunately, a rather involved process so be patient.
+Again, the excellent Happy Git with R is your friend.
+Follow the instructions in <a href="https://happygitwithr.com/https-pat.html">this chapter</a> to set up your GitHub Personal Access Token.<br />
+If you are on linux, we highly recommend <a href="https://blog.djnavarro.net/posts/2021-08-08_git-credential-helpers/">this post by Danielle Navarro</a>.
+It covers some of the same territory, but it can be cathartic to read someone sharing your pain.</p></li>
+<li><p>(Optional) In this workshop we will be using RStudio as a simple git GUI, but in the future you might want to use a more full-fledge client.
+Again, Happy Git with R <a href="https://happygitwithr.com/git-client.html#recommended-git-clients">recommends a few</a>.
+We like <a href="https://www.gitkraken.com/">GitKraken</a>, which is free, feature-rich, and multi-platform.</p></li>
+</ol>
+</div>
+<div id="docker" class="section level2">
+<h2>Docker</h2>
+<p>On the third day we show the basics of docker.
+Instructions on how to install it depend on your operating system.
+Go to <a href="https://docs.docker.com/get-docker/" class="uri">https://docs.docker.com/get-docker/</a> and follow the instructions.</p>
 </div>
 
       </section>
