@@ -4,14 +4,104 @@ subtitle: ""
 weight: 1
 excerpt: "How to prepare ahead of time."
 draft: false
+show_post_date: false
 ---
 
+Hi!
+In this workshop we will be introducing in many tools to help make your work as reproducible as possible.
+That means that you'll need to have several programs installed and set up before we begin.
+Please, follow these instructions before the workshop.
 
+## R
 
-## get R
+At the very least you need to have R installed on your computer.
+If possible, try to have it upgraded to the latest version.
+We developed the materials using `r R.version.string`.
+To the best of our abilities, we don't think there's anything that requires this particular version, but to avoid potential issues, it would be best if you have at least a R 4.something.
 
+Go to <https://cloud.r-project.org/> and follow the steps for your Operating System.
 
-## Get RStudio
+## RStudio
 
+We will be using RStudio as IDE.
+Again, try to update it to the latest version.
+The new visual editor will be particularly helpful for those without a lot of experience with markdown (and probably for the markdown experts as well).
+Also, old versions of RStudio do not work well with new versions of R (ggplot2 plots will crash your session).
 
-## Packages
+Go to <https://www.rstudio.com/products/rstudio/download/> and download the latest version.
+
+## R Packages
+
+You will need to install the packages required to use **knitr**.
+The easiest way to do this is to let RStudio do that for you.
+
+-   Open RStudio
+
+-   Go to to File -> New File -> R Markdown.
+
+-   If you get a pop up saying that you need to install some packages, click "Ok".
+    RStudio will install the packages and then open a sample document.
+
+-   Click on the "Knit" button (the blue yarn) to test your installation; everything went well, you should see a new window with an HTML file.
+
+Other important packages are **here**, **renv**, **rticles**, and **devtools** and **roxygen2**.
+These are on CRAN so you can install them with the usual
+
+``` r
+install.packages(c("here", "renv", "rticles", "devtools", "roxygen2"))
+```
+
+The packages **rrtools** and **rrtools.addin** will also be useful.
+They are not on CRAN, so you need so install them from github
+
+``` r
+if (!require("remotes")) install.packages("remotes")
+remotes::install_github("benmarwick/rrtools")
+remotes::install_github("nevrome/rrtools.addin")
+```
+
+## LaTeX
+
+You'll need a working LaTeX installation to render PDFs.
+If you didn't feel chills down your spine at the sight of that sentence, consider yourself lucky!
+
+The easiest (and painless) way to do this is to use the [tinytex](https://yihui.org/tinytex/) R package.
+You should be up and running with these two commands:
+
+``` r
+install.packages('tinytex')
+tinytex::install_tinytex()
+```
+
+## Git and GitHub
+
+On the second day of the workshop we will start using Git for version control and GitHub as a remote repository.
+Details on how to do this are best described in Jenny Bryan's fantastic [Happy Git with R book](https://happygitwithr.com/install-intro.html).
+The core steps are:
+
+1.  Install git on your machine.
+    \
+    The instructions depend on your Operating System.
+    Follow the instructions at <https://happygitwithr.com/install-git.html>.
+
+2.  Create a GitHub account.\
+    Go to [github.com](github.com) and create your free account.
+
+3.  Set up git so it can work with GitHUb and RStudio.\
+    This can be, unfortunately, a rather involved process so be patient.
+    Again, the excellent Happy Git with R is your friend.
+    Follow the instructions in [this chapter](https://happygitwithr.com/https-pat.html) to set up your GitHub Personal Access Token.
+    \
+    If you are on linux, we highly recommend [this post by Danielle Navarro](https://blog.djnavarro.net/posts/2021-08-08_git-credential-helpers/).
+    It covers some of the same territory, but it can be cathartic to read someone sharing your pain.
+
+4.  (Optional) In this workshop we will be using RStudio as a simple git GUI, but in the future you might want to use a more full-fledge client.
+    Again, Happy Git with R [recommends a few](https://happygitwithr.com/git-client.html#recommended-git-clients).
+    We like [GitKraken](https://www.gitkraken.com/), which is free, feature-rich, and multi-platform.
+
+## Docker
+
+On the third day we show the basics of docker.
+Instructions on how to install it depend on your operating system.
+Go to <https://docs.docker.com/get-docker/> and follow the instructions.
+
