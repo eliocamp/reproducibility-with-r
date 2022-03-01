@@ -93,7 +93,7 @@ The core steps are:
     Follow the instructions in [this chapter](https://happygitwithr.com/https-pat.html) to set up your GitHub Personal Access Token.
     \
     If you are on linux, we highly recommend [this post by Danielle Navarro](https://blog.djnavarro.net/posts/2021-08-08_git-credential-helpers/).
-    It covers some of the same territory, but it can be cathartic to read someone sharing your pain.
+    It covers some of the same territory with more detail, and it can be cathartic to read someone who shares your pain.
 
 4.  (Optional) In this workshop we will be using RStudio as a simple git GUI, but in the future you might want to use a more full-fledge client.
     Again, Happy Git with R [recommends a few](https://happygitwithr.com/git-client.html#recommended-git-clients).
@@ -104,4 +104,3 @@ The core steps are:
 On the third day we show the basics of docker.
 Instructions on how to install it depend on your operating system.
 Go to <https://docs.docker.com/get-docker/> and follow the instructions.
-
