@@ -14,9 +14,7 @@ cascade:
 
 ## Learning objectives
 
-* Create R project with an specific and useful structure
-* Extend the use of RMarkdown files for reports and papers
-* Use LaTex templates to customize reports
-* Manage package dependencies inside a project. 
-
-## Materials
+-   Create R project with an specific and useful structure
+-   Extend the use of RMarkdown files for reports and papers
+-   Use LaTex templates to customize reports
+-   Manage package dependencies inside a project.

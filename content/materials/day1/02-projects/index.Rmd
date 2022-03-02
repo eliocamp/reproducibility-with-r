@@ -1,18 +1,9 @@
 ---
-title: "02 - A tidy project is a happy project"
+title: "02: A tidy project is a happy project"
 weight: 2
 show_post_date: false
 publishDate: 2022-02-19
 excerpt: ""
-links:
-- icon: images
-  icon_pack: fas
-  name: slides
-  url: "/slides/01-introduction.html"
-- icon: theater-masks
-  icon_pack: fas
-  name: activity
-  url: "/materials/act-01/01-introduction/#activity"
 ---
 
 Imagine that you read some interesting paper or analysis.
@@ -100,7 +91,7 @@ You can use "\_" to separate words that are part of the same concept and "-" to 
 For instance `buenos_aires-minimum_temperature.csv`.
 You can also use them the other way around, but what's important is consistency.
 
-::: instructions
+::: notes
 By using separators consistently and smartly you can parse file names programmatically very easily.
 For example, if you have
 
@@ -159,7 +150,7 @@ They don't strictly help with reproducibility of the final product, but they wil
 
 Opening an RStudio Project also ensures that you start a new R session every time and sets your working directory to the project root directory.
 
-::: instructions
+::: activity
 Create a new RStudio Project
 
 1.  Click on "File" and then in "New Project...".
@@ -186,7 +177,7 @@ It will even preserve changes not This helps keep your work tidy and makes it ea
 RStudio allows you to have multiple projects open, and this is possible because each project has its own folder.
 You can work with multiple projects in parallel without code or results of one analysis interfering with the other's.
 
-::: instructions
+::: activity
 Open your project
 
 1.  On your new project, create a new file (any file) and write some code on it (e.g. `print("Hello world")`).
@@ -213,12 +204,12 @@ The best way of ensuring this doesn't happen is to re-run your code on a fresh R
 However, be default RStudio will save the environment in a hidden file called .RData and restore it on startup, so that data will still be in memory.
 And while this comes in handy so that you can boot up your work exactly where you left it each time you open your project, it might lead to a situation in which you never realise that you missed saving a key line of code in your analysis.
 
-::: instructions
+::: activity
 Configure your project
 
--   Go to "Tools" -> "Project options..."
+1.   Go to "Tools" -> "Project options..."
 
--   In the "General" tab
+2.  In the "General" tab
 
     -   "Restore .RData into workspace at startup": Select "No" from the dropdown menu.
 
@@ -226,7 +217,7 @@ Configure your project
 :::
 
 ::: notes
-You can change these preferences at the gobal level with "Tools" -> "Global options" in the "General" subheading
+You can change these preferences at the global level with "Tools" -> "Global options" in the "General" subheading
 :::
 
 ## Research compendia with **rrtools**
@@ -245,7 +236,7 @@ rrtools provides a relatively rich and strict template which has the advantage o
 In any case, it provides a very solid starting point that follows some best practices.
 However, it can be a bit overwhelming because it has many moving parts, so in this course we will go over each part "by hand" before automatising.
 
-## Resources
+### Resources
 
 [https://slides.djnavarro.net/project-structure](https://slides.djnavarro.net/project-structure/#25)/
 

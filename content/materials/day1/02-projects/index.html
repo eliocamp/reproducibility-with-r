@@ -1,18 +1,9 @@
 ---
-title: "02 - A tidy project is a happy project"
+title: "02: A tidy project is a happy project"
 weight: 2
 show_post_date: false
 publishDate: 2022-02-19
 excerpt: ""
-links:
-- icon: images
-  icon_pack: fas
-  name: slides
-  url: "/slides/01-introduction.html"
-- icon: theater-masks
-  icon_pack: fas
-  name: activity
-  url: "/materials/act-01/01-introduction/#activity"
 ---
 
 <script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
@@ -94,7 +85,7 @@ Some symbols (“.”, “*”, an others) are also best avoided because they ha
 You can use “_” to separate words that are part of the same concept and “-” to separate concepts.
 For instance <code>buenos_aires-minimum_temperature.csv</code>.
 You can also use them the other way around, but what’s important is consistency.</p>
-<div class="instructions">
+<div class="notes">
 <p>By using separators consistently and smartly you can parse file names programmatically very easily.
 For example, if you have</p>
 <pre class="r"><code>files</code></pre>
@@ -140,7 +131,7 @@ We will see that a simple solution is to use the <strong>here</strong> package.<
 <p>RStudio provides a neat, structured way of separating your projects into different contexts.
 They don’t strictly help with reproducibility of the final product, but they will help you streamline your workflow by encapsulating things like the list of open files, R command history and RStudio settings for each project.</p>
 <p>Opening an RStudio Project also ensures that you start a new R session every time and sets your working directory to the project root directory.</p>
-<div class="instructions">
+<div class="activity">
 <p>Create a new RStudio Project</p>
 <ol style="list-style-type: decimal">
 <li>Click on “File” and then in “New Project…”.</li>
@@ -163,7 +154,7 @@ By default, it will also open any previously-opened files.
 It will even preserve changes not This helps keep your work tidy and makes it easy to pick up or share what you’ve done later.</p>
 <p>RStudio allows you to have multiple projects open, and this is possible because each project has its own folder.
 You can work with multiple projects in parallel without code or results of one analysis interfering with the other’s.</p>
-<div class="instructions">
+<div class="activity">
 <p>Open your project</p>
 <ol style="list-style-type: decimal">
 <li>On your new project, create a new file (any file) and write some code on it (e.g. <code>print("Hello world")</code>).</li>
@@ -187,19 +178,19 @@ While we are working, R will have that data in memory and you will be able to ma
 <p>The best way of ensuring this doesn’t happen is to re-run your code on a fresh R session early and often so you can be sure that your code is reproducible at every step of the analysis.
 However, be default RStudio will save the environment in a hidden file called .RData and restore it on startup, so that data will still be in memory.
 And while this comes in handy so that you can boot up your work exactly where you left it each time you open your project, it might lead to a situation in which you never realise that you missed saving a key line of code in your analysis.</p>
-<div class="instructions">
+<div class="activity">
 <p>Configure your project</p>
-<ul>
+<ol style="list-style-type: decimal">
 <li><p>Go to “Tools” -&gt; “Project options…”</p></li>
 <li><p>In the “General” tab</p>
 <ul>
 <li><p>“Restore .RData into workspace at startup”: Select “No” from the dropdown menu.</p></li>
 <li><p>“Save workspace to .RData on exit”: Select “No” from the dropdown menu</p></li>
 </ul></li>
-</ul>
+</ol>
 </div>
 <div class="notes">
-<p>You can change these preferences at the gobal level with “Tools” -&gt; “Global options” in the “General” subheading</p>
+<p>You can change these preferences at the global level with “Tools” -&gt; “Global options” in the “General” subheading</p>
 </div>
 </div>
 <div id="research-compendia-with-rrtools" class="section level2">
@@ -212,10 +203,10 @@ remotes::install_github(&quot;nevrome/rrtools.addin&quot;)</code></pre>
 <p>rrtools provides a relatively rich and strict template which has the advantage of liberating you from some decisions but, as it usually goes with these things, it also forces some decision onto you which might not be optimal for your specific use-case.
 In any case, it provides a very solid starting point that follows some best practices.
 However, it can be a bit overwhelming because it has many moving parts, so in this course we will go over each part “by hand” before automatising.</p>
-</div>
-<div id="resources" class="section level2">
-<h2>Resources</h2>
+<div id="resources" class="section level3">
+<h3>Resources</h3>
 <p><a href="https://slides.djnavarro.net/project-structure/#25">https://slides.djnavarro.net/project-structure</a>/</p>
 <p><a href="https://peerj.com/preprints/3192v1/" class="uri">https://peerj.com/preprints/3192v1/</a></p>
 <p><a href="https://mbjoseph.github.io/intro-research-compendia/#9">https://mbjoseph.github.io/intro-research-compendia</a></p>
+</div>
 </div>

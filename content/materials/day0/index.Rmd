@@ -79,8 +79,7 @@ On the second day of the workshop we will start using Git for version control an
 Details on how to do this are best described in Jenny Bryan's fantastic [Happy Git with R book](https://happygitwithr.com/install-intro.html).
 The core steps are:
 
-1.  Install git on your machine.
-    \
+1.  Install git on your machine.\
     The instructions depend on your Operating System.
     Follow the instructions at <https://happygitwithr.com/install-git.html>.
 
@@ -90,8 +89,7 @@ The core steps are:
 3.  Set up git so it can work with GitHUb and RStudio.\
     This can be, unfortunately, a rather involved process so be patient.
     Again, the excellent Happy Git with R is your friend.
-    Follow the instructions in [this chapter](https://happygitwithr.com/https-pat.html) to set up your GitHub Personal Access Token.
-    \
+    Follow the instructions in [this chapter](https://happygitwithr.com/https-pat.html) to set up your GitHub Personal Access Token.\
     If you are on linux, we highly recommend [this post by Danielle Navarro](https://blog.djnavarro.net/posts/2021-08-08_git-credential-helpers/).
     It covers some of the same territory with more detail, and it can be cathartic to read someone who shares your pain.
 
