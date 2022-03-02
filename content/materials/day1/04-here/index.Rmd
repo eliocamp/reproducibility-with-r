@@ -1,18 +1,9 @@
 ---
-title: "03 - Using here for portable paths"
-weight: 2
+title: "04: here are the portable paths"
+weight: 4
 show_post_date: false
 publishDate: 2022-02-19
 excerpt: ""
-links:
-- icon: images
-  icon_pack: fas
-  name: slides
-  url: "/slides/01-introduction.html"
-- icon: theater-masks
-  icon_pack: fas
-  name: activity
-  url: "/materials/act-01/01-introduction/#activity"
 ---
 
 If you use RStudio Projects consistently, you can be sure that your working directory is always the root of the project unless you actively change it.
@@ -29,15 +20,15 @@ To witness this, we prepared a demo project.
 penguins <- read.csv("data/penguins.csv")
 ```
 
-::: instructions
-Get things
+::: activity
+Get the demo project
 
--   Download the [demo project](demo_project.zip) and extract it anywhere in your computer.
--   Open the project (double click on `demo_project.Rproj`), open `report-not_here.Rmd` and try to knit it.
+1.   Download the [demo project](/reproducibility-with-r/demo_project.zip) and extract it anywhere in your computer.
+1.  Open the project (double click on `demo_project.Rproj`), open `report-not_here.Rmd` and try to knit it.
 :::
 
 ```{r include=FALSE}
-here::i_am("content/materials/day1/03-here/index.Rmd")
+here::i_am("content/materials/day1/04-here/index.Rmd")
 knitr::opts_knit$set(root.dir = here::here("static/demo_project"))
 ```
 
@@ -87,16 +78,16 @@ But we saw that using absolute paths leads to code that runs only in one machine
 What the **here** package does is create absolute paths that work on the machine running the code from paths relative to the root directory.
 The way you use the package is to always use paths relative to the root project directory but wrap them in the `here::here()` function.
 
-::: instructions
-Fix the error
+::: activity
+Fix one error
 
--   Change line 9 in `report.Rmd` to
+1.   Change line 9 in `report.Rmd` to
 
     ``` r
     penguins <- read.csv(here::here("data/penguins.csv"))
     ```
 
--   Try to knitr again.
+1.  Try to knitr again.
 :::
 
 
@@ -106,29 +97,29 @@ The here package works every time as long as the current working directory is a 
 But it can be brittle otherwise. 
 
 
-::: instructions
-Find another error
+::: activity
+Find a new error
 
--  Close demo_project
+1.  Close demo_project.
 
--  Open `report.Rmd` in a new RStudio window. Make sure that you are **not** on the demo_project project. 
+1. Open `report.Rmd` in a new RStudio window. Make sure that you are **not** on the demo_project project. 
 
--  Try to run line 9.
+1.  Try to run line 9.
 
-- Create a new chunk with the code `here::here("data/penguins.csv")` and run it. Which absolute paths does it return?
+1. Create a new chunk with the code `here::here("data/penguins.csv")` and run it. Which absolute paths does it return?
 :::
 
 
 You'll notice that if you break the expectation that you are working inside the correct project, `here()` will return essentially nonsense. 
 A more robust approach is to define the working directory by asserting the relative paths that leads to the current file. 
 
-::: instructions 
+::: activity 
 
 Fix the new error
 
--  Add a new chunk at the beginning of the file that `here::i_am("analysis/report.Rmd")`
+1.  Add a new chunk at the beginning of the file that reads `here::i_am("analysis/report.Rmd")`.
 
--  Run this new chunk and the one after. 
+1.  Run this new chunk and the one after. 
 
 :::
 

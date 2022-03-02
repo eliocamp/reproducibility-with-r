@@ -1,25 +1,15 @@
 ---
 title: "03: Reporting with RMarkdown"
-weight: 1
+weight: 3
 show_post_date: false
 publishDate: 2022-02-19
 excerpt: ""
-links:
-- icon: images
-  icon_pack: fas
-  name: slides
-  url: "/slides/01-introduction.html"
-- icon: theater-masks
-  icon_pack: fas
-  name: activity
-  url: "/materials/act-01/01-introduction/#activity"
 ---
 
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 chunk <- "```"
-params <- list(this_cut = "Ideal")
 ```
 
 ## RMarkdown files
@@ -160,7 +150,7 @@ Let's imagine that you have a variable `temperature` to which you assign the val
 
     temperature <- 18
 
-To mention it in the text then we have to put the name of that variable between two grave accents and to warn that it is code of R this way r "r"`temperatura` \`\`.
+To mention it in the text then we have to put the name of that variable between two "\`" and to warn that it is code of R this way `` ``r "r"` temperature` ``.
 Then if at any time the value of the variable changes, the next time you knit the document it will be updated in the text.
 :::
 
@@ -201,51 +191,6 @@ You can start typing "fig." inside the `{ }` to explore the options.
 
 :::
 
-### Parameterized reports
-
-Sometimes you need to re-do a report changing one variable that repeats over all the code, the best way to do this is through a parameterized report. 
-
-In the following example there is a plot of the price distribution for ideal diamonds. 
-If you want to change it to visualise the data for "fair" or "very good" cut diamonds, you will have to change the `filter(cut == "Ideal")` and hopefully you wont forget the plot title. 
-
-```{r message=FALSE, warning=FALSE}
-library(dplyr)
-library(ggplot2)
-
-diamonds %>% 
-  filter(cut == "Ideal") %>% 
-  ggplot(aes(color, price)) +
-  geom_boxplot() +
-  labs(title = "Price distribution for ideal diamonds",
-       x = "Color",
-       y = "Price [US dollars]")
-  
-```
-
-In these situations you can create a parameterized report. 
-To generate a parameterized report you have to add an element called `params` to the YAML with the list of parameters (1 or more) and their default values. It is as if the R Markdown file were a big function with its arguments!
-
-```
-params:
-  this_cut: Ideal
-```
-
-Then, in the R code you will have access to a variable called `params` which is a list containing the parameters and their values. To access the value of each parameter the `$` operator is used as follows:
-
-
-```{r message=FALSE, warning=FALSE}
-library(dplyr)
-library(ggplot2)
-
-diamonds %>% 
-  filter(cut == params$this_cut) %>% 
-  ggplot(aes(color, price)) +
-  geom_boxplot() +
-  labs(title = paste0("Price distribution for ", params$this_cut, " diamonds"),
-       x = "Color",
-       y = "Price [US dollars]")
-  
-```
 
 ## RMarkdown Templates
 

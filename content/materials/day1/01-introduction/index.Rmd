@@ -1,18 +1,9 @@
 ---
-title: "01 - What is repdoducibilty anyway?"
+title: "01: What is repdoducibilty anyway?"
 weight: 1
 show_post_date: false
 publishDate: 2022-02-19
 excerpt: ""
-links:
-- icon: images
-  icon_pack: fas
-  name: slides
-  url: "/slides/01-introduction.html"
-- icon: theater-masks
-  icon_pack: fas
-  name: activity
-  url: "/materials/act-01/01-introduction/#activity"
 ---
 
 
@@ -29,6 +20,4 @@ Reproducibilty-transparency trade-off
 Reproducibility doesn't mean correct code, nor replicability means correct science!
 
 What is real 
-
-## Exercises
 
