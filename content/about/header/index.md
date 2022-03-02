@@ -7,4 +7,4 @@ headline: |
 ---
 
 <!-- this is a subheadline -->
-This course is [licensed](/license) with Creative Commons Attribution-ShareAlike 4.0 International License. Help yourself!
+The course is organised with [Physalia](https://www.physalia-courses.org/courses-workshops/) and its first edition will be held online between 14th and 16th of March. It is [licensed](/license) with Creative Commons Attribution-ShareAlike 4.0 International License. Help yourself!
