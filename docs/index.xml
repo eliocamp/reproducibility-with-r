@@ -31,13 +31,8 @@
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day1/01-introduction/</guid>
-      <description>Why is it important.
-Why would you want to make your code reproducible.
-Reproducibilty vs. replicability.
-Limits of reproducibility.
-Reproducibilty-transparency trade-off
-Reproducibility doesn’t mean correct code, nor replicability means correct science!
-What is real</description>
+      <description>This workshop will introduce some useful tools to help you write code that can be run anywhere with consistent results. We will focus on the practical aspects of reproducibility, but it’s still worth it to get some sense of what is reproducibility and what’s its aim.
+What reproducibility is and what it is not We will use “reproducibility” to talk about results that can be obtained by someone else given the same data and code.</description>
     </item>
     
     <item>
