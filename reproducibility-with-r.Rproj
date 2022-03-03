@@ -18,3 +18,5 @@ StripTrailingWhitespace: Yes
 BuildType: Website
 
 MarkdownWrap: Sentence
+
+SpellingDictionary: en_GB
