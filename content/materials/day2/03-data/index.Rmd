@@ -1,0 +1,37 @@
+---
+title: "03: Sharing data"
+weight: 3
+show_post_date: false
+publishDate: 2022-02-19
+excerpt: ""
+---
+
+
+figshare
+
+Free accounts on Figshare can upload files of up to 5gb and get 20gb of free storage. 
+
+
+Mendeley Data
+
+Researchers can upload and store their work free of cost on Mendeley Data.
+10 GB per dataset
+There's a moderation step
+
+
+Open Science Framework 
+https://osf.io/
+is a more comprehensive service, with support for preprints, 
+
+
+Zeonodo
+
+50gb free
+
+integrates with github (releases get automatic DOI)
+
+download
+
+versioning
+
+Programmatically -> zen4R

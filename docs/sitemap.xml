@@ -3,16 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://eliocamp.github.io/reproducibility-with-r/materials/day2/01-tbd/</loc>
-    <lastmod>2022-03-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-tbd/</loc>
-    <lastmod>2022-03-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://eliocamp.github.io/reproducibility-with-r/materials/day1/01-introduction/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
   </url>
@@ -62,6 +52,16 @@
   
   <url>
     <loc>https://eliocamp.github.io/reproducibility-with-r/materials/extras/</loc>
+    <lastmod>2022-03-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eliocamp.github.io/reproducibility-with-r/materials/day2/03-data/</loc>
+    <lastmod>2022-03-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-renv/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
   </url>
   
