@@ -8,8 +8,8 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.80.0" />
-<title>05: Reproducible computational environment with renv | An R reproducibility toolkit for the practical researcher</title>
+<meta name="generator" content="Hugo 0.92.2" />
+<title>03: Sharing data | An R reproducibility toolkit for the practical researcher</title>
 
 
 
@@ -25,7 +25,7 @@
 
 
 <meta property="og:site_name" content="An R reproducibility toolkit for the practical researcher">
-<meta property="og:title" content="05: Reproducible computational environment with renv | An R reproducibility toolkit for the practical researcher">
+<meta property="og:title" content="03: Sharing data | An R reproducibility toolkit for the practical researcher">
 <meta property="og:description" content="Reproducibility course in R" />
 <meta property="og:type" content="page" />
 <meta property="og:url" content="https://eliocamp.github.io/reproducibility-with-r/materials/day2/03-data/" />
@@ -40,30 +40,34 @@
           <meta name="twitter:image" content="https://eliocamp.github.io/reproducibility-with-r/materials/day2/sidebar.png" >
       
       
-  <meta itemprop="name" content="05: Reproducible computational environment with renv">
-<meta itemprop="description" content="No code is its own isolated bubble. Almost every analysis will depend on a number of external packages, such as ggplot2 for plotting, data.table for data wrangling, knitr for rendering a report, and so on.
-But actively-maintained packages will change their code-base to fix bugs, add features, remove features or change behaviour. These changes have the potential of breaking your analysis or creating subtle (or not so subtle) differences in the result.">
-<meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
+  <meta itemprop="name" content="03: Sharing data">
+<meta itemprop="description" content="figshare
+Free accounts on Figshare can upload files of up to 5gb and get 20gb of free storage.
+Mendeley Data
+Researchers can upload and store their work free of cost on Mendeley Data. 10 GB per dataset There’s a moderation step
+Open Science Framework https://osf.io/ is a more comprehensive service, with support for preprints,
+Zeonodo
+50gb free
+integrates with github (releases get automatic DOI)
+download
+versioning
+Programmatically -&gt; zen4R"><meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1289">
-
-
-
+<meta itemprop="wordCount" content="69">
 <meta itemprop="keywords" content="" />
-
   
   <!--[if IE]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
   
   
-  <link rel="stylesheet" href="/reproducibility-with-r/style.main.min.5c14ccb91905d450469e4040c74b4193d2441462e073a51188cded19e3799fd6.css" integrity="sha256-XBTMuRkF1FBGnkBAx0tBk9JEFGLgc6URiM3tGeN5n9Y=" media="screen">
+  <link rel="stylesheet" href="/reproducibility-with-r/style.main.min.7a023c375adf335f4ef5b9e8ddd01ee5e6af996e893c3bedeb494346f65c7303.css" integrity="sha256-egI8N1rfM19O9bno3dAe5eavmW6JPDvt60lDRvZccwM=" media="screen">
   
   
-  <script src="/reproducibility-with-r/panelset.min.41f62c42d5f25dd80e81136866f4f1baa1bc17669edfd002e75c0e107953789b.js" type="text/javascript"></script>
+  <script src="/reproducibility-with-r/panelset.min.078a92db9bd3228df502db3d9e0453c3cf3d910abe3f8deca0ad196c7071ad41.js" type="text/javascript"></script>
   
   
-  <script src="/reproducibility-with-r/main.min.07ec8e08cbb63db3a2cf7d4a7df6f7be00c715f13b64d8df6a2c48441ba8b14b.js" type="text/javascript"></script>
+  <script src="/reproducibility-with-r/main.min.a7f2ab9c7ee6cfc08afbe84c9153ddc3e4e9bec0abd15ede932c2a50dcc84949.js" type="text/javascript"></script>
   
   
 </head>
@@ -128,7 +132,7 @@ But actively-maintained packages will change their code-base to fix bugs, add fe
 
   
     
-      05: Reproducible computational environment with renv
+      03: Sharing data
     
 
 
@@ -138,7 +142,7 @@ But actively-maintained packages will change their code-base to fix bugs, add fe
 
 
         
-        <h1 class="f1 lh-solid measure-narrow mb3 fw4">05: Reproducible computational environment with renv</h1>
+        <h1 class="f1 lh-solid measure-narrow mb3 fw4">03: Sharing data</h1>
         
         <p class="f6 measure lh-copy mv1">By Paola Corrales and Elio Campitelli</p>
         
@@ -152,150 +156,29 @@ But actively-maintained packages will change their code-base to fix bugs, add fe
 <script src="https://eliocamp.github.io/reproducibility-with-r/materials/day2/03-data/index_files/header-attrs/header-attrs.js"></script>
 
 
-<p>No code is its own isolated bubble.
-Almost every analysis will depend on a number of external packages, such as ggplot2 for plotting, data.table for data wrangling, knitr for rendering a report, and so on.</p>
-<p>But actively-maintained packages will change their code-base to fix bugs, add features, remove features or change behaviour.
-These changes have the potential of breaking your analysis or creating subtle (or not so subtle) differences in the result.</p>
-<p>For this reason it is important to both record package versions used in a project and to provide a mechanism for others to install the correct versions in their local machine.
-The <a href="https://rstudio.github.io/renv/index.html"><strong>renv</strong></a> package solves both.</p>
-<p>The idea underlying renv is that each project should have a project-specific R environment with its own library where packages are installed.
-Packages installed in the project library are independent of the personal library so you can install a specific version of a package in one project without changing the version used by another.</p>
-<p>The status of this project library is recorderd on a lockfile: a file called <code>renv.lock</code> that holds the version, source and other metadata of each package used in the project.
-This file will be used by renv to restore the project library to its correct state if for some reason there are missing packages, or packages with the wrong version.</p>
-<div id="using-renv-in-your-project" class="section level2">
-<h2>Using renv in your project</h2>
-<p>The nice thing about renv is that on its default behaviour it automates a lot and gets out of your way as much as it can.
-To start working with renv you first need to initialise the project-local environment with <code>renv::init()</code>.</p>
-<p>This will automatically scan all your R scripts and RMarkdown files, discover their dependencies, and store the versions of the currently-installed packages in the lockfile and install them in the project library.</p>
-<div class="activity">
-<p>Start using renv</p>
-<ol style="list-style-type: decimal">
-<li><p>Open the demo project <a href="/reproducibility-with-r/demo_project.zip">demo project</a>.</p></li>
-<li><p>In the console run <code>renv::init()</code></p></li>
-</ol>
-</div>
-<p>In your project root you will now see a file called <code>renv.lock</code> and a folder called <code>renv</code>.</p>
-<p>Once this is done, you can keep working on your project as usual, installing, removing and updating packages as you normally would.
-The difference is that now all of that will only affect the project library.
-if you update a package in your project, other projects will still use the global version (or their local versions if you use renv with them).
-The flipside is that updating packages outside of the project won’t affect the package versions used by it.</p>
-<div class="activity">
-<p>Use ggplot2</p>
-<ol style="list-style-type: decimal">
-<li><p>Add a new chunk that loads ggplot2 with <code>library(ggplot2)</code> in <code>report.Rmd</code>.</p></li>
-<li><p>Try to render the file.</p></li>
-</ol>
-</div>
-<p>You will notice two weird things happening.</p>
-<p>First, RStudio will ask you to install the markdown package.
-“But wait, I must have installed already!”.
-Yes, but not on this project.
-Because the markdown package is not used explicitly anywhere in the project, renv didn’t discover it as a poject dependency package so it was neither included in the lockfile nor installed in the project library, so it needs to be installed.</p>
-<p>Second, you will get an error informing you that “there is no package called ‘ggplot2’.
-Again, even if you had ggplot2 installed on your personal library, since it was not used on the code, it was not installed.</p>
-<p>You can now check the status of the lockfile with <code>renv::status()</code>, which will return this:</p>
-<pre><code>* The project is already synchronized with the lockfile.
-The following package(s) are used in the project, but are not installed:
-
-    ggplot2
-
-Consider installing these packages, and then using `renv::snapshot()`
-to record these packages in the lockfile.</code></pre>
-<p>The first line tells you that the lockfile is correctly synced with your project.
-It seems that renv updated the lockfile to include markdown and its dependencies when they were installed.
-(This is not always the case).</p>
-<p>The rest of the message tells you that renv detected a new dependency that is not installed.
-Of course, you added <code>library(ggplot2)</code> but never installed ggplot2.
-So you can install it normally (<code>install.packages("ggplot2")</code>) and now the report will render correctly.</p>
-<div class="instructions">
-<p>Install ggplot2</p>
-<ol style="list-style-type: decimal">
-<li><p>Install ggplot2 with <code>install.packages("ggplot2")</code> in the console.</p></li>
-<li><p>Knit <code>report.Rmd</code>.</p></li>
-<li><p>Run <code>renv::status()</code> in the console.</p></li>
-</ol>
-</div>
-<p>This time, the report should render correctly because ggplot2 is now included in your project library.
-However, the ouput of <code>renv::status()</code> reads something like</p>
-<pre><code>The following package(s) are installed but not recorded in the lockfile:
-               _
-  lattice        [0.20-45]
-  colorspace     [2.0-3]
-  viridisLite    [0.4.0]
-  mgcv           [1.8-39]
-  isoband        [0.2.5]
-  RColorBrewer   [1.1-2]
-  munsell        [0.5.0]
-  gtable         [0.3.0]
-  labeling       [0.4.2]
-  scales         [1.1.1]
-  farver         [2.1.0]
-  ggplot2        [3.3.5]
-  MASS           [7.3-55]
-  Matrix         [1.4-0]
-  nlme           [3.1-155]
-
-Use `renv::snapshot()` to add these packages to your lockfile.</code></pre>
-<p>This tells us that the lockfile is out of sync with the status of the project.
-To remedy that, you need to update the lockfile by taking a “snapshot” of the current status of the project with <code>renv::snapshot()</code>.</p>
-<p>This three functions (<code>renv::init()</code>, <code>renv::snapshot()</code> and <code>renv::status()</code>) should be enough to work locally within a controlled environment and with an updated lockfile.</p>
-</div>
-<div id="renv-for-reproducibility" class="section level2">
-<h2>Renv for reproducibility</h2>
-<p>All this work wouldn’t mean be useful if there wasn’t a way of using the lockfile to consistently recreate the same environment.
-This is where renv shines.</p>
-<p>Anyone who wants to install the same packages that you use with their exact versions can download your code, open the project and use <code>renv::restore()</code>.
-This will install everything in their local project library so they can be up an running in no time.</p>
-<div class="instructions">
-<p>Restore an environment</p>
-<ol style="list-style-type: decimal">
-<li><p>Download this <a href="/reproducibility-with-r/reproducible_project.zip">reproducible project</a>.</p></li>
-<li><p>Open the project and restore the environment with <code>renv::restore()</code>.</p></li>
-<li><p>Render <code>analysis/report.Rmd</code> to make sure that it worked.</p></li>
-</ol>
-</div>
-<div class="notes">
-<p>You don’t need to share the <code>renv/library</code> folder, which holds the installed packages.
-You share only the <code>renv.lock</code> file (and the <code>rev/activate.R</code> file, which is a very cool script that auto-install the correct version of renv if needed!).
-If you use git, you don’t need to think about this because renv takes care of that with a special <code>renv/.gitignore</code>.</p>
-</div>
-</div>
-<div id="caveats" class="section level2">
-<h2>Caveats</h2>
-<div id="the-lockfile" class="section level3">
-<h3>The lockfile</h3>
-<p>The lockfile holds a snapshot of the project library at a moment in time, but it doesn’t guarantee that this corresponds to the rendered result.
-The lockfile could be out of date when the code is run, or the lockfile coudl be updated but the code not re-run.</p>
-</div>
-<div id="dependency-discovery" class="section level3">
-<h3>Dependency discovery</h3>
-<p>The automatic dependency discovery is really cool, somewhat limited.
-It understand the most common and obvious ways a package can be loaded in a script, but it can fail if you use some more indirect methods.</p>
-</div>
-<div id="package-installation" class="section level3">
-<h3>Package installation</h3>
-<p>Sometimes package installation can fail.
-One common case would be if you installed a CRAN-compiled package in Windows but the person trying to <code>restore()</code> the environment is running Linux.
-Since CRAN doesn’t offer compiled packages for Linux, renv will try to install from source, which can fail if compilation requires missing system dependencies.
-There’s nothing renv can do in this case, but the problem can be resolved by installing the relevant system dependencies.</p>
-<p>Package installation will fail if the remote repository that hosts a package is unreachable either due to local connection issues or it being down, or deleted.
-Again, there’s nothing renv can do in that situation.</p>
-</div>
-<div id="system-dependencies" class="section level3">
-<h3>System dependencies</h3>
-<p>Furthermore, some R packages require certain system dependences to be installed to run
-renv does not handle these cases yet, so if you are using a package that needs system dependencies, installation could fail if these are not met.</p>
-<p>Even in the case in which system dependencies are fulfilled, renv offers no guarantee that these are the same versions used to run the analysis.
-This means that if results depend on the version of some system dependency, renv will not be able to ensure reproducibility.
-This includes the version of R itself!</p>
-<p>One tool to ensure that the whole system is stable is using containers, which is the subject of the next section.</p>
-</div>
-</div>
+<p>figshare</p>
+<p>Free accounts on Figshare can upload files of up to 5gb and get 20gb of free storage.</p>
+<p>Mendeley Data</p>
+<p>Researchers can upload and store their work free of cost on Mendeley Data.
+10 GB per dataset
+There’s a moderation step</p>
+<p>Open Science Framework
+<a href="https://osf.io/" class="uri">https://osf.io/</a>
+is a more comprehensive service, with support for preprints,</p>
+<p>Zeonodo</p>
+<p>50gb free</p>
+<p>integrates with github (releases get automatic DOI)</p>
+<p>download</p>
+<p>versioning</p>
+<p>Programmatically -&gt; zen4R</p>
 
       </section>
       <footer class="post-footer">
         <div class="post-pagination dt w-100 mt4 mb2">
   
+  
+    <a class="prev dtc pr2 tl v-top fw6"
+    href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/02-rrtools/">&larr; 02: Research compendia with rrtools</a>
   
   
   
@@ -371,7 +254,10 @@ This includes the version of R itself!</p>
             <summary class="active" hugo-nav="/reproducibility-with-r/materials/day2/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/">Day 2</a></summary>
             
               
-              <li class="active" hugo-nav="/reproducibility-with-r/materials/day2/03-data/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/03-data/">05: Reproducible computational environment with renv</a></li>
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day2/02-rrtools/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/02-rrtools/">02: Research compendia with rrtools</a></li>
+            
+              
+              <li class="active" hugo-nav="/reproducibility-with-r/materials/day2/03-data/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/03-data/">03: Sharing data</a></li>
             
           </details>
           
@@ -384,7 +270,7 @@ This includes the version of R itself!</p>
             <summary class="" hugo-nav="/reproducibility-with-r/materials/day3/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day3/">Day 3</a></summary>
             
               
-              <li class="" hugo-nav="/reproducibility-with-r/materials/day3/01-renv/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-renv/">05: Reproducible computational environment with renv</a></li>
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day3/01-renv/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-renv/">01: Reproducible computational environment with renv</a></li>
             
           </details>
           
@@ -400,12 +286,6 @@ This includes the version of R itself!</p>
         </ul>
     </nav>
   </div>
-  <details id="PageTableOfContents">
-    <summary><h2 class="mv0 f5 fw7 ttu tracked dib">On this page<h2></summary>
-    <div class="pl2 pr0 mh0">
-    
-    </div>
-  </details>
   
 </div>
 
