@@ -140,8 +140,8 @@ read.csv("data/data.csv")
 
 And this will run no matter where the root folder is located.
 The only catch is that you need to make sure that the working directory is set to the root of the project.
-This is easier said than done, especially due to knitr's default behaviour of setting the location of the .Rmd file as the working directory.
-We will see that a simple solution is to use the **here** package.
+This is easier said than done, especially due to (and assuming you use) knitr's default behaviour of setting the location of the R Markdown file as the working directory.
+We will see that a simple solution is to use the [**here** package](reproducibility-with-r/materials/day1/04-here/).
 
 ## RStudio Projects
 
@@ -154,7 +154,7 @@ Opening an RStudio Project also ensures that you start a new R session every tim
 Create a new RStudio Project
 
 1.  Click on "File" and then in "New Project...".
-2.  Cilck on "New directory".
+2.  Click on "New directory".
 3.  You'll see a list of various templates. Select "New Project".
 4.  Type the name of the root folder in which your project will live and the directory where you want this folder to be created in by clicking "Browse.."
 5.  Click on "Create Project".
@@ -168,11 +168,11 @@ Each RStudio Project has its own set of options that you can change without alte
 ## Opening a project
 
 The simplest way to open a project is to open the folder that contains it and double-click on the .Rproj file.
-You can also quickly open a recently-used project by clicking on the project icon on the left-hand side of the RStudio toolbar.
+You can also quickly open a recently-used project by clicking on the project icon on the right-hand side of the RStudio toolbar.
 
 This will open a new RStudio window with its own clean R process with the project folder as the working directory.
 By default, it will also open any previously-opened files.
-It will even preserve changes not This helps keep your work tidy and makes it easy to pick up or share what you've done later.
+It will even preserve changes not saved. This helps keep your work tidy and makes it easy to pick up or share what you've done later.
 
 RStudio allows you to have multiple projects open, and this is possible because each project has its own folder.
 You can work with multiple projects in parallel without code or results of one analysis interfering with the other's.
@@ -220,7 +220,7 @@ Configure your project
 You can change these preferences at the global level with "Tools" -> "Global options" in the "General" subheading
 :::
 
-## Research compendia with **rrtools**
+## Automatic project structure
 
 There's a tool to automate a lot of this so you don't need to think about it so much.
 The **rrtools** package can automate a lot of these steps (and more) and the **rrtools.addin** package offers a GUI for the main functionality.
@@ -234,7 +234,7 @@ remotes::install_github("nevrome/rrtools.addin")
 
 rrtools provides a relatively rich and strict template which has the advantage of liberating you from some decisions but, as it usually goes with these things, it also forces some decision onto you which might not be optimal for your specific use-case.
 In any case, it provides a very solid starting point that follows some best practices.
-However, it can be a bit overwhelming because it has many moving parts, so in this course we will go over each part "by hand" before automatising.
+However, it can be a bit overwhelming because it has many moving parts, so in this course we will go over each part in [Research compendia with rrtools]().
 
 ### Resources
 
