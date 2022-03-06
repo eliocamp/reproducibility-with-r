@@ -106,6 +106,16 @@ In the following example there is a plot of the price distribution for ideal dia
     </item>
     
     <item>
+      <title>05: Reproducible computational environment with renv</title>
+      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day1/05-renv/</link>
+      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day1/05-renv/</guid>
+      <description>No code is its own isolated bubble. Almost every analysis will depend on a number of external packages, such as ggplot2 for plotting, data.table for data wrangling, knitr for rendering a report, and so on.
+But actively-maintained packages will change their code-base to fix bugs, add features, remove features or change behaviour. These changes have the potential of breaking your analysis or creating subtle (or not so subtle) differences in the result.</description>
+    </item>
+    
+    <item>
       <title>Attribution</title>
       <link>https://eliocamp.github.io/reproducibility-with-r/attribution/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
