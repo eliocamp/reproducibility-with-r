@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head>
+  
+                           
+     
+
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.80.0" />
+<title>02: Reproducible computational environment with Docker | An R reproducibility toolkit for the practical researcher</title>
+
+
+
+
+
+
+
+
+  
+    
+  
+<meta name="description" content="Reproducibility course in R">
+
+
+<meta property="og:site_name" content="An R reproducibility toolkit for the practical researcher">
+<meta property="og:title" content="02: Reproducible computational environment with Docker | An R reproducibility toolkit for the practical researcher">
+<meta property="og:description" content="Reproducibility course in R" />
+<meta property="og:type" content="page" />
+<meta property="og:url" content="https://eliocamp.github.io/reproducibility-with-r/materials/day3/02-docker/" />
+<meta property="og:locale" content="en">
+
+
+
+
+      
+          <meta property="og:image" content="https://eliocamp.github.io/reproducibility-with-r/materials/day3/sidebar.png" >
+          <meta property="twitter:card" content="summary_large_image">
+          <meta name="twitter:image" content="https://eliocamp.github.io/reproducibility-with-r/materials/day3/sidebar.png" >
+      
+      
+  <meta itemprop="name" content="02: Reproducible computational environment with Docker">
+<meta itemprop="description" content="While renv is nice, it doesn’t solve the whole problem, because system dependencies and even the R version itself can change. Another issue is that downloading and installing all the R packages can take a while. Like an hour or more. This is not a deal-breaker, but I’d like to do better. People trying to reproduce work are few and far between, so it’s important to make their lives as easy as possible.">
+<meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1389">
+
+
+
+<meta itemprop="keywords" content="" />
+
+  
+  <!--[if IE]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  
+  
+  <link rel="stylesheet" href="/reproducibility-with-r/style.main.min.5c14ccb91905d450469e4040c74b4193d2441462e073a51188cded19e3799fd6.css" integrity="sha256-XBTMuRkF1FBGnkBAx0tBk9JEFGLgc6URiM3tGeN5n9Y=" media="screen">
+  
+  
+  <script src="/reproducibility-with-r/panelset.min.41f62c42d5f25dd80e81136866f4f1baa1bc17669edfd002e75c0e107953789b.js" type="text/javascript"></script>
+  
+  
+  <script src="/reproducibility-with-r/main.min.07ec8e08cbb63db3a2cf7d4a7df6f7be00c715f13b64d8df6a2c48441ba8b14b.js" type="text/javascript"></script>
+  
+  
+</head>
+<body>
+      <div class="grid-container single-series">
+<header class="site-header pt4 pb2 mb4 bb b--transparent ph5 headroom z-max" role="banner">
+  <nav class="site-nav db dt-l w-100" role="navigation">
+    <a class="site-brand db dtc-l v-mid link no-underline w-100 w-33-l tc tl-l" href="https://eliocamp.github.io/reproducibility-with-r/" title="Home">
+      <img src="/reproducibility-with-r/logo.png" class="dib db-l h2 w-auto" alt="An R reproducibility toolkit for the practical researcher">
+    </a>
+    <div class="site-links db dtc-l v-mid w-100 w-47-l tc tr-l mt3 mt0-l ttu tracked">
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/reproducibility-with-r/about/" title="About this course">About this course</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/reproducibility-with-r/materials/" title="Materials">Materials</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/reproducibility-with-r/people/" title="About us">About us</a>
+      
+      
+    </div>
+  </nav>
+</header>
+
+
+<main class="page-main ph4 pt4" role="main">
+  <section class="page-content mw7 center">
+    <article class="post-content pa0 pr3-l">
+      <header class="post-header">
+        <h4 class="breadcrumb pb5">
+
+ 
+ 
+    
+ 
+ 
+    
+ 
+ 
+    
+ 
+
+  
+    
+      <a href="/reproducibility-with-r/materials/">An R reproducibility toolkit for the practical researcher</a> >
+    
+
+
+  
+    
+      <a href="/reproducibility-with-r/materials/day3/">Day 3</a> >
+    
+
+
+  
+    
+      02: Reproducible computational environment with Docker
+    
+
+
+</h4>
+
+
+
+
+        
+        <h1 class="f1 lh-solid measure-narrow mb3 fw4">02: Reproducible computational environment with Docker</h1>
+        
+        <p class="f6 measure lh-copy mv1">By Paola Corrales and Elio Campitelli</p>
+        
+        
+        
+      
+        
+      </header>
+      <section class="post-body pt5 pb4">
+        
+<script src="https://eliocamp.github.io/reproducibility-with-r/materials/day3/02-docker/index_files/header-attrs/header-attrs.js"></script>
+
+
+<p>While renv is nice, it doesn’t solve the whole problem, because system dependencies and even the R version itself can change.
+Another issue is that downloading and installing all the R packages can take a while.
+Like an hour or more.
+This is not a deal-breaker, but I’d like to do better.
+People trying to reproduce work are few and far between, so it’s important to make their lives as easy as possible.</p>
+<p>The core idea: <a href="https://docs.docker.com/get-started/overview/">Docker</a> runs basically like a virtual machine inside your computer; you can control which R version you use and which packages are installed.
+You can also host a docker image on <a href="https://hub.docker.com/">Docker Hub</a>, so that anyone can download it and spin it up on their computer within minutes.</p>
+<p>So you could create a docker image, do all the system dependencies and R package dependencies setup that can take an hour or more, and then publish that.
+If someone wants to reproduce my work, they can just get the image, run it, and they are ready.
+And not only that, but I could also add all the necessary data that also takes hours to download.</p>
+<p>In that sense, docker is not only a boon for reproducibility but also for usability.</p>
+<p>At the heart of the docker image is the Dockerfile, a plain-text file with a series of commands that are then executed inside the image.
+The Dockerfile is the recipe to create the container, install packages, update dependencies, etc… This recipe is fed into docker which will then run those steps and build the container image proper.</p>
+<p>You will then be able to share this container on DockerHub for anyone to be able to download it.
+For this you will need to create a <a href="https://hub.docker.com/">DockerHub account</a>.
+(Rememeber your username, because you will need it).</p>
+<p>Once build, the container can be booted up and you or anyone else can run the analysis in this isolated and stable container.</p>
+<div id="your-first-docker" class="section level2">
+<h2>Your first docker</h2>
+<p>All this might sound intimidating at first, but thanks to the awesome R community, spinning up your own docker instance with R and RStudio ready to use is relatively painless.
+The <a href="https://hub.docker.com/u/rocker">rocker team</a> maintains a suite of docker images that with R and RStudio pre-installed.
+Assuming that you’ve got docker up and running, you can spin up a virtual machine running R with this command in the terminal</p>
+<pre class="bash"><code>docker run -p 8787:8787 \
+  -e DISABLE_AUTH=true \
+  rocker/rstudio:4.2.0</code></pre>
+<p>The first time you run this command you’ll see something like</p>
+<pre><code>Unable to find image &#39;rocker/rstudio:4.2.0&#39; locally</code></pre>
+<p>4.2.0: Pulling from rocker/rstudio</p>
+<p>Which will inform you of the process of downloading the remote image to your local machine.
+When it’s <code>done</code>, open a browser and navigate to <a href="http://localhost:8787/">localhost:8787</a></p>
+<div class="activity">
+<p>Run RStudio inside docker</p>
+<ol style="list-style-type: decimal">
+<li>Run <code>docker run -p 8787:8787 -e DISABLE_AUTH=true rocker/rstudio:4.2.0</code> inside a terminal.</li>
+<li>Once it finishes, go to <a href="http://localhost:8787/">localhost:8787</a> on your browser of choice.</li>
+</ol>
+</div>
+<div class="notes">
+<p>Some notes on this command:</p>
+<ul>
+<li><p><code>run</code> is the command to run an image.</p></li>
+<li><p><code>-p 8787:8787</code> tells docker to map the 8787 port inside the container to the local 8787 port.
+This is the port that RStudio uses to connect via a browser.</p></li>
+<li><p><code>-e DISABLE_AUTH=true</code> is an extra argument specific to this image that disables authentication.
+As long as you use this image locally, it’s safe to do this.
+Otherwise, don’t.</p></li>
+<li><p><code>rocker/rstudio:4.2.0</code> is the name of the image that needs to be ran.</p></li>
+</ul>
+</div>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
+<img src="images/rstudio-landing.png" alt="Screenshot of a browser in http://localhost:8787/ running RStudio." width="662" />
+<p class="caption">
+Figure 1: RStudio running inside docker.
+</p>
+</div>
+<p>Surprise!
+You’ve got RStudio running inside a Docker container.
+Notice that the R version is 4.2.0 which is most likely not the version you have installed locally.
+By using the <code>rocker/rstudio:4.2.0</code> you fixed the R version to 4.2.0.</p>
+<p>Now you could use this docker instance to run R code, create files, analysis, etc…
+But there’s a small issue: docker instances are ephemeral. Anything you do inside the container will be lost once the container is closed.
+Each time you spin up the container it starts as a blank slate. You need a way of making sure that files are created in the local machine and are don’t disappear with the container.</p>
+<p>To do this you need to use an option that maps a local folder to a folder inside the container.
+So let’s create a <code>docker-projects</code> folder in the local and map that folder to <code>/home/rstudio/projects</code> in the docker container.</p>
+<pre class="bash"><code>mkdir ~/docker-projects
+docker run -p 8787:8787 \
+    -e DISABLE_AUTH=true \
+    -v ~/docker-projects:/home/rstudio/projects \
+    rocker/rstudio:4.2.1</code></pre>
+<p>Now you can create files, projects, results, inside the container in <code>/home/rstudio/projects</code> and any change will live on in your local machine in <code>~/docker-projects</code>.</p>
+<p>The ephemeral nature of the docker container is still not resolved, however.
+The container will not “remember” any R package you install while it’s running.
+Likewise, it will not preserve system dependencies.
+Furthermore, using the same Docker image for every project would defeat the purpose of having a stable environment for each project.</p>
+<p>To solve these issues you need to create and customise a Docker image for each project.</p>
+</div>
+<div id="your-second-docker" class="section level2">
+<h2>Your second docker</h2>
+<p>Until now you’ve use <code>rocker/rstudio</code> docker image.
+But if you need to install system dependencies and R Packages you will need to modify this image to install them.
+This is done with the Dockerfile, a set of steps required to build an image.</p>
+<p>Since each project should have its own Dockerfile, let’s create a file called <code>Dockerfile</code> at the root of the demo project and put these lines in:</p>
+<pre><code>FROM rocker/rstudio:4.1.2
+
+WORKDIR /home/rstudio/project
+
+COPY renv.lock renv.lock
+COPY renv/activate.R renv/activate.R
+
+RUN chown -R rstudio . \
+ &amp;&amp; sudo -u rstudio R -e &#39;source(&quot;renv/activate.R&quot;); renv::restore()&#39;
+</code></pre>
+<p>The first line tells docker to base this new image on the <code>rocker/rstudio:4.2.1</code> image.
+Then, with that as a base, it will then run the next steps.</p>
+<p>The next line set the working directory of the container.</p>
+<p>The next steps might look weird because it seems to copy the <code>renv.lock</code> onto itself.
+The key here is that the <code>COPY</code> instruction takes a route in the local machine and copies it into the container.
+<code>COPY renv.lock renv.lock</code> takes the <strong>local</strong> <code>renv.lock</code> file and copies it into a <code>renv.lock</code> file inside the container.
+The two files being copied are the lockfile and the renv bootstrap script that will install the correct version of renv.</p>
+<p>The final line starts with <code>RUN</code>, which is docker-speak to run commands in the terminal.
+The important part here is that it runs <code>R -e 'source("renv/activate.R"); renv::restore()</code>, which bootstraps renv and restores the project library.</p>
+<p>This image doesn’t install any system dependency, but if you wanted you could install them using apt-get.
+For instance, if your image needed the netcdf library, you would add</p>
+<pre><code>RUN apt-get install netcdf-bin -y</code></pre>
+<p>right after the <code>FROM</code> line.</p>
+<p>So, with this Dockerfile you can now actually build a Docker image with <code>docker build</code>.
+For tidyness sake, let’s also name this container with the <code>-t</code> (tag) option:</p>
+<pre class="bash"><code>docker build . -t [username]/demo-project</code></pre>
+<p>(Where [username] is your DockerHub username.)</p>
+<p>Docker will now go step by step, setting up the image.
+You will see that R will install all the necessary packages usign the information in the lockfile.
+When it ends it will output something like this.</p>
+<pre><code>Successfully built 83813dd878c7
+Successfully tagged [username]/demo-project:latest</code></pre>
+<p>This means that you have a working Docker image in your computer.
+Now what’s left to to is to run it with this command</p>
+<pre class="bash"><code>docker run --rm  -p 8787:8787 \
+    -e DISABLE_AUTH=true \
+    -v $(pwd):/home/rstudio/project \
+    -v /home/rstudio/project/renv \
+    [username]/demo-project</code></pre>
+<p>You’ll notice that this is very similar to the command used to launch the <code>rocker/rstudio</code> container.
+The new bit here is that the line <code>-v /home/rstudio/project/renv</code> makes sure that the container does not mount the local <code>renv</code> folder.</p>
+<p>Now you can go to <a href="http://localhost:8787/">localhost:8787</a>, open the demo_project and knit <code>report.Rmd</code>.</p>
+</div>
+<div id="sharing-docker" class="section level2">
+<h2>Sharing docker</h2>
+<p>So now you have a computational environment that holds both R packages and system dependencies constant.
+But it’s only accessible to you on your machine.
+You need to make it public so that anyone can pull it, exactly how you pulled <code>rocker/rstudio</code>.</p>
+<p>You need con configure your terminal to use your DockerHub account with</p>
+<pre class="bash"><code>docker login</code></pre>
+<p>Then, you push your container with</p>
+<pre class="bash"><code>docker push [username]/demo-project</code></pre>
+<p>Once the image is uploaded, you can go to your DockerHub repositories.</p>
+<p>Now what anyone needs to do to download and run your same exact computational environment is to run this code</p>
+<pre class="bash"><code>docker run --rm  -p 8787:8787 \
+    -e DISABLE_AUTH=true \
+    -v $(pwd):/home/rstudio/project \
+    -v /home/rstudio/project/renv \
+    [username]/demo-project</code></pre>
+</div>
+
+      </section>
+      <footer class="post-footer">
+        <div class="post-pagination dt w-100 mt4 mb2">
+  
+  
+    <a class="prev dtc pr2 tl v-top fw6"
+    href="https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-renv/">&larr; 01: Reproducible computational environment with renv</a>
+  
+  
+  
+</div>
+
+      </footer>
+    </article>
+    
+  </section>
+</main>
+
+<aside class="page-sidebar" role="complementary">
+                         
+ 
+
+
+
+
+
+
+
+
+
+
+
+  <img src="/reproducibility-with-r/materials/day3/sidebar.png" class="db ma0">
+
+                         
+ 
+
+
+
+<div class="flex items-start sticky ph4 pb4 flex-row">
+  <div class="w-two-thirds w-50-l ph0">
+    <h2 class="mv3 f5 fw7 ttu tracked">
+      <a class="no-underline dim" href="/reproducibility-with-r/materials/">Outline</a></h2>
+    <nav id="SectionTableOfContents" aria-label="SectionTableOfContents">
+        <ul>
+        
+          
+          
+          <li class="" hugo-nav="/reproducibility-with-r/materials/day0/">
+            <a href="https://eliocamp.github.io/reproducibility-with-r/materials/day0/">Day 0</a></li>
+          
+          </li>
+        
+          
+          
+          
+          <details  class="">
+            <summary class="" hugo-nav="/reproducibility-with-r/materials/day1/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/">Day 1</a></summary>
+            
+              
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day1/01-introduction/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/01-introduction/">01: What is repdoducibilty anyway?</a></li>
+            
+              
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day1/02-projects/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/02-projects/">02: A tidy project is a happy project</a></li>
+            
+              
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day1/03-rmarkdown/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/03-rmarkdown/">03: Reporting with RMarkdown</a></li>
+            
+              
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day1/04-here/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/04-here/">04: here are the portable paths</a></li>
+            
+          </details>
+          
+          </li>
+        
+          
+          
+          
+          <details  class="">
+            <summary class="" hugo-nav="/reproducibility-with-r/materials/day2/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/">Day 2</a></summary>
+            
+              
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day2/02-rrtools/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/02-rrtools/">02: Research compendia with rrtools</a></li>
+            
+              
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day2/03-data/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/03-data/">03: Sharing data</a></li>
+            
+          </details>
+          
+          </li>
+        
+          
+          
+          
+          <details open class="active">
+            <summary class="active" hugo-nav="/reproducibility-with-r/materials/day3/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day3/">Day 3</a></summary>
+            
+              
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day3/01-renv/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-renv/">01: Reproducible computational environment with renv</a></li>
+            
+              
+              <li class="active" hugo-nav="/reproducibility-with-r/materials/day3/02-docker/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day3/02-docker/">02: Reproducible computational environment with Docker</a></li>
+            
+          </details>
+          
+          </li>
+        
+          
+          
+          <li class="" hugo-nav="/reproducibility-with-r/materials/extras/">
+            <a href="https://eliocamp.github.io/reproducibility-with-r/materials/extras/">Extras</a></li>
+          
+          </li>
+        
+        </ul>
+    </nav>
+  </div>
+  <details id="PageTableOfContents">
+    <summary><h2 class="mv0 f5 fw7 ttu tracked dib">On this page<h2></summary>
+    <div class="pl2 pr0 mh0">
+    
+    </div>
+  </details>
+  
+</div>
+
+</aside>
+
+<footer class="site-footer pv4 bt b--transparent ph5" role="contentinfo">
+  <nav class="db dt-l w-100">
+    <p class="site-copyright f7 db dtc-l v-mid w-100 w-33-l tc tl-l pv2 pv0-l mv0 lh-copy">
+      &copy; 2022
+      <span class="middot-divider"></span>
+      Made with <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/hugo-apero/" rel="dct:source">Hugo Apéro</a></span>.
+      <br />
+      
+Based on <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/formspree/blogophonic-hugo" rel="dct:source">Blogophonic</a></span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://formspree.io" property="cc:attributionName" rel="cc:attributionURL">Formspree</a>.
+    </p>
+    
+    <div class="site-social-links db dtc-l v-mid w-100 w-33-l tc pv2 pv0-l mv0">
+      <div class="social-icon-links" aria-hidden="true">
+  
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 ml0 mr2 f3 o-90 glow grow" href="https://github.com/eliocamp/reproducibility-with-r/" title="github" target="_blank" rel="noopener">
+      <i class="fab fa-github fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 ml0 mr2 f3 o-90 glow grow" href="https://twitter.com/d_olivaw" title="@d_olivaw on Twiter" target="_blank" rel="noopener">
+      <i class="fab fa-twitter purple fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 ml0 mr2 f3 o-90 glow grow" href="https://twitter.com/paobcorrales" title="@paobcorrales on Twiter" target="_blank" rel="noopener">
+      <i class="fab fa-twitter green fa-lg fa-fw"></i>
+    </a>
+  
+</div>
+
+    </div>
+    
+    <div class="site-links f6 db dtc-l v-mid w-100 w-67-l tc tr-l pv2 pv0-l mv0">
+      
+      <a class="dib pv1 ph2 link" href="/reproducibility-with-r/license/" title="License">License</a>
+      
+      <a class="dib pv1 ph2 link" href="/reproducibility-with-r/attribution/" title="Attributions">Attributions</a>
+      
+    </div>
+  </nav>
+  
+    <script>
+
+    var i, text, code, codes = document.getElementsByTagName('code');
+    for (let i = 0; i < codes.length;) {
+      code = codes[i];
+      if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+        text = code.textContent;
+        if (/^\$[^$]/.test(text) && /[^$]\$$/.test(text)) {
+          text = text.replace(/^\$/, '\\(').replace(/\$$/, '\\)');
+          code.textContent = text;
+        }
+        if (/^\\\((.|\s)+\\\)$/.test(text) ||
+            /^\\\[(.|\s)+\\\]$/.test(text) ||
+            /^\$(.|\s)+\$$/.test(text) ||
+            /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+          code.outerHTML = code.innerHTML;  
+          continue;
+        }
+      }
+      i++;
+    }
+</script>
+
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js" integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+
+
+    
+  
+  
+</footer>
+
+      </div>
+    </body>
+</html>
