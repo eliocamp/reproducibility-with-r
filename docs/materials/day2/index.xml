@@ -23,17 +23,8 @@ The first thing you need to know is that an rrtools compendium will be at the sa
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day2/03-data/</guid>
-      <description>figshare
-Free accounts on Figshare can upload files of up to 5gb and get 20gb of free storage.
-Mendeley Data
-Researchers can upload and store their work free of cost on Mendeley Data. 10 GB per dataset There’s a moderation step
-Open Science Framework https://osf.io/ is a more comprehensive service, with support for preprints,
-Zeonodo
-50gb free
-integrates with github (releases get automatic DOI)
-download
-versioning
-Programmatically -&amp;gt; zen4R</description>
+      <description>The two ingredients for a reproducible project are code and data. We talked a lot about how to organise and share code, but what about data? Sharing data is far from trivial and there are a lot of things to consider.
+Permissions Before the technical issues of sharing data there are the bureaucratic issues. Depending on your context, you might not be allowed to share your data. Data can be expensive to create so your company or institution might want to keep it private so they can squeeze all the profit it can from it.</description>
     </item>
     
   </channel>

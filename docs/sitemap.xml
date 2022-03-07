@@ -1,67 +1,115 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
   <url>
     <loc>https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-renv/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://eliocamp.github.io/reproducibility-with-r/materials/day1/01-introduction/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://eliocamp.github.io/reproducibility-with-r/materials/day0/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://eliocamp.github.io/reproducibility-with-r/materials/day1/02-projects/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://eliocamp.github.io/reproducibility-with-r/materials/day2/02-rrtools/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://eliocamp.github.io/reproducibility-with-r/materials/day1/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://eliocamp.github.io/reproducibility-with-r/people/eliocampitelli/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://eliocamp.github.io/reproducibility-with-r/people/paocorrales/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://eliocamp.github.io/reproducibility-with-r/materials/day1/03-rmarkdown/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://eliocamp.github.io/reproducibility-with-r/materials/day2/03-data/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://eliocamp.github.io/reproducibility-with-r/materials/day2/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://eliocamp.github.io/reproducibility-with-r/materials/day1/04-here/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://eliocamp.github.io/reproducibility-with-r/materials/day3/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://eliocamp.github.io/reproducibility-with-r/materials/extras/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://eliocamp.github.io/reproducibility-with-r/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://eliocamp.github.io/reproducibility-with-r/materials/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://eliocamp.github.io/reproducibility-with-r/about/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://eliocamp.github.io/reproducibility-with-r/attribution/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://eliocamp.github.io/reproducibility-with-r/categories/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://eliocamp.github.io/reproducibility-with-r/license/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://eliocamp.github.io/reproducibility-with-r/people/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://eliocamp.github.io/reproducibility-with-r/categories/people/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://eliocamp.github.io/reproducibility-with-r/series/</loc>
-  </url><url>
+  </url>
+  
+  <url>
     <loc>https://eliocamp.github.io/reproducibility-with-r/tags/</loc>
   </url>
+  
 </urlset>
