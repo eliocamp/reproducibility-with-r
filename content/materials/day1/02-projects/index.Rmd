@@ -12,8 +12,20 @@ You then are itching to sink your teeth on it; to see how they implemented the m
 
 You download the all the files and you find something like this.
 
-```{r echo=FALSE}
-fs::dir_tree(here::here("content", "materials", "day1", "02-projects", "bad_project"))
+```
+/home/dorothy/Documents/paper
+├── abstract.R
+├── correlation.png
+├── data.csv
+├── data2.csv
+├── fig1.png
+├── figure 2 (copy).png
+├── figure.png
+├── figure1.png
+├── figure10.png
+├── partial data.csv
+├── script.R
+└── script_final.R
 ```
 
 And you have no idea what to do with it.
