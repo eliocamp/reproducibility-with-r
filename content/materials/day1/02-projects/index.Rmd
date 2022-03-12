@@ -12,8 +12,7 @@ You then are itching to sink your teeth on it; to see how they implemented the m
 
 You download the all the files and you find something like this.
 
-```{r}
-# TODO: mover esto para que la ruta de la carpeta no sea tan larga?
+```{r echo=FALSE}
 fs::dir_tree(here::here("content", "materials", "day1", "02-projects", "bad_project"))
 ```
 
@@ -59,11 +58,15 @@ Describe what do you think are the contents of these files:
 ::: activity
 Come up with good file names and folders for:
 
--   a dataset that
+-   a dataset of cats with columns for weight, length, tail length, fur colour(s), fur type and name.
 
 -   a script that downloads data from Spotify
 
--   asdfsd
+-   a scripts that cleans up data
+
+-   a scripts that fits a linear discriminant model and saves it to a file
+
+-   the .Rds file in which that model is stored
 :::
 
 ::: notes
