@@ -60,13 +60,13 @@ Come up with good file names and folders for:
 
 -   a dataset of cats with columns for weight, length, tail length, fur colour(s), fur type and name.
 
--   a script that downloads data from Spotify
+-   a script that downloads data from Spotify.
 
--   a scripts that cleans up data
+-   a scripts that cleans up data.
 
--   a scripts that fits a linear discriminant model and saves it to a file
+-   a scripts that fits a linear discriminant model and saves it to a file.
 
--   the .Rds file in which that model is stored
+-   the .Rds file in which that model is stored.
 :::
 
 ::: notes
