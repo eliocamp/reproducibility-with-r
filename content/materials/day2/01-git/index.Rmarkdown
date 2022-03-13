@@ -87,7 +87,6 @@ If you want to try the command line, here are the git commands:
 
 ## Introduce yourself to Git
 
-
 Before you create your first repository you need to make sure that git and RStudio are friends and that git knows you.
 If you follow the [pre-workshop instructions](http://localhost:4321/reproducibility-with-r/materials/day0#git-and-github), RStudio, git, and GitHub are definitely talking to each other.
 
@@ -100,7 +99,7 @@ There you should find the path in your computer to the git installation.
 
 To introduce yourself to git, that is to let it know your name and email you can use the *usethis* package.
 
-```r
+``` r
 library(usethis) 
 use_git_config(user.name = "Jane Doe",
                user.email = "jane@example.org")
@@ -181,7 +180,7 @@ Add, commit
 
 </div>
 
-If everything went OK, you  started tracking files, made changes, committed them to the local repository.
+If everything went OK, you started tracking files, made changes, committed them to the local repository.
 You may see a message on the git tab saying that the local repo is ahead of the remote repo by 2 commits.
 
 <div class = activity> 
@@ -192,14 +191,14 @@ Push!
 
 </div>
 
-You won't see any changes on GitHub until you push those commits. 
-You can do this at the end of the day if you prefer but if you work with others it may be a good idea to push everything after you do each commit. 
+You won't see any changes on GitHub until you push those commits.
+You can do this at the end of the day if you prefer but if you work with others it may be a good idea to push everything after you do each commit.
 
 ## Remote changes
 
-Let's come back to GitHub. 
-If you refresh the page, now you'll see the files you committed just now. 
-Let's click on "Commits" to see the history of the repository. 
+Let's come back to GitHub.
+If you refresh the page, now you'll see the files you committed just now.
+Let's click on "Commits" to see the history of the repository.
 From this view, you can explore the repository at the "state" of each commit and look at the file differences.
 
 Now, we can try to make changes here.
@@ -215,13 +214,13 @@ Create a README
 
 </div>
 
-The new file and the changes you do on GitHub are only on the remote repository until you make a pull from the local repo. 
-If you make changes on the local repo while it not up to date, you may encounter merge conflicts, which lead to headaches. 
-This happens when the version of a file on the local repo is not compatible with its version on the remote repo. 
+The new file and the changes you do on GitHub are only on the remote repository until you make a pull from the local repo.
+If you make changes on the local repo while it not up to date, you may encounter merge conflicts, which lead to headaches.
+This happens when the version of a file on the local repo is not compatible with its version on the remote repo.
 In those cases, git cannot decide which version is the right one and you have to do it yourself.
 
-To avoid this problem (most of the time), you should do a pull before start doing anything else. 
-Most of the time RStudio will show the “Already up-to-date” but it is good to make this a habit.
+To avoid this problem (most of the time), you should do a pull before start doing anything else.
+Most of the time RStudio will show the "Already up-to-date" but it is good to make this a habit.
 
 <div class = activity> 
 
@@ -236,23 +235,46 @@ Pull from GitHub
 
 ## Anatomy of GitHub Repo
 
-* *Readme files.* Use a `README.md` file to explain what your project is, and how use it. `README.md` is the file that is automatically displayed when you open a GitHub repo.
-* *License.* The license tell people how they can use the content of your repo. Generally, we use permissive licences and people can do almost anything with the materials. Examples are the MIT Licence or Apache. Some extra resources
-    * https://choosealicense.com/ - does what it says on the tin and helps you choose a licence. 
-    * https://tldrlegal.com/ - plain English explanations of licences in bullet form.
-* *Contributing guide.* A file called `CONTRIBUTING.md` and guidelines for contributors so they know what they should do if they want to help you out.
-* *Code of Conduct.* Good projects have codes of conduct to make sure that people are treated well. Github has an Code of Conduct wizard to make it easy to add one.
-* *Issues.* Allows you to manage the project. 
+-   *Readme files.* Use a `README.md` file to explain what your project is, and how use it.
+    `README.md` is the file that is automatically displayed when you open a GitHub repo.
+
+-   *License.* The license tell people how they can use the content of your repo.
+    Generally, we use permissive licences and people can do almost anything with the materials.
+    Examples are the MIT Licence or Apache.
+    Some extra resources:
+
+    -   [Choose an open source license](https://choosealicense.com/) does what it says on the tin and helps you choose a licence.
+    -   [Software Licenses in Plain English](https://tldrlegal.com/) explains licences' legalese in simple terms
+
+-   *Contributing guide.* A file called `CONTRIBUTING.md` and guidelines for contributors so they know what they should do if they want to help you out.
+
+-   *Code of Conduct.* Good projects have codes of conduct to make sure that people are treated well.
+    Github has an Code of Conduct wizard to make it easy to add one.
+
+-   *Issues.* Allows you to manage the project.
 
 ## Collaborating with others
 
-There are to main scenarios when you work with others or you want to collaborate in a project.
+When collaborating on a project you can find yourself in one of two scenarios
 
-* You have write permission of the repo you are working on.
-* You don't have write permission on the repo.
+-   You have write permission of the repo you are working on.
+-   You don't have write permission on the repo.
 
-In the first case, you can clone the repo following the [these same instructions](/reproducibility-with-r/materials/day2/01-git/#creating-a-new-repository) and use the same workflow as before. When you try to push your changes to the remote repository, GitHub will check if you have the rights to modify the repo.
+The first situation is the most common when working together with an team on a long term project.
+You can clone the repo following the [these same instructions](/reproducibility-with-r/materials/day2/01-git/#creating-a-new-repository) and use the same workflow as before.
+When you try to push your changes to the remote repository, GitHub will check if you have the rights to modify the repo.
+The only difference between this and working on your own is that you need to communicate well so that two people are not working on the same thing.
+But this is true with or without git.
 
+The second situation is common when contributing to strangers' projects, such as fixing bugs in open source packages.
+In this case, you need to first *fork* the repository, which creates a remote repository linked to your GitHub account to which you will have complete access.
+Now you work in this fork using the normal workflow: modify, add, commit and push.
+But for your changes to integrate into the original repository, you need to create a *pull request* (or *PR*).
+This will let the owner of the original repo that you made some changes that you think should be merged.
+The owner can then accept, reject or ask for modifications.
+Once they accept your Pull Request, your modifications will be safe in the original repository.
+
+![Concep model of the remote workflow. A foreign remote repository can be forked to an owned remote repository with a "fork". The remote repository is copied into a local repository with a "clone". Files inside the local repository and the remote repository are synced with push and pull. The owned remote repository can be merged into the foreign remote repository with a pull request. ](images/pull-request.png)
 
 ### Let's plant some trees
 
@@ -323,9 +345,8 @@ And that it!
 
 The owner/s of the repo will receive an email. They can review the pull request, comment on it and eventually accept the contribution. When that happen the changes you made will apear in the repo. 
 
-
 ## Resources
 
 [Happy git with R, by Jenny Bryan](https://happygitwithr.com)
 
-[Taller de git developed by Yanina Bellini Saibene and Marysol Gatti (in Spanish)](https://master--yabellini.netlify.app/es/courses/tallerdegitconr>)
+[Taller de git developed by Yanina Bellini Saibene and Marysol Gatti (in Spanish)](https://master--yabellini.netlify.app/es/courses/tallerdegitconr%3E)
