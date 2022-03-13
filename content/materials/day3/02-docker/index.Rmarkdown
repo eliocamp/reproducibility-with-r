@@ -127,6 +127,40 @@ Furthermore, using the same Docker image for every project would defeat the purp
 
 To solve these issues you need to create and customise a Docker image for each project.
 
+
+
+<div class=notes>
+
+Killing docker containers
+
+At some point it's possible that you spin a container in "detached mode" with the option `-d`. 
+This means that the container will run in the background, which can be useful if you want to have the terminal available but can be annoying because then there's no obvious way of stopping the container.
+You might even forget that the container is running. 
+
+To see a list of currently running containers use 
+
+```bash
+docker ps
+````
+
+You can kill a specific container by using its `CONTAINER ID` with
+
+```bash 
+docker kill {CONTAINER ID}
+```
+
+(replacing `{CONTAINER ID}` with the `CONTAINER ID`)
+
+Or use this command to stop all running containers. 
+
+```bash
+docker kill $(docker ps -q)
+```
+
+</div>
+
+
+
 ## Your second docker
 
 Until now you've use `rocker/rstudio` docker image.
@@ -226,3 +260,20 @@ docker run --rm  -p 8787:8787 \
     -v /home/rstudio/project/renv \
     [username]/demo-project
 ```
+
+
+<div class=notes>
+
+Clean up your Docker cache
+
+Docker images can be rather heavy and they tend to accumulate.
+To free up some disk space you can run 
+
+```bash
+docker system prune -a
+```
+
+to delete unused containers. 
+
+
+</div>
