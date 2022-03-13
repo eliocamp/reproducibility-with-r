@@ -50,8 +50,8 @@ Go to [this page](https://packagemanager.rstudio.com/client/#/repos/1/overview) 
 
 ### Analytic Reproducibility In Articles Receiving Open Data Badges At The Journal Psychological Science: An Observational Study {#analytic-reproducibility}
 
-Mean reproducibility score: 9,5/10 \
-Number of reviews: 2 \
+Mean reproducibility score: 9,5/10  
+Number of reviews: 2  
 Link: <https://www.reprohack.org/paper/46/>
 
 This is a highly polished project that uses Docker to run the code in a container and render the result automatically.
@@ -59,8 +59,8 @@ It's also a study about reproducibility so the meta aspect is hard to resist.
 
 ### No Effect Of Nature Representations On State Anxiety, Actual And Perceived Noise {#library-noise}
 
-Mean reproducibility score: 5,0/10 \
-Number of reviews: 1 \
+Mean reproducibility score: 5,0/10  
+Number of reviews: 1  
 Link: <https://www.reprohack.org/paper/49/>
 
 This paper has code and data available, but it doesn't use RMarkdown to produce results, nor any way of defining a stable computational environment.
@@ -70,19 +70,19 @@ Although all the code is there, it's not straightforward to run it or reproduce 
 
 ### The Role Of Conidia In The Dispersal Of Ascochyta Rabiei {#dispersal}
 
-Mean reproducibility score: `NA` \
-Number of reviews: 0 \
+Mean reproducibility score: `NA`  
+Number of reviews: 0  
 Link: <https://www.reprohack.org/paper/41/>
 
 This paper uses Docker completely.
 That's to say, it comes with a docker image which ships the computational environment, as well as all the code and data.
 Unlike [Analytic Reproducibility...](#analytic-reproducibility), the docker image does not create the paper automatically.
-From the description, the authors had submitted other papers to Reprohack before and used what they learnt from the reviews to improve the reproducibility of this one. 
+From the description, the authors had submitted other papers to Reprohack before and used what they learnt from the reviews to improve the reproducibility of this one.
 
 ### Mental Health and Social Contact During the COVID-19 Pandemic: An Ecological Momentary Assessment Study {#covid}
 
-Mean reproducibility score: 7,0/10 \
-Number of reviews: 1 \
+Mean reproducibility score: 7,0/10  
+Number of reviews: 1  
 Link: <https://www.reprohack.org/paper/32/>
 
 This paper doesn't define a table computational environment, but the code is almost fully portable and seems to run without errors.
@@ -90,8 +90,8 @@ If you manage to install all the packages, you should be able to run it.
 
 ### Where Should New Parkrun Events Be Located? Modelling The Potential Impact Of 200 New Events On Socio-Economic Inequalities In Access And Participation {#parkrun}
 
-Mean reproducibility score: 7,0/10\
-Number of reviews: 3\
+Mean reproducibility score: 7,0/10  
+Number of reviews: 3  
 Link: <https://www.reprohack.org/paper/28/>
 
 This paper is bundled into an RStudio project and the code is portable.
