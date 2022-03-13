@@ -274,6 +274,8 @@ This will let the owner of the original repo that you made some changes that you
 The owner can then accept, reject or ask for modifications.
 Once they accept your Pull Request, your modifications will be safe in the original repository.
 
+![Concep model of the remote workflow. A foreign remote repository can be forked to an owned remote repository with a "fork". The remote repository is copied into a local repository with a "clone". Files inside the local repository and the remote repository are synced with push and pull. The owned remote repository can be merged into the foreign remote repository with a pull request. ](images/pull-request.png)
+
 ## Resources
 
 [Happy git with R, by Jenny Bryan](https://happygitwithr.com)
