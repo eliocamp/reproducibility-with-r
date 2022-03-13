@@ -9,6 +9,8 @@ link_list_label: "Resources" # bookmarks, elsewhere, etc.
 link_list:
 - name: Materials
   url: /materials/
+- name: Notes for Instructors
+  url: notes_for_instructors/
 ---
 
 ** index doesn't contain a body, just front matter above.
