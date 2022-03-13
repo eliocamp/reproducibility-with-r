@@ -52,15 +52,15 @@ The first time you run this command you'll see something like
 Which will inform you of the process of downloading the remote image to your local machine.
 When it's `done`, open a browser and navigate to [localhost:8787](http://localhost:8787/)
 
-::: activity
+<div class = activity> 
 Run RStudio inside docker
 
 1.  Run `docker run -p 8787:8787 -e DISABLE_AUTH=true rocker/rstudio:4.2.0` inside a terminal.
 2.  Once it finishes, go to [localhost:8787](http://localhost:8787/) on your browser of choice.
-:::
+</div>
 
 
-::: notes
+<div class = notes> 
 Some notes on this command:
 
 -   `run` is the command to run an image.
@@ -73,7 +73,7 @@ Some notes on this command:
     Otherwise, don't.
 
 -   `rocker/rstudio:4.2.0` is the name of the image that needs to be ran.
-:::
+</div>
 
 
 

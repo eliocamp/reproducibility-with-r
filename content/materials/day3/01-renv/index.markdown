@@ -28,13 +28,13 @@ To start working with renv you first need to initialise the project-local enviro
 
 This will automatically scan all your R scripts and RMarkdown files, discover their dependencies, and store the versions of the currently-installed packages in the lockfile and install them in the project library. 
 
-::: {.activity}  
+</div> {.activity}  
 Start using renv
 
 1. Open the demo project [demo project](/reproducibility-with-r/demo_project.zip). 
 
 2. In the console run `renv::init()`  
-:::
+</div>
 
 In your project root you will now see a file called `renv.lock` and a folder called `renv`. 
 
@@ -44,7 +44,7 @@ if you update a package in your project, other projects will still use the globa
 The flipside is that updating packages outside of the project won't affect the package versions used by it. 
 
 
-::: activity
+<div class = activity> 
 
 Use ggplot2
 
@@ -52,7 +52,7 @@ Use ggplot2
 
 2. Try to render the file. 
 
-::: 
+</div> 
 
 You will notice two weird things happening. 
 
@@ -84,7 +84,7 @@ The rest of the message tells you that renv detected a new dependency that is no
 Of course, you added `library(ggplot2)` but never installed ggplot2. 
 So you can install it normally (`install.packages("ggplot2")`) and now the report will render correctly. 
 
-::: instructions
+<div class = instructions> 
 
 Install ggplot2
 
@@ -95,7 +95,7 @@ Install ggplot2
 3. Run `renv::status()` in the console. 
 
 
-::: 
+</div> 
 
 
 This time, the report should render correctly because ggplot2 is now included in your project library. 
@@ -138,7 +138,7 @@ This will install everything in their local project library so they can be up an
 
 
 
-::: instructions
+<div class = instructions> 
 
 Restore an environment 
 
@@ -149,15 +149,15 @@ Restore an environment
 
 3. Render `analysis/report.Rmd` to make sure that it worked.
 
-:::
+</div>
 
-::: notes
+<div class = notes> 
 
 You don't need to share the `renv/library` folder, which holds the installed packages.
 You share only the `renv.lock` file (and the `rev/activate.R` file, which is a very cool script that auto-install the correct version of renv if needed!). 
 If you use git, you don't need to think about this because renv takes care of that with a special `renv/.gitignore`.
 
-:::
+</div>
 
 
 ## Caveats

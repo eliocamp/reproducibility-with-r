@@ -22,16 +22,16 @@ This will save you the effort of doing some analysis, saving a plot on a file, c
 Now let's create a new RMarkdown file.
 In RStudio you can use the menu bar:
 
-::: instructions
+<div class = instructions> 
 File → New File → R Markdown
-:::
+</div>
 
 A new window will open where you can *optionally* complete with your name, author and the output format.
 Let try first HTML.
 By doing click on th ok button, the new file will open showing the template.
 This is great, you can try to "knit" the file to see the output document.
 
-::: activity
+<div class = activity> 
 Your turn
 
 1.  Create a new RMarkdown file.
@@ -41,7 +41,7 @@ Your turn
 
 3.  Compare the "source file" with the "output file".
     Can you identify the different sections of the file?
-:::
+</div>
 
 ### File structure
 
@@ -72,12 +72,12 @@ output:
 ---
 ```
 
-::: notes
+<div class = notes> 
 Keep in mind the indentation!
 
 It is very important to maintain the indentation of the elements, since it defines the hierarchy of each element.
 Many of the errors you'll find when knitting occur because the file has problems in the header indentation.
-:::
+</div>
 
 #### Code chunks
 
@@ -88,27 +88,27 @@ Code chunks start with `` ```{r label} `` (where "label" is an optional and uniq
 Everything you include between these delimiters will be interpreted by R as code and will try to execute it when the file is knitted.
 Any output (graphics, tables, text, etc..) will be inserted into the final document in the same order as they are in the R Markdown file.
 
-::: instructions
+<div class = instructions> 
 You can create a new chunk with:
 
 1.  The "+C" green bottom on the top right of the document
 2.  A very handy shortcut: `Ctrl + Alt + I`
 3.  Writing the \`\`\` by hand (but why would you?)
-:::
+</div>
 
 While the code will run when you knit, if you are analysing data and writing a report it is very convenient to run individual chunks interactively as if it were in the console.
 
 To run the line where your cursor is use the shortcut:
 
-::: instructions
+<div class = instructions> 
 Ctrl + Enter
-:::
+</div>
 
 But you can also run the code of the whole chunk with:
 
-::: instructions
+<div class = instructions> 
 Ctrl + Shift + Enter
-:::
+</div>
 
 By default, the output will appear immediately below the chunk.
 
@@ -133,7 +133,7 @@ $$
 y = \mu + \sum_{i=1}^p \beta_i x_i + \epsilon
 $$
 
-::: notes
+<div class = notes> 
 In-line code
 
 You may find yourself mentioning results in the text, for example something like "the average minimum temperature for the month of March was 18 degrees".
@@ -146,7 +146,7 @@ Let's imagine that you have a variable `temperature` to which you assign the val
 
 To mention it in the text then we have to put the name of that variable between two "\`" and to warn that it is code of R this way `` `r temperature` ``.
 Then if at any time the value of the variable changes, the next time you knit the document it will be updated in the text.
-:::
+</div>
 
 ### Chunk control 
 
@@ -176,14 +176,14 @@ If you are writing a report where you don't want any code to be shown, adding `e
                       warning = FALSE)
     ```
     
-::: notes
+<div class = notes> 
 
 Figures control
 
 If the output of the chunk is a figure you have a ton of options to control its aspect. From it size, resolution, caption, etc.. 
 You can start typing "fig." inside the `{ }` to explore the options.
 
-:::
+</div>
 
 
 ## RMarkdown Templates
@@ -202,7 +202,7 @@ To use rticles from RStudio, you can access the templates through `File -> New F
 
 This will create a folder containing a Rmd file using the corresponding output format and all the assets required by this format.
 
-::: activity
+<div class = activity> 
 
 Your turn! 
 
@@ -210,14 +210,14 @@ Your turn!
 2. Check the options in the YAML and change a few of the fields. It doesn't to be real information! 
 3. Knit the document to see output.
 
-:::
+</div>
 
 ### Beyond the usual templates
 
 Now, what happens if rticles doesn't have the template you need? Usually, the journal you are sending your work will provide you with a LaTeX template that you can use and **adapt** to use within R Markdown. 
 This will require some knowledge of LaTeX and a lot of patience to deal with knitr errors but the result its worth it and you can always contribute the adapted template to the R community so other can benefit too.
 
-::: activity 
+<div class = activity>  
 
 Adapting a template
 
@@ -265,4 +265,4 @@ abstract:
 ```
 
 9. One final knit to see the result!
-:::
+</div>

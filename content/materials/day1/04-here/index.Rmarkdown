@@ -20,12 +20,12 @@ To witness this, we prepared a demo project.
 penguins <- read.csv("data/penguins.csv")
 ```
 
-::: activity
+<div class = activity> 
 Get the demo project
 
 1.   Download the [demo project](/reproducibility-with-r/demo_project.zip) and extract it anywhere in your computer.
 1.  Open the project (double click on `demo_project.Rproj`), open `report-not_here.Rmd` and try to knit it.
-:::
+</div>
 
 ```{r include=FALSE}
 here::i_am("content/materials/day1/04-here/index.Rmarkdown")
@@ -78,7 +78,7 @@ But we saw that using absolute paths leads to code that runs only in one machine
 What the **here** package does is create absolute paths that work on the machine running the code from paths relative to the root directory.
 The way you use the package is to always use paths relative to the root project directory but wrap them in the `here::here()` function.
 
-::: activity
+<div class = activity> 
 Fix one error
 
 1.   Change line 9 in `report.Rmd` to
@@ -88,7 +88,7 @@ Fix one error
     ```
 
 1.  Try to knitr again.
-:::
+</div>
 
 
 ## Defensive programming with here
@@ -97,7 +97,7 @@ The here package works every time as long as the current working directory is a 
 But it can be brittle otherwise. 
 
 
-::: activity
+<div class = activity> 
 Find a new error
 
 1.  Close demo_project.
@@ -107,13 +107,13 @@ Find a new error
 1.  Try to run line 9.
 
 1. Create a new chunk with the code `here::here("data/penguins.csv")` and run it. Which absolute paths does it return?
-:::
+</div>
 
 
 You'll notice that if you break the expectation that you are working inside the correct project, `here()` will return essentially nonsense. 
 A more robust approach is to define the working directory by asserting the relative paths that leads to the current file. 
 
-::: activity 
+<div class = activity>  
 
 Fix the new error
 
@@ -121,7 +121,7 @@ Fix the new error
 
 1.  Run this new chunk and the one after. 
 
-:::
+</div>
 
 
 With `here::i_am("analysis/report.Rmd")`, you are declaring the location of the current script relative to the project root.

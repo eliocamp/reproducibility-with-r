@@ -23,14 +23,14 @@ These are outside the scope of this workshop.
 
 In summary, for a research finding to be reproducible both data and methods should be available and applying the described methods on the data lead to the same results.
 
-::: notes
+<div class = notes> 
 Methods vs. code
 
 In theory, method availability doesn't necessarily mean code availability, but in practice it's almost impossible to describe methods in such a way that enables full reproducibilty.
 As Ben Marwick [wrote](https://theconversation.com/how-computers-broke-science-and-what-we-can-do-to-fix-it-49938):
 
 > The problem is that most modern science is so complicated, and most journal articles so brief, it's impossible for the article to include details of many important methods and decisions made by the researcher as [they] analyzed [their] data on [their] computer.
-:::
+</div>
 
 If good science can be irreproducible and reproducible results can be bad science, what's the value of thinking about reproducibility?
 

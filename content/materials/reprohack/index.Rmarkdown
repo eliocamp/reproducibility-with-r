@@ -28,15 +28,15 @@ To get the code of a paper, you need to go to the "Code URL" link that's on its 
 Below there's a curated list of some papers for you to chose with a short description of what you can expect.
 You are free to browse the [list of papers tagged with "R"](https://www.reprohack.org/paper/?search=&tags=R) and select anyone that piques your interest.
 
-::: notes
+<div class = notes> 
 Optional: Submit a review!
 
 You can submit a review of each paper in its respective Reprohack page.
 This is a set of structure questions that are then sent to the authors.
 You are encouraged to submit a review if you can.
-:::
+</div>
 
-::: notes
+<div class = notes> 
 Package installation (especially Linux)
 
 When reproducing papers you will most likely need to install a whole lot of new packages.
@@ -44,7 +44,7 @@ This can take quite a while if you are a Linux user because packages that ship F
 
 If you want to speed things up, you can use the RStudio Package Manager repository, which offers pre-compiled binaries for several linux distributions.
 Go to [this page](https://packagemanager.rstudio.com/client/#/repos/1/overview) for setup instructions.
-:::
+</div>
 
 ## Curated list of papers
 
