@@ -14,17 +14,13 @@ There are two situations in which this assumption can be broken and that can lea
 
 One issue is that when RMarkdown files are knitted, the working directory in which the code is executed is the location of the .Rmd file, which is not always the root of the project.
 
-To witness this, we prepared a demo project.
-
-```r
-penguins <- read.csv("data/penguins.csv")
-```
+To show you this, we prepared a demo project.
 
 <div class = activity> 
 
 Get the demo project
 
-1.   Download the [demo project](/reproducibility-with-r/demo_project.zip) and extract it anywhere in your computer.
+1.  Download the [demo project](/reproducibility-with-r/demo_project.zip) and extract it anywhere in your computer.
 1.  Open the project (double click on `demo_project.Rproj`), open `report-not_here.Rmd` and try to knit it.
 </div>
 
@@ -46,10 +42,10 @@ getwd()
 ```
 
 ```
-## [1] "/home/elio/Documents/cursos/reproducibility-with-r/static/demo_project"
+## [1] "/home/pao/RStuff/reproducibility-with-r/static/demo_project"
 ```
 
-And also that `penguins.csv` is indeed located un the `data` folder by running
+You'll get some path in your computer. And also that `penguins.csv` is indeed located in the `data` folder by running
 
 
 ```r
