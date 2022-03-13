@@ -52,6 +52,13 @@ You will also find a template for the feedback form and the shared document.
   * Big files (more that 100 Mb)
 
 
+[02: Research compendia with rrtools](/reproducibility-with-r/materials/day2/02-rrtools/)
+
+* How familiar are you with R package development?
+  * I don't have a clue
+  * I've created a few functions
+  * I've use the R package structure
+  * I maintain one or more R packages
 
 ### Day 3
 

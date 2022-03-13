@@ -6,15 +6,16 @@ publishDate: 2022-02-19
 excerpt: ""
 ---
 
-Of course, you can always create a file structure that suit you and your work by hand.
-But here we are going to try rrtools to create a "research compendium" and combine it with the things we learned on the git and GitHub section.
+Of course, you can always create a file structure that suits you and your work by hand.
+But if you are going to do that a lot, it might be nice to automate some of the work. 
+We are going to use the rrtools package to create a "research compendium" using a couple of R functions and combine it with the things we learned on the git and GitHub section.
 
 The first thing you need to know is that an rrtools compendium will be at the same time an R package.
 If you don't have experience with R packages, don't worry!
 This is why:
 
--   An R package is in practice a folder with some special text files and a few sub-folders.
--   You won't need to learn much about packages to use rtools and take advantage of it.
+-   An R package is, in practice, just a folder with some special text files and a few sub-folders.
+-   You don't need to learn much about packages to use rtools and take advantage of it.
 -   Here we'll cover the necessary bits to work inside a compendium.
 -   But if you want to learn more about R packages there are wonderful resources, for example: [here](https://r-pkgs.org/).
 
@@ -22,7 +23,18 @@ The following instructions are adapted from the [rrtools GitHub repository](http
 
 ### 0. Create a Git-managed directory linked to an online repository
 
-It is possible to use rrtools without Git, but usually we want our research compendium to be managed by the version control software Git.
+It is possible to use rrtools without Git, but usually you would want you research compendium to be managed by the version control software Git.
+
+The name of the compendium and the project should be the same.
+Keep in mind that this will also be the package name so it has to follow some rules for everything to work properly. 
+Your project name  must:
+
+-   contain only ASCII letters, numbers, and '.'
+-   have at least two characters
+-   start with a letter (not a number)
+-   not end with '.'
+
+For convenience we will use  `pkgname` as a placeholder for this package.
 
 <div class = instructions> 
 
@@ -32,26 +44,20 @@ It is possible to use rrtools without Git, but usually we want our research comp
 -   `File > New Project > Version Control > Git`. In the "repository URL" paste the URL of your new GitHub repository. It will be something like this <https://github.com/paocorrales/PaperCompedium.git>.
 -   Make sure you know where you are creating the project.
 -   Choose "Open in new session".
--   And Click on "Create Project".
+-   Click on "Create Project".
 </div>
 
-The name of the repository and the project should be the same.
-Keep in mind that it will also be the package name and has to follow some rules for everything to work, it must:
+### 1. `rrtools::use_compendium()`
 
--   contain only ASCII letters, numbers, and '.'
--   have at least two characters
--   start with a letter (not a number)
--   not end with '.'
+This uses `usethis::create_package()` to create a basic R package in the `pkgname` directory.
+The function will also instruct on the next steps. 
 
-### 1. `rrtools::use_compendium("pkgname")`
-
-This uses `usethis::create_package()` to create a basic R package in the `pkgname` directory (in this case "PaperCompendium"), and then the project.
 
 <div class = instructions>
 
 Create the compendium
 
-1.  Run `rrtools::use_compendium("path/to/pkgname")` (you use the path to `pkgname` in your system)
+1.  In the new project, run `rrtools::use_compendium()` to create the compendium
 
 2.  Edit the `DESCRIPTION` file (located in your `pkgname` directory) to include accurate metadata, e.g. your [ORCID](https://orcid.org/).
     This is one of the files that makes a regular folder an "R package".
@@ -118,20 +124,20 @@ This folder will have the following structure:
 
 -   you can replace the supplied `csl` file with a different citation style from <https://github.com/citation-style-language/>
 
--   we recommend using the [RStudio 1.4](https://www.rstudio.com/products/rstudio/download/preview/) or higher to efficiently insert citations from your [Zotero](https://www.zotero.org/) library while writing in an Rmd file (see [here](https://blog.rstudio.com/2020/11/09/rstudio-1-4-preview-citations/) for detailed setup and use information to connect your RStudio to your Zotero).
-
 Remember that the `Imports:` field in the `DESCRIPTION` file must include the names of all packages used in analysis documents (e.g. `paper.Rmd`).
 rrtools have a helper function `rrtools::add_dependencies_to_description()` that will scan the Rmd file, identify libraries used in there, and add them to the `DESCRIPTION` file.
 
 When you create this file structure using this function you can choose whether you want to add your data to the repository.
 If `data_in_git = FALSE` you will exclude files in the `data/` directory from being tracked by git and prevent them from appearing on GitHub.
 You should set `data_in_git = FALSE` if your data files are large (>100 mb is the limit for GitHub) or you do not want to make the data files publicly accessible on GitHub.
-More about sharing data in the future.
+More about sharing data in [the next section](/reproducibility-with-r/materials/day2/03-data/).
 
 <div class = notes> 
 
+rrtools assistant
+
 You can also use a graphic interface to create the compendium using the "rrtools Assistant" addin.
-It includes datailed instructions and the code associated with each step.
+It includes detailed instructions and the code associated with each step.
 
 ![rrtools Assistant interface showing the Overview tab.](images/rrtools1.png)
 </div>
@@ -140,21 +146,20 @@ It includes datailed instructions and the code associated with each step.
 
 To load your custom code in the `paper.Rmd`, you have a few options.
 You can write all your R code in chunks in the Rmd, that's the simplest method.
-Or you can write R code in script files in `/R`, and include `devtools::load_all(".")` at the top of your `paper.Rmd`.
-Or you can write functions in `/R` and use `library(pkgname)` at the top of your `paper.Rmd`, or omit `library` and preface each function call with `pkgname::`.
+Or you can write R code in script files in a sub folder called `R`, and include `devtools::load_all(".")` at the top of your `paper.Rmd`.
+Or you can write functions in `R` and use `library(pkgname)` at the top of your `paper.Rmd`, or omit `library` and preface each function call with `pkgname::`.
 Up to you to choose whatever seems most natural to you.
-
 
 #### Documenting code
 
 Whether you choose to write code in chunks, script files or as functions, it important to your future self and others to document your code. 
-If you are note use to do it, the easiest way to start is by commenting everything without much thinking. 
-With time you can decide if you need commenting every single line or maybe only the key decision you made when you where writing the code. 
+If you are not used to doing it, the easiest way to start is by commenting everything without much thinking. 
+With time you can decide if you need commenting every single line or maybe only the key decisions you made when you where writing the code. 
 
-If you decide to work with functions there are a few tools that can help you to document it and create the help view (remember, a compendium is also a package and we can take advantage of that!). 
-Each function will live in a .R file (there are some exceptions but we won't worry about that at this point) and will have a heather with the name, descriptions and more information. 
-You can use simple `#` to comment or you can use *roxigen2* comments using `#'`. 
-The later will allows you to generate the package documentation. 
+If you decide to work with functions there are a few tools that can help you to document them and make that documentation available in the Help Pane (remember, a compendium is also a package, so you can take advantage of that!). 
+Each function will live in a .R file (there are some exceptions but we won't worry about that at this point) and will have a header with the name, descriptions and more information. 
+You can use simple `#` to comment or you can use *roxygen2* comments using `#'`. 
+The later will allow you to generate the package documentation. 
 
 The following instructions to document a function are adapted from the [R packages book](https://r-pkgs.org/man.html).
 
@@ -184,12 +189,12 @@ add <- function(x, y) {
 * The first line is the title
 * You can also add a description after the title
 * `@params` are the function arguments, in this case `x` and `y`.
-* `@examples` start the examples sections, R will run this code when the package is build.
-* After `@export` the function code starts. 
+* `@examples` starts the examples sections, R will run this code when the package is build.
+* The `@export` comment is important to make the function accessible via`pkgname::add()` or `library(pkgname)`.
 
-3. Run devtools::document() (or press Ctrl/Cmd + Shift + D in RStudio) to convert roxygen comments to .Rd files. (devtools::document() calls roxygen2::roxygenise() to do the hard work.)
+3. Run `devtools::document()` (or press `Ctrl/Cmd + Shift + D` in RStudio) to build the documentation based on these roxygen comments 
 
-4. Preview documentation with ?.
+4. Preview documentation with `?.`.
 
 5. Rinse and repeat until the documentation looks the way you want.
 
