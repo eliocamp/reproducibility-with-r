@@ -102,3 +102,5 @@ The core steps are:
 On the third day we show the basics of docker.
 Instructions on how to install it depend on your operating system.
 Go to <https://docs.docker.com/get-docker/> and follow the instructions.
+
+If you're on Linux, you should also follow [this guide](https://docs.docker.com/engine/install/linux-postinstall/) to run `docker` without `sudo`.
