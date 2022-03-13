@@ -6,6 +6,7 @@ publishDate: 2022-02-19
 excerpt: ""
 ---
 
+
 The two ingredients for a reproducible project are code and data.
 We talked a lot about how to organise and share code, but what about data?
 Sharing data is far from trivial and there are a lot of things to consider.

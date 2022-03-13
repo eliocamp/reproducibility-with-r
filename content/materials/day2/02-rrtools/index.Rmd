@@ -29,7 +29,7 @@ It is possible to use rrtools without Git, but usually we want our research comp
 2.  In RStudio, start a new Project:
 
 -   `File > New Project > Version Control > Git`. In the "repository URL" paste the URL of your new GitHub repository. It will be something like this <https://github.com/paocorrales/PaperCompedium.git>.
--   Make sure you kn ow where you are creating the project.
+-   Make sure you know where you are creating the project.
 -   Choose "Open in new session".
 -   And Click on "Create Project".
 :::
