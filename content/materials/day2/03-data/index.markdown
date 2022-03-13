@@ -19,8 +19,8 @@ Data can be expensive to create so your company or institution might want to kee
 Or it might contain industry secrets or proprietary information.
 
 Privacy concerns might preclude sharing data including sensitive and/or potentially identifiable information, such as it's common in the medical setting.
-Baring licencing barriers, you might be able to share aggregate data, or anonymised data.
-If your data comes from human subjects such as medial trials, psychological or social experiments, even surveys, you need to ask consent before you publish the data.
+Baring licencing barriers, you might be able to share aggregated data, or anonymised data.
+If your data comes from human subjects such as medical trials, psychological or social experiments, even surveys, you need to ask consent before you publish the data.
 
 The bottom line is that you need to check carefully if you actually can distribute raw or derived data before doing so.
 Even if you created the data yourself, check with your institution.
@@ -28,15 +28,15 @@ Even if you created the data yourself, check with your institution.
 ## How to share
 
 The technical aspects of data sharing can be much more complicated than code sharing for the simple reason that data are, most of the time, much bigger than a couple of text files with a few hundred lines each.
-Hosting and transferring several gigabytes of data can be a challenge, as well as ensuring long-term stability.
+Hosting and transferring several gigabytes worth of data can be a challenge, as well as ensuring long-term stability.
 
 That is to say that there is no one solution to sharing data.
 
 ### Data inside the repository
 
-If your project relies on not a lot of data, then you are un luck.
+If your project relies on not a lot of data, then you are in luck.
 You can simply add the relevant files to your GitHub repository (or any other repository-hosting service) and you're done.
-Anyone will be able to download the entire repository and run the code without worring about accessing data because it is already there.
+Anyone will be able to download the entire repository and run the code without worrying about accessing data because it is already there.
 
 What counts as "tiny data" in this context depends on the repository service you use.
 GitHub allows individual files of [up to 100 MB](https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github#file-size-limits), so for any file below that limit can be safely included in your repository.
@@ -61,7 +61,7 @@ If your data is not so tiny and exceeds the limits of your particular repository
 
 Public data
 
-Sometimes an research project might use publicly-accessible data, perhaps provided by a public API, or a public repository.
+Sometimes a research project might use publicly-accessible data, perhaps provided by a public API, or a public repository.
 In that case, you might not need to host the data yourself and instead rely on that service.
 While this has the advantage that other people can handle all the complexities of data storage and delivery, the disadvantage is that you don't control it.
 The service might decide to update the data (perhaps they found an error) and you might then lose access to the version of the data that produced a certain result.
@@ -70,7 +70,7 @@ The service might decide to update the data (perhaps they found an error) and yo
 A survey of every hosting provider would be impossible.
 Some popular and reputable services are [figshare](https://figshare.com/), the [Open Science Framework](https://osf.io/) and [Mendeley Data](https://data.mendeley.com/).
 Each has its own pros and cons, but in this workshop we will use [Zeonodo](https://zenodo.org/) because it's free, offers a generous 50GB limit per dataset, assigns Digital Object Identifier (DOI), supports versioning, and it integrates well with GitHub.
-Also because we've use, so we are more familiar with it.
+Also because we've used it, so we are more familiar with it.
 
 ## Using zenodo for data hosting
 
@@ -89,7 +89,7 @@ Because we are going to upload test data, we are going to use [Zenodo Sandbox](h
 
 ### Upload
 
-Go do sandbox.zenodo.org and log in (create an account or use your GitHub account if necessary).
+Go do [sandbox.zenodo.org](sandbox.zenodo.org) and log in (create an account or use your GitHub account if necessary).
 To upload a dataset you need to click on Upload.
 
 
@@ -97,7 +97,7 @@ To upload a dataset you need to click on Upload.
 
 
 <div class="figure">
-<img src="images/zenodo-upload_1.png" alt="Screenshot of Zenodo’s page after clicking Upload on the main page. It shows a list with one entry, called “PEnguins” and a green button titled “New Upload.”" width="634" />
+<img src="images/zenodo-upload_1.png" alt="Screenshot of Zenodo’s page after clicking Upload on the main page. It shows a list with one entry, called “PEnguins” and a green button titled “New Upload.”"  />
 <p class="caption">Figure 1: Zeonodo upload. As you can see, datasets are permanent and this user had already uploaded one test dataset in preparation for writing this.</p>
 </div>
 
@@ -109,7 +109,7 @@ Now you need to click on "New Upload".
 
 
 <div class="figure">
-<img src="images/zenodo-upload_2.png" alt="Screenshot of Zenodo’s New Upload page. It shows a big area where to drop file with a button to Chose files." width="634" />
+<img src="images/zenodo-upload_2.png" alt="Screenshot of Zenodo’s New Upload page. It shows a big area where to drop file with a button to Chose files."  />
 <p class="caption">Figure 2: Zeonodo upload section.</p>
 </div>
 
@@ -121,13 +121,13 @@ A single dataset can have multiple files.
 
 
 <div class="figure">
-<img src="images/zenodo-upload_3.png" alt="Screenshot of Zenodo’s New Upload page scrolled down. It shows a list of options for metadata." width="634" />
+<img src="images/zenodo-upload_3.png" alt="Screenshot of Zenodo’s New Upload page scrolled down. It shows a list of options for metadata."  />
 <p class="caption">Figure 3: Zeonodo upload section.</p>
 </div>
 
 Zeonodo supports multiple types of records.
 Beside datasets, you could create a DOI for your entire publication, or for individual images.
-We this is the lesson about datasets, so you need to select "Dataset" as the upload type.
+This is the lesson about datasets, so you need to select "Dataset" as the upload type.
 
 You can create your upload as an unpublished draft and only publish it once you are ready.
 In this case, it is a good idea to reserve the DOI before publishing.
@@ -145,7 +145,7 @@ The last step is to click the "Publish" button at the bottom of the page and you
 
 
 <div class="figure">
-<img src="images/zenodo-upload_4.png" alt="Screenshot of Zenodo’s record viewer. It shows a record titled “Test Upload 2,” a preview of the dataset, an “Edit” button, a “New Version” button, and information on the publication date, DOI and Licence." width="634" />
+<img src="images/zenodo-upload_4.png" alt="Screenshot of Zenodo’s record viewer. It shows a record titled “Test Upload 2,” a preview of the dataset, an “Edit” button, a “New Version” button, and information on the publication date, DOI and Licence."  />
 <p class="caption">Figure 4: Zeonodo upload section.</p>
 </div>
 
@@ -180,7 +180,7 @@ If you go to a zenodo record, below the file previewyou will see a box with the 
 
 
 <div class="figure">
-<img src="images/file_list.png" alt="Screenshot of Zenodo’s list of files in the example database. It shows one file called penguins.csv that weights 15.2kB. To the right there’s a “Preview” button and a “download” button and below it an md5 checksum." width="412" />
+<img src="images/file_list.png" alt="Screenshot of Zenodo’s list of files in the example database. It shows one file called penguins.csv that weights 15.2kB. To the right there’s a “Preview” button and a “download” button and below it an md5 checksum."  />
 <p class="caption">Figure 5: Lis of files in the example database.</p>
 </div>
 
