@@ -43,6 +43,16 @@ You will also find a template for the feedback form and the shared document.
 
 ### Day 2
 
+[01: Getting the most of git](/reproducibility-with-r/materials/day2/01-git/#git-and-github)
+
+* Does git sound familiar to you?
+  * I don't have a clue
+  * I've heard of it
+  * I've used it
+  * I use it all the time
+  
+
+
 [03: Sharing data](/reproducibility-with-r/materials/day2/03-data/)
 
 * If you work with data, what's the typical size?
