@@ -41,11 +41,11 @@
       
       
   <meta itemprop="name" content="01: Getting the most of git">
-<meta itemprop="description" content="Why git? Do you have something like this in your computer?
-/home/pao/Documents/thesis ├── abstract.R ├── thesis.Rmd ├── thesis_reviwed.Rmd ├── thesis_reviwed2.Rmd ├── thesis_final.Rmd ├── thesis_finalfinal.Rmd ├── this_is_it.Rmd ├── now_this_is_it.Rmd └── FINAL.Rmd Probably we all have or had something like this. Git came to solve this problem. It is a version control system, that manage the evolution and changes of a set of files or repository. If you ever looked at the history of a Google Docs file, it is like that but in a very controlled way.">
+<meta itemprop="description" content="Why git?     Do you have something like this in your computer?
+/home/pao/Documents/thesis ├── abstract.R ├── thesis.Rmd ├── thesis_reviwed.Rmd ├── thesis_reviwed2.Rmd ├── thesis_final.Rmd ├── thesis_finalfinal.Rmd ├── this_is_it.Rmd ├── now_this_is_it.Rmd └── FINAL.Rmd  Probably we all have or had something like this. Git came to solve this problem. It is a version control system, that manage the evolution and changes of a set of files or repository. If you ever looked at the history of a Google Docs file, it is like that but in a very controlled way.">
 <meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1575">
+<meta itemprop="wordCount" content="1456">
 
 
 
@@ -149,11 +149,15 @@
       </header>
       <section class="post-body pt5 pb4">
         
-<script src="https://eliocamp.github.io/reproducibility-with-r/materials/day2/01-git/index_files/header-attrs/header-attrs.js"></script>
 
 
-<div id="why-git" class="section level2">
-<h2>Why git?</h2>
+
+<h2 id="why-git">Why git?
+  <a href="#why-git"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
 <p>Do you have something like this in your computer?</p>
 <pre><code>/home/pao/Documents/thesis
 ├── abstract.R
@@ -164,7 +168,8 @@
 ├── thesis_finalfinal.Rmd
 ├── this_is_it.Rmd
 ├── now_this_is_it.Rmd
-└── FINAL.Rmd</code></pre>
+└── FINAL.Rmd
+</code></pre>
 <p>Probably we all have or had something like this.
 Git came to solve this problem.
 It is a version control system, that manage the evolution and changes of a set of files or <strong>repository</strong>.
@@ -172,87 +177,110 @@ If you ever looked at the history of a Google Docs file, it is like that but in 
 <p>If you work alone, git is great to track changes, recover previous version of your files.
 You can also use a <strong>remote repository</strong> (more later) to have a back up and share your work.</p>
 <p>If you work as a team you can take advantage of all the above and also use version control as a tool to collaborate and organize the different version of the same file in the multiple computer you and they use.</p>
-</div>
-<div id="but-what-we-mean-by-version-control" class="section level2">
-<h2>But what we mean by version control?</h2>
+
+
+
+
+<h2 id="but-what-we-mean-by-version-control">But what we mean by version control?
+  <a href="#but-what-we-mean-by-version-control"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
 <p>Let imagine that we have a repository already working.
 When you create a new file as part of the repository, that file is untracked or unversioned.
 This mean that the repository will ignore the file and any change you made until you <em>add</em> it to the repo.
 At this point the file is <strong>staged</strong> and it ready to get into the repository.
 To do that you do a <em>commit</em> and <strong>save</strong> that version of the file to the repo.
 This workflow <code>add --&gt; commit</code> will repeat every time you want to save a version of the file.
-We don’t recommend you to make a commit every time you save the file or change a comma, and its also not a good idea to make a commit with a billion of changes.
+We don&rsquo;t recommend you to make a commit every time you save the file or change a comma, and its also not a good idea to make a commit with a billion of changes.
 With practice and depending on how do you work, you will find a mid point.</p>
-<div class="figure">
-<img src="images/file_cycle2.png" alt="" />
-<p class="caption">The figure show the states of a file: untracked or tracked. When is tracked by the repository, the file can be staged, committed or modified. With add the file is “staged”, with commit the file is “saved” to the repository. This cycles repeats when the files it modified.</p>
-</div>
+<p><img src="images/file_cycle2.png" alt="The figure show the states of a file: untracked or tracked. When is tracked by the repository, the file can be staged, committed or modified. With add the file is &ldquo;staged&rdquo;, with commit the file is &ldquo;saved&rdquo; to the repository. This cycles repeats when the files it modified."></p>
 <p>So, we mention <code>add</code> and <code>commit</code>, this are git commands.
 If you have experience working with the command line you could use git from them.
 The same commands can be executed from a GUI like GitHub Desktop or Git Kraken.
-During this workshop we’ll use RStudio.</p>
-<div class="notes">
-<p>If you want to try the command line, here are the git commands:</p>
+During this workshop we&rsquo;ll use RStudio.</p>
+<div class = notes> 
+If you want to try the command line, here are the git commands:
 <ul>
 <li><code>git add &lt;file&gt;</code> to add a file to the staging area.</li>
-<li><code>git commit -m "A very descriptive message</code> to commit the files on the staging area.</li>
+<li><code>git commit -m &quot;A very descriptive message</code> to commit the files on the staging area.</li>
 </ul>
 </div>
-</div>
-<div id="did-you-mentioned-remote-repository" class="section level2">
-<h2>Did you mentioned remote repository?</h2>
+
+
+
+
+<h2 id="did-you-mentioned-remote-repository">Did you mentioned remote repository?
+  <a href="#did-you-mentioned-remote-repository"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
 <p>Yes, before we when through the <strong>local workflow</strong>.
 The repo lives in your computer and that it.
 But, you can also connect the <strong>local repository</strong> to a <strong>remote repository</strong>.
 For the workshop we are going to use GitHub but there are other options you can explore.</p>
-<p>Let imagine we have a local repository, we made some commits and we want to send those changes to the remote repository (we’ll how to create the remote repository later).
-For that we <strong>push</strong> the commits to the remote repository and the two repos are “up to date”.</p>
+<p>Let imagine we have a local repository, we made some commits and we want to send those changes to the remote repository (we&rsquo;ll how to create the remote repository later).
+For that we <strong>push</strong> the commits to the remote repository and the two repos are &ldquo;up to date&rdquo;.</p>
 <p>A team mate makes a change to a file and push it to the remote repository.
-Now, your local repo is “updated” and you need to download those new commits from the remote repository.
+Now, your local repo is &ldquo;updated&rdquo; and you need to download those new commits from the remote repository.
 You <strong>pull</strong> the commits.</p>
-<div class="figure">
-<img src="images/local_remote.png" alt="" />
-<p class="caption">Concept model of a workflow using RStudio projects and git. Files are added to the staging area, and then commited to the local repository. You can push commits to the remote repository and pull new commits to your computer.</p>
-</div>
+<p><img src="images/local_remote.png" alt="Concept model of a workflow using RStudio projects and git. Files are added to the staging area, and then commited to the local repository. You can push commits to the remote repository and pull new commits to your computer."></p>
 <p>Tools like GitHub also include features that help you to collaborate and manage the repository.
 For example, you will be able to make changes to the files (this is modify something, add and commit the file) using the web interface.</p>
 <p>If you want to try the command line, here are the git commands:</p>
 <ul>
 <li><code>git push</code> to upload the commit to the remote repository.</li>
-<li><code>git pull</code> to download the commits from the remote repository to the local repo. :::</li>
+<li><code>git pull</code> to download the commits from the remote repository to the local repo. </div></li>
 </ul>
-</div>
-<div id="introduce-yourself-to-git" class="section level2">
-<h2>Introduce yourself to Git</h2>
+
+
+
+
+<h2 id="introduce-yourself-to-git">Introduce yourself to Git
+  <a href="#introduce-yourself-to-git"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
 <p>Before we create the first repository we have to make sure that git and RStudio are friends and that git knows you.
 If you follow the pre-workshop instructions, RStudio and git are (and GitHub) are definitely talking to each other.</p>
-<div class="notes">
-<p>You can check that RStudio “see” git going to <code>Tools --&gt; Global Options --&gt; Git/SVN</code>.
-There you will find the path in your computer to the git installation.</p>
+<div class = notes> 
+You can check that RStudio "see" git going to `Tools --> Global Options --> Git/SVN`.
+There you will find the path in your computer to the git installation.
 </div>
 <p>To introduce yourself to git, that is to let it know your name and email you can use the <em>usethis</em> package.</p>
 <pre><code>library(usethis) 
 use_git_config(user.name = &quot;Jane Doe&quot;,
-               user.email = &quot;jane@example.org&quot;)</code></pre>
+               user.email = &quot;jane@example.org&quot;)
+</code></pre>
 <p>Substituting with your name and the email associated with your GitHub account.</p>
-<div class="notes">
-<p>If you want to try the command line:</p>
-<pre><code>git config --global user.name &#39;Jane Doe&#39;
-git config --global user.email &#39;jane@example.com&#39;</code></pre>
+<div class = notes> 
+If you want to try the command line:
+<pre><code>git config --global user.name 'Jane Doe'
+git config --global user.email 'jane@example.com'
+</code></pre>
 </div>
-</div>
-<div id="creating-a-new-repository" class="section level2">
-<h2>Creating a new repository</h2>
+
+
+
+
+<h2 id="creating-a-new-repository">Creating a new repository
+  <a href="#creating-a-new-repository"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
 <p>There are many ways to start a new repository, locally in your computer using the command line or an interface, from GitHub (or it friends), from RStudio!
-We’ll show you here how to create a repo from GitHub, associate it to a RStudio project and work with it.
+We&rsquo;ll show you here how to create a repo from GitHub, associate it to a RStudio project and work with it.
 But keep in mind that there are many other ways to work with git.</p>
-<div class="instructions">
-<ol style="list-style-type: decimal">
-<li>Create an online repository.</li>
-</ol>
+<div class = instructions> 
+1.  Create an online repository.
 <ul>
-<li>Go to <a href="https://github.com">github.com</a> and log in.</li>
-<li>On the top right corner, click on the “+” bottom and then “New repository”</li>
+<li>Go to 
+<a href="https://github.com" target="_blank" rel="noopener">github.com</a> and log in.</li>
+<li>On the top right corner, click on the &ldquo;+&rdquo; bottom and then &ldquo;New repository&rdquo;</li>
 </ul>
 <p>Then:</p>
 <ul>
@@ -265,83 +293,92 @@ But keep in mind that there are many other ways to work with git.</p>
 <p>Before going back to RStudio, copy the url for the repository.
 For example <code>https://github.com/paocorrales/myrepo.git</code></p>
 </div>
-<div class="instructions">
-<ol start="2" style="list-style-type: decimal">
-<li>In RStudio, start a new Project:</li>
-</ol>
+<div class = instructions> 
+2.  In RStudio, start a new Project:
 <ul>
-<li><code>File &gt; New Project &gt; Version Control &gt; Git</code>. In the “repository URL” paste the URL of your new GitHub repository <code>https://github.com/paocorrales/myrepo.git</code>.</li>
+<li><code>File &gt; New Project &gt; Version Control &gt; Git</code>. In the &ldquo;repository URL&rdquo; paste the URL of your new GitHub repository <code>https://github.com/paocorrales/myrepo.git</code>.</li>
 <li>Choose the folder where you want to create the project.</li>
-<li>Choose “Open in new session”.</li>
-<li>And Click on “Create Project”.</li>
+<li>Choose &ldquo;Open in new session&rdquo;.</li>
+<li>And Click on &ldquo;Create Project&rdquo;.</li>
 </ul>
 </div>
 <p>The new folder in your computer will be a git repository, linked to a remote GitHub repository and an RStudio Project at the same time.
 This workflow also makes sure that all the configuration between the local and remote repos are done correctly.</p>
 <p>It also add a .gitignore file that include a list of file that we wont need to track, for example the .Rhistory.</p>
-</div>
-<div id="local-changes" class="section level2">
-<h2>Local changes</h2>
-<p>It’s time to put into practice some of the thing we’ve been talking.</p>
-<div class="activity">
-<p>Add, commit</p>
-<ol style="list-style-type: decimal">
+
+
+
+
+<h2 id="local-changes">Local changes
+  <a href="#local-changes"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>It&rsquo;s time to put into practice some of the thing we&rsquo;ve been talking.</p>
+<div class = activity> 
+Add, commit
+<ol>
 <li>Create a new RMarkdown file and save it.</li>
-<li>Add it to the staging area and commit the file. You’ll need to add a descriptive message!</li>
+<li>Add it to the staging area and commit the file. You&rsquo;ll need to add a descriptive message!</li>
 <li>Make a change on the file, it can be anything. Save it.</li>
 <li>Repeat step 2.</li>
 </ol>
-<div class="figure">
-<img src="images/add1.png" alt="" />
-<p class="caption">Git panel with 3 untracked files.</p>
-</div>
-<div class="figure">
-<img src="images/add2.png" alt="" />
-<p class="caption">Git panel with 3 tracked files added to the staging area.</p>
-</div>
-<div class="figure">
-<img src="images/add3.png" alt="" />
-<p class="caption">RStudio interface to see file differences, write message’s commit and push it to the remote repository.</p>
-</div>
+<p><img src="images/add1.png" alt="Git panel with 3 untracked files."></p>
+<p><img src="images/add2.png" alt="Git panel with 3 tracked files added to the staging area."></p>
+<p><img src="images/add3.png" alt="RStudio interface to see file differences, write message&rsquo;s commit and push it to the remote repository."></p>
 </div>
 <p>If everything went ok, you started tracking files, made changes, commit them to the local repository. You may see a message on the git tab saying that the local repo is ahead of the remote repo by 2 commits.</p>
-<div class="activity">
+<div class = activity> 
 <p>Push!</p>
-<ol style="list-style-type: decimal">
+<ol>
 <li>Now, push the commits to the remote repository.</li>
 </ol>
 </div>
-<p>If you don’t push the commits to the remote repository, you wont be able to see them on GitHub. You can do this at the end of the day if you prefer but if you work with others it may be a good idea to push everything after you do each commit.</p>
-</div>
-<div id="remote-changes" class="section level2">
-<h2>Remote changes</h2>
-<p>Let come back to GitHub. If you refresh the page, now you’ll see the files you committed just yet. Let click on “Commits” to see the history of the repository. From this view, you can explore the repository at the “state” of each commit and look at the file differences.</p>
-<p>Now, we can try to make changes here.</p>
-<div class="activity">
+<p>If you don&rsquo;t push the commits to the remote repository, you wont be able to see them on GitHub. You can do this at the end of the day if you prefer but if you work with others it may be a good idea to push everything after you do each commit.</p>
+
+
+
+
+<h2 id="remote-changes">Remote changes
+  <a href="#remote-changes"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>Let come back to GitHub. If you refresh the page, now you&rsquo;ll see the files you committed just yet. Let click on &ldquo;Commits&rdquo; to see the history of the repository. From this view, you can explore the repository at the &ldquo;state&rdquo; of each commit and look at the file differences.</p>
+<p>Now, we can try to  make changes here.</p>
+<div class = activity> 
 <p>Create a README</p>
-<ol style="list-style-type: decimal">
-<li>On the main page, click on the green bottom that says “Add a README”.</li>
+<ol>
+<li>On the main page, click on the green bottom that says &ldquo;Add a README&rdquo;.</li>
 <li>Add something to the file. READMEs usually are written in Markdown and contains information about the repo.</li>
-<li>At the end of the page add a message on the first line and click on “Commit new file”.</li>
+<li>At the end of the page add a message on the first line and click on &ldquo;Commit new file&rdquo;.</li>
 <li>Come back to the main page to see the README.</li>
 </ol>
 </div>
 <p>The new file and the changes you do on GitHub are only on the remote repository until you make a pull from the local repo. If you make changes on the local repo while it not up to date, you may encounter merge conflicts. This happens when the version of a file on the local repo is not compatible with it version on the remote repo. On those cases, git cannot decide which version is the right one and you have to do it for it.</p>
 <p>To avoid this problem (almost all the time), you should do a pull before start doing anything else. Most of the time RStudio will show the “Already up-to-date.” but it is good to make this a habit.</p>
-<div class="activity">
+<div class = activity> 
 <p>Pull from GitHub</p>
-<ol style="list-style-type: decimal">
+<ol>
 <li>Go back to RStudio</li>
-<li>Click on the light blue arrow that says “Pull”</li>
+<li>Click on the light blue arrow that says &ldquo;Pull&rdquo;</li>
 <li>Check the README file on the Files tab.</li>
 </ol>
 </div>
-</div>
-<div id="resources" class="section level2">
-<h2>Resources</h2>
-<p>Happy git with R, writen by Jenny Bryan: <a href="https://happygitwithr.com/" class="uri">https://happygitwithr.com/</a></p>
-<p>Taller de git developed by Yanina Bellini Saibene and Marysol Gatti (in Spanish): <a href="https://master--yabellini.netlify.app/es/courses/tallerdegitconr" class="uri">https://master--yabellini.netlify.app/es/courses/tallerdegitconr</a></p>
-</div>
+
+
+
+
+<h2 id="resources">Resources
+  <a href="#resources"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>Happy git with R, writen by Jenny Bryan: <a href="https://happygitwithr.com/">https://happygitwithr.com/</a></p>
+<p>Taller de git developed by Yanina Bellini Saibene and Marysol Gatti (in Spanish): <a href="https://master--yabellini.netlify.app/es/courses/tallerdegitconr">https://master--yabellini.netlify.app/es/courses/tallerdegitconr</a></p>
 
       </section>
       <footer class="post-footer">
@@ -473,7 +510,18 @@ This workflow also makes sure that all the configuration between the local and r
   <details id="PageTableOfContents">
     <summary><h2 class="mv0 f5 fw7 ttu tracked dib">On this page<h2></summary>
     <div class="pl2 pr0 mh0">
-    
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#why-git">Why git?</a></li>
+    <li><a href="#but-what-we-mean-by-version-control">But what we mean by version control?</a></li>
+    <li><a href="#did-you-mentioned-remote-repository">Did you mentioned remote repository?</a></li>
+    <li><a href="#introduce-yourself-to-git">Introduce yourself to Git</a></li>
+    <li><a href="#creating-a-new-repository">Creating a new repository</a></li>
+    <li><a href="#local-changes">Local changes</a></li>
+    <li><a href="#remote-changes">Remote changes</a></li>
+    <li><a href="#resources">Resources</a></li>
+  </ul>
+</nav>
     </div>
   </details>
   
