@@ -13,21 +13,19 @@ excerpt: ""
 To your delight, all the code and data is available in a public repository.
 You then are itching to sink your teeth on it; to see how they implemented the methods, or to run it with your own similar data.</p>
 <p>You download the all the files and you find something like this.</p>
-<pre class="r"><code># TODO: mover esto para que la ruta de la carpeta no sea tan larga?
-fs::dir_tree(here::here(&quot;content&quot;, &quot;materials&quot;, &quot;day1&quot;, &quot;02-projects&quot;, &quot;bad_project&quot;))</code></pre>
-<pre><code>## /home/pao/RStuff/reproducibility-with-r/content/materials/day1/02-projects/bad_project
-## ├── abstract.R
-## ├── correlation.png
-## ├── data.csv
-## ├── data2.csv
-## ├── fig1.png
-## ├── figure 2 (copy).png
-## ├── figure.png
-## ├── figure1.png
-## ├── figure10.png
-## ├── partial data.csv
-## ├── script.R
-## └── script_final.R</code></pre>
+<pre><code>/home/dorothy/Documents/paper
+├── abstract.R
+├── correlation.png
+├── data.csv
+├── data2.csv
+├── fig1.png
+├── figure 2 (copy).png
+├── figure.png
+├── figure1.png
+├── figure10.png
+├── partial data.csv
+├── script.R
+└── script_final.R</code></pre>
 <p>And you have no idea what to do with it.
 There’s three <code>.R</code> files which could be the main script, several possible files containing some unspecified “data” and a bunch of image files with names that give little information on their contents.
 With no README file or any other documentation to help you sort out this mess, you might well decide that your time is better spent somewhere else.</p>
@@ -61,9 +59,11 @@ Also use sub-folders, such as <code>data/raw</code> for raw data from the source
 <div class="activity">
 <p>Come up with good file names and folders for:</p>
 <ul>
-<li><p>a dataset that</p></li>
-<li><p>a script that downloads data from Spotify</p></li>
-<li><p>asdfsd</p></li>
+<li><p>a dataset of cats with columns for weight, length, tail length, fur colour(s), fur type and name.</p></li>
+<li><p>a script that downloads data from Spotify.</p></li>
+<li><p>a scripts that cleans up data.</p></li>
+<li><p>a scripts that fits a linear discriminant model and saves it to a file.</p></li>
+<li><p>the .Rds file in which that model is stored.</p></li>
 </ul>
 </div>
 <div class="notes">
