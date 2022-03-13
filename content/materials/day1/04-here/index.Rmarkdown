@@ -130,3 +130,10 @@ Fix the new error
 With `here::i_am("analysis/report.Rmd")`, you are declaring the location of the current script relative to the project root.
 This will set the project root that is consistent with this location and emit a message. 
 Importantly, it will fail if the declared location is not found in the working directory or any of the parent directories. 
+
+
+## Resources
+
+[Using here with rmarkdown](https://here.r-lib.org/articles/rmarkdown.html)
+
+[Ode to the here package](https://github.com/jennybc/here_here) 

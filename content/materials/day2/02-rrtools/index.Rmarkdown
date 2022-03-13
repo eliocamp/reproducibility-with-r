@@ -195,3 +195,7 @@ add <- function(x, y) {
 
 
 </div>
+
+## Resources 
+
+[A guide to modern reproducible data science with R](https://www.rstudio.com/resources/rstudioconf-2019/a-guide-to-modern-reproducible-data-science-with-r-karthik-ram/)

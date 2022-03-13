@@ -196,3 +196,8 @@ This includes the version of R itself!
 One tool to ensure that the whole system is stable is using containers, which is the subject of the next section. 
 
 
+## Resources
+
+[renv package documentation](https://rstudio.github.io/renv/index.html):
+  - [Get started](https://rstudio.github.io/renv/articles/renv.html)
+  - [FAQ](https://rstudio.github.io/renv/articles/faq.html)

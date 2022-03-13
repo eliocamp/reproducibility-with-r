@@ -280,3 +280,12 @@ abstract:
 
 9. One final knit to see the result!
 </div>
+
+## Resources
+
+
+[RMarkdown cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+
+[R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
+
+[rticles package documentation](https://github.com/rstudio/rticles)
