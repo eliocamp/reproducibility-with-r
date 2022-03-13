@@ -32,7 +32,7 @@ cascade:
       
       Click on each day's page to read the materials and homework. 
       
-      Additionally, there's an extra [optional activity](reproducibility-with-r/materials/reprohack/).
+      Additionally, there's an extra [optional activity](/reproducibility-with-r/materials/reprohack/).
       
       
     show_sidebar_adunit: true # show ad container
