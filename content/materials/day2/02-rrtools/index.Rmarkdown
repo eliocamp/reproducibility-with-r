@@ -24,7 +24,7 @@ The following instructions are adapted from the [rrtools GitHub repository](http
 
 It is possible to use rrtools without Git, but usually we want our research compendium to be managed by the version control software Git.
 
-::: instructions
+<div class = instructions> 
 1.  Create an online repository.
 2.  In RStudio, start a new Project:
 
@@ -32,7 +32,7 @@ It is possible to use rrtools without Git, but usually we want our research comp
 -   Make sure you know where you are creating the project.
 -   Choose "Open in new session".
 -   And Click on "Create Project".
-:::
+</div>
 
 The name of the repository and the project should be the same.
 Keep in mind that it will also be the package name and has to follow some rules for everything to work, it must:
@@ -46,7 +46,7 @@ Keep in mind that it will also be the package name and has to follow some rules 
 
 This uses `usethis::create_package()` to create a basic R package in the `pkgname` directory (in this case "PaperCompendium"), and then the project.
 
-::: instructions
+<div class = instructions> 
 Create the compendium
 
 1.  Run `rrtools::use_compendium("path/to/pkgname")` (you use the path to `pkgname` in your system)
@@ -55,7 +55,7 @@ Create the compendium
     This is one of the files that makes a regular folder an "R package".
 
 3.  Periodically update the `Imports:` section of the `DESCRIPTION` file with the names of packages used in the code we write in the .Rmd document(s) by running `rrtools::add_dependencies_to_description()`
-:::
+</div>
 
 ### 2. `usethis::use_mit_license(copyright_holder = "My Name")`
 
@@ -63,9 +63,9 @@ This adds a reference to the MIT license in the [DESCRIPTION](DESCRIPTION) file 
 
 To use a different license, replace this line with any of the licenses mentioned here: `?usethis::use_mit_license()`
 
-::: notes
+<div class = notes> 
 You can read more about licences [here](https://r-pkgs.org/license.html).
-:::
+</div>
 
 ### 3. `rrtools::use_readme_rmd()`
 
@@ -125,12 +125,12 @@ If `data_in_git = FALSE` you will exclude files in the `data/` directory from be
 You should set `data_in_git = FALSE` if your data files are large (>100 mb is the limit for GitHub) or you do not want to make the data files publicly accessible on GitHub.
 More about sharing data in the future.
 
-::: notes
+<div class = notes> 
 You can also use a graphic interface to create the compendium using the "rrtools Assistant" addin.
 It includes datailed instructions and the code associated with each step.
 
 ![rrtools Assistant interface showing the Overview tab.](images/rrtools1.png)
-:::
+</div>
 
 ### Working with your own code
 
@@ -154,7 +154,7 @@ The later will allows you to generate the package documentation.
 
 The following instructions to document a function are adapted from the [R packages book](https://r-pkgs.org/man.html).
 
-::: instructions 
+<div class = instructions>  
 
 The documentation workflow
 
@@ -190,4 +190,4 @@ add <- function(x, y) {
 5. Rinse and repeat until the documentation looks the way you want.
 
 
-:::
+</div>

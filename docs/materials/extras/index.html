@@ -143,42 +143,45 @@
       </header>
       <section class="post-body pt5 pb4">
         
-<script src="https://eliocamp.github.io/reproducibility-with-r/materials/extras/index_files/header-attrs/header-attrs.js"></script>
 
 
-<div id="parameterised-reports" class="section level2">
-<h2>Parameterised reports</h2>
+
+<h2 id="parameterised-reports">Parameterised reports
+  <a href="#parameterised-reports"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
 <p>Sometimes you need to re-do a report changing one variable that repeats over all the code, the best way to do this is through a parameterised report.</p>
 <p>In the following example there is a plot of the price distribution for ideal diamonds.
-If you want to change it to visualise the data for “fair” or “very good” cut diamonds, you will have to change the <code>filter(cut == "Ideal")</code> and hopefully you wont forget the plot title.</p>
-<pre class="r"><code>library(dplyr)
-library(ggplot2)
+If you want to change it to visualise the data for &ldquo;fair&rdquo; or &ldquo;very good&rdquo; cut diamonds, you will have to change the <code>filter(cut == &quot;Ideal&quot;)</code> and hopefully you wont forget the plot title.</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#d35400">library</span>(<span style="color:#434f54">dplyr</span>)
+<span style="color:#d35400">library</span>(<span style="color:#434f54">ggplot2</span>)
 
-diamonds %&gt;% 
-  filter(cut == &quot;Ideal&quot;) %&gt;% 
-  ggplot(aes(color, price)) +
-  geom_boxplot() +
-  labs(title = &quot;Price distribution for ideal diamonds&quot;,
-       x = &quot;Color&quot;,
-       y = &quot;Price [US dollars]&quot;)</code></pre>
-<p><img src="https://eliocamp.github.io/reproducibility-with-r/materials/extras/index_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
+<span style="color:#434f54">diamonds</span> <span style="color:#728e00">%&gt;%</span> 
+  <span style="color:#d35400">filter</span>(<span style="color:#434f54">cut</span> <span style="color:#728e00">==</span> <span style="color:#7f8c8d">&#34;Ideal&#34;</span>) <span style="color:#728e00">%&gt;%</span> 
+  <span style="color:#d35400">ggplot</span>(<span style="color:#d35400">aes</span>(<span style="color:#434f54">color</span>, <span style="color:#434f54">price</span>)) <span style="color:#728e00">+</span>
+  <span style="color:#d35400">geom_boxplot</span>() <span style="color:#728e00">+</span>
+  <span style="color:#d35400">labs</span>(<span style="color:#434f54">title</span> <span style="color:#728e00">=</span> <span style="color:#7f8c8d">&#34;Price distribution for ideal diamonds&#34;</span>,
+       <span style="color:#434f54">x</span> <span style="color:#728e00">=</span> <span style="color:#7f8c8d">&#34;Color&#34;</span>,
+       <span style="color:#434f54">y</span> <span style="color:#728e00">=</span> <span style="color:#7f8c8d">&#34;Price [US dollars]&#34;</span>)
+</code></pre></div><p><img src="https://eliocamp.github.io/reproducibility-with-r/materials/extras/index_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
 <p>In these situations you can create a parameterised report.
 To generate a parameterised report you have to add an element called <code>params</code> to the YAML with the list of parameters (1 or more) and their default values. It is as if the R Markdown file were a big function with its arguments!</p>
 <pre><code>params:
-  this_cut: Ideal</code></pre>
-<p>Then, in the R code you will have access to a variable called <code>params</code> which is a list containing the parameters and their values. To access the value of each parameter the <code>$</code> operator is used as follows:</p>
-<pre class="r"><code>library(dplyr)
-library(ggplot2)
+  this_cut: Ideal
+</code></pre><p>Then, in the R code you will have access to a variable called <code>params</code> which is a list containing the parameters and their values. To access the value of each parameter the <code>$</code> operator is used as follows:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#d35400">library</span>(<span style="color:#434f54">dplyr</span>)
+<span style="color:#d35400">library</span>(<span style="color:#434f54">ggplot2</span>)
 
-diamonds %&gt;% 
-  filter(cut == params$this_cut) %&gt;% 
-  ggplot(aes(color, price)) +
-  geom_boxplot() +
-  labs(title = paste0(&quot;Price distribution for &quot;, params$this_cut, &quot; diamonds&quot;),
-       x = &quot;Color&quot;,
-       y = &quot;Price [US dollars]&quot;)</code></pre>
-<p><img src="https://eliocamp.github.io/reproducibility-with-r/materials/extras/index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
-</div>
+<span style="color:#434f54">diamonds</span> <span style="color:#728e00">%&gt;%</span> 
+  <span style="color:#d35400">filter</span>(<span style="color:#434f54">cut</span> <span style="color:#728e00">==</span> <span style="color:#434f54">params</span><span style="color:#728e00">$</span><span style="color:#434f54">this_cut</span>) <span style="color:#728e00">%&gt;%</span> 
+  <span style="color:#d35400">ggplot</span>(<span style="color:#d35400">aes</span>(<span style="color:#434f54">color</span>, <span style="color:#434f54">price</span>)) <span style="color:#728e00">+</span>
+  <span style="color:#d35400">geom_boxplot</span>() <span style="color:#728e00">+</span>
+  <span style="color:#d35400">labs</span>(<span style="color:#434f54">title</span> <span style="color:#728e00">=</span> <span style="color:#d35400">paste0</span>(<span style="color:#7f8c8d">&#34;Price distribution for &#34;</span>, <span style="color:#434f54">params</span><span style="color:#728e00">$</span><span style="color:#434f54">this_cut</span>, <span style="color:#7f8c8d">&#34; diamonds&#34;</span>),
+       <span style="color:#434f54">x</span> <span style="color:#728e00">=</span> <span style="color:#7f8c8d">&#34;Color&#34;</span>,
+       <span style="color:#434f54">y</span> <span style="color:#728e00">=</span> <span style="color:#7f8c8d">&#34;Price [US dollars]&#34;</span>)
+</code></pre></div><p><img src="https://eliocamp.github.io/reproducibility-with-r/materials/extras/index_files/figure-html/unnamed-chunk-3-1.png" width="672" /></p>
 
       </section>
       <footer class="post-footer">
@@ -186,12 +189,9 @@ diamonds %&gt;%
   
   
     <a class="prev dtc pr2 tl v-top fw6"
-    href="https://eliocamp.github.io/reproducibility-with-r/materials/day0/">&larr; Day 0</a>
+    href="https://eliocamp.github.io/reproducibility-with-r/materials/reprohack/">&larr; Mini Reprohack</a>
   
   
-  
-    <a class="next dtc pl2 tr v-top fw6"
-    href="https://eliocamp.github.io/reproducibility-with-r/materials/reprohack/">Mini Reprohack &rarr;</a>
   
 </div>
 
@@ -265,6 +265,9 @@ diamonds %&gt;%
             <summary class="" hugo-nav="/reproducibility-with-r/materials/day2/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/">Day 2</a></summary>
             
               
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day2/01-git/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/01-git/">01: Getting the most of git</a></li>
+            
+              
               <li class="" hugo-nav="/reproducibility-with-r/materials/day2/02-rrtools/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/02-rrtools/">02: Research compendia with rrtools</a></li>
             
               
@@ -292,15 +295,15 @@ diamonds %&gt;%
         
           
           
-          <li class="active" hugo-nav="/reproducibility-with-r/materials/extras/">
-            <a href="https://eliocamp.github.io/reproducibility-with-r/materials/extras/">Extras</a></li>
+          <li class="" hugo-nav="/reproducibility-with-r/materials/reprohack/">
+            <a href="https://eliocamp.github.io/reproducibility-with-r/materials/reprohack/">Mini Reprohack</a></li>
           
           </li>
         
           
           
-          <li class="" hugo-nav="/reproducibility-with-r/materials/reprohack/">
-            <a href="https://eliocamp.github.io/reproducibility-with-r/materials/reprohack/">Mini Reprohack</a></li>
+          <li class="active" hugo-nav="/reproducibility-with-r/materials/extras/">
+            <a href="https://eliocamp.github.io/reproducibility-with-r/materials/extras/">Extras</a></li>
           
           </li>
         
@@ -310,7 +313,11 @@ diamonds %&gt;%
   <details id="PageTableOfContents">
     <summary><h2 class="mv0 f5 fw7 ttu tracked dib">On this page<h2></summary>
     <div class="pl2 pr0 mh0">
-    
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#parameterised-reports">Parameterised reports</a></li>
+  </ul>
+</nav>
     </div>
   </details>
   

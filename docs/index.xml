@@ -8,6 +8,16 @@
     <language>en</language>
     <lastBuildDate>Tue, 15 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://eliocamp.github.io/reproducibility-with-r/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>01: Getting the most of git</title>
+      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day2/01-git/</link>
+      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day2/01-git/</guid>
+      <description>Why git?     Do you have something like this in your computer?
+/home/pao/Documents/thesis ├── abstract.R ├── thesis.Rmd ├── thesis_reviwed.Rmd ├── thesis_reviwed2.Rmd ├── thesis_final.Rmd ├── thesis_finalfinal.Rmd ├── this_is_it.Rmd ├── now_this_is_it.Rmd └── FINAL.Rmd  Probably we all have or had something like this. Git came to solve this problem. It is a version control system, that manage the evolution and changes of a set of files or repository. If you ever looked at the history of a Google Docs file, it is like that but in a very controlled way.</description>
+    </item>
+    
+    <item>
       <title>01: Reproducible computational environment with renv</title>
       <link>https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-renv/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
@@ -23,8 +33,8 @@ But actively-maintained packages will change their code-base to fix bugs, add fe
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day1/01-introduction/</guid>
-      <description>This workshop will introduce some useful tools to help you write code that can be run anywhere with consistent results. We will focus on the practical aspects of reproducibility, but it’s still worth it to get some sense of what is reproducibility and what’s its aim.
-What reproducibility is and what it is not We will use “reproducibility” to talk about results that can be obtained by someone else given the same data and code.</description>
+      <description>This workshop will introduce some useful tools to help you write code that can be run anywhere with consistent results. We will focus on the practical aspects of reproducibility, but it&amp;rsquo;s still worth it to get some sense of what is reproducibility and what&amp;rsquo;s its aim.
+What reproducibility is and what it is not     We will use &amp;ldquo;reproducibility&amp;rdquo; to talk about results that can be obtained by someone else given the same data and code.</description>
     </item>
     
     <item>
@@ -33,7 +43,7 @@ What reproducibility is and what it is not We will use “reproducibility” to 
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day3/02-docker/</guid>
-      <description>While renv is nice, it doesn’t solve the whole problem, because system dependencies and even the R version itself can change. Another issue is that downloading and installing all the R packages can take a while. Like an hour or more. This is not a deal-breaker, but I’d like to do better. People trying to reproduce work are few and far between, so it’s important to make their lives as easy as possible.</description>
+      <description>While renv is nice, it doesn&amp;rsquo;t solve the whole problem, because system dependencies and even the R version itself can change. Another issue is that downloading and installing all the R packages can take a while. Like an hour or more. This is not a deal-breaker, but I&amp;rsquo;d like to do better. People trying to reproduce work are few and far between, so it&amp;rsquo;s important to make their lives as easy as possible.</description>
     </item>
     
     <item>
@@ -54,7 +64,7 @@ R At the very least you need to have R installed on your computer. If possible, 
       <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day1/02-projects/</guid>
       <description>Imagine that you read some interesting paper or analysis. To your delight, all the code and data is available in a public repository. You then are itching to sink your teeth on it; to see how they implemented the methods, or to run it with your own similar data.
 You download the all the files and you find something like this.
-# TODO: mover esto para que la ruta de la carpeta no sea tan larga?</description>
+/home/dorothy/Documents/paper ├── abstract.R ├── correlation.png ├── data.csv ├── data2.csv ├── fig1.</description>
     </item>
     
     <item>
@@ -63,8 +73,8 @@ You download the all the files and you find something like this.
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day2/02-rrtools/</guid>
-      <description>Of course, you can always create a file structure that suit you and your work by hand. But here we are going to try rrtools to create a “research compendium” and combine it with the things we learned on the git and GitHub section.
-The first thing you need to know is that an rrtools compendium will be at the same time an R package. If you don’t have experience with R packages, don’t worry!</description>
+      <description>Of course, you can always create a file structure that suit you and your work by hand. But here we are going to try rrtools to create a &amp;ldquo;research compendium&amp;rdquo; and combine it with the things we learned on the git and GitHub section.
+The first thing you need to know is that an rrtools compendium will be at the same time an R package. If you don&amp;rsquo;t have experience with R packages, don&amp;rsquo;t worry!</description>
     </item>
     
     <item>
@@ -92,7 +102,7 @@ I develops openly licensed materials to teach and learn R from scratch.</descrip
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day1/03-rmarkdown/</guid>
-      <description>RMarkdown files An RMarkdown file is a plain text file, with some rules and special syntax that allow us to write code and text together. When it is “knitted,” the code will be evaluated and executed and the text formatted so that it creates a reproducible report or document that is nice to read and contains all your work.
+      <description>RMarkdown files     An RMarkdown file is a plain text file, with some rules and special syntax that allow us to write code and text together. When it is &amp;ldquo;knitted,&amp;rdquo; the code will be evaluated and executed and the text formatted so that it creates a reproducible report or document that is nice to read and contains all your work.
 This is really critical to reproducibility. It also saves us time and can help with automation tasks.</description>
     </item>
     
@@ -103,7 +113,7 @@ This is really critical to reproducibility. It also saves us time and can help w
       
       <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day2/03-data/</guid>
       <description>The two ingredients for a reproducible project are code and data. We talked a lot about how to organise and share code, but what about data? Sharing data is far from trivial and there are a lot of things to consider.
-Permissions Before the technical issues of sharing data there are the bureaucratic issues. Depending on your context, you might not be allowed to share your data. Data can be expensive to create so your company or institution might want to keep it private so they can squeeze all the profit it can from it.</description>
+Permissions     Before the technical issues of sharing data there are the bureaucratic issues. Depending on your context, you might not be allowed to share your data.</description>
     </item>
     
     <item>
@@ -113,17 +123,7 @@ Permissions Before the technical issues of sharing data there are the bureaucrat
       
       <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day1/04-here/</guid>
       <description>If you use RStudio Projects consistently, you can be sure that your working directory is always the root of the project unless you actively change it. Almost. There are two situations in which this assumption can be broken and that can lead to errors or, even worse, surprising results.
-Root directory during knit One issue is that when RMarkdown files are knitted, the working directory in which the code is executed is the location of the .</description>
-    </item>
-    
-    <item>
-      <title>Extras</title>
-      <link>https://eliocamp.github.io/reproducibility-with-r/materials/extras/</link>
-      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/extras/</guid>
-      <description>Parameterised reports Sometimes you need to re-do a report changing one variable that repeats over all the code, the best way to do this is through a parameterised report.
-In the following example there is a plot of the price distribution for ideal diamonds. If you want to change it to visualise the data for “fair” or “very good” cut diamonds, you will have to change the filter(cut == &#34;</description>
+Root directory during knit     One issue is that when RMarkdown files are knitted, the working directory in which the code is executed is the location of the .</description>
     </item>
     
     <item>
@@ -132,8 +132,18 @@ In the following example there is a plot of the price distribution for ideal dia
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://eliocamp.github.io/reproducibility-with-r/materials/reprohack/</guid>
-      <description>One of the best ways of learning what makes a reproducible project is to try to reproduce real life projects instead of toy examples. You’ll quickly learn what works and what doesn’t and pick up tools and workflows from others.
+      <description>One of the best ways of learning what makes a reproducible project is to try to reproduce real life projects instead of toy examples. You&amp;rsquo;ll quickly learn what works and what doesn&amp;rsquo;t and pick up tools and workflows from others.
 Therefore we propose this optional homework in which you will do just that. You can do it at any moment during the workshop. Some paper require using particular packages or technologies that you might not be familiar at the start of the workshop.</description>
+    </item>
+    
+    <item>
+      <title>Extras</title>
+      <link>https://eliocamp.github.io/reproducibility-with-r/materials/extras/</link>
+      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/extras/</guid>
+      <description>Parameterised reports     Sometimes you need to re-do a report changing one variable that repeats over all the code, the best way to do this is through a parameterised report.
+In the following example there is a plot of the price distribution for ideal diamonds. If you want to change it to visualise the data for &amp;ldquo;fair&amp;rdquo; or &amp;ldquo;very good&amp;rdquo; cut diamonds, you will have to change the filter(cut == &amp;quot;Ideal&amp;quot;) and hopefully you wont forget the plot title.</description>
     </item>
     
     <item>

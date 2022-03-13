@@ -41,11 +41,11 @@
       
       
   <meta itemprop="name" content="02: Research compendia with rrtools">
-<meta itemprop="description" content="Of course, you can always create a file structure that suit you and your work by hand. But here we are going to try rrtools to create a “research compendium” and combine it with the things we learned on the git and GitHub section.
-The first thing you need to know is that an rrtools compendium will be at the same time an R package. If you don’t have experience with R packages, don’t worry!">
+<meta itemprop="description" content="Of course, you can always create a file structure that suit you and your work by hand. But here we are going to try rrtools to create a &ldquo;research compendium&rdquo; and combine it with the things we learned on the git and GitHub section.
+The first thing you need to know is that an rrtools compendium will be at the same time an R package. If you don&rsquo;t have experience with R packages, don&rsquo;t worry!">
 <meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1423">
+<meta itemprop="wordCount" content="1417">
 
 
 
@@ -148,83 +148,130 @@ The first thing you need to know is that an rrtools compendium will be at the sa
         
       </header>
       <section class="post-body pt5 pb4">
-        
-<script src="https://eliocamp.github.io/reproducibility-with-r/materials/day2/02-rrtools/index_files/header-attrs/header-attrs.js"></script>
-
-
-<p>Of course, you can always create a file structure that suit you and your work by hand.
-But here we are going to try rrtools to create a “research compendium” and combine it with the things we learned on the git and GitHub section.</p>
+        <p>Of course, you can always create a file structure that suit you and your work by hand.
+But here we are going to try rrtools to create a &ldquo;research compendium&rdquo; and combine it with the things we learned on the git and GitHub section.</p>
 <p>The first thing you need to know is that an rrtools compendium will be at the same time an R package.
-If you don’t have experience with R packages, don’t worry!
+If you don&rsquo;t have experience with R packages, don&rsquo;t worry!
 This is why:</p>
 <ul>
 <li>An R package is in practice a folder with some special text files and a few sub-folders.</li>
-<li>You won’t need to learn much about packages to use rtools and take advantage of it.</li>
-<li>Here we’ll cover the necessary bits to work inside a compendium.</li>
-<li>But if you want to learn more about R packages there are wonderful resources, for example: <a href="https://r-pkgs.org/">here</a>.</li>
+<li>You won&rsquo;t need to learn much about packages to use rtools and take advantage of it.</li>
+<li>Here we&rsquo;ll cover the necessary bits to work inside a compendium.</li>
+<li>But if you want to learn more about R packages there are wonderful resources, for example: 
+<a href="https://r-pkgs.org/" target="_blank" rel="noopener">here</a>.</li>
 </ul>
-<p>The following instructions are adapted from the <a href="https://github.com/benmarwick/rrtools">rrtools GitHub repository</a>.</p>
-<div id="create-a-git-managed-directory-linked-to-an-online-repository" class="section level3">
-<h3>0. Create a Git-managed directory linked to an online repository</h3>
+<p>The following instructions are adapted from the 
+<a href="https://github.com/benmarwick/rrtools" target="_blank" rel="noopener">rrtools GitHub repository</a>.</p>
+
+
+
+
+<h3 id="0-create-a-git-managed-directory-linked-to-an-online-repository">0. Create a Git-managed directory linked to an online repository
+  <a href="#0-create-a-git-managed-directory-linked-to-an-online-repository"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
 <p>It is possible to use rrtools without Git, but usually we want our research compendium to be managed by the version control software Git.</p>
-<div class="instructions">
-<ol style="list-style-type: decimal">
-<li>Create an online repository.</li>
-<li>In RStudio, start a new Project:</li>
-</ol>
+<div class = instructions> 
+1.  Create an online repository.
+2.  In RStudio, start a new Project:
 <ul>
-<li><code>File &gt; New Project &gt; Version Control &gt; Git</code>. In the “repository URL” paste the URL of your new GitHub repository. It will be something like this <a href="https://github.com/paocorrales/PaperCompedium.git" class="uri">https://github.com/paocorrales/PaperCompedium.git</a>.</li>
-<li>Make sure you kn ow where you are creating the project.</li>
-<li>Choose “Open in new session”.</li>
-<li>And Click on “Create Project”.</li>
+<li><code>File &gt; New Project &gt; Version Control &gt; Git</code>. In the &ldquo;repository URL&rdquo; paste the URL of your new GitHub repository. It will be something like this <a href="https://github.com/paocorrales/PaperCompedium.git">https://github.com/paocorrales/PaperCompedium.git</a>.</li>
+<li>Make sure you know where you are creating the project.</li>
+<li>Choose &ldquo;Open in new session&rdquo;.</li>
+<li>And Click on &ldquo;Create Project&rdquo;.</li>
 </ul>
 </div>
 <p>The name of the repository and the project should be the same.
 Keep in mind that it will also be the package name and has to follow some rules for everything to work, it must:</p>
 <ul>
-<li>contain only ASCII letters, numbers, and ‘.’</li>
+<li>contain only ASCII letters, numbers, and &lsquo;.&rsquo;</li>
 <li>have at least two characters</li>
 <li>start with a letter (not a number)</li>
-<li>not end with ‘.’</li>
+<li>not end with &lsquo;.&rsquo;</li>
 </ul>
-</div>
-<div id="rrtoolsuse_compendiumpkgname" class="section level3">
-<h3>1. <code>rrtools::use_compendium("pkgname")</code></h3>
-<p>This uses <code>usethis::create_package()</code> to create a basic R package in the <code>pkgname</code> directory (in this case “PaperCompendium”), and then the project.</p>
-<div class="instructions">
-<p>Create the compendium</p>
-<ol style="list-style-type: decimal">
-<li><p>Run <code>rrtools::use_compendium("path/to/pkgname")</code> (you use the path to <code>pkgname</code> in your system)</p></li>
-<li><p>Edit the <code>DESCRIPTION</code> file (located in your <code>pkgname</code> directory) to include accurate metadata, e.g. your <a href="https://orcid.org/">ORCID</a>.
-This is one of the files that makes a regular folder an “R package”.</p></li>
-<li><p>Periodically update the <code>Imports:</code> section of the <code>DESCRIPTION</code> file with the names of packages used in the code we write in the .Rmd document(s) by running <code>rrtools::add_dependencies_to_description()</code></p></li>
+
+
+
+
+<h3 id="1-rrtoolsuse_compendiumpkgname">1. <code>rrtools::use_compendium(&quot;pkgname&quot;)</code>
+  <a href="#1-rrtoolsuse_compendiumpkgname"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>This uses <code>usethis::create_package()</code> to create a basic R package in the <code>pkgname</code> directory (in this case &ldquo;PaperCompendium&rdquo;), and then the project.</p>
+<div class = instructions> 
+Create the compendium
+<ol>
+<li>
+<p>Run <code>rrtools::use_compendium(&quot;path/to/pkgname&quot;)</code> (you use the path to <code>pkgname</code> in your system)</p>
+</li>
+<li>
+<p>Edit the <code>DESCRIPTION</code> file (located in your <code>pkgname</code> directory) to include accurate metadata, e.g. your 
+<a href="https://orcid.org/" target="_blank" rel="noopener">ORCID</a>.
+This is one of the files that makes a regular folder an &ldquo;R package&rdquo;.</p>
+</li>
+<li>
+<p>Periodically update the <code>Imports:</code> section of the <code>DESCRIPTION</code> file with the names of packages used in the code we write in the .Rmd document(s) by running <code>rrtools::add_dependencies_to_description()</code></p>
+</li>
 </ol>
 </div>
-</div>
-<div id="usethisuse_mit_licensecopyright_holder-my-name" class="section level3">
-<h3>2. <code>usethis::use_mit_license(copyright_holder = "My Name")</code></h3>
-<p>This adds a reference to the MIT license in the <a href="DESCRIPTION">DESCRIPTION</a> file and generates a <a href="LICENSE">LICENSE</a> file listing the name provided as the copyright holder.</p>
+
+
+
+
+<h3 id="2-usethisuse_mit_licensecopyright_holder--my-name">2. <code>usethis::use_mit_license(copyright_holder = &quot;My Name&quot;)</code>
+  <a href="#2-usethisuse_mit_licensecopyright_holder--my-name"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>This adds a reference to the MIT license in the 
+<a href="DESCRIPTION">DESCRIPTION</a> file and generates a 
+<a href="LICENSE">LICENSE</a> file listing the name provided as the copyright holder.</p>
 <p>To use a different license, replace this line with any of the licenses mentioned here: <code>?usethis::use_mit_license()</code></p>
-<div class="notes">
-<p>You can read more about licences <a href="https://r-pkgs.org/license.html">here</a>.</p>
+<div class = notes> 
+You can read more about licences [here](https://r-pkgs.org/license.html).
 </div>
-</div>
-<div id="rrtoolsuse_readme_rmd" class="section level3">
-<h3>3. <code>rrtools::use_readme_rmd()</code></h3>
-<p>This generates <a href="README.Rmd">README.Rmd</a> and renders it to <a href="README.md">README.md</a>, ready to display on the repository home page on GitHub.</p>
+
+
+
+
+<h3 id="3-rrtoolsuse_readme_rmd">3. <code>rrtools::use_readme_rmd()</code>
+  <a href="#3-rrtoolsuse_readme_rmd"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>This generates 
+<a href="README.Rmd">README.Rmd</a> and renders it to 
+<a href="README.md">README.md</a>, ready to display on the repository home page on GitHub.</p>
 <p>It contains:</p>
 <ul>
-<li>A template citation to show others how to cite your project. Edit this to include the correct title and <a href="https://doi.org">DOI</a> when it get published!</li>
+<li>A template citation to show others how to cite your project. Edit this to include the correct title and 
+<a href="https://doi.org" target="_blank" rel="noopener">DOI</a> when it get published!</li>
 <li>License information for the text, figures, code and data in your compendium.</li>
 </ul>
 <p>This function also adds:</p>
 <ul>
-<li>Two other markdown files: a code of conduct for users <a href="CONDUCT.md">CONDUCT.md</a>, and basic instructions for people who want to contribute to your project <a href="CONTRIBUTING.md">CONTRIBUTING.md</a>, including for first-timers to git and GitHub.</li>
-<li>A <code>runtime.txt</code> that makes <a href="https://mybinder.org/">Binder</a> work, if your compendium is hosted online (e.g. GitHub, Zenodo, Figshare, Dataverse, etc.)</li>
+<li>Two other markdown files: a code of conduct for users 
+<a href="CONDUCT.md">CONDUCT.md</a>, and basic instructions for people who want to contribute to your project 
+<a href="CONTRIBUTING.md">CONTRIBUTING.md</a>, including for first-timers to git and GitHub.</li>
+<li>A <code>runtime.txt</code> that makes 
+<a href="https://mybinder.org/" target="_blank" rel="noopener">Binder</a> work, if your compendium is hosted online (e.g. GitHub, Zenodo, Figshare, Dataverse, etc.)</li>
 </ul>
-</div>
-<div id="rrtoolsuse_analysis" class="section level3">
-<h3>4. <code>rrtools::use_analysis()</code></h3>
+
+
+
+
+<h3 id="4-rrtoolsuse_analysis">4. <code>rrtools::use_analysis()</code>
+  <a href="#4-rrtoolsuse_analysis"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
 <p>This function has three <code>location =</code> options: <code>top_level</code> to create a top-level <code>analysis/</code> directory and a few more options more associated with R packages.
 The default options is a top-level <code>analysis/</code>.</p>
 <p>This folder will have the following structure:</p>
@@ -244,87 +291,120 @@ The default options is a top-level <code>analysis/</code>.</p>
     ├── journal-of-archaeological-science.csl
     |                   # this sets the style of citations &amp; reference list
     ├── template.docx   # used to style the output of the paper.Rmd
-    └── template.Rmd</code></pre>
+    └── template.Rmd
+</code></pre>
 <ul>
-<li><p>the <code>paper.Rmd</code> is ready to write in and render with bookdown. It includes:</p>
+<li>
+<p>the <code>paper.Rmd</code> is ready to write in and render with bookdown. It includes:</p>
 <ul>
 <li>a YAML header that identifies the <code>references.bib</code> file and the supplied <code>csl</code> file (to style the reference list).</li>
 <li>a colophon that adds some git commit details to the end of the document. This means that the output file (HTML/PDF/Word) is always traceable to a specific state of the code.</li>
-</ul></li>
-<li><p>the <code>references.bib</code> file has just one item to demonstrate the format. It is ready to insert more reference details or be replaced it with a .bib file created using Reference Manager tools like Zotero.</p></li>
-<li><p>you can replace the supplied <code>csl</code> file with a different citation style from <a href="https://github.com/citation-style-language/" class="uri">https://github.com/citation-style-language/</a></p></li>
-<li><p>we recommend using the <a href="https://www.rstudio.com/products/rstudio/download/preview/">RStudio 1.4</a> or higher to efficiently insert citations from your <a href="https://www.zotero.org/">Zotero</a> library while writing in an Rmd file (see <a href="https://blog.rstudio.com/2020/11/09/rstudio-1-4-preview-citations/">here</a> for detailed setup and use information to connect your RStudio to your Zotero).</p></li>
 </ul>
-<p>Remember that the <code>Imports:</code> field in the <code>DESCRIPTION</code> file must include the names of all packages used in analysis documents (e.g. <code>paper.Rmd</code>).
+</li>
+<li>
+<p>the <code>references.bib</code> file has just one item to demonstrate the format. It is ready to insert more reference details or be replaced it with a .bib file created using Reference Manager tools like Zotero.</p>
+</li>
+<li>
+<p>you can replace the supplied <code>csl</code> file with a different citation style from <a href="https://github.com/citation-style-language/">https://github.com/citation-style-language/</a></p>
+</li>
+<li>
+<p>we recommend using the 
+<a href="https://www.rstudio.com/products/rstudio/download/preview/" target="_blank" rel="noopener">RStudio 1.4</a> or higher to efficiently insert citations from your 
+<a href="https://www.zotero.org/" target="_blank" rel="noopener">Zotero</a> library while writing in an Rmd file (see 
+<a href="https://blog.rstudio.com/2020/11/09/rstudio-1-4-preview-citations/" target="_blank" rel="noopener">here</a> for detailed setup and use information to connect your RStudio to your Zotero).</p>
+</li>
+</ul>
+<p>Remember that the <code>Imports:</code> field in the <code>DESCRIPTION</code> file must include the names of all packages used in analysis documents (e.g. <code>paper.Rmd</code>).
 rrtools have a helper function <code>rrtools::add_dependencies_to_description()</code> that will scan the Rmd file, identify libraries used in there, and add them to the <code>DESCRIPTION</code> file.</p>
 <p>When you create this file structure using this function you can choose whether you want to add your data to the repository.
 If <code>data_in_git = FALSE</code> you will exclude files in the <code>data/</code> directory from being tracked by git and prevent them from appearing on GitHub.
 You should set <code>data_in_git = FALSE</code> if your data files are large (&gt;100 mb is the limit for GitHub) or you do not want to make the data files publicly accessible on GitHub.
 More about sharing data in the future.</p>
-<div class="notes">
-<p>You can also use a graphic interface to create the compendium using the “rrtools Assistant” addin.
-It includes datailed instructions and the code associated with each step.</p>
-<div class="figure">
-<img src="images/rrtools1.png" alt="" />
-<p class="caption">rrtools Assistant interface showing the Overview tab.</p>
+<div class = notes> 
+You can also use a graphic interface to create the compendium using the "rrtools Assistant" addin.
+It includes datailed instructions and the code associated with each step.
+<p><img src="images/rrtools1.png" alt="rrtools Assistant interface showing the Overview tab."></p>
 </div>
-</div>
-</div>
-<div id="working-with-your-own-code" class="section level3">
-<h3>Working with your own code</h3>
+
+
+
+
+<h3 id="working-with-your-own-code">Working with your own code
+  <a href="#working-with-your-own-code"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
 <p>To load your custom code in the <code>paper.Rmd</code>, you have a few options.
-You can write all your R code in chunks in the Rmd, that’s the simplest method.
-Or you can write R code in script files in <code>/R</code>, and include <code>devtools::load_all(".")</code> at the top of your <code>paper.Rmd</code>.
+You can write all your R code in chunks in the Rmd, that&rsquo;s the simplest method.
+Or you can write R code in script files in <code>/R</code>, and include <code>devtools::load_all(&quot;.&quot;)</code> at the top of your <code>paper.Rmd</code>.
 Or you can write functions in <code>/R</code> and use <code>library(pkgname)</code> at the top of your <code>paper.Rmd</code>, or omit <code>library</code> and preface each function call with <code>pkgname::</code>.
 Up to you to choose whatever seems most natural to you.</p>
-<div id="documenting-code" class="section level4">
-<h4>Documenting code</h4>
+
+
+
+
+<h4 id="documenting-code">Documenting code
+  <a href="#documenting-code"></a>
+</h4>
 <p>Whether you choose to write code in chunks, script files or as functions, it important to your future self and others to document your code.
 If you are note use to do it, the easiest way to start is by commenting everything without much thinking.
 With time you can decide if you need commenting every single line or maybe only the key decision you made when you where writing the code.</p>
 <p>If you decide to work with functions there are a few tools that can help you to document it and create the help view (remember, a compendium is also a package and we can take advantage of that!).
-Each function will live in a .R file (there are some exceptions but we won’t worry about that at this point) and will have a heather with the name, descriptions and more information.
+Each function will live in a .R file (there are some exceptions but we won&rsquo;t worry about that at this point) and will have a heather with the name, descriptions and more information.
 You can use simple <code>#</code> to comment or you can use <em>roxigen2</em> comments using <code>#'</code>.
 The later will allows you to generate the package documentation.</p>
-<p>The following instructions to document a function are adapted from the <a href="https://r-pkgs.org/man.html">R packages book</a>.</p>
-<div class="instructions">
+<p>The following instructions to document a function are adapted from the 
+<a href="https://r-pkgs.org/man.html" target="_blank" rel="noopener">R packages book</a>.</p>
+<div class = instructions>  
 <p>The documentation workflow</p>
-<ol style="list-style-type: decimal">
-<li><p>Create a dummy function that add to numbers and save it to <code>add-numbers.R</code>.</p></li>
-<li><p>Add roxygen comments to your function:</p></li>
+<ol>
+<li>
+<p>Create a dummy function that add to numbers and save it to <code>add-numbers.R</code>.</p>
+</li>
+<li>
+<p>Add roxygen comments to your function:</p>
+</li>
 </ol>
-<pre><code>#&#39; Add together two numbers
-#&#39; 
-#&#39; @param x A number.
-#&#39; @param y A number.
-#&#39; @return The sum of \code{x} and \code{y}.
-#&#39; @examples
-#&#39; add(1, 1)
-#&#39; add(10, 1)
-#&#39; @export
+<pre><code>#' Add together two numbers
+#' 
+#' @param x A number.
+#' @param y A number.
+#' @return The sum of \code{x} and \code{y}.
+#' @examples
+#' add(1, 1)
+#' add(10, 1)
+#' @export
 add &lt;- function(x, y) {
   x + y
-}</code></pre>
-<ul>
+}
+</code></pre><ul>
 <li>The first line is the title</li>
 <li>You can also add a description after the title</li>
 <li><code>@params</code> are the function arguments, in this case <code>x</code> and <code>y</code>.</li>
 <li><code>@examples</code> start the examples sections, R will run this code when the package is build.</li>
 <li>After <code>@export</code> the function code starts.</li>
 </ul>
-<ol start="3" style="list-style-type: decimal">
-<li><p>Run devtools::document() (or press Ctrl/Cmd + Shift + D in RStudio) to convert roxygen comments to .Rd files. (devtools::document() calls roxygen2::roxygenise() to do the hard work.)</p></li>
-<li><p>Preview documentation with ?.</p></li>
-<li><p>Rinse and repeat until the documentation looks the way you want.</p></li>
+<ol start="3">
+<li>
+<p>Run devtools::document() (or press Ctrl/Cmd + Shift + D in RStudio) to convert roxygen comments to .Rd files. (devtools::document() calls roxygen2::roxygenise() to do the hard work.)</p>
+</li>
+<li>
+<p>Preview documentation with ?.</p>
+</li>
+<li>
+<p>Rinse and repeat until the documentation looks the way you want.</p>
+</li>
 </ol>
-</div>
-</div>
 </div>
 
       </section>
       <footer class="post-footer">
         <div class="post-pagination dt w-100 mt4 mb2">
   
+  
+    <a class="prev dtc pr2 tl v-top fw6"
+    href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/01-git/">&larr; 01: Getting the most of git</a>
   
   
   
@@ -403,6 +483,9 @@ add &lt;- function(x, y) {
             <summary class="active" hugo-nav="/reproducibility-with-r/materials/day2/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/">Day 2</a></summary>
             
               
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day2/01-git/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/01-git/">01: Getting the most of git</a></li>
+            
+              
               <li class="active" hugo-nav="/reproducibility-with-r/materials/day2/02-rrtools/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/02-rrtools/">02: Research compendia with rrtools</a></li>
             
               
@@ -430,15 +513,15 @@ add &lt;- function(x, y) {
         
           
           
-          <li class="" hugo-nav="/reproducibility-with-r/materials/extras/">
-            <a href="https://eliocamp.github.io/reproducibility-with-r/materials/extras/">Extras</a></li>
+          <li class="" hugo-nav="/reproducibility-with-r/materials/reprohack/">
+            <a href="https://eliocamp.github.io/reproducibility-with-r/materials/reprohack/">Mini Reprohack</a></li>
           
           </li>
         
           
           
-          <li class="" hugo-nav="/reproducibility-with-r/materials/reprohack/">
-            <a href="https://eliocamp.github.io/reproducibility-with-r/materials/reprohack/">Mini Reprohack</a></li>
+          <li class="" hugo-nav="/reproducibility-with-r/materials/extras/">
+            <a href="https://eliocamp.github.io/reproducibility-with-r/materials/extras/">Extras</a></li>
           
           </li>
         

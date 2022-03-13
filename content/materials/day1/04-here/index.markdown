@@ -1,0 +1,157 @@
+---
+title: "04: here are the portable paths"
+weight: 4
+show_post_date: false
+publishDate: 2022-02-19
+excerpt: ""
+---
+
+If you use RStudio Projects consistently, you can be sure that your working directory is always the root of the project unless you actively change it.
+Almost.
+There are two situations in which this assumption can be broken and that can lead to errors or, even worse, surprising results.
+
+## Root directory during knit
+
+One issue is that when RMarkdown files are knitted, the working directory in which the code is executed is the location of the .Rmd file, which is not always the root of the project.
+
+To witness this, we prepared a demo project.
+
+```r
+penguins <- read.csv("data/penguins.csv")
+```
+
+<div class = activity> 
+Get the demo project
+
+1.   Download the [demo project](/reproducibility-with-r/demo_project.zip) and extract it anywhere in your computer.
+1.  Open the project (double click on `demo_project.Rproj`), open `report-not_here.Rmd` and try to knit it.
+</div>
+
+
+
+You'll notice that R fails to render the file with an error that reads `Line 9 Error in file(file, "rt") : cannot open the connection`, indicating that there was an issue reading the file in line 9.
+
+However, line 9 seems perfectly sensible:
+
+``` r
+penguins <- read.csv("data/penguins.csv")
+```
+
+You can test that the working directory is the project root by running `getwd()` in the console:
+
+
+```r
+getwd()
+```
+
+```
+## [1] "/home/pao/RStuff/reproducibility-with-r/static/demo_project"
+```
+
+And also that `penguins.csv` is indeed located un the `data` folder by running
+
+
+```r
+file.exists("data/penguins.csv")
+```
+
+```
+## [1] TRUE
+```
+
+You can even try to read the data in the console
+
+
+```r
+head(read.csv("data/penguins.csv"))
+```
+
+```
+##   species    island bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
+## 1  Adelie Torgersen           39.1          18.7               181        3750
+## 2  Adelie Torgersen           39.5          17.4               186        3800
+## 3  Adelie Torgersen           40.3          18.0               195        3250
+## 4  Adelie Torgersen             NA            NA                NA          NA
+## 5  Adelie Torgersen           36.7          19.3               193        3450
+## 6  Adelie Torgersen           39.3          20.6               190        3650
+##      sex year
+## 1   male 2007
+## 2 female 2007
+## 3 female 2007
+## 4   <NA> 2007
+## 5 female 2007
+## 6   male 2007
+```
+
+
+
+However, if you try to run the first chunk by setting the cursor over line 9 and pressing Ctrl + Enter, you'll get the same error:
+
+
+```r
+penguins <- read.csv("data/penguins.csv")
+```
+
+```
+## Error in file(file, "rt"): cannot open the connection
+```
+
+This is because when knitting, the working directory is set to the directory where the .Rmd file is located.
+For consistency, RStudio runs code inside chunks with the same setup.
+This inconsistency between the working directory of your session and that of the knitting process can be a source of a lot of headaches.
+
+A possible solution would be to use absolute paths, so the current working directory is irrelevant.
+But we saw that using absolute paths leads to code that runs only in one machine.
+
+What the **here** package does is create absolute paths that work on the machine running the code from paths relative to the root directory.
+The way you use the package is to always use paths relative to the root project directory but wrap them in the `here::here()` function.
+
+<div class = activity> 
+Fix one error
+
+1.   Change line 9 in `report.Rmd` to
+
+    ``` r
+    penguins <- read.csv(here::here("data/penguins.csv"))
+    ```
+
+1.  Try to knitr again.
+</div>
+
+
+## Defensive programming with here
+
+The here package works every time as long as the current working directory is a subdirectory of the project root. 
+But it can be brittle otherwise. 
+
+
+<div class = activity> 
+Find a new error
+
+1.  Close demo_project.
+
+1. Open `report.Rmd` in a new RStudio window. Make sure that you are **not** on the demo_project project. 
+
+1.  Try to run line 9.
+
+1. Create a new chunk with the code `here::here("data/penguins.csv")` and run it. Which absolute paths does it return?
+</div>
+
+
+You'll notice that if you break the expectation that you are working inside the correct project, `here()` will return essentially nonsense. 
+A more robust approach is to define the working directory by asserting the relative paths that leads to the current file. 
+
+<div class = activity>  
+
+Fix the new error
+
+1.  Add a new chunk at the beginning of the file that reads `here::i_am("analysis/report.Rmd")`.
+
+1.  Run this new chunk and the one after. 
+
+</div>
+
+
+With `here::i_am("analysis/report.Rmd")`, you are declaring the location of the current script relative to the project root.
+This will set the project root that is consistent with this location and emit a message. 
+Importantly, it will fail if the declared location is not found in the working directory or any of the parent directories. 

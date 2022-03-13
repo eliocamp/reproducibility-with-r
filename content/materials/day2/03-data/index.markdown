@@ -44,26 +44,26 @@ If you have many moderately big files, you might be reaching [GitHub's soft limi
 
 Other services impose other limits but whatever the limit, bear in mind that large repositories can perform poorly.
 
-::: notes
+<div class = notes> 
 Repository size and version control
 
 When using version control, remember that the repository stores the information of every past commit.
 This means that the size of the complete repository can be much larger than the size of the project at a particular point in time.
 Since code is stored in plain text files, this overhead is not big, but if you have data in your repository every change to the data files will be remembered and can severely increase your repository size.
-:::
+</div>
 
 ### Data ouside the repository
 
 If your data is not so tiny and exceeds the limits of your particular repository provider, you will need to look for an external service to host it and how to provide access to it.
 
-::: notes
+<div class = notes> 
 Public data
 
 Sometimes an research project might use publicly-accessible data, perhaps provided by a public API, or a public repository.
 In that case, you might not need to host the data yourself and instead rely on that service.
 While this has the advantage that other people can handle all the complexities of data storage and delivery, the disadvantage is that you don't control it.
 The service might decide to update the data (perhaps they found an error) and you might then lose access to the version of the data that produced a certain result.
-:::
+</div>
 
 A survey of every hosting provider would be impossible.
 Some popular and reputable services are [figshare](https://figshare.com/), the [Open Science Framework](https://osf.io/) and [Mendeley Data](https://data.mendeley.com/).
@@ -77,47 +77,50 @@ You just go to the site, upload the file and get a link.
 The main difference is that you also need to specify the metadata and you get an unique DOI that represents your data.
 This allows you or anyone else to cite these data and also allows you to upload multiple versions of the same dataset and refer to the proper one.
 
-::: notes
+<div class = notes> 
 Zeonodo Sandbox
 
 Data uploaded to Zeonodo cannot be deleted.
 Because we are going to upload test data, we are going to use [Zenodo Sandbox](https://sandbox.zenodo.org/).
-:::
+</div>
 
 ### Upload
 
 Go do sandbox.zenodo.org and log in (create an account or use your GitHub account if necessary).
 To upload a dataset you need to click on Upload.
 
-(ref:zenodo-upload-1-cap) Zeonodo upload. As you can see, datasets are permanent and this user had already uploaded one test dataset in preparation for writing this.
 
-(ref:zenodo-upload-1-alt) Screenshot of Zenodo's page after clicking Upload on the main page. It shows a list with one entry, called "PEnguins" and a green button titled "New Upload".
 
-```{r zenodo-upload-1, echo=FALSE, fig.alt="(ref:zenodo-upload-1-alt)", fig.cap="(ref:zenodo-upload-1-cap)"}
-knitr::include_graphics("images/zenodo-upload_1.png")
-```
+
+
+<div class="figure">
+<img src="images/zenodo-upload_1.png" alt="Screenshot of Zenodo’s page after clicking Upload on the main page. It shows a list with one entry, called “PEnguins” and a green button titled “New Upload.”"  />
+<p class="caption">Figure 1: Zeonodo upload. As you can see, datasets are permanent and this user had already uploaded one test dataset in preparation for writing this.</p>
+</div>
 
 You will see a list of your previously-uploaded datasets which in your case might be empty.
 Now you need to click on "New Upload".
 
-(ref:zenodo-upload-2-cap) Zeonodo upload section.
 
-(ref:zenodo-upload-2-alt) Screenshot of Zenodo's New Upload page. It shows a big area where to drop file with a button to Chose files.
 
-```{r zenodo-upload-2, echo=FALSE, fig.alt="(ref:zenodo-upload-2-alt)", fig.cap="(ref:zenodo-upload-2-cap)"}
-knitr::include_graphics("images/zenodo-upload_2.png")
-```
+
+
+<div class="figure">
+<img src="images/zenodo-upload_2.png" alt="Screenshot of Zenodo’s New Upload page. It shows a big area where to drop file with a button to Chose files."  />
+<p class="caption">Figure 2: Zeonodo upload section.</p>
+</div>
 
 In this new section you can drag and drop your files on the big area or click on "Choose files" to open a file chooser.
 A single dataset can have multiple files.
 
-(ref:zenodo-upload-3-cap) Zeonodo upload section.
 
-(ref:zenodo-upload-3-alt) Screenshot of Zenodo's New Upload page scrolled down. It shows a list of options for metadata.
 
-```{r zenodo-upload-3, echo=FALSE, fig.alt="(ref:zenodo-upload-3-alt)", fig.cap="(ref:zenodo-upload-3-cap)"}
-knitr::include_graphics("images/zenodo-upload_3.png")
-```
+
+
+<div class="figure">
+<img src="images/zenodo-upload_3.png" alt="Screenshot of Zenodo’s New Upload page scrolled down. It shows a list of options for metadata."  />
+<p class="caption">Figure 3: Zeonodo upload section.</p>
+</div>
 
 Zeonodo supports multiple types of records.
 Beside datasets, you could create a DOI for your entire publication, or for individual images.
@@ -134,13 +137,14 @@ Don't stress yourself too much about the correctness of each field, you can alwa
 
 The last step is to click the "Publish" button at the bottom of the page and your dataset will be published.
 
-(ref:zenodo-upload-4-cap) Zeonodo record viewer
 
-(ref:zenodo-upload-4-alt) Screenshot of Zenodo's record viewer. It shows a record titled "Test Upload 2", a preview of the dataset, an "Edit" button, a "New Version" button, and information on the publication date, DOI and Licence.
 
-```{r zenodo-upload-4, echo=FALSE, fig.alt="(ref:zenodo-upload-4-alt)", fig.cap="(ref:zenodo-upload-3-cap)"}
-knitr::include_graphics("images/zenodo-upload_4.png")
-```
+
+
+<div class="figure">
+<img src="images/zenodo-upload_4.png" alt="Screenshot of Zenodo’s record viewer. It shows a record titled “Test Upload 2,” a preview of the dataset, an “Edit” button, a “New Version” button, and information on the publication date, DOI and Licence."  />
+<p class="caption">Figure 4: Zeonodo upload section.</p>
+</div>
 
 Once the dataset is uploaded you will be able to see the result.
 You can see [this](https://sandbox.zenodo.org/record/1029654) example.
@@ -151,13 +155,13 @@ So you don't need to worry about typos and other errors.
 The New Version button allows you to upload a whole new version of the dataset in case you find an error in your dataset and want to correct it.
 Each version will have its own DOI and stable URL so you can cite and download the specific version used in each project.
 
-::: activity
+<div class = activity> 
 Upload your data
 
 Follow all the steps detailed previously to upload penguins.csv to a Zenodo record. 
 (We are testing stuff, so remember to use sandbox.zenodo.org).
 
-::::
+</div>:
 
 ### Download
 
@@ -167,13 +171,14 @@ This involves minimal effort but it introduces error-prone manual steps and thus
 
 If you go to a zenodo record, below the file previewyou will see a box with the list of files in it.
 
-(ref:file-list-cap) Lis of files in the example database.
 
-(ref:file-list-alt) Screenshot of Zenodo's list of files in the example database. It shows one file called penguins.csv that weights 15.2kB. To the right there's a "Preview" button and a "download" button and below it an md5 checksum.
 
-```{r file-list, echo=FALSE, fig.alt="(ref:file-list-alt)", fig.cap="(ref:file-list-cap)"}
-knitr::include_graphics("images/file_list.png")
-```
+
+
+<div class="figure">
+<img src="images/file_list.png" alt="Screenshot of Zenodo’s list of files in the example database. It shows one file called penguins.csv that weights 15.2kB. To the right there’s a “Preview” button and a “download” button and below it an md5 checksum."  />
+<p class="caption">Figure 5: Lis of files in the example database.</p>
+</div>
 
 The nice bit here is the "Download" button. 
 This is the button you should point people to. 
@@ -181,7 +186,8 @@ This is the button you should point people to.
 To make reproducibility much easier, you could write code that programmatically download the datasets where it should be.
 For example, you could create a `download_penguins()` function
 
-```{r}
+
+```r
 download_penguins <- function() {
   file <- here::here("data/penguins.csv")
   url <- "https://sandbox.zenodo.org/record/1029654/files/penguins.csv?download=1"
@@ -196,7 +202,8 @@ Now anyone wanting to reproduce the project can call `download_penguins()` from 
 An even seamless approach could be create a function that returns the dataset, downloading the relevant files if needed.
 A minimal example would be something like this
 
-```{r}
+
+```r
 dataset_penguins <- function() {
   file <- here::here("data/penguins.csv")
   if (!file.exists(file)) {
@@ -216,19 +223,19 @@ With this system, the RMarkdown file will be self-sufficient and download the da
 Neither future you nor any future reproducibility enthusiast needs to worry about downloading data before running the code.
 
 
-::: activity
+<div class = activity> 
 Improve report.Rmd
 
 1. Modify report.Rmd in the [demo project](http://localhost:4321/reproducibility-with-r/demo_project.zip) to download the data automatically. 
 
-:::
+</div>
 
 
 
-::: notes
+<div class = notes> 
 Manage Zenodo programmatically
 
 You can use the [**zen4R**](https://github.com/eblondel/zen4R) package to automate all these steps. 
 This will allow you to create, update and download datasets using Zenodo's API.
-:::
+</div>
   

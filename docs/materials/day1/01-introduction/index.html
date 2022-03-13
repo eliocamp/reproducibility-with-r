@@ -41,11 +41,11 @@
       
       
   <meta itemprop="name" content="01: What is repdoducibilty anyway?">
-<meta itemprop="description" content="This workshop will introduce some useful tools to help you write code that can be run anywhere with consistent results. We will focus on the practical aspects of reproducibility, but it’s still worth it to get some sense of what is reproducibility and what’s its aim.
-What reproducibility is and what it is not We will use “reproducibility” to talk about results that can be obtained by someone else given the same data and code.">
+<meta itemprop="description" content="This workshop will introduce some useful tools to help you write code that can be run anywhere with consistent results. We will focus on the practical aspects of reproducibility, but it&rsquo;s still worth it to get some sense of what is reproducibility and what&rsquo;s its aim.
+What reproducibility is and what it is not     We will use &ldquo;reproducibility&rdquo; to talk about results that can be obtained by someone else given the same data and code.">
 <meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="811">
+<meta itemprop="wordCount" content="799">
 
 
 
@@ -148,46 +148,56 @@ What reproducibility is and what it is not We will use “reproducibility” to 
         
       </header>
       <section class="post-body pt5 pb4">
-        
-<script src="https://eliocamp.github.io/reproducibility-with-r/materials/day1/01-introduction/index_files/header-attrs/header-attrs.js"></script>
+        <p>This workshop will introduce some useful tools to help you write code that can be run anywhere with consistent results.
+We will focus on the practical aspects of reproducibility, but it&rsquo;s still worth it to get some sense of what is reproducibility and what&rsquo;s its aim.</p>
 
 
-<p>This workshop will introduce some useful tools to help you write code that can be run anywhere with consistent results.
-We will focus on the practical aspects of reproducibility, but it’s still worth it to get some sense of what is reproducibility and what’s its aim.</p>
-<div id="what-reproducibility-is-and-what-it-is-not" class="section level2">
-<h2>What reproducibility is and what it is not</h2>
-<p>We will use “reproducibility” to talk about results that can be obtained by someone else given the same data and code.
+
+
+<h2 id="what-reproducibility-is-and-what-it-is-not">What reproducibility is and what it is not
+  <a href="#what-reproducibility-is-and-what-it-is-not"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>We will use &ldquo;reproducibility&rdquo; to talk about results that can be obtained by someone else given the same data and code.
 This is a technical problem.
-That a result is reproducible doesn’t mean that the result is scientifically valid, statistically sound or even that it’s computationally correct.
+That a result is reproducible doesn&rsquo;t mean that the result is scientifically valid, statistically sound or even that it&rsquo;s computationally correct.
 Perfectly reproducible bugs are still bugs!</p>
 <p>There are other related concepts, such as replicability, robustness and generalisability which relate to being able to reach the same results when changing data and/or methods.
 These are outside the scope of this workshop.</p>
-<div class="figure">
-<img src="https://the-turing-way.netlify.app/_images/reproducible-matrix.jpg" alt="" />
-<p class="caption">Dimensions of reproducible research (From <a href="https://github.com/alan-turing-institute/the-turing-way">The Turing Way Community</a> under <a href="https://creativecommons.org/licenses/by/4.0/">cc-by licence</a>)</p>
-</div>
+<p><img src="https://the-turing-way.netlify.app/_images/reproducible-matrix.jpg" alt="Dimensions of reproducible research (From The Turing Way Community under cc-by licence)"></p>
 <p>In summary, for a research finding to be reproducible both data and methods should be available and applying the described methods on the data lead to the same results.</p>
-<div class="notes">
-<p>Methods vs. code</p>
-<p>In theory, method availability doesn’t necessarily mean code availability, but in practice it’s almost impossible to describe methods in such a way that enables full reproducibilty.
-As Ben Marwick <a href="https://theconversation.com/how-computers-broke-science-and-what-we-can-do-to-fix-it-49938">wrote</a>:</p>
+<div class = notes> 
+Methods vs. code
+<p>In theory, method availability doesn&rsquo;t necessarily mean code availability, but in practice it&rsquo;s almost impossible to describe methods in such a way that enables full reproducibilty.
+As Ben Marwick 
+<a href="https://theconversation.com/how-computers-broke-science-and-what-we-can-do-to-fix-it-49938" target="_blank" rel="noopener">wrote</a>:</p>
 <blockquote>
-<p>The problem is that most modern science is so complicated, and most journal articles so brief, it’s impossible for the article to include details of many important methods and decisions made by the researcher as [they] analyzed [their] data on [their] computer.</p>
+<p>The problem is that most modern science is so complicated, and most journal articles so brief, it&rsquo;s impossible for the article to include details of many important methods and decisions made by the researcher as [they] analyzed [their] data on [their] computer.</p>
 </blockquote>
 </div>
-<p>If good science can be irreproducible and reproducible results can be bad science, what’s the value of thinking about reproducibility?</p>
+<p>If good science can be irreproducible and reproducible results can be bad science, what&rsquo;s the value of thinking about reproducibility?</p>
 <p>The intent behind publishing results in science is to have the wider community understand them, check them, and build on top of them.
 Irreproducible research findings make each of these steps harder.</p>
-<p>Lack of detailed methods can hinder other researchers’ ability to correctly interpret the results.
+<p>Lack of detailed methods can hinder other researchers' ability to correctly interpret the results.
 Methods sections usually describe only the big-picture steps and decisions, but are too short to explain every little detail of how the data was treated and can be ambiguous do the vagueness of human writing.
 But even in the case of sufficiently detailed explanations, there is no guarantee that they correctly describe the actual code or steps taken to reach the conclusions.</p>
-<p>Without access to the actual code used to get numbers, tables and figures, it’s hard to spot and correct mistakes.
-For instance, in 2013 an influential 2010 economic report <a href="https://theconversation.com/the-reinhart-rogoff-error-or-how-not-to-excel-at-economics-13646">was found to contain technical errors</a>, but only after three researchers got their hands into the actual excel spreadsheet that the original authors had used.</p>
+<p>Without access to the actual code used to get numbers, tables and figures, it&rsquo;s hard to spot and correct mistakes.
+For instance, in 2013 an influential 2010 economic report 
+<a href="https://theconversation.com/the-reinhart-rogoff-error-or-how-not-to-excel-at-economics-13646" target="_blank" rel="noopener">was found to contain technical errors</a>, but only after three researchers got their hands into the actual excel spreadsheet that the original authors had used.</p>
 <p>Finally, freely accessible code and data facilitates the other aspects of reproducible research.
 With access to data, other researchers can re-analyse it with other methods to check for robustness, and with access to code, they can apply the same methods to other, independent datasets to check for replicability.</p>
-</div>
-<div id="the-reproducibility-spectrum" class="section level2">
-<h2>The reproducibility spectrum</h2>
+
+
+
+
+<h2 id="the-reproducibility-spectrum">The reproducibility spectrum
+  <a href="#the-reproducibility-spectrum"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
 <p>As with most things, reproducibility is non-binary.
 Having access to code and data sometimes is good, but how about describing the specific version of each software and packaged used?
 Do you need to describe the operating system?
@@ -197,21 +207,37 @@ Do we expect identical result bit by bit?
 Or do we allow for small changes in non-significant digits, cosmetic variation in figures such as fonts or colours?</p>
 <p>For these reasons instead of saying that a research project is reproducible or not, is often more helpful to say that a research project is more or less reproducible and harder or easier to reproduce.
 A project that publishes code and data but not software versions is probably harder to reproduce than one that provides the virtual machine in which the code was run.</p>
-<p>However, each “step” in the reproducibility spectrum requires additional skills and time.
+<p>However, each &ldquo;step&rdquo; in the reproducibility spectrum requires additional skills and time.
 While some of those skills (such as, literal programming, version control, setting up environments) pay off in the long run, they can require a high up-front investment.
 This is made even harder in a collaborate setting in which not all members of the team are familiarised with the relevant techniques and technologies.</p>
-</div>
-<div id="this-workshop" class="section level2">
-<h2>This workshop</h2>
+
+
+
+
+<h2 id="this-workshop">This workshop
+  <a href="#this-workshop"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
 <p>In light of all this, the goal of this workshop is not to erect some perfect, pure standard of reproducibility that no researcher is able to attain, but to empower researchers to make their research as reproducible as they can (but not more).
-We don’t want anyone to feel ashamed for not using some piece of software, but to make then aware of all the cool and interesting tools than can streamline their research</p>
-</div>
-<div id="resources" class="section level2">
-<h2>Resources</h2>
-<p><a href="https://www.youtube.com/watch?v=DjKlO8YFqAc">Daniel Piqué: How I discovered a missing data point in a paper with 8000+ citations</a></p>
-<p><a href="https://www.youtube.com/watch?v=KHMW8fV2NXo">useR! 2020: Keynote - Computational Reproducibility, from Theory to Practice (Anna Krystalli)</a></p>
-<p><a href="https://the-turing-way.netlify.app/reproducible-research/reproducible-research.html">Guide for Reproducible Research - The Turing Way</a></p>
-</div>
+We don&rsquo;t want anyone to feel ashamed for not using some piece of software, but to make then aware of all the cool and interesting tools than can streamline their research</p>
+
+
+
+
+<h2 id="resources">Resources
+  <a href="#resources"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>
+<a href="https://www.youtube.com/watch?v=DjKlO8YFqAc" target="_blank" rel="noopener">Daniel Piqué: How I discovered a missing data point in a paper with 8000+ citations</a></p>
+<p>
+<a href="https://www.youtube.com/watch?v=KHMW8fV2NXo" target="_blank" rel="noopener">useR! 2020: Keynote - Computational Reproducibility, from Theory to Practice (Anna Krystalli)</a></p>
+<p>
+<a href="https://the-turing-way.netlify.app/reproducible-research/reproducible-research.html" target="_blank" rel="noopener">Guide for Reproducible Research - The Turing Way</a></p>
 
       </section>
       <footer class="post-footer">
@@ -295,6 +321,9 @@ We don’t want anyone to feel ashamed for not using some piece of software, but
             <summary class="" hugo-nav="/reproducibility-with-r/materials/day2/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/">Day 2</a></summary>
             
               
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day2/01-git/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/01-git/">01: Getting the most of git</a></li>
+            
+              
               <li class="" hugo-nav="/reproducibility-with-r/materials/day2/02-rrtools/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/02-rrtools/">02: Research compendia with rrtools</a></li>
             
               
@@ -322,15 +351,15 @@ We don’t want anyone to feel ashamed for not using some piece of software, but
         
           
           
-          <li class="" hugo-nav="/reproducibility-with-r/materials/extras/">
-            <a href="https://eliocamp.github.io/reproducibility-with-r/materials/extras/">Extras</a></li>
+          <li class="" hugo-nav="/reproducibility-with-r/materials/reprohack/">
+            <a href="https://eliocamp.github.io/reproducibility-with-r/materials/reprohack/">Mini Reprohack</a></li>
           
           </li>
         
           
           
-          <li class="" hugo-nav="/reproducibility-with-r/materials/reprohack/">
-            <a href="https://eliocamp.github.io/reproducibility-with-r/materials/reprohack/">Mini Reprohack</a></li>
+          <li class="" hugo-nav="/reproducibility-with-r/materials/extras/">
+            <a href="https://eliocamp.github.io/reproducibility-with-r/materials/extras/">Extras</a></li>
           
           </li>
         
@@ -340,7 +369,14 @@ We don’t want anyone to feel ashamed for not using some piece of software, but
   <details id="PageTableOfContents">
     <summary><h2 class="mv0 f5 fw7 ttu tracked dib">On this page<h2></summary>
     <div class="pl2 pr0 mh0">
-    
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-reproducibility-is-and-what-it-is-not">What reproducibility is and what it is not</a></li>
+    <li><a href="#the-reproducibility-spectrum">The reproducibility spectrum</a></li>
+    <li><a href="#this-workshop">This workshop</a></li>
+    <li><a href="#resources">Resources</a></li>
+  </ul>
+</nav>
     </div>
   </details>
   

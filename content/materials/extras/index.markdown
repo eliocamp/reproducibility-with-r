@@ -2,7 +2,7 @@
 title: "Extras"
 # list or single layouts are possible
 layout: single-series # list, list-sidebar, single-series
-weight: 4
+weight: 10
 subtitle: "Things we like (but don't have time to cover)"
 description: |
   Things we like (but don't have time to cover)
@@ -12,9 +12,7 @@ cascade:
   layout: single-series # list, list-sidebar, single-series
 ---
 
-```{r, include = FALSE}
-params <- list(this_cut = "Ideal")
-```
+
 
 
 ## Parameterised reports
@@ -24,7 +22,8 @@ Sometimes you need to re-do a report changing one variable that repeats over all
 In the following example there is a plot of the price distribution for ideal diamonds. 
 If you want to change it to visualise the data for "fair" or "very good" cut diamonds, you will have to change the `filter(cut == "Ideal")` and hopefully you wont forget the plot title. 
 
-```{r message=FALSE, warning=FALSE}
+
+```r
 library(dplyr)
 library(ggplot2)
 
@@ -35,8 +34,9 @@ diamonds %>%
   labs(title = "Price distribution for ideal diamonds",
        x = "Color",
        y = "Price [US dollars]")
-  
 ```
+
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-2-1.png" width="672" />
 
 In these situations you can create a parameterised report. 
 To generate a parameterised report you have to add an element called `params` to the YAML with the list of parameters (1 or more) and their default values. It is as if the R Markdown file were a big function with its arguments!
@@ -49,7 +49,8 @@ params:
 Then, in the R code you will have access to a variable called `params` which is a list containing the parameters and their values. To access the value of each parameter the `$` operator is used as follows:
 
 
-```{r message=FALSE, warning=FALSE}
+
+```r
 library(dplyr)
 library(ggplot2)
 
@@ -60,6 +61,7 @@ diamonds %>%
   labs(title = paste0("Price distribution for ", params$this_cut, " diamonds"),
        x = "Color",
        y = "Price [US dollars]")
-  
 ```
+
+<img src="{{< blogdown/postref >}}index_files/figure-html/unnamed-chunk-3-1.png" width="672" />
 

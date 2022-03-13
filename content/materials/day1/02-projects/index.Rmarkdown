@@ -57,7 +57,7 @@ Name your files so that you can know what they are even if you came home at 3am 
 
 Use slugs (short descriptions of what's inside).
 
-::: activity
+<div class = activity> 
 Describe what do you think are the contents of these files:
 
 -   `data/raw/madrid-minimum_temperature.csv`
@@ -65,9 +65,9 @@ Describe what do you think are the contents of these files:
 -   `scripts/02-compute_mean_temperature.csv`
 
 -   `analysis/01-madrid-minimum_temperature-descriptive_statistics.Rmd`
-:::
+</div>
 
-::: activity
+<div class = activity> 
 Come up with good file names and folders for:
 
 -   a dataset of cats with columns for weight, length, tail length, fur colour(s), fur type and name.
@@ -79,15 +79,15 @@ Come up with good file names and folders for:
 -   a scripts that fits a linear discriminant model and saves it to a file.
 
 -   the .Rds file in which that model is stored.
-:::
+</div>
 
-::: notes
+<div class = notes> 
 Use a familiar folder structure
 
 There is no single one objectively best folder structure.
 When in doubt, try to follow the conventions of your research community.
 This will minimise any friction between you and your potential audience.
-:::
+</div>
 
 ### Files you can code with
 
@@ -106,7 +106,7 @@ You can use "\_" to separate words that are part of the same concept and "-" to 
 For instance `buenos_aires-minimum_temperature.csv`.
 You can also use them the other way around, but what's important is consistency.
 
-::: notes
+<div class = notes> 
 By using separators consistently and smartly you can parse file names programmatically very easily.
 For example, if you have
 
@@ -125,7 +125,7 @@ You could extract cities and variable names by just
 ```{r}
 strsplit(files, "-")
 ```
-:::
+</div>
 
 Finally, if you can try to make your files easily sortable.
 Put numbers with enough zero-padding and, if relevant, use dates in YYYY-MM-DD format at the beginning of the file name so that sorting by name coincide with sorting by date.
@@ -165,7 +165,7 @@ They don't strictly help with reproducibility of the final product, but they wil
 
 Opening an RStudio Project also ensures that you start a new R session every time and sets your working directory to the project root directory.
 
-::: activity
+<div class = activity> 
 Create a new RStudio Project
 
 1.  Click on "File" and then in "New Project...".
@@ -173,7 +173,7 @@ Create a new RStudio Project
 3.  You'll see a list of various templates. Select "New Project".
 4.  Type the name of the root folder in which your project will live and the directory where you want this folder to be created in by clicking "Browse.."
 5.  Click on "Create Project".
-:::
+</div>
 
 If everything went well, you should have a new folder with your desired name.
 This is a normal garden-variety folder; what singles it out as an RStudio Project is the .Rproj file that holds project-specific RStudio options and the hidden folder .Rproj.user where project-specific temporary files are located.
@@ -192,13 +192,13 @@ It will even preserve changes not saved. This helps keep your work tidy and make
 RStudio allows you to have multiple projects open, and this is possible because each project has its own folder.
 You can work with multiple projects in parallel without code or results of one analysis interfering with the other's.
 
-::: activity
+<div class = activity> 
 Open your project
 
 1.  On your new project, create a new file (any file) and write some code on it (e.g. `print("Hello world")`).
 2.  Close the RStudio window.
 3.  Now open a new RStudio window and open the RStudio Project you just closed (depending on your global options, it might open by default).
-:::
+</div>
 
 ## A clean slate... every day
 
@@ -208,9 +208,9 @@ For now we are going to concentrate on at least on your computer being able to r
 And besides organising projects and not modifying the original data, how can you make sure that you saved all the code you were writing and used?
 The most direct way is to restart the R session and run the code again, if it gives an error or doesn't return what you expected it means you missed a step.
 
-::: notes
+<div class = notes> 
 You can restart the R session with the shortcut Ctrl+Shif+F10.
-:::
+</div>
 
 This can happen if for example you read data into memory by running a command in the console.
 While we are working, R will have that data in memory and you will be able to make calculations and graphs, but your code will not be reproducible because it's missing the important step of reading the data.
@@ -219,7 +219,7 @@ The best way of ensuring this doesn't happen is to re-run your code on a fresh R
 However, be default RStudio will save the environment in a hidden file called .RData and restore it on startup, so that data will still be in memory.
 And while this comes in handy so that you can boot up your work exactly where you left it each time you open your project, it might lead to a situation in which you never realise that you missed saving a key line of code in your analysis.
 
-::: activity
+<div class = activity> 
 Configure your project
 
 1.   Go to "Tools" -> "Project options..."
@@ -229,11 +229,11 @@ Configure your project
     -   "Restore .RData into workspace at startup": Select "No" from the dropdown menu.
 
     -   "Save workspace to .RData on exit": Select "No" from the dropdown menu
-:::
+</div>
 
-::: notes
+<div class = notes> 
 You can change these preferences at the global level with "Tools" -> "Global options" in the "General" subheading
-:::
+</div>
 
 ## Automatic project structure
 
