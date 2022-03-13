@@ -15,19 +15,19 @@ People trying to reproduce work are few and far between, so it's important to ma
 The core idea: [Docker](https://docs.docker.com/get-started/overview/) runs basically like a virtual machine inside your computer; you can control which R version you use and which packages are installed.
 You can also host a docker image on [Docker Hub](https://hub.docker.com/), so that anyone can download it and spin it up on their computer within minutes.
 
-So you could create a docker image, do all the system dependencies and R package dependencies setup that can take an hour or more, and then publish that.
+So you could create a docker image, do all the system dependencies and R package dependencies setup, that can take an hour or more, and then publish that.
 If someone wants to reproduce my work, they can just get the image, run it, and they are ready.
 And not only that, but I could also add all the necessary data that also takes hours to download.
 
 In that sense, docker is not only a boon for reproducibility but also for usability.
 
-At the heart of the docker image is the Dockerfile, a plain-text file with a series of commands that are then executed inside the image.
-The Dockerfile is the recipe to create the container, install packages, update dependencies, etc... This recipe is fed into docker which will then run those steps and build the container image proper.
+At the heart of the docker image is the `Dockerfile`, a plain-text file with a series of commands that are then executed inside the image.
+The Dockerfile is the recipe to create the container, install packages, update dependencies, etc... This recipe is fed into docker which will then run those steps and build the container image properly.
 
 
 You will then be able to share this container on DockerHub for anyone to be able to download it.
 For this you will need to create a [DockerHub account](https://hub.docker.com/).
-(Rememeber your username, because you will need it).
+(Remember your username, because you will need it).
 
 Once build, the container can be booted up and you or anyone else can run the analysis in this isolated and stable container.
 
@@ -35,28 +35,28 @@ Once build, the container can be booted up and you or anyone else can run the an
 ## Your first docker
 
 All this might sound intimidating at first, but thanks to the awesome R community, spinning up your own docker instance with R and RStudio ready to use is relatively painless.
-The [rocker team](https://hub.docker.com/u/rocker) maintains a suite of docker images that with R and RStudio pre-installed.
-Assuming that you've got docker up and running, you can spin up a virtual machine running R with this command in the terminal
+The [rocker team](https://hub.docker.com/u/rocker) maintains a suite of docker images that came with R and RStudio pre-installed.
+Assuming that you've got docker up and running, you can spin up a virtual machine running R with this command in the terminal ([what's a terminal do you ask?](/reproducibility-with-r/materials/extras/#the-terminal)):
 
 ``` bash
 docker run -p 8787:8787 \
   -e DISABLE_AUTH=true \
-  rocker/rstudio:4.2.0
+  rocker/rstudio:4.1.2
 ```
 
 The first time you run this command you'll see something like
 
-    Unable to find image 'rocker/rstudio:4.2.0' locally
-   4.2.0: Pulling from rocker/rstudio
+    Unable to find image 'rocker/rstudio:4.1.2' locally
+   4.1.2: Pulling from rocker/rstudio
 
 Which will inform you of the process of downloading the remote image to your local machine.
 When it's `done`, open a browser and navigate to [localhost:8787](http://localhost:8787/)
 
-<div class = activity> 
+<div class = activity>
 
 Run RStudio inside docker
 
-1.  Run `docker run -p 8787:8787 -e DISABLE_AUTH=true rocker/rstudio:4.2.0` inside a terminal.
+1.  Run `docker run -p 8787:8787 -e DISABLE_AUTH=true rocker/rstudio:4.1.2` inside a terminal.
 2.  Once it finishes, go to [localhost:8787](http://localhost:8787/) on your browser of choice.
 </div>
 
@@ -74,35 +74,35 @@ Some notes on this command:
     As long as you use this image locally, it's safe to do this.
     Otherwise, don't.
 
--   `rocker/rstudio:4.2.0` is the name of the image that needs to be ran.
+-   `rocker/rstudio:4.1.2` is the name of the image that needs to be ran.
 </div>
 
 
 
 
 <div class="figure">
-<img src="images/rstudio-landing.png" alt="Screenshot of a browser in http://localhost:8787/ running RStudio." width="662" />
+<img src="images/rstudio-landing.png" alt="Screenshot of a browser in http://localhost:8787/ running RStudio."  />
 <p class="caption">Figure 1: RStudio running inside docker.</p>
 </div>
 
 Surprise!
 You've got RStudio running inside a Docker container.
-Notice that the R version is 4.2.0 which is most likely not the version you have installed locally.
-By using the `rocker/rstudio:4.2.0` you fixed the R version to 4.2.0.
+Notice that the R version is 4.1.2 which is most likely not the version you have installed locally.
+By using the `rocker/rstudio:4.1.2` you fixed the R version to 4.1.2.
 
 Now you could use this docker instance to run R code, create files, analysis, etc...
 But there's a small issue: docker instances are ephemeral. Anything you do inside the container will be lost once the container is closed. 
-Each time you spin up the container it starts as a blank slate. You need a way of making sure that files are created in the local machine and are don't disappear with the container.
+Each time you spin up the container it starts as a blank slate. You need a way of making sure that files are created in the local machine and that they don't disappear with the container.
 
 To do this you need to use an option that maps a local folder to a folder inside the container. 
-So let's create a `docker-projects` folder in the local and map that folder to `/home/rstudio/projects` in the docker container. 
+So let's create a `docker-projects` folder in your computer and map that folder to `/home/rstudio/projects` in the docker container. 
 
 ```bash
 mkdir ~/docker-projects
 docker run -p 8787:8787 \
     -e DISABLE_AUTH=true \
     -v ~/docker-projects:/home/rstudio/projects \
-    rocker/rstudio:4.2.1
+    rocker/rstudio:4.1.2
 ```
 
 Now you can create files, projects, results, inside the container in `/home/rstudio/projects` and any change will live on in your local machine in `~/docker-projects`. 
@@ -120,7 +120,7 @@ Until now you've use `rocker/rstudio` docker image.
 But if you need to install system dependencies and R Packages you will need to modify this image to install them. 
 This is done with the Dockerfile, a set of steps required to build an image. 
 
-Since each project should have its own Dockerfile, let's create a file called `Dockerfile` at the root of the demo project and put these lines in:
+Since each project should have its own Dockerfile, let's create a file called `Dockerfile` at the root of the demo project we used for the renv section and put these lines in:
 
 ```
 FROM rocker/rstudio:4.1.2
@@ -136,7 +136,7 @@ RUN chown -R rstudio . \
 ```
 
 
-The first line tells docker to base this new image on the `rocker/rstudio:4.2.1` image. 
+The first line tells docker to base this new image on the `rocker/rstudio:4.1.2` image. 
 Then, with that as a base, it will then run the next steps. 
 
 The next line set the working directory of the container. 
@@ -150,7 +150,7 @@ The final line starts with `RUN`, which is docker-speak to run commands in the t
 The important part here is that it runs `R -e 'source("renv/activate.R"); renv::restore()`, which bootstraps renv and restores the project library. 
 
 This image doesn't install any system dependency, but if you wanted you could install them using apt-get.
-For instance, if your image needed the netcdf library, you would add 
+For instance, if your image needed the netcdf library (a meteorlogy related library), you would add 
 
 ```
 RUN apt-get install netcdf-bin -y
@@ -166,10 +166,10 @@ For tidyness sake, let's also name this container with the `-t` (tag) option:
 docker build . -t [username]/demo-project
 ```
 
-(Where [username] is your DockerHub username.)
+Where [username] is your DockerHub username.
 
 Docker will now go step by step, setting up the image. 
-You will see that R will install all the necessary packages usign the information in the lockfile. 
+You will see that R will install all the necessary packages using the information in the lockfile. 
 When it ends it will output something like this.
 
 ```
@@ -192,7 +192,7 @@ docker run --rm  -p 8787:8787 \
 You'll notice that this is very similar to the command used to launch the `rocker/rstudio` container.
 The new bit here is that the line `-v /home/rstudio/project/renv` makes sure that the container does not mount the local `renv` folder. 
 
-Now you can go to  [localhost:8787](http://localhost:8787/), open the demo_project and knit `report.Rmd`. 
+Now you can go to [localhost:8787](http://localhost:8787/), open the demo_project and knit `report.Rmd`. 
 
 ## Sharing docker
 
