@@ -205,7 +205,7 @@ Also use sub-folders, such as <code>data/raw</code> for raw data from the source
 <p>Name your files so that you can know what they are even if you came home at 3am after drinking a few beers.</p>
 <p>Use slugs (short descriptions of what&rsquo;s inside).</p>
 <div class = activity> 
-Describe what do you think are the contents of these files:
+<p>Describe what do you think are the contents of these files:</p>
 <ul>
 <li>
 <p><code>data/raw/madrid-minimum_temperature.csv</code></p>
@@ -219,7 +219,7 @@ Describe what do you think are the contents of these files:
 </ul>
 </div>
 <div class = activity> 
-Come up with good file names and folders for:
+<p>Come up with good file names and folders for:</p>
 <ul>
 <li>
 <p>a dataset of cats with columns for weight, length, tail length, fur colour(s), fur type and name.</p>
@@ -239,7 +239,7 @@ Come up with good file names and folders for:
 </ul>
 </div>
 <div class = notes> 
-Use a familiar folder structure
+<p>Use a familiar folder structure</p>
 <p>There is no single one objectively best folder structure.
 When in doubt, try to follow the conventions of your research community.
 This will minimise any friction between you and your potential audience.</p>
@@ -265,8 +265,8 @@ You can use &ldquo;_&rdquo; to separate words that are part of the same concept 
 For instance <code>buenos_aires-minimum_temperature.csv</code>.
 You can also use them the other way around, but what&rsquo;s important is consistency.</p>
 <div class = notes> 
-By using separators consistently and smartly you can parse file names programmatically very easily.
-For example, if you have
+<p>By using separators consistently and smartly you can parse file names programmatically very easily.
+For example, if you have</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#434f54">files</span>
 </code></pre></div><pre><code>## [1] &quot;madrid-minimum_temperature&quot;       &quot;buenos_aires-minimum_temperature&quot;
 ## [3] &quot;madrid-maximum_temperature&quot;       &quot;buenos_aires-maximum_temperature&quot;
@@ -325,7 +325,7 @@ We will see that a simple solution is to use the
 They don&rsquo;t strictly help with reproducibility of the final product, but they will help you streamline your workflow by encapsulating things like the list of open files, R command history and RStudio settings for each project.</p>
 <p>Opening an RStudio Project also ensures that you start a new R session every time and sets your working directory to the project root directory.</p>
 <div class = activity> 
-Create a new RStudio Project
+<p>Create a new RStudio Project</p>
 <ol>
 <li>Click on &ldquo;File&rdquo; and then in &ldquo;New Project&hellip;&rdquo;.</li>
 <li>Click on &ldquo;New directory&rdquo;.</li>
@@ -355,7 +355,7 @@ It will even preserve changes not saved. This helps keep your work tidy and make
 <p>RStudio allows you to have multiple projects open, and this is possible because each project has its own folder.
 You can work with multiple projects in parallel without code or results of one analysis interfering with the other&rsquo;s.</p>
 <div class = activity> 
-Open your project
+<p>Open your project</p>
 <ol>
 <li>On your new project, create a new file (any file) and write some code on it (e.g. <code>print(&quot;Hello world&quot;)</code>).</li>
 <li>Close the RStudio window.</li>
@@ -378,7 +378,7 @@ For now we are going to concentrate on at least on your computer being able to r
 And besides organising projects and not modifying the original data, how can you make sure that you saved all the code you were writing and used?
 The most direct way is to restart the R session and run the code again, if it gives an error or doesn&rsquo;t return what you expected it means you missed a step.</p>
 <div class = notes> 
-You can restart the R session with the shortcut Ctrl+Shif+F10.
+<p>You can restart the R session with the shortcut Ctrl+Shif+F10.</p>
 </div>
 <p>This can happen if for example you read data into memory by running a command in the console.
 While we are working, R will have that data in memory and you will be able to make calculations and graphs, but your code will not be reproducible because it&rsquo;s missing the important step of reading the data.</p>
@@ -386,7 +386,7 @@ While we are working, R will have that data in memory and you will be able to ma
 However, be default RStudio will save the environment in a hidden file called .RData and restore it on startup, so that data will still be in memory.
 And while this comes in handy so that you can boot up your work exactly where you left it each time you open your project, it might lead to a situation in which you never realise that you missed saving a key line of code in your analysis.</p>
 <div class = activity> 
-Configure your project
+<p>Configure your project</p>
 <ol>
 <li>
 <p>Go to &ldquo;Tools&rdquo; -&gt; &ldquo;Project options&hellip;&rdquo;</p>
@@ -405,7 +405,7 @@ Configure your project
 </ol>
 </div>
 <div class = notes> 
-You can change these preferences at the global level with "Tools" -> "Global options" in the "General" subheading
+<p>You can change these preferences at the global level with &ldquo;Tools&rdquo; -&gt; &ldquo;Global options&rdquo; in the &ldquo;General&rdquo; subheading</p>
 </div>
 
 

@@ -203,7 +203,7 @@ If you have many moderately big files, you might be reaching
 <a href="https://docs.github.com/en/repositories/working-with-files/managing-large-files/about-large-files-on-github#repository-size-limits" target="_blank" rel="noopener">GitHub&rsquo;s soft limit of around 5Gb per repository</a>.</p>
 <p>Other services impose other limits but whatever the limit, bear in mind that large repositories can perform poorly.</p>
 <div class = notes> 
-Repository size and version control
+<p>Repository size and version control</p>
 <p>When using version control, remember that the repository stores the information of every past commit.
 This means that the size of the complete repository can be much larger than the size of the project at a particular point in time.
 Since code is stored in plain text files, this overhead is not big, but if you have data in your repository every change to the data files will be remembered and can severely increase your repository size.</p>
@@ -220,7 +220,7 @@ Since code is stored in plain text files, this overhead is not big, but if you h
 </h3>
 <p>If your data is not so tiny and exceeds the limits of your particular repository provider, you will need to look for an external service to host it and how to provide access to it.</p>
 <div class = notes> 
-Public data
+<p>Public data</p>
 <p>Sometimes an research project might use publicly-accessible data, perhaps provided by a public API, or a public repository.
 In that case, you might not need to host the data yourself and instead rely on that service.
 While this has the advantage that other people can handle all the complexities of data storage and delivery, the disadvantage is that you don&rsquo;t control it.
@@ -250,7 +250,7 @@ You just go to the site, upload the file and get a link.
 The main difference is that you also need to specify the metadata and you get an unique DOI that represents your data.
 This allows you or anyone else to cite these data and also allows you to upload multiple versions of the same dataset and refer to the proper one.</p>
 <div class = notes> 
-Zeonodo Sandbox
+<p>Zeonodo Sandbox</p>
 <p>Data uploaded to Zeonodo cannot be deleted.
 Because we are going to upload test data, we are going to use 
 <a href="https://sandbox.zenodo.org/" target="_blank" rel="noopener">Zenodo Sandbox</a>.</p>
@@ -306,7 +306,7 @@ So you don&rsquo;t need to worry about typos and other errors.
 The New Version button allows you to upload a whole new version of the dataset in case you find an error in your dataset and want to correct it.
 Each version will have its own DOI and stable URL so you can cite and download the specific version used in each project.</p>
 <div class = activity> 
-Upload your data
+<p>Upload your data</p>
 <p>Follow all the steps detailed previously to upload penguins.csv to a Zenodo record.
 (We are testing stuff, so remember to use sandbox.zenodo.org).</p>
 </div>:
@@ -353,14 +353,14 @@ A minimal example would be something like this</p>
 </code></pre></div><p>With this system, the RMarkdown file will be self-sufficient and download the data if needed.
 Neither future you nor any future reproducibility enthusiast needs to worry about downloading data before running the code.</p>
 <div class = activity> 
-Improve report.Rmd
+<p>Improve report.Rmd</p>
 <ol>
 <li>Modify report.Rmd in the 
 <a href="http://localhost:4321/reproducibility-with-r/demo_project.zip" target="_blank" rel="noopener">demo project</a> to download the data automatically.</li>
 </ol>
 </div>
 <div class = notes> 
-Manage Zenodo programmatically
+<p>Manage Zenodo programmatically</p>
 <p>You can use the 
 <a href="https://github.com/eblondel/zen4R" target="_blank" rel="noopener"><strong>zen4R</strong></a> package to automate all these steps.
 This will allow you to create, update and download datasets using Zenodo&rsquo;s API.</p>

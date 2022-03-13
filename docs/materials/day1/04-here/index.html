@@ -165,7 +165,7 @@ There are two situations in which this assumption can be broken and that can lea
 <p>To witness this, we prepared a demo project.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#434f54">penguins</span> <span style="color:#728e00">&lt;-</span> <span style="color:#d35400">read.csv</span>(<span style="color:#7f8c8d">&#34;data/penguins.csv&#34;</span>)
 </code></pre></div><div class = activity> 
-Get the demo project
+<p>Get the demo project</p>
 <ol>
 <li>Download the 
 <a href="/reproducibility-with-r/demo_project.zip">demo project</a> and extract it anywhere in your computer.</li>
@@ -208,7 +208,7 @@ But we saw that using absolute paths leads to code that runs only in one machine
 <p>What the <strong>here</strong> package does is create absolute paths that work on the machine running the code from paths relative to the root directory.
 The way you use the package is to always use paths relative to the root project directory but wrap them in the <code>here::here()</code> function.</p>
 <div class = activity> 
-Fix one error
+<p>Fix one error</p>
 <ol>
 <li>Change line 9 in <code>report.Rmd</code> to</li>
 </ol>
@@ -233,7 +233,7 @@ penguins &lt;- read.csv(here::here(&quot;data/penguins.csv&quot;))
 <p>The here package works every time as long as the current working directory is a subdirectory of the project root.
 But it can be brittle otherwise.</p>
 <div class = activity> 
-Find a new error
+<p>Find a new error</p>
 <ol>
 <li>
 <p>Close demo_project.</p>

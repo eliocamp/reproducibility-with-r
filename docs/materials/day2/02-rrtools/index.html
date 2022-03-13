@@ -45,7 +45,7 @@
 The first thing you need to know is that an rrtools compendium will be at the same time an R package. If you don&rsquo;t have experience with R packages, don&rsquo;t worry!">
 <meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1417">
+<meta itemprop="wordCount" content="1415">
 
 
 
@@ -174,8 +174,10 @@ This is why:</p>
 </h3>
 <p>It is possible to use rrtools without Git, but usually we want our research compendium to be managed by the version control software Git.</p>
 <div class = instructions> 
-1.  Create an online repository.
-2.  In RStudio, start a new Project:
+<ol>
+<li>Create an online repository.</li>
+<li>In RStudio, start a new Project:</li>
+</ol>
 <ul>
 <li><code>File &gt; New Project &gt; Version Control &gt; Git</code>. In the &ldquo;repository URL&rdquo; paste the URL of your new GitHub repository. It will be something like this <a href="https://github.com/paocorrales/PaperCompedium.git">https://github.com/paocorrales/PaperCompedium.git</a>.</li>
 <li>Make sure you know where you are creating the project.</li>
@@ -202,8 +204,8 @@ Keep in mind that it will also be the package name and has to follow some rules 
     </svg></a>
 </h3>
 <p>This uses <code>usethis::create_package()</code> to create a basic R package in the <code>pkgname</code> directory (in this case &ldquo;PaperCompendium&rdquo;), and then the project.</p>
-<div class = instructions> 
-Create the compendium
+<div class = instructions>
+<p>Create the compendium</p>
 <ol>
 <li>
 <p>Run <code>rrtools::use_compendium(&quot;path/to/pkgname&quot;)</code> (you use the path to <code>pkgname</code> in your system)</p>
@@ -233,7 +235,8 @@ This is one of the files that makes a regular folder an &ldquo;R package&rdquo;.
 <a href="LICENSE">LICENSE</a> file listing the name provided as the copyright holder.</p>
 <p>To use a different license, replace this line with any of the licenses mentioned here: <code>?usethis::use_mit_license()</code></p>
 <div class = notes> 
-You can read more about licences [here](https://r-pkgs.org/license.html).
+<p>You can read more about licences 
+<a href="https://r-pkgs.org/license.html" target="_blank" rel="noopener">here</a>.</p>
 </div>
 
 
@@ -321,8 +324,8 @@ If <code>data_in_git = FALSE</code> you will exclude files in the <code>data/</c
 You should set <code>data_in_git = FALSE</code> if your data files are large (&gt;100 mb is the limit for GitHub) or you do not want to make the data files publicly accessible on GitHub.
 More about sharing data in the future.</p>
 <div class = notes> 
-You can also use a graphic interface to create the compendium using the "rrtools Assistant" addin.
-It includes datailed instructions and the code associated with each step.
+<p>You can also use a graphic interface to create the compendium using the &ldquo;rrtools Assistant&rdquo; addin.
+It includes datailed instructions and the code associated with each step.</p>
 <p><img src="images/rrtools1.png" alt="rrtools Assistant interface showing the Overview tab."></p>
 </div>
 

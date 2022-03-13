@@ -167,14 +167,14 @@ This will save you the effort of doing some analysis, saving a plot on a file, c
 <p>Now let&rsquo;s create a new RMarkdown file.
 In RStudio you can use the menu bar:</p>
 <div class = instructions> 
-File → New File → R Markdown
+<p>File → New File → R Markdown</p>
 </div>
 <p>A new window will open where you can <em>optionally</em> complete with your name, author and the output format.
 Let try first HTML.
 By doing click on th ok button, the new file will open showing the template.
 This is great, you can try to &ldquo;knit&rdquo; the file to see the output document.</p>
 <div class = activity> 
-Your turn
+<p>Your turn</p>
 <ol>
 <li>
 <p>Create a new RMarkdown file.
@@ -226,7 +226,7 @@ For example:</p>
     <span style="color:#434f54">toc_float</span>: <span style="color:#00979d">false</span>
 <span style="color:#434f54">---</span>
 </code></pre></div><div class = notes> 
-Keep in mind the indentation!
+<p>Keep in mind the indentation!</p>
 <p>It is very important to maintain the indentation of the elements, since it defines the hierarchy of each element.
 Many of the errors you&rsquo;ll find when knitting occur because the file has problems in the header indentation.</p>
 </div>
@@ -242,7 +242,7 @@ Code chunks start with <code>```{r label}</code> (where &ldquo;label&rdquo; is a
 Everything you include between these delimiters will be interpreted by R as code and will try to execute it when the file is knitted.
 Any output (graphics, tables, text, etc..) will be inserted into the final document in the same order as they are in the R Markdown file.</p>
 <div class = instructions> 
-You can create a new chunk with:
+<p>You can create a new chunk with:</p>
 <ol>
 <li>The &ldquo;+C&rdquo; green bottom on the top right of the document</li>
 <li>A very handy shortcut: <code>Ctrl + Alt + I</code></li>
@@ -252,11 +252,11 @@ You can create a new chunk with:
 <p>While the code will run when you knit, if you are analysing data and writing a report it is very convenient to run individual chunks interactively as if it were in the console.</p>
 <p>To run the line where your cursor is use the shortcut:</p>
 <div class = instructions> 
-Ctrl + Enter
+<p>Ctrl + Enter</p>
 </div>
 <p>But you can also run the code of the whole chunk with:</p>
 <div class = instructions> 
-Ctrl + Shift + Enter
+<p>Ctrl + Shift + Enter</p>
 </div>
 <p>By default, the output will appear immediately below the chunk.</p>
 
@@ -284,7 +284,7 @@ $$
 y = \mu + \sum_{i=1}^p \beta_i x_i + \epsilon
 $$</p>
 <div class = notes> 
-In-line code
+<p>In-line code</p>
 <p>You may find yourself mentioning results in the text, for example something like &ldquo;the average minimum temperature for the month of March was 18 degrees&rdquo;.
 And it is also possible that this value will change if you use a different database or if you then generate a report but for a following month.
 The chances of you forgetting to update that &ldquo;18&rdquo; are high, that&rsquo;s why RMarkdown also has the possibility to incorporate in-line code.</p>
