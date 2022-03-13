@@ -1,0 +1,97 @@
+---
+title: "Mini Reprohack"
+# list or single layouts are possible
+layout: single-series # list, list-sidebar, single-series
+weight: 4
+subtitle: "Let's reproduce papers in the wild!"
+description: |
+  Let's reproduce papers in the wild!
+cascade:
+  draft: false
+  # list or single layouts are possible
+  layout: single-series # list, list-sidebar, single-series
+---
+
+One of the best ways of learning what makes a reproducible project is to try to reproduce real life projects instead of toy examples.
+You'll quickly learn what works and what doesn't and pick up tools and workflows from others.
+
+Therefore we propose this optional homework in which you will do just that.
+You can do it at any moment during the workshop.
+Some paper require using particular packages or technologies that you might not be familiar at the start of the workshop.
+Most of them should have readmes with instructions, but if you're stuck, you can always ask for help in the #reprohack Slack channel or leave it for later.
+
+[Reprohack](https://www.reprohack.org/) is a project that organises meetups in which a bunch of people get together to reproduce results.
+In their website they host a [database of papers](https://www.reprohack.org/paper/) submitted by their authors.
+Papers that have been reviewed at least one have a "Mean reproducibility score" which will tell you roughly how easy it is to reproduce it.
+To get the code of a paper, you need to go to the "Code URL" link that's on its respective reprohack page.
+
+Below there's a curated list of some papers for you to chose with a short description of what you can expect.
+You are free to browse the [list of papers tagged with "R"](https://www.reprohack.org/paper/?search=&tags=R) and select anyone that piques your interest. 
+
+
+::: notes
+Optional: Submit a review!
+
+You can submit a review of each paper in its respective Reprohack page.
+This is a set of structure questions that are then sent to the authors.
+You are encouraged to submit a review if you can.
+:::
+
+::: notes
+Package installation (especially Linux)
+
+When reproducing papers you will most likely need to install a whole lot of new packages.
+This can take quite a while if you are a Linux user because packages that ship FORTRAN, C++ or other code needs to be compiled.
+
+If you want to speed things up, you can use the RStudio Package Manager repository, which offers pre-compiled binaries for several linux distributions.
+Go to [this page](https://packagemanager.rstudio.com/client/#/repos/1/overview) for setup instructions.
+:::
+
+## Curated list of papers
+
+### Analytic Reproducibility In Articles Receiving Open Data Badges At The Journal Psychological Science: An Observational Study {analytic-reproducibility}
+
+Mean reproducibility score: 9,5/10 Number of reviews: 2 Link: <https://www.reprohack.org/paper/46/>
+
+This is a highly polished project that uses Docker to run the code in a container and render the result automatically.
+It's also a study about reproducibility so the meta aspect is hard to resist.
+
+### No Effect Of Nature Representations On State Anxiety, Actual And Perceived Noise {library-noise}
+
+Mean reproducibility score: 5,0/10 Number of reviews: 1 Link: <https://www.reprohack.org/paper/49/>
+
+This paper has code and data available, but it doesn't use RMarkdown to produce results, nor any way of defining a stable computational environment.
+On top of that, the code is not portable and it has some errors.
+On the other hand, since it doesn't use any complicated technology like docker or renv, all the moving pieces can be understood by anyone with enough familiarity with R.
+Although all the code is there, it's not straightforward to run it or reproduce the results.
+
+### The Role Of Conidia In The Dispersal Of Ascochyta Rabiei
+
+Mean reproducibility score: `NA` Number of reviews: 0 Link: <https://www.reprohack.org/paper/41/>
+
+This paper uses Docker completely.
+That's to say, it comes with a docker image which ships the computational environment, as well as all the code and data.
+Unlike [this other paper](#analytic-reproducibility), the docker image does not create the paper automatically.
+From the description, this is a second revision of the paper in which the authors took several steps to improve its reproducibility.
+
+### Mental Health and Social Contact During the COVID-19 Pandemic: An Ecological Momentary Assessment Study
+
+Mean reproducibility score: 7,0/10 Number of reviews: 1 Link: <https://www.reprohack.org/paper/32/>
+
+This paper doesn't define a table computational environment, but the code is almost fully portable and seems to run without errors.
+If you manage to install all the packages, you should be able to run it.
+
+
+### Where Should New Parkrun Events Be Located? Modelling The Potential Impact Of 200 New Events On Socio-Economic Inequalities In Access And Participation
+
+Mean reproducibility score: 7,0/10
+Number of reviews:   3
+Link: https://www.reprohack.org/paper/28/
+
+This paper is bundled into an RStudio project and the code is portable. 
+The code will install packages if needed.
+Some possible problems is that it uses packages related to spatial analysis, some of which might require some special system dependencies. 
+It also warns that the analysis might not run in a lightweight computer. 
+
+
+
