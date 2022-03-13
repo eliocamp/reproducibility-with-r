@@ -45,6 +45,7 @@ If you have many moderately big files, you might be reaching [GitHub's soft limi
 Other services impose other limits but whatever the limit, bear in mind that large repositories can perform poorly.
 
 <div class = notes> 
+
 Repository size and version control
 
 When using version control, remember that the repository stores the information of every past commit.
@@ -57,6 +58,7 @@ Since code is stored in plain text files, this overhead is not big, but if you h
 If your data is not so tiny and exceeds the limits of your particular repository provider, you will need to look for an external service to host it and how to provide access to it.
 
 <div class = notes> 
+
 Public data
 
 Sometimes an research project might use publicly-accessible data, perhaps provided by a public API, or a public repository.
@@ -78,6 +80,7 @@ The main difference is that you also need to specify the metadata and you get an
 This allows you or anyone else to cite these data and also allows you to upload multiple versions of the same dataset and refer to the proper one.
 
 <div class = notes> 
+
 Zeonodo Sandbox
 
 Data uploaded to Zeonodo cannot be deleted.
@@ -94,7 +97,7 @@ To upload a dataset you need to click on Upload.
 
 
 <div class="figure">
-<img src="images/zenodo-upload_1.png" alt="Screenshot of Zenodo’s page after clicking Upload on the main page. It shows a list with one entry, called “PEnguins” and a green button titled “New Upload.”"  />
+<img src="images/zenodo-upload_1.png" alt="Screenshot of Zenodo’s page after clicking Upload on the main page. It shows a list with one entry, called “PEnguins” and a green button titled “New Upload.”" width="634" />
 <p class="caption">Figure 1: Zeonodo upload. As you can see, datasets are permanent and this user had already uploaded one test dataset in preparation for writing this.</p>
 </div>
 
@@ -106,7 +109,7 @@ Now you need to click on "New Upload".
 
 
 <div class="figure">
-<img src="images/zenodo-upload_2.png" alt="Screenshot of Zenodo’s New Upload page. It shows a big area where to drop file with a button to Chose files."  />
+<img src="images/zenodo-upload_2.png" alt="Screenshot of Zenodo’s New Upload page. It shows a big area where to drop file with a button to Chose files." width="634" />
 <p class="caption">Figure 2: Zeonodo upload section.</p>
 </div>
 
@@ -118,7 +121,7 @@ A single dataset can have multiple files.
 
 
 <div class="figure">
-<img src="images/zenodo-upload_3.png" alt="Screenshot of Zenodo’s New Upload page scrolled down. It shows a list of options for metadata."  />
+<img src="images/zenodo-upload_3.png" alt="Screenshot of Zenodo’s New Upload page scrolled down. It shows a list of options for metadata." width="634" />
 <p class="caption">Figure 3: Zeonodo upload section.</p>
 </div>
 
@@ -142,7 +145,7 @@ The last step is to click the "Publish" button at the bottom of the page and you
 
 
 <div class="figure">
-<img src="images/zenodo-upload_4.png" alt="Screenshot of Zenodo’s record viewer. It shows a record titled “Test Upload 2,” a preview of the dataset, an “Edit” button, a “New Version” button, and information on the publication date, DOI and Licence."  />
+<img src="images/zenodo-upload_4.png" alt="Screenshot of Zenodo’s record viewer. It shows a record titled “Test Upload 2,” a preview of the dataset, an “Edit” button, a “New Version” button, and information on the publication date, DOI and Licence." width="634" />
 <p class="caption">Figure 4: Zeonodo upload section.</p>
 </div>
 
@@ -156,6 +159,7 @@ The New Version button allows you to upload a whole new version of the dataset i
 Each version will have its own DOI and stable URL so you can cite and download the specific version used in each project.
 
 <div class = activity> 
+
 Upload your data
 
 Follow all the steps detailed previously to upload penguins.csv to a Zenodo record. 
@@ -176,7 +180,7 @@ If you go to a zenodo record, below the file previewyou will see a box with the 
 
 
 <div class="figure">
-<img src="images/file_list.png" alt="Screenshot of Zenodo’s list of files in the example database. It shows one file called penguins.csv that weights 15.2kB. To the right there’s a “Preview” button and a “download” button and below it an md5 checksum."  />
+<img src="images/file_list.png" alt="Screenshot of Zenodo’s list of files in the example database. It shows one file called penguins.csv that weights 15.2kB. To the right there’s a “Preview” button and a “download” button and below it an md5 checksum." width="412" />
 <p class="caption">Figure 5: Lis of files in the example database.</p>
 </div>
 
@@ -224,6 +228,7 @@ Neither future you nor any future reproducibility enthusiast needs to worry abou
 
 
 <div class = activity> 
+
 Improve report.Rmd
 
 1. Modify report.Rmd in the [demo project](http://localhost:4321/reproducibility-with-r/demo_project.zip) to download the data automatically. 
@@ -233,6 +238,7 @@ Improve report.Rmd
 
 
 <div class = notes> 
+
 Manage Zenodo programmatically
 
 You can use the [**zen4R**](https://github.com/eblondel/zen4R) package to automate all these steps. 

@@ -50,6 +50,7 @@ The same commands can be executed from a GUI like GitHub Desktop or Git Kraken.
 During this workshop we'll use RStudio.
 
 <div class = notes> 
+
 If you want to try the command line, here are the git commands:
 
 -   `git add <file>` to add a file to the staging area.

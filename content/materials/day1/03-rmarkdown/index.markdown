@@ -23,7 +23,9 @@ Now let's create a new RMarkdown file.
 In RStudio you can use the menu bar:
 
 <div class = instructions> 
+
 File → New File → R Markdown
+
 </div>
 
 A new window will open where you can *optionally* complete with your name, author and the output format.
@@ -32,6 +34,7 @@ By doing click on th ok button, the new file will open showing the template.
 This is great, you can try to "knit" the file to see the output document.
 
 <div class = activity> 
+
 Your turn
 
 1.  Create a new RMarkdown file.
@@ -73,6 +76,7 @@ output:
 ```
 
 <div class = notes> 
+
 Keep in mind the indentation!
 
 It is very important to maintain the indentation of the elements, since it defines the hierarchy of each element.
@@ -89,6 +93,7 @@ Everything you include between these delimiters will be interpreted by R as code
 Any output (graphics, tables, text, etc..) will be inserted into the final document in the same order as they are in the R Markdown file.
 
 <div class = instructions> 
+
 You can create a new chunk with:
 
 1.  The "+C" green bottom on the top right of the document
@@ -101,12 +106,14 @@ While the code will run when you knit, if you are analysing data and writing a r
 To run the line where your cursor is use the shortcut:
 
 <div class = instructions> 
+
 Ctrl + Enter
 </div>
 
 But you can also run the code of the whole chunk with:
 
 <div class = instructions> 
+
 Ctrl + Shift + Enter
 </div>
 
@@ -134,6 +141,7 @@ y = \mu + \sum_{i=1}^p \beta_i x_i + \epsilon
 $$
 
 <div class = notes> 
+
 In-line code
 
 You may find yourself mentioning results in the text, for example something like "the average minimum temperature for the month of March was 18 degrees".

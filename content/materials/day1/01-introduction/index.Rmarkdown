@@ -23,7 +23,8 @@ These are outside the scope of this workshop.
 
 In summary, for a research finding to be reproducible both data and methods should be available and applying the described methods on the data lead to the same results.
 
-<div class = notes> 
+<div class = notes>
+
 Methods vs. code
 
 In theory, method availability doesn't necessarily mean code availability, but in practice it's almost impossible to describe methods in such a way that enables full reproducibilty.

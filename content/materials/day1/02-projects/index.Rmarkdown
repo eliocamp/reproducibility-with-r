@@ -58,6 +58,7 @@ Name your files so that you can know what they are even if you came home at 3am 
 Use slugs (short descriptions of what's inside).
 
 <div class = activity> 
+
 Describe what do you think are the contents of these files:
 
 -   `data/raw/madrid-minimum_temperature.csv`
@@ -68,6 +69,7 @@ Describe what do you think are the contents of these files:
 </div>
 
 <div class = activity> 
+
 Come up with good file names and folders for:
 
 -   a dataset of cats with columns for weight, length, tail length, fur colour(s), fur type and name.
@@ -82,6 +84,7 @@ Come up with good file names and folders for:
 </div>
 
 <div class = notes> 
+
 Use a familiar folder structure
 
 There is no single one objectively best folder structure.
@@ -107,6 +110,7 @@ For instance `buenos_aires-minimum_temperature.csv`.
 You can also use them the other way around, but what's important is consistency.
 
 <div class = notes> 
+
 By using separators consistently and smartly you can parse file names programmatically very easily.
 For example, if you have
 
@@ -166,6 +170,7 @@ They don't strictly help with reproducibility of the final product, but they wil
 Opening an RStudio Project also ensures that you start a new R session every time and sets your working directory to the project root directory.
 
 <div class = activity> 
+
 Create a new RStudio Project
 
 1.  Click on "File" and then in "New Project...".
@@ -193,6 +198,7 @@ RStudio allows you to have multiple projects open, and this is possible because 
 You can work with multiple projects in parallel without code or results of one analysis interfering with the other's.
 
 <div class = activity> 
+
 Open your project
 
 1.  On your new project, create a new file (any file) and write some code on it (e.g. `print("Hello world")`).
@@ -209,7 +215,9 @@ And besides organising projects and not modifying the original data, how can you
 The most direct way is to restart the R session and run the code again, if it gives an error or doesn't return what you expected it means you missed a step.
 
 <div class = notes> 
+
 You can restart the R session with the shortcut Ctrl+Shif+F10.
+
 </div>
 
 This can happen if for example you read data into memory by running a command in the console.
@@ -220,6 +228,7 @@ However, be default RStudio will save the environment in a hidden file called .R
 And while this comes in handy so that you can boot up your work exactly where you left it each time you open your project, it might lead to a situation in which you never realise that you missed saving a key line of code in your analysis.
 
 <div class = activity> 
+
 Configure your project
 
 1.   Go to "Tools" -> "Project options..."
@@ -232,6 +241,7 @@ Configure your project
 </div>
 
 <div class = notes> 
+
 You can change these preferences at the global level with "Tools" -> "Global options" in the "General" subheading
 </div>
 

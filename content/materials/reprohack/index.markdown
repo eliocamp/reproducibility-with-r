@@ -29,6 +29,7 @@ Below there's a curated list of some papers for you to chose with a short descri
 You are free to browse the [list of papers tagged with "R"](https://www.reprohack.org/paper/?search=&tags=R) and select anyone that piques your interest.
 
 <div class = notes> 
+
 Optional: Submit a review!
 
 You can submit a review of each paper in its respective Reprohack page.
@@ -37,6 +38,7 @@ You are encouraged to submit a review if you can.
 </div>
 
 <div class = notes> 
+
 Package installation (especially Linux)
 
 When reproducing papers you will most likely need to install a whole lot of new packages.

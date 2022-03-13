@@ -21,6 +21,7 @@ penguins <- read.csv("data/penguins.csv")
 ```
 
 <div class = activity> 
+
 Get the demo project
 
 1.   Download the [demo project](/reproducibility-with-r/demo_project.zip) and extract it anywhere in your computer.
@@ -45,7 +46,7 @@ getwd()
 ```
 
 ```
-## [1] "/home/pao/RStuff/reproducibility-with-r/static/demo_project"
+## [1] "/home/elio/Documents/cursos/reproducibility-with-r/static/demo_project"
 ```
 
 And also that `penguins.csv` is indeed located un the `data` folder by running
@@ -107,6 +108,7 @@ What the **here** package does is create absolute paths that work on the machine
 The way you use the package is to always use paths relative to the root project directory but wrap them in the `here::here()` function.
 
 <div class = activity> 
+
 Fix one error
 
 1.   Change line 9 in `report.Rmd` to
@@ -126,6 +128,7 @@ But it can be brittle otherwise.
 
 
 <div class = activity> 
+
 Find a new error
 
 1.  Close demo_project.

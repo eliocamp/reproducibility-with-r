@@ -25,6 +25,7 @@ The following instructions are adapted from the [rrtools GitHub repository](http
 It is possible to use rrtools without Git, but usually we want our research compendium to be managed by the version control software Git.
 
 <div class = instructions> 
+
 1.  Create an online repository.
 2.  In RStudio, start a new Project:
 
@@ -46,7 +47,8 @@ Keep in mind that it will also be the package name and has to follow some rules 
 
 This uses `usethis::create_package()` to create a basic R package in the `pkgname` directory (in this case "PaperCompendium"), and then the project.
 
-<div class = instructions> 
+<div class = instructions>
+
 Create the compendium
 
 1.  Run `rrtools::use_compendium("path/to/pkgname")` (you use the path to `pkgname` in your system)
@@ -64,6 +66,7 @@ This adds a reference to the MIT license in the [DESCRIPTION](DESCRIPTION) file 
 To use a different license, replace this line with any of the licenses mentioned here: `?usethis::use_mit_license()`
 
 <div class = notes> 
+
 You can read more about licences [here](https://r-pkgs.org/license.html).
 </div>
 
@@ -126,6 +129,7 @@ You should set `data_in_git = FALSE` if your data files are large (>100 mb is th
 More about sharing data in the future.
 
 <div class = notes> 
+
 You can also use a graphic interface to create the compendium using the "rrtools Assistant" addin.
 It includes datailed instructions and the code associated with each step.
 
