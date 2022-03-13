@@ -1,6 +1,33 @@
  # Notes for instructors
 
- ##  Check points
+Would you like to teach this workshop/use the materials for your own course? We've compiled here a list of this we usually use while we teach. 
+
+The check points are instances when we ask the students how familiar are with x topic. Depending on their answers we decide if we can skip the topic, explain a few things or going through it in depth. 
+
+You will also find a template for the feedback form and the shared document. 
+
+##  Check points
+
+### Day 1
+
+[02: A tidy project is a happy project](/reproducibility-with-r/materials/day1/02-projects/)
+
+* Do you use RStudio projects? 
+
+  * What's that?
+  * I'm familiar with them.
+  * I use them somethimes.
+  * All the time.
+
+[03: Sharing data](/reproducibility-with-r/materials/day2/03-data/)
+
+* If you work with data, what's the typical size?
+
+  * A few megabytes (less than 100 Mb per file)
+  * A lot of small files (more that 50 Gb in total)
+  * Big files (more that 100 Mb)
+
+### Day 2
 
 ### Day 1
 
@@ -52,4 +79,10 @@
 
 
 ## Shared document
+
+Template: https://docs.google.com/document/d/1-rADHkl1QFR8EspCsS2YF6vtgZHPx16mYTgxc5PznQc/edit?usp=sharing
+
+## Feedback form
+
+https://docs.google.com/forms/d/e/1FAIpQLSeTzYR2HZG02kKstUPXPrvKVdgq0jK8ZdmuCiCJkzb-J2MIbA/viewform
 
