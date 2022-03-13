@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="generator" content="Hugo 0.80.0" />
-<title>Day 0 | An R reproducibility toolkit for the practical researcher</title>
+<title>Mini Reprohack | An R reproducibility toolkit for the practical researcher</title>
 
 
 
@@ -21,32 +21,34 @@
   
     
   
-<meta name="description" content="How to prepare ahead of time.">
+<meta name="description" content="Let&#39;s reproduce papers in the wild!
+">
 
 
 <meta property="og:site_name" content="An R reproducibility toolkit for the practical researcher">
-<meta property="og:title" content="Day 0 | An R reproducibility toolkit for the practical researcher">
-<meta property="og:description" content="How to prepare ahead of time." />
+<meta property="og:title" content="Mini Reprohack | An R reproducibility toolkit for the practical researcher">
+<meta property="og:description" content="Let&#39;s reproduce papers in the wild!
+" />
 <meta property="og:type" content="page" />
-<meta property="og:url" content="https://eliocamp.github.io/reproducibility-with-r/materials/day0/" />
+<meta property="og:url" content="https://eliocamp.github.io/reproducibility-with-r/materials/reprohack/" />
 <meta property="og:locale" content="en">
 
 
 
 
       
-          <meta property="og:image" content="https://eliocamp.github.io/reproducibility-with-r/materials/day0/featured.png" >
+          <meta property="og:image" content="https://eliocamp.github.io/reproducibility-with-r/materials/reprohack/featured.png" >
           <meta property="twitter:card" content="summary_large_image">
-          <meta name="twitter:image" content="https://eliocamp.github.io/reproducibility-with-r/materials/day0/featured.png" >
+          <meta name="twitter:image" content="https://eliocamp.github.io/reproducibility-with-r/materials/reprohack/featured.png" >
       
       
-  <meta itemprop="name" content="Day 0">
-<meta itemprop="description" content="Hi! In this workshop we will be introducing in many tools to help make your work as reproducible as possible. That means that you’ll need to have several programs installed and set up before we begin. Please, follow these instructions before the workshop.
-R At the very least you need to have R installed on your computer. If possible, try to have it upgraded to the latest version. We developed the materials using R version 4.">
+  <meta itemprop="name" content="Mini Reprohack">
+<meta itemprop="description" content="Let&#39;s reproduce papers in the wild!
+">
 <meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="620">
-<meta itemprop="image" content="https://eliocamp.github.io/reproducibility-with-r/materials/day0/featured.png">
+<meta itemprop="wordCount" content="745">
+<meta itemprop="image" content="https://eliocamp.github.io/reproducibility-with-r/materials/reprohack/featured.png">
 
 
 
@@ -120,7 +122,7 @@ R At the very least you need to have R installed on your computer. If possible, 
 
   
     
-      Day 0
+      Mini Reprohack
     
 
 
@@ -130,10 +132,10 @@ R At the very least you need to have R installed on your computer. If possible, 
 
 
         
-        <h1 class="f1 lh-solid measure-narrow mb3 fw4">Day 0</h1>
-        
+        <h1 class="f1 lh-solid measure-narrow mb3 fw4">Mini Reprohack</h1>
+        <h4 class="f4 mt0 mb4 lh-title measure">Let&#39;s reproduce papers in the wild!</h4>
         <p class="f6 measure lh-copy mv1">By Paola Corrales and Elio Campitelli</p>
-        
+        <p class="f7 db mv0 ttu">February 19, 2022</p>
         
         
       
@@ -141,85 +143,74 @@ R At the very least you need to have R installed on your computer. If possible, 
       </header>
       <section class="post-body pt5 pb4">
         
-<script src="https://eliocamp.github.io/reproducibility-with-r/materials/day0/index_files/header-attrs/header-attrs.js"></script>
+<script src="https://eliocamp.github.io/reproducibility-with-r/materials/reprohack/index_files/header-attrs/header-attrs.js"></script>
 
 
-<p>Hi!
-In this workshop we will be introducing in many tools to help make your work as reproducible as possible.
-That means that you’ll need to have several programs installed and set up before we begin.
-Please, follow these instructions before the workshop.</p>
-<div id="r" class="section level2">
-<h2>R</h2>
-<p>At the very least you need to have R installed on your computer.
-If possible, try to have it upgraded to the latest version.
-We developed the materials using R version 4.1.2 (2021-11-01).
-To the best of our abilities, we don’t think there’s anything that requires this particular version, but to avoid potential issues, it would be best if you have at least a R 4.something.</p>
-<p>Go to <a href="https://cloud.r-project.org/" class="uri">https://cloud.r-project.org/</a> and follow the steps for your Operating System.</p>
+<p>One of the best ways of learning what makes a reproducible project is to try to reproduce real life projects instead of toy examples.
+You’ll quickly learn what works and what doesn’t and pick up tools and workflows from others.</p>
+<p>Therefore we propose this optional homework in which you will do just that.
+You can do it at any moment during the workshop.
+Some paper require using particular packages or technologies that you might not be familiar at the start of the workshop.
+Most of them should have readmes with instructions, but if you’re stuck, you can always ask for help in the #reprohack Slack channel or leave it for later.</p>
+<p><a href="https://www.reprohack.org/">Reprohack</a> is a project that organises meetups in which a bunch of people get together to reproduce results.
+In their website they host a <a href="https://www.reprohack.org/paper/">database of papers</a> submitted by their authors.
+Papers that have been reviewed at least one have a “Mean reproducibility score” which will tell you roughly how easy it is to reproduce it.
+To get the code of a paper, you need to go to the “Code URL” link that’s on its respective reprohack page.</p>
+<p>Below there’s a curated list of some papers for you to chose with a short description of what you can expect.
+You are free to browse the <a href="https://www.reprohack.org/paper/?search=&amp;tags=R">list of papers tagged with “R”</a> and select anyone that piques your interest.</p>
+<div class="notes">
+<p>Optional: Submit a review!</p>
+<p>You can submit a review of each paper in its respective Reprohack page.
+This is a set of structure questions that are then sent to the authors.
+You are encouraged to submit a review if you can.</p>
 </div>
-<div id="rstudio" class="section level2">
-<h2>RStudio</h2>
-<p>We will be using RStudio as IDE.
-Again, try to update it to the latest version.
-The new visual editor will be particularly helpful for those without a lot of experience with markdown (and probably for the markdown experts as well).
-Also, old versions of RStudio do not work well with new versions of R (ggplot2 plots will crash your session).</p>
-<p>Go to <a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a> and download the latest version.</p>
+<div class="notes">
+<p>Package installation (especially Linux)</p>
+<p>When reproducing papers you will most likely need to install a whole lot of new packages.
+This can take quite a while if you are a Linux user because packages that ship FORTRAN, C++ or other code needs to be compiled.</p>
+<p>If you want to speed things up, you can use the RStudio Package Manager repository, which offers pre-compiled binaries for several linux distributions.
+Go to <a href="https://packagemanager.rstudio.com/client/#/repos/1/overview">this page</a> for setup instructions.</p>
 </div>
-<div id="r-packages" class="section level2">
-<h2>R Packages</h2>
-<p>You will need to install the packages required to use <strong>knitr</strong>.
-The easiest way to do this is to let RStudio do that for you.</p>
-<ul>
-<li><p>Open RStudio</p></li>
-<li><p>Go to to File -&gt; New File -&gt; R Markdown.</p></li>
-<li><p>If you get a pop up saying that you need to install some packages, click “Ok”.
-RStudio will install the packages and then open a sample document.</p></li>
-<li><p>Click on the “Knit” button (the blue yarn) to test your installation; everything went well, you should see a new window with an HTML file.</p></li>
-</ul>
-<p>Other important packages are <strong>here</strong>, <strong>renv</strong>, <strong>rticles</strong>, and <strong>devtools</strong> and <strong>roxygen2</strong>.
-These are on CRAN so you can install them with the usual</p>
-<pre class="r"><code>install.packages(c(&quot;here&quot;, &quot;renv&quot;, &quot;rticles&quot;, &quot;devtools&quot;, &quot;roxygen2&quot;))</code></pre>
-<p>The packages <strong>rrtools</strong> and <strong>rrtools.addin</strong> will also be useful.
-They are not on CRAN, so you need so install them from github</p>
-<pre class="r"><code>if (!require(&quot;remotes&quot;)) install.packages(&quot;remotes&quot;)
-remotes::install_github(&quot;benmarwick/rrtools&quot;)
-remotes::install_github(&quot;nevrome/rrtools.addin&quot;)</code></pre>
+<div id="curated-list-of-papers" class="section level2">
+<h2>Curated list of papers</h2>
+<div id="analytic-reproducibility-in-articles-receiving-open-data-badges-at-the-journal-psychological-science-an-observational-study-analytic-reproducibility" class="section level3">
+<h3>Analytic Reproducibility In Articles Receiving Open Data Badges At The Journal Psychological Science: An Observational Study {analytic-reproducibility}</h3>
+<p>Mean reproducibility score: 9,5/10 Number of reviews: 2 Link: <a href="https://www.reprohack.org/paper/46/" class="uri">https://www.reprohack.org/paper/46/</a></p>
+<p>This is a highly polished project that uses Docker to run the code in a container and render the result automatically.
+It’s also a study about reproducibility so the meta aspect is hard to resist.</p>
 </div>
-<div id="latex" class="section level2">
-<h2>LaTeX</h2>
-<p>You’ll need a working LaTeX installation to render PDFs.
-If you didn’t feel chills down your spine at the sight of that sentence, consider yourself lucky!</p>
-<p>The easiest (and painless) way to do this is to use the <a href="https://yihui.org/tinytex/">tinytex</a> R package.
-You should be up and running with these two commands:</p>
-<pre class="r"><code>install.packages(&#39;tinytex&#39;)
-tinytex::install_tinytex()</code></pre>
+<div id="no-effect-of-nature-representations-on-state-anxiety-actual-and-perceived-noise-library-noise" class="section level3">
+<h3>No Effect Of Nature Representations On State Anxiety, Actual And Perceived Noise {library-noise}</h3>
+<p>Mean reproducibility score: 5,0/10 Number of reviews: 1 Link: <a href="https://www.reprohack.org/paper/49/" class="uri">https://www.reprohack.org/paper/49/</a></p>
+<p>This paper has code and data available, but it doesn’t use RMarkdown to produce results, nor any way of defining a stable computational environment.
+On top of that, the code is not portable and it has some errors.
+On the other hand, since it doesn’t use any complicated technology like docker or renv, all the moving pieces can be understood by anyone with enough familiarity with R.
+Although all the code is there, it’s not straightforward to run it or reproduce the results.</p>
 </div>
-<div id="git-and-github" class="section level2">
-<h2>Git and GitHub</h2>
-<p>On the second day of the workshop we will start using Git for version control and GitHub as a remote repository.
-Details on how to do this are best described in Jenny Bryan’s fantastic <a href="https://happygitwithr.com/install-intro.html">Happy Git with R book</a>.
-The core steps are:</p>
-<ol style="list-style-type: decimal">
-<li><p>Install git on your machine.<br />
-The instructions depend on your Operating System.
-Follow the instructions at <a href="https://happygitwithr.com/install-git.html" class="uri">https://happygitwithr.com/install-git.html</a>.</p></li>
-<li><p>Create a GitHub account.<br />
-Go to <a href="github.com">github.com</a> and create your free account.</p></li>
-<li><p>Set up git so it can work with GitHUb and RStudio.<br />
-This can be, unfortunately, a rather involved process so be patient.
-Again, the excellent Happy Git with R is your friend.
-Follow the instructions in <a href="https://happygitwithr.com/https-pat.html">this chapter</a> to set up your GitHub Personal Access Token.<br />
-If you are on linux, we highly recommend <a href="https://blog.djnavarro.net/posts/2021-08-08_git-credential-helpers/">this post by Danielle Navarro</a>.
-It covers some of the same territory with more detail, and it can be cathartic to read someone who shares your pain.</p></li>
-<li><p>(Optional) In this workshop we will be using RStudio as a simple git GUI, but in the future you might want to use a more full-fledge client.
-Again, Happy Git with R <a href="https://happygitwithr.com/git-client.html#recommended-git-clients">recommends a few</a>.
-We like <a href="https://www.gitkraken.com/">GitKraken</a>, which is free, feature-rich, and multi-platform.</p></li>
-</ol>
+<div id="the-role-of-conidia-in-the-dispersal-of-ascochyta-rabiei" class="section level3">
+<h3>The Role Of Conidia In The Dispersal Of Ascochyta Rabiei</h3>
+<p>Mean reproducibility score: <code>NA</code> Number of reviews: 0 Link: <a href="https://www.reprohack.org/paper/41/" class="uri">https://www.reprohack.org/paper/41/</a></p>
+<p>This paper uses Docker completely.
+That’s to say, it comes with a docker image which ships the computational environment, as well as all the code and data.
+Unlike <a href="#analytic-reproducibility">this other paper</a>, the docker image does not create the paper automatically.
+From the description, this is a second revision of the paper in which the authors took several steps to improve its reproducibility.</p>
 </div>
-<div id="docker" class="section level2">
-<h2>Docker</h2>
-<p>On the third day we show the basics of docker.
-Instructions on how to install it depend on your operating system.
-Go to <a href="https://docs.docker.com/get-docker/" class="uri">https://docs.docker.com/get-docker/</a> and follow the instructions.</p>
+<div id="mental-health-and-social-contact-during-the-covid-19-pandemic-an-ecological-momentary-assessment-study" class="section level3">
+<h3>Mental Health and Social Contact During the COVID-19 Pandemic: An Ecological Momentary Assessment Study</h3>
+<p>Mean reproducibility score: 7,0/10 Number of reviews: 1 Link: <a href="https://www.reprohack.org/paper/32/" class="uri">https://www.reprohack.org/paper/32/</a></p>
+<p>This paper doesn’t define a table computational environment, but the code is almost fully portable and seems to run without errors.
+If you manage to install all the packages, you should be able to run it.</p>
+</div>
+<div id="where-should-new-parkrun-events-be-located-modelling-the-potential-impact-of-200-new-events-on-socio-economic-inequalities-in-access-and-participation" class="section level3">
+<h3>Where Should New Parkrun Events Be Located? Modelling The Potential Impact Of 200 New Events On Socio-Economic Inequalities In Access And Participation</h3>
+<p>Mean reproducibility score: 7,0/10
+Number of reviews: 3
+Link: <a href="https://www.reprohack.org/paper/28/" class="uri">https://www.reprohack.org/paper/28/</a></p>
+<p>This paper is bundled into an RStudio project and the code is portable.
+The code will install packages if needed.
+Some possible problems is that it uses packages related to spatial analysis, some of which might require some special system dependencies.
+It also warns that the analysis might not run in a lightweight computer.</p>
+</div>
 </div>
 
       </section>
@@ -227,10 +218,10 @@ Go to <a href="https://docs.docker.com/get-docker/" class="uri">https://docs.doc
         <div class="post-pagination dt w-100 mt4 mb2">
   
   
+    <a class="prev dtc pr2 tl v-top fw6"
+    href="https://eliocamp.github.io/reproducibility-with-r/materials/extras/">&larr; Extras</a>
   
   
-    <a class="next dtc pl2 tr v-top fw6"
-    href="https://eliocamp.github.io/reproducibility-with-r/materials/extras/">Extras &rarr;</a>
   
 </div>
 
@@ -254,7 +245,7 @@ Go to <a href="https://docs.docker.com/get-docker/" class="uri">https://docs.doc
 
 
 
-  <img src="/reproducibility-with-r/materials/day0/sidebar.png" class="db ma0">
+  <img src="/reproducibility-with-r/materials/reprohack/sidebar.png" class="db ma0">
 
                          
  
@@ -270,7 +261,7 @@ Go to <a href="https://docs.docker.com/get-docker/" class="uri">https://docs.doc
         
           
           
-          <li class="active" hugo-nav="/reproducibility-with-r/materials/day0/">
+          <li class="" hugo-nav="/reproducibility-with-r/materials/day0/">
             <a href="https://eliocamp.github.io/reproducibility-with-r/materials/day0/">Day 0</a></li>
           
           </li>
@@ -338,7 +329,7 @@ Go to <a href="https://docs.docker.com/get-docker/" class="uri">https://docs.doc
         
           
           
-          <li class="" hugo-nav="/reproducibility-with-r/materials/reprohack/">
+          <li class="active" hugo-nav="/reproducibility-with-r/materials/reprohack/">
             <a href="https://eliocamp.github.io/reproducibility-with-r/materials/reprohack/">Mini Reprohack</a></li>
           
           </li>
