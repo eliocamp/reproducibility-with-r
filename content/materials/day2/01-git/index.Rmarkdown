@@ -254,6 +254,74 @@ There are to main scenarios when you work with others or you want to collaborate
 In the first case, you can clone the repo following the [these same instructions](/reproducibility-with-r/materials/day2/01-git/#creating-a-new-repository) and use the same workflow as before. When you try to push your changes to the remote repository, GitHub will check if you have the rights to modify the repo.
 
 
+### Let's plant some trees
+
+As a fun example will collaborate with the recently open Flametree galley and do some pull request on the way. 
+
+<div class = activity> 
+
+Fork the repository 
+
+1. Go to [github.com/paocorrales/flametree_gallery](https://github.com/paocorrales/flametree_gallery)
+2. Fork the repository using the "Fork" button on the top right corner.
+
+![Screenshot of a repository showing where the "fork" button is.](images/fork.png)
+
+Now, you have a copy of the repo in your GitHub account.
+
+3. Copy the url of the repo and clone it to your computer following the [instructions to create a new repo.](/reproducibility-with-r/materials/day2/01-git/#creating-a-new-repository)
+
+![Screenshot of a forked repo showing where to copy the url to clone the repo.](images/clone.png)
+
+</div>
+
+Now you have an RStudio project (that is also a repo) that is a copy of the one in the original repo. It's a very small project with a few file. `template_script.R` includes the necessary code to create beautiful images like this:
+
+![Image of trees created using R](images/tree_pao.png)
+
+It uses the [*flametree*](https://github.com/djnavarro/flametree) library created by [Danielle Navarro](https://djnavarro.net/). How it works is not part of the topics of the workshop (sadly!) but it's a good excuse to practice doing pull requests.
+
+<div class = activity> 
+
+Make a change in the repo
+
+1. Make a copy of the `template_script.R` file and change it's name to `<your-name.R>`
+2. Change the value of the first 3 variables in the script:
+
+    * `name` your name.
+    * `seed` there are some random things happening there.
+    * `shades` choose 4 colors that you like. 
+
+You can run the code if you want :)
+
+3. Save the file, **add** it to the staging area and **commit** it (*include only the .R file you created*).
+4. Push it to your remote repository.
+
+</div>
+
+At this point you've made a change in your local repo (that is a copy of the forked repo) and pushed those changes to your remote repo in GitHub. The original repo doesn't know this. 
+
+If you want to contribute the changes you made to the original repo, it's time to make a pull request. 
+
+<div class = activity> 
+
+Make a pull request
+
+1. Go to your repo in GitHub, you will see that you made the last commit and a message like this:
+
+![Screenshot of a forked repo in GitHub with a new commit. It shows how to star a new pull request.](images/pr1.png)
+
+2. Click on "Open pull request".
+3. And click on "Create pull request". 
+4. We are almost there. Complete the pull request with a title and a message and then finish the PR.
+
+![Screenshot of GitHub showing how to add a title, message and finish a pull request](images/pr2.png)
+
+And that it!
+
+</div>
+
+The owner/s of the repo will receive an email. They can review the pull request, comment on it and eventually accept the contribution. When that happen the changes you made will apear in the repo. 
 
 
 ## Resources
