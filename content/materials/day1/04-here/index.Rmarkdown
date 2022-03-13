@@ -16,7 +16,7 @@ One issue is that when RMarkdown files are knitted, the working directory in whi
 
 To witness this, we prepared a demo project.
 
-``` r
+```r
 penguins <- read.csv("data/penguins.csv")
 ```
 
@@ -28,7 +28,7 @@ Get the demo project
 :::
 
 ```{r include=FALSE}
-here::i_am("content/materials/day1/04-here/index.Rmd")
+here::i_am("content/materials/day1/04-here/index.Rmarkdown")
 knitr::opts_knit$set(root.dir = here::here("static/demo_project"))
 ```
 

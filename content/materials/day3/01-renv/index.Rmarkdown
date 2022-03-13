@@ -28,14 +28,12 @@ To start working with renv you first need to initialise the project-local enviro
 
 This will automatically scan all your R scripts and RMarkdown files, discover their dependencies, and store the versions of the currently-installed packages in the lockfile and install them in the project library. 
 
-::: activity
-
+::: {.activity}  
 Start using renv
 
 1. Open the demo project [demo project](/reproducibility-with-r/demo_project.zip). 
 
-2. In the console run `renv::init()`
-
+2. In the console run `renv::init()`  
 :::
 
 In your project root you will now see a file called `renv.lock` and a folder called `renv`. 

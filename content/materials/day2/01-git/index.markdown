@@ -1,0 +1,215 @@
+---
+title: "01: Getting the most of git"
+weight: 1
+show_post_date: false
+publishDate: 2022-02-19
+excerpt: ""
+---
+
+## Why git?
+
+Do you have something like this in your computer?
+
+    /home/pao/Documents/thesis
+    ├── abstract.R
+    ├── thesis.Rmd
+    ├── thesis_reviwed.Rmd
+    ├── thesis_reviwed2.Rmd
+    ├── thesis_final.Rmd
+    ├── thesis_finalfinal.Rmd
+    ├── this_is_it.Rmd
+    ├── now_this_is_it.Rmd
+    └── FINAL.Rmd
+
+Probably we all have or had something like this.
+Git came to solve this problem.
+It is a version control system, that manage the evolution and changes of a set of files or **repository**.
+If you ever looked at the history of a Google Docs file, it is like that but in a very controlled way.
+
+If you work alone, git is great to track changes, recover previous version of your files.
+You can also use a **remote repository** (more later) to have a back up and share your work.
+
+If you work as a team you can take advantage of all the above and also use version control as a tool to collaborate and organize the different version of the same file in the multiple computer you and they use.
+
+## But what we mean by version control?
+
+Let imagine that we have a repository already working.
+When you create a new file as part of the repository, that file is untracked or unversioned.
+This mean that the repository will ignore the file and any change you made until you *add* it to the repo.
+At this point the file is **staged** and it ready to get into the repository.
+To do that you do a *commit* and **save** that version of the file to the repo.
+This workflow `add --> commit` will repeat every time you want to save a version of the file.
+We don't recommend you to make a commit every time you save the file or change a comma, and its also not a good idea to make a commit with a billion of changes.
+With practice and depending on how do you work, you will find a mid point.
+
+![The figure show the states of a file: untracked or tracked. When is tracked by the repository, the file can be staged, committed or modified. With add the file is "staged", with commit the file is "saved" to the repository. This cycles repeats when the files it modified.](images/file_cycle2.png)
+
+So, we mention `add` and `commit`, this are git commands.
+If you have experience working with the command line you could use git from them.
+The same commands can be executed from a GUI like GitHub Desktop or Git Kraken.
+During this workshop we'll use RStudio.
+
+::: notes
+If you want to try the command line, here are the git commands:
+
+-   `git add <file>` to add a file to the staging area.
+-   `git commit -m "A very descriptive message` to commit the files on the staging area.
+:::
+
+## Did you mentioned remote repository?
+
+Yes, before we when through the **local workflow**.
+The repo lives in your computer and that it.
+But, you can also connect the **local repository** to a **remote repository**.
+For the workshop we are going to use GitHub but there are other options you can explore.
+
+Let imagine we have a local repository, we made some commits and we want to send those changes to the remote repository (we'll how to create the remote repository later).
+For that we **push** the commits to the remote repository and the two repos are "up to date".
+
+A team mate makes a change to a file and push it to the remote repository.
+Now, your local repo is "updated" and you need to download those new commits from the remote repository.
+You **pull** the commits.
+
+![Concept model of a workflow using RStudio projects and git. Files are added to the staging area, and then commited to the local repository. You can push commits to the remote repository and pull new commits to your computer.](images/local_remote.png)
+
+Tools like GitHub also include features that help you to collaborate and manage the repository.
+For example, you will be able to make changes to the files (this is modify something, add and commit the file) using the web interface.
+
+If you want to try the command line, here are the git commands:
+
+-   `git push` to upload the commit to the remote repository.
+-   `git pull` to download the commits from the remote repository to the local repo. :::
+
+## Introduce yourself to Git
+
+Before we create the first repository we have to make sure that git and RStudio are friends and that git knows you.
+If you follow the pre-workshop instructions, RStudio and git are (and GitHub) are definitely talking to each other.
+
+::: notes
+You can check that RStudio "see" git going to `Tools --> Global Options --> Git/SVN`.
+There you will find the path in your computer to the git installation.
+:::
+
+To introduce yourself to git, that is to let it know your name and email you can use the *usethis* package.
+
+    library(usethis) 
+    use_git_config(user.name = "Jane Doe",
+                   user.email = "jane@example.org")
+
+Substituting with your name and the email associated with your GitHub account.
+
+::: notes
+If you want to try the command line:
+
+    git config --global user.name 'Jane Doe'
+    git config --global user.email 'jane@example.com'
+:::
+
+## Creating a new repository
+
+There are many ways to start a new repository, locally in your computer using the command line or an interface, from GitHub (or it friends), from RStudio!
+We'll show you here how to create a repo from GitHub, associate it to a RStudio project and work with it.
+But keep in mind that there are many other ways to work with git.
+
+::: instructions
+1.  Create an online repository.
+
+-   Go to [github.com](https://github.com) and log in.
+-   On the top right corner, click on the "+" bottom and then "New repository"
+
+Then:
+
+-   Repository template: No template.
+-   Repository name: myrepo or whatever you wish to name your new project.
+-   Description: Any short description of the project. Write this for humans.
+-   Public.
+-   Initialize this repository with: nothing (we can set up everything from R).
+
+Before going back to RStudio, copy the url for the repository.
+For example `https://github.com/paocorrales/myrepo.git`
+:::
+
+::: instructions
+2.  In RStudio, start a new Project:
+
+-   `File > New Project > Version Control > Git`. In the "repository URL" paste the URL of your new GitHub repository `https://github.com/paocorrales/myrepo.git`.
+-   Choose the folder where you want to create the project.
+-   Choose "Open in new session".
+-   And Click on "Create Project".
+:::
+
+The new folder in your computer will be a git repository, linked to a remote GitHub repository and an RStudio Project at the same time.
+This workflow also makes sure that all the configuration between the local and remote repos are done correctly.
+
+It also add a .gitignore file that include a list of file that we wont need to track, for example the .Rhistory.
+
+## Local changes
+
+It's time to put into practice some of the thing we've been talking.
+
+::: activity
+Add, commit
+
+1.  Create a new RMarkdown file and save it.
+2.  Add it to the staging area and commit the file. You'll need to add a descriptive message!
+3.  Make a change on the file, it can be anything. Save it.
+4.  Repeat step 2.
+
+
+![Git panel with 3 untracked files.](images/add1.png)
+
+![Git panel with 3 tracked files added to the staging area.](images/add2.png)
+
+![RStudio interface to see file differences, write message's commit and push it to the remote repository.](images/add3.png)
+
+:::
+
+If everything went ok, you started tracking files, made changes, commit them to the local repository. You may see a message on the git tab saying that the local repo is ahead of the remote repo by 2 commits.
+
+::: activity
+
+Push!
+
+1. Now, push the commits to the remote repository.
+
+:::
+
+If you don't push the commits to the remote repository, you wont be able to see them on GitHub. You can do this at the end of the day if you prefer but if you work with others it may be a good idea to push everything after you do each commit. 
+
+## Remote changes
+
+Let come back to GitHub. If you refresh the page, now you'll see the files you committed just yet. Let click on "Commits" to see the history of the repository. From this view, you can explore the repository at the "state" of each commit and look at the file differences.
+
+Now, we can try to  make changes here.
+
+::: activity
+
+Create a README
+
+1. On the main page, click on the green bottom that says "Add a README".
+2. Add something to the file. READMEs usually are written in Markdown and contains information about the repo.
+3. At the end of the page add a message on the first line and click on "Commit new file". 
+4. Come back to the main page to see the README. 
+
+:::
+
+The new file and the changes you do on GitHub are only on the remote repository until you make a pull from the local repo. If you make changes on the local repo while it not up to date, you may encounter merge conflicts. This happens when the version of a file on the local repo is not compatible with it version on the remote repo. On those cases, git cannot decide which version is the right one and you have to do it for it. 
+
+To avoid this problem (almost all the time), you should do a pull before start doing anything else. Most of the time RStudio will show the “Already up-to-date.” but it is good to make this a habit.
+
+::: activity
+
+Pull from GitHub
+
+1. Go back to RStudio
+2. Click on the light blue arrow that says "Pull" 
+3. Check the README file on the Files tab.
+
+:::
+
+
+## Resources
+
+Happy git with R, writen by Jenny Bryan: <https://happygitwithr.com/>
+
+Taller de git developed by Yanina Bellini Saibene and Marysol Gatti (in Spanish): <https://master--yabellini.netlify.app/es/courses/tallerdegitconr>
