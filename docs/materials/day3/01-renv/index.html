@@ -45,7 +45,7 @@
 But actively-maintained packages will change their code-base to fix bugs, add features, remove features or change behaviour. These changes have the potential of breaking your analysis or creating subtle (or not so subtle) differences in the result.">
 <meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1290">
+<meta itemprop="wordCount" content="1296">
 
 
 
@@ -157,7 +157,7 @@ The
 <a href="https://rstudio.github.io/renv/index.html" target="_blank" rel="noopener"><strong>renv</strong></a> package solves both.</p>
 <p>The idea underlying renv is that each project should have a project-specific R environment with its own library where packages are installed.
 Packages installed in the project library are independent of the personal library so you can install a specific version of a package in one project without changing the version used by another.</p>
-<p>The status of this project library is recorderd on a lockfile: a file called <code>renv.lock</code> that holds the version, source and other metadata of each package used in the project.
+<p>The status of this project library is recorded in a lockfile: a file called <code>renv.lock</code> that holds the version, source and other metadata of each package used in the project.
 This file will be used by renv to restore the project library to its correct state if for some reason there are missing packages, or packages with the wrong version.</p>
 
 
@@ -172,8 +172,8 @@ This file will be used by renv to restore the project library to its correct sta
 <p>The nice thing about renv is that on its default behaviour it automates a lot and gets out of your way as much as it can.
 To start working with renv you first need to initialise the project-local environment with <code>renv::init()</code>.</p>
 <p>This will automatically scan all your R scripts and RMarkdown files, discover their dependencies, and store the versions of the currently-installed packages in the lockfile and install them in the project library.</p>
-</div> {.activity}  
-Start using renv
+<div class = activity> 
+<p>Start using renv</p>
 <ol>
 <li>
 <p>Open the demo project 
@@ -187,7 +187,7 @@ Start using renv
 <p>In your project root you will now see a file called <code>renv.lock</code> and a folder called <code>renv</code>.</p>
 <p>Once this is done, you can keep working on your project as usual, installing, removing and updating packages as you normally would.
 The difference is that now all of that will only affect the project library.
-if you update a package in your project, other projects will still use the global version (or their local versions if you use renv with them).
+If you update a package in your project, other projects will still use the global version (or their local versions if you use renv with them).
 The flipside is that updating packages outside of the project won&rsquo;t affect the package versions used by it.</p>
 <div class = activity> 
 <p>Use ggplot2</p>
@@ -204,7 +204,7 @@ The flipside is that updating packages outside of the project won&rsquo;t affect
 <p>First, RStudio will ask you to install the markdown package.
 &ldquo;But wait, I must have installed already!&rdquo;.
 Yes, but not on this project.
-Because the markdown package is not used explicitly anywhere in the project, renv didn&rsquo;t discover it as a poject dependency package so it was neither included in the lockfile nor installed in the project library, so it needs to be installed.</p>
+Because the markdown package is not used explicitly anywhere in the project, renv didn&rsquo;t discover it as a project dependency package so it was neither included in the lockfile nor installed in the project library, so it needs to be installed.</p>
 <p>Second, you will get an error informing you that &ldquo;there is no package called &lsquo;ggplot2&rsquo;.
 Again, even if you had ggplot2 installed on your personal library, since it was not used on the code, it was not installed.</p>
 <p>You can now check the status of the lockfile with <code>renv::status()</code>, which will return this:</p>
@@ -236,7 +236,7 @@ So you can install it normally (<code>install.packages(&quot;ggplot2&quot;)</cod
 </ol>
 </div> 
 <p>This time, the report should render correctly because ggplot2 is now included in your project library.
-However, the ouput of <code>renv::status()</code> reads something like</p>
+However, the output of <code>renv::status()</code> reads something like</p>
 <pre><code>The following package(s) are installed but not recorded in the lockfile:
                _
   lattice        [0.20-45]
@@ -269,7 +269,7 @@ To remedy that, you need to update the lockfile by taking a &ldquo;snapshot&rdqu
       <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
     </svg></a>
 </h2>
-<p>All this work wouldn&rsquo;t mean be useful if there wasn&rsquo;t a way of using the lockfile to  consistently recreate the same environment.
+<p>All this work wouldn&rsquo;t be useful if there wasn&rsquo;t a way of using the lockfile to consistently recreate the same environment.
 This is where renv shines.</p>
 <p>Anyone who wants to install the same packages that you use with their exact versions can download your code, open the project and use <code>renv::restore()</code>.
 This will install everything in their local project library so they can be up an running in no time.</p>
@@ -314,7 +314,7 @@ If you use git, you don&rsquo;t need to think about this because renv takes care
     </svg></a>
 </h3>
 <p>The lockfile holds a snapshot of the project library at a moment in time, but it doesn&rsquo;t guarantee that this corresponds to the rendered result.
-The lockfile could be out of date when the code is run, or the lockfile coudl be updated but the code not re-run.</p>
+The lockfile could be out of date when the code is run, or the lockfile could be outdated but the code not re-run.</p>
 
 
 
@@ -325,7 +325,7 @@ The lockfile could be out of date when the code is run, or the lockfile coudl be
       <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
     </svg></a>
 </h3>
-<p>The automatic dependency discovery is really cool, somewhat limited.
+<p>The automatic dependency discovery is really cool, but somewhat limited.
 It understand the most common and obvious ways a package can be loaded in a script, but it can fail if you use some more indirect methods.</p>
 
 
@@ -359,6 +359,24 @@ renv does not handle these cases yet, so if you are using a package that needs s
 This means that if results depend on the version of some system dependency, renv will not be able to ensure reproducibility.
 This includes the version of R itself!</p>
 <p>One tool to ensure that the whole system is stable is using containers, which is the subject of the next section.</p>
+
+
+
+
+<h2 id="resources">Resources
+  <a href="#resources"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>
+<a href="https://rstudio.github.io/renv/index.html" target="_blank" rel="noopener">renv package documentation</a>:</p>
+<ul>
+<li>
+<a href="https://rstudio.github.io/renv/articles/renv.html" target="_blank" rel="noopener">Get started</a></li>
+<li>
+<a href="https://rstudio.github.io/renv/articles/faq.html" target="_blank" rel="noopener">FAQ</a></li>
+</ul>
 
       </section>
       <footer class="post-footer">
@@ -426,7 +444,7 @@ This includes the version of R itself!</p>
               <li class="" hugo-nav="/reproducibility-with-r/materials/day1/02-projects/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/02-projects/">02: A tidy project is a happy project</a></li>
             
               
-              <li class="" hugo-nav="/reproducibility-with-r/materials/day1/03-rmarkdown/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/03-rmarkdown/">03: Reporting with RMarkdown</a></li>
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day1/03-rmarkdown/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/03-rmarkdown/">03: Reporting with R Markdown</a></li>
             
               
               <li class="" hugo-nav="/reproducibility-with-r/materials/day1/04-here/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/04-here/">04: here are the portable paths</a></li>
@@ -495,6 +513,7 @@ This includes the version of R itself!</p>
     <li><a href="#using-renv-in-your-project">Using renv in your project</a></li>
     <li><a href="#renv-for-reproducibility">Renv for reproducibility</a></li>
     <li><a href="#caveats">Caveats</a></li>
+    <li><a href="#resources">Resources</a></li>
   </ul>
 </nav>
     </div>

@@ -282,8 +282,8 @@ However, it can be a bit overwhelming because it has many moving parts, so in th
 
 ### Resources
 
-[https://slides.djnavarro.net/project-structure](https://slides.djnavarro.net/project-structure/#25)/
+[Project structure - Slides by Danielle Navarro](https://slides.djnavarro.net/project-structure/)/
 
-<https://peerj.com/preprints/3192v1/>
+[Packaging data analytical work reproducibly using R (and friends)](https://peerj.com/preprints/3192v1)
 
-[https://mbjoseph.github.io/intro-research-compendia](https://mbjoseph.github.io/intro-research-compendia/#9)
+[How (and why) to make a research compendium](https://mbjoseph.github.io/intro-research-compendia/)

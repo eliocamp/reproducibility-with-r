@@ -33,8 +33,7 @@ Therefore we propose this optional homework in which you will do just that. You 
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://eliocamp.github.io/reproducibility-with-r/materials/extras/</guid>
-      <description>Parameterised reports     Sometimes you need to re-do a report changing one variable that repeats over all the code, the best way to do this is through a parameterised report.
-In the following example there is a plot of the price distribution for ideal diamonds. If you want to change it to visualise the data for &amp;ldquo;fair&amp;rdquo; or &amp;ldquo;very good&amp;rdquo; cut diamonds, you will have to change the filter(cut == &amp;quot;Ideal&amp;quot;) and hopefully you wont forget the plot title.</description>
+      <description>The terminal     If you use macOS or any flavour of Linux, the terminal will sound familiar. If you live in the Windows world, the terminal may be new to you. But you don&amp;rsquo;t need another workshop to work with it in the context of this workshop. For now you can use the terminal tab in RStudio or look for the Command Prompt in the list of programs you have installed.</description>
     </item>
     
   </channel>

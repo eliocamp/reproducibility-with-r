@@ -29,13 +29,13 @@ You download the all the files and you find something like this.
     </item>
     
     <item>
-      <title>03: Reporting with RMarkdown</title>
+      <title>03: Reporting with R Markdown</title>
       <link>https://eliocamp.github.io/reproducibility-with-r/materials/day1/03-rmarkdown/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day1/03-rmarkdown/</guid>
-      <description>RMarkdown files     An RMarkdown file is a plain text file, with some rules and special syntax that allow us to write code and text together. When it is &amp;ldquo;knitted,&amp;rdquo; the code will be evaluated and executed and the text formatted so that it creates a reproducible report or document that is nice to read and contains all your work.
-This is really critical to reproducibility. It also saves us time and can help with automation tasks.</description>
+      <description>R Markdown files     An R Markdown file is a plain text file, with some rules and special syntax that allow you to write code and text together. When it is &amp;ldquo;knitted,&amp;rdquo; the code will be evaluated and executed and the text formatted so that it creates a reproducible report or document that is nice to read and contains all your work.
+This is really critical to reproducibility since it automates the creation of a paper or report, which also has the side effect of saving time.</description>
     </item>
     
     <item>

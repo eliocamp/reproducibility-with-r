@@ -96,6 +96,11 @@
   </url>
   
   <url>
+    <loc>https://eliocamp.github.io/reproducibility-with-r/notes_for_instructors/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://eliocamp.github.io/reproducibility-with-r/about/</loc>
   </url>
   

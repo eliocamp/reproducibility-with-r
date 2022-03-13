@@ -45,7 +45,7 @@
 Root directory during knit     One issue is that when RMarkdown files are knitted, the working directory in which the code is executed is the location of the .">
 <meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="691">
+<meta itemprop="wordCount" content="706">
 
 
 
@@ -162,9 +162,8 @@ There are two situations in which this assumption can be broken and that can lea
     </svg></a>
 </h2>
 <p>One issue is that when RMarkdown files are knitted, the working directory in which the code is executed is the location of the .Rmd file, which is not always the root of the project.</p>
-<p>To witness this, we prepared a demo project.</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#434f54">penguins</span> <span style="color:#728e00">&lt;-</span> <span style="color:#d35400">read.csv</span>(<span style="color:#7f8c8d">&#34;data/penguins.csv&#34;</span>)
-</code></pre></div><div class = activity> 
+<p>To show you this, we prepared a demo project.</p>
+<div class = activity> 
 <p>Get the demo project</p>
 <ol>
 <li>Download the 
@@ -177,8 +176,8 @@ There are two situations in which this assumption can be broken and that can lea
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#434f54">penguins</span> <span style="color:#728e00">&lt;-</span> <span style="color:#d35400">read.csv</span>(<span style="color:#7f8c8d">&#34;data/penguins.csv&#34;</span>)
 </code></pre></div><p>You can test that the working directory is the project root by running <code>getwd()</code> in the console:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#d35400">getwd</span>()
-</code></pre></div><pre><code>## [1] &quot;/home/elio/Documents/cursos/reproducibility-with-r/static/demo_project&quot;
-</code></pre><p>And also that <code>penguins.csv</code> is indeed located un the <code>data</code> folder by running</p>
+</code></pre></div><pre><code>## [1] &quot;/home/pao/RStuff/reproducibility-with-r/static/demo_project&quot;
+</code></pre><p>You&rsquo;ll get some path in your computer. And also that <code>penguins.csv</code> is indeed located in the <code>data</code> folder by running</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#d35400">file.exists</span>(<span style="color:#7f8c8d">&#34;data/penguins.csv&#34;</span>)
 </code></pre></div><pre><code>## [1] TRUE
 </code></pre><p>You can even try to read the data in the console</p>
@@ -266,13 +265,27 @@ A more robust approach is to define the working directory by asserting the relat
 This will set the project root that is consistent with this location and emit a message.
 Importantly, it will fail if the declared location is not found in the working directory or any of the parent directories.</p>
 
+
+
+
+<h2 id="resources">Resources
+  <a href="#resources"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>
+<a href="https://here.r-lib.org/articles/rmarkdown.html" target="_blank" rel="noopener">Using here with rmarkdown</a></p>
+<p>
+<a href="https://github.com/jennybc/here_here" target="_blank" rel="noopener">Ode to the here package</a></p>
+
       </section>
       <footer class="post-footer">
         <div class="post-pagination dt w-100 mt4 mb2">
   
   
     <a class="prev dtc pr2 tl v-top fw6"
-    href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/03-rmarkdown/">&larr; 03: Reporting with RMarkdown</a>
+    href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/03-rmarkdown/">&larr; 03: Reporting with R Markdown</a>
   
   
   
@@ -332,7 +345,7 @@ Importantly, it will fail if the declared location is not found in the working d
               <li class="" hugo-nav="/reproducibility-with-r/materials/day1/02-projects/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/02-projects/">02: A tidy project is a happy project</a></li>
             
               
-              <li class="" hugo-nav="/reproducibility-with-r/materials/day1/03-rmarkdown/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/03-rmarkdown/">03: Reporting with RMarkdown</a></li>
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day1/03-rmarkdown/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/03-rmarkdown/">03: Reporting with R Markdown</a></li>
             
               
               <li class="active" hugo-nav="/reproducibility-with-r/materials/day1/04-here/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/04-here/">04: here are the portable paths</a></li>
@@ -400,6 +413,7 @@ Importantly, it will fail if the declared location is not found in the working d
   <ul>
     <li><a href="#root-directory-during-knit">Root directory during knit</a></li>
     <li><a href="#defensive-programming-with-here">Defensive programming with here</a></li>
+    <li><a href="#resources">Resources</a></li>
   </ul>
 </nav>
     </div>

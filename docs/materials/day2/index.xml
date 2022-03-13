@@ -14,7 +14,7 @@
       
       <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day2/01-git/</guid>
       <description>Why git?     Do you have something like this in your computer?
-/home/pao/Documents/thesis ├── abstract.R ├── thesis.Rmd ├── thesis_reviwed.Rmd ├── thesis_reviwed2.Rmd ├── thesis_final.Rmd ├── thesis_finalfinal.Rmd ├── this_is_it.Rmd ├── now_this_is_it.Rmd └── FINAL.Rmd  Probably we all have or had something like this. Git came to solve this problem. It is a version control system, that manage the evolution and changes of a set of files or repository. If you ever looked at the history of a Google Docs file, it is like that but in a very controlled way.</description>
+/home/pao/Documents/thesis ├── abstract.R ├── thesis.Rmd ├── thesis_reviwed.Rmd ├── thesis_reviwed2.Rmd ├── thesis_final.Rmd ├── thesis_finalfinal.Rmd ├── this_is_it.Rmd ├── now_this_is_it_for_real_this_time_i_swear.Rmd └── FINAL.Rmd  Probably we all have, or had something like this at one point because we didn&amp;rsquo;t use a version control system. Version control systems manage the evolution and changes of a set of files that we&amp;rsquo;ll call repository.</description>
     </item>
     
     <item>
@@ -23,8 +23,7 @@
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day2/02-rrtools/</guid>
-      <description>Of course, you can always create a file structure that suit you and your work by hand. But here we are going to try rrtools to create a &amp;ldquo;research compendium&amp;rdquo; and combine it with the things we learned on the git and GitHub section.
-The first thing you need to know is that an rrtools compendium will be at the same time an R package. If you don&amp;rsquo;t have experience with R packages, don&amp;rsquo;t worry!</description>
+      <description>Of course, you can always create a file structure that suits you and your work by hand. But if you are going to do that a lot, it might be nice to automate some of the work. We are going to use the rrtools package to create a &amp;ldquo;research compendium&amp;rdquo; using a couple of R functions and combine it with the things we learned on the git and GitHub section.</description>
     </item>
     
     <item>

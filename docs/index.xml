@@ -14,7 +14,7 @@
       
       <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day2/01-git/</guid>
       <description>Why git?     Do you have something like this in your computer?
-/home/pao/Documents/thesis ├── abstract.R ├── thesis.Rmd ├── thesis_reviwed.Rmd ├── thesis_reviwed2.Rmd ├── thesis_final.Rmd ├── thesis_finalfinal.Rmd ├── this_is_it.Rmd ├── now_this_is_it.Rmd └── FINAL.Rmd  Probably we all have or had something like this. Git came to solve this problem. It is a version control system, that manage the evolution and changes of a set of files or repository. If you ever looked at the history of a Google Docs file, it is like that but in a very controlled way.</description>
+/home/pao/Documents/thesis ├── abstract.R ├── thesis.Rmd ├── thesis_reviwed.Rmd ├── thesis_reviwed2.Rmd ├── thesis_final.Rmd ├── thesis_finalfinal.Rmd ├── this_is_it.Rmd ├── now_this_is_it_for_real_this_time_i_swear.Rmd └── FINAL.Rmd  Probably we all have, or had something like this at one point because we didn&amp;rsquo;t use a version control system. Version control systems manage the evolution and changes of a set of files that we&amp;rsquo;ll call repository.</description>
     </item>
     
     <item>
@@ -73,8 +73,7 @@ You download the all the files and you find something like this.
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day2/02-rrtools/</guid>
-      <description>Of course, you can always create a file structure that suit you and your work by hand. But here we are going to try rrtools to create a &amp;ldquo;research compendium&amp;rdquo; and combine it with the things we learned on the git and GitHub section.
-The first thing you need to know is that an rrtools compendium will be at the same time an R package. If you don&amp;rsquo;t have experience with R packages, don&amp;rsquo;t worry!</description>
+      <description>Of course, you can always create a file structure that suits you and your work by hand. But if you are going to do that a lot, it might be nice to automate some of the work. We are going to use the rrtools package to create a &amp;ldquo;research compendium&amp;rdquo; using a couple of R functions and combine it with the things we learned on the git and GitHub section.</description>
     </item>
     
     <item>
@@ -97,13 +96,13 @@ I develops openly licensed materials to teach and learn R from scratch.</descrip
     </item>
     
     <item>
-      <title>03: Reporting with RMarkdown</title>
+      <title>03: Reporting with R Markdown</title>
       <link>https://eliocamp.github.io/reproducibility-with-r/materials/day1/03-rmarkdown/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day1/03-rmarkdown/</guid>
-      <description>RMarkdown files     An RMarkdown file is a plain text file, with some rules and special syntax that allow us to write code and text together. When it is &amp;ldquo;knitted,&amp;rdquo; the code will be evaluated and executed and the text formatted so that it creates a reproducible report or document that is nice to read and contains all your work.
-This is really critical to reproducibility. It also saves us time and can help with automation tasks.</description>
+      <description>R Markdown files     An R Markdown file is a plain text file, with some rules and special syntax that allow you to write code and text together. When it is &amp;ldquo;knitted,&amp;rdquo; the code will be evaluated and executed and the text formatted so that it creates a reproducible report or document that is nice to read and contains all your work.
+This is really critical to reproducibility since it automates the creation of a paper or report, which also has the side effect of saving time.</description>
     </item>
     
     <item>
@@ -142,8 +141,17 @@ Therefore we propose this optional homework in which you will do just that. You 
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://eliocamp.github.io/reproducibility-with-r/materials/extras/</guid>
-      <description>Parameterised reports     Sometimes you need to re-do a report changing one variable that repeats over all the code, the best way to do this is through a parameterised report.
-In the following example there is a plot of the price distribution for ideal diamonds. If you want to change it to visualise the data for &amp;ldquo;fair&amp;rdquo; or &amp;ldquo;very good&amp;rdquo; cut diamonds, you will have to change the filter(cut == &amp;quot;Ideal&amp;quot;) and hopefully you wont forget the plot title.</description>
+      <description>The terminal     If you use macOS or any flavour of Linux, the terminal will sound familiar. If you live in the Windows world, the terminal may be new to you. But you don&amp;rsquo;t need another workshop to work with it in the context of this workshop. For now you can use the terminal tab in RStudio or look for the Command Prompt in the list of programs you have installed.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://eliocamp.github.io/reproducibility-with-r/notes_for_instructors/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://eliocamp.github.io/reproducibility-with-r/notes_for_instructors/</guid>
+      <description>Notes for instructors   Would you like to teach this workshop/use the materials for your own course? We&amp;rsquo;ve compiled here a list of this we usually use while we teach.
+The check points are instances when we ask the students how familiar are with x topic. Depending on their answers we decide if we can skip the topic, explain a few things or going through it in depth.</description>
     </item>
     
     <item>

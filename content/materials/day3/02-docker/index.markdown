@@ -279,3 +279,12 @@ to delete unused containers.
 
 
 </div>
+
+
+## Resources 
+
+[Setting up a transparent reproducible R environment with Docker + renv](https://eliocamp.github.io/codigo-r/en/2021/08/docker-renv/)
+
+[Reproducible Work in R](https://towardsdatascience.com/reproducible-work-in-r-e7d160d5d198)
+
+[Using renv with Docker](https://rstudio.github.io/renv/articles/docker.html)

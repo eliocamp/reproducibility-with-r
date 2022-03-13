@@ -1,5 +1,5 @@
 ---
-title: "03: Reporting with RMarkdown"
+title: "03: Reporting with R Markdown"
 weight: 3
 show_post_date: false
 publishDate: 2022-02-19
@@ -8,18 +8,15 @@ excerpt: ""
 
 
 
+## R Markdown files
 
-## RMarkdown files
-
-An RMarkdown file is a plain text file, with some rules and special syntax that allow us to write code and text together.
+An R Markdown file is a plain text file, with some rules and special syntax that allow you to write code and text together.
 When it is "knitted," the code will be evaluated and executed and the text formatted so that it creates a reproducible report or document that is nice to read and contains all your work.
 
-This is really critical to reproducibility.
-It also saves us time and can help with automation tasks.
-This document will recreate the figures for you in the same document where you are writing the text that explain them.
-This will save you the effort of doing some analysis, saving a plot on a file, copy-pasting that plot into Word, LaTeX or Power Point or Google Slides, and having to do it all over again after discovering a typo.
+This is really critical to reproducibility since it automates the creation of a paper or report, which also has the side effect of saving time.
+Since the document will recreate the figures and text each time you knit it, you won't need to copy-paste plots between R and Word, LaTeX or whatever tool you are using to write your report each time you make some trivial change.
 
-Now let's create a new RMarkdown file.
+Now let's create a new R Markdown file.
 In RStudio you can use the menu bar:
 
 <div class = instructions> 
@@ -29,18 +26,19 @@ File → New File → R Markdown
 </div>
 
 A new window will open where you can *optionally* complete with your name, author and the output format.
-Let try first HTML.
-By doing click on th ok button, the new file will open showing the template.
-This is great, you can try to "knit" the file to see the output document.
+Let try HTML output first.
+A new file with a template document will open up when you click OK.
+This includes a brief demonstration of R Markdown capabilities.
+You can try to "knit" the file to see the output document.
 
 <div class = activity> 
 
 Your turn
 
-1.  Create a new RMarkdown file.
+1.  Create a new R Markdown file.
     You can choose the output format.
 
-2.  Knit the document.
+2.  Knit the sample document.
 
 3.  Compare the "source file" with the "output file".
     Can you identify the different sections of the file?
@@ -48,25 +46,32 @@ Your turn
 
 ### File structure
 
-Any .Rmd file will have 3 sections or areas:
+Any R Markdown file will have 3 sections or areas:
 
 ![Rmarkdown file in the left. Knited document on the right. The YAML, chunk codes and text areas are highlighted on the file.](images/rmarkdown.png)
 
 -   The top part uses YAML syntax and includes the title and the output type (which in this case is an HTML document).
--   Below that there are alternating *white* and *grey* sections. These are the two main sections that make up an RMarkdown file: \* Grey sections are code chunks. They are usually R chunks but there are many languages supported. \* White sections are text sections and support markdown for styling.
+
+-   Below there are *white* and *grey* sections.
+    These are the two main sections that make up an R Markdown file:
+
+    -   Grey sections are code chunks.
+        They will be evaluated in order and any output will be inserted in the output document.
+
+    -   White sections are text sections and support markdown for styling.
 
 #### Header
 
 The header is a series of instructions organized between three dashes (`---`) that define the global properties of the document, such as the title, the output format, authorship information, etc..
-The heather will contain many many more options when you use templates and customised reports.
 You can also change options associated with the output format, such as the style of the table of contents or index.
+The heather will grow much much larger as you start using templates and customised reports.
 
 The YAML format allows you to define hierarchical lists in a humanly readable way.
 For example:
 
 ``` yaml
 ---
-title: "Mi primer RMarkdown"
+title: "My first markdown"
 output: 
   html_document:
     code_download: true
@@ -77,10 +82,10 @@ output:
 
 <div class = notes> 
 
-Keep in mind the indentation!
+Mind the indentation!
 
 It is very important to maintain the indentation of the elements, since it defines the hierarchy of each element.
-Many of the errors you'll find when knitting occur because the file has problems in the header indentation.
+Many of the errors you'll find when knitting will have their roots in problems in the header indentation.
 </div>
 
 #### Code chunks
@@ -89,8 +94,8 @@ Many of the errors you'll find when knitting occur because the file has problems
 
 The R code is written inside code "chunks".
 Code chunks start with `` ```{r label} `` (where "label" is an optional and unique name) and end with `` ``` ``.
-Everything you include between these delimiters will be interpreted by R as code and will try to execute it when the file is knitted.
-Any output (graphics, tables, text, etc..) will be inserted into the final document in the same order as they are in the R Markdown file.
+Everything you include between these delimiters will be interpreted by R as code and will be executed it when the file is knitted.
+Any output (graphics, tables, text, etc..) will be inserted into the final document in the same order as they are in the R Markdown file (or "roughly in the same order" if you're knitting to PDF).
 
 <div class = instructions> 
 
@@ -98,10 +103,10 @@ You can create a new chunk with:
 
 1.  The "+C" green bottom on the top right of the document
 2.  A very handy shortcut: `Ctrl + Alt + I`
-3.  Writing the \`\`\` by hand (but why would you?)
+3.  Writing \`\`\`{r} by hand (but why would you?)
 </div>
 
-While the code will run when you knit, if you are analysing data and writing a report it is very convenient to run individual chunks interactively as if it were in the console.
+While the code will run line by line when you knit the file, during writing it is very convenient to run individual chunks interactively as if it were in the console.
 
 To run the line where your cursor is use the shortcut:
 
@@ -121,14 +126,14 @@ By default, the output will appear immediately below the chunk.
 
 #### Text
 
-To format plain text RMarkdown uses Markdown.
+The plain text sections of an R Markdown files is interpreted as Markdown.
 You can get a guide to rmarkdown [in this](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf) cheat sheet, but here is a minimum syntax to get you started:
 
 -   headers start with `#` or `##` and so on (it's important to put a space after the last `#`).
--   bold words and phases are surrounded with `**` or `__`.
--   and italics, with `*` or `_`.
+-   bold text is surrounded with `**` or `__`.
+-   and italic text, with `*` or `_`.
 
-You can also add equations and other symbols with LaTeX in line (`` `$E = mc^2$` ``  looks like `\(E = mc^2\)`) or in its own line as:
+You can also add equations and other symbols with LaTeX in line (`` `$E = mc^2$` `` looks like `\(E = mc^2\)`) or in its own line as:
 
     $$
     y = \mu + \sum_{i=1}^p \beta_i x_i + \epsilon
@@ -145,45 +150,54 @@ $$
 In-line code
 
 You may find yourself mentioning results in the text, for example something like "the average minimum temperature for the month of March was 18 degrees".
-And it is also possible that this value will change if you use a different database or if you then generate a report but for a following month.
-The chances of you forgetting to update that "18" are high, that's why RMarkdown also has the possibility to incorporate in-line code.
+And it is also possible that this value will change if you use a different database or if you then generate the same report for different months.
+The chances of you forgetting to update that "18" are high, that's why R Markdown also has the possibility to incorporate in-line code.
 
 Let's imagine that you have a variable `temperature` to which you assign the value "18":
 
     temperature <- 18
 
-To mention it in the text then we have to put the name of that variable between two "\`" and to warn that it is code of R this way `` `r temperature` ``.
+To use that value in the text you have to put the name of that variable between two "\`" and to indicate that it is R code this way `` `r temperature` ``.
 Then if at any time the value of the variable changes, the next time you knit the document it will be updated in the text.
 </div>
 
-### Chunk control 
+### Chunk control
 
-You may have notice that the chunks code in the templates includes information between the ```{r }```. We mention the chunk name but we can also add options to control how the chuck will behave when the file is knitted. 
-Usually the output will have both code and output, which is fine when you or the person that will read the report wants to see the code that generates those results, but it might not be what the final audience of the report might need. 
-It’s up to you to decide if you want to show the code or not.
+You may have noticed that code chunks in the template document include some information between the `{r }`.
+Besides the chunk name you can also add options to control how the chuck will behave when the file is knitted.
+Usually the code chunk will be included in the output, which is fine when you or the person that will read the report wants to see the code that generates those results, but it might not be what the final audience of the report might need.
+It's up to you to decide if you want to show the code or not.
 
-To change the options of a chunk code, all you have to do is list the options inside the square brackets. For example:
+To change the options of a code chunk, all you have to do is list the options inside the square brackets.
+For example:
 
-    ```{r nombre-del-chunk, echo = FALSE, message = FALSE}
-    
+    ```{r chunk-name, echo = FALSE, message = FALSE}
+
     ```
 
 A particularly important set of options are the ones that control whether the code is executed and whether the result of the code will remain in the report or not:
 
-* `eval = FALSE` prevents the chunk code from being run, so it will not display results either. It is useful for displaying example code if you are writing, for example, a document to teach R.
+-   `echo = FALSE` runs the code chunk and displays the results, but hides the code in the report.
+    This is useful for writing reports for people who do not need to see the R code that generated the graph or table.
 
-* `echo = FALSE` runs the chunk code and displays the results, but hides the code in the report. This is useful for writing reports for people who do not need to see the R code that generated the graph or table.
+-   `include = FALSE` runs the code but hides both the code and any output.
+    It is useful to use in general configuration chunks where you load libraries.
 
-* `include = FALSE` runs the code but hides both the code and the results. It is useful to use in general configuration chunks where you load libraries.
+-   `eval = FALSE` prevents the code chunk from being run at all.
+    Naturally, it will not display results either.
+    It is useful for displaying example code if you are writing, for example, a document to teach R or if you want to suppress specific parts of your code.
 
-If you are writing a report where you don't want any code to be shown, adding `echo = FALSE` to each new chunk becomes tedious. The solution is to change the option globally so that it applies to all chunks. This is done by the `knitr::opts_chunk$set()` function, which sets the global options of the chunks that follow it. You'll find this function on the first "setup" chunk.
+If you are writing a report where you don't want any code to be shown, adding `echo = FALSE` to each new chunk becomes tedious.
+The solution is to change the option globally so that it applies to all chunks.
+This is done by the `knitr::opts_chunk$set()` function, which sets the global options of the chunks that follow it.
+You'll find this function on the first "setup" chunk.
 
     ```{r setup, include = FALSE}
     knitr::opts_chunk$set(echo = FALSE, 
                       message = FALSE,
                       warning = FALSE)
     ```
-    
+
 <div class = notes> 
 
 Figures control
@@ -193,20 +207,30 @@ You can start typing "fig." inside the `{ }` to explore the options.
 
 </div>
 
+<div class = notes>
 
-## RMarkdown Templates
+RStudio Visual editor
+
+Recent versions of RStudio include a Visual Editor which allows you to write Markdown markup with a friendly GUI.
+
+</div>
+
+## R Markdown Templates
 
 ### Using rticles
 
-If you have to write a report or document for your institution or maybe a paper for a scientific journal, you may want to use a template to change the look of the final document. 
-Depending on the output format, templates will be different. In this section will focus on PDF files. 
+If you have to write a report or document for your institution or maybe a paper for a scientific journal, you may want to use a template to change the look of the final document.
+Depending on the output format, templates will be different.
+In this section will focus on PDF files.
 
-For scientific journals you may find the **rticles** package very useful. 
-This package include several templates for different journals, most of them contributed by the R community, that you can use. We recommend you to install de development version from GitHub which often include new article formats. 
+For scientific journals you may find the [**rticles**](https://pkgs.rstudio.com/rticles/index.html) package very useful.
+This package includes several templates --most of them contributed by the R community-- so you can create journal-specific PDFs directly from RMarkdown.
+We recommend you to install de development version from GitHub which often includes new or updated article formats.
 
-To use rticles from RStudio, you can access the templates through `File -> New File -> R Markdown`. This will open the dialogue box where you can select from one of the available templates:
+To use rticles from RStudio, you can access the templates through `File -> New File -> R Markdown`.
+This will open the dialogue box where you can select from one of the available templates:
 
-![New RMarkdown dialog box with the list of available templates](images/rticles.png)
+![New R Markdown dialog box with the list of available templates](images/rticles.png)
 
 This will create a folder containing a Rmd file using the corresponding output format and all the assets required by this format.
 
@@ -214,16 +238,18 @@ This will create a folder containing a Rmd file using the corresponding output f
 
 Your turn! 
 
-1. Create a new R Markdown using one template of your choosing
-2. Check the options in the YAML and change a few of the fields. It doesn't to be real information! 
-3. Knit the document to see output.
+1. Create a new R Markdown file using one template of your choosing
+2. Check the options in the YAML and change a few of the fields. It doesn't have to be real information! 
+3. Knit the document to see the output.
 
 </div>
 
 ### Beyond the usual templates
 
-Now, what happens if rticles doesn't have the template you need? Usually, the journal you are sending your work will provide you with a LaTeX template that you can use and **adapt** to use within R Markdown. 
-This will require some knowledge of LaTeX and a lot of patience to deal with knitr errors but the result its worth it and you can always contribute the adapted template to the R community so other can benefit too.
+Now, what happens if rticles doesn't have the template you need?
+Usually, journals provide LaTeX templates that you can use and **adapt** to use within R Markdown.
+This will require some knowledge of LaTeX and [Pandoc templates](https://pandoc.org/MANUAL.html#templates), and some patience and coffee/tea/mate to deal with knitr errors.
+The result is worth it, however; especially if you then [contribute](https://github.com/rstudio/rticles/pulls) the adapted template to the R community so others can benefit from your sweat and tears.
 
 <div class = activity>  
 
@@ -233,44 +259,73 @@ Adapting a template
 2. Create a new R Markdown file using PDF as a output format.
 3. Change the YAML to include the following:
 
-```YAML
----
-title: "A very nice Title"
-author: "Pao Corrales"
-date: "3/1/2022"
-output: 
-  pdf_document:
-    template: "agujournaltemplate.tex"
----
-```
+    ```YAML
+    ---
+    title: "A very nice Title"
+    author: "Pao Corrales"
+    date: "3/1/2022"
+    output: 
+      pdf_document:
+        template: "agujournaltemplate.tex"
+    ---
+    ```
 
-This new line will tell to knit to look for a template call "agujournaltemplate.tex". You already have it but it needs some changes too.
+    This new line will tell to knit to use the `agujournaltemplate.tex` file as template. 
+    The template needs some tweaking, though.
 
-4. In the agujournaltemplate.tex file, add "\usepackage{hyperref}" under line 21. Also, remove everything from line 179  to line 396.
-5. Knit! You will get a not very nice pdf. 
+4. In the `agujournaltemplate.tex` file, add `\usepackage{hyperref}` under line 21. 
+Also, remove everything from line 179  to line 396 (all the example paper).
 
-None of the information on the R Markdown file went to the pdf, you have to connect the dots. 
+5. Knit! 
+    
+    You will get a not very nice-looking PDF. None of the information on the R Markdown file it reflected in the PDF! You have to modify the template to connect the dots. 
 
-6. Again in the agujournaltemplate.tex file, change line 81 (`\title{=enter title here=}`) for `\title{$title$}` and Knit! 
+6. Again in the `agujournaltemplate.tex` file, change `\title{=enter title here=}` (line ~81) for `\title{$title$}` 
 
-Now, the title in the R Markdown file and the pdf are the same. The value associated with `title` in the YAML goes to `` `$title$` `` in the template. 
+7. Knit again!
 
-7. In line 179 of the tex file add `` `$body$` `` to include the content of the RMarkdown file. 
+    Now, the title in the R Markdown file and the pdf are the same.
+    `` `$title$` `` in the LaTeX template will be replaced by the value of `title` supplied by the YAML header.
+  
+8. Let's also include the content of the R Markdown file. In line 179 of the LaTeX template add `` `$body$` ``. The special variable `body` will be replaced by the actual rendered contents of the R Markdown file.
 
-8. On the opposite direction, you can add a new option to the YAML that its present on the tex file. Change line 166 in the text file for `\(abstract\)` and add the following to the YAML:
+8. You can add new options to the YAML header and then use the same trick so they are used by the LaTeX template. For example, add a new option called "abstract" and provide some text, like this:
 
-```YAML
----
-title: "A very nice Title"
-author: "Pao Corrales"
-date: "3/1/2022"
-output: 
-  pdf_document:
-    template: "agujournaltemplate.tex"
-abstract: 
-  This is the very interesting abstract. 
----
-```
+    ```YAML
+    ---
+    title: "A very nice Title"
+    author: "Pao Corrales"
+    date: "3/1/2022"
+    output: 
+      pdf_document:
+        template: "agujournaltemplate.tex"
+    abstract: "This is the very interesting abstract."
+    ---
+    ```
+
+    Then, in the LaTeX template search for `[ enter your Abstract here ]` (around line 167) and replace it with `` `$abstract$` ``.
+
 
 9. One final knit to see the result!
+
+10. (Optional) Add more variables, such as a Plain Language Summary, author, mail of the corresponding author.
 </div>
+
+<div class=notes> 
+
+Pandoc template syntax
+
+The template uses something called Pandoc Templates, which has a specific syntax.
+You can read more in [the documentation](https://pandoc.org/MANUAL.html#templates). 
+
+
+</div>
+
+
+## Resources
+
+[R Markdown cheatsheet](https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf)
+
+[R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
+
+[rticles package documentation](https://github.com/rstudio/rticles)

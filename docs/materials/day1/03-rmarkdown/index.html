@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="generator" content="Hugo 0.80.0" />
-<title>03: Reporting with RMarkdown | An R reproducibility toolkit for the practical researcher</title>
+<title>03: Reporting with R Markdown | An R reproducibility toolkit for the practical researcher</title>
 
 
 
@@ -25,7 +25,7 @@
 
 
 <meta property="og:site_name" content="An R reproducibility toolkit for the practical researcher">
-<meta property="og:title" content="03: Reporting with RMarkdown | An R reproducibility toolkit for the practical researcher">
+<meta property="og:title" content="03: Reporting with R Markdown | An R reproducibility toolkit for the practical researcher">
 <meta property="og:description" content="Reproducibility course in R" />
 <meta property="og:type" content="page" />
 <meta property="og:url" content="https://eliocamp.github.io/reproducibility-with-r/materials/day1/03-rmarkdown/" />
@@ -40,12 +40,12 @@
           <meta name="twitter:image" content="https://eliocamp.github.io/reproducibility-with-r/materials/day1/sidebar.png" >
       
       
-  <meta itemprop="name" content="03: Reporting with RMarkdown">
-<meta itemprop="description" content="RMarkdown files     An RMarkdown file is a plain text file, with some rules and special syntax that allow us to write code and text together. When it is &ldquo;knitted,&rdquo; the code will be evaluated and executed and the text formatted so that it creates a reproducible report or document that is nice to read and contains all your work.
-This is really critical to reproducibility. It also saves us time and can help with automation tasks.">
+  <meta itemprop="name" content="03: Reporting with R Markdown">
+<meta itemprop="description" content="R Markdown files     An R Markdown file is a plain text file, with some rules and special syntax that allow you to write code and text together. When it is &ldquo;knitted,&rdquo; the code will be evaluated and executed and the text formatted so that it creates a reproducible report or document that is nice to read and contains all your work.
+This is really critical to reproducibility since it automates the creation of a paper or report, which also has the side effect of saving time.">
 <meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1836">
+<meta itemprop="wordCount" content="1988">
 
 
 
@@ -128,7 +128,7 @@ This is really critical to reproducibility. It also saves us time and can help w
 
   
     
-      03: Reporting with RMarkdown
+      03: Reporting with R Markdown
     
 
 
@@ -138,7 +138,7 @@ This is really critical to reproducibility. It also saves us time and can help w
 
 
         
-        <h1 class="f1 lh-solid measure-narrow mb3 fw4">03: Reporting with RMarkdown</h1>
+        <h1 class="f1 lh-solid measure-narrow mb3 fw4">03: Reporting with R Markdown</h1>
         
         <p class="f6 measure lh-copy mv1">By Paola Corrales and Elio Campitelli</p>
         
@@ -152,36 +152,35 @@ This is really critical to reproducibility. It also saves us time and can help w
 
 
 
-<h2 id="rmarkdown-files">RMarkdown files
-  <a href="#rmarkdown-files"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+<h2 id="r-markdown-files">R Markdown files
+  <a href="#r-markdown-files"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
       <path d="M0 0h24v24H0z" fill="currentColor"></path>
       <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
     </svg></a>
 </h2>
-<p>An RMarkdown file is a plain text file, with some rules and special syntax that allow us to write code and text together.
+<p>An R Markdown file is a plain text file, with some rules and special syntax that allow you to write code and text together.
 When it is &ldquo;knitted,&rdquo; the code will be evaluated and executed and the text formatted so that it creates a reproducible report or document that is nice to read and contains all your work.</p>
-<p>This is really critical to reproducibility.
-It also saves us time and can help with automation tasks.
-This document will recreate the figures for you in the same document where you are writing the text that explain them.
-This will save you the effort of doing some analysis, saving a plot on a file, copy-pasting that plot into Word, LaTeX or Power Point or Google Slides, and having to do it all over again after discovering a typo.</p>
-<p>Now let&rsquo;s create a new RMarkdown file.
+<p>This is really critical to reproducibility since it automates the creation of a paper or report, which also has the side effect of saving time.
+Since the document will recreate the figures and text each time you knit it, you won&rsquo;t need to copy-paste plots between R and Word, LaTeX or whatever tool you are using to write your report each time you make some trivial change.</p>
+<p>Now let&rsquo;s create a new R Markdown file.
 In RStudio you can use the menu bar:</p>
 <div class = instructions> 
 <p>File → New File → R Markdown</p>
 </div>
 <p>A new window will open where you can <em>optionally</em> complete with your name, author and the output format.
-Let try first HTML.
-By doing click on th ok button, the new file will open showing the template.
-This is great, you can try to &ldquo;knit&rdquo; the file to see the output document.</p>
+Let try HTML output first.
+A new file with a template document will open up when you click OK.
+This includes a brief demonstration of R Markdown capabilities.
+You can try to &ldquo;knit&rdquo; the file to see the output document.</p>
 <div class = activity> 
 <p>Your turn</p>
 <ol>
 <li>
-<p>Create a new RMarkdown file.
+<p>Create a new R Markdown file.
 You can choose the output format.</p>
 </li>
 <li>
-<p>Knit the document.</p>
+<p>Knit the sample document.</p>
 </li>
 <li>
 <p>Compare the &ldquo;source file&rdquo; with the &ldquo;output file&rdquo;.
@@ -199,11 +198,25 @@ Can you identify the different sections of the file?</p>
       <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
     </svg></a>
 </h3>
-<p>Any .Rmd file will have 3 sections or areas:</p>
+<p>Any R Markdown file will have 3 sections or areas:</p>
 <p><img src="images/rmarkdown.png" alt="Rmarkdown file in the left. Knited document on the right. The YAML, chunk codes and text areas are highlighted on the file."></p>
 <ul>
-<li>The top part uses YAML syntax and includes the title and the output type (which in this case is an HTML document).</li>
-<li>Below that there are alternating <em>white</em> and <em>grey</em> sections. These are the two main sections that make up an RMarkdown file: * Grey sections are code chunks. They are usually R chunks but there are many languages supported. * White sections are text sections and support markdown for styling.</li>
+<li>
+<p>The top part uses YAML syntax and includes the title and the output type (which in this case is an HTML document).</p>
+</li>
+<li>
+<p>Below there are <em>white</em> and <em>grey</em> sections.
+These are the two main sections that make up an R Markdown file:</p>
+<ul>
+<li>
+<p>Grey sections are code chunks.
+They will be evaluated in order and any output will be inserted in the output document.</p>
+</li>
+<li>
+<p>White sections are text sections and support markdown for styling.</p>
+</li>
+</ul>
+</li>
 </ul>
 
 
@@ -213,12 +226,12 @@ Can you identify the different sections of the file?</p>
   <a href="#header"></a>
 </h4>
 <p>The header is a series of instructions organized between three dashes (<code>---</code>) that define the global properties of the document, such as the title, the output format, authorship information, etc..
-The heather will contain many many more options when you use templates and customised reports.
-You can also change options associated with the output format, such as the style of the table of contents or index.</p>
+You can also change options associated with the output format, such as the style of the table of contents or index.
+The heather will grow much much larger as you start using templates and customised reports.</p>
 <p>The YAML format allows you to define hierarchical lists in a humanly readable way.
 For example:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#434f54">---</span>
-<span style="color:#434f54">title</span>: <span style="color:#7f8c8d">&#34;Mi primer RMarkdown&#34;</span>
+<span style="color:#434f54">title</span>: <span style="color:#7f8c8d">&#34;My first markdown&#34;</span>
 <span style="color:#434f54">output</span>: 
   <span style="color:#434f54">html_document</span>:
     <span style="color:#434f54">code_download</span>: <span style="color:#00979d">true</span>
@@ -226,9 +239,9 @@ For example:</p>
     <span style="color:#434f54">toc_float</span>: <span style="color:#00979d">false</span>
 <span style="color:#434f54">---</span>
 </code></pre></div><div class = notes> 
-<p>Keep in mind the indentation!</p>
+<p>Mind the indentation!</p>
 <p>It is very important to maintain the indentation of the elements, since it defines the hierarchy of each element.
-Many of the errors you&rsquo;ll find when knitting occur because the file has problems in the header indentation.</p>
+Many of the errors you&rsquo;ll find when knitting will have their roots in problems in the header indentation.</p>
 </div>
 
 
@@ -239,17 +252,17 @@ Many of the errors you&rsquo;ll find when knitting occur because the file has pr
 </h4>
 <p>The R code is written inside code &ldquo;chunks&rdquo;.
 Code chunks start with <code>```{r label}</code> (where &ldquo;label&rdquo; is an optional and unique name) and end with <code>```</code>.
-Everything you include between these delimiters will be interpreted by R as code and will try to execute it when the file is knitted.
-Any output (graphics, tables, text, etc..) will be inserted into the final document in the same order as they are in the R Markdown file.</p>
+Everything you include between these delimiters will be interpreted by R as code and will be executed it when the file is knitted.
+Any output (graphics, tables, text, etc..) will be inserted into the final document in the same order as they are in the R Markdown file (or &ldquo;roughly in the same order&rdquo; if you&rsquo;re knitting to PDF).</p>
 <div class = instructions> 
 <p>You can create a new chunk with:</p>
 <ol>
 <li>The &ldquo;+C&rdquo; green bottom on the top right of the document</li>
 <li>A very handy shortcut: <code>Ctrl + Alt + I</code></li>
-<li>Writing the ``` by hand (but why would you?)</li>
+<li>Writing ```{r} by hand (but why would you?)</li>
 </ol>
 </div>
-<p>While the code will run when you knit, if you are analysing data and writing a report it is very convenient to run individual chunks interactively as if it were in the console.</p>
+<p>While the code will run line by line when you knit the file, during writing it is very convenient to run individual chunks interactively as if it were in the console.</p>
 <p>To run the line where your cursor is use the shortcut:</p>
 <div class = instructions> 
 <p>Ctrl + Enter</p>
@@ -266,15 +279,15 @@ Any output (graphics, tables, text, etc..) will be inserted into the final docum
 <h4 id="text">Text
   <a href="#text"></a>
 </h4>
-<p>To format plain text RMarkdown uses Markdown.
+<p>The plain text sections of an R Markdown files is interpreted as Markdown.
 You can get a guide to rmarkdown 
 <a href="https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf" target="_blank" rel="noopener">in this</a> cheat sheet, but here is a minimum syntax to get you started:</p>
 <ul>
 <li>headers start with <code>#</code> or <code>##</code> and so on (it&rsquo;s important to put a space after the last <code>#</code>).</li>
-<li>bold words and phases are surrounded with <code>**</code> or <code>__</code>.</li>
-<li>and italics, with <code>*</code> or <code>_</code>.</li>
+<li>bold text is surrounded with <code>**</code> or <code>__</code>.</li>
+<li>and italic text, with <code>*</code> or <code>_</code>.</li>
 </ul>
-<p>You can also add equations and other symbols with LaTeX in line (<code>`$E = mc^2$`</code>  looks like <code>\(E = mc^2\)</code>) or in its own line as:</p>
+<p>You can also add equations and other symbols with LaTeX in line (<code>`$E = mc^2$`</code> looks like <code>\(E = mc^2\)</code>) or in its own line as:</p>
 <pre><code>$$
 y = \mu + \sum_{i=1}^p \beta_i x_i + \epsilon
 $$
@@ -286,12 +299,12 @@ $$</p>
 <div class = notes> 
 <p>In-line code</p>
 <p>You may find yourself mentioning results in the text, for example something like &ldquo;the average minimum temperature for the month of March was 18 degrees&rdquo;.
-And it is also possible that this value will change if you use a different database or if you then generate a report but for a following month.
-The chances of you forgetting to update that &ldquo;18&rdquo; are high, that&rsquo;s why RMarkdown also has the possibility to incorporate in-line code.</p>
+And it is also possible that this value will change if you use a different database or if you then generate the same report for different months.
+The chances of you forgetting to update that &ldquo;18&rdquo; are high, that&rsquo;s why R Markdown also has the possibility to incorporate in-line code.</p>
 <p>Let&rsquo;s imagine that you have a variable <code>temperature</code> to which you assign the value &ldquo;18&rdquo;:</p>
 <pre><code>temperature &lt;- 18
 </code></pre>
-<p>To mention it in the text then we have to put the name of that variable between two &ldquo;`&rdquo; and to warn that it is code of R this way <code>`r temperature`</code>.
+<p>To use that value in the text you have to put the name of that variable between two &ldquo;`&rdquo; and to indicate that it is R code this way <code>`r temperature`</code>.
 Then if at any time the value of the variable changes, the next time you knit the document it will be updated in the text.</p>
 </div>
 
@@ -304,27 +317,36 @@ Then if at any time the value of the variable changes, the next time you knit th
       <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
     </svg></a>
 </h3>
-<p>You may have notice that the chunks code in the templates includes information between the <code>{r }</code>. We mention the chunk name but we can also add options to control how the chuck will behave when the file is knitted.
-Usually the output will have both code and output, which is fine when you or the person that will read the report wants to see the code that generates those results, but it might not be what the final audience of the report might need.
-It’s up to you to decide if you want to show the code or not.</p>
-<p>To change the options of a chunk code, all you have to do is list the options inside the square brackets. For example:</p>
-<pre><code>```{r nombre-del-chunk, echo = FALSE, message = FALSE}
+<p>You may have noticed that code chunks in the template document include some information between the <code>{r }</code>.
+Besides the chunk name you can also add options to control how the chuck will behave when the file is knitted.
+Usually the code chunk will be included in the output, which is fine when you or the person that will read the report wants to see the code that generates those results, but it might not be what the final audience of the report might need.
+It&rsquo;s up to you to decide if you want to show the code or not.</p>
+<p>To change the options of a code chunk, all you have to do is list the options inside the square brackets.
+For example:</p>
+<pre><code>```{r chunk-name, echo = FALSE, message = FALSE}
 
 ```
 </code></pre>
 <p>A particularly important set of options are the ones that control whether the code is executed and whether the result of the code will remain in the report or not:</p>
 <ul>
 <li>
-<p><code>eval = FALSE</code> prevents the chunk code from being run, so it will not display results either. It is useful for displaying example code if you are writing, for example, a document to teach R.</p>
+<p><code>echo = FALSE</code> runs the code chunk and displays the results, but hides the code in the report.
+This is useful for writing reports for people who do not need to see the R code that generated the graph or table.</p>
 </li>
 <li>
-<p><code>echo = FALSE</code> runs the chunk code and displays the results, but hides the code in the report. This is useful for writing reports for people who do not need to see the R code that generated the graph or table.</p>
+<p><code>include = FALSE</code> runs the code but hides both the code and any output.
+It is useful to use in general configuration chunks where you load libraries.</p>
 </li>
 <li>
-<p><code>include = FALSE</code> runs the code but hides both the code and the results. It is useful to use in general configuration chunks where you load libraries.</p>
+<p><code>eval = FALSE</code> prevents the code chunk from being run at all.
+Naturally, it will not display results either.
+It is useful for displaying example code if you are writing, for example, a document to teach R or if you want to suppress specific parts of your code.</p>
 </li>
 </ul>
-<p>If you are writing a report where you don&rsquo;t want any code to be shown, adding <code>echo = FALSE</code> to each new chunk becomes tedious. The solution is to change the option globally so that it applies to all chunks. This is done by the <code>knitr::opts_chunk$set()</code> function, which sets the global options of the chunks that follow it. You&rsquo;ll find this function on the first &ldquo;setup&rdquo; chunk.</p>
+<p>If you are writing a report where you don&rsquo;t want any code to be shown, adding <code>echo = FALSE</code> to each new chunk becomes tedious.
+The solution is to change the option globally so that it applies to all chunks.
+This is done by the <code>knitr::opts_chunk$set()</code> function, which sets the global options of the chunks that follow it.
+You&rsquo;ll find this function on the first &ldquo;setup&rdquo; chunk.</p>
 <pre><code>```{r setup, include = FALSE}
 knitr::opts_chunk$set(echo = FALSE, 
                   message = FALSE,
@@ -336,12 +358,16 @@ knitr::opts_chunk$set(echo = FALSE,
 <p>If the output of the chunk is a figure you have a ton of options to control its aspect. From it size, resolution, caption, etc..
 You can start typing &ldquo;fig.&rdquo; inside the <code>{ }</code> to explore the options.</p>
 </div>
+<div class = notes>
+<p>RStudio Visual editor</p>
+<p>Recent versions of RStudio include a Visual Editor which allows you to write Markdown markup with a friendly GUI.</p>
+</div>
 
 
 
 
-<h2 id="rmarkdown-templates">RMarkdown Templates
-  <a href="#rmarkdown-templates"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+<h2 id="r-markdown-templates">R Markdown Templates
+  <a href="#r-markdown-templates"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
       <path d="M0 0h24v24H0z" fill="currentColor"></path>
       <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
     </svg></a>
@@ -357,18 +383,22 @@ You can start typing &ldquo;fig.&rdquo; inside the <code>{ }</code> to explore t
     </svg></a>
 </h3>
 <p>If you have to write a report or document for your institution or maybe a paper for a scientific journal, you may want to use a template to change the look of the final document.
-Depending on the output format, templates will be different. In this section will focus on PDF files.</p>
-<p>For scientific journals you may find the <strong>rticles</strong> package very useful.
-This package include several templates for different journals, most of them contributed by the R community, that you can use. We recommend you to install de development version from GitHub which often include new article formats.</p>
-<p>To use rticles from RStudio, you can access the templates through <code>File -&gt; New File -&gt; R Markdown</code>. This will open the dialogue box where you can select from one of the available templates:</p>
-<p><img src="images/rticles.png" alt="New RMarkdown dialog box with the list of available templates"></p>
+Depending on the output format, templates will be different.
+In this section will focus on PDF files.</p>
+<p>For scientific journals you may find the 
+<a href="https://pkgs.rstudio.com/rticles/index.html" target="_blank" rel="noopener"><strong>rticles</strong></a> package very useful.
+This package includes several templates &ndash;most of them contributed by the R community&ndash; so you can create journal-specific PDFs directly from RMarkdown.
+We recommend you to install de development version from GitHub which often includes new or updated article formats.</p>
+<p>To use rticles from RStudio, you can access the templates through <code>File -&gt; New File -&gt; R Markdown</code>.
+This will open the dialogue box where you can select from one of the available templates:</p>
+<p><img src="images/rticles.png" alt="New R Markdown dialog box with the list of available templates"></p>
 <p>This will create a folder containing a Rmd file using the corresponding output format and all the assets required by this format.</p>
 <div class = activity> 
 <p>Your turn!</p>
 <ol>
-<li>Create a new R Markdown using one template of your choosing</li>
-<li>Check the options in the YAML and change a few of the fields. It doesn&rsquo;t to be real information!</li>
-<li>Knit the document to see output.</li>
+<li>Create a new R Markdown file using one template of your choosing</li>
+<li>Check the options in the YAML and change a few of the fields. It doesn&rsquo;t have to be real information!</li>
+<li>Knit the document to see the output.</li>
 </ol>
 </div>
 
@@ -381,16 +411,24 @@ This package include several templates for different journals, most of them cont
       <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
     </svg></a>
 </h3>
-<p>Now, what happens if rticles doesn&rsquo;t have the template you need? Usually, the journal you are sending your work will provide you with a LaTeX template that you can use and <strong>adapt</strong> to use within R Markdown.
-This will require some knowledge of LaTeX and a lot of patience to deal with knitr errors but the result its worth it and you can always contribute the adapted template to the R community so other can benefit too.</p>
+<p>Now, what happens if rticles doesn&rsquo;t have the template you need?
+Usually, journals provide LaTeX templates that you can use and <strong>adapt</strong> to use within R Markdown.
+This will require some knowledge of LaTeX and 
+<a href="https://pandoc.org/MANUAL.html#templates" target="_blank" rel="noopener">Pandoc templates</a>, and some patience and coffee/tea/mate to deal with knitr errors.
+The result is worth it, however; especially if you then 
+<a href="https://github.com/rstudio/rticles/pulls" target="_blank" rel="noopener">contribute</a> the adapted template to the R community so others can benefit from your sweat and tears.</p>
 <div class = activity>  
 <p>Adapting a template</p>
 <ol>
-<li>Download the AGU Geophysical Research Letters template from 
-<a href="https://www.agu.org/-/media/Files/Publications/Feb-3-22-latex-templates.zip?la=en&amp;hash=EF7DAE79FAF88D98B8B8D55DFECF0374" target="_blank" rel="noopener">here</a> and unzip it inside the project folder.</li>
-<li>Create a new R Markdown file using PDF as a output format.</li>
-<li>Change the YAML to include the following:</li>
-</ol>
+<li>
+<p>Download the AGU Geophysical Research Letters template from 
+<a href="https://www.agu.org/-/media/Files/Publications/Feb-3-22-latex-templates.zip?la=en&amp;hash=EF7DAE79FAF88D98B8B8D55DFECF0374" target="_blank" rel="noopener">here</a> and unzip it inside the project folder.</p>
+</li>
+<li>
+<p>Create a new R Markdown file using PDF as a output format.</p>
+</li>
+<li>
+<p>Change the YAML to include the following:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-YAML" data-lang="YAML"><span style="color:#434f54">---</span>
 <span style="color:#434f54">title</span>: <span style="color:#7f8c8d">&#34;A very nice Title&#34;</span>
 <span style="color:#434f54">author</span>: <span style="color:#7f8c8d">&#34;Pao Corrales&#34;</span>
@@ -399,24 +437,30 @@ This will require some knowledge of LaTeX and a lot of patience to deal with kni
   <span style="color:#434f54">pdf_document</span>:
     <span style="color:#434f54">template</span>: <span style="color:#7f8c8d">&#34;agujournaltemplate.tex&#34;</span>
 <span style="color:#434f54">---</span>
-</code></pre></div><p>This new line will tell to knit to look for a template call &ldquo;agujournaltemplate.tex&rdquo;. You already have it but it needs some changes too.</p>
-<ol start="4">
-<li>In the agujournaltemplate.tex file, add &ldquo;\usepackage{hyperref}&rdquo; under line 21. Also, remove everything from line 179  to line 396.</li>
-<li>Knit! You will get a not very nice pdf.</li>
-</ol>
-<p>None of the information on the R Markdown file went to the pdf, you have to connect the dots.</p>
-<ol start="6">
-<li>Again in the agujournaltemplate.tex file, change line 81 (<code>\title{=enter title here=}</code>) for <code>\title{$title$}</code> and Knit!</li>
-</ol>
-<p>Now, the title in the R Markdown file and the pdf are the same. The value associated with <code>title</code> in the YAML goes to <code>`$title$`</code> in the template.</p>
-<ol start="7">
-<li>
-<p>In line 179 of the tex file add <code>`$body$`</code> to include the content of the RMarkdown file.</p>
+</code></pre></div><p>This new line will tell to knit to use the <code>agujournaltemplate.tex</code> file as template.
+The template needs some tweaking, though.</p>
 </li>
 <li>
-<p>On the opposite direction, you can add a new option to the YAML that its present on the tex file. Change line 166 in the text file for <code>\(abstract\)</code> and add the following to the YAML:</p>
+<p>In the <code>agujournaltemplate.tex</code> file, add <code>\usepackage{hyperref}</code> under line 21.
+Also, remove everything from line 179  to line 396 (all the example paper).</p>
 </li>
-</ol>
+<li>
+<p>Knit!</p>
+<p>You will get a not very nice-looking PDF. None of the information on the R Markdown file it reflected in the PDF! You have to modify the template to connect the dots.</p>
+</li>
+<li>
+<p>Again in the <code>agujournaltemplate.tex</code> file, change <code>\title{=enter title here=}</code> (line ~81) for <code>\title{$title$}</code></p>
+</li>
+<li>
+<p>Knit again!</p>
+<p>Now, the title in the R Markdown file and the pdf are the same.
+<code>`$title$`</code> in the LaTeX template will be replaced by the value of <code>title</code> supplied by the YAML header.</p>
+</li>
+<li>
+<p>Let&rsquo;s also include the content of the R Markdown file. In line 179 of the LaTeX template add <code>`$body$`</code>. The special variable <code>body</code> will be replaced by the actual rendered contents of the R Markdown file.</p>
+</li>
+<li>
+<p>You can add new options to the YAML header and then use the same trick so they are used by the LaTeX template. For example, add a new option called &ldquo;abstract&rdquo; and provide some text, like this:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-YAML" data-lang="YAML"><span style="color:#434f54">---</span>
 <span style="color:#434f54">title</span>: <span style="color:#7f8c8d">&#34;A very nice Title&#34;</span>
 <span style="color:#434f54">author</span>: <span style="color:#7f8c8d">&#34;Pao Corrales&#34;</span>
@@ -424,13 +468,40 @@ This will require some knowledge of LaTeX and a lot of patience to deal with kni
 <span style="color:#434f54">output</span>: 
   <span style="color:#434f54">pdf_document</span>:
     <span style="color:#434f54">template</span>: <span style="color:#7f8c8d">&#34;agujournaltemplate.tex&#34;</span>
-<span style="color:#434f54">abstract</span>: 
-  This is the very interesting abstract. 
+<span style="color:#434f54">abstract</span>: <span style="color:#7f8c8d">&#34;This is the very interesting abstract.&#34;</span>
 <span style="color:#434f54">---</span>
-</code></pre></div><ol start="9">
-<li>One final knit to see the result!</li>
+</code></pre></div><p>Then, in the LaTeX template search for <code>[ enter your Abstract here ]</code> (around line 167) and replace it with <code>`$abstract$`</code>.</p>
+</li>
+<li>
+<p>One final knit to see the result!</p>
+</li>
+<li>
+<p>(Optional) Add more variables, such as a Plain Language Summary, author, mail of the corresponding author.</p>
+</li>
 </ol>
 </div>
+<div class=notes> 
+<p>Pandoc template syntax</p>
+<p>The template uses something called Pandoc Templates, which has a specific syntax.
+You can read more in 
+<a href="https://pandoc.org/MANUAL.html#templates" target="_blank" rel="noopener">the documentation</a>.</p>
+</div>
+
+
+
+
+<h2 id="resources">Resources
+  <a href="#resources"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>
+<a href="https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf" target="_blank" rel="noopener">R Markdown cheatsheet</a></p>
+<p>
+<a href="https://bookdown.org/yihui/rmarkdown/" target="_blank" rel="noopener">R Markdown: The Definitive Guide</a></p>
+<p>
+<a href="https://github.com/rstudio/rticles" target="_blank" rel="noopener">rticles package documentation</a></p>
 
       </section>
       <footer class="post-footer">
@@ -501,7 +572,7 @@ This will require some knowledge of LaTeX and a lot of patience to deal with kni
               <li class="" hugo-nav="/reproducibility-with-r/materials/day1/02-projects/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/02-projects/">02: A tidy project is a happy project</a></li>
             
               
-              <li class="active" hugo-nav="/reproducibility-with-r/materials/day1/03-rmarkdown/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/03-rmarkdown/">03: Reporting with RMarkdown</a></li>
+              <li class="active" hugo-nav="/reproducibility-with-r/materials/day1/03-rmarkdown/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/03-rmarkdown/">03: Reporting with R Markdown</a></li>
             
               
               <li class="" hugo-nav="/reproducibility-with-r/materials/day1/04-here/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/04-here/">04: here are the portable paths</a></li>
@@ -567,8 +638,9 @@ This will require some knowledge of LaTeX and a lot of patience to deal with kni
     <div class="pl2 pr0 mh0">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#rmarkdown-files">RMarkdown files</a></li>
-    <li><a href="#rmarkdown-templates">RMarkdown Templates</a></li>
+    <li><a href="#r-markdown-files">R Markdown files</a></li>
+    <li><a href="#r-markdown-templates">R Markdown Templates</a></li>
+    <li><a href="#resources">Resources</a></li>
   </ul>
 </nav>
     </div>
