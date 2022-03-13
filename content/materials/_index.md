@@ -28,64 +28,13 @@ cascade:
 
       ---
 
-      The workshop is scheduled to take place on  March 14-16-18 2022 from 15:00 to 18:00 Berlin time. Check your timezone by clicking on each day. 
-
-      <table>
-      <thead>
-        <tr>
-          <th></th>
-          <th>Time</th>
-          <th>Topic</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><a href = https://www.timeanddate.com/worldclock/fixedtime.html?msg=An+R+reproducibility+toolkit+for+the+practical+researcher+%28Day+1%29&iso=20220314T15&p1=37&ah=3>Day 1</a></td>
-          <td>00:00</td>
-          <td>Hello</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>01:00</td>
-          <td>First topic</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>02:00</td>
-          <td>Second topic</td>
-        </tr>
-        <tr>
-          <td><a href = https://www.timeanddate.com/worldclock/fixedtime.html?msg=An+R+reproducibility+toolkit+for+the+practical+researcher+%28Day+2%29&iso=20220316T15&p1=37&ah=3>Day 2</a></td>
-          <td>00:00</td>
-          <td>Hello</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>01:00</td>
-          <td>First topic</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>02:00</td>
-          <td>Second topic</td>
-        </tr>
-        <tr>
-          <td><a href = https://www.timeanddate.com/worldclock/fixedtime.html?msg=An+R+reproducibility+toolkit+for+the+practical+researcher+%28Day+3%29&iso=20220318T15&p1=37&ah=3>Day 2</a></td>
-          <td>00:00</td>
-          <td>Hello</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>01:00</td>
-          <td>First topic</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>02:00</td>
-          <td>Second topic</td>
-        </tr>
-      </tbody>
-      </table>
+      The workshop is scheduled to take place on  March 14-16-18 2022 from 15:00 to 18:00 Berlin time with two 5 to 10 minute breaks. Check your timezone by clicking [here](https://www.timeanddate.com/worldclock/fixedtime.html?msg=An+R+reproducibility+toolkit+for+the+practical+researcher+%28Day+1%29&iso=20220314T15&p1=37&ah=3). 
+      
+      Click on each day's page to read the materials and homework. 
+      
+      Additionally, there's an extra [optional activity](/reproducibility-with-r/materials/reprohack/).
+      
+      
     show_sidebar_adunit: true # show ad container
     text_series_label: "Outline"
     text_contents_label: "On this page"
