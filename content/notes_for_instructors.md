@@ -19,17 +19,6 @@ You will also find a template for the feedback form and the shared document.
   * I use them somethimes.
   * All the time.
 
-[03: Sharing data](/reproducibility-with-r/materials/day2/03-data/)
-
-* If you work with data, what's the typical size?
-
-  * A few megabytes (less than 100 Mb per file)
-  * A lot of small files (more that 50 Gb in total)
-  * Big files (more that 100 Mb)
-
-### Day 2
-
-### Day 1
 
 [03: Reporting with RMarkdown](/reproducibility-with-r/materials/day1/03-rmarkdown/)
 
@@ -51,6 +40,16 @@ You will also find a template for the feedback form and the shared document.
   * I've heard of it
   * I've used it, unfortunately
   * I use it all the time, unfortunately
+
+### Day 2
+
+[03: Sharing data](/reproducibility-with-r/materials/day2/03-data/)
+
+* If you work with data, what's the typical size?
+
+  * A few megabytes (less than 100 Mb per file)
+  * A lot of small files (more that 50 Gb in total)
+  * Big files (more that 100 Mb)
 
 
 

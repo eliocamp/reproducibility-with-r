@@ -21,12 +21,12 @@ Do you have something like this in your computer?
     ├── now_this_is_it.Rmd
     └── FINAL.Rmd
 
-Probably we all have or had something like this.
+Probably we all have or had something like this at one point.
 Git came to solve this problem.
-It is a version control system, that manage the evolution and changes of a set of files or **repository**.
+It is a version control system, that manage the evolution and changes of a set of files that we'll call **repository**.
 If you ever looked at the history of a Google Docs file, it is like that but in a very controlled way.
 
-If you work alone, git is great to track changes, recover previous version of your files.
+If you work alone, git is great to track changes and recover previous version of your files.
 You can also use a **remote repository** (more later) to have a back up and share your work.
 
 If you work as a team you can take advantage of all the above and also use version control as a tool to collaborate and organize the different version of the same file in the multiple computer you and they use.
@@ -79,7 +79,7 @@ For example, you will be able to make changes to the files (this is modify somet
 If you want to try the command line, here are the git commands:
 
 -   `git push` to upload the commit to the remote repository.
--   `git pull` to download the commits from the remote repository to the local repo. </div>
+-   `git pull` to download the commits from the remote repository to the local repo.
 
 ## Introduce yourself to Git
 
@@ -87,6 +87,7 @@ Before we create the first repository we have to make sure that git and RStudio 
 If you follow the pre-workshop instructions, RStudio and git are (and GitHub) are definitely talking to each other.
 
 <div class = notes> 
+
 You can check that RStudio "see" git going to `Tools --> Global Options --> Git/SVN`.
 There you will find the path in your computer to the git installation.
 </div>
@@ -100,6 +101,7 @@ To introduce yourself to git, that is to let it know your name and email you can
 Substituting with your name and the email associated with your GitHub account.
 
 <div class = notes> 
+
 If you want to try the command line:
 
     git config --global user.name 'Jane Doe'
@@ -113,6 +115,7 @@ We'll show you here how to create a repo from GitHub, associate it to a RStudio 
 But keep in mind that there are many other ways to work with git.
 
 <div class = instructions> 
+
 1.  Create an online repository.
 
 -   Go to [github.com](https://github.com) and log in.
@@ -131,6 +134,7 @@ For example `https://github.com/paocorrales/myrepo.git`
 </div>
 
 <div class = instructions> 
+
 2.  In RStudio, start a new Project:
 
 -   `File > New Project > Version Control > Git`. In the "repository URL" paste the URL of your new GitHub repository `https://github.com/paocorrales/myrepo.git`.
@@ -149,6 +153,7 @@ It also add a .gitignore file that include a list of file that we wont need to t
 It's time to put into practice some of the thing we've been talking.
 
 <div class = activity> 
+
 Add, commit
 
 1.  Create a new RMarkdown file and save it.
