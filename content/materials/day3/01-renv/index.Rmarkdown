@@ -18,7 +18,7 @@ The [**renv**](https://rstudio.github.io/renv/index.html) package solves both.
 The idea underlying renv is that each project should have a project-specific R environment with its own library where packages are installed. 
 Packages installed in the project library are independent of the personal library so you can install a specific version of a package in one project without changing the version used by another. 
 
-The status of this project library is recorderd on a lockfile: a file called `renv.lock` that holds the version, source and other metadata of each package used in the project. 
+The status of this project library is recorded in a lockfile: a file called `renv.lock` that holds the version, source and other metadata of each package used in the project. 
 This file will be used by renv to restore the project library to its correct state if for some reason there are missing packages, or packages with the wrong version.
 
 ## Using renv in your project
@@ -28,7 +28,8 @@ To start working with renv you first need to initialise the project-local enviro
 
 This will automatically scan all your R scripts and RMarkdown files, discover their dependencies, and store the versions of the currently-installed packages in the lockfile and install them in the project library. 
 
-</div> {.activity}  
+<div class = activity> 
+
 Start using renv
 
 1. Open the demo project [demo project](/reproducibility-with-r/demo_project.zip). 
@@ -40,7 +41,7 @@ In your project root you will now see a file called `renv.lock` and a folder cal
 
 Once this is done, you can keep working on your project as usual, installing, removing and updating packages as you normally would. 
 The difference is that now all of that will only affect the project library. 
-if you update a package in your project, other projects will still use the global version (or their local versions if you use renv with them). 
+If you update a package in your project, other projects will still use the global version (or their local versions if you use renv with them). 
 The flipside is that updating packages outside of the project won't affect the package versions used by it. 
 
 
@@ -59,7 +60,7 @@ You will notice two weird things happening.
 First, RStudio will ask you to install the markdown package.
 "But wait, I must have installed already!". 
 Yes, but not on this project. 
-Because the markdown package is not used explicitly anywhere in the project, renv didn't discover it as a poject dependency package so it was neither included in the lockfile nor installed in the project library, so it needs to be installed. 
+Because the markdown package is not used explicitly anywhere in the project, renv didn't discover it as a project dependency package so it was neither included in the lockfile nor installed in the project library, so it needs to be installed. 
 
 Second, you will get an error informing you that "there is no package called 'ggplot2'. 
 Again, even if you had ggplot2 installed on your personal library, since it was not used on the code, it was not installed. 
@@ -99,7 +100,7 @@ Install ggplot2
 
 
 This time, the report should render correctly because ggplot2 is now included in your project library. 
-However, the ouput of `renv::status()` reads something like
+However, the output of `renv::status()` reads something like
 
 ```
 The following package(s) are installed but not recorded in the lockfile:
@@ -130,7 +131,7 @@ This three functions (`renv::init()`, `renv::snapshot()` and `renv::status()`) s
 
 ## Renv for reproducibility
 
-All this work wouldn't mean be useful if there wasn't a way of using the lockfile to  consistently recreate the same environment. 
+All this work wouldn't be useful if there wasn't a way of using the lockfile to consistently recreate the same environment. 
 This is where renv shines. 
 
 Anyone who wants to install the same packages that you use with their exact versions can download your code, open the project and use `renv::restore()`. 
@@ -166,11 +167,11 @@ If you use git, you don't need to think about this because renv takes care of th
 ### The lockfile
 
 The lockfile holds a snapshot of the project library at a moment in time, but it doesn't guarantee that this corresponds to the rendered result. 
-The lockfile could be out of date when the code is run, or the lockfile coudl be updated but the code not re-run.
+The lockfile could be out of date when the code is run, or the lockfile could be outdated but the code not re-run.
 
 ### Dependency discovery
 
-The automatic dependency discovery is really cool, somewhat limited. 
+The automatic dependency discovery is really cool, but somewhat limited. 
 It understand the most common and obvious ways a package can be loaded in a script, but it can fail if you use some more indirect methods. 
 
 ### Package installation 

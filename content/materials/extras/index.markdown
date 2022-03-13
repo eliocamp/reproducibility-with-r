@@ -14,6 +14,14 @@ cascade:
 
 
 
+## The terminal 
+
+If you use macOS or any flavour of Linux, the terminal will sound familiar. If you live in the Windows world, the terminal may be new to you. But you don't need another workshop to work with it in the context of this workshop. For now you can use the terminal tab in RStudio or look for the Command Prompt in the list of programs you have installed.
+
+![The terminal tab in RStudio.](images/terminal.png)
+
+If you want to read more about the terminal, we recommend this [chapter from Happy Git with R](https://happygitwithr.com/shell.html). It git oriented but it's includes everything you need to setup everything. 
+
 
 ## Parameterised reports
 
