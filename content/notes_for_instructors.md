@@ -16,7 +16,7 @@ You will also find a template for the feedback form and the shared document.
 
   * What's that?
   * I'm familiar with them.
-  * I use them somethimes.
+  * I use them sometSimes.
   * All the time.
 
 
