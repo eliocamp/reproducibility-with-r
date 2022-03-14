@@ -77,15 +77,6 @@ You download the all the files and you find something like this.
     </item>
     
     <item>
-      <title>Clementina</title>
-      <link>https://eliocamp.github.io/reproducibility-with-r/people/clementina/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://eliocamp.github.io/reproducibility-with-r/people/clementina/</guid>
-      <description>wsagjkfytiuiuu xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxgh kjhgggggggggggggggggggggggggghjhgklgkjhg</description>
-    </item>
-    
-    <item>
       <title>Elio Campitelli</title>
       <link>https://eliocamp.github.io/reproducibility-with-r/people/eliocampitelli/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -151,6 +142,15 @@ Therefore we propose this optional homework in which you will do just that. You 
       
       <guid>https://eliocamp.github.io/reproducibility-with-r/materials/extras/</guid>
       <description>The terminal     If you use macOS or any flavour of Linux, the terminal will sound familiar. If you live in the Windows world, the terminal may be new to you. But you don&amp;rsquo;t need another workshop to work with it in the context of this workshop. For now you can use the terminal tab in RStudio or look for the Command Prompt in the list of programs you have installed.</description>
+    </item>
+    
+    <item>
+      <title>Clementina</title>
+      <link>https://eliocamp.github.io/reproducibility-with-r/people/clementina/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://eliocamp.github.io/reproducibility-with-r/people/clementina/</guid>
+      <description>wsagjkfytiuiuu xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxgh kjhgggggggggggggggggggggggggghjhgklgkjhg</description>
     </item>
     
     <item>
