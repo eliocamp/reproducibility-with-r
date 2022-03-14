@@ -309,6 +309,10 @@ Also, remove everything from line 179  to line 396 (all the example paper).
 9. One final knit to see the result!
 
 10. (Optional) Add more variables, such as a Plain Language Summary, author, mail of the corresponding author.
+
+Having problems? You can watch a video on how to solve this activity [here](https://www.youtube.com/watch?v=bk3mcRIJLqc) and follow along.
+
+
 </div>
 
 <div class=notes> 
