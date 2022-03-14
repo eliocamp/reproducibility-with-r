@@ -5,7 +5,7 @@ excerpt: >
   **Helper**<br>Sleeping on top of keyboards consultant.
 type: people
 show_post_image: true
-weight: 2
+weight: 10
 author: "Clem"
 draft: false
 categories:
