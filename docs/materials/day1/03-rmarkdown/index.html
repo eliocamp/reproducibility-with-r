@@ -45,7 +45,7 @@
 This is really critical to reproducibility since it automates the creation of a paper or report, which also has the side effect of saving time.">
 <meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2005">
+<meta itemprop="wordCount" content="2080">
 
 
 
@@ -421,14 +421,25 @@ The result is worth it, however; especially if you then
 <p>Adapting a template</p>
 <ol>
 <li>
+<p>Create a new R Markdown file using PDF as a output format and save it into your project (for example, <code>paper.Rmd</code>).</p>
+</li>
+<li>
 <p>Download the AGU Geophysical Research Letters template from 
-<a href="https://www.agu.org/-/media/Files/Publications/Feb-3-22-latex-templates.zip?la=en&amp;hash=EF7DAE79FAF88D98B8B8D55DFECF0374" target="_blank" rel="noopener">here</a> and unzip it inside the project folder.</p>
-</li>
+<a href="https://www.agu.org/-/media/Files/Publications/Feb-3-22-latex-templates.zip?la=en&amp;hash=EF7DAE79FAF88D98B8B8D55DFECF0374" target="_blank" rel="noopener">here</a>. Inside the file there&rsquo;s a <code>Feb-3-22-latex-templates</code> folder with 8 files. Extract all those files into the same folder you saved the R Markdown.
+You need to have a folder in your project with these files:</p>
+<pre><code>.
+├── agujournal2019.cls
+├── agujournaltemplate.pdf
+├── agujournaltemplate.synctex.gz
+├── agujournaltemplate.tex
+├── agutexSI2019.cls
+├── paper.Rmd
+├── si_template_2019.tex
+├── trackchanges-0.7.0
+└── trackchanges.sty
+</code></pre></li>
 <li>
-<p>Create a new R Markdown file using PDF as a output format.</p>
-</li>
-<li>
-<p>Change the YAML to include the following:</p>
+<p>Change the YAML of the R Markdown file to include the following:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-YAML" data-lang="YAML"><span style="color:#434f54">---</span>
 <span style="color:#434f54">title</span>: <span style="color:#7f8c8d">&#34;A very nice Title&#34;</span>
 <span style="color:#434f54">author</span>: <span style="color:#7f8c8d">&#34;Pao Corrales&#34;</span>
@@ -438,18 +449,18 @@ The result is worth it, however; especially if you then
     <span style="color:#434f54">template</span>: <span style="color:#7f8c8d">&#34;agujournaltemplate.tex&#34;</span>
 <span style="color:#434f54">---</span>
 </code></pre></div><p>This new line will tell to knit to use the <code>agujournaltemplate.tex</code> file as template.
-The template needs some tweaking, though.</p>
+The template needs some tweaking, though.
+Take care to repsect the identation and that each parameter is in its own line.</p>
 </li>
 <li>
-<p>In the <code>agujournaltemplate.tex</code> file, add <code>\usepackage{hyperref}</code> under line 21.
-Also, remove everything from line 179  to line 396 (all the example paper).</p>
+<p>In the <code>agujournaltemplate.tex</code> file, remove everything from line 179 to line 396 (all the example paper) and add <code>\usepackage{hyperref}</code> below line 21.</p>
 </li>
 <li>
 <p>Knit!</p>
 <p>You will get a not very nice-looking PDF. None of the information on the R Markdown file it reflected in the PDF! You have to modify the template to connect the dots.</p>
 </li>
 <li>
-<p>Again in the <code>agujournaltemplate.tex</code> file, change <code>\title{=enter title here=}</code> (line ~81) for <code>\title{$title$}</code></p>
+<p>Again in the <code>agujournaltemplate.tex</code> file, change <code>\title{=enter title here=}</code> (line 82) for <code>\title{$title$}</code></p>
 </li>
 <li>
 <p>Knit again!</p>
@@ -457,7 +468,7 @@ Also, remove everything from line 179  to line 396 (all the example paper).</p>
 <code>`$title$`</code> in the LaTeX template will be replaced by the value of <code>title</code> supplied by the YAML header.</p>
 </li>
 <li>
-<p>Let&rsquo;s also include the content of the R Markdown file. In line 179 of the LaTeX template add <code>`$body$`</code>. The special variable <code>body</code> will be replaced by the actual rendered contents of the R Markdown file.</p>
+<p>Let&rsquo;s also include the content of the R Markdown file. In line 180 of the LaTeX template add <code>`$body$`</code>. The special variable <code>body</code> will be replaced by the actual rendered contents of the R Markdown file.</p>
 </li>
 <li>
 <p>You can add new options to the YAML header and then use the same trick so they are used by the LaTeX template. For example, add a new option called &ldquo;abstract&rdquo; and provide some text, like this:</p>
@@ -470,7 +481,7 @@ Also, remove everything from line 179  to line 396 (all the example paper).</p>
     <span style="color:#434f54">template</span>: <span style="color:#7f8c8d">&#34;agujournaltemplate.tex&#34;</span>
 <span style="color:#434f54">abstract</span>: <span style="color:#7f8c8d">&#34;This is the very interesting abstract.&#34;</span>
 <span style="color:#434f54">---</span>
-</code></pre></div><p>Then, in the LaTeX template search for <code>[ enter your Abstract here ]</code> (around line 167) and replace it with <code>`$abstract$`</code>.</p>
+</code></pre></div><p>Then, in the LaTeX template search for <code>[ enter your Abstract here ]</code> (line 167) and replace it with <code>`$abstract$`</code>.</p>
 </li>
 <li>
 <p>One final knit to see the result!</p>
