@@ -63,7 +63,7 @@ Describe what do you think are the contents of these files:
 
 -   `data/raw/madrid-minimum_temperature.csv`
 
--   `scripts/02-compute_mean_temperature.R`
+-   `scripts/02-compute-mean_temperature.R`
 
 -   `analysis/01-madrid-minimum_temperature-descriptive_statistics.Rmd`
 </div>
