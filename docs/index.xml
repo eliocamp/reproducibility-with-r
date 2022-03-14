@@ -77,6 +77,15 @@ You download the all the files and you find something like this.
     </item>
     
     <item>
+      <title>Clementina</title>
+      <link>https://eliocamp.github.io/reproducibility-with-r/people/paocorrales/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://eliocamp.github.io/reproducibility-with-r/people/paocorrales/</guid>
+      <description>wsagjkfytiuiuu xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxgh kjhgggggggggggggggggggggggggghjhgklgkjhg</description>
+    </item>
+    
+    <item>
       <title>Elio Campitelli</title>
       <link>https://eliocamp.github.io/reproducibility-with-r/people/eliocampitelli/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
@@ -87,10 +96,10 @@ You download the all the files and you find something like this.
     
     <item>
       <title>Paola Corrales</title>
-      <link>https://eliocamp.github.io/reproducibility-with-r/people/paocorrales/</link>
+      <link>https://eliocamp.github.io/reproducibility-with-r/people/clementina/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://eliocamp.github.io/reproducibility-with-r/people/paocorrales/</guid>
+      <guid>https://eliocamp.github.io/reproducibility-with-r/people/clementina/</guid>
       <description>I&amp;rsquo;m a Ph.D. student at the University of Buenos Aires. I study atmospheric sciences applying data assimilation techniques to improve short-term forecasts of severe events in Argentina. Also, I&amp;rsquo;m a Trainer and instructor for The Carpentries and an RStudio certified instructor. I co-funded MetaDocencia, a Spanish-speaking community to help teachers and educator to apply science-based techniques to their clase.s
 I develops openly licensed materials to teach and learn R from scratch.</description>
     </item>
