@@ -1,5 +1,5 @@
 ---
-title: "01: What is repdoducibilty anyway?"
+title: "01: What is reproducibilty anyway?"
 weight: 1
 show_post_date: false
 publishDate: 2022-02-19
