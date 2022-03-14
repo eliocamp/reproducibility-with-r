@@ -261,9 +261,24 @@ The result is worth it, however; especially if you then [contribute](https://git
 
 Adapting a template
 
-1. Download the AGU Geophysical Research Letters template from [here](https://www.agu.org/-/media/Files/Publications/Feb-3-22-latex-templates.zip?la=en&hash=EF7DAE79FAF88D98B8B8D55DFECF0374) and unzip it inside the project folder. 
-2. Create a new R Markdown file using PDF as a output format.
-3. Change the YAML to include the following:
+1. Create a new R Markdown file using PDF as a output format and save it into your project (for example, `paper.Rmd`). 
+1. Download the AGU Geophysical Research Letters template from [here](https://www.agu.org/-/media/Files/Publications/Feb-3-22-latex-templates.zip?la=en&hash=EF7DAE79FAF88D98B8B8D55DFECF0374). Inside the file there's a `Feb-3-22-latex-templates` folder with 8 files. Extract all those files into the same folder you saved the R Markdown. 
+You need to have a folder in your project with these files:
+
+    ```
+    .
+    ├── agujournal2019.cls
+    ├── agujournaltemplate.pdf
+    ├── agujournaltemplate.synctex.gz
+    ├── agujournaltemplate.tex
+    ├── agutexSI2019.cls
+    ├── paper.Rmd
+    ├── si_template_2019.tex
+    ├── trackchanges-0.7.0
+    └── trackchanges.sty
+    ```
+
+3. Change the YAML of the R Markdown file to include the following:
 
     ```YAML
     ---
@@ -278,22 +293,22 @@ Adapting a template
 
     This new line will tell to knit to use the `agujournaltemplate.tex` file as template. 
     The template needs some tweaking, though.
+    Take care to repsect the identation and that each parameter is in its own line. 
 
-4. In the `agujournaltemplate.tex` file, add `\usepackage{hyperref}` under line 21. 
-Also, remove everything from line 179  to line 396 (all the example paper).
+4. In the `agujournaltemplate.tex` file, remove everything from line 179 to line 396 (all the example paper) and add `\usepackage{hyperref}` below line 21. 
 
 5. Knit! 
     
     You will get a not very nice-looking PDF. None of the information on the R Markdown file it reflected in the PDF! You have to modify the template to connect the dots. 
 
-6. Again in the `agujournaltemplate.tex` file, change `\title{=enter title here=}` (line ~81) for `\title{$title$}` 
+6. Again in the `agujournaltemplate.tex` file, change `\title{=enter title here=}` (line 82) for `\title{$title$}` 
 
 7. Knit again!
 
     Now, the title in the R Markdown file and the pdf are the same.
     `` `$title$` `` in the LaTeX template will be replaced by the value of `title` supplied by the YAML header.
   
-8. Let's also include the content of the R Markdown file. In line 179 of the LaTeX template add `` `$body$` ``. The special variable `body` will be replaced by the actual rendered contents of the R Markdown file.
+8. Let's also include the content of the R Markdown file. In line 180 of the LaTeX template add `` `$body$` ``. The special variable `body` will be replaced by the actual rendered contents of the R Markdown file.
 
 8. You can add new options to the YAML header and then use the same trick so they are used by the LaTeX template. For example, add a new option called "abstract" and provide some text, like this:
 
@@ -309,7 +324,7 @@ Also, remove everything from line 179  to line 396 (all the example paper).
     ---
     ```
 
-    Then, in the LaTeX template search for `[ enter your Abstract here ]` (around line 167) and replace it with `` `$abstract$` ``.
+    Then, in the LaTeX template search for `[ enter your Abstract here ]` (line 167) and replace it with `` `$abstract$` ``.
 
 
 9. One final knit to see the result!
