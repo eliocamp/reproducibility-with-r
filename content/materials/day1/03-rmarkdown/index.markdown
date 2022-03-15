@@ -288,6 +288,10 @@ You need to have a folder in your project with these files:
     This new line will tell to knit to use the `agujournaltemplate.tex` file as template. 
     The template needs some tweaking, though.
     Take care to repsect the identation and that each parameter is in its own line. 
+    
+4. Set the global option `echo = FALSE` 
+
+    To do this, look for the line `knitr::opts_chunk$set(echo = TRUE)` and change it to `knitr::opts_chunk$set(echo = FALSE)`
 
 4. In the `agujournaltemplate.tex` file, remove everything from line 179 to line 396 (all the example paper) and add `\usepackage{hyperref}` below line 21. 
 
@@ -302,7 +306,7 @@ You need to have a folder in your project with these files:
     Now, the title in the R Markdown file and the pdf are the same.
     `` `$title$` `` in the LaTeX template will be replaced by the value of `title` supplied by the YAML header.
   
-8. Let's also include the content of the R Markdown file. In line 180 of the LaTeX template add `` `$body$` ``. The special variable `body` will be replaced by the actual rendered contents of the R Markdown file.
+8. Let's also include the content of the R Markdown file. In line 180 of the LaTeX template add `` `$body$` `` (without the backticks). The special variable `body` will be replaced by the actual rendered contents of the R Markdown file.
 
 8. You can add new options to the YAML header and then use the same trick so they are used by the LaTeX template. For example, add a new option called "abstract" and provide some text, like this:
 
@@ -318,7 +322,7 @@ You need to have a folder in your project with these files:
     ---
     ```
 
-    Then, in the LaTeX template search for `[ enter your Abstract here ]` (line 167) and replace it with `` `$abstract$` ``.
+    Then, in the LaTeX template search for `[ enter your Abstract here ]` (line 167) and replace it with `` `$abstract$` `` (without backticks).
 
 
 9. One final knit to see the result!

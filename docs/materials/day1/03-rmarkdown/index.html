@@ -45,7 +45,7 @@
 This is really critical to reproducibility since it automates the creation of a paper or report, which also has the side effect of saving time.">
 <meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2080">
+<meta itemprop="wordCount" content="2109">
 
 
 
@@ -453,6 +453,10 @@ The template needs some tweaking, though.
 Take care to repsect the identation and that each parameter is in its own line.</p>
 </li>
 <li>
+<p>Set the global option <code>echo = FALSE</code></p>
+<p>To do this, look for the line <code>knitr::opts_chunk$set(echo = TRUE)</code> and change it to <code>knitr::opts_chunk$set(echo = FALSE)</code></p>
+</li>
+<li>
 <p>In the <code>agujournaltemplate.tex</code> file, remove everything from line 179 to line 396 (all the example paper) and add <code>\usepackage{hyperref}</code> below line 21.</p>
 </li>
 <li>
@@ -468,7 +472,7 @@ Take care to repsect the identation and that each parameter is in its own line.<
 <code>`$title$`</code> in the LaTeX template will be replaced by the value of <code>title</code> supplied by the YAML header.</p>
 </li>
 <li>
-<p>Let&rsquo;s also include the content of the R Markdown file. In line 180 of the LaTeX template add <code>`$body$`</code>. The special variable <code>body</code> will be replaced by the actual rendered contents of the R Markdown file.</p>
+<p>Let&rsquo;s also include the content of the R Markdown file. In line 180 of the LaTeX template add <code>`$body$`</code> (without the backticks). The special variable <code>body</code> will be replaced by the actual rendered contents of the R Markdown file.</p>
 </li>
 <li>
 <p>You can add new options to the YAML header and then use the same trick so they are used by the LaTeX template. For example, add a new option called &ldquo;abstract&rdquo; and provide some text, like this:</p>
@@ -481,7 +485,7 @@ Take care to repsect the identation and that each parameter is in its own line.<
     <span style="color:#434f54">template</span>: <span style="color:#7f8c8d">&#34;agujournaltemplate.tex&#34;</span>
 <span style="color:#434f54">abstract</span>: <span style="color:#7f8c8d">&#34;This is the very interesting abstract.&#34;</span>
 <span style="color:#434f54">---</span>
-</code></pre></div><p>Then, in the LaTeX template search for <code>[ enter your Abstract here ]</code> (line 167) and replace it with <code>`$abstract$`</code>.</p>
+</code></pre></div><p>Then, in the LaTeX template search for <code>[ enter your Abstract here ]</code> (line 167) and replace it with <code>`$abstract$`</code> (without backticks).</p>
 </li>
 <li>
 <p>One final knit to see the result!</p>
