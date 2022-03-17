@@ -194,7 +194,7 @@ add <- function(x, y) {
 
 3. Run `devtools::document()` (or press `Ctrl/Cmd + Shift + D` in RStudio) to build the documentation based on these roxygen comments 
 
-4. Preview documentation with `?.`.
+4. Preview documentation with `?add`.
 
 5. Rinse and repeat until the documentation looks the way you want.
 
