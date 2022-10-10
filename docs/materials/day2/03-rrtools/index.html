@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr"><head>
+  
+                           
+     
+
+
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.80.0" />
+<title>03: Research compendia with rrtools | An R reproducibility toolkit for the practical researcher</title>
+
+
+
+
+
+
+
+
+  
+    
+  
+<meta name="description" content="Reproducibility course in R">
+
+
+<meta property="og:site_name" content="An R reproducibility toolkit for the practical researcher">
+<meta property="og:title" content="03: Research compendia with rrtools | An R reproducibility toolkit for the practical researcher">
+<meta property="og:description" content="Reproducibility course in R" />
+<meta property="og:type" content="page" />
+<meta property="og:url" content="https://eliocamp.github.io/reproducibility-with-r/materials/day2/03-rrtools/" />
+<meta property="og:locale" content="en">
+
+
+
+
+      
+          <meta property="og:image" content="https://eliocamp.github.io/reproducibility-with-r/materials/day2/sidebar.png" >
+          <meta property="twitter:card" content="summary_large_image">
+          <meta name="twitter:image" content="https://eliocamp.github.io/reproducibility-with-r/materials/day2/sidebar.png" >
+      
+      
+  <meta itemprop="name" content="03: Research compendia with rrtools">
+<meta itemprop="description" content="Of course, you can always create a file structure that suits you and your work by hand. But if you are going to do that a lot, it might be nice to automate some of the work. We are going to use the rrtools package to create a &ldquo;research compendium&rdquo; using a couple of R functions and combine it with the things we learned on the git and GitHub section.">
+<meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
+<meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
+<meta itemprop="wordCount" content="1443">
+
+
+
+<meta itemprop="keywords" content="" />
+
+  
+  <!--[if IE]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  
+  
+  <link rel="stylesheet" href="/reproducibility-with-r/style.main.min.5c14ccb91905d450469e4040c74b4193d2441462e073a51188cded19e3799fd6.css" integrity="sha256-XBTMuRkF1FBGnkBAx0tBk9JEFGLgc6URiM3tGeN5n9Y=" media="screen">
+  
+  
+  <script src="/reproducibility-with-r/panelset.min.41f62c42d5f25dd80e81136866f4f1baa1bc17669edfd002e75c0e107953789b.js" type="text/javascript"></script>
+  
+  
+  <script src="/reproducibility-with-r/main.min.07ec8e08cbb63db3a2cf7d4a7df6f7be00c715f13b64d8df6a2c48441ba8b14b.js" type="text/javascript"></script>
+  
+  
+</head>
+<body>
+      <div class="grid-container single-series">
+<header class="site-header pt4 pb2 mb4 bb b--transparent ph5 headroom z-max" role="banner">
+  <nav class="site-nav db dt-l w-100" role="navigation">
+    <a class="site-brand db dtc-l v-mid link no-underline w-100 w-33-l tc tl-l" href="https://eliocamp.github.io/reproducibility-with-r/" title="Home">
+      <img src="/reproducibility-with-r/logo.png" class="dib db-l h2 w-auto" alt="An R reproducibility toolkit for the practical researcher">
+    </a>
+    <div class="site-links db dtc-l v-mid w-100 w-47-l tc tr-l mt3 mt0-l ttu tracked">
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/reproducibility-with-r/about/" title="About this course">About this course</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/reproducibility-with-r/materials/" title="Materials">Materials</a>
+      
+        
+        
+        
+      <a class="link f6 f5-l dib pv1 ph2 " href="/reproducibility-with-r/people/" title="About us">About us</a>
+      
+      
+    </div>
+  </nav>
+</header>
+
+
+<main class="page-main ph4 pt4" role="main">
+  <section class="page-content mw7 center">
+    <article class="post-content pa0 pr3-l">
+      <header class="post-header">
+        <h4 class="breadcrumb pb5">
+
+ 
+ 
+    
+ 
+ 
+    
+ 
+ 
+    
+ 
+
+  
+    
+      <a href="/reproducibility-with-r/materials/">An R reproducibility toolkit for the practical researcher</a> >
+    
+
+
+  
+    
+      <a href="/reproducibility-with-r/materials/day2/">Day 2</a> >
+    
+
+
+  
+    
+      03: Research compendia with rrtools
+    
+
+
+</h4>
+
+
+
+
+        
+        <h1 class="f1 lh-solid measure-narrow mb3 fw4">03: Research compendia with rrtools</h1>
+        
+        <p class="f6 measure lh-copy mv1">By Paola Corrales and Elio Campitelli</p>
+        
+        
+        
+      
+        
+      </header>
+      <section class="post-body pt5 pb4">
+        <p>Of course, you can always create a file structure that suits you and your work by hand.
+But if you are going to do that a lot, it might be nice to automate some of the work.
+We are going to use the rrtools package to create a &ldquo;research compendium&rdquo; using a couple of R functions and combine it with the things we learned on the git and GitHub section.</p>
+<p>The first thing you need to know is that an rrtools compendium will be at the same time an R package.
+If you don&rsquo;t have experience with R packages, don&rsquo;t worry!
+This is why:</p>
+<ul>
+<li>An R package is, in practice, just a folder with some special text files and a few sub-folders.</li>
+<li>You don&rsquo;t need to learn much about packages to use rtools and take advantage of it.</li>
+<li>Here we&rsquo;ll cover the necessary bits to work inside a compendium.</li>
+<li>But if you want to learn more about R packages there are wonderful resources, for example: 
+<a href="https://r-pkgs.org/" target="_blank" rel="noopener">here</a>.</li>
+</ul>
+<p>The following instructions are adapted from the 
+<a href="https://github.com/benmarwick/rrtools" target="_blank" rel="noopener">rrtools GitHub repository</a>.</p>
+
+
+
+
+<h3 id="0-create-a-git-managed-directory-linked-to-an-online-repository">0. Create a Git-managed directory linked to an online repository
+  <a href="#0-create-a-git-managed-directory-linked-to-an-online-repository"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>It is possible to use rrtools without Git, but usually you would want you research compendium to be managed by the version control software Git.</p>
+<p>The name of the compendium and the project should be the same.
+Keep in mind that this will also be the package name so it has to follow some rules for everything to work properly.
+Your project name  must:</p>
+<ul>
+<li>contain only ASCII letters, numbers, and &lsquo;.&rsquo;</li>
+<li>have at least two characters</li>
+<li>start with a letter (not a number)</li>
+<li>not end with &lsquo;.&rsquo;</li>
+</ul>
+<p>For convenience we will use  <code>pkgname</code> as a placeholder for this package.</p>
+<div class = instructions> 
+<ol>
+<li>Create an online repository.</li>
+<li>In RStudio, start a new Project:</li>
+</ol>
+<ul>
+<li><code>File &gt; New Project &gt; Version Control &gt; Git</code>. In the &ldquo;repository URL&rdquo; paste the URL of your new GitHub repository. It will be something like this <a href="https://github.com/paocorrales/PaperCompedium.git">https://github.com/paocorrales/PaperCompedium.git</a>.</li>
+<li>Make sure you know where you are creating the project.</li>
+<li>Choose &ldquo;Open in new session&rdquo;.</li>
+<li>Click on &ldquo;Create Project&rdquo;.</li>
+</ul>
+</div>
+
+
+
+
+<h3 id="1-rrtoolsuse_compendium">1. <code>rrtools::use_compendium()</code>
+  <a href="#1-rrtoolsuse_compendium"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>This uses <code>usethis::create_package()</code> to create a basic R package in the <code>pkgname</code> directory.
+The function will also instruct on the next steps.</p>
+<div class = instructions>
+<p>Create the compendium</p>
+<ol>
+<li>
+<p>In the new project, run <code>rrtools::use_compendium()</code> to create the compendium</p>
+</li>
+<li>
+<p>Edit the <code>DESCRIPTION</code> file (located in your <code>pkgname</code> directory) to include accurate metadata, e.g. your 
+<a href="https://orcid.org/" target="_blank" rel="noopener">ORCID</a>.
+This is one of the files that makes a regular folder an &ldquo;R package&rdquo;.</p>
+</li>
+<li>
+<p>Periodically update the <code>Imports:</code> section of the <code>DESCRIPTION</code> file with the names of packages used in the code we write in the .Rmd document(s) by running <code>rrtools::add_dependencies_to_description()</code></p>
+</li>
+</ol>
+</div>
+
+
+
+
+<h3 id="2-usethisuse_mit_licensecopyright_holder--my-name">2. <code>usethis::use_mit_license(copyright_holder = &quot;My Name&quot;)</code>
+  <a href="#2-usethisuse_mit_licensecopyright_holder--my-name"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>This adds a reference to the MIT license in the 
+<a href="DESCRIPTION">DESCRIPTION</a> file and generates a 
+<a href="LICENSE">LICENSE</a> file listing the name provided as the copyright holder.</p>
+<p>To use a different license, replace this line with any of the licenses mentioned here: <code>?usethis::use_mit_license()</code></p>
+<div class = notes> 
+<p>You can read more about licences 
+<a href="https://r-pkgs.org/license.html" target="_blank" rel="noopener">here</a>.</p>
+</div>
+
+
+
+
+<h3 id="3-rrtoolsuse_readme_rmd">3. <code>rrtools::use_readme_rmd()</code>
+  <a href="#3-rrtoolsuse_readme_rmd"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>This generates 
+<a href="README.Rmd">README.Rmd</a> and renders it to 
+<a href="README.md">README.md</a>, ready to display on the repository home page on GitHub.</p>
+<p>It contains:</p>
+<ul>
+<li>A template citation to show others how to cite your project. Edit this to include the correct title and 
+<a href="https://doi.org" target="_blank" rel="noopener">DOI</a> when it get published!</li>
+<li>License information for the text, figures, code and data in your compendium.</li>
+</ul>
+<p>This function also adds:</p>
+<ul>
+<li>Two other markdown files: a code of conduct for users 
+<a href="CONDUCT.md">CONDUCT.md</a>, and basic instructions for people who want to contribute to your project 
+<a href="CONTRIBUTING.md">CONTRIBUTING.md</a>, including for first-timers to git and GitHub.</li>
+<li>A <code>runtime.txt</code> that makes 
+<a href="https://mybinder.org/" target="_blank" rel="noopener">Binder</a> work, if your compendium is hosted online (e.g. GitHub, Zenodo, Figshare, Dataverse, etc.)</li>
+</ul>
+
+
+
+
+<h3 id="4-rrtoolsuse_analysis">4. <code>rrtools::use_analysis()</code>
+  <a href="#4-rrtoolsuse_analysis"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>This function has three <code>location =</code> options: <code>top_level</code> to create a top-level <code>analysis/</code> directory and a few more options more associated with R packages.
+The default options is a top-level <code>analysis/</code>.</p>
+<p>This folder will have the following structure:</p>
+<pre><code>analysis/
+|
+├── paper/
+│   ├── paper.Rmd       # this is the main document to edit
+│   └── references.bib  # this contains the reference list information
+
+├── figures/            # location of the figures produced by the Rmd
+|
+├── data/
+│   ├── raw_data/       # data obtained from elsewhere
+│   └── derived_data/   # data generated during the analysis
+|
+└── templates
+    ├── journal-of-archaeological-science.csl
+    |                   # this sets the style of citations &amp; reference list
+    ├── template.docx   # used to style the output of the paper.Rmd
+    └── template.Rmd
+</code></pre>
+<ul>
+<li>
+<p>the <code>paper.Rmd</code> is ready to write in and render with bookdown. It includes:</p>
+<ul>
+<li>a YAML header that identifies the <code>references.bib</code> file and the supplied <code>csl</code> file (to style the reference list).</li>
+<li>a colophon that adds some git commit details to the end of the document. This means that the output file (HTML/PDF/Word) is always traceable to a specific state of the code.</li>
+</ul>
+</li>
+<li>
+<p>the <code>references.bib</code> file has just one item to demonstrate the format. It is ready to insert more reference details or be replaced it with a .bib file created using Reference Manager tools like Zotero.</p>
+</li>
+<li>
+<p>you can replace the supplied <code>csl</code> file with a different citation style from <a href="https://github.com/citation-style-language/">https://github.com/citation-style-language/</a></p>
+</li>
+</ul>
+<p>Remember that the <code>Imports:</code> field in the <code>DESCRIPTION</code> file must include the names of all packages used in analysis documents (e.g. <code>paper.Rmd</code>).
+rrtools have a helper function <code>rrtools::add_dependencies_to_description()</code> that will scan the Rmd file, identify libraries used in there, and add them to the <code>DESCRIPTION</code> file.</p>
+<p>When you create this file structure using this function you can choose whether you want to add your data to the repository.
+If <code>data_in_git = FALSE</code> you will exclude files in the <code>data/</code> directory from being tracked by git and prevent them from appearing on GitHub.
+You should set <code>data_in_git = FALSE</code> if your data files are large (&gt;100 mb is the limit for GitHub) or you do not want to make the data files publicly accessible on GitHub.
+More about sharing data in 
+<a href="/reproducibility-with-r/materials/day2/03-data/">the next section</a>.</p>
+<div class = notes> 
+<p>rrtools assistant</p>
+<p>You can also use a graphic interface to create the compendium using the &ldquo;rrtools Assistant&rdquo; addin.
+It includes detailed instructions and the code associated with each step.</p>
+<p><img src="images/rrtools1.png" alt="rrtools Assistant interface showing the Overview tab."></p>
+</div>
+
+
+
+
+<h3 id="working-with-your-own-code">Working with your own code
+  <a href="#working-with-your-own-code"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>To load your custom code in the <code>paper.Rmd</code>, you have a few options.
+You can write all your R code in chunks in the Rmd, that&rsquo;s the simplest method.
+Or you can write R code in script files in a sub folder called <code>R</code>, and include <code>devtools::load_all(&quot;.&quot;)</code> at the top of your <code>paper.Rmd</code>.
+Or you can write functions in <code>R</code> and use <code>library(pkgname)</code> at the top of your <code>paper.Rmd</code>, or omit <code>library</code> and preface each function call with <code>pkgname::</code>.
+Up to you to choose whatever seems most natural to you.</p>
+
+
+
+
+<h4 id="documenting-code">Documenting code
+  <a href="#documenting-code"></a>
+</h4>
+<p>Whether you choose to write code in chunks, script files or as functions, it important to your future self and others to document your code.
+If you are not used to doing it, the easiest way to start is by commenting everything without much thinking.
+With time you can decide if you need commenting every single line or maybe only the key decisions you made when you where writing the code.</p>
+<p>If you decide to work with functions there are a few tools that can help you to document them and make that documentation available in the Help Pane (remember, a compendium is also a package, so you can take advantage of that!).
+Each function will live in a .R file (there are some exceptions but we won&rsquo;t worry about that at this point) and will have a header with the name, descriptions and more information.
+You can use simple <code>#</code> to comment or you can use <em>roxygen2</em> comments using <code>#'</code>.
+The later will allow you to generate the package documentation.</p>
+<p>The following instructions to document a function are adapted from the 
+<a href="https://r-pkgs.org/man.html" target="_blank" rel="noopener">R packages book</a>.</p>
+<div class = instructions>  
+<p>The documentation workflow</p>
+<ol>
+<li>
+<p>Create a dummy function that add to numbers and save it to <code>add-numbers.R</code>.</p>
+</li>
+<li>
+<p>Add roxygen comments to your function:</p>
+</li>
+</ol>
+<pre><code>#' Add together two numbers
+#' 
+#' @param x A number.
+#' @param y A number.
+#' @return The sum of \code{x} and \code{y}.
+#' @examples
+#' add(1, 1)
+#' add(10, 1)
+#' @export
+add &lt;- function(x, y) {
+  x + y
+}
+</code></pre><ul>
+<li>The first line is the title</li>
+<li>You can also add a description after the title</li>
+<li><code>@params</code> are the function arguments, in this case <code>x</code> and <code>y</code>.</li>
+<li><code>@examples</code> starts the examples sections, R will run this code when the package is build.</li>
+<li>The <code>@export</code> comment is important to make the function accessible via<code>pkgname::add()</code> or <code>library(pkgname)</code>.</li>
+</ul>
+<ol start="3">
+<li>
+<p>Run <code>devtools::document()</code> (or press <code>Ctrl/Cmd + Shift + D</code> in RStudio) to build the documentation based on these roxygen comments</p>
+</li>
+<li>
+<p>Preview documentation with <code>?add</code>.</p>
+</li>
+<li>
+<p>Rinse and repeat until the documentation looks the way you want.</p>
+</li>
+</ol>
+</div>
+
+
+
+
+<h2 id="resources">Resources
+  <a href="#resources"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h2>
+<p>
+<a href="https://www.rstudio.com/resources/rstudioconf-2019/a-guide-to-modern-reproducible-data-science-with-r-karthik-ram/" target="_blank" rel="noopener">A guide to modern reproducible data science with R</a></p>
+
+      </section>
+      <footer class="post-footer">
+        <div class="post-pagination dt w-100 mt4 mb2">
+  
+  
+    <a class="prev dtc pr2 tl v-top fw6"
+    href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/02-git/">&larr; 02: Getting the most of git</a>
+  
+  
+  
+</div>
+
+      </footer>
+    </article>
+    
+  </section>
+</main>
+
+<aside class="page-sidebar" role="complementary">
+                         
+ 
+
+
+
+
+
+
+
+
+
+
+
+  <img src="/reproducibility-with-r/materials/day2/sidebar.png" class="db ma0">
+
+                         
+ 
+
+
+
+<div class="flex items-start sticky ph4 pb4 flex-row">
+  <div class="w-two-thirds w-50-l ph0">
+    <h2 class="mv3 f5 fw7 ttu tracked">
+      <a class="no-underline dim" href="/reproducibility-with-r/materials/">Outline</a></h2>
+    <nav id="SectionTableOfContents" aria-label="SectionTableOfContents">
+        <ul>
+        
+          
+          
+          <li class="" hugo-nav="/reproducibility-with-r/materials/day0/">
+            <a href="https://eliocamp.github.io/reproducibility-with-r/materials/day0/">Day 0</a></li>
+          
+          </li>
+        
+          
+          
+          
+          <details  class="">
+            <summary class="" hugo-nav="/reproducibility-with-r/materials/day1/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/">Day 1</a></summary>
+            
+              
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day1/01-introduction/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/01-introduction/">01: What is reproducibilty anyway?</a></li>
+            
+              
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day1/02-projects/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/02-projects/">02: A tidy project is a happy project</a></li>
+            
+              
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day1/03-rmarkdown/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/03-rmarkdown/">03: Reporting with R Markdown</a></li>
+            
+          </details>
+          
+          </li>
+        
+          
+          
+          
+          <details open class="active">
+            <summary class="active" hugo-nav="/reproducibility-with-r/materials/day2/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/">Day 2</a></summary>
+            
+              
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day2/01-here/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/01-here/">01: here are the portable paths</a></li>
+            
+              
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day2/02-git/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/02-git/">02: Getting the most of git</a></li>
+            
+              
+              <li class="active" hugo-nav="/reproducibility-with-r/materials/day2/03-rrtools/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/03-rrtools/">03: Research compendia with rrtools</a></li>
+            
+          </details>
+          
+          </li>
+        
+          
+          
+          
+          <details  class="">
+            <summary class="" hugo-nav="/reproducibility-with-r/materials/day3/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day3/">Day 3</a></summary>
+            
+              
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day3/01-renv/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-renv/">01: Managing R dependencies with renv</a></li>
+            
+              
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day3/02-data/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day3/02-data/">02: Sharing data</a></li>
+            
+          </details>
+          
+          </li>
+        
+          
+          
+          
+          <details  class="">
+            <summary class="" hugo-nav="/reproducibility-with-r/materials/day4/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day4/">Day 4</a></summary>
+            
+              
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day4/01-docker/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day4/01-docker/">01: Reproducible computational environment with Docker</a></li>
+            
+          </details>
+          
+          </li>
+        
+          
+          
+          <li class="" hugo-nav="/reproducibility-with-r/materials/reprohack/">
+            <a href="https://eliocamp.github.io/reproducibility-with-r/materials/reprohack/">Mini Reprohack</a></li>
+          
+          </li>
+        
+          
+          
+          <li class="" hugo-nav="/reproducibility-with-r/materials/extras/">
+            <a href="https://eliocamp.github.io/reproducibility-with-r/materials/extras/">Extras</a></li>
+          
+          </li>
+        
+        </ul>
+    </nav>
+  </div>
+  <details id="PageTableOfContents">
+    <summary><h2 class="mv0 f5 fw7 ttu tracked dib">On this page<h2></summary>
+    <div class="pl2 pr0 mh0">
+    <nav id="TableOfContents">
+  <ul>
+    <li></li>
+    <li><a href="#resources">Resources</a></li>
+  </ul>
+</nav>
+    </div>
+  </details>
+  
+</div>
+
+</aside>
+
+<footer class="site-footer pv4 bt b--transparent ph5" role="contentinfo">
+  <nav class="db dt-l w-100">
+    <p class="site-copyright f7 db dtc-l v-mid w-100 w-33-l tc tl-l pv2 pv0-l mv0 lh-copy">
+      &copy; 2022
+      <span class="middot-divider"></span>
+      Made with <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/hugo-apero/" rel="dct:source">Hugo Apéro</a></span>.
+      <br />
+      
+Based on <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/formspree/blogophonic-hugo" rel="dct:source">Blogophonic</a></span> by <a xmlns:cc="http://creativecommons.org/ns#" href="https://formspree.io" property="cc:attributionName" rel="cc:attributionURL">Formspree</a>.
+    </p>
+    
+    <div class="site-social-links db dtc-l v-mid w-100 w-33-l tc pv2 pv0-l mv0">
+      <div class="social-icon-links" aria-hidden="true">
+  
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 ml0 mr2 f3 o-90 glow grow" href="https://github.com/eliocamp/reproducibility-with-r/" title="github" target="_blank" rel="noopener">
+      <i class="fab fa-github fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 ml0 mr2 f3 o-90 glow grow" href="https://twitter.com/d_olivaw" title="@d_olivaw on Twiter" target="_blank" rel="noopener">
+      <i class="fab fa-twitter purple fa-lg fa-fw"></i>
+    </a>
+  
+    
+    
+    
+      
+    
+    
+    
+    
+    
+      
+    
+    <a class="link dib h1 ml0 mr2 f3 o-90 glow grow" href="https://twitter.com/paobcorrales" title="@paobcorrales on Twiter" target="_blank" rel="noopener">
+      <i class="fab fa-twitter green fa-lg fa-fw"></i>
+    </a>
+  
+</div>
+
+    </div>
+    
+    <div class="site-links f6 db dtc-l v-mid w-100 w-67-l tc tr-l pv2 pv0-l mv0">
+      
+      <a class="dib pv1 ph2 link" href="/reproducibility-with-r/license/" title="License">License</a>
+      
+      <a class="dib pv1 ph2 link" href="/reproducibility-with-r/attribution/" title="Attributions">Attributions</a>
+      
+    </div>
+  </nav>
+  
+    <script>
+
+    var i, text, code, codes = document.getElementsByTagName('code');
+    for (let i = 0; i < codes.length;) {
+      code = codes[i];
+      if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+        text = code.textContent;
+        if (/^\$[^$]/.test(text) && /[^$]\$$/.test(text)) {
+          text = text.replace(/^\$/, '\\(').replace(/\$$/, '\\)');
+          code.textContent = text;
+        }
+        if (/^\\\((.|\s)+\\\)$/.test(text) ||
+            /^\\\[(.|\s)+\\\]$/.test(text) ||
+            /^\$(.|\s)+\$$/.test(text) ||
+            /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+          code.outerHTML = code.innerHTML;  
+          continue;
+        }
+      }
+      i++;
+    }
+</script>
+
+  
+    
+    
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.css" integrity="sha384-RZU/ijkSsFbcmivfdRBQDtwuwVqK7GMOw6IMvKyeWL2K5UAlyp6WonmB8m7Jd0Hn" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/katex.min.js" integrity="sha384-pK1WpvzWVBQiP0/GjnvRxV4mOb0oxFuyRxJlk6vVw146n3egcN5C925NCP7a7BY8" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.13/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script>
+
+
+
+    
+  
+  
+</footer>
+
+      </div>
+    </body>
+</html>

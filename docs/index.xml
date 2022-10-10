@@ -8,23 +8,32 @@
     <language>en</language>
     <lastBuildDate>Tue, 15 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://eliocamp.github.io/reproducibility-with-r/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>01: Getting the most of git</title>
-      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day2/01-git/</link>
+      <title>01: here are the portable paths</title>
+      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day2/01-here/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day2/01-git/</guid>
-      <description>Why git?     Do you have something like this in your computer?
-/home/pao/Documents/thesis ├── abstract.R ├── thesis.Rmd ├── thesis_reviwed.Rmd ├── thesis_reviwed2.Rmd ├── thesis_final.Rmd ├── thesis_finalfinal.Rmd ├── this_is_it.Rmd ├── now_this_is_it_for_real_this_time_i_swear.Rmd └── FINAL.Rmd  Probably we all have, or had something like this at one point because we didn&amp;rsquo;t use a version control system. Version control systems manage the evolution and changes of a set of files that we&amp;rsquo;ll call repository.</description>
+      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day2/01-here/</guid>
+      <description>If you use RStudio Projects consistently, you can be sure that your working directory is always the root of the project unless you actively change it. Almost. There are two situations in which this assumption can be broken and that can lead to errors or, even worse, surprising results.
+Root directory during knit     One issue is that when RMarkdown files are knitted, the working directory in which the code is executed is the location of the .</description>
     </item>
     
     <item>
-      <title>01: Reproducible computational environment with renv</title>
-      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day3/02-renv/</link>
+      <title>01: Managing R dependencies with renv</title>
+      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-renv/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day3/02-renv/</guid>
+      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-renv/</guid>
       <description>No code is its own isolated bubble. Almost every analysis will depend on a number of external packages, such as ggplot2 for plotting, data.table for data wrangling, knitr for rendering a report, and so on.
 But actively-maintained packages will change their code-base to fix bugs, add features, remove features or change behaviour. These changes have the potential of breaking your analysis or creating subtle (or not so subtle) differences in the result.</description>
+    </item>
+    
+    <item>
+      <title>01: Reproducible computational environment with Docker</title>
+      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day4/01-docker/</link>
+      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day4/01-docker/</guid>
+      <description>While renv is nice, it doesn&amp;rsquo;t solve the whole problem, because system dependencies and even the R version itself can change. Another issue is that downloading and installing all the R packages can take a while. Like an hour or more. This is not a deal-breaker, but I&amp;rsquo;d like to do better. People trying to reproduce work are few and far between, so it&amp;rsquo;s important to make their lives as easy as possible.</description>
     </item>
     
     <item>
@@ -35,15 +44,6 @@ But actively-maintained packages will change their code-base to fix bugs, add fe
       <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day1/01-introduction/</guid>
       <description>This workshop will introduce some useful tools to help you write code that can be run anywhere with consistent results. We will focus on the practical aspects of reproducibility, but it&amp;rsquo;s still worth it to get some sense of what is reproducibility and what&amp;rsquo;s its aim.
 What reproducibility is and what it is not     We will use &amp;ldquo;reproducibility&amp;rdquo; to talk about results that can be obtained by someone else given the same data and code.</description>
-    </item>
-    
-    <item>
-      <title>02: Reproducible computational environment with Docker</title>
-      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day4/01-docker/</link>
-      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day4/01-docker/</guid>
-      <description>While renv is nice, it doesn&amp;rsquo;t solve the whole problem, because system dependencies and even the R version itself can change. Another issue is that downloading and installing all the R packages can take a while. Like an hour or more. This is not a deal-breaker, but I&amp;rsquo;d like to do better. People trying to reproduce work are few and far between, so it&amp;rsquo;s important to make their lives as easy as possible.</description>
     </item>
     
     <item>
@@ -68,12 +68,23 @@ You download the all the files and you find something like this.
     </item>
     
     <item>
-      <title>02: Research compendia with rrtools</title>
-      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-rrtools/</link>
+      <title>02: Getting the most of git</title>
+      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day2/02-git/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-rrtools/</guid>
-      <description>Of course, you can always create a file structure that suits you and your work by hand. But if you are going to do that a lot, it might be nice to automate some of the work. We are going to use the rrtools package to create a &amp;ldquo;research compendium&amp;rdquo; using a couple of R functions and combine it with the things we learned on the git and GitHub section.</description>
+      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day2/02-git/</guid>
+      <description>Why git?     Do you have something like this in your computer?
+/home/pao/Documents/thesis ├── abstract.R ├── thesis.Rmd ├── thesis_reviwed.Rmd ├── thesis_reviwed2.Rmd ├── thesis_final.Rmd ├── thesis_finalfinal.Rmd ├── this_is_it.Rmd ├── now_this_is_it_for_real_this_time_i_swear.Rmd └── FINAL.Rmd  Probably we all have, or had something like this at one point because we didn&amp;rsquo;t use a version control system. Version control systems manage the evolution and changes of a set of files that we&amp;rsquo;ll call repository.</description>
+    </item>
+    
+    <item>
+      <title>02: Sharing data</title>
+      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day3/02-data/</link>
+      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day3/02-data/</guid>
+      <description>The two ingredients for a reproducible project are code and data. We talked a lot about how to organise and share code, but what about data? Sharing data is far from trivial and there are a lot of things to consider.
+Permissions     Before the technical issues of sharing data there are the bureaucratic issues. Depending on your context, you might not be allowed to share your data.</description>
     </item>
     
     <item>
@@ -106,23 +117,12 @@ This is really critical to reproducibility since it automates the creation of a 
     </item>
     
     <item>
-      <title>03: Sharing data</title>
-      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day2/03-data/</link>
+      <title>03: Research compendia with rrtools</title>
+      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day2/03-rrtools/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day2/03-data/</guid>
-      <description>The two ingredients for a reproducible project are code and data. We talked a lot about how to organise and share code, but what about data? Sharing data is far from trivial and there are a lot of things to consider.
-Permissions     Before the technical issues of sharing data there are the bureaucratic issues. Depending on your context, you might not be allowed to share your data.</description>
-    </item>
-    
-    <item>
-      <title>04: here are the portable paths</title>
-      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day1/04-here/</link>
-      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day1/04-here/</guid>
-      <description>If you use RStudio Projects consistently, you can be sure that your working directory is always the root of the project unless you actively change it. Almost. There are two situations in which this assumption can be broken and that can lead to errors or, even worse, surprising results.
-Root directory during knit     One issue is that when RMarkdown files are knitted, the working directory in which the code is executed is the location of the .</description>
+      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day2/03-rrtools/</guid>
+      <description>Of course, you can always create a file structure that suits you and your work by hand. But if you are going to do that a lot, it might be nice to automate some of the work. We are going to use the rrtools package to create a &amp;ldquo;research compendium&amp;rdquo; using a couple of R functions and combine it with the things we learned on the git and GitHub section.</description>
     </item>
     
     <item>

@@ -1,0 +1,87 @@
+---
+title: "Introduction"
+format: revealjs
+---
+
+# Day 2:
+
+1.  [Portable file paths with here](/reproducibility-with-r/materials/day2/01-here/)
+2.  [Using git and GitHub](/reproducibility-with-r/materials/day2/02-git/) ([setup instructions](/reproducibility-with-r/materials/day0/#git-and-github))
+3.  [Creating a research compendium](/reproducibility-with-r/materials/day2/03-rrtools/)
+
+---- 
+
+## Does git sound familiar to you?
+
+😯 I don’t have a clue
+
+👍 I’ve heard of it
+
+👏 I’ve used it
+
+❤️ I use it all the time
+
+Choose an emoji from Reactions
+
+--- 
+
+```
+/home/pao/Documents/thesis
+├── abstract.R
+├── thesis.Rmd
+├── thesis_reviwed.Rmd
+├── thesis_reviwed2.Rmd
+├── thesis_final.Rmd
+├── thesis_finalfinal.Rmd
+├── this_is_it.Rmd
+├── now_this_is_it_for_real_this_time_i_swear.Rmd
+└── FINAL.Rmd
+```
+
+---
+
+
+![](/reproducibility-with-r/materials/day2/02-git/images/file_cycle2.png)
+
+---
+
+
+![](/reproducibility-with-r/materials/day2/02-git/images/local_remote.png)
+
+---
+
+
+![](/reproducibility-with-r/materials/day2/02-git/images/pull-request.png)
+
+
+----
+
+
+## How familiar are you with R package development?
+
+
+😯 I don’t have a clue.
+
+👍 I’ve created a few functions.
+
+👏 I’ve use the R package structure.
+
+❤️ I maintain one or more R packages.
+
+Choose an emoji from Reactions
+
+
+----
+
+
+## If you work with data, what’s the typical size?
+
+
+😯 A few megabytes (less than 100 Mb per file).
+
+👍 A lot of small files (more than 50 Gb in total).
+
+👏 Chonky files (more than 100 Mb).
+
+
+Choose an emoji from Reactions

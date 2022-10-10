@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="generator" content="Hugo 0.80.0" />
-<title>01: Reproducible computational environment with renv | An R reproducibility toolkit for the practical researcher</title>
+<title>01: Managing R dependencies with renv | An R reproducibility toolkit for the practical researcher</title>
 
 
 
@@ -25,7 +25,7 @@
 
 
 <meta property="og:site_name" content="An R reproducibility toolkit for the practical researcher">
-<meta property="og:title" content="01: Reproducible computational environment with renv | An R reproducibility toolkit for the practical researcher">
+<meta property="og:title" content="01: Managing R dependencies with renv | An R reproducibility toolkit for the practical researcher">
 <meta property="og:description" content="Reproducibility course in R" />
 <meta property="og:type" content="page" />
 <meta property="og:url" content="https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-renv/" />
@@ -40,7 +40,7 @@
           <meta name="twitter:image" content="https://eliocamp.github.io/reproducibility-with-r/materials/day3/sidebar.png" >
       
       
-  <meta itemprop="name" content="01: Reproducible computational environment with renv">
+  <meta itemprop="name" content="01: Managing R dependencies with renv">
 <meta itemprop="description" content="No code is its own isolated bubble. Almost every analysis will depend on a number of external packages, such as ggplot2 for plotting, data.table for data wrangling, knitr for rendering a report, and so on.
 But actively-maintained packages will change their code-base to fix bugs, add features, remove features or change behaviour. These changes have the potential of breaking your analysis or creating subtle (or not so subtle) differences in the result.">
 <meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
@@ -128,7 +128,7 @@ But actively-maintained packages will change their code-base to fix bugs, add fe
 
   
     
-      01: Reproducible computational environment with renv
+      01: Managing R dependencies with renv
     
 
 
@@ -138,7 +138,7 @@ But actively-maintained packages will change their code-base to fix bugs, add fe
 
 
         
-        <h1 class="f1 lh-solid measure-narrow mb3 fw4">01: Reproducible computational environment with renv</h1>
+        <h1 class="f1 lh-solid measure-narrow mb3 fw4">01: Managing R dependencies with renv</h1>
         
         <p class="f6 measure lh-copy mv1">By Paola Corrales and Elio Campitelli</p>
         
@@ -386,7 +386,7 @@ This includes the version of R itself!</p>
   
   
     <a class="next dtc pl2 tr v-top fw6"
-    href="https://eliocamp.github.io/reproducibility-with-r/materials/day3/02-docker/">02: Reproducible computational environment with Docker &rarr;</a>
+    href="https://eliocamp.github.io/reproducibility-with-r/materials/day3/02-data/">02: Sharing data &rarr;</a>
   
 </div>
 
@@ -446,9 +446,6 @@ This includes the version of R itself!</p>
               
               <li class="" hugo-nav="/reproducibility-with-r/materials/day1/03-rmarkdown/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/03-rmarkdown/">03: Reporting with R Markdown</a></li>
             
-              
-              <li class="" hugo-nav="/reproducibility-with-r/materials/day1/04-here/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/04-here/">04: here are the portable paths</a></li>
-            
           </details>
           
           </li>
@@ -460,13 +457,13 @@ This includes the version of R itself!</p>
             <summary class="" hugo-nav="/reproducibility-with-r/materials/day2/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/">Day 2</a></summary>
             
               
-              <li class="" hugo-nav="/reproducibility-with-r/materials/day2/01-git/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/01-git/">01: Getting the most of git</a></li>
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day2/01-here/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/01-here/">01: here are the portable paths</a></li>
             
               
-              <li class="" hugo-nav="/reproducibility-with-r/materials/day2/02-rrtools/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/02-rrtools/">02: Research compendia with rrtools</a></li>
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day2/02-git/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/02-git/">02: Getting the most of git</a></li>
             
               
-              <li class="" hugo-nav="/reproducibility-with-r/materials/day2/03-data/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/03-data/">03: Sharing data</a></li>
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day2/03-rrtools/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/03-rrtools/">03: Research compendia with rrtools</a></li>
             
           </details>
           
@@ -479,10 +476,23 @@ This includes the version of R itself!</p>
             <summary class="active" hugo-nav="/reproducibility-with-r/materials/day3/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day3/">Day 3</a></summary>
             
               
-              <li class="active" hugo-nav="/reproducibility-with-r/materials/day3/01-renv/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-renv/">01: Reproducible computational environment with renv</a></li>
+              <li class="active" hugo-nav="/reproducibility-with-r/materials/day3/01-renv/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-renv/">01: Managing R dependencies with renv</a></li>
             
               
-              <li class="" hugo-nav="/reproducibility-with-r/materials/day3/02-docker/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day3/02-docker/">02: Reproducible computational environment with Docker</a></li>
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day3/02-data/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day3/02-data/">02: Sharing data</a></li>
+            
+          </details>
+          
+          </li>
+        
+          
+          
+          
+          <details  class="">
+            <summary class="" hugo-nav="/reproducibility-with-r/materials/day4/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day4/">Day 4</a></summary>
+            
+              
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day4/01-docker/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day4/01-docker/">01: Reproducible computational environment with Docker</a></li>
             
           </details>
           

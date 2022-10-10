@@ -3,22 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://eliocamp.github.io/reproducibility-with-r/materials/day2/01-git/</loc>
+    <loc>https://eliocamp.github.io/reproducibility-with-r/materials/day2/01-here/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://eliocamp.github.io/reproducibility-with-r/materials/day3/02-renv/</loc>
-    <lastmod>2022-03-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://eliocamp.github.io/reproducibility-with-r/materials/day1/01-introduction/</loc>
+    <loc>https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-renv/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://eliocamp.github.io/reproducibility-with-r/materials/day4/01-docker/</loc>
+    <lastmod>2022-03-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eliocamp.github.io/reproducibility-with-r/materials/day1/01-introduction/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -33,7 +33,12 @@
   </url>
   
   <url>
-    <loc>https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-rrtools/</loc>
+    <loc>https://eliocamp.github.io/reproducibility-with-r/materials/day2/02-git/</loc>
+    <lastmod>2022-03-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://eliocamp.github.io/reproducibility-with-r/materials/day3/02-data/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -56,7 +61,7 @@
   </url>
   
   <url>
-    <loc>https://eliocamp.github.io/reproducibility-with-r/materials/day2/03-data/</loc>
+    <loc>https://eliocamp.github.io/reproducibility-with-r/materials/day2/03-rrtools/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -66,22 +71,17 @@
   </url>
   
   <url>
-    <loc>https://eliocamp.github.io/reproducibility-with-r/materials/day1/04-here/</loc>
-    <lastmod>2022-03-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://eliocamp.github.io/reproducibility-with-r/materials/day3/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://eliocamp.github.io/reproducibility-with-r/materials/reprohack/</loc>
+    <loc>https://eliocamp.github.io/reproducibility-with-r/materials/day4/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://eliocamp.github.io/reproducibility-with-r/materials/day4/</loc>
+    <loc>https://eliocamp.github.io/reproducibility-with-r/materials/reprohack/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
   </url>
   

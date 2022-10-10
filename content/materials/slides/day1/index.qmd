@@ -1,0 +1,96 @@
+---
+title: "An R reproducibility toolkit for the practical researcher"
+format: revealjs
+---
+
+# Day 1
+
+1.  [Introduction](/reproducibility-with-r/materials/day1/01-introduction/)
+2.  [Project structure](/reproducibility-with-r/materials/day1/02-projects/)
+3.  [RMarkdown](/reproducibility-with-r/materials/day1/03-rmarkdown/)
+
+------------------------------------------------------------------------
+
+![](reproducible-matrix.jpg)
+
+<https://the-turing-way.netlify.app/reproducible-research/reproducible-research.html>
+
+------------------------------------------------------------------------
+
+![](repro-spectrum.png)
+
+<https://towardsdatascience.com/scientific-data-analysis-pipelines-and-reproducibility-75ff9df5b4c5>
+
+------------------------------------------------------------------------
+
+![](spectrum-notext.png)
+
+<https://rviews.rstudio.com/2018/01/18/package-management-for-reproducible-r-code/>
+
+------------------------------------------------------------------------
+
+## Do you use RStudio projects?
+
+😯 What's that?
+
+👍 I'm familiar with them.
+
+👏 I use them sometimes.
+
+❤️ I use them all the time.
+
+Choose an emoji from Reactions
+
+------------------------------------------------------------------------
+
+## Does RMarkdown documents sound familiar to you?
+
+😯 I don't have a clue.
+
+👍 I've heard of it.
+
+👏 I've used it
+
+❤️ I use it all the time.
+
+Choose an emoji from Reactions
+
+------------------------------------------------------------------------
+
+## Does YAML sound familiar to you?
+
+😯 I don't have a clue.
+
+👍 I've heard of it.
+
+👏 I can understand it.
+
+❤️ I can write valid yaml most of the time.
+
+Choose an emoji from Reactions
+
+------------------------------------------------------------------------
+
+## Does LaTeX sound familiar to you?
+
+😯 I don't have a clue.
+
+👍 I've heard of it.
+
+👏 I've used it, unfortunately.
+
+❤️ I use it all the time, unfortunately.
+
+Choose an emoji from Reactions
+
+------------------------------------------------------------------------
+
+# Preparations for day 2:
+
+1.  [Portable file paths with here](/reproducibility-with-r/materials/day2/01-here/)
+    -   Install the here package.
+2.  [Using git and GitHub](/reproducibility-with-r/materials/day2/02-git/) ([setup instructions](/reproducibility-with-r/materials/day0/#git-and-github))
+    -   Install git
+    -   Create GitHub account
+    -   Configure your system to use RStudio with GitHub
+3.  [Creating a research compendium](/reproducibility-with-r/materials/day2/03-rrtools/)

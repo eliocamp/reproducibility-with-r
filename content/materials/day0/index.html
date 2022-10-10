@@ -42,7 +42,7 @@ RStudio will install the packages and then open a sample document.</p></li>
 </ul>
 <p>Other important packages are <strong>here</strong>, <strong>renv</strong>, <strong>rticles</strong>, and <strong>devtools</strong> and <strong>roxygen2</strong>.
 These are on CRAN so you can install them with the usual</p>
-<pre class="r"><code>install.packages(c(&quot;here&quot;, &quot;renv&quot;, &quot;rticles&quot;, &quot;devtools&quot;, &quot;roxygen2&quot;))</code></pre>
+<pre class="r"><code>install.packages(c(&quot;here&quot;, &quot;renv&quot;, &quot;rticles&quot;, &quot;devtools&quot;, &quot;roxygen2&quot;, &quot;gitcreds&quot;))</code></pre>
 <p>The packages <strong>rrtools</strong> and <strong>rrtools.addin</strong> will also be useful.
 They are not on CRAN, so you need so install them from github</p>
 <pre class="r"><code>if (!require(&quot;remotes&quot;)) install.packages(&quot;remotes&quot;)
@@ -65,17 +65,35 @@ Details on how to do this are best described in Jenny Bryan’s fantastic <a hre
 The core steps are:</p>
 <ol style="list-style-type: decimal">
 <li><p>Install git on your machine.<br />
-The instructions depend on your Operating System.
+</p>
+<p>The instructions depend on your Operating System.
 Follow the instructions at <a href="https://happygitwithr.com/install-git.html" class="uri">https://happygitwithr.com/install-git.html</a>.</p></li>
 <li><p>Create a GitHub account.<br />
-Go to <a href="github.com">github.com</a> and create your free account.</p></li>
+</p>
+<p>Go to <a href="github.com">github.com</a> and create your free account.</p></li>
+<li><p>If you are on linux, you’ll need to configure git to save credentials for more than 15 minutes.
+Follow the instructions in <a href="https://blog.djnavarro.net/posts/2021-08-08_git-credential-helpers/">this post by Danielle Navarro</a>.
+It covers some of the same territory with more detail, and it can be cathartic to read someone who shares your pain.</p></li>
 <li><p>Set up git so it can work with GitHUb and RStudio.<br />
-This can be, unfortunately, a rather involved process so be patient.
+</p>
+<p>This can be, unfortunately, a rather involved process so be patient.
 Again, the excellent Happy Git with R is your friend.
 Follow the instructions in <a href="https://happygitwithr.com/https-pat.html">this chapter</a> to set up your GitHub Personal Access Token.<br />
-If you are on linux, we highly recommend <a href="https://blog.djnavarro.net/posts/2021-08-08_git-credential-helpers/">this post by Danielle Navarro</a>.
-It covers some of the same territory with more detail, and it can be cathartic to read someone who shares your pain.</p></li>
-<li><p>(Optional) In this workshop we will be using RStudio as a simple git GUI, but in the future you might want to use a more full-fledge client.
+</p>
+<p>The tl;dr is to run this command on your R console</p>
+<pre class="r"><code>usethis::use_git_config(user.name = &quot;Jane Doe&quot;, 
+                        user.email = &quot;jane@example.org&quot;)</code></pre>
+<p>Using your full name and the email you used to register to GitHub.
+Then, you need to create a Personal Access Token with</p>
+<pre class="r"><code>usethis::create_github_token()</code></pre>
+<p>This will create a token.
+Then run this other command to save it to your configuration:</p>
+<pre class="r"><code>gitcreds::gitcreds_set()</code></pre>
+<p>Finally, to check that everything’s ok with this command.</p>
+<pre class="r"><code>usethis::gh_token_help()</code></pre>
+<p>It should print a list of personal details, including:</p>
+<pre><code>Personal access token for &#39;https://github.com&#39;: &#39;&lt;discovered&gt;&#39;</code></pre></li>
+<li><p>(Optional) In this workshop we will be using RStudio as a simple git GUI, but in the future you might want to use a more full-fledged client.
 Again, Happy Git with R <a href="https://happygitwithr.com/git-client.html#recommended-git-clients">recommends a few</a>.
 We like <a href="https://www.gitkraken.com/">GitKraken</a>, which is free, feature-rich, and multi-platform.</p></li>
 </ol>
@@ -86,7 +104,8 @@ We like <a href="https://www.gitkraken.com/">GitKraken</a>, which is free, featu
 Instructions on how to install it depend on your operating system.
 Go to <a href="https://docs.docker.com/get-docker/" class="uri">https://docs.docker.com/get-docker/</a> and follow the instructions.</p>
 <p>If you’re on Linux, you need <code>sudo</code> to run docker unless you follow <a href="https://docs.docker.com/engine/install/linux-postinstall/">this guide</a>, which is recommended.
-Regardless of your OS, run this line to check that your docker installation is working. You should see a message like this one:</p>
+Regardless of your OS, run this line to check that your docker installation is working.
+You should see a message like this one:</p>
 <pre class="bash"><code>docker run hello-world</code></pre>
 <pre><code>## 
 ## Hello from Docker!

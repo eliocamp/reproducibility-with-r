@@ -8,22 +8,23 @@
     <language>en</language>
     <lastBuildDate>Tue, 15 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://eliocamp.github.io/reproducibility-with-r/materials/day3/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>01: Reproducible computational environment with renv</title>
-      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day3/02-renv/</link>
+      <title>01: Managing R dependencies with renv</title>
+      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-renv/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day3/02-renv/</guid>
+      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-renv/</guid>
       <description>No code is its own isolated bubble. Almost every analysis will depend on a number of external packages, such as ggplot2 for plotting, data.table for data wrangling, knitr for rendering a report, and so on.
 But actively-maintained packages will change their code-base to fix bugs, add features, remove features or change behaviour. These changes have the potential of breaking your analysis or creating subtle (or not so subtle) differences in the result.</description>
     </item>
     
     <item>
-      <title>02: Research compendia with rrtools</title>
-      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-rrtools/</link>
+      <title>02: Sharing data</title>
+      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day3/02-data/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-rrtools/</guid>
-      <description>Of course, you can always create a file structure that suits you and your work by hand. But if you are going to do that a lot, it might be nice to automate some of the work. We are going to use the rrtools package to create a &amp;ldquo;research compendium&amp;rdquo; using a couple of R functions and combine it with the things we learned on the git and GitHub section.</description>
+      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day3/02-data/</guid>
+      <description>The two ingredients for a reproducible project are code and data. We talked a lot about how to organise and share code, but what about data? Sharing data is far from trivial and there are a lot of things to consider.
+Permissions     Before the technical issues of sharing data there are the bureaucratic issues. Depending on your context, you might not be allowed to share your data.</description>
     </item>
     
   </channel>

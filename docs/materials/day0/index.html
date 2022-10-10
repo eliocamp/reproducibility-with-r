@@ -45,7 +45,7 @@
 R At the very least you need to have R installed on your computer. If possible, try to have it upgraded to the latest version. We developed the materials using R version 4.">
 <meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="635">
+<meta itemprop="wordCount" content="967">
 <meta itemprop="image" content="https://eliocamp.github.io/reproducibility-with-r/materials/day0/featured.png">
 
 
@@ -141,7 +141,6 @@ R At the very least you need to have R installed on your computer. If possible, 
       </header>
       <section class="post-body pt5 pb4">
         
-<script src="https://eliocamp.github.io/reproducibility-with-r/materials/day0/index_files/header-attrs/header-attrs.js"></script>
 
 
 <p>Hi!
@@ -152,7 +151,7 @@ Please, follow these instructions before the workshop.</p>
 <h2>R</h2>
 <p>At the very least you need to have R installed on your computer.
 If possible, try to have it upgraded to the latest version.
-We developed the materials using R version 4.1.2 (2021-11-01).
+We developed the materials using R version 4.2.1 (2022-06-23).
 To the best of our abilities, we don’t think there’s anything that requires this particular version, but to avoid potential issues, it would be best if you have at least a R 4.something.</p>
 <p>Go to <a href="https://cloud.r-project.org/" class="uri">https://cloud.r-project.org/</a> and follow the steps for your Operating System.</p>
 </div>
@@ -177,7 +176,7 @@ RStudio will install the packages and then open a sample document.</p></li>
 </ul>
 <p>Other important packages are <strong>here</strong>, <strong>renv</strong>, <strong>rticles</strong>, and <strong>devtools</strong> and <strong>roxygen2</strong>.
 These are on CRAN so you can install them with the usual</p>
-<pre class="r"><code>install.packages(c(&quot;here&quot;, &quot;renv&quot;, &quot;rticles&quot;, &quot;devtools&quot;, &quot;roxygen2&quot;))</code></pre>
+<pre class="r"><code>install.packages(c(&quot;here&quot;, &quot;renv&quot;, &quot;rticles&quot;, &quot;devtools&quot;, &quot;roxygen2&quot;, &quot;gitcreds&quot;))</code></pre>
 <p>The packages <strong>rrtools</strong> and <strong>rrtools.addin</strong> will also be useful.
 They are not on CRAN, so you need so install them from github</p>
 <pre class="r"><code>if (!require(&quot;remotes&quot;)) install.packages(&quot;remotes&quot;)
@@ -200,17 +199,35 @@ Details on how to do this are best described in Jenny Bryan’s fantastic <a hre
 The core steps are:</p>
 <ol style="list-style-type: decimal">
 <li><p>Install git on your machine.<br />
-The instructions depend on your Operating System.
+</p>
+<p>The instructions depend on your Operating System.
 Follow the instructions at <a href="https://happygitwithr.com/install-git.html" class="uri">https://happygitwithr.com/install-git.html</a>.</p></li>
 <li><p>Create a GitHub account.<br />
-Go to <a href="github.com">github.com</a> and create your free account.</p></li>
+</p>
+<p>Go to <a href="github.com">github.com</a> and create your free account.</p></li>
+<li><p>If you are on linux, you’ll need to configure git to save credentials for more than 15 minutes.
+Follow the instructions in <a href="https://blog.djnavarro.net/posts/2021-08-08_git-credential-helpers/">this post by Danielle Navarro</a>.
+It covers some of the same territory with more detail, and it can be cathartic to read someone who shares your pain.</p></li>
 <li><p>Set up git so it can work with GitHUb and RStudio.<br />
-This can be, unfortunately, a rather involved process so be patient.
+</p>
+<p>This can be, unfortunately, a rather involved process so be patient.
 Again, the excellent Happy Git with R is your friend.
 Follow the instructions in <a href="https://happygitwithr.com/https-pat.html">this chapter</a> to set up your GitHub Personal Access Token.<br />
-If you are on linux, we highly recommend <a href="https://blog.djnavarro.net/posts/2021-08-08_git-credential-helpers/">this post by Danielle Navarro</a>.
-It covers some of the same territory with more detail, and it can be cathartic to read someone who shares your pain.</p></li>
-<li><p>(Optional) In this workshop we will be using RStudio as a simple git GUI, but in the future you might want to use a more full-fledge client.
+</p>
+<p>The tl;dr is to run this command on your R console</p>
+<pre class="r"><code>usethis::use_git_config(user.name = &quot;Jane Doe&quot;, 
+                        user.email = &quot;jane@example.org&quot;)</code></pre>
+<p>Using your full name and the email you used to register to GitHub.
+Then, you need to create a Personal Access Token with</p>
+<pre class="r"><code>usethis::create_github_token()</code></pre>
+<p>This will create a token.
+Then run this other command to save it to your configuration:</p>
+<pre class="r"><code>gitcreds::gitcreds_set()</code></pre>
+<p>Finally, to check that everything’s ok with this command.</p>
+<pre class="r"><code>usethis::gh_token_help()</code></pre>
+<p>It should print a list of personal details, including:</p>
+<pre><code>Personal access token for &#39;https://github.com&#39;: &#39;&lt;discovered&gt;&#39;</code></pre></li>
+<li><p>(Optional) In this workshop we will be using RStudio as a simple git GUI, but in the future you might want to use a more full-fledged client.
 Again, Happy Git with R <a href="https://happygitwithr.com/git-client.html#recommended-git-clients">recommends a few</a>.
 We like <a href="https://www.gitkraken.com/">GitKraken</a>, which is free, feature-rich, and multi-platform.</p></li>
 </ol>
@@ -220,7 +237,38 @@ We like <a href="https://www.gitkraken.com/">GitKraken</a>, which is free, featu
 <p>On the third day we show the basics of docker.
 Instructions on how to install it depend on your operating system.
 Go to <a href="https://docs.docker.com/get-docker/" class="uri">https://docs.docker.com/get-docker/</a> and follow the instructions.</p>
-<p>If you’re on Linux, you should also follow <a href="https://docs.docker.com/engine/install/linux-postinstall/">this guide</a> to run <code>docker</code> without <code>sudo</code>.</p>
+<p>If you’re on Linux, you need <code>sudo</code> to run docker unless you follow <a href="https://docs.docker.com/engine/install/linux-postinstall/">this guide</a>, which is recommended.
+Regardless of your OS, run this line to check that your docker installation is working.
+You should see a message like this one:</p>
+<pre class="bash"><code>docker run hello-world</code></pre>
+<pre><code>## 
+## Hello from Docker!
+## This message shows that your installation appears to be working correctly.
+## 
+## To generate this message, Docker took the following steps:
+##  1. The Docker client contacted the Docker daemon.
+##  2. The Docker daemon pulled the &quot;hello-world&quot; image from the Docker Hub.
+##     (amd64)
+##  3. The Docker daemon created a new container from that image which runs the
+##     executable that produces the output you are currently reading.
+##  4. The Docker daemon streamed that output to the Docker client, which sent it
+##     to your terminal.
+## 
+## To try something more ambitious, you can run an Ubuntu container with:
+##  $ docker run -it ubuntu bash
+## 
+## Share images, automate workflows, and more with a free Docker ID:
+##  https://hub.docker.com/
+## 
+## For more examples and ideas, visit:
+##  https://docs.docker.com/get-started/</code></pre>
+<p>Once all is installed correctly, run this line to download the docker image we will use in the course so that you don’t need to download it during the session:</p>
+<pre class="bash"><code>docker pull rocker/rstudio:4.1.2</code></pre>
+<p>You should get a few progress bars and finally a message like this one:</p>
+<pre><code>4.1.2: Pulling from rocker/rstudio
+Digest: sha256:a8708ac1c1de0814c475f08034b95b8fe17f96e370b0bbfa306304c99010db49
+Status: Image is up to date for rocker/rstudio:4.1.2
+docker.io/rocker/rstudio:4.1.2</code></pre>
 </div>
 
       </section>
@@ -291,9 +339,6 @@ Go to <a href="https://docs.docker.com/get-docker/" class="uri">https://docs.doc
               
               <li class="" hugo-nav="/reproducibility-with-r/materials/day1/03-rmarkdown/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/03-rmarkdown/">03: Reporting with R Markdown</a></li>
             
-              
-              <li class="" hugo-nav="/reproducibility-with-r/materials/day1/04-here/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day1/04-here/">04: here are the portable paths</a></li>
-            
           </details>
           
           </li>
@@ -305,10 +350,13 @@ Go to <a href="https://docs.docker.com/get-docker/" class="uri">https://docs.doc
             <summary class="" hugo-nav="/reproducibility-with-r/materials/day2/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/">Day 2</a></summary>
             
               
-              <li class="" hugo-nav="/reproducibility-with-r/materials/day2/01-git/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/01-git/">01: Getting the most of git</a></li>
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day2/01-here/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/01-here/">01: here are the portable paths</a></li>
             
               
-              <li class="" hugo-nav="/reproducibility-with-r/materials/day2/03-data/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/03-data/">03: Sharing data</a></li>
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day2/02-git/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/02-git/">02: Getting the most of git</a></li>
+            
+              
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day2/03-rrtools/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day2/03-rrtools/">03: Research compendia with rrtools</a></li>
             
           </details>
           
@@ -321,19 +369,12 @@ Go to <a href="https://docs.docker.com/get-docker/" class="uri">https://docs.doc
             <summary class="" hugo-nav="/reproducibility-with-r/materials/day3/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day3/">Day 3</a></summary>
             
               
-              <li class="" hugo-nav="/reproducibility-with-r/materials/day3/02-renv/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day3/02-renv/">01: Reproducible computational environment with renv</a></li>
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day3/01-renv/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-renv/">01: Managing R dependencies with renv</a></li>
             
               
-              <li class="" hugo-nav="/reproducibility-with-r/materials/day3/01-rrtools/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-rrtools/">02: Research compendia with rrtools</a></li>
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day3/02-data/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day3/02-data/">02: Sharing data</a></li>
             
           </details>
-          
-          </li>
-        
-          
-          
-          <li class="" hugo-nav="/reproducibility-with-r/materials/reprohack/">
-            <a href="https://eliocamp.github.io/reproducibility-with-r/materials/reprohack/">Mini Reprohack</a></li>
           
           </li>
         
@@ -344,9 +385,16 @@ Go to <a href="https://docs.docker.com/get-docker/" class="uri">https://docs.doc
             <summary class="" hugo-nav="/reproducibility-with-r/materials/day4/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day4/">Day 4</a></summary>
             
               
-              <li class="" hugo-nav="/reproducibility-with-r/materials/day4/01-docker/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day4/01-docker/">02: Reproducible computational environment with Docker</a></li>
+              <li class="" hugo-nav="/reproducibility-with-r/materials/day4/01-docker/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day4/01-docker/">01: Reproducible computational environment with Docker</a></li>
             
           </details>
+          
+          </li>
+        
+          
+          
+          <li class="" hugo-nav="/reproducibility-with-r/materials/reprohack/">
+            <a href="https://eliocamp.github.io/reproducibility-with-r/materials/reprohack/">Mini Reprohack</a></li>
           
           </li>
         

@@ -38,15 +38,5 @@ You download the all the files and you find something like this.
 This is really critical to reproducibility since it automates the creation of a paper or report, which also has the side effect of saving time.</description>
     </item>
     
-    <item>
-      <title>04: here are the portable paths</title>
-      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day1/04-here/</link>
-      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day1/04-here/</guid>
-      <description>If you use RStudio Projects consistently, you can be sure that your working directory is always the root of the project unless you actively change it. Almost. There are two situations in which this assumption can be broken and that can lead to errors or, even worse, surprising results.
-Root directory during knit     One issue is that when RMarkdown files are knitted, the working directory in which the code is executed is the location of the .</description>
-    </item>
-    
   </channel>
 </rss>
