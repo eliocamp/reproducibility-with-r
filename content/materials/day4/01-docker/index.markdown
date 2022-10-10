@@ -1,5 +1,5 @@
 ---
-title: "02: Reproducible computational environment with Docker"
+title: "01: Reproducible computational environment with Docker"
 weight: 1
 show_post_date: false
 publishDate: 2022-02-19
@@ -95,9 +95,10 @@ Some notes on this command:
 -   `rocker/rstudio:4.1.2` is the name of the image that needs to be ran.
 </div>
 
-```{r, fig.cap = "RStudio running inside docker.", fig.alt="Screenshot of a browser in http://localhost:8787/ running RStudio.", echo = FALSE}
-knitr::include_graphics("images/rstudio-landing.png")
-```
+<div class="figure">
+<img src="images/rstudio-landing.png" alt="Screenshot of a browser in http://localhost:8787/ running RStudio." width="662" />
+<p class="caption">Figure 1: RStudio running inside docker.</p>
+</div>
 
 Surprise!
 You've got RStudio running inside a Docker container.

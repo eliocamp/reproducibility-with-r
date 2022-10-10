@@ -19,10 +19,10 @@
     
     <item>
       <title>01: Reproducible computational environment with renv</title>
-      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-renv/</link>
+      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day3/02-renv/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-renv/</guid>
+      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day3/02-renv/</guid>
       <description>No code is its own isolated bubble. Almost every analysis will depend on a number of external packages, such as ggplot2 for plotting, data.table for data wrangling, knitr for rendering a report, and so on.
 But actively-maintained packages will change their code-base to fix bugs, add features, remove features or change behaviour. These changes have the potential of breaking your analysis or creating subtle (or not so subtle) differences in the result.</description>
     </item>
@@ -39,10 +39,10 @@ What reproducibility is and what it is not     We will use &amp;ldquo;reproducib
     
     <item>
       <title>02: Reproducible computational environment with Docker</title>
-      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day3/02-docker/</link>
+      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day4/01-docker/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day3/02-docker/</guid>
+      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day4/01-docker/</guid>
       <description>While renv is nice, it doesn&amp;rsquo;t solve the whole problem, because system dependencies and even the R version itself can change. Another issue is that downloading and installing all the R packages can take a while. Like an hour or more. This is not a deal-breaker, but I&amp;rsquo;d like to do better. People trying to reproduce work are few and far between, so it&amp;rsquo;s important to make their lives as easy as possible.</description>
     </item>
     
@@ -69,10 +69,10 @@ You download the all the files and you find something like this.
     
     <item>
       <title>02: Research compendia with rrtools</title>
-      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day2/02-rrtools/</link>
+      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-rrtools/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day2/02-rrtools/</guid>
+      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-rrtools/</guid>
       <description>Of course, you can always create a file structure that suits you and your work by hand. But if you are going to do that a lot, it might be nice to automate some of the work. We are going to use the rrtools package to create a &amp;ldquo;research compendium&amp;rdquo; using a couple of R functions and combine it with the things we learned on the git and GitHub section.</description>
     </item>
     

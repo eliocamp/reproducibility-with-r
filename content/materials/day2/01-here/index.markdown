@@ -1,10 +1,11 @@
 ---
-title: "04: here are the portable paths"
-weight: 4
+title: "01: here are the portable paths"
+weight: 1
 show_post_date: false
 publishDate: 2022-02-19
 excerpt: ""
 ---
+
 
 If you use RStudio Projects consistently, you can be sure that your working directory is always the root of the project unless you actively change it.
 Almost.
@@ -42,7 +43,7 @@ getwd()
 ```
 
 ```
-## [1] "/home/pao/RStuff/reproducibility-with-r/static/demo_project"
+## [1] "/home/elio/Documents/cursos/reproducibility-with-r/static/demo_project"
 ```
 
 You'll get some path in your computer. And also that `penguins.csv` is indeed located in the `data` folder by running

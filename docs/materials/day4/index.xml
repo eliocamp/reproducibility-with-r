@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Day 4 on An R reproducibility toolkit for the practical researcher</title>
+    <link>https://eliocamp.github.io/reproducibility-with-r/materials/day4/</link>
+    <description>Recent content in Day 4 on An R reproducibility toolkit for the practical researcher</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 15 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://eliocamp.github.io/reproducibility-with-r/materials/day4/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>02: Reproducible computational environment with Docker</title>
+      <link>https://eliocamp.github.io/reproducibility-with-r/materials/day4/01-docker/</link>
+      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day4/01-docker/</guid>
+      <description>While renv is nice, it doesn&amp;rsquo;t solve the whole problem, because system dependencies and even the R version itself can change. Another issue is that downloading and installing all the R packages can take a while. Like an hour or more. This is not a deal-breaker, but I&amp;rsquo;d like to do better. People trying to reproduce work are few and far between, so it&amp;rsquo;s important to make their lives as easy as possible.</description>
+    </item>
+    
+  </channel>
+</rss>

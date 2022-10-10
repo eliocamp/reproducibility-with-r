@@ -1,5 +1,5 @@
 ---
-title: "01: Reproducible computational environment with renv"
+title: "01: Managing R dependencies with renv"
 weight: 1
 show_post_date: false
 publishDate: 2022-02-19

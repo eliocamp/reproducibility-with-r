@@ -7,7 +7,6 @@ draft: false
 show_post_date: false
 ---
 
-<script src="{{< blogdown/postref >}}index_files/header-attrs/header-attrs.js"></script>
 
 
 <p>Hi!
@@ -18,7 +17,7 @@ Please, follow these instructions before the workshop.</p>
 <h2>R</h2>
 <p>At the very least you need to have R installed on your computer.
 If possible, try to have it upgraded to the latest version.
-We developed the materials using R version 4.1.2 (2021-11-01).
+We developed the materials using R version 4.2.1 (2022-06-23).
 To the best of our abilities, we don’t think there’s anything that requires this particular version, but to avoid potential issues, it would be best if you have at least a R 4.something.</p>
 <p>Go to <a href="https://cloud.r-project.org/" class="uri">https://cloud.r-project.org/</a> and follow the steps for your Operating System.</p>
 </div>
@@ -86,5 +85,35 @@ We like <a href="https://www.gitkraken.com/">GitKraken</a>, which is free, featu
 <p>On the third day we show the basics of docker.
 Instructions on how to install it depend on your operating system.
 Go to <a href="https://docs.docker.com/get-docker/" class="uri">https://docs.docker.com/get-docker/</a> and follow the instructions.</p>
-<p>If you’re on Linux, you should also follow <a href="https://docs.docker.com/engine/install/linux-postinstall/">this guide</a> to run <code>docker</code> without <code>sudo</code>.</p>
+<p>If you’re on Linux, you need <code>sudo</code> to run docker unless you follow <a href="https://docs.docker.com/engine/install/linux-postinstall/">this guide</a>, which is recommended.
+Regardless of your OS, run this line to check that your docker installation is working. You should see a message like this one:</p>
+<pre class="bash"><code>docker run hello-world</code></pre>
+<pre><code>## 
+## Hello from Docker!
+## This message shows that your installation appears to be working correctly.
+## 
+## To generate this message, Docker took the following steps:
+##  1. The Docker client contacted the Docker daemon.
+##  2. The Docker daemon pulled the &quot;hello-world&quot; image from the Docker Hub.
+##     (amd64)
+##  3. The Docker daemon created a new container from that image which runs the
+##     executable that produces the output you are currently reading.
+##  4. The Docker daemon streamed that output to the Docker client, which sent it
+##     to your terminal.
+## 
+## To try something more ambitious, you can run an Ubuntu container with:
+##  $ docker run -it ubuntu bash
+## 
+## Share images, automate workflows, and more with a free Docker ID:
+##  https://hub.docker.com/
+## 
+## For more examples and ideas, visit:
+##  https://docs.docker.com/get-started/</code></pre>
+<p>Once all is installed correctly, run this line to download the docker image we will use in the course so that you don’t need to download it during the session:</p>
+<pre class="bash"><code>docker pull rocker/rstudio:4.1.2</code></pre>
+<p>You should get a few progress bars and finally a message like this one:</p>
+<pre><code>4.1.2: Pulling from rocker/rstudio
+Digest: sha256:a8708ac1c1de0814c475f08034b95b8fe17f96e370b0bbfa306304c99010db49
+Status: Image is up to date for rocker/rstudio:4.1.2
+docker.io/rocker/rstudio:4.1.2</code></pre>
 </div>

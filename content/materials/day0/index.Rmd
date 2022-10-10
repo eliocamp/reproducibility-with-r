@@ -103,4 +103,25 @@ On the third day we show the basics of docker.
 Instructions on how to install it depend on your operating system.
 Go to <https://docs.docker.com/get-docker/> and follow the instructions.
 
-If you're on Linux, you should also follow [this guide](https://docs.docker.com/engine/install/linux-postinstall/) to run `docker` without `sudo`.
+If you're on Linux, you need `sudo` to run docker unless you follow [this guide](https://docs.docker.com/engine/install/linux-postinstall/), which is recommended. 
+Regardless of your OS, run this line to check that your docker installation is working. You should see a message like this one:
+
+```{bash}
+docker run hello-world
+```
+
+
+Once all is installed correctly, run this line to download the docker image we will use in the course so that you don't need to download it during the session:
+
+```bash
+docker pull rocker/rstudio:4.1.2
+```
+
+You should get a few progress bars and finally a message like this one:
+
+```
+4.1.2: Pulling from rocker/rstudio
+Digest: sha256:a8708ac1c1de0814c475f08034b95b8fe17f96e370b0bbfa306304c99010db49
+Status: Image is up to date for rocker/rstudio:4.1.2
+docker.io/rocker/rstudio:4.1.2
+```

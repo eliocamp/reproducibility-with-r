@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="generator" content="Hugo 0.80.0" />
-<title>Mini Reprohack | An R reproducibility toolkit for the practical researcher</title>
+<title>Day 4 | An R reproducibility toolkit for the practical researcher</title>
 
 
 
@@ -21,43 +21,36 @@
   
     
   
-<meta name="description" content="Let&#39;s reproduce papers in the wild!
+<meta name="description" content="Building reproducible computational environments with docker
 ">
 
 
 <meta property="og:site_name" content="An R reproducibility toolkit for the practical researcher">
-<meta property="og:title" content="Mini Reprohack | An R reproducibility toolkit for the practical researcher">
-<meta property="og:description" content="Let&#39;s reproduce papers in the wild!
+<meta property="og:title" content="Day 4 | An R reproducibility toolkit for the practical researcher">
+<meta property="og:description" content="Building reproducible computational environments with docker
 " />
-<meta property="og:type" content="page" />
-<meta property="og:url" content="https://eliocamp.github.io/reproducibility-with-r/materials/reprohack/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://eliocamp.github.io/reproducibility-with-r/materials/day4/" />
 <meta property="og:locale" content="en">
 
 
 
 
       
-          <meta property="og:image" content="https://eliocamp.github.io/reproducibility-with-r/materials/reprohack/featured.png" >
+          <meta property="og:image" content="https://eliocamp.github.io/img/papillons.jpg" >
           <meta property="twitter:card" content="summary_large_image">
-          <meta name="twitter:image" content="https://eliocamp.github.io/reproducibility-with-r/materials/reprohack/featured.png" >
+          <meta name="twitter:image" content="https://eliocamp.github.io/img/papillons.jpg" >
       
-      
-  <meta itemprop="name" content="Mini Reprohack">
-<meta itemprop="description" content="Let&#39;s reproduce papers in the wild!
+  <meta itemprop="name" content="Day 4">
+<meta itemprop="description" content="Building reproducible computational environments with docker
 ">
-<meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
-<meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="747">
-<meta itemprop="image" content="https://eliocamp.github.io/reproducibility-with-r/materials/reprohack/featured.png">
-
-
-
-<meta itemprop="keywords" content="" />
 
   
   <!--[if IE]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
   <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
   <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  
+    <link rel="alternate" type="application/rss+xml" href="https://eliocamp.github.io/reproducibility-with-r/materials/day4/index.xml" title="An R reproducibility toolkit for the practical researcher" />
   
   
   <link rel="stylesheet" href="/reproducibility-with-r/style.main.min.5c14ccb91905d450469e4040c74b4193d2441462e073a51188cded19e3799fd6.css" integrity="sha256-XBTMuRkF1FBGnkBAx0tBk9JEFGLgc6URiM3tGeN5n9Y=" media="screen">
@@ -122,7 +115,7 @@
 
   
     
-      Mini Reprohack
+      Day 4
     
 
 
@@ -132,150 +125,56 @@
 
 
         
-        <h1 class="f1 lh-solid measure-narrow mb3 fw4">Mini Reprohack</h1>
-        <h4 class="f4 mt0 mb4 lh-title measure">Let&#39;s reproduce papers in the wild!</h4>
-        <p class="f6 measure lh-copy mv1">By Paola Corrales and Elio Campitelli</p>
-        <p class="f7 db mv0 ttu">February 19, 2022</p>
+        <h1 class="i fw1 f1 tc mb0">Day 4</h1>
+        <h2 class="pb4 mt2 f4 fw4 ttu tracked bb bw1 tc">Building reproducible computational environments with docker</h2>
         
         
       
         
       </header>
       <section class="post-body pt5 pb4">
-        <p>One of the best ways of learning what makes a reproducible project is to try to reproduce real life projects instead of toy examples.
-You&rsquo;ll quickly learn what works and what doesn&rsquo;t and pick up tools and workflows from others.</p>
-<p>Therefore we propose this optional homework in which you will do just that.
-You can do it at any moment during the workshop.
-Some paper require using particular packages or technologies that you might not be familiar at the start of the workshop.
-Most of them should have readmes with instructions, but if you&rsquo;re stuck, you can always ask for help in the #reprohack Slack channel or leave it for later.</p>
-<p>
-<a href="https://www.reprohack.org/" target="_blank" rel="noopener">Reprohack</a> is a project that organises meetups in which a bunch of people get together to reproduce results.
-In their website they host a 
-<a href="https://www.reprohack.org/paper/" target="_blank" rel="noopener">database of papers</a> submitted by their authors.
-Papers that have been reviewed at least one have a &ldquo;Mean reproducibility score&rdquo; which will tell you roughly how easy it is to reproduce it.
-To get the code of a paper, you need to go to the &ldquo;Code URL&rdquo; link that&rsquo;s on its respective reprohack page.</p>
-<p>Below there&rsquo;s a curated list of some papers for you to chose with a short description of what you can expect.
-You are free to browse the 
-<a href="https://www.reprohack.org/paper/?search=&amp;tags=R" target="_blank" rel="noopener">list of papers tagged with &ldquo;R&rdquo;</a> and select anyone that piques your interest.</p>
-<div class = notes> 
-<p>Optional: Submit a review!</p>
-<p>You can submit a review of each paper in its respective Reprohack page.
-This is a set of structure questions that are then sent to the authors.
-You are encouraged to submit a review if you can.</p>
-</div>
-<div class = notes> 
-<p>Package installation (especially Linux)</p>
-<p>When reproducing papers you will most likely need to install a whole lot of new packages.
-This can take quite a while if you are a Linux user because packages that ship FORTRAN, C++ or other code needs to be compiled.</p>
-<p>If you want to speed things up, you can use the RStudio Package Manager repository, which offers pre-compiled binaries for several linux distributions.
-Go to 
-<a href="https://packagemanager.rstudio.com/client/#/repos/1/overview" target="_blank" rel="noopener">this page</a> for setup instructions.</p>
-</div>
+        
 
 
 
-
-<h2 id="curated-list-of-papers">Curated list of papers
-  <a href="#curated-list-of-papers"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+<h2 id="learning-objectives">Learning objectives
+  <a href="#learning-objectives"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
       <path d="M0 0h24v24H0z" fill="currentColor"></path>
       <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
     </svg></a>
 </h2>
+<ul>
+<li>Using docker to share a project.</li>
+</ul>
 
 
 
 
-<h3 id="analytic-reproducibility">Analytic Reproducibility In Articles Receiving Open Data Badges At The Journal Psychological Science: An Observational Study
-  <a href="#analytic-reproducibility"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+<h2 id="homework">Homework
+  <a href="#homework"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
       <path d="M0 0h24v24H0z" fill="currentColor"></path>
       <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
     </svg></a>
-</h3>
-<p>Mean reproducibility score: 9,5/10<br>
-Number of reviews: 2<br>
-Link: <a href="https://www.reprohack.org/paper/46/">https://www.reprohack.org/paper/46/</a></p>
-<p>This is a highly polished project that uses Docker to run the code in a container and render the result automatically.
-It&rsquo;s also a study about reproducibility so the meta aspect is hard to resist.</p>
-
-
-
-
-<h3 id="library-noise">No Effect Of Nature Representations On State Anxiety, Actual And Perceived Noise
-  <a href="#library-noise"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 0h24v24H0z" fill="currentColor"></path>
-      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
-    </svg></a>
-</h3>
-<p>Mean reproducibility score: 5,0/10<br>
-Number of reviews: 1<br>
-Link: <a href="https://www.reprohack.org/paper/49/">https://www.reprohack.org/paper/49/</a></p>
-<p>This paper has code and data available, but it doesn&rsquo;t use RMarkdown to produce results, nor any way of defining a stable computational environment.
-On top of that, the code is not portable and it has some errors.
-On the other hand, since it doesn&rsquo;t use any complicated technology like docker or renv, all the moving pieces can be understood by anyone with enough familiarity with R.
-Although all the code is there, it&rsquo;s not straightforward to run it or reproduce the results.</p>
-
-
-
-
-<h3 id="dispersal">The Role Of Conidia In The Dispersal Of Ascochyta Rabiei
-  <a href="#dispersal"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 0h24v24H0z" fill="currentColor"></path>
-      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
-    </svg></a>
-</h3>
-<p>Mean reproducibility score: <code>NA</code><br>
-Number of reviews: 0<br>
-Link: <a href="https://www.reprohack.org/paper/41/">https://www.reprohack.org/paper/41/</a></p>
-<p>This paper uses Docker completely.
-That&rsquo;s to say, it comes with a docker image which ships the computational environment, as well as all the code and data.
-Unlike 
-<a href="#analytic-reproducibility">Analytic Reproducibility&hellip;</a>, the docker image does not create the paper automatically.
-From the description, the authors had submitted other papers to Reprohack before and used what they learnt from the reviews to improve the reproducibility of this one.</p>
-
-
-
-
-<h3 id="covid">Mental Health and Social Contact During the COVID-19 Pandemic: An Ecological Momentary Assessment Study
-  <a href="#covid"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 0h24v24H0z" fill="currentColor"></path>
-      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
-    </svg></a>
-</h3>
-<p>Mean reproducibility score: 7,0/10<br>
-Number of reviews: 1<br>
-Link: <a href="https://www.reprohack.org/paper/32/">https://www.reprohack.org/paper/32/</a></p>
-<p>This paper doesn&rsquo;t define a table computational environment, but the code is almost fully portable and seems to run without errors.
-If you manage to install all the packages, you should be able to run it.</p>
-
-
-
-
-<h3 id="parkrun">Where Should New Parkrun Events Be Located? Modelling The Potential Impact Of 200 New Events On Socio-Economic Inequalities In Access And Participation
-  <a href="#parkrun"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0 0h24v24H0z" fill="currentColor"></path>
-      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
-    </svg></a>
-</h3>
-<p>Mean reproducibility score: 7,0/10<br>
-Number of reviews: 3<br>
-Link: <a href="https://www.reprohack.org/paper/28/">https://www.reprohack.org/paper/28/</a></p>
-<p>This paper is bundled into an RStudio project and the code is portable.
-The code will install packages if needed.
-Some possible problems is that it uses packages related to spatial analysis, some of which might require some special system dependencies.
-It also warns that the analysis might not run in a lightweight computer.</p>
+</h2>
+<div class = "activity">
+<p>Build a docker container</p>
+<p>Create a Dockerfile and build a docker image.
+Test it to make sure that it runs properly and all the necessary packages are installed.</p>
+<p>Add the necessary instructions on how to run the container to the README.</p>
+<p>As always, commit and push changes to your GitHub repository.</p>
+<p>Upload your docker image to DockerHub.</p>
+</div>
+<div class = "activity">
+<p>Share your repository and reproduce someone else&rsquo;s</p>
+<p>Just like before, share your repository on the #day-3 channel on Slack, clone and reproduce other&rsquo;s and share your feedback.</p>
+</div>
 
       </section>
       <footer class="post-footer">
         <div class="post-pagination dt w-100 mt4 mb2">
   
   
-    <a class="prev dtc pr2 tl v-top fw6"
-    href="https://eliocamp.github.io/reproducibility-with-r/materials/day0/">&larr; Day 0</a>
   
-  
-  
-    <a class="next dtc pl2 tr v-top fw6"
-    href="https://eliocamp.github.io/reproducibility-with-r/materials/extras/">Extras &rarr;</a>
   
 </div>
 
@@ -298,8 +197,6 @@ It also warns that the analysis might not run in a lightweight computer.</p>
 
 
 
-
-  <img src="/reproducibility-with-r/materials/reprohack/sidebar.png" class="db ma0">
 
                          
  
@@ -376,7 +273,7 @@ It also warns that the analysis might not run in a lightweight computer.</p>
         
           
           
-          <li class="active" hugo-nav="/reproducibility-with-r/materials/reprohack/">
+          <li class="" hugo-nav="/reproducibility-with-r/materials/reprohack/">
             <a href="https://eliocamp.github.io/reproducibility-with-r/materials/reprohack/">Mini Reprohack</a></li>
           
           </li>
@@ -384,8 +281,8 @@ It also warns that the analysis might not run in a lightweight computer.</p>
           
           
           
-          <details  class="">
-            <summary class="" hugo-nav="/reproducibility-with-r/materials/day4/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day4/">Day 4</a></summary>
+          <details open class="active">
+            <summary class="active" hugo-nav="/reproducibility-with-r/materials/day4/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day4/">Day 4</a></summary>
             
               
               <li class="" hugo-nav="/reproducibility-with-r/materials/day4/01-docker/"><a href="https://eliocamp.github.io/reproducibility-with-r/materials/day4/01-docker/">02: Reproducible computational environment with Docker</a></li>
@@ -409,7 +306,8 @@ It also warns that the analysis might not run in a lightweight computer.</p>
     <div class="pl2 pr0 mh0">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#curated-list-of-papers">Curated list of papers</a></li>
+    <li><a href="#learning-objectives">Learning objectives</a></li>
+    <li><a href="#homework">Homework</a></li>
   </ul>
 </nav>
     </div>

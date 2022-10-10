@@ -1,10 +1,11 @@
 ---
-title: "04: here are the portable paths"
-weight: 4
+title: "01: here are the portable paths"
+weight: 1
 show_post_date: false
 publishDate: 2022-02-19
 excerpt: ""
 ---
+
 
 If you use RStudio Projects consistently, you can be sure that your working directory is always the root of the project unless you actively change it.
 Almost.
@@ -25,7 +26,7 @@ Get the demo project
 </div>
 
 ```{r include=FALSE}
-here::i_am("content/materials/day1/04-here/index.Rmarkdown")
+here::i_am("content/materials/day2/01-here/index.Rmarkdown")
 knitr::opts_knit$set(root.dir = here::here("static/demo_project"))
 ```
 

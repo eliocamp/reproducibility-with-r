@@ -28,7 +28,7 @@ cascade:
 
       ---
 
-      The workshop is scheduled to take place on  March 14-16-18 2022 from 15:00 to 18:00 Berlin time with two 5 to 10 minute breaks. Check your timezone by clicking [here](https://www.timeanddate.com/worldclock/fixedtime.html?msg=An+R+reproducibility+toolkit+for+the+practical+researcher+%28Day+1%29&iso=20220314T15&p1=37&ah=3). 
+      The workshop is scheduled to take place on October 31 through November 3 2022 from 15:00 to 18:00 Berlin time with two 5 to 10 minute breaks. Check your timezone by clicking [here](https://www.timeanddate.com/worldclock/fixedtime.html?msg=An+R+reproducibility+toolkit+for+the+practical+researcher+%28Day+1%29&iso=20221031T15&p1=37&ah=3). 
       
       Click on each day's page to read the materials and homework. 
       

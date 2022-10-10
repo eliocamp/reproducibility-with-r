@@ -1,6 +1,6 @@
 ---
-title: "02: Research compendia with rrtools"
-weight: 2
+title: "03: Research compendia with rrtools"
+weight: 3
 show_post_date: false
 publishDate: 2022-02-19
 excerpt: ""

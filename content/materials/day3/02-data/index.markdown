@@ -1,6 +1,6 @@
 ---
-title: "03: Sharing data"
-weight: 3
+title: "02: Sharing data"
+weight: 2
 show_post_date: false
 publishDate: 2022-02-19
 excerpt: ""
@@ -97,7 +97,7 @@ To upload a dataset you need to click on Upload.
 
 
 <div class="figure">
-<img src="images/zenodo-upload_1.png" alt="Screenshot of Zenodo’s page after clicking Upload on the main page. It shows a list with one entry, called “PEnguins” and a green button titled “New Upload.”"  />
+<img src="images/zenodo-upload_1.png" alt="Screenshot of Zenodo’s page after clicking Upload on the main page. It shows a list with one entry, called “PEnguins” and a green button titled “New Upload”." width="634" />
 <p class="caption">Figure 1: Zeonodo upload. As you can see, datasets are permanent and this user had already uploaded one test dataset in preparation for writing this.</p>
 </div>
 
@@ -109,7 +109,7 @@ Now you need to click on "New Upload".
 
 
 <div class="figure">
-<img src="images/zenodo-upload_2.png" alt="Screenshot of Zenodo’s New Upload page. It shows a big area where to drop file with a button to Chose files."  />
+<img src="images/zenodo-upload_2.png" alt="Screenshot of Zenodo’s New Upload page. It shows a big area where to drop file with a button to Chose files." width="634" />
 <p class="caption">Figure 2: Zeonodo upload section.</p>
 </div>
 
@@ -121,7 +121,7 @@ A single dataset can have multiple files.
 
 
 <div class="figure">
-<img src="images/zenodo-upload_3.png" alt="Screenshot of Zenodo’s New Upload page scrolled down. It shows a list of options for metadata."  />
+<img src="images/zenodo-upload_3.png" alt="Screenshot of Zenodo’s New Upload page scrolled down. It shows a list of options for metadata." width="634" />
 <p class="caption">Figure 3: Zeonodo upload section.</p>
 </div>
 
@@ -145,7 +145,7 @@ The last step is to click the "Publish" button at the bottom of the page and you
 
 
 <div class="figure">
-<img src="images/zenodo-upload_4.png" alt="Screenshot of Zenodo’s record viewer. It shows a record titled “Test Upload 2,” a preview of the dataset, an “Edit” button, a “New Version” button, and information on the publication date, DOI and Licence."  />
+<img src="images/zenodo-upload_4.png" alt="Screenshot of Zenodo’s record viewer. It shows a record titled “Test Upload 2”, a preview of the dataset, an “Edit” button, a “New Version” button, and information on the publication date, DOI and Licence." width="634" />
 <p class="caption">Figure 4: Zeonodo upload section.</p>
 </div>
 
@@ -180,7 +180,7 @@ If you go to a zenodo record, below the file previewyou will see a box with the 
 
 
 <div class="figure">
-<img src="images/file_list.png" alt="Screenshot of Zenodo’s list of files in the example database. It shows one file called penguins.csv that weights 15.2kB. To the right there’s a “Preview” button and a “download” button and below it an md5 checksum."  />
+<img src="images/file_list.png" alt="Screenshot of Zenodo’s list of files in the example database. It shows one file called penguins.csv that weights 15.2kB. To the right there’s a “Preview” button and a “download” button and below it an md5 checksum." width="412" />
 <p class="caption">Figure 5: Lis of files in the example database.</p>
 </div>
 
