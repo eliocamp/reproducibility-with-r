@@ -30,6 +30,13 @@ Also, old versions of RStudio do not work well with new versions of R (ggplot2 p
 
 Go to <https://www.rstudio.com/products/rstudio/download/> and download the latest version.
 
+## (Optional) Use RStudio Package Manager
+
+If you're a Linux user, you can add the RStudio Package Manager repository.
+This can speed up package installation tremendously, as it provides pre-compiled versions of R packages.
+To enable it, follow the instructions in [their setup guide](https://packagemanager.rstudio.com/client/#/repos/1/overview).
+Don't forget to select your Linux distribution on the top right corner.
+
 ## R Packages
 
 You will need to install the packages required to use **knitr**.
@@ -53,6 +60,12 @@ install.packages(c("here", "renv", "rticles", "devtools", "roxygen2", "gitcreds"
 
 The packages **rrtools** and **rrtools.addin** will also be useful.
 They are not on CRAN, so you need so install them from github
+
+On Linux, you might need to install these system libraries:
+
+``` bash
+sudo apt install libxml2-dev libcurl4-openssl-dev libfontconfig1-dev libgit2-dev libssh2-1-dev libharfbuzz-dev libfribidi-dev lbfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev 
+```
 
 ``` r
 if (!require("remotes")) install.packages("remotes")
@@ -88,25 +101,24 @@ The core steps are:
 
     Go to [github.com](github.com) and create your free account.
 
-3.  If you are on linux, you'll need to configure git to save credentials for more than 15 minutes.
-    Follow the instructions in [this post by Danielle Navarro](https://blog.djnavarro.net/posts/2021-08-08_git-credential-helpers/).
-    It covers some of the same territory with more detail, and it can be cathartic to read someone who shares your pain.
-
-4.  Set up git so it can work with GitHUb and RStudio.\
-
-    This can be, unfortunately, a rather involved process so be patient.
-    Again, the excellent Happy Git with R is your friend.
-    Follow the instructions in [this chapter](https://happygitwithr.com/https-pat.html) to set up your GitHub Personal Access Token.\
-
-    The tl;dr is to run this command on your R console
+3.  Introduce yourself to git by running this from the R console, replacing the name and email with your name and the email you used to register to GitHub
 
     ``` r
     usethis::use_git_config(user.name = "Jane Doe", 
                             user.email = "jane@example.org")
     ```
 
-    Using your full name and the email you used to register to GitHub.
-    Then, you need to create a Personal Access Token with
+4.  If you are on linux, you'll need to configure git to save credentials for more than 15 minutes.
+    Follow the instructions in [this post by Danielle Navarro](https://blog.djnavarro.net/posts/2021-08-08_git-credential-helpers/).
+    It covers some of the same territory with more detail, and it can be cathartic to read someone who shares your pain.
+
+5.  Set up git so it can work with GitHUb and RStudio.
+
+    This can be, unfortunately, a rather involved process so be patient.
+    Again, the excellent Happy Git with R is your friend.
+    Follow the instructions in [this chapter](https://happygitwithr.com/https-pat.html) to set up your GitHub Personal Access Token.
+
+    Create a Personal Access Token with
 
     ``` r
     usethis::create_github_token()
@@ -129,7 +141,7 @@ The core steps are:
 
         Personal access token for 'https://github.com': '<discovered>'
 
-5.  (Optional) In this workshop we will be using RStudio as a simple git GUI, but in the future you might want to use a more full-fledged client.
+6.  (Optional) In this workshop we will be using RStudio as a simple git GUI, but in the future you might want to use a more full-fledged client.
     Again, Happy Git with R [recommends a few](https://happygitwithr.com/git-client.html#recommended-git-clients).
     We like [GitKraken](https://www.gitkraken.com/), which is free, feature-rich, and multi-platform.
 
@@ -143,9 +155,36 @@ If you're on Linux, you need `sudo` to run docker unless you follow [this guide]
 Regardless of your OS, run this line to check that your docker installation is working.
 You should see a message like this one:
 
-```{bash}
+``` bash
 docker run hello-world
 ```
+
+    Unable to find image 'hello-world:latest' locally
+    latest: Pulling from library/hello-world
+    2db29710123e: Pull complete 
+    Digest: sha256:18a657d0cc1c7d0678a3fbea8b7eb4918bba25968d3e1b0adebfa71caddbc346
+    Status: Downloaded newer image for hello-world:latest
+
+    Hello from Docker!
+    This message shows that your installation appears to be working correctly.
+
+    To generate this message, Docker took the following steps:
+     1. The Docker client contacted the Docker daemon.
+     2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+        (amd64)
+     3. The Docker daemon created a new container from that image which runs the
+        executable that produces the output you are currently reading.
+     4. The Docker daemon streamed that output to the Docker client, which sent it
+        to your terminal.
+
+    To try something more ambitious, you can run an Ubuntu container with:
+     $ docker run -it ubuntu bash
+
+    Share images, automate workflows, and more with a free Docker ID:
+     https://hub.docker.com/
+
+    For more examples and ideas, visit:
+     https://docs.docker.com/get-started/
 
 Once all is installed correctly, run this line to download the docker image we will use in the course so that you don't need to download it during the session:
 

@@ -29,6 +29,13 @@ The new visual editor will be particularly helpful for those without a lot of ex
 Also, old versions of RStudio do not work well with new versions of R (ggplot2 plots will crash your session).</p>
 <p>Go to <a href="https://www.rstudio.com/products/rstudio/download/" class="uri">https://www.rstudio.com/products/rstudio/download/</a> and download the latest version.</p>
 </div>
+<div id="optional-use-rstudio-package-manager" class="section level2">
+<h2>(Optional) Use RStudio Package Manager</h2>
+<p>If you’re a Linux user, you can add the RStudio Package Manager repository.
+This can speed up package installation tremendously, as it provides pre-compiled versions of R packages.
+To enable it, follow the instructions in <a href="https://packagemanager.rstudio.com/client/#/repos/1/overview">their setup guide</a>.
+Don’t forget to select your Linux distribution on the top right corner.</p>
+</div>
 <div id="r-packages" class="section level2">
 <h2>R Packages</h2>
 <p>You will need to install the packages required to use <strong>knitr</strong>.
@@ -45,6 +52,8 @@ These are on CRAN so you can install them with the usual</p>
 <pre class="r"><code>install.packages(c(&quot;here&quot;, &quot;renv&quot;, &quot;rticles&quot;, &quot;devtools&quot;, &quot;roxygen2&quot;, &quot;gitcreds&quot;))</code></pre>
 <p>The packages <strong>rrtools</strong> and <strong>rrtools.addin</strong> will also be useful.
 They are not on CRAN, so you need so install them from github</p>
+<p>On Linux, you might need to install these system libraries:</p>
+<pre class="bash"><code>sudo apt install libxml2-dev libcurl4-openssl-dev libfontconfig1-dev libgit2-dev libssh2-1-dev libharfbuzz-dev libfribidi-dev lbfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev </code></pre>
 <pre class="r"><code>if (!require(&quot;remotes&quot;)) install.packages(&quot;remotes&quot;)
 remotes::install_github(&quot;benmarwick/rrtools&quot;)
 remotes::install_github(&quot;nevrome/rrtools.addin&quot;)</code></pre>
@@ -71,20 +80,17 @@ Follow the instructions at <a href="https://happygitwithr.com/install-git.html" 
 <li><p>Create a GitHub account.<br />
 </p>
 <p>Go to <a href="github.com">github.com</a> and create your free account.</p></li>
+<li><p>Introduce yourself to git by running this from the R console, replacing the name and email with your name and the email you used to register to GitHub</p>
+<pre class="r"><code>usethis::use_git_config(user.name = &quot;Jane Doe&quot;, 
+                        user.email = &quot;jane@example.org&quot;)</code></pre></li>
 <li><p>If you are on linux, you’ll need to configure git to save credentials for more than 15 minutes.
 Follow the instructions in <a href="https://blog.djnavarro.net/posts/2021-08-08_git-credential-helpers/">this post by Danielle Navarro</a>.
 It covers some of the same territory with more detail, and it can be cathartic to read someone who shares your pain.</p></li>
-<li><p>Set up git so it can work with GitHUb and RStudio.<br />
-</p>
+<li><p>Set up git so it can work with GitHUb and RStudio.</p>
 <p>This can be, unfortunately, a rather involved process so be patient.
 Again, the excellent Happy Git with R is your friend.
-Follow the instructions in <a href="https://happygitwithr.com/https-pat.html">this chapter</a> to set up your GitHub Personal Access Token.<br />
-</p>
-<p>The tl;dr is to run this command on your R console</p>
-<pre class="r"><code>usethis::use_git_config(user.name = &quot;Jane Doe&quot;, 
-                        user.email = &quot;jane@example.org&quot;)</code></pre>
-<p>Using your full name and the email you used to register to GitHub.
-Then, you need to create a Personal Access Token with</p>
+Follow the instructions in <a href="https://happygitwithr.com/https-pat.html">this chapter</a> to set up your GitHub Personal Access Token.</p>
+<p>Create a Personal Access Token with</p>
 <pre class="r"><code>usethis::create_github_token()</code></pre>
 <p>This will create a token.
 Then run this other command to save it to your configuration:</p>
@@ -107,27 +113,32 @@ Go to <a href="https://docs.docker.com/get-docker/" class="uri">https://docs.doc
 Regardless of your OS, run this line to check that your docker installation is working.
 You should see a message like this one:</p>
 <pre class="bash"><code>docker run hello-world</code></pre>
-<pre><code>## 
-## Hello from Docker!
-## This message shows that your installation appears to be working correctly.
-## 
-## To generate this message, Docker took the following steps:
-##  1. The Docker client contacted the Docker daemon.
-##  2. The Docker daemon pulled the &quot;hello-world&quot; image from the Docker Hub.
-##     (amd64)
-##  3. The Docker daemon created a new container from that image which runs the
-##     executable that produces the output you are currently reading.
-##  4. The Docker daemon streamed that output to the Docker client, which sent it
-##     to your terminal.
-## 
-## To try something more ambitious, you can run an Ubuntu container with:
-##  $ docker run -it ubuntu bash
-## 
-## Share images, automate workflows, and more with a free Docker ID:
-##  https://hub.docker.com/
-## 
-## For more examples and ideas, visit:
-##  https://docs.docker.com/get-started/</code></pre>
+<pre><code>Unable to find image &#39;hello-world:latest&#39; locally
+latest: Pulling from library/hello-world
+2db29710123e: Pull complete 
+Digest: sha256:18a657d0cc1c7d0678a3fbea8b7eb4918bba25968d3e1b0adebfa71caddbc346
+Status: Downloaded newer image for hello-world:latest
+
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
+
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the &quot;hello-world&quot; image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
+
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
+
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
+
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/</code></pre>
 <p>Once all is installed correctly, run this line to download the docker image we will use in the course so that you don’t need to download it during the session:</p>
 <pre class="bash"><code>docker pull rocker/rstudio:4.1.2</code></pre>
 <p>You should get a few progress bars and finally a message like this one:</p>
