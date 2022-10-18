@@ -88,7 +88,7 @@ If you want to try the command line, here are the git commands:
 ## Introduce yourself to Git
 
 Before you create your first repository you need to make sure that git and RStudio are friends and that git knows you.
-If you follow the [pre-workshop instructions](http://localhost:4321/reproducibility-with-r/materials/day0#git-and-github), RStudio, git, and GitHub are definitely talking to each other.
+If you followed the [pre-workshop instructions](/reproducibility-with-r/materials/day0#git-and-github), RStudio, git, and GitHub are definitely talking to each other.
 
 <div class = notes> 
 

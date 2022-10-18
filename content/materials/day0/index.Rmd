@@ -58,8 +58,8 @@ These are on CRAN so you can install them with the usual
 install.packages(c("here", "renv", "rticles", "devtools", "roxygen2", "gitcreds"))
 ```
 
-The packages **rrtools** and **rrtools.addin** will also be useful.
-They are not on CRAN, so you need so install them from github
+The package **rrtools** will also be useful.
+It's not on CRAN, so you need so install it from github
 
 On Linux, you might need to install these system libraries:
 
@@ -70,7 +70,6 @@ sudo apt install libxml2-dev libcurl4-openssl-dev libfontconfig1-dev libgit2-dev
 ``` r
 if (!require("remotes")) install.packages("remotes")
 remotes::install_github("benmarwick/rrtools")
-remotes::install_github("nevrome/rrtools.addin")
 ```
 
 ## LaTeX

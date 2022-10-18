@@ -34,14 +34,14 @@ Your project name  must:
 -   start with a letter (not a number)
 -   not end with '.'
 
-For convenience we will use  `pkgname` as a placeholder for this package.
+For convenience we will use  `pkgname` as a placeholder for this package's name.
 
 <div class = instructions> 
 
-1.  Create an online repository.
+1.  Create an repository on GitHub. Remember to pick a valid R package name. 
 2.  In RStudio, start a new Project:
 
--   `File > New Project > Version Control > Git`. In the "repository URL" paste the URL of your new GitHub repository. It will be something like this <https://github.com/paocorrales/PaperCompedium.git>.
+-   `File > New Project > Version Control > Git`. In the "repository URL" paste the URL of your new GitHub repository. It will be something like this <https://github.com/yourusername/pkgname.git>.
 -   Make sure you know where you are creating the project.
 -   Choose "Open in new session".
 -   Click on "Create Project".
@@ -52,12 +52,23 @@ For convenience we will use  `pkgname` as a placeholder for this package.
 This uses `usethis::create_package()` to create a basic R package in the `pkgname` directory.
 The function will also instruct on the next steps. 
 
-
 <div class = instructions>
 
 Create the compendium
 
-1.  In the new project, run `rrtools::use_compendium()` to create the compendium
+1.  In the new project, run `rrtools::use_compendium()` to create the compendium.  
+   You will see a message. At the end it will ask you:
+   ```
+   Overwrite pre-existing file 'testrrtools.Rproj'?
+
+   1: Not now
+   2: Yes
+   3: No
+   ```
+   
+   Select the "Yes" option. 
+   
+   (It's possible that a new RStudio windowd is opened at this time. Close it and continue on the original session.)
 
 2.  Edit the `DESCRIPTION` file (located in your `pkgname` directory) to include accurate metadata, e.g. your [ORCID](https://orcid.org/).
     This is one of the files that makes a regular folder an "R package".
@@ -82,13 +93,13 @@ This generates [README.Rmd](README.Rmd) and renders it to [README.md](README.md)
 
 It contains:
 
--   A template citation to show others how to cite your project. Edit this to include the correct title and [DOI](https://doi.org) when it get published!
+-   A template citation to show others how to cite your project. Edit this to include the correct title and [DOI](https://doi.org) when it gets published!
 -   License information for the text, figures, code and data in your compendium.
 
 This function also adds:
 
 -   Two other markdown files: a code of conduct for users [CONDUCT.md](CONDUCT.md), and basic instructions for people who want to contribute to your project [CONTRIBUTING.md](CONTRIBUTING.md), including for first-timers to git and GitHub.
--   A `runtime.txt` that makes [Binder](https://mybinder.org/) work, if your compendium is hosted online (e.g. GitHub, Zenodo, Figshare, Dataverse, etc.)
+-   A `.binder/Dockerfile` file that makes [Binder](https://mybinder.org/) work, if your compendium is hosted online (e.g. GitHub, Zenodo, Figshare, Dataverse, etc.)
 
 ### 4. `rrtools::use_analysis()`
 
@@ -132,23 +143,18 @@ If `data_in_git = FALSE` you will exclude files in the `data/` directory from be
 You should set `data_in_git = FALSE` if your data files are large (>100 mb is the limit for GitHub) or you do not want to make the data files publicly accessible on GitHub.
 More about sharing data in [the next section](/reproducibility-with-r/materials/day2/03-data/).
 
-<div class = notes> 
-
-rrtools assistant
-
-You can also use a graphic interface to create the compendium using the "rrtools Assistant" addin.
-It includes detailed instructions and the code associated with each step.
-
-![rrtools Assistant interface showing the Overview tab.](images/rrtools1.png)
-</div>
 
 ### Working with your own code
 
-To load your custom code in the `paper.Rmd`, you have a few options.
-You can write all your R code in chunks in the Rmd, that's the simplest method.
-Or you can write R code in script files in a sub folder called `R`, and include `devtools::load_all(".")` at the top of your `paper.Rmd`.
-Or you can write functions in `R` and use `library(pkgname)` at the top of your `paper.Rmd`, or omit `library` and preface each function call with `pkgname::`.
-Up to you to choose whatever seems most natural to you.
+You can add small snippets of code right inside your Rmd document, but this is not optimal for code that you might want to reuse among documents associated with the same protect or in various R scripts. 
+It's can also lead to a very long and hard to understand Rmd document. 
+
+For complex functions, it's better to put them in the `R` sub folder and include `devtools::load_all(".")` at the top of your `paper.Rmd`.
+In an interactive session, you an use Ctrl + Shift + L (or run `devtools::load_all(".")` in the console).  
+This will make all functions and objects in that folder available in your environment. 
+
+A stricter approach is to build your code as a package, install it in your system and load it with `library(pkgname)` or with `pkgname::`.
+But to do this, you need to know about documenting code. 
 
 #### Documenting code
 
@@ -190,7 +196,7 @@ add <- function(x, y) {
 * You can also add a description after the title
 * `@params` are the function arguments, in this case `x` and `y`.
 * `@examples` starts the examples sections, R will run this code when the package is build.
-* The `@export` comment is important to make the function accessible via`pkgname::add()` or `library(pkgname)`.
+* The `@export` comment is important to make the function accessible via `pkgname::add()` or `library(pkgname)`.
 
 3. Run `devtools::document()` (or press `Ctrl/Cmd + Shift + D` in RStudio) to build the documentation based on these roxygen comments 
 
