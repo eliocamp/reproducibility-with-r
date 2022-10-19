@@ -45,7 +45,7 @@
 But actively-maintained packages will change their code-base to fix bugs, add features, remove features or change behaviour. These changes have the potential of breaking your analysis or creating subtle (or not so subtle) differences in the result.">
 <meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1296">
+<meta itemprop="wordCount" content="1364">
 
 
 
@@ -290,8 +290,8 @@ This will install everything in their local project library so they can be up an
 </div>
 <div class = notes> 
 <p>You don&rsquo;t need to share the <code>renv/library</code> folder, which holds the installed packages.
-You share only the <code>renv.lock</code> file (and the <code>rev/activate.R</code> file, which is a very cool script that auto-install the correct version of renv if needed!).
-If you use git, you don&rsquo;t need to think about this because renv takes care of that with a special <code>renv/.gitignore</code>.</p>
+You share only the <code>renv.lock</code> file (and the <code>rev/activate.R</code> file, which is a very cool script that auto-installs the correct version of renv if needed!).
+If you use git, you don&rsquo;t need to think about this because renv takes care of that with a special <code>renv/.gitignore</code> file.</p>
 </div>
 
 
@@ -314,7 +314,7 @@ If you use git, you don&rsquo;t need to think about this because renv takes care
     </svg></a>
 </h3>
 <p>The lockfile holds a snapshot of the project library at a moment in time, but it doesn&rsquo;t guarantee that this corresponds to the rendered result.
-The lockfile could be out of date when the code is run, or the lockfile could be outdated but the code not re-run.</p>
+The lockfile could be out of date when the code is run, or the code might&rsquo;ve been run with a previous version of the lockfile.</p>
 
 
 
@@ -326,7 +326,8 @@ The lockfile could be out of date when the code is run, or the lockfile could be
     </svg></a>
 </h3>
 <p>The automatic dependency discovery is really cool, but somewhat limited.
-It understand the most common and obvious ways a package can be loaded in a script, but it can fail if you use some more indirect methods.</p>
+It understand the most common and obvious ways a package can be loaded in a script, but it can fail if you use some more indirect methods.
+For instance, it can fail to detect rmarkdown and its dependencies in some cases.</p>
 
 
 
@@ -337,12 +338,14 @@ It understand the most common and obvious ways a package can be loaded in a scri
       <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
     </svg></a>
 </h3>
-<p>Sometimes package installation can fail.
+<p>Sometimes package installation fails.
 One common case would be if you installed a CRAN-compiled package in Windows but the person trying to <code>restore()</code> the environment is running Linux.
 Since CRAN doesn&rsquo;t offer compiled packages for Linux, renv will try to install from source, which can fail if compilation requires missing system dependencies.
 There&rsquo;s nothing renv can do in this case, but the problem can be resolved by installing the relevant system dependencies.</p>
 <p>Package installation will fail if the remote repository that hosts a package is unreachable either due to local connection issues or it being down, or deleted.
 Again, there&rsquo;s nothing renv can do in that situation.</p>
+<p>Package installation can fail if the package requires compilation but the machine doesn&rsquo;t have enough RAM to compile.
+This is the case with the sf package, which cannot be compiled in the free-tier RStudio Cloud machine.</p>
 
 
 
@@ -353,8 +356,9 @@ Again, there&rsquo;s nothing renv can do in that situation.</p>
       <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
     </svg></a>
 </h3>
-<p>Furthermore, some R packages require certain system dependences to be installed to run
-renv does not handle these cases yet, so if you are using a package that needs system dependencies, installation could fail if these are not met.</p>
+<p>Furthermore, some R packages require certain system dependences to be installed to run.
+renv does not handle these cases yet, so if you are using a package that needs system dependencies, installation could fail if these are not met.
+Even if installation goes well, a pacakge might not work if it has unmed runtime dependencies.</p>
 <p>Even in the case in which system dependencies are fulfilled, renv offers no guarantee that these are the same versions used to run the analysis.
 This means that if results depend on the version of some system dependency, renv will not be able to ensure reproducibility.
 This includes the version of R itself!</p>

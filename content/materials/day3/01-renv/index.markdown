@@ -137,12 +137,9 @@ This is where renv shines.
 Anyone who wants to install the same packages that you use with their exact versions can download your code, open the project and use `renv::restore()`. 
 This will install everything in their local project library so they can be up an running in no time. 
 
-
-
 <div class = instructions> 
 
 Restore an environment 
-
 
 1. Download this [reproducible project](/reproducibility-with-r/reproducible_project.zip). 
 
@@ -155,28 +152,28 @@ Restore an environment
 <div class = notes> 
 
 You don't need to share the `renv/library` folder, which holds the installed packages.
-You share only the `renv.lock` file (and the `rev/activate.R` file, which is a very cool script that auto-install the correct version of renv if needed!). 
-If you use git, you don't need to think about this because renv takes care of that with a special `renv/.gitignore`.
+You share only the `renv.lock` file (and the `rev/activate.R` file, which is a very cool script that auto-installs the correct version of renv if needed!). 
+If you use git, you don't need to think about this because renv takes care of that with a special `renv/.gitignore` file.
 
 </div>
 
 
 ## Caveats
 
-
 ### The lockfile
 
 The lockfile holds a snapshot of the project library at a moment in time, but it doesn't guarantee that this corresponds to the rendered result. 
-The lockfile could be out of date when the code is run, or the lockfile could be outdated but the code not re-run.
+The lockfile could be out of date when the code is run, or the code might've been run with a previous version of the lockfile. 
 
 ### Dependency discovery
 
 The automatic dependency discovery is really cool, but somewhat limited. 
 It understand the most common and obvious ways a package can be loaded in a script, but it can fail if you use some more indirect methods. 
+For instance, it can fail to detect rmarkdown and its dependencies in some cases. 
 
 ### Package installation 
 
-Sometimes package installation can fail. 
+Sometimes package installation fails. 
 One common case would be if you installed a CRAN-compiled package in Windows but the person trying to `restore()` the environment is running Linux. 
 Since CRAN doesn't offer compiled packages for Linux, renv will try to install from source, which can fail if compilation requires missing system dependencies. 
 There's nothing renv can do in this case, but the problem can be resolved by installing the relevant system dependencies. 
@@ -184,17 +181,20 @@ There's nothing renv can do in this case, but the problem can be resolved by ins
 Package installation will fail if the remote repository that hosts a package is unreachable either due to local connection issues or it being down, or deleted. 
 Again, there's nothing renv can do in that situation. 
 
+Package installation can fail if the package requires compilation but the machine doesn't have enough RAM to compile. 
+This is the case with the sf package, which cannot be compiled in the free-tier RStudio Cloud machine. 
+
 ### System dependencies
 
-Furthermore, some R packages require certain system dependences to be installed to run
+Furthermore, some R packages require certain system dependences to be installed to run.
 renv does not handle these cases yet, so if you are using a package that needs system dependencies, installation could fail if these are not met. 
+Even if installation goes well, a pacakge might not work if it has unmed runtime dependencies. 
 
 Even in the case in which system dependencies are fulfilled, renv offers no guarantee that these are the same versions used to run the analysis. 
 This means that if results depend on the version of some system dependency, renv will not be able to ensure reproducibility. 
 This includes the version of R itself!
 
 One tool to ensure that the whole system is stable is using containers, which is the subject of the next section. 
-
 
 ## Resources
 
