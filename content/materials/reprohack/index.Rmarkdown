@@ -17,7 +17,7 @@ You'll quickly learn what works and what doesn't and pick up tools and workflows
 
 Therefore we propose this optional homework in which you will do just that.
 You can do it at any moment during the workshop.
-Some paper require using particular packages or technologies that you might not be familiar at the start of the workshop.
+Some papers require using particular packages or technologies that you might not be familiar at the start of the workshop.
 Most of them should have readmes with instructions, but if you're stuck, you can always ask for help in the #reprohack Slack channel or leave it for later.
 
 [Reprohack](https://www.reprohack.org/) is a project that organises meetups in which a bunch of people get together to reproduce results.
@@ -45,7 +45,7 @@ When reproducing papers you will most likely need to install a whole lot of new 
 This can take quite a while if you are a Linux user because packages that ship FORTRAN, C++ or other code needs to be compiled.
 
 If you want to speed things up, you can use the RStudio Package Manager repository, which offers pre-compiled binaries for several linux distributions.
-Go to [this page](https://packagemanager.rstudio.com/client/#/repos/1/overview) for setup instructions.
+Go to [this page](https://packagemanager.posit.co/client/#/repos/cran/setup) for setup instructions.
 </div>
 
 ## Curated list of papers
@@ -83,8 +83,8 @@ From the description, the authors had submitted other papers to Reprohack before
 
 ### Mental Health and Social Contact During the COVID-19 Pandemic: An Ecological Momentary Assessment Study {#covid}
 
-Mean reproducibility score: 7,0/10  
-Number of reviews: 1  
+Mean reproducibility score: 8,0/10  
+Number of reviews: 3  
 Link: <https://www.reprohack.org/paper/32/>
 
 This paper doesn't define a table computational environment, but the code is almost fully portable and seems to run without errors.
