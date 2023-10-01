@@ -58,3 +58,6 @@ rsconnect/
 
 *.*~
 >>>>>>> 603d733464f50d496791df52cd9e057169c77826
+
+# Quarto
+.quarto
