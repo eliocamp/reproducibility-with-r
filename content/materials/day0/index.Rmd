@@ -34,8 +34,7 @@ Go to <https://www.rstudio.com/products/rstudio/download/> and download the late
 
 If you're a Linux user, you can add the RStudio Package Manager repository.
 This can speed up package installation tremendously, as it provides pre-compiled versions of R packages.
-To enable it, follow the instructions in [their setup guide](https://packagemanager.rstudio.com/client/#/repos/1/overview).
-Don't forget to select your Linux distribution on the top right corner.
+To enable it, follow the instructions in [their setup guide](https://packagemanager.posit.co/client/#/repos/cran/setup) and be sure to select your Linux distribution to get the binary packages. 
 
 ## R Packages
 
@@ -124,11 +123,15 @@ The core steps are:
     ```
 
     This will create a token.
-    Then run this other command to save it to your configuration:
+    Do now close this window, as you will need to copy the token to your clipboard.
+    Then run this other command
 
     ``` r
     gitcreds::gitcreds_set()
     ```
+    
+    This will ask you for your access token. 
+    Go to the previous window, copy the token, paste it on your console and press enter.
 
     Finally, to check that everything's ok with this command.
 
