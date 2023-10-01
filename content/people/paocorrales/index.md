@@ -23,7 +23,7 @@ links:
   url: https://paocorrales.github.io
 - icon: mastodon
   icon_pack: fab
-  name: paobcorrales
+  name: paocorrales
   url: https://fosstodon.org/@paocorrales
 - icon: github
   icon_pack: fab
