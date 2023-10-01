@@ -21,10 +21,10 @@ links:
   icon_pack: fas
   name: paocorrales.github.io
   url: https://paocorrales.github.io
-- icon: twitter
+- icon: mastodon
   icon_pack: fab
-  name: paobcorrales
-  url: https://twitter.com/paobcorrales
+  name: paocorrales
+  url: https://fosstodon.org/@paocorrales
 - icon: github
   icon_pack: fab
   name: paocorrales

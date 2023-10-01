@@ -21,10 +21,10 @@ links:
   icon_pack: fas
   name: eliocamp.github.io
   url: https://eliocamp.github.io
-- icon: twitter
+- icon: mastodon
   icon_pack: fab
-  name: d_olivaw
-  url: https://twitter.com/d_olivaw
+  name: eliocamp
+  url: https://mastodon.social/@eliocamp
 - icon: github
   icon_pack: fab
   name: eiocamp
