@@ -91,13 +91,12 @@ Details on how to do this are best described in Jenny Bryan's fantastic [Happy G
 The core steps are:
 
 1.  Install git on your machine.\
-
     The instructions depend on your Operating System.
     Follow the instructions at <https://happygitwithr.com/install-git.html>.
 
 2.  Create a GitHub account.\
-
     Go to [github.com](github.com) and create your free account.
+    If it asks you to personalise your experience, scroll to the bottom of the page to skip that step.
 
 3.  Introduce yourself to git by running this from the R console, replacing the name and email with your name and the email you used to register to GitHub
 
@@ -110,8 +109,7 @@ The core steps are:
     Follow the instructions in [this post by Danielle Navarro](https://blog.djnavarro.net/posts/2021-08-08_git-credential-helpers/).
     It covers some of the same territory with more detail, and it can be cathartic to read someone who shares your pain.
 
-5.  Set up git so it can work with GitHUb and RStudio.
-
+5.  Set up git so it can work with GitHUb and RStudio.\
     This can be, unfortunately, a rather involved process so be patient.
     Again, the excellent Happy Git with R is your friend.
     Follow the instructions in [this chapter](https://happygitwithr.com/https-pat.html) to set up your GitHub Personal Access Token.
