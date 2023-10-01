@@ -41,7 +41,7 @@ Upload your docker image to DockerHub.
 
 Share your repository and reproduce someone else's
 
-Just like before, share your repository on the #day-3 channel on Slack, clone and reproduce other's and share your feedback.
+Just like before, share your repository on the #day-4 channel on Slack, clone and reproduce other's and share your feedback.
 
 </div>
 

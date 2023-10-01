@@ -1,6 +1,13 @@
 ---
 title: "An R reproducibility toolkit for the practical researcher"
-format: revealjs
+format: 
+  revealjs:
+    logo: "logo.png"
+    title-slide-attributes:
+      data-background-image: "https://eliocamp.github.io/reproducibility-with-r/sheep.svg"
+      data-background-size: "35%"
+      data-background-opacity: "0.5" 
+      data-background-position: "98% 95%"
 ---
 
 # Day 1
@@ -39,7 +46,7 @@ format: revealjs
 
 ❤️ I use them all the time.
 
-Choose an emoji from Reactions
+**Choose an emoji from Reactions**
 
 ------------------------------------------------------------------------
 
@@ -53,7 +60,7 @@ Choose an emoji from Reactions
 
 ❤️ I use it all the time.
 
-Choose an emoji from Reactions
+**Choose an emoji from Reactions**
 
 ------------------------------------------------------------------------
 
@@ -67,7 +74,7 @@ Choose an emoji from Reactions
 
 ❤️ I can write valid yaml most of the time.
 
-Choose an emoji from Reactions
+**Choose an emoji from Reactions**
 
 ------------------------------------------------------------------------
 
@@ -81,7 +88,7 @@ Choose an emoji from Reactions
 
 ❤️ I use it all the time, unfortunately.
 
-Choose an emoji from Reactions
+**Choose an emoji from Reactions**
 
 ------------------------------------------------------------------------
 
@@ -94,3 +101,4 @@ Choose an emoji from Reactions
     -   Create GitHub account
     -   Configure your system to use RStudio with GitHub
 3.  [Creating a research compendium](/reproducibility-with-r/materials/day2/03-rrtools/)
+    -   Install the rrtools package.

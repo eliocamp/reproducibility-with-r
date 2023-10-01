@@ -1,0 +1,39 @@
+---
+title: "Day 4"
+format: 
+  revealjs:
+    logo: "logo.png"
+    title-slide-attributes:
+      data-background-image: "https://eliocamp.github.io/reproducibility-with-r/sheep.svg"
+      data-background-size: "35%"
+      data-background-opacity: "0.5" 
+      data-background-position: "98% 95%"
+---
+
+# Day 4:
+
+1.  [Reproducible computational environment with Docker](/reproducibility-with-r/materials/day4/01-docker/)
+
+The end!
+
+
+---
+
+## Have you used docker before? 
+
+👍 Yes!
+
+😯 Nop
+
+**Choose an emoji from Reactions**
+
+---- 
+
+## Are you familiar with the terminal/command line?
+
+👍 Yes.
+
+😯 First time I've heard of it. 
+  
+**Choose an emoji from Reactions**
+
