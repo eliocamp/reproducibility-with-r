@@ -2,7 +2,7 @@
 title: "02: A tidy project is a happy project"
 weight: 2
 show_post_date: false
-publishDate: 2022-02-19
+publishDate: 2023-10-01
 excerpt: ""
 ---
 
@@ -12,7 +12,7 @@ You then are itching to sink your teeth on it; to see how they implemented the m
 
 You download the all the files and you find something like this.
 
-```
+```         
 /home/dorothy/Documents/paper
 ├── abstract.R
 ├── correlation.png
@@ -105,9 +105,9 @@ Some file systems are case insensitive, so `Madrid-Temperature.csv` and `madrid-
 To avoid any headaches, it is best to be conservative and just use lower-case latin characters, numbers and hyphens ("\_" and "-").
 
 Use hyphens as separators.
-You can use "\_" to separate words that are part of the same concept and "-" to separate concepts.
-For instance `buenos_aires-minimum_temperature.csv`.
-You can also use them the other way around, but what's important is consistency.
+You can use "-" to separate words that are part of the same concept and "\_" to separate concepts.
+For instance `buenos-aires_minimum-temperature.csv`.
+We recommend this convention and not the other way around, because it's compatible with the ISO date format ("YYYY-MM-DD").
 
 <div class = notes> 
 
@@ -115,9 +115,9 @@ By using separators consistently and smartly you can parse file names programmat
 For example, if you have
 
 ```{r include=FALSE}
-cities <- c("madrid", "buenos_aires")
-variables <- c("minimum_temperature", "maximum_temperature")
-files <- with(expand.grid(cities, variables), paste0(Var1, "-", Var2))
+cities <- c("madrid", "buenos-aires")
+variables <- c("minimum-temperature", "maximum-temperature")
+files <- with(expand.grid(cities, variables), paste0(Var1, "_", Var2))
 ```
 
 ```{r}
@@ -127,11 +127,11 @@ files
 You could extract cities and variable names by just
 
 ```{r}
-strsplit(files, "-")
+strsplit(files, "_")
 ```
 </div>
 
-Finally, if you can try to make your files easily sortable.
+Finally, try to make your files easily sortable.
 Put numbers with enough zero-padding and, if relevant, use dates in YYYY-MM-DD format at the beginning of the file name so that sorting by name coincide with sorting by date.
 
 ### Making it portable
@@ -140,7 +140,7 @@ An important aspect of thinking about your project is that all scripts, data, fi
 That way you can ensure that the only thing you need to give to someone else to successfully run your code is that single folder.
 It also makes your life easier if you work on the same project in different computers, as it enables you to sync a single folder.
 
-One extra step to consider is that you cannot make your work portable is your code is not portable too.
+One extra step to consider is that you cannot make your work portable if your code is not portable too.
 Perhaps the main culprit of non-portable code is using absolute paths to manipulate files in your code.
 
 Think about this piece of code:
@@ -192,7 +192,8 @@ You can also quickly open a recently-used project by clicking on the project ico
 
 This will open a new RStudio window with its own clean R process with the project folder as the working directory.
 By default, it will also open any previously-opened files.
-It will even preserve changes not saved. This helps keep your work tidy and makes it easy to pick up or share what you've done later.
+It will even preserve changes not saved.
+This helps keep your work tidy and makes it easy to pick up or share what you've done later.
 
 RStudio allows you to have multiple projects open, and this is possible because each project has its own folder.
 You can work with multiple projects in parallel without code or results of one analysis interfering with the other's.
@@ -253,8 +254,6 @@ These packages are not on CRAN, so you need to install them with
 
 ```{r, eval = FALSE}
 remotes::install_github("benmarwick/rrtools")
-remotes::install_github("nevrome/rrtools.addin")
-
 ```
 
 rrtools provides a relatively rich and strict template which has the advantage of liberating you from some decisions but, as it usually goes with these things, it also forces some decision onto you which might not be optimal for your specific use-case.
