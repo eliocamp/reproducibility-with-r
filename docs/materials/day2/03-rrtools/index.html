@@ -44,7 +44,7 @@
 <meta itemprop="description" content="Of course, you can always create a file structure that suits you and your work by hand. But if you are going to do that a lot, it might be nice to automate some of the work. We are going to use the rrtools package to create a &ldquo;research compendium&rdquo; using a couple of R functions and combine it with the things we learned on the git and GitHub section.">
 <meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1443">
+<meta itemprop="wordCount" content="1523">
 
 
 
@@ -182,14 +182,14 @@ Your project name  must:</p>
 <li>start with a letter (not a number)</li>
 <li>not end with &lsquo;.&rsquo;</li>
 </ul>
-<p>For convenience we will use  <code>pkgname</code> as a placeholder for this package.</p>
+<p>For convenience we will use  <code>pkgname</code> as a placeholder for this package&rsquo;s name.</p>
 <div class = instructions> 
 <ol>
-<li>Create an online repository.</li>
+<li>Create an repository on GitHub. Remember to pick a valid R package name.</li>
 <li>In RStudio, start a new Project:</li>
 </ol>
 <ul>
-<li><code>File &gt; New Project &gt; Version Control &gt; Git</code>. In the &ldquo;repository URL&rdquo; paste the URL of your new GitHub repository. It will be something like this <a href="https://github.com/paocorrales/PaperCompedium.git">https://github.com/paocorrales/PaperCompedium.git</a>.</li>
+<li><code>File &gt; New Project &gt; Version Control &gt; Git</code>. In the &ldquo;repository URL&rdquo; paste the URL of your new GitHub repository. It will be something like this <a href="https://github.com/yourusername/pkgname.git">https://github.com/yourusername/pkgname.git</a>.</li>
 <li>Make sure you know where you are creating the project.</li>
 <li>Choose &ldquo;Open in new session&rdquo;.</li>
 <li>Click on &ldquo;Create Project&rdquo;.</li>
@@ -210,9 +210,17 @@ The function will also instruct on the next steps.</p>
 <div class = instructions>
 <p>Create the compendium</p>
 <ol>
-<li>
-<p>In the new project, run <code>rrtools::use_compendium()</code> to create the compendium</p>
-</li>
+<li>In the new project, run <code>rrtools::use_compendium()</code> to create the compendium.<br>
+You will see a message. At the end it will ask you:</li>
+</ol>
+<pre><code>Overwrite pre-existing file 'testrrtools.Rproj'?
+
+1: Not now
+2: Yes
+3: No
+</code></pre><p>Select the &ldquo;Yes&rdquo; option.</p>
+<p>(It&rsquo;s possible that a new RStudio windowd is opened at this time. Close it and continue on the original session.)</p>
+<ol start="2">
 <li>
 <p>Edit the <code>DESCRIPTION</code> file (located in your <code>pkgname</code> directory) to include accurate metadata, e.g. your 
 <a href="https://orcid.org/" target="_blank" rel="noopener">ORCID</a>.
@@ -257,7 +265,7 @@ This is one of the files that makes a regular folder an &ldquo;R package&rdquo;.
 <p>It contains:</p>
 <ul>
 <li>A template citation to show others how to cite your project. Edit this to include the correct title and 
-<a href="https://doi.org" target="_blank" rel="noopener">DOI</a> when it get published!</li>
+<a href="https://doi.org" target="_blank" rel="noopener">DOI</a> when it gets published!</li>
 <li>License information for the text, figures, code and data in your compendium.</li>
 </ul>
 <p>This function also adds:</p>
@@ -265,7 +273,7 @@ This is one of the files that makes a regular folder an &ldquo;R package&rdquo;.
 <li>Two other markdown files: a code of conduct for users 
 <a href="CONDUCT.md">CONDUCT.md</a>, and basic instructions for people who want to contribute to your project 
 <a href="CONTRIBUTING.md">CONTRIBUTING.md</a>, including for first-timers to git and GitHub.</li>
-<li>A <code>runtime.txt</code> that makes 
+<li>A <code>.binder/Dockerfile</code> file that makes 
 <a href="https://mybinder.org/" target="_blank" rel="noopener">Binder</a> work, if your compendium is hosted online (e.g. GitHub, Zenodo, Figshare, Dataverse, etc.)</li>
 </ul>
 
@@ -321,12 +329,6 @@ If <code>data_in_git = FALSE</code> you will exclude files in the <code>data/</c
 You should set <code>data_in_git = FALSE</code> if your data files are large (&gt;100 mb is the limit for GitHub) or you do not want to make the data files publicly accessible on GitHub.
 More about sharing data in 
 <a href="/reproducibility-with-r/materials/day2/03-data/">the next section</a>.</p>
-<div class = notes> 
-<p>rrtools assistant</p>
-<p>You can also use a graphic interface to create the compendium using the &ldquo;rrtools Assistant&rdquo; addin.
-It includes detailed instructions and the code associated with each step.</p>
-<p><img src="images/rrtools1.png" alt="rrtools Assistant interface showing the Overview tab."></p>
-</div>
 
 
 
@@ -337,11 +339,13 @@ It includes detailed instructions and the code associated with each step.</p>
       <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
     </svg></a>
 </h3>
-<p>To load your custom code in the <code>paper.Rmd</code>, you have a few options.
-You can write all your R code in chunks in the Rmd, that&rsquo;s the simplest method.
-Or you can write R code in script files in a sub folder called <code>R</code>, and include <code>devtools::load_all(&quot;.&quot;)</code> at the top of your <code>paper.Rmd</code>.
-Or you can write functions in <code>R</code> and use <code>library(pkgname)</code> at the top of your <code>paper.Rmd</code>, or omit <code>library</code> and preface each function call with <code>pkgname::</code>.
-Up to you to choose whatever seems most natural to you.</p>
+<p>You can add small snippets of code right inside your Rmd document, but this is not optimal for code that you might want to reuse among documents associated with the same protect or in various R scripts.
+It&rsquo;s can also lead to a very long and hard to understand Rmd document.</p>
+<p>For complex functions, it&rsquo;s better to put them in the <code>R</code> sub folder and include <code>devtools::load_all(&quot;.&quot;)</code> at the top of your <code>paper.Rmd</code>.
+In an interactive session, you an use Ctrl + Shift + L (or run <code>devtools::load_all(&quot;.&quot;)</code> in the console).<br>
+This will make all functions and objects in that folder available in your environment.</p>
+<p>A stricter approach is to build your code as a package, install it in your system and load it with <code>library(pkgname)</code> or with <code>pkgname::</code>.
+But to do this, you need to know about documenting code.</p>
 
 
 
@@ -385,7 +389,7 @@ add &lt;- function(x, y) {
 <li>You can also add a description after the title</li>
 <li><code>@params</code> are the function arguments, in this case <code>x</code> and <code>y</code>.</li>
 <li><code>@examples</code> starts the examples sections, R will run this code when the package is build.</li>
-<li>The <code>@export</code> comment is important to make the function accessible via<code>pkgname::add()</code> or <code>library(pkgname)</code>.</li>
+<li>The <code>@export</code> comment is important to make the function accessible via <code>pkgname::add()</code> or <code>library(pkgname)</code>.</li>
 </ul>
 <ol start="3">
 <li>
@@ -568,7 +572,7 @@ add &lt;- function(x, y) {
 <footer class="site-footer pv4 bt b--transparent ph5" role="contentinfo">
   <nav class="db dt-l w-100">
     <p class="site-copyright f7 db dtc-l v-mid w-100 w-33-l tc tl-l pv2 pv0-l mv0 lh-copy">
-      &copy; 2022
+      &copy; 2023
       <span class="middot-divider"></span>
       Made with <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/hugo-apero/" rel="dct:source">Hugo Apéro</a></span>.
       <br />
@@ -606,8 +610,8 @@ Based on <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xml
     
       
     
-    <a class="link dib h1 ml0 mr2 f3 o-90 glow grow" href="https://twitter.com/d_olivaw" title="@d_olivaw on Twiter" target="_blank" rel="noopener">
-      <i class="fab fa-twitter purple fa-lg fa-fw"></i>
+    <a class="link dib h1 ml0 mr2 f3 o-90 glow grow" href="https://mastodon.social/@eliocamp" title="Elio on Mastodon" target="_blank" rel="noopener">
+      <i class="fab fa-mastodon purple fa-lg fa-fw"></i>
     </a>
   
     
@@ -621,8 +625,8 @@ Based on <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xml
     
       
     
-    <a class="link dib h1 ml0 mr2 f3 o-90 glow grow" href="https://twitter.com/paobcorrales" title="@paobcorrales on Twiter" target="_blank" rel="noopener">
-      <i class="fab fa-twitter green fa-lg fa-fw"></i>
+    <a class="link dib h1 ml0 mr2 f3 o-90 glow grow" href="https://fosstodon.org/@paocorrales" title="Pao on Mastodon" target="_blank" rel="noopener">
+      <i class="fab fa-mastodon green fa-lg fa-fw"></i>
     </a>
   
 </div>

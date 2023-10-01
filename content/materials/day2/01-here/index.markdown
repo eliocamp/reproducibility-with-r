@@ -22,12 +22,22 @@ To show you this, we prepared a demo project.
 Get the demo project
 
 1.  Download the [demo project](/reproducibility-with-r/demo_project.zip) and extract it anywhere in your computer.
-1.  Open the project (double click on `demo_project.Rproj`), open `report-not_here.Rmd` and try to knit it.
+1.  Open the project (double click on `demo_project.Rproj`), open `report.Rmd` and try to knit it.
 </div>
 
 
 
-You'll notice that R fails to render the file with an error that reads `Line 9 Error in file(file, "rt") : cannot open the connection`, indicating that there was an issue reading the file in line 9.
+You'll notice that R fails to render the file with an error that reads: 
+
+
+```vervatin
+Quitting from lines 9-10 [setup] (report.Rmd)
+
+Error in `file()`:
+! cannot open the connection
+```
+
+indicating that there was an issue reading the file in line 9.
 
 However, line 9 seems perfectly sensible:
 

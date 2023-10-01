@@ -102,8 +102,7 @@ Permissions     Before the technical issues of sharing data there are the bureau
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://eliocamp.github.io/reproducibility-with-r/people/paocorrales/</guid>
-      <description>I&amp;rsquo;m a Ph.D. student at the University of Buenos Aires. I study atmospheric sciences applying data assimilation techniques to improve short-term forecasts of severe events in Argentina. Also, I&amp;rsquo;m a Trainer and instructor for The Carpentries and an RStudio certified instructor. I co-funded MetaDocencia, a Spanish-speaking community to help teachers and educator to apply science-based techniques to their clase.s
-I develops openly licensed materials to teach and learn R from scratch.</description>
+      <description>I have a PhD from the University of Buenos Aires. I study atmospheric sciences applying data assimilation techniques to improve short-term forecasts of severe events in Argentina. Also, I&amp;rsquo;m a Trainer and instructor for The Carpentries and an RStudio certified instructor. I&amp;rsquo;m also part of Expedition Science, an Argentina-based NPO, where she leads educational projects such as science camps and workshops for students and K-12 science teachers. I&amp;rsquo;m a professor at the Data Sciences degree and postgraduate courses at Guillermo Brown University.</description>
     </item>
     
     <item>
@@ -154,12 +153,21 @@ Therefore we propose this optional homework in which you will do just that. You 
     </item>
     
     <item>
+      <title>David</title>
+      <link>https://eliocamp.github.io/reproducibility-with-r/people/david/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://eliocamp.github.io/reproducibility-with-r/people/david/</guid>
+      <description>as345trbwetrsdvfasfs sret sertgfddddddddddddddddddddddddg s4tsdffffffffffg sfdg sdfg</description>
+    </item>
+    
+    <item>
       <title></title>
       <link>https://eliocamp.github.io/reproducibility-with-r/notes_for_instructors/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://eliocamp.github.io/reproducibility-with-r/notes_for_instructors/</guid>
-      <description>Notes for instructors   Would you like to teach this workshop/use the materials for your own course? We&amp;rsquo;ve compiled here a list of this we usually use while we teach.
+      <description>Notes for instructors   Would you like to teach this workshop/use the materials for your own course? We&amp;rsquo;ve compiled here a list of tools we usually use while we teach.
 The check points are instances when we ask the students how familiar are with x topic. Depending on their answers we decide if we can skip the topic, explain a few things or going through it in depth.</description>
     </item>
     
