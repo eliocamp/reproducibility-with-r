@@ -15,7 +15,7 @@ cascade:
 ## Learning objectives
 
 -   Manage package dependencies inside a project.
--   Get to know different options to pack and share a project.
+-   Get to know different options to pack and share the data asociated to a project.
 
 
 ## Homework
