@@ -34,7 +34,7 @@ Go to <https://www.rstudio.com/products/rstudio/download/> and download the late
 
 If you're a Linux user, you can add the RStudio Package Manager repository.
 This can speed up package installation tremendously, as it provides pre-compiled versions of R packages.
-To enable it, follow the instructions in [their setup guide](https://packagemanager.posit.co/client/#/repos/cran/setup) and be sure to select your Linux distribution to get the binary packages. 
+To enable it, follow the instructions in [their setup guide](https://packagemanager.posit.co/client/#/repos/cran/setup) and be sure to select your Linux distribution to get the binary packages.
 
 ## R Packages
 
@@ -129,8 +129,8 @@ The core steps are:
     ``` r
     gitcreds::gitcreds_set()
     ```
-    
-    This will ask you for your access token. 
+
+    This will ask you for your access token.
     Go to the previous window, copy the token, paste it on your console and press enter.
 
     Finally, to check that everything's ok with this command.
@@ -141,7 +141,9 @@ The core steps are:
 
     It should print a list of personal details, including:
 
-        Personal access token for 'https://github.com': '<discovered>'
+    ```         
+    Personal access token for 'https://github.com': '<discovered>'
+    ```
 
 6.  (Optional) In this workshop we will be using RStudio as a simple git GUI, but in the future you might want to use a more full-fledged client.
     Again, Happy Git with R [recommends a few](https://happygitwithr.com/git-client.html#recommended-git-clients).
@@ -161,32 +163,34 @@ You should see a message like this one:
 docker run hello-world
 ```
 
-    Unable to find image 'hello-world:latest' locally
-    latest: Pulling from library/hello-world
-    2db29710123e: Pull complete 
-    Digest: sha256:18a657d0cc1c7d0678a3fbea8b7eb4918bba25968d3e1b0adebfa71caddbc346
-    Status: Downloaded newer image for hello-world:latest
+```         
+Unable to find image 'hello-world:latest' locally
+latest: Pulling from library/hello-world
+2db29710123e: Pull complete 
+Digest: sha256:18a657d0cc1c7d0678a3fbea8b7eb4918bba25968d3e1b0adebfa71caddbc346
+Status: Downloaded newer image for hello-world:latest
 
-    Hello from Docker!
-    This message shows that your installation appears to be working correctly.
+Hello from Docker!
+This message shows that your installation appears to be working correctly.
 
-    To generate this message, Docker took the following steps:
-     1. The Docker client contacted the Docker daemon.
-     2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
-        (amd64)
-     3. The Docker daemon created a new container from that image which runs the
-        executable that produces the output you are currently reading.
-     4. The Docker daemon streamed that output to the Docker client, which sent it
-        to your terminal.
+To generate this message, Docker took the following steps:
+ 1. The Docker client contacted the Docker daemon.
+ 2. The Docker daemon pulled the "hello-world" image from the Docker Hub.
+    (amd64)
+ 3. The Docker daemon created a new container from that image which runs the
+    executable that produces the output you are currently reading.
+ 4. The Docker daemon streamed that output to the Docker client, which sent it
+    to your terminal.
 
-    To try something more ambitious, you can run an Ubuntu container with:
-     $ docker run -it ubuntu bash
+To try something more ambitious, you can run an Ubuntu container with:
+ $ docker run -it ubuntu bash
 
-    Share images, automate workflows, and more with a free Docker ID:
-     https://hub.docker.com/
+Share images, automate workflows, and more with a free Docker ID:
+ https://hub.docker.com/
 
-    For more examples and ideas, visit:
-     https://docs.docker.com/get-started/
+For more examples and ideas, visit:
+ https://docs.docker.com/get-started/
+```
 
 Once all is installed correctly, run this line to download the docker image we will use in the course so that you don't need to download it during the session:
 
@@ -196,7 +200,9 @@ docker pull rocker/rstudio:4.1.2
 
 You should get a few progress bars and finally a message like this one:
 
-    4.1.2: Pulling from rocker/rstudio
-    Digest: sha256:a8708ac1c1de0814c475f08034b95b8fe17f96e370b0bbfa306304c99010db49
-    Status: Image is up to date for rocker/rstudio:4.1.2
-    docker.io/rocker/rstudio:4.1.2
+```         
+4.1.2: Pulling from rocker/rstudio
+Digest: sha256:a8708ac1c1de0814c475f08034b95b8fe17f96e370b0bbfa306304c99010db49
+Status: Image is up to date for rocker/rstudio:4.1.2
+docker.io/rocker/rstudio:4.1.2
+```
