@@ -91,15 +91,15 @@ publishDir = "docs"
       icon_pack = "fab"
       url       = "https://github.com/eliocamp/reproducibility-with-r/"
   [[params.social]]
-      title     = "@d_olivaw on Twiter"
-      icon      = "twitter purple" # icon name without the 'fa-'
+      title     = "Elio on Mastodon"
+      icon      = "mastodon purple" # icon name without the 'fa-'
       icon_pack = "fab"
-      url       = "https://twitter.com/d_olivaw"
+      url       = "https://mastodon.social/@eliocamp"
   [[params.social]]
-      title     = "@paobcorrales on Twiter"
-      icon      = "twitter green" # icon name without the 'fa-'
+      title     = "Pao on Mastodon"
+      icon      = "mastodon green" # icon name without the 'fa-'
       icon_pack = "fab"
-      url       = "https://twitter.com/paobcorrales"
+      url       = "https://fosstodon.org/@paocorrales"
 
 
 [taxonomies]
