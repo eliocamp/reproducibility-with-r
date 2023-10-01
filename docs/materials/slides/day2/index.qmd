@@ -47,7 +47,7 @@ Choose an emoji from Reactions
 
 ------------------------------------------------------------------------
 
-![](/reproducibility-with-r/content/materials/day2/02-git/images/file_cycle2.png){alt="The figure shows the states of a file: untracked or tracked. When it is tracked by the repository, the file can be staged, committed or modified. With the add action the file is “staged”, with the commit action the file is “saved” to the repository. This cycles repeats teach time the file is modified."}
+![](/reproducibility-with-r/materials/day2/02-git/images/file_cycle2.png){alt="The figure shows the states of a file: untracked or tracked. When it is tracked by the repository, the file can be staged, committed or modified. With the add action the file is “staged”, with the commit action the file is “saved” to the repository. This cycles repeats teach time the file is modified."}
 
 ------------------------------------------------------------------------
 
