@@ -163,6 +163,15 @@ Therefore we propose this optional homework in which you will do just that. You 
     
     <item>
       <title></title>
+      <link>https://eliocamp.github.io/reproducibility-with-r/materials/slides/day2/index_files/libs/revealjs/plugin/notes/speaker-view/</link>
+      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://eliocamp.github.io/reproducibility-with-r/materials/slides/day2/index_files/libs/revealjs/plugin/notes/speaker-view/</guid>
+      <description>reveal.js - Speaker View  body { font-family: Helvetica; font-size: 18px; } #current-slide, #upcoming-slide, #speaker-controls { padding: 6px; box-sizing: border-box; -moz-box-sizing: border-box; } #current-slide iframe, #upcoming-slide iframe { width: 100%; height: 100%; border: 1px solid #ddd; } #current-slide .label, #upcoming-slide .label { position: absolute; top: 10px; left: 10px; z-index: 2; } #connection-status { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 20; padding: 30% 20% 20% 20%; font-size: 18px; color: #222; background: #fff; text-align: center; box-sizing: border-box; line-height: 1.</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>https://eliocamp.github.io/reproducibility-with-r/notes_for_instructors/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
