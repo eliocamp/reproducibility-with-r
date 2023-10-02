@@ -17,7 +17,7 @@ Please, follow these instructions before the workshop.</p>
 <h2>R</h2>
 <p>At the very least you need to have R installed on your computer.
 If possible, try to have it upgraded to the latest version.
-We developed the materials using R version 4.2.1 (2022-06-23).
+We developed the materials using R version 4.3.0 (2023-04-21).
 To the best of our abilities, we don’t think there’s anything that requires this particular version, but to avoid potential issues, it would be best if you have at least a R 4.something.</p>
 <p>Go to <a href="https://cloud.r-project.org/" class="uri">https://cloud.r-project.org/</a> and follow the steps for your Operating System.</p>
 </div>
@@ -33,8 +33,7 @@ Also, old versions of RStudio do not work well with new versions of R (ggplot2 p
 <h2>(Optional) Use RStudio Package Manager</h2>
 <p>If you’re a Linux user, you can add the RStudio Package Manager repository.
 This can speed up package installation tremendously, as it provides pre-compiled versions of R packages.
-To enable it, follow the instructions in <a href="https://packagemanager.rstudio.com/client/#/repos/1/overview">their setup guide</a>.
-Don’t forget to select your Linux distribution on the top right corner.</p>
+To enable it, follow the instructions in <a href="https://packagemanager.posit.co/client/#/repos/cran/setup">their setup guide</a> and be sure to select your Linux distribution to get the binary packages.</p>
 </div>
 <div id="r-packages" class="section level2">
 <h2>R Packages</h2>
@@ -50,13 +49,12 @@ RStudio will install the packages and then open a sample document.</p></li>
 <p>Other important packages are <strong>here</strong>, <strong>renv</strong>, <strong>rticles</strong>, and <strong>devtools</strong> and <strong>roxygen2</strong>.
 These are on CRAN so you can install them with the usual</p>
 <pre class="r"><code>install.packages(c(&quot;here&quot;, &quot;renv&quot;, &quot;rticles&quot;, &quot;devtools&quot;, &quot;roxygen2&quot;, &quot;gitcreds&quot;))</code></pre>
-<p>The packages <strong>rrtools</strong> and <strong>rrtools.addin</strong> will also be useful.
-They are not on CRAN, so you need so install them from github</p>
+<p>The package <strong>rrtools</strong> will also be useful.
+It’s not on CRAN, so you need so install it from github</p>
 <p>On Linux, you might need to install these system libraries:</p>
 <pre class="bash"><code>sudo apt install libxml2-dev libcurl4-openssl-dev libfontconfig1-dev libgit2-dev libssh2-1-dev libharfbuzz-dev libfribidi-dev lbfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev </code></pre>
 <pre class="r"><code>if (!require(&quot;remotes&quot;)) install.packages(&quot;remotes&quot;)
-remotes::install_github(&quot;benmarwick/rrtools&quot;)
-remotes::install_github(&quot;nevrome/rrtools.addin&quot;)</code></pre>
+remotes::install_github(&quot;benmarwick/rrtools&quot;)</code></pre>
 </div>
 <div id="latex" class="section level2">
 <h2>LaTeX</h2>
@@ -74,27 +72,29 @@ Details on how to do this are best described in Jenny Bryan’s fantastic <a hre
 The core steps are:</p>
 <ol style="list-style-type: decimal">
 <li><p>Install git on your machine.<br />
-</p>
-<p>The instructions depend on your Operating System.
+The instructions depend on your Operating System.
 Follow the instructions at <a href="https://happygitwithr.com/install-git.html" class="uri">https://happygitwithr.com/install-git.html</a>.</p></li>
 <li><p>Create a GitHub account.<br />
-</p>
-<p>Go to <a href="github.com">github.com</a> and create your free account.</p></li>
+Go to <a href="github.com">github.com</a> and create your free account.
+If it asks you to personalise your experience, scroll to the bottom of the page to skip that step.</p></li>
 <li><p>Introduce yourself to git by running this from the R console, replacing the name and email with your name and the email you used to register to GitHub</p>
 <pre class="r"><code>usethis::use_git_config(user.name = &quot;Jane Doe&quot;, 
                         user.email = &quot;jane@example.org&quot;)</code></pre></li>
 <li><p>If you are on linux, you’ll need to configure git to save credentials for more than 15 minutes.
 Follow the instructions in <a href="https://blog.djnavarro.net/posts/2021-08-08_git-credential-helpers/">this post by Danielle Navarro</a>.
 It covers some of the same territory with more detail, and it can be cathartic to read someone who shares your pain.</p></li>
-<li><p>Set up git so it can work with GitHUb and RStudio.</p>
-<p>This can be, unfortunately, a rather involved process so be patient.
+<li><p>Set up git so it can work with GitHUb and RStudio.<br />
+This can be, unfortunately, a rather involved process so be patient.
 Again, the excellent Happy Git with R is your friend.
 Follow the instructions in <a href="https://happygitwithr.com/https-pat.html">this chapter</a> to set up your GitHub Personal Access Token.</p>
 <p>Create a Personal Access Token with</p>
 <pre class="r"><code>usethis::create_github_token()</code></pre>
 <p>This will create a token.
-Then run this other command to save it to your configuration:</p>
+Do now close this window, as you will need to copy the token to your clipboard.
+Then run this other command</p>
 <pre class="r"><code>gitcreds::gitcreds_set()</code></pre>
+<p>This will ask you for your access token.
+Go to the previous window, copy the token, paste it on your console and press enter.</p>
 <p>Finally, to check that everything’s ok with this command.</p>
 <pre class="r"><code>usethis::gh_token_help()</code></pre>
 <p>It should print a list of personal details, including:</p>
