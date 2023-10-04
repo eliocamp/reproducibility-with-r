@@ -182,7 +182,8 @@ Error in `file()`:
 </code></pre></div><p>You can test that the working directory is the project root by running <code>getwd()</code> in the console:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#d35400">getwd</span>()
 </code></pre></div><pre><code>## [1] &quot;/home/elio/Documents/cursos/reproducibility-with-r/static/demo_project&quot;
-</code></pre><p>You&rsquo;ll get some path in your computer. And also that <code>penguins.csv</code> is indeed located in the <code>data</code> folder by running</p>
+</code></pre><p>You&rsquo;ll get some path in your computer.
+And also that <code>penguins.csv</code> is indeed located in the <code>data</code> folder by running</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#d35400">file.exists</span>(<span style="color:#7f8c8d">&#34;data/penguins.csv&#34;</span>)
 </code></pre></div><pre><code>## [1] TRUE
 </code></pre><p>You can even try to read the data in the console</p>

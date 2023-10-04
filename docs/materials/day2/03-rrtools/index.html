@@ -44,7 +44,7 @@
 <meta itemprop="description" content="Of course, you can always create a file structure that suits you and your work by hand. But if you are going to do that a lot, it might be nice to automate some of the work. We are going to use the rrtools package to create a &ldquo;research compendium&rdquo; using a couple of R functions and combine it with the things we learned on the git and GitHub section.">
 <meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1523">
+<meta itemprop="wordCount" content="1525">
 
 
 
@@ -175,14 +175,14 @@ This is why:</p>
 <p>It is possible to use rrtools without Git, but usually you would want you research compendium to be managed by the version control software Git.</p>
 <p>The name of the compendium and the project should be the same.
 Keep in mind that this will also be the package name so it has to follow some rules for everything to work properly.
-Your project name  must:</p>
+Your project name must:</p>
 <ul>
 <li>contain only ASCII letters, numbers, and &lsquo;.&rsquo;</li>
 <li>have at least two characters</li>
 <li>start with a letter (not a number)</li>
 <li>not end with &lsquo;.&rsquo;</li>
 </ul>
-<p>For convenience we will use  <code>pkgname</code> as a placeholder for this package&rsquo;s name.</p>
+<p>For convenience we will use <code>pkgname</code> as a placeholder for this package&rsquo;s name.</p>
 <div class = instructions> 
 <ol>
 <li>Create an repository on GitHub. Remember to pick a valid R package name.</li>
@@ -210,7 +210,7 @@ The function will also instruct on the next steps.</p>
 <div class = instructions>
 <p>Create the compendium</p>
 <ol>
-<li>In the new project, run <code>rrtools::use_compendium()</code> to create the compendium.<br>
+<li>In the new project, run <code>rrtools::use_compendium(simple = FALSE)</code> to create the compendium.<br>
 You will see a message. At the end it will ask you:</li>
 </ol>
 <pre><code>Overwrite pre-existing file 'testrrtools.Rproj'?
@@ -306,17 +306,18 @@ The default options is a top-level <code>analysis/</code>.</p>
     |                   # this sets the style of citations &amp; reference list
     ├── template.docx   # used to style the output of the paper.Rmd
     └── template.Rmd
-</code></pre>
-<ul>
+</code></pre><ul>
 <li>
-<p>the <code>paper.Rmd</code> is ready to write in and render with bookdown. It includes:</p>
+<p>the <code>paper.Rmd</code> is ready to write in and render with bookdown.
+It includes:</p>
 <ul>
 <li>a YAML header that identifies the <code>references.bib</code> file and the supplied <code>csl</code> file (to style the reference list).</li>
 <li>a colophon that adds some git commit details to the end of the document. This means that the output file (HTML/PDF/Word) is always traceable to a specific state of the code.</li>
 </ul>
 </li>
 <li>
-<p>the <code>references.bib</code> file has just one item to demonstrate the format. It is ready to insert more reference details or be replaced it with a .bib file created using Reference Manager tools like Zotero.</p>
+<p>the <code>references.bib</code> file has just one item to demonstrate the format.
+It is ready to insert more reference details or be replaced it with a .bib file created using Reference Manager tools like Zotero.</p>
 </li>
 <li>
 <p>you can replace the supplied <code>csl</code> file with a different citation style from <a href="https://github.com/citation-style-language/">https://github.com/citation-style-language/</a></p>

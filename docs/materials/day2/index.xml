@@ -24,7 +24,7 @@ Root directory during knit     One issue is that when RMarkdown files are knitte
       
       <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day2/02-git/</guid>
       <description>Why git?     Do you have something like this in your computer?
-/home/pao/Documents/thesis ├── abstract.R ├── thesis.Rmd ├── thesis_reviwed.Rmd ├── thesis_reviwed2.Rmd ├── thesis_final.Rmd ├── thesis_finalfinal.Rmd ├── this_is_it.Rmd ├── now_this_is_it_for_real_this_time_i_swear.Rmd └── FINAL.Rmd  Probably we all have, or had something like this at one point because we didn&amp;rsquo;t use a version control system. Version control systems manage the evolution and changes of a set of files that we&amp;rsquo;ll call repository.</description>
+/home/pao/Documents/thesis ├── abstract.R ├── thesis.Rmd ├── thesis_reviwed.Rmd ├── thesis_reviwed2.Rmd ├── thesis_final.Rmd ├── thesis_finalfinal.Rmd ├── this_is_it.Rmd ├── now_this_is_it_for_real_this_time_i_swear.Rmd └── FINAL.Rmd Probably we all have, or had something like this at one point because we didn&amp;rsquo;t use a version control system. Version control systems manage the evolution and changes of a set of files that we&amp;rsquo;ll call repository.</description>
     </item>
     
     <item>

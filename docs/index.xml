@@ -24,7 +24,7 @@ Root directory during knit     One issue is that when RMarkdown files are knitte
       
       <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-renv/</guid>
       <description>No code is its own isolated bubble. Almost every analysis will depend on a number of external packages, such as ggplot2 for plotting, data.table for data wrangling, knitr for rendering a report, and so on.
-But actively-maintained packages will change their code-base to fix bugs, add features, remove features or change behaviour. These changes have the potential of breaking your analysis or creating subtle (or not so subtle) differences in the result.</description>
+But actively-maintained packages will change their code-base to fix bugs, add or remove features, or change behaviour. These changes can potentially break your analysis or create subtle (or not so subtle) differences in the result.</description>
     </item>
     
     <item>
@@ -74,7 +74,7 @@ You download the all the files and you find something like this.
       
       <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day2/02-git/</guid>
       <description>Why git?     Do you have something like this in your computer?
-/home/pao/Documents/thesis ├── abstract.R ├── thesis.Rmd ├── thesis_reviwed.Rmd ├── thesis_reviwed2.Rmd ├── thesis_final.Rmd ├── thesis_finalfinal.Rmd ├── this_is_it.Rmd ├── now_this_is_it_for_real_this_time_i_swear.Rmd └── FINAL.Rmd  Probably we all have, or had something like this at one point because we didn&amp;rsquo;t use a version control system. Version control systems manage the evolution and changes of a set of files that we&amp;rsquo;ll call repository.</description>
+/home/pao/Documents/thesis ├── abstract.R ├── thesis.Rmd ├── thesis_reviwed.Rmd ├── thesis_reviwed2.Rmd ├── thesis_final.Rmd ├── thesis_finalfinal.Rmd ├── this_is_it.Rmd ├── now_this_is_it_for_real_this_time_i_swear.Rmd └── FINAL.Rmd Probably we all have, or had something like this at one point because we didn&amp;rsquo;t use a version control system. Version control systems manage the evolution and changes of a set of files that we&amp;rsquo;ll call repository.</description>
     </item>
     
     <item>

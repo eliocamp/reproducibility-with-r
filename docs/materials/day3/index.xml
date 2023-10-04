@@ -14,7 +14,7 @@
       
       <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day3/01-renv/</guid>
       <description>No code is its own isolated bubble. Almost every analysis will depend on a number of external packages, such as ggplot2 for plotting, data.table for data wrangling, knitr for rendering a report, and so on.
-But actively-maintained packages will change their code-base to fix bugs, add features, remove features or change behaviour. These changes have the potential of breaking your analysis or creating subtle (or not so subtle) differences in the result.</description>
+But actively-maintained packages will change their code-base to fix bugs, add or remove features, or change behaviour. These changes can potentially break your analysis or create subtle (or not so subtle) differences in the result.</description>
     </item>
     
     <item>

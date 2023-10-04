@@ -42,10 +42,10 @@
       
   <meta itemprop="name" content="01: Managing R dependencies with renv">
 <meta itemprop="description" content="No code is its own isolated bubble. Almost every analysis will depend on a number of external packages, such as ggplot2 for plotting, data.table for data wrangling, knitr for rendering a report, and so on.
-But actively-maintained packages will change their code-base to fix bugs, add features, remove features or change behaviour. These changes have the potential of breaking your analysis or creating subtle (or not so subtle) differences in the result.">
+But actively-maintained packages will change their code-base to fix bugs, add or remove features, or change behaviour. These changes can potentially break your analysis or create subtle (or not so subtle) differences in the result.">
 <meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1364">
+<meta itemprop="wordCount" content="1583">
 
 
 
@@ -150,8 +150,8 @@ But actively-maintained packages will change their code-base to fix bugs, add fe
       <section class="post-body pt5 pb4">
         <p>No code is its own isolated bubble.
 Almost every analysis will depend on a number of external packages, such as ggplot2 for plotting, data.table for data wrangling, knitr for rendering a report, and so on.</p>
-<p>But actively-maintained packages will change their code-base to fix bugs, add features, remove features or change behaviour.
-These changes have the potential of breaking your analysis or creating subtle (or not so subtle) differences in the result.</p>
+<p>But actively-maintained packages will change their code-base to fix bugs, add or remove features, or change behaviour.
+These changes can potentially break your analysis or create subtle (or not so subtle) differences in the result.</p>
 <p>For this reason it is important to both record package versions used in a project and to provide a mechanism for others to install the correct versions in their local machine.
 The 
 <a href="https://rstudio.github.io/renv/index.html" target="_blank" rel="noopener"><strong>renv</strong></a> package solves both.</p>
@@ -169,22 +169,30 @@ This file will be used by renv to restore the project library to its correct sta
       <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
     </svg></a>
 </h2>
-<p>The nice thing about renv is that on its default behaviour it automates a lot and gets out of your way as much as it can.
+<p>The nice thing about renv is that it automates a lot and gets out of your way as much as it can.
 To start working with renv you first need to initialise the project-local environment with <code>renv::init()</code>.</p>
 <p>This will automatically scan all your R scripts and RMarkdown files, discover their dependencies, and store the versions of the currently-installed packages in the lockfile and install them in the project library.</p>
 <div class = activity> 
 <p>Start using renv</p>
 <ol>
 <li>
-<p>Open the demo project 
-<a href="/reproducibility-with-r/demo_project.zip">demo project</a>.</p>
+<p>Create a new project and add a new R Markdown document (you can save it as paper.Rmd).</p>
 </li>
 <li>
-<p>In the console run <code>renv::init()</code></p>
+<p>In the console run <code>renv::init()</code>.</p>
+</li>
+<li>
+<p>Run <code>renv::status()</code>.</p>
 </li>
 </ol>
 </div>
-<p>In your project root you will now see a file called <code>renv.lock</code> and a folder called <code>renv</code>.</p>
+<p>You should see a message like this one:</p>
+<pre><code>No issues found -- the project is in a consistent state.
+</code></pre><p>Also in your project root you will now see a file called <code>renv.lock</code> and a folder called <code>renv</code>.
+The former stores version and other information for your R packages (and even the version of R itself), while the latter stores your project library.</p>
+<p>If you try to knit the project, you might get a modal saying that you need &ldquo;an updated version of the markdown package&rdquo; to render R Markdown.
+Wait, but surely you had all the necessary packages to render R Markdown already; indeed, but not in your project library.
+renv wasn&rsquo;t able to discover that markdown was a dependency of your project so the markdown package was not installed.</p>
 <p>Once this is done, you can keep working on your project as usual, installing, removing and updating packages as you normally would.
 The difference is that now all of that will only affect the project library.
 If you update a package in your project, other projects will still use the global version (or their local versions if you use renv with them).
@@ -193,34 +201,25 @@ The flipside is that updating packages outside of the project won&rsquo;t affect
 <p>Use ggplot2</p>
 <ol>
 <li>
-<p>Add a new chunk that loads ggplot2 with <code>library(ggplot2)</code> in <code>report.Rmd</code>.</p>
+<p>Add a new chunk that loads ggplot2 with <code>library(ggplot2)</code> in paper.Rmd.</p>
 </li>
 <li>
 <p>Try to render the file.</p>
 </li>
 </ol>
-</div> 
-<p>You will notice two weird things happening.</p>
-<p>First, RStudio will ask you to install the markdown package.
-&ldquo;But wait, I must have installed already!&rdquo;.
-Yes, but not on this project.
-Because the markdown package is not used explicitly anywhere in the project, renv didn&rsquo;t discover it as a project dependency package so it was neither included in the lockfile nor installed in the project library, so it needs to be installed.</p>
-<p>Second, you will get an error informing you that &ldquo;there is no package called &lsquo;ggplot2&rsquo;.
-Again, even if you had ggplot2 installed on your personal library, since it was not used on the code, it was not installed.</p>
-<p>You can now check the status of the lockfile with <code>renv::status()</code>, which will return this:</p>
-<pre><code>* The project is already synchronized with the lockfile.
-The following package(s) are used in the project, but are not installed:
+</div>
+<p>You will notice an error informing you that &ldquo;there is no package called &lsquo;ggplot2&rsquo;&rdquo;.
+As with markdown before, while ggplot2 is probably installed in your user library, it&rsquo;s not installed in this project library.</p>
+<p>You can now check the status of the lockfile with <code>renv::status()</code>, which will return something like this:</p>
+<pre><code>The following package(s) are missing:
 
-	ggplot2
+ package installed recorded used
+ ggplot2 n         n        y   
 
-Consider installing these packages, and then using `renv::snapshot()`
-to record these packages in the lockfile.
-</code></pre><p>The first line tells you that the lockfile is correctly synced with your project.
-It seems that renv updated the lockfile to include markdown and its dependencies when they were installed.
-(This is not always the case).</p>
-<p>The rest of the message tells you that renv detected a new dependency that is not installed.
-Of course, you added <code>library(ggplot2)</code> but never installed ggplot2.
-So you can install it normally (<code>install.packages(&quot;ggplot2&quot;)</code>) and now the report will render correctly.</p>
+See ?renv::status() for advice on resolving these issues.
+</code></pre><p>This message lists packages and their status.
+Whether they are installed (in the project library), whether they are recorded in the lockfile, and whether they have been detected as being used by your project.</p>
+<p>In this case, ggplot2 is being used (due to the <code>library(ggplot2)</code> line) but is not installed (in the project library) and also not recorded in the lockfile.</p>
 <div class = instructions> 
 <p>Install ggplot2</p>
 <ol>
@@ -228,42 +227,67 @@ So you can install it normally (<code>install.packages(&quot;ggplot2&quot;)</cod
 <p>Install ggplot2 with <code>install.packages(&quot;ggplot2&quot;)</code> in the console.</p>
 </li>
 <li>
-<p>Knit <code>report.Rmd</code>.</p>
+<p>Knit <code>paper.Rmd</code>.</p>
 </li>
 <li>
 <p>Run <code>renv::status()</code> in the console.</p>
 </li>
 </ol>
-</div> 
-<p>This time, the report should render correctly because ggplot2 is now included in your project library.
-However, the output of <code>renv::status()</code> reads something like</p>
-<pre><code>The following package(s) are installed but not recorded in the lockfile:
-               _
-  lattice        [0.20-45]
-  colorspace     [2.0-3]
-  viridisLite    [0.4.0]
-  mgcv           [1.8-39]
-  isoband        [0.2.5]
-  RColorBrewer   [1.1-2]
-  munsell        [0.5.0]
-  gtable         [0.3.0]
-  labeling       [0.4.2]
-  scales         [1.1.1]
-  farver         [2.1.0]
-  ggplot2        [3.3.5]
-  MASS           [7.3-55]
-  Matrix         [1.4-0]
-  nlme           [3.1-155]
+</div>
+<p>Now that ggplot2 is installed, you should be able to render the R Markdown file.
+However, <code>renv::status()</code> prints something like this:</p>
+<pre><code>The following package(s) are in an inconsistent state:
 
-Use `renv::snapshot()` to add these packages to your lockfile.
-</code></pre><p>This tells us that the lockfile is out of sync with the status of the project.
-To remedy that, you need to update the lockfile by taking a &ldquo;snapshot&rdquo; of the current status of the project with <code>renv::snapshot()</code>.</p>
-<p>This three functions (<code>renv::init()</code>, <code>renv::snapshot()</code> and <code>renv::status()</code>) should be enough to work locally within a controlled environment and with an updated lockfile.</p>
+ package      installed recorded used
+ colorspace   y         n        y   
+ fansi        y         n        y   
+ farver       y         n        y   
+ ggplot2      y         n        y   
+ gtable       y         n        y   
+ isoband      y         n        y   
+ labeling     y         n        y   
+ lattice      y         n        y   
+ MASS         y         n        y   
+ Matrix       y         n        y   
+ mgcv         y         n        y   
+ munsell      y         n        y   
+ nlme         y         n        y   
+ pillar       y         n        y   
+ pkgconfig    y         n        y   
+ RColorBrewer y         n        y   
+ scales       y         n        y   
+ tibble       y         n        y   
+ utf8         y         n        y   
+ viridisLite  y         n        y   
+ withr        y         n        y   
+
+See ?renv::status() for advice on resolving these issues.
+</code></pre><p>This table is similar to the one you saw before.
+In this case these are ggplot2 and its dependencies.
+They are all installed and used, but they are still not recorded in the lockfile.
+To record these pacakges, you need to update the lockfile by taking a &ldquo;snapshot&rdquo; of the current status of the project with <code>renv::snapshot()</code>.</p>
+<div class = instructions> 
+<p>Update the lockfile</p>
+<ol>
+<li>
+<p>Run <code>renv::snapshot()</code> in the console.</p>
+</li>
+<li>
+<p>You will see a list of packages and the text &ldquo;Do you want to proceed? [Y/n]:&rdquo;. Type &ldquo;y&rdquo; and press enter.</p>
+</li>
+<li>
+<p>Run <code>renv::status()</code> in the console.</p>
+</li>
+</ol>
+</div>
+<p>When all used packages are installed and recorded with their proper versions, <code>renv::status()</code> will display</p>
+<pre><code>No issues found -- the project is in a consistent state.
+</code></pre><p>These three functions (<code>renv::init()</code>, <code>renv::snapshot()</code> and <code>renv::status()</code>) should be enough to work locally within a controlled environment and with an updated lockfile.</p>
 
 
 
 
-<h2 id="renv-for-reproducibility">Renv for reproducibility
+<h2 id="renv-for-reproducibility">renv for reproducibility
   <a href="#renv-for-reproducibility"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
       <path d="M0 0h24v24H0z" fill="currentColor"></path>
       <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
@@ -281,7 +305,13 @@ This will install everything in their local project library so they can be up an
 <a href="/reproducibility-with-r/reproducible_project.zip">reproducible project</a>.</p>
 </li>
 <li>
-<p>Open the project and restore the environment with <code>renv::restore()</code>.</p>
+<p>Open the project and run <code>renv::status()</code> in the R console. What&rsquo;s the stauts of the packages?</p>
+</li>
+<li>
+<p>Run <code>renv::restore()</code> in the R console and proceed.</p>
+</li>
+<li>
+<p>Run <code>renv::status()</code> again to check that the project is in a consisten state.</p>
 </li>
 <li>
 <p>Render <code>analysis/report.Rmd</code> to make sure that it worked.</p>
@@ -314,7 +344,8 @@ If you use git, you don&rsquo;t need to think about this because renv takes care
     </svg></a>
 </h3>
 <p>The lockfile holds a snapshot of the project library at a moment in time, but it doesn&rsquo;t guarantee that this corresponds to the rendered result.
-The lockfile could be out of date when the code is run, or the code might&rsquo;ve been run with a previous version of the lockfile.</p>
+The lockfile could be out of date when the code is run, or the code might have been run with a previous version of the lockfile.
+It&rsquo;s up to you to always render your file when the project is in a consistent state.</p>
 
 
 
@@ -327,7 +358,8 @@ The lockfile could be out of date when the code is run, or the code might&rsquo;
 </h3>
 <p>The automatic dependency discovery is really cool, but somewhat limited.
 It understand the most common and obvious ways a package can be loaded in a script, but it can fail if you use some more indirect methods.
-For instance, it can fail to detect rmarkdown and its dependencies in some cases.</p>
+As we saw, it fails to detect the markdown dependency.
+It also fails if you use functionality in a package that depends on Suggested packages (e.g. <code>ggplot2::geom_hex()</code> requires the hexbin package, so you need to add an explicit <code>library(hexbin)</code> somewhere in your project).</p>
 
 
 
@@ -358,7 +390,7 @@ This is the case with the sf package, which cannot be compiled in the free-tier 
 </h3>
 <p>Furthermore, some R packages require certain system dependences to be installed to run.
 renv does not handle these cases yet, so if you are using a package that needs system dependencies, installation could fail if these are not met.
-Even if installation goes well, a pacakge might not work if it has unmed runtime dependencies.</p>
+Even if installation goes well, a package might not work if it has unmet runtime dependencies.</p>
 <p>Even in the case in which system dependencies are fulfilled, renv offers no guarantee that these are the same versions used to run the analysis.
 This means that if results depend on the version of some system dependency, renv will not be able to ensure reproducibility.
 This includes the version of R itself!</p>
@@ -532,7 +564,7 @@ This includes the version of R itself!</p>
     <nav id="TableOfContents">
   <ul>
     <li><a href="#using-renv-in-your-project">Using renv in your project</a></li>
-    <li><a href="#renv-for-reproducibility">Renv for reproducibility</a></li>
+    <li><a href="#renv-for-reproducibility">renv for reproducibility</a></li>
     <li><a href="#caveats">Caveats</a></li>
     <li><a href="#resources">Resources</a></li>
   </ul>

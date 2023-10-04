@@ -42,10 +42,10 @@
       
   <meta itemprop="name" content="02: Getting the most of git">
 <meta itemprop="description" content="Why git?     Do you have something like this in your computer?
-/home/pao/Documents/thesis ├── abstract.R ├── thesis.Rmd ├── thesis_reviwed.Rmd ├── thesis_reviwed2.Rmd ├── thesis_final.Rmd ├── thesis_finalfinal.Rmd ├── this_is_it.Rmd ├── now_this_is_it_for_real_this_time_i_swear.Rmd └── FINAL.Rmd  Probably we all have, or had something like this at one point because we didn&rsquo;t use a version control system. Version control systems manage the evolution and changes of a set of files that we&rsquo;ll call repository.">
+/home/pao/Documents/thesis ├── abstract.R ├── thesis.Rmd ├── thesis_reviwed.Rmd ├── thesis_reviwed2.Rmd ├── thesis_final.Rmd ├── thesis_finalfinal.Rmd ├── this_is_it.Rmd ├── now_this_is_it_for_real_this_time_i_swear.Rmd └── FINAL.Rmd Probably we all have, or had something like this at one point because we didn&rsquo;t use a version control system. Version control systems manage the evolution and changes of a set of files that we&rsquo;ll call repository.">
 <meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2262">
+<meta itemprop="wordCount" content="2271">
 
 
 
@@ -169,20 +169,19 @@
 ├── this_is_it.Rmd
 ├── now_this_is_it_for_real_this_time_i_swear.Rmd
 └── FINAL.Rmd
-</code></pre>
-<p>Probably we all have, or had something like this at one point because we didn&rsquo;t use a version control system.
+</code></pre><p>Probably we all have, or had something like this at one point because we didn&rsquo;t use a version control system.
 Version control systems manage the evolution and changes of a set of files that we&rsquo;ll call <strong>repository</strong>.
 If you ever looked at the history of a Google Docs file, it is like that but in a very controlled way.
 Git is one popular version control system.</p>
 <p>If you work alone, git is great to track changes and recover previous version of your files.
-You can also use a <strong>remote repository</strong> (more later) to have a back up and share your work.</p>
+You can also use a <strong>remote repository</strong> to have a back up and share your work.</p>
 <p>If you work as a team you can take advantage of all the above and also use version control as a tool to collaborate and organize the various versions of the same file present in the multiple computers you and they use.</p>
 
 
 
 
-<h2 id="but-what-we-mean-by-version-control">But what we mean by version control?
-  <a href="#but-what-we-mean-by-version-control"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+<h2 id="but-what-do-we-mean-by-version-control">But what do we mean by version control?
+  <a href="#but-what-do-we-mean-by-version-control"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
       <path d="M0 0h24v24H0z" fill="currentColor"></path>
       <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
     </svg></a>
@@ -190,7 +189,7 @@ You can also use a <strong>remote repository</strong> (more later) to have a bac
 <p>Let&rsquo;s imagine that we have a repository already working (
 <a href="/reproducibility-with-r/materials/day2/01-git/#creating-a-new-repository">later</a> we&rsquo;ll see how to create one).
 When you create a new file as part of the repository (or <em>repo</em>), that file is untracked or unversioned.
-This means that the git will ignore the file and any change you made until you <em>add</em> it to the repo.
+This means that git will ignore the file and any change you make to it until you <em>add</em> it to the repo.
 At that point the file is <strong>staged</strong> and it ready to get into the repository.
 To do that you do a <em>commit</em> and <strong>save</strong> that version of the file to the repo.
 This workflow <code>modify --&gt; add --&gt; commit</code> will repeat every time you want to save a version of the file.
@@ -201,7 +200,7 @@ With practice and depending on how do you work, you will find a comfortable midd
 If you have experience working with the command line you could use git from there, but the same commands can be executed from a GUI like 
 <a href="https://desktop.github.com/" target="_blank" rel="noopener">GitHub Desktop</a> or 
 <a href="https://www.gitkraken.com/" target="_blank" rel="noopener">GitKraken</a>.
-During this workshop we&rsquo;ll use RStudio.</p>
+RStudio also provides a basic GUI for git, which we are goint to use in this workshop.</p>
 <div class = notes> 
 <p>If you want to try the command line, here are the core git commands:</p>
 <ul>
@@ -213,23 +212,22 @@ During this workshop we&rsquo;ll use RStudio.</p>
 
 
 
-<h2 id="did-you-mentioned-remote-repository">Did you mentioned remote repository?
-  <a href="#did-you-mentioned-remote-repository"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+<h2 id="what-are-remote-repositories">What are remote repositories?
+  <a href="#what-are-remote-repositories"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
       <path d="M0 0h24v24H0z" fill="currentColor"></path>
       <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
     </svg></a>
 </h2>
-<p>Yes, before we went through a <strong>local workflow</strong>.
-The repo lives in your computer and that&rsquo;s it.
-But, you can also connect the <strong>local repository</strong> with a <strong>remote repository</strong>.
+<p>What we explained before is the <strong>local workflow</strong>.
+This is when the repo lives in your computer and that&rsquo;s it.
+But you can also connect the <strong>local repository</strong> with a <strong>remote repository</strong>.
 For this workshop we are going to use 
 <a href="https://www.github.com" target="_blank" rel="noopener">GitHub</a> to host remote repositories, but there are other options you can explore, such as 
 <a href="https://about.gitlab.com/" target="_blank" rel="noopener">GitLab</a>.</p>
 <p>Let&rsquo;s imagine we have a local repository, we made some commits and we want to send those changes to the remote repository (we&rsquo;ll how to create the remote repository later).
 For that we <strong>push</strong> the commits to the remote repository and the two repos are &ldquo;up to date&rdquo;.</p>
-<p>A team mate makes a change to a file and push it to the remote repository.
-Now, your local repo is &ldquo;outdated&rdquo; and you need to download those new commits from the remote repository.
-You <strong>pull</strong> the commits.</p>
+<p>If a teammate changes a file and pushes the changes it to the remote repository, your local repo will be &ldquo;outdated&rdquo;.
+To download those new commits from the remote repository you <strong>pull</strong> the commits.</p>
 <p><img src="images/local_remote.png" alt="Concept model of a workflow using RStudio projects and git. Files are added to the staging area, and then commited to the local repository. You can push commits to the remote repository and pull new commits to your computer."></p>
 <p>Tools like GitHub also include features that help you to collaborate and manage repositories.
 For example, you can modify files and commit those changes using the web interface.</p>
@@ -251,15 +249,15 @@ For example, you can modify files and commit those changes using the web interfa
     </svg></a>
 </h2>
 <p>Before you create your first repository you need to make sure that git and RStudio are friends and that git knows you.
-If you follow the 
-<a href="http://localhost:4321/reproducibility-with-r/materials/day0#git-and-github" target="_blank" rel="noopener">pre-workshop instructions</a>, RStudio, git, and GitHub are definitely talking to each other.</p>
+If you followed the 
+<a href="/reproducibility-with-r/materials/day0#git-and-github">pre-workshop instructions</a>, RStudio, git, and GitHub are definitely talking to each other.</p>
 <div class = notes> 
 <p>You can check that RStudio &ldquo;sees&rdquo; git by going to <code>Tools --&gt; Global Options --&gt; Git/SVN</code>.
 There you should find the path in your computer to the git installation.</p>
 </div>
-<p>To introduce yourself to git, that is to let it know your name and email you can use the <em>usethis</em> package.</p>
+<p>To introduce yourself to git, that is to let it know your name and email, you can use the <em>usethis</em> package.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#d35400">library</span>(<span style="color:#434f54">usethis</span>) 
-<span style="color:#d35400">use_git_config</span>(<span style="color:#434f54">user.name</span> <span style="color:#728e00">=</span> <span style="color:#7f8c8d">&#34;Jane Doe&#34;</span>,
+<span style="color:#d35400">use_git_config</span>(<span style="color:#434f54">user.name</span>  <span style="color:#728e00">=</span> <span style="color:#7f8c8d">&#34;Jane Doe&#34;</span>,
                <span style="color:#434f54">user.email</span> <span style="color:#728e00">=</span> <span style="color:#7f8c8d">&#34;jane@example.org&#34;</span>)
 </code></pre></div><p>Substituting with your name and the email associated with your GitHub account.</p>
 <div class = notes> 
@@ -279,7 +277,7 @@ git config --global user.email <span style="color:#7f8c8d">&#39;jane@example.com
 </h2>
 <p>There are many ways to start a new repository, locally in your computer using the command line or an interface, from GitHub (or its friends), from RStudio!
 Here we&rsquo;ll show you how to create a repo from GitHub, associate it to an RStudio project and work with it.
-But keep in mind that there are many other ways of working with git.</p>
+But keep in mind that there are many other ways to work with git.</p>
 <div class = instructions> 
 <ol>
 <li>Create an online repository.</li>
@@ -452,7 +450,7 @@ But for your changes to integrate into the original repository, you need to crea
 This will let the owner of the original repo that you made some changes that you think should be merged.
 The owner can then accept, reject or ask for modifications.
 Once they accept your Pull Request, your modifications will be safe in the original repository.</p>
-<p><img src="images/pull-request.png" alt="Concep model of the remote workflow. A foreign remote repository can be forked to an owned remote repository with a &ldquo;fork&rdquo;. The remote repository is copied into a local repository with a &ldquo;clone&rdquo;. Files inside the local repository and the remote repository are synced with push and pull. The owned remote repository can be merged into the foreign remote repository with a pull request. "></p>
+<p><img src="images/pull-request.png" alt="Concep model of the remote workflow. A foreign remote repository can be forked to an owned remote repository with a &ldquo;fork&rdquo;. The remote repository is copied into a local repository with a &ldquo;clone&rdquo;. Files inside the local repository and the remote repository are synced with push and pull. The owned remote repository can be merged into the foreign remote repository with a pull request."></p>
 
 
 
@@ -479,11 +477,14 @@ Once they accept your Pull Request, your modifications will be safe in the origi
 </ol>
 <p><img src="images/clone.png" alt="Screenshot of a forked repo showing where to copy the url to clone the repo."></p>
 </div>
-<p>Now you have an RStudio project (that is also a repo) that is a copy of the one in the original repo. It&rsquo;s a very small project with a few file. <code>template_script.R</code> includes the necessary code to create beautiful images like this:</p>
+<p>Now you have an RStudio project (that is also a repo) that is a copy of the one in the original repo.
+It&rsquo;s a very small project with a few file.
+<code>template_script.R</code> includes the necessary code to create beautiful images like this:</p>
 <p><img src="images/tree_pao.png" alt="Image of trees created using R"></p>
 <p>It uses the 
 <a href="https://github.com/djnavarro/flametree" target="_blank" rel="noopener"><em>flametree</em></a> library created by 
-<a href="https://djnavarro.net/" target="_blank" rel="noopener">Danielle Navarro</a>. How it works is not part of the topics of the workshop (sadly!) but it&rsquo;s a good excuse to practice doing pull requests.</p>
+<a href="https://djnavarro.net/" target="_blank" rel="noopener">Danielle Navarro</a>.
+How it works is not part of the topics of the workshop (sadly!) but it&rsquo;s a good excuse to practice doing pull requests.</p>
 <div class = activity> 
 <p>Make a change in the repo</p>
 <ol>
@@ -505,7 +506,8 @@ Once they accept your Pull Request, your modifications will be safe in the origi
 <li>Push it to your remote repository.</li>
 </ol>
 </div>
-<p>At this point you&rsquo;ve made a change in your local repo (that is a copy of the forked repo) and pushed those changes to your remote repo in GitHub. The original repo doesn&rsquo;t know this.</p>
+<p>At this point you&rsquo;ve made a change in your local repo (that is a copy of the forked repo) and pushed those changes to <strong>your</strong> remote repo in GitHub.
+The original repo doesn&rsquo;t know this.</p>
 <p>If you want to contribute the changes you made to the original repo, it&rsquo;s time to make a pull request.</p>
 <div class = activity> 
 <p>Make a pull request</p>
@@ -521,7 +523,9 @@ Once they accept your Pull Request, your modifications will be safe in the origi
 <p><img src="images/pr2.png" alt="Screenshot of GitHub showing how to add a title, message and finish a pull request"></p>
 <p>And that it!</p>
 </div>
-<p>The owner/s of the repo will receive an email. They can review the pull request, comment on it and eventually accept the contribution. When that happen the changes you made will apear in the repo.</p>
+<p>The owner/s of the repo will receive an email.
+They can review the pull request, comment on it and eventually accept the contribution.
+When that happen the changes you made will appear in the repo.</p>
 
 
 
@@ -690,8 +694,8 @@ Once they accept your Pull Request, your modifications will be safe in the origi
     <nav id="TableOfContents">
   <ul>
     <li><a href="#why-git">Why git?</a></li>
-    <li><a href="#but-what-we-mean-by-version-control">But what we mean by version control?</a></li>
-    <li><a href="#did-you-mentioned-remote-repository">Did you mentioned remote repository?</a></li>
+    <li><a href="#but-what-do-we-mean-by-version-control">But what do we mean by version control?</a></li>
+    <li><a href="#what-are-remote-repositories">What are remote repositories?</a></li>
     <li><a href="#introduce-yourself-to-git">Introduce yourself to Git</a></li>
     <li><a href="#creating-a-new-repository">Creating a new repository</a></li>
     <li><a href="#local-changes">Local changes</a></li>

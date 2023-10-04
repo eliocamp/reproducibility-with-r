@@ -44,9 +44,9 @@
 <meta itemprop="description" content="Imagine that you read some interesting paper or analysis. To your delight, all the code and data is available in a public repository. You then are itching to sink your teeth on it; to see how they implemented the methods, or to run it with your own similar data.
 You download the all the files and you find something like this.
 /home/dorothy/Documents/paper ├── abstract.R ├── correlation.png ├── data.csv ├── data2.csv ├── fig1.">
-<meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
+<meta itemprop="datePublished" content="2023-10-01T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1883">
+<meta itemprop="wordCount" content="1884">
 
 
 
@@ -261,30 +261,30 @@ Some symbols (&quot;.&quot;, &ldquo;*&rdquo;, an others) are also best avoided b
 <p>Some file systems are case insensitive, so <code>Madrid-Temperature.csv</code> and <code>madrid-temperature.csv</code> might be the same file!</p>
 <p>To avoid any headaches, it is best to be conservative and just use lower-case latin characters, numbers and hyphens (&quot;_&quot; and &ldquo;-&quot;).</p>
 <p>Use hyphens as separators.
-You can use &ldquo;_&rdquo; to separate words that are part of the same concept and &ldquo;-&rdquo; to separate concepts.
-For instance <code>buenos_aires-minimum_temperature.csv</code>.
-You can also use them the other way around, but what&rsquo;s important is consistency.</p>
+You can use &ldquo;-&rdquo; to separate words that are part of the same concept and &ldquo;_&rdquo; to separate concepts.
+For instance <code>buenos-aires_minimum-temperature.csv</code>.
+We recommend this convention and not the other way around, because it&rsquo;s compatible with the ISO date format (&ldquo;YYYY-MM-DD&rdquo;).</p>
 <div class = notes> 
 <p>By using separators consistently and smartly you can parse file names programmatically very easily.
 For example, if you have</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#434f54">files</span>
-</code></pre></div><pre><code>## [1] &quot;madrid-minimum_temperature&quot;       &quot;buenos_aires-minimum_temperature&quot;
-## [3] &quot;madrid-maximum_temperature&quot;       &quot;buenos_aires-maximum_temperature&quot;
+</code></pre></div><pre><code>## [1] &quot;madrid_minimum-temperature&quot;       &quot;buenos-aires_minimum-temperature&quot;
+## [3] &quot;madrid_maximum-temperature&quot;       &quot;buenos-aires_maximum-temperature&quot;
 </code></pre><p>You could extract cities and variable names by just</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#d35400">strsplit</span>(<span style="color:#434f54">files</span>, <span style="color:#7f8c8d">&#34;-&#34;</span>)
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#d35400">strsplit</span>(<span style="color:#434f54">files</span>, <span style="color:#7f8c8d">&#34;_&#34;</span>)
 </code></pre></div><pre><code>## [[1]]
-## [1] &quot;madrid&quot;              &quot;minimum_temperature&quot;
+## [1] &quot;madrid&quot;              &quot;minimum-temperature&quot;
 ## 
 ## [[2]]
-## [1] &quot;buenos_aires&quot;        &quot;minimum_temperature&quot;
+## [1] &quot;buenos-aires&quot;        &quot;minimum-temperature&quot;
 ## 
 ## [[3]]
-## [1] &quot;madrid&quot;              &quot;maximum_temperature&quot;
+## [1] &quot;madrid&quot;              &quot;maximum-temperature&quot;
 ## 
 ## [[4]]
-## [1] &quot;buenos_aires&quot;        &quot;maximum_temperature&quot;
+## [1] &quot;buenos-aires&quot;        &quot;maximum-temperature&quot;
 </code></pre></div>
-<p>Finally, if you can try to make your files easily sortable.
+<p>Finally, try to make your files easily sortable.
 Put numbers with enough zero-padding and, if relevant, use dates in YYYY-MM-DD format at the beginning of the file name so that sorting by name coincide with sorting by date.</p>
 
 
@@ -299,7 +299,7 @@ Put numbers with enough zero-padding and, if relevant, use dates in YYYY-MM-DD f
 <p>An important aspect of thinking about your project is that all scripts, data, figures, and whatever else is needed to (re)create the analysis is inside the same root folder.
 That way you can ensure that the only thing you need to give to someone else to successfully run your code is that single folder.
 It also makes your life easier if you work on the same project in different computers, as it enables you to sync a single folder.</p>
-<p>One extra step to consider is that you cannot make your work portable is your code is not portable too.
+<p>One extra step to consider is that you cannot make your work portable if your code is not portable too.
 Perhaps the main culprit of non-portable code is using absolute paths to manipulate files in your code.</p>
 <p>Think about this piece of code:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#d35400">read.csv</span>(<span style="color:#7f8c8d">&#34;/home/dorothy/Documents/research/black-hole/data/data.csv&#34;</span>)
@@ -351,7 +351,8 @@ This is a normal garden-variety folder; what singles it out as an RStudio Projec
 You can also quickly open a recently-used project by clicking on the project icon on the right-hand side of the RStudio toolbar.</p>
 <p>This will open a new RStudio window with its own clean R process with the project folder as the working directory.
 By default, it will also open any previously-opened files.
-It will even preserve changes not saved. This helps keep your work tidy and makes it easy to pick up or share what you&rsquo;ve done later.</p>
+It will even preserve changes not saved.
+This helps keep your work tidy and makes it easy to pick up or share what you&rsquo;ve done later.</p>
 <p>RStudio allows you to have multiple projects open, and this is possible because each project has its own folder.
 You can work with multiple projects in parallel without code or results of one analysis interfering with the other&rsquo;s.</p>
 <div class = activity> 
@@ -421,7 +422,6 @@ And while this comes in handy so that you can boot up your work exactly where yo
 The <strong>rrtools</strong> package can automate a lot of these steps (and more) and the <strong>rrtools.addin</strong> package offers a GUI for the main functionality.
 These packages are not on CRAN, so you need to install them with</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#434f54">remotes</span><span style="color:#728e00">::</span><span style="color:#d35400">install_github</span>(<span style="color:#7f8c8d">&#34;benmarwick/rrtools&#34;</span>)
-<span style="color:#434f54">remotes</span><span style="color:#728e00">::</span><span style="color:#d35400">install_github</span>(<span style="color:#7f8c8d">&#34;nevrome/rrtools.addin&#34;</span>)
 </code></pre></div><p>rrtools provides a relatively rich and strict template which has the advantage of liberating you from some decisions but, as it usually goes with these things, it also forces some decision onto you which might not be optimal for your specific use-case.
 In any case, it provides a very solid starting point that follows some best practices.
 However, it can be a bit overwhelming because it has many moving parts, so in this course we will go over each part in 
