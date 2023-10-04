@@ -33,7 +33,7 @@ But actively-maintained packages will change their code-base to fix bugs, add or
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day4/01-docker/</guid>
-      <description>While renv is nice, it doesn&amp;rsquo;t solve the whole problem, because system dependencies and even the R version itself can change. Another issue is that downloading and installing all the R packages can take a while. Like an hour or more. This is not a deal-breaker, but I&amp;rsquo;d like to do better. People trying to reproduce work are few and far between, so it&amp;rsquo;s important to make their lives as easy as possible.</description>
+      <description>While renv is nice, it doesn&amp;rsquo;t solve the whole problem, because system dependencies and even the R version itself can change. Another issue is that downloading and installing all the R packages can take a while. Like an hour or more. This is not a deal-breaker, but it&#39; be great to do better. People trying to reproduce work are few and far between, so it&amp;rsquo;s important to make their lives as easy as possible.</description>
     </item>
     
     <item>

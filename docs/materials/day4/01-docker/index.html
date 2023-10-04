@@ -41,10 +41,10 @@
       
       
   <meta itemprop="name" content="01: Reproducible computational environment with Docker">
-<meta itemprop="description" content="While renv is nice, it doesn&rsquo;t solve the whole problem, because system dependencies and even the R version itself can change. Another issue is that downloading and installing all the R packages can take a while. Like an hour or more. This is not a deal-breaker, but I&rsquo;d like to do better. People trying to reproduce work are few and far between, so it&rsquo;s important to make their lives as easy as possible.">
+<meta itemprop="description" content="While renv is nice, it doesn&rsquo;t solve the whole problem, because system dependencies and even the R version itself can change. Another issue is that downloading and installing all the R packages can take a while. Like an hour or more. This is not a deal-breaker, but it&#39; be great to do better. People trying to reproduce work are few and far between, so it&rsquo;s important to make their lives as easy as possible.">
 <meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1812">
+<meta itemprop="wordCount" content="1814">
 
 
 
@@ -150,11 +150,11 @@
         <p>While renv is nice, it doesn&rsquo;t solve the whole problem, because system dependencies and even the R version itself can change.
 Another issue is that downloading and installing all the R packages can take a while.
 Like an hour or more.
-This is not a deal-breaker, but I&rsquo;d like to do better.
+This is not a deal-breaker, but it' be great to do better.
 People trying to reproduce work are few and far between, so it&rsquo;s important to make their lives as easy as possible.</p>
 <p>One way to address this issue is to use some sort of containerisation solution.
 Instead of making people run your code inside their machine and creating some elaborate system to make sure their machine has all the correct packages and system components, just offer a machine with all the relevant software pre-installed.
-Of course, buying and shipping physical laptops to every one that needs to reproduce a result is not feasible, so the next best thing is to offer a virtual machine.</p>
+Of course, buying and shipping physical laptops to every one that needs to reproduce a result is not feasible; a virtual machine is the next best thing.</p>
 <p>One class of containers are virtual machines that run in some server.
 These services will manage most of the technical complexity of setting up and spinning up the containers and offer a web-based platform to interact with it.
 
@@ -162,14 +162,15 @@ These services will manage most of the technical complexity of setting up and sp
 <a href="https://mybinder.org/" target="_blank" rel="noopener">Binder</a> and 
 <a href="https://codeocean.com/" target="_blank" rel="noopener">Code Ocean</a>, 
 <a href="https://saturncloud.io/" target="_blank" rel="noopener">Saturn Cloud</a> are four examples.
-They are generally easy to set up and use at the expense of heavily depending on external services.
+They are generally easy to set up and use at the expense of heavily depending on external services and...
+well, expenses.
 One important aspect for reproducibility is that since they provide an standardised hardware setup, they can empower users without powerful machines to reproduce demanding analyses.</p>
 <p>Another class of containers are locally-run containers.
-This run locally on the user&rsquo;s machine and thus don&rsquo;t depend so much on external servers' uptime.
-On the other hand, it requires some local setup and the resulting performance can depend on the user&rsquo;s computer.
+These run locally on the user&rsquo;s machine and thus don&rsquo;t depend so much on external servers' uptime.
+On the other hand, they require some local setup and the resulting performance can depend on the user&rsquo;s computer.
 In this workshop we will create a container using 
 <a href="https://docs.docker.com/get-started/overview/" target="_blank" rel="noopener">Docker</a>.
-This is not the only software but it&rsquo;s the more popular and well supported by the R community.</p>
+This is not the only software but it&rsquo;s the more popular and it&rsquo;s well supported by the R community.</p>
 
 
 
@@ -242,13 +243,13 @@ As long as you use this image locally, it&rsquo;s safe to do this.
 Otherwise, don&rsquo;t.</p>
 </li>
 <li>
-<p><code>rocker/rstudio:4.1.2</code> is the name of the image that needs to be ran.</p>
+<p><code>rocker/rstudio:4.1.2</code> is the name of the image that needs to be run.</p>
 </li>
 </ul>
 </div>
 <div class="figure">
-<img src="images/rstudio-landing.png" alt="Screenshot of a browser in http://localhost:8787/ running RStudio." width="662" />
-<p class="caption">Figure 1: RStudio running inside docker.</p>
+<img src="images/rstudio-landing.png" alt="Screenshot of a browser in http://localhost:8787/ running RStudio." width="602" />
+<p class="caption"><span id="fig:unnamed-chunk-1"></span>Figure 1: RStudio running inside docker.</p>
 </div>
 <p>Surprise!
 You&rsquo;ve got RStudio running inside a Docker container.
@@ -307,8 +308,7 @@ COPY renv/activate.R renv/activate.R
 
 RUN chown -R rstudio . \
  &amp;&amp; sudo -u rstudio R -e 'source(&quot;renv/activate.R&quot;); renv::restore()'
-</code></pre>
-<p>The first line tells docker to base this new image on the <code>rocker/rstudio:4.2.1</code> image.
+</code></pre><p>The first line tells docker to base this new image on the <code>rocker/rstudio:4.2.1</code> image.
 Then, with that as a base, it will then run the next steps.</p>
 <p>The next line set the working directory of the container.</p>
 <p>The next steps might look weird because it seems to copy the <code>renv.lock</code> onto itself.
@@ -317,11 +317,10 @@ The key here is that the <code>COPY</code> instruction takes a route in the loca
 The two files being copied are the lockfile and the renv bootstrap script that will install the correct version of renv.</p>
 <p>The final line starts with <code>RUN</code>, which is docker-speak to run commands in the terminal.
 The important part here is that it runs <code>R -e 'source(&quot;renv/activate.R&quot;); renv::restore()</code>, which bootstraps renv and restores the project library.</p>
-<p>This image doesn&rsquo;t install any system dependency, but if you wanted you could install them using apt-get.
+<p>This image doesn&rsquo;t install any system dependency, but if you wanted you could install them using <code>apt-get</code>.
 For instance, if your image needed the netcdf library (a meteorology related library), you would add</p>
 <pre><code>RUN apt-get install netcdf-bin -y
-</code></pre>
-<p>right after the <code>FROM</code> line.</p>
+</code></pre><p>right after the <code>FROM</code> line.</p>
 <p>So, with this Dockerfile you can now actually build a Docker image with <code>docker build</code>.
 For tidyness sake, let&rsquo;s also name this container with the <code>-t</code> (tag) option:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build . -t <span style="color:#728e00">[</span>username<span style="color:#728e00">]</span>/demo-project
@@ -331,8 +330,7 @@ You will see that R will install all the necessary packages using the informatio
 <p>When it ends it will output something like this.</p>
 <pre><code>Successfully built 83813dd878c7
 Successfully tagged [username]/demo-project:latest
-</code></pre>
-<p>This means that you have a working Docker image in your computer.
+</code></pre><p>This means that you have a working Docker image in your computer.
 Now what&rsquo;s left to to is to run it with this command</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run --rm  -p 8787:8787 <span style="color:#7f8c8d">\
 </span><span style="color:#7f8c8d"></span>    -e <span style="color:#434f54">DISABLE_AUTH</span><span style="color:#728e00">=</span><span style="color:#728e00">true</span> <span style="color:#7f8c8d">\
