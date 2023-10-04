@@ -7,7 +7,7 @@ excerpt: ""
 ---
 
 Of course, you can always create a file structure that suits you and your work by hand.
-But if you are going to do that a lot, it might be nice to automate some of the work. 
+But if you are going to do that a lot, it might be nice to automate some of the work.
 We are going to use the rrtools package to create a "research compendium" using a couple of R functions and combine it with the things we learned on the git and GitHub section.
 
 The first thing you need to know is that an rrtools compendium will be at the same time an R package.
@@ -26,15 +26,15 @@ The following instructions are adapted from the [rrtools GitHub repository](http
 It is possible to use rrtools without Git, but usually you would want you research compendium to be managed by the version control software Git.
 
 The name of the compendium and the project should be the same.
-Keep in mind that this will also be the package name so it has to follow some rules for everything to work properly. 
-Your project name  must:
+Keep in mind that this will also be the package name so it has to follow some rules for everything to work properly.
+Your project name must:
 
 -   contain only ASCII letters, numbers, and '.'
 -   have at least two characters
 -   start with a letter (not a number)
 -   not end with '.'
 
-For convenience we will use  `pkgname` as a placeholder for this package's name.
+For convenience we will use `pkgname` as a placeholder for this package's name.
 
 <div class = instructions> 
 
@@ -50,13 +50,13 @@ For convenience we will use  `pkgname` as a placeholder for this package's name.
 ### 1. `rrtools::use_compendium()`
 
 This uses `usethis::create_package()` to create a basic R package in the `pkgname` directory.
-The function will also instruct on the next steps. 
+The function will also instruct on the next steps.
 
 <div class = instructions>
 
 Create the compendium
 
-1.  In the new project, run `rrtools::use_compendium()` to create the compendium.  
+1.  In the new project, run `rrtools::use_compendium(simple = FALSE)` to create the compendium.  
    You will see a message. At the end it will ask you:
    ```
    Overwrite pre-existing file 'testrrtools.Rproj'?
@@ -108,30 +108,34 @@ The default options is a top-level `analysis/`.
 
 This folder will have the following structure:
 
-    analysis/
-    |
-    ├── paper/
-    │   ├── paper.Rmd       # this is the main document to edit
-    │   └── references.bib  # this contains the reference list information
+```         
+analysis/
+|
+├── paper/
+│   ├── paper.Rmd       # this is the main document to edit
+│   └── references.bib  # this contains the reference list information
 
-    ├── figures/            # location of the figures produced by the Rmd
-    |
-    ├── data/
-    │   ├── raw_data/       # data obtained from elsewhere
-    │   └── derived_data/   # data generated during the analysis
-    |
-    └── templates
-        ├── journal-of-archaeological-science.csl
-        |                   # this sets the style of citations & reference list
-        ├── template.docx   # used to style the output of the paper.Rmd
-        └── template.Rmd
+├── figures/            # location of the figures produced by the Rmd
+|
+├── data/
+│   ├── raw_data/       # data obtained from elsewhere
+│   └── derived_data/   # data generated during the analysis
+|
+└── templates
+    ├── journal-of-archaeological-science.csl
+    |                   # this sets the style of citations & reference list
+    ├── template.docx   # used to style the output of the paper.Rmd
+    └── template.Rmd
+```
 
--   the `paper.Rmd` is ready to write in and render with bookdown. It includes:
+-   the `paper.Rmd` is ready to write in and render with bookdown.
+    It includes:
 
     -   a YAML header that identifies the `references.bib` file and the supplied `csl` file (to style the reference list).
     -   a colophon that adds some git commit details to the end of the document. This means that the output file (HTML/PDF/Word) is always traceable to a specific state of the code.
 
--   the `references.bib` file has just one item to demonstrate the format. It is ready to insert more reference details or be replaced it with a .bib file created using Reference Manager tools like Zotero.
+-   the `references.bib` file has just one item to demonstrate the format.
+    It is ready to insert more reference details or be replaced it with a .bib file created using Reference Manager tools like Zotero.
 
 -   you can replace the supplied `csl` file with a different citation style from <https://github.com/citation-style-language/>
 
@@ -140,32 +144,31 @@ rrtools have a helper function `rrtools::add_dependencies_to_description()` that
 
 When you create this file structure using this function you can choose whether you want to add your data to the repository.
 If `data_in_git = FALSE` you will exclude files in the `data/` directory from being tracked by git and prevent them from appearing on GitHub.
-You should set `data_in_git = FALSE` if your data files are large (>100 mb is the limit for GitHub) or you do not want to make the data files publicly accessible on GitHub.
+You should set `data_in_git = FALSE` if your data files are large (\>100 mb is the limit for GitHub) or you do not want to make the data files publicly accessible on GitHub.
 More about sharing data in [the next section](/reproducibility-with-r/materials/day2/03-data/).
-
 
 ### Working with your own code
 
-You can add small snippets of code right inside your Rmd document, but this is not optimal for code that you might want to reuse among documents associated with the same protect or in various R scripts. 
-It's can also lead to a very long and hard to understand Rmd document. 
+You can add small snippets of code right inside your Rmd document, but this is not optimal for code that you might want to reuse among documents associated with the same protect or in various R scripts.
+It's can also lead to a very long and hard to understand Rmd document.
 
 For complex functions, it's better to put them in the `R` sub folder and include `devtools::load_all(".")` at the top of your `paper.Rmd`.
 In an interactive session, you an use Ctrl + Shift + L (or run `devtools::load_all(".")` in the console).  
-This will make all functions and objects in that folder available in your environment. 
+This will make all functions and objects in that folder available in your environment.
 
 A stricter approach is to build your code as a package, install it in your system and load it with `library(pkgname)` or with `pkgname::`.
-But to do this, you need to know about documenting code. 
+But to do this, you need to know about documenting code.
 
 #### Documenting code
 
-Whether you choose to write code in chunks, script files or as functions, it important to your future self and others to document your code. 
-If you are not used to doing it, the easiest way to start is by commenting everything without much thinking. 
-With time you can decide if you need commenting every single line or maybe only the key decisions you made when you where writing the code. 
+Whether you choose to write code in chunks, script files or as functions, it important to your future self and others to document your code.
+If you are not used to doing it, the easiest way to start is by commenting everything without much thinking.
+With time you can decide if you need commenting every single line or maybe only the key decisions you made when you where writing the code.
 
-If you decide to work with functions there are a few tools that can help you to document them and make that documentation available in the Help Pane (remember, a compendium is also a package, so you can take advantage of that!). 
-Each function will live in a .R file (there are some exceptions but we won't worry about that at this point) and will have a header with the name, descriptions and more information. 
-You can use simple `#` to comment or you can use *roxygen2* comments using `#'`. 
-The later will allow you to generate the package documentation. 
+If you decide to work with functions there are a few tools that can help you to document them and make that documentation available in the Help Pane (remember, a compendium is also a package, so you can take advantage of that!).
+Each function will live in a .R file (there are some exceptions but we won't worry about that at this point) and will have a header with the name, descriptions and more information.
+You can use simple `#` to comment or you can use *roxygen2* comments using `#'`.
+The later will allow you to generate the package documentation.
 
 The following instructions to document a function are adapted from the [R packages book](https://r-pkgs.org/man.html).
 
@@ -207,6 +210,6 @@ add <- function(x, y) {
 
 </div>
 
-## Resources 
+## Resources
 
 [A guide to modern reproducible data science with R](https://www.rstudio.com/resources/rstudioconf-2019/a-guide-to-modern-reproducible-data-science-with-r-karthik-ram/)

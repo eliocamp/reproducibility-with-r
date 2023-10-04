@@ -2,7 +2,7 @@
 title: "03: Reporting with R Markdown"
 weight: 3
 show_post_date: false
-publishDate: 2022-02-19
+publishDate: 2023-10-01
 excerpt: ""
 ---
 
@@ -44,18 +44,31 @@ Your turn
     Can you identify the different sections of the file?
 </div>
 
+<div class = notes> 
+
+What about Quarto?
+
+<a href = "https://quarto.org/">Quarto</a> is a new implementation of this same concept. 
+It's billed as a "next generation version of R Markdown" because it incorporates a lot of lessons learned from its development and adds other features. 
+It also doesn't need R to run, so it's more langauge agnostic. 
+
+However, Quarto is still missing the large collection of scientific journal templates offered by the rticles package.
+
+Many of the freatuers and syntax shown here work with little or no changes in Quarto. 
+</div>
+
 ### File structure
 
 Any R Markdown file will have 3 sections or areas:
 
 ![Rmarkdown file in the left. Knited document on the right. The YAML, chunk codes and text areas are highlighted on the file.](images/rmarkdown.png)
 
--   The top part uses YAML syntax and includes the title and the output type (which in this case is an HTML document).
+-   The top part is called the **header** and uses YAML syntax and includes the title and the output type (which in this case is an HTML document) and other metadata.
 
--   Below there are *white* and *grey* sections.
+-   Below the heather goes the document proper, which has *white* and *grey* sections.
     These are the two main sections that make up an R Markdown file:
 
-    -   Grey sections are code chunks.
+    -   Grey sections are **code chunks**.
         They will be evaluated in order and any output will be inserted in the output document.
 
     -   White sections are text sections and support markdown for styling.
@@ -85,7 +98,7 @@ output:
 Mind the indentation!
 
 It is very important to maintain the indentation of the elements, since it defines the hierarchy of each element.
-Many of the errors you'll find when knitting will have their roots in problems in the header indentation.
+Many of the errors you'll find when knitting will be rooted in indentation issues.
 </div>
 
 #### Code chunks
@@ -135,9 +148,11 @@ You can get a guide to rmarkdown [in this](https://www.rstudio.com/wp-content/up
 
 You can also add equations and other symbols with LaTeX in line (`` `$E = mc^2$` `` looks like `\(E = mc^2\)`) or in its own line as:
 
-    $$
-    y = \mu + \sum_{i=1}^p \beta_i x_i + \epsilon
-    $$
+```         
+$$
+y = \mu + \sum_{i=1}^p \beta_i x_i + \epsilon
+$$
+```
 
 It looks like:
 
@@ -171,9 +186,12 @@ It's up to you to decide if you want to show the code or not.
 To change the options of a code chunk, all you have to do is list the options inside the square brackets.
 For example:
 
-    ```{r chunk-name, echo = FALSE, message = FALSE}
 
-    ```
+````default
+```{r chunk-name, echo = FALSE, message = FALSE}
+
+```
+````
 
 A particularly important set of options are the ones that control whether the code is executed and whether the result of the code will remain in the report or not:
 
@@ -192,11 +210,14 @@ The solution is to change the option globally so that it applies to all chunks.
 This is done by the `knitr::opts_chunk$set()` function, which sets the global options of the chunks that follow it.
 You'll find this function on the first "setup" chunk.
 
-    ```{r setup, include = FALSE}
-    knitr::opts_chunk$set(echo = FALSE, 
-                      message = FALSE,
-                      warning = FALSE)
-    ```
+
+````default
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE, 
+                  message = FALSE,
+                  warning = FALSE)
+```
+````
 
 <div class = notes> 
 
@@ -211,7 +232,7 @@ You can start typing "fig." inside the `{ }` to explore the options.
 
 RStudio Visual editor
 
-Recent versions of RStudio include a Visual Editor which allows you to write Markdown markup with a friendly GUI.
+Recent versions of RStudio include a [Visual Editor](https://rstudio.github.io/visual-markdown-editing/) which allows you to write Markdown markup, add citations, tables, etc. with a friendly GUI.
 
 </div>
 
@@ -225,14 +246,16 @@ In this section will focus on PDF files.
 
 For scientific journals you may find the [**rticles**](https://pkgs.rstudio.com/rticles/index.html) package very useful.
 This package includes several templates --most of them contributed by the R community-- so you can create journal-specific PDFs directly from RMarkdown.
-We recommend you to install de development version from GitHub which often includes new or updated article formats.
+We recommend installing the development version from GitHub, which often includes new or updated article formats.
+
+After installing rticles you'll need to restart RStudio for its templates to be available in the UI.
 
 To use rticles from RStudio, you can access the templates through `File -> New File -> R Markdown`.
 This will open the dialogue box where you can select from one of the available templates:
 
 ![New R Markdown dialog box with the list of available templates](images/rticles.png)
 
-This will create a folder containing a Rmd file using the corresponding output format and all the assets required by this format.
+This will create a folder containing a Rmd file using the corresponding output format and all the assets required by it.
 
 <div class = activity> 
 
@@ -249,14 +272,21 @@ Your turn!
 Now, what happens if rticles doesn't have the template you need?
 Usually, journals provide LaTeX templates that you can use and **adapt** to use within R Markdown.
 This will require some knowledge of LaTeX and [Pandoc templates](https://pandoc.org/MANUAL.html#templates), and some patience and coffee/tea/mate to deal with knitr errors.
-The result is worth it, however; especially if you then [contribute](https://github.com/rstudio/rticles/pulls) the adapted template to the R community so others can benefit from your sweat and tears.
+If you go through the trouble of adapting a template, consider [contributing](https://github.com/rstudio/rticles/pulls) it to rticles so that others can benefit from your sweat and tears.
+
+<div class = note> 
+
+<a href="https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-023-02882-y#Sec3">One estimate</a> put the amount of work required to format and re-format academic submissinos to comply with journal templates at around 230 million USD in 2001. 
+Also, it's not always mandatory to submit your paper using the journal template. 
+
+</div>
 
 <div class = activity>  
 
 Adapting a template
 
 1. Create a new R Markdown file using PDF as a output format and save it into your project (for example, `paper.Rmd`). 
-1. Download the AGU Geophysical Research Letters template from [here](https://www.agu.org/-/media/Files/Publications/Feb-3-22-latex-templates.zip?la=en&hash=EF7DAE79FAF88D98B8B8D55DFECF0374). Inside the file there's a `Feb-3-22-latex-templates` folder with 8 files. Extract all those files into the same folder you saved the R Markdown. 
+1. Download the AGU Geophysical Research Letters template from [here](https://www.agu.org/-/media/files/publications/august-2022-latex-templates.zip). Inside the file there's a `Feb-3-22-latex-templates` folder with 8 files. Extract all those files into the same folder you saved the R Markdown. 
 You need to have a folder in your project with these files:
 
     ```
@@ -267,9 +297,11 @@ You need to have a folder in your project with these files:
     ├── agujournaltemplate.tex
     ├── agutexSI2019.cls
     ├── paper.Rmd
+    ├── paper.Rproj
     ├── si_template_2019.tex
     ├── trackchanges-0.7.0
     └── trackchanges.sty
+
     ```
 
 3. Change the YAML of the R Markdown file to include the following:
@@ -282,6 +314,8 @@ You need to have a folder in your project with these files:
     output: 
       pdf_document:
         template: "agujournaltemplate.tex"
+        pandoc_args: 
+          - "--wrap=none"
     ---
     ```
 
@@ -293,22 +327,26 @@ You need to have a folder in your project with these files:
 
     To do this, look for the line `knitr::opts_chunk$set(echo = TRUE)` and change it to `knitr::opts_chunk$set(echo = FALSE)`
 
-4. In the `agujournaltemplate.tex` file, remove everything from line 179 to line 396 (all the example paper) and add `\usepackage{hyperref}` below line 21. 
+4. In the `agujournaltemplate.tex` file, add `\usepackage{hyperref}` in line 63 (or anywhere before `\begin{document}`. Also, remove  remove everything from line 174 (around `%  BODY TEXT` to line 413 (right before `\end{document}`).
 
 5. Knit! 
     
-    You will get a not very nice-looking PDF. None of the information on the R Markdown file it reflected in the PDF! You have to modify the template to connect the dots. 
+    Open paper.pdf and you will see a rendered PDF in the style of the AGU journal. However, none of the contect in the R Markdown file it reflected in the PDF! You have to modify the template to connect the dots. 
 
-6. Again in the `agujournaltemplate.tex` file, change `\title{=enter title here=}` (line 82) for `\title{$title$}` 
+6. Again in the `agujournaltemplate.tex` file, change `\title{=enter title here=}` (line 78) for `\title{$title$}` 
 
 7. Knit again!
 
     Now, the title in the R Markdown file and the pdf are the same.
     `` `$title$` `` in the LaTeX template will be replaced by the value of `title` supplied by the YAML header.
   
-8. Let's also include the content of the R Markdown file. In line 180 of the LaTeX template add `` `$body$` `` (without the backticks). The special variable `body` will be replaced by the actual rendered contents of the R Markdown file.
+8. Let's also include the content of the R Markdown file. In the LaTeX template, go to right before `\end{documnet} (around line 174) and add `` `$body$` `` (without the backticks). The special variable `body` will be replaced by the actual rendered contents of the R Markdown file.
 
-8. You can add new options to the YAML header and then use the same trick so they are used by the LaTeX template. For example, add a new option called "abstract" and provide some text, like this:
+9. Knit again! 
+   
+   This time you'll see the sample R Markdown document in the PDF. 
+
+8. You can add new options to the YAML header and then use the same trick so they are used by the LaTeX template. For example, add a new option called "abstract" and write some text, like this:
 
     ```YAML
     ---
@@ -318,18 +356,20 @@ You need to have a folder in your project with these files:
     output: 
       pdf_document:
         template: "agujournaltemplate.tex"
-    abstract: "This is the very interesting abstract."
+        pandoc_args: 
+          - "--wrap=none"        
+    abstract: "This is the very interesting abstract." 
     ---
     ```
 
-    Then, in the LaTeX template search for `[ enter your Abstract here ]` (line 167) and replace it with `` `$abstract$` `` (without backticks).
+    Then, in the LaTeX template search for `[ enter your Abstract here ]` (~line 166) and replace it with `` `$abstract$` `` (without backticks).
 
 
 9. One final knit to see the result!
 
 10. (Optional) Add more variables, such as a Plain Language Summary, author, mail of the corresponding author.
 
-Having problems? You can watch a video on how to solve this activity [here](https://www.youtube.com/watch?v=bk3mcRIJLqc) and follow along.
+Having problems? You can watch a video on how to solve this activity [here](https://www.youtube.com/watch?v=bk3mcRIJLqc) and follow along (the video was made with an slightly older version of the template but everything is almost the same except for the precise line numbers).
 
 
 </div>
@@ -341,9 +381,7 @@ Pandoc template syntax
 The template uses something called Pandoc Templates, which has a specific syntax.
 You can read more in [the documentation](https://pandoc.org/MANUAL.html#templates). 
 
-
 </div>
-
 
 ## Resources
 

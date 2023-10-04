@@ -6,7 +6,6 @@ publishDate: 2022-02-19
 excerpt: ""
 ---
 
-
 If you use RStudio Projects consistently, you can be sure that your working directory is always the root of the project unless you actively change it.
 Almost.
 There are two situations in which this assumption can be broken and that can lead to errors or, even worse, surprising results.
@@ -27,7 +26,7 @@ Get the demo project
 
 
 
-You'll notice that R fails to render the file with an error that reads: 
+You'll notice that R fails to render the file with an error that reads:
 
 
 ```vervatin
@@ -56,7 +55,8 @@ getwd()
 ## [1] "/home/elio/Documents/cursos/reproducibility-with-r/static/demo_project"
 ```
 
-You'll get some path in your computer. And also that `penguins.csv` is indeed located in the `data` folder by running
+You'll get some path in your computer.
+And also that `penguins.csv` is indeed located in the `data` folder by running
 
 
 ```r
@@ -127,12 +127,10 @@ Fix one error
 1.  Try to knitr again.
 </div>
 
-
 ## Defensive programming with here
 
-The here package works every time as long as the current working directory is a subdirectory of the project root. 
-But it can be brittle otherwise. 
-
+The here package works every time as long as the current working directory is a subdirectory of the project root.
+But it can be brittle otherwise.
 
 <div class = activity> 
 
@@ -147,9 +145,8 @@ Find a new error
 1. Create a new chunk with the code `here::here("data/penguins.csv")` and run it. Which absolute paths does it return?
 </div>
 
-
-You'll notice that if you break the expectation that you are working inside the correct project, `here()` will return essentially nonsense. 
-A more robust approach is to define the working directory by asserting the relative paths that leads to the current file. 
+You'll notice that if you break the expectation that you are working inside the correct project, `here()` will return essentially nonsense.
+A more robust approach is to define the working directory by asserting the relative paths that leads to the current file.
 
 <div class = activity>  
 
@@ -161,14 +158,12 @@ Fix the new error
 
 </div>
 
-
 With `here::i_am("analysis/report.Rmd")`, you are declaring the location of the current script relative to the project root.
-This will set the project root that is consistent with this location and emit a message. 
-Importantly, it will fail if the declared location is not found in the working directory or any of the parent directories. 
-
+This will set the project root that is consistent with this location and emit a message.
+Importantly, it will fail if the declared location is not found in the working directory or any of the parent directories.
 
 ## Resources
 
 [Using here with rmarkdown](https://here.r-lib.org/articles/rmarkdown.html)
 
-[Ode to the here package](https://github.com/jennybc/here_here) 
+[Ode to the here package](https://github.com/jennybc/here_here)

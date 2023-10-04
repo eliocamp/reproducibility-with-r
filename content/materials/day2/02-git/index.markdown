@@ -10,16 +10,18 @@ excerpt: ""
 
 Do you have something like this in your computer?
 
-    /home/pao/Documents/thesis
-    ├── abstract.R
-    ├── thesis.Rmd
-    ├── thesis_reviwed.Rmd
-    ├── thesis_reviwed2.Rmd
-    ├── thesis_final.Rmd
-    ├── thesis_finalfinal.Rmd
-    ├── this_is_it.Rmd
-    ├── now_this_is_it_for_real_this_time_i_swear.Rmd
-    └── FINAL.Rmd
+```         
+/home/pao/Documents/thesis
+├── abstract.R
+├── thesis.Rmd
+├── thesis_reviwed.Rmd
+├── thesis_reviwed2.Rmd
+├── thesis_final.Rmd
+├── thesis_finalfinal.Rmd
+├── this_is_it.Rmd
+├── now_this_is_it_for_real_this_time_i_swear.Rmd
+└── FINAL.Rmd
+```
 
 Probably we all have, or had something like this at one point because we didn't use a version control system.
 Version control systems manage the evolution and changes of a set of files that we'll call **repository**.
@@ -27,15 +29,15 @@ If you ever looked at the history of a Google Docs file, it is like that but in 
 Git is one popular version control system.
 
 If you work alone, git is great to track changes and recover previous version of your files.
-You can also use a **remote repository** (more later) to have a back up and share your work.
+You can also use a **remote repository** to have a back up and share your work.
 
 If you work as a team you can take advantage of all the above and also use version control as a tool to collaborate and organize the various versions of the same file present in the multiple computers you and they use.
 
-## But what we mean by version control?
+## But what do we mean by version control?
 
 Let's imagine that we have a repository already working ([later](/reproducibility-with-r/materials/day2/01-git/#creating-a-new-repository) we'll see how to create one).
 When you create a new file as part of the repository (or *repo*), that file is untracked or unversioned.
-This means that the git will ignore the file and any change you made until you *add* it to the repo.
+This means that git will ignore the file and any change you make to it until you *add* it to the repo.
 At that point the file is **staged** and it ready to get into the repository.
 To do that you do a *commit* and **save** that version of the file to the repo.
 This workflow `modify --> add --> commit` will repeat every time you want to save a version of the file.
@@ -46,7 +48,7 @@ With practice and depending on how do you work, you will find a comfortable midd
 
 So, we mentioned `add` and `commit`, these are git commands.
 If you have experience working with the command line you could use git from there, but the same commands can be executed from a GUI like [GitHub Desktop](https://desktop.github.com/) or [GitKraken](https://www.gitkraken.com/).
-During this workshop we'll use RStudio.
+RStudio also provides a basic GUI for git, which we are goint to use in this workshop.
 
 <div class = notes> 
 
@@ -57,19 +59,18 @@ If you want to try the command line, here are the core git commands:
 
 </div>
 
-## Did you mentioned remote repository?
+## What are remote repositories?
 
-Yes, before we went through a **local workflow**.
-The repo lives in your computer and that's it.
-But, you can also connect the **local repository** with a **remote repository**.
+What we explained before is the **local workflow**.
+This is when the repo lives in your computer and that's it.
+But you can also connect the **local repository** with a **remote repository**.
 For this workshop we are going to use [GitHub](https://www.github.com) to host remote repositories, but there are other options you can explore, such as [GitLab](https://about.gitlab.com/).
 
 Let's imagine we have a local repository, we made some commits and we want to send those changes to the remote repository (we'll how to create the remote repository later).
 For that we **push** the commits to the remote repository and the two repos are "up to date".
 
-A team mate makes a change to a file and push it to the remote repository.
-Now, your local repo is "outdated" and you need to download those new commits from the remote repository.
-You **pull** the commits.
+If a teammate changes a file and pushes the changes it to the remote repository, your local repo will be "outdated".
+To download those new commits from the remote repository you **pull** the commits.
 
 ![Concept model of a workflow using RStudio projects and git. Files are added to the staging area, and then commited to the local repository. You can push commits to the remote repository and pull new commits to your computer.](images/local_remote.png)
 
@@ -88,7 +89,7 @@ If you want to try the command line, here are the git commands:
 ## Introduce yourself to Git
 
 Before you create your first repository you need to make sure that git and RStudio are friends and that git knows you.
-If you follow the [pre-workshop instructions](http://localhost:4321/reproducibility-with-r/materials/day0#git-and-github), RStudio, git, and GitHub are definitely talking to each other.
+If you followed the [pre-workshop instructions](/reproducibility-with-r/materials/day0#git-and-github), RStudio, git, and GitHub are definitely talking to each other.
 
 <div class = notes> 
 
@@ -97,11 +98,11 @@ There you should find the path in your computer to the git installation.
 
 </div>
 
-To introduce yourself to git, that is to let it know your name and email you can use the *usethis* package.
+To introduce yourself to git, that is to let it know your name and email, you can use the *usethis* package.
 
 ``` r
 library(usethis) 
-use_git_config(user.name = "Jane Doe",
+use_git_config(user.name  = "Jane Doe",
                user.email = "jane@example.org")
 ```
 
@@ -122,7 +123,7 @@ git config --global user.email 'jane@example.com'
 
 There are many ways to start a new repository, locally in your computer using the command line or an interface, from GitHub (or its friends), from RStudio!
 Here we'll show you how to create a repo from GitHub, associate it to an RStudio project and work with it.
-But keep in mind that there are many other ways of working with git.
+But keep in mind that there are many other ways to work with git.
 
 <div class = instructions> 
 
@@ -274,11 +275,11 @@ This will let the owner of the original repo that you made some changes that you
 The owner can then accept, reject or ask for modifications.
 Once they accept your Pull Request, your modifications will be safe in the original repository.
 
-![Concep model of the remote workflow. A foreign remote repository can be forked to an owned remote repository with a "fork". The remote repository is copied into a local repository with a "clone". Files inside the local repository and the remote repository are synced with push and pull. The owned remote repository can be merged into the foreign remote repository with a pull request. ](images/pull-request.png)
+![Concep model of the remote workflow. A foreign remote repository can be forked to an owned remote repository with a "fork". The remote repository is copied into a local repository with a "clone". Files inside the local repository and the remote repository are synced with push and pull. The owned remote repository can be merged into the foreign remote repository with a pull request.](images/pull-request.png)
 
 ### Let's plant some trees
 
-As a fun example will collaborate with the recently open Flametree galley and do some pull request on the way. 
+As a fun example will collaborate with the recently open Flametree galley and do some pull request on the way.
 
 <div class = activity> 
 
@@ -297,11 +298,14 @@ Now, you have a copy of the repo in your GitHub account.
 
 </div>
 
-Now you have an RStudio project (that is also a repo) that is a copy of the one in the original repo. It's a very small project with a few file. `template_script.R` includes the necessary code to create beautiful images like this:
+Now you have an RStudio project (that is also a repo) that is a copy of the one in the original repo.
+It's a very small project with a few file.
+`template_script.R` includes the necessary code to create beautiful images like this:
 
 ![Image of trees created using R](images/tree_pao.png)
 
-It uses the [*flametree*](https://github.com/djnavarro/flametree) library created by [Danielle Navarro](https://djnavarro.net/). How it works is not part of the topics of the workshop (sadly!) but it's a good excuse to practice doing pull requests.
+It uses the [*flametree*](https://github.com/djnavarro/flametree) library created by [Danielle Navarro](https://djnavarro.net/).
+How it works is not part of the topics of the workshop (sadly!) but it's a good excuse to practice doing pull requests.
 
 <div class = activity> 
 
@@ -321,9 +325,10 @@ You can run the code if you want :)
 
 </div>
 
-At this point you've made a change in your local repo (that is a copy of the forked repo) and pushed those changes to your remote repo in GitHub. The original repo doesn't know this. 
+At this point you've made a change in your local repo (that is a copy of the forked repo) and pushed those changes to **your** remote repo in GitHub.
+The original repo doesn't know this.
 
-If you want to contribute the changes you made to the original repo, it's time to make a pull request. 
+If you want to contribute the changes you made to the original repo, it's time to make a pull request.
 
 <div class = activity> 
 
@@ -343,7 +348,9 @@ And that it!
 
 </div>
 
-The owner/s of the repo will receive an email. They can review the pull request, comment on it and eventually accept the contribution. When that happen the changes you made will apear in the repo. 
+The owner/s of the repo will receive an email.
+They can review the pull request, comment on it and eventually accept the contribution.
+When that happen the changes you made will appear in the repo.
 
 ## Resources
 
