@@ -49,8 +49,9 @@ Also in your project root you will now see a file called `renv.lock` and a folde
 The former stores version and other information for your R packages (and even the version of R itself), while the latter stores your project library.
 
 If you try to knit the project, you might get a modal saying that you need "an updated version of the markdown package" to render R Markdown.
-Wait, but surely you had all the necessary packages to render R Markdown already; indeed, but not in your project library.
-renv wasn't able to discover that markdown was a dependency of your project so the markdown package was not installed.
+This is actually [a bug in RStudio](https://github.com/rstudio/rstudio/issues/9861).
+renv correctly recorded and installed all the dependencies needed to render the document, but RStudio mistakenly thinks that the markdown package (not the rmarkdown package) is also necessary.
+As a work-around, install the markdown package.
 
 Once this is done, you can keep working on your project as usual, installing, removing and updating packages as you normally would.
 The difference is that now all of that will only affect the project library.
