@@ -61,7 +61,7 @@ docker run -p 8787:8787 \
   rocker/rstudio:4.1.2
 ```
 
-The first time you run this command you'll see something like
+If you didn't download a docker image before, the first time you run this command you'll see something like
 
 ```         
     Unable to find image 'rocker/rstudio:4.1.2' locally
@@ -109,8 +109,8 @@ Anything you do inside the container will be lost once the container is closed.
 Each time you spin up the container it starts as a blank slate.
 You need a way of making sure that files are created in the local machine and are don't disappear with the container.
 
-To do this you need to use an option that maps a local folder to a folder inside the container.
-So let's create a `docker-projects` folder in the local machine and map that folder to `/home/rstudio/projects` in the docker container.
+To do this you need to use an option that maps a local folder in your machine to a folder inside the container.
+So let's create a `docker-projects` folder in the local machine and map that folder to `/home/rstudio/projects` inside the docker container.
 
 ``` bash
 mkdir ~/docker-projects
@@ -120,7 +120,35 @@ docker run -p 8787:8787 \
     rocker/rstudio:4.1.2
 ```
 
-Now you can create files, projects, results, inside the container in `/home/rstudio/projects` and any change will live on in your local machine in `~/docker-projects`.
+<div class = notes> 
+
+Some notes on this new lines:
+
+-   `mkdir ~/docker-projects` creates a new folder in your machine called "docker-projects". The `~` represents the root directory, usually called "home" in Linux distributions. 
+
+-   `-v ~/docker-projects:/home/rstudio/projects` is the command to map a local folder (`~/docker-projects`) to a folder inside the container (`/home/rstudio/projects`). 
+
+</div>
+
+Now you can create files, projects, results, inside the container in `/home/rstudio/projects` (in this case from the File tab in Rstudio) and any change will live on in your local machine in `~/docker-projects`.
+
+<div class = activity>
+
+Run a new container
+
+1. Stop the previous container with Ctrl+C or Command+C.
+2. Run in the terminal
+``` bash
+`mkdir ~/docker-projects
+docker run -p 8787:8787 \
+    -e DISABLE_AUTH=true \
+    -v ~/docker-projects:/home/rstudio/projects \
+    rocker/rstudio:4.1.2
+```
+3.  Once it finishes, go to [localhost:8787](http://localhost:8787/) on your browser of choice.
+4.  Create a new file or folder suing the Files tab in RStudio and check if the new file/folder is also present in the docker-projects folder.
+</div>
+
 
 The ephemeral nature of the docker container is still not resolved, however.
 The container will not "remember" any R package you install while it's running.
@@ -165,7 +193,7 @@ Until now you've use `rocker/rstudio` docker image.
 But if you need to install system dependencies and R Packages you will need to modify this image to install them.
 This is done with the Dockerfile, a set of steps required to build an image.
 
-Since each project should have its own Dockerfile, let's create a file called `Dockerfile` at the root of the demo project and put these lines in:
+Since each project should have its own Dockerfile, let's create a file called `Dockerfile` at the root of the [reproducible project](/reproducibility-with-r/reproducible_project.zip) and put these lines in:
 
 ```         
 FROM rocker/rstudio:4.1.2
@@ -182,7 +210,7 @@ RUN chown -R rstudio . \
 The first line tells docker to base this new image on the `rocker/rstudio:4.2.1` image.
 Then, with that as a base, it will then run the next steps.
 
-The next line set the working directory of the container.
+Next it set the working directory of the container to `/home/rstudio/project`.
 
 The next steps might look weird because it seems to copy the `renv.lock` onto itself.
 The key here is that the `COPY` instruction takes a route in the local machine and copies it into the container.
@@ -195,8 +223,8 @@ The important part here is that it runs `R -e 'source("renv/activate.R"); renv::
 This image doesn't install any system dependency, but if you wanted you could install them using `apt-get`.
 For instance, if your image needed the netcdf library (a meteorology related library), you would add
 
-```         
-RUN apt-get install netcdf-bin -y
+```
+RUN apt-get update && apt-get install netcdf-bin -y
 ```
 
 right after the `FROM` line.
@@ -205,36 +233,35 @@ So, with this Dockerfile you can now actually build a Docker image with `docker 
 For tidyness sake, let's also name this container with the `-t` (tag) option:
 
 ``` bash
-docker build . -t [username]/demo-project
+docker build . -t [username]/reproducible_project
 ```
 
 Where \[username\] is your DockerHub username.
 
-Docker will now go step by step, setting up the image.
+By running the previous command in the terminal, Docker will now go step by step, setting up the image.
 You will see that R will install all the necessary packages using the information in the lockfile.
 
 When it ends it will output something like this.
 
 ```         
-Successfully built 83813dd878c7
-Successfully tagged [username]/demo-project:latest
+ => => naming to docker.io/[username]/reproducible_project 0.0s
 ```
 
 This means that you have a working Docker image in your computer.
-Now what's left to to is to run it with this command
+Now what's left to do is to run it with this command from the terminal:
 
 ``` bash
 docker run --rm  -p 8787:8787 \
     -e DISABLE_AUTH=true \
     -v $(pwd):/home/rstudio/project \
     -v /home/rstudio/project/renv \
-    [username]/demo-project
+    [username]/reproducible_project
 ```
 
 You'll notice that this is very similar to the command used to launch the `rocker/rstudio` container.
 The new bit here is that the line `-v /home/rstudio/project/renv` makes sure that the container does not mount the local `renv` folder.
 
-Now you can go to [localhost:8787](http://localhost:8787/), open the demo_project and knit `report.Rmd`.
+Now you can go to [localhost:8787](http://localhost:8787/), open the reproducible_project and knit `report.Rmd`.
 
 ## Sharing docker
 
@@ -246,6 +273,16 @@ You need con configure your terminal to use your DockerHub account with
 
 ``` bash
 docker login
+```
+
+The terminal will show:
+
+```bash
+Log in with your Docker ID or email address to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com/ to create one.
+You can log in with your password or a Personal Access Token (PAT). Using a limited-scope PAT grants better security and is required for organizations using SSO. Learn more at https://docs.docker.com/go/access-tokens/
+
+Username:
+Password:
 ```
 
 Then, you push your container with
@@ -263,7 +300,7 @@ docker run --rm  -p 8787:8787 \
     -e DISABLE_AUTH=true \
     -v $(pwd):/home/rstudio/project \
     -v /home/rstudio/project/renv \
-    [username]/demo-project
+    [username]/reproducible_project
 ```
 
 <div class=notes>
