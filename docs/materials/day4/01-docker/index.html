@@ -44,7 +44,7 @@
 <meta itemprop="description" content="While renv is nice, it doesn&rsquo;t solve the whole problem, because system dependencies and even the R version itself can change. Another issue is that downloading and installing all the R packages can take a while. Like an hour or more. This is not a deal-breaker, but it&#39; be great to do better. People trying to reproduce work are few and far between, so it&rsquo;s important to make their lives as easy as possible.">
 <meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1814">
+<meta itemprop="wordCount" content="2030">
 
 
 
@@ -213,7 +213,7 @@ Assuming that you&rsquo;ve got docker up and running, you can spin up a virtual 
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run -p 8787:8787 <span style="color:#7f8c8d">\
 </span><span style="color:#7f8c8d"></span>  -e <span style="color:#434f54">DISABLE_AUTH</span><span style="color:#728e00">=</span><span style="color:#728e00">true</span> <span style="color:#7f8c8d">\
 </span><span style="color:#7f8c8d"></span>  rocker/rstudio:4.1.2
-</code></pre></div><p>The first time you run this command you&rsquo;ll see something like</p>
+</code></pre></div><p>If you didn&rsquo;t download a docker image before, the first time you run this command you&rsquo;ll see something like</p>
 <pre><code>    Unable to find image 'rocker/rstudio:4.1.2' locally
    4.1.2: Pulling from rocker/rstudio
 </code></pre><p>Which will inform you of the process of downloading the remote image to your local machine.
@@ -249,7 +249,7 @@ Otherwise, don&rsquo;t.</p>
 </div>
 <div class="figure">
 <img src="images/rstudio-landing.png" alt="Screenshot of a browser in http://localhost:8787/ running RStudio." width="602" />
-<p class="caption"><span id="fig:unnamed-chunk-1"></span>Figure 1: RStudio running inside docker.</p>
+<p class="caption">Figure 1: RStudio running inside docker.</p>
 </div>
 <p>Surprise!
 You&rsquo;ve got RStudio running inside a Docker container.
@@ -259,14 +259,42 @@ By using the <code>rocker/rstudio:4.1.2</code> you fixed the R version to 4.1.2.
 Anything you do inside the container will be lost once the container is closed.
 Each time you spin up the container it starts as a blank slate.
 You need a way of making sure that files are created in the local machine and are don&rsquo;t disappear with the container.</p>
-<p>To do this you need to use an option that maps a local folder to a folder inside the container.
-So let&rsquo;s create a <code>docker-projects</code> folder in the local machine and map that folder to <code>/home/rstudio/projects</code> in the docker container.</p>
+<p>To do this you need to use an option that maps a local folder in your machine to a folder inside the container.
+So let&rsquo;s create a <code>docker-projects</code> folder in the local machine and map that folder to <code>/home/rstudio/projects</code> inside the docker container.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir ~/docker-projects
 docker run -p 8787:8787 <span style="color:#7f8c8d">\
 </span><span style="color:#7f8c8d"></span>    -e <span style="color:#434f54">DISABLE_AUTH</span><span style="color:#728e00">=</span><span style="color:#728e00">true</span> <span style="color:#7f8c8d">\
 </span><span style="color:#7f8c8d"></span>    -v ~/docker-projects:/home/rstudio/projects <span style="color:#7f8c8d">\
 </span><span style="color:#7f8c8d"></span>    rocker/rstudio:4.1.2
-</code></pre></div><p>Now you can create files, projects, results, inside the container in <code>/home/rstudio/projects</code> and any change will live on in your local machine in <code>~/docker-projects</code>.</p>
+</code></pre></div><div class = notes> 
+<p>Some notes on this new lines:</p>
+<ul>
+<li>
+<p><code>mkdir ~/docker-projects</code> creates a new folder in your machine called &ldquo;docker-projects&rdquo;. The <code>~</code> represents the root directory, usually called &ldquo;home&rdquo; in Linux distributions.</p>
+</li>
+<li>
+<p><code>-v ~/docker-projects:/home/rstudio/projects</code> is the command to map a local folder (<code>~/docker-projects</code>) to a folder inside the container (<code>/home/rstudio/projects</code>).</p>
+</li>
+</ul>
+</div>
+<p>Now you can create files, projects, results, inside the container in <code>/home/rstudio/projects</code> (in this case from the File tab in Rstudio) and any change will live on in your local machine in <code>~/docker-projects</code>.</p>
+<div class = activity>
+<p>Run a new container</p>
+<ol>
+<li>Stop the previous container with Ctrl+C or Command+C.</li>
+<li>Run in the terminal</li>
+</ol>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#7f8c8d">`</span>mkdir ~/docker-projects
+docker run -p 8787:8787 <span style="color:#7f8c8d">\
+</span><span style="color:#7f8c8d"></span>    -e <span style="color:#434f54">DISABLE_AUTH</span><span style="color:#728e00">=</span><span style="color:#728e00">true</span> <span style="color:#7f8c8d">\
+</span><span style="color:#7f8c8d"></span>    -v ~/docker-projects:/home/rstudio/projects <span style="color:#7f8c8d">\
+</span><span style="color:#7f8c8d"></span>    rocker/rstudio:4.1.2
+</code></pre></div><ol start="3">
+<li>Once it finishes, go to 
+<a href="http://localhost:8787/" target="_blank" rel="noopener">localhost:8787</a> on your browser of choice.</li>
+<li>Create a new file or folder suing the Files tab in RStudio and check if the new file/folder is also present in the docker-projects folder.</li>
+</ol>
+</div>
 <p>The ephemeral nature of the docker container is still not resolved, however.
 The container will not &ldquo;remember&rdquo; any R package you install while it&rsquo;s running.
 Likewise, it will not preserve system dependencies.
@@ -298,7 +326,8 @@ You might even forget that the container is running.</p>
 <p>Until now you&rsquo;ve use <code>rocker/rstudio</code> docker image.
 But if you need to install system dependencies and R Packages you will need to modify this image to install them.
 This is done with the Dockerfile, a set of steps required to build an image.</p>
-<p>Since each project should have its own Dockerfile, let&rsquo;s create a file called <code>Dockerfile</code> at the root of the demo project and put these lines in:</p>
+<p>Since each project should have its own Dockerfile, let&rsquo;s create a file called <code>Dockerfile</code> at the root of the 
+<a href="/reproducibility-with-r/reproducible_project.zip">reproducible project</a> and put these lines in:</p>
 <pre><code>FROM rocker/rstudio:4.1.2
 
 WORKDIR /home/rstudio/project
@@ -310,7 +339,7 @@ RUN chown -R rstudio . \
  &amp;&amp; sudo -u rstudio R -e 'source(&quot;renv/activate.R&quot;); renv::restore()'
 </code></pre><p>The first line tells docker to base this new image on the <code>rocker/rstudio:4.2.1</code> image.
 Then, with that as a base, it will then run the next steps.</p>
-<p>The next line set the working directory of the container.</p>
+<p>Next it set the working directory of the container to <code>/home/rstudio/project</code>.</p>
 <p>The next steps might look weird because it seems to copy the <code>renv.lock</code> onto itself.
 The key here is that the <code>COPY</code> instruction takes a route in the local machine and copies it into the container.
 <code>COPY renv.lock renv.lock</code> takes the <strong>local</strong> <code>renv.lock</code> file and copies it into a <code>renv.lock</code> file inside the container.
@@ -319,28 +348,27 @@ The two files being copied are the lockfile and the renv bootstrap script that w
 The important part here is that it runs <code>R -e 'source(&quot;renv/activate.R&quot;); renv::restore()</code>, which bootstraps renv and restores the project library.</p>
 <p>This image doesn&rsquo;t install any system dependency, but if you wanted you could install them using <code>apt-get</code>.
 For instance, if your image needed the netcdf library (a meteorology related library), you would add</p>
-<pre><code>RUN apt-get install netcdf-bin -y
+<pre><code>RUN apt-get update &amp;&amp; apt-get install netcdf-bin -y
 </code></pre><p>right after the <code>FROM</code> line.</p>
 <p>So, with this Dockerfile you can now actually build a Docker image with <code>docker build</code>.
 For tidyness sake, let&rsquo;s also name this container with the <code>-t</code> (tag) option:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build . -t <span style="color:#728e00">[</span>username<span style="color:#728e00">]</span>/demo-project
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker build . -t <span style="color:#728e00">[</span>username<span style="color:#728e00">]</span>/reproducible_project
 </code></pre></div><p>Where [username] is your DockerHub username.</p>
-<p>Docker will now go step by step, setting up the image.
+<p>By running the previous command in the terminal, Docker will now go step by step, setting up the image.
 You will see that R will install all the necessary packages using the information in the lockfile.</p>
 <p>When it ends it will output something like this.</p>
-<pre><code>Successfully built 83813dd878c7
-Successfully tagged [username]/demo-project:latest
+<pre><code> =&gt; =&gt; naming to docker.io/[username]/reproducible_project 0.0s
 </code></pre><p>This means that you have a working Docker image in your computer.
-Now what&rsquo;s left to to is to run it with this command</p>
+Now what&rsquo;s left to do is to run it with this command from the terminal:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run --rm  -p 8787:8787 <span style="color:#7f8c8d">\
 </span><span style="color:#7f8c8d"></span>    -e <span style="color:#434f54">DISABLE_AUTH</span><span style="color:#728e00">=</span><span style="color:#728e00">true</span> <span style="color:#7f8c8d">\
 </span><span style="color:#7f8c8d"></span>    -v <span style="color:#728e00">$(</span><span style="color:#728e00">pwd</span><span style="color:#728e00">)</span>:/home/rstudio/project <span style="color:#7f8c8d">\
 </span><span style="color:#7f8c8d"></span>    -v /home/rstudio/project/renv <span style="color:#7f8c8d">\
-</span><span style="color:#7f8c8d"></span>    <span style="color:#728e00">[</span>username<span style="color:#728e00">]</span>/demo-project
+</span><span style="color:#7f8c8d"></span>    <span style="color:#728e00">[</span>username<span style="color:#728e00">]</span>/reproducible_project
 </code></pre></div><p>You&rsquo;ll notice that this is very similar to the command used to launch the <code>rocker/rstudio</code> container.
 The new bit here is that the line <code>-v /home/rstudio/project/renv</code> makes sure that the container does not mount the local <code>renv</code> folder.</p>
 <p>Now you can go to 
-<a href="http://localhost:8787/" target="_blank" rel="noopener">localhost:8787</a>, open the demo_project and knit <code>report.Rmd</code>.</p>
+<a href="http://localhost:8787/" target="_blank" rel="noopener">localhost:8787</a>, open the reproducible_project and knit <code>report.Rmd</code>.</p>
 
 
 
@@ -356,6 +384,12 @@ But it&rsquo;s only accessible to you on your machine.
 You need to make it public so that anyone can pull it, exactly how you pulled <code>rocker/rstudio</code>.</p>
 <p>You need con configure your terminal to use your DockerHub account with</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker login
+</code></pre></div><p>The terminal will show:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Log in with your Docker ID or email address to push and pull images from Docker Hub. If you don<span style="color:#a61717">&#39;</span>t have a Docker ID, head over to https://hub.docker.com/ to create one.
+You can log in with your password or a Personal Access Token <span style="color:#728e00">(</span>PAT<span style="color:#728e00">)</span>. Using a limited-scope PAT grants better security and is required <span style="color:#728e00">for</span> organizations using SSO. Learn more at https://docs.docker.com/go/access-tokens/
+
+Username:
+Password:
 </code></pre></div><p>Then, you push your container with</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker push <span style="color:#728e00">[</span>username<span style="color:#728e00">]</span>/demo-project
 </code></pre></div><p>Once the image is uploaded, you can go to your DockerHub repositories.</p>
@@ -364,7 +398,7 @@ You need to make it public so that anyone can pull it, exactly how you pulled <c
 </span><span style="color:#7f8c8d"></span>    -e <span style="color:#434f54">DISABLE_AUTH</span><span style="color:#728e00">=</span><span style="color:#728e00">true</span> <span style="color:#7f8c8d">\
 </span><span style="color:#7f8c8d"></span>    -v <span style="color:#728e00">$(</span><span style="color:#728e00">pwd</span><span style="color:#728e00">)</span>:/home/rstudio/project <span style="color:#7f8c8d">\
 </span><span style="color:#7f8c8d"></span>    -v /home/rstudio/project/renv <span style="color:#7f8c8d">\
-</span><span style="color:#7f8c8d"></span>    <span style="color:#728e00">[</span>username<span style="color:#728e00">]</span>/demo-project
+</span><span style="color:#7f8c8d"></span>    <span style="color:#728e00">[</span>username<span style="color:#728e00">]</span>/reproducible_project
 </code></pre></div><div class=notes>
 <p>Clean up your Docker cache</p>
 <p>Docker images can be rather heavy and they tend to accumulate.
