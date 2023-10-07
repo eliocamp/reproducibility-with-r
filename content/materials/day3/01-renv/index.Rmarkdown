@@ -170,11 +170,11 @@ Restore an environment
 
 1. Download this [reproducible project](/reproducibility-with-r/reproducible_project.zip). 
 
-2. Open the project and run `renv::status()` in the R console. What's the stauts of the packages?
+2. Open the project and run `renv::status()` in the R console. What's the status of the packages?
 
 3. Run `renv::restore()` in the R console and proceed. 
 
-4. Run `renv::status()` again to check that the project is in a consisten state. 
+4. Run `renv::status()` again to check that the project is in a consistent state. 
 
 3. Render `analysis/report.Rmd` to make sure that it worked.
 
