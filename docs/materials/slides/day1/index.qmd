@@ -10,11 +10,42 @@ format:
       data-background-position: "98% 95%"
 ---
 
+## Welcome
+
+::: {.incremental}
+
+-   🗓️ The course will be held online, from 3 to 6 pm (Berlin time), in October (9th-12th).
+    -   ⏳with pauses every hour!
+-   📚Materiales: everything lives here: <https://eliocamp.github.io/reproducibility-with-r>
+-   ❓Check points (how familiar you with \_\_\_?)
+-   🏃Exercises:
+    -   Follow along
+    -   breakout rooms
+-   📑Homework + mini reprohack challenges (optional)
+
+:::
+
+--------------------
+
 # Day 1
+
+:::: {.columns}
+
+::: {.column width="50%"}
 
 1.  [Introduction](/reproducibility-with-r/materials/day1/01-introduction/)
 2.  [Project structure](/reproducibility-with-r/materials/day1/02-projects/)
-3.  [RMarkdown](/reproducibility-with-r/materials/day1/03-rmarkdown/)
+3.  [RMarkdown](/reproducibility-with-r/materials/day1/03-rmarkdown/) 
+
+:::
+
+::: {.column width="50%"}
+
+![](logo.png) 
+
+::: 
+
+:::: 
 
 ------------------------------------------------------------------------
 
