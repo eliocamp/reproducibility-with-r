@@ -17,7 +17,7 @@ format:
 -   🗓️ The course will be held online, from 3 to 6 pm (Berlin time), in October (9th-12th).
     -   ⏳with pauses every hour!
 -   📚Materiales: everything lives here: <https://eliocamp.github.io/reproducibility-with-r>
--   ❓Check points (how familiar you with \_\_\_?)
+-   ❓Check points (how familiar are you with \_\_\_?)
 -   🏃Exercises:
     -   Follow along
     -   breakout rooms
@@ -25,7 +25,7 @@ format:
 
 :::
 
---------------------
+------------------------------------------------------------------------
 
 # Day 1
 
@@ -35,17 +35,17 @@ format:
 
 1.  [Introduction](/reproducibility-with-r/materials/day1/01-introduction/)
 2.  [Project structure](/reproducibility-with-r/materials/day1/02-projects/)
-3.  [RMarkdown](/reproducibility-with-r/materials/day1/03-rmarkdown/) 
+3.  [RMarkdown](/reproducibility-with-r/materials/day1/03-rmarkdown/)
 
 :::
 
 ::: {.column width="50%"}
 
-![](logo.png) 
+![](logo.png)
 
-::: 
+:::
 
-:::: 
+::::
 
 ------------------------------------------------------------------------
 
@@ -65,21 +65,17 @@ format:
 
 <https://rviews.rstudio.com/2018/01/18/package-management-for-reproducible-r-code/>
 
-
 ------------------------------------------------------------------------
 
 ## Ejercise
 
 **Describe what these files are**
 
+-   `data/raw/madrid-minimum_temperature.csv`
 
-* `data/raw/madrid-minimum_temperature.csv`
+-   `scripts/02-compute-mean_temperature.R`
 
-* `scripts/02-compute-mean_temperature.R`
-
-* `analysis/01-madrid-minimum_temperature-descriptive_statistics.Rmd`
-
-
+-   `analysis/01-madrid-minimum_temperature-descriptive_statistics.Rmd`
 
 ------------------------------------------------------------------------
 
@@ -87,15 +83,15 @@ format:
 
 **Come up with good file names and folders for**
 
-* a dataset of cats with columns for weight, length, tail length, fur colour(s), fur type and name.
+-   a dataset of cats with columns for weight, length, tail length, fur colour(s), fur type and name.
 
-* a script that downloads data from Spotify.
+-   a script that downloads data from Spotify.
 
-* a scripts that cleans up data.
+-   a scripts that cleans up data.
 
-* a scripts that fits a linear discriminant model and saves it to a file.
+-   a scripts that fits a linear discriminant model and saves it to a file.
 
-* the .Rds file in which that model is stored.
+-   the .Rds file in which that model is stored.
 
 ------------------------------------------------------------------------
 
