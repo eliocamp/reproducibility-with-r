@@ -81,7 +81,7 @@ format:
 
 ## Exercise
 
-**Come up with good file names and folders for**
+**Come up with good file names and folders for (choose two)**
 
 -   a dataset of cats with columns for weight, length, tail length, fur colour(s), fur type and name.
 
