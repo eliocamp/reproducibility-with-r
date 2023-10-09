@@ -111,7 +111,7 @@ Permissions     Before the technical issues of sharing data there are the bureau
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://eliocamp.github.io/reproducibility-with-r/materials/day1/03-rmarkdown/</guid>
-      <description>R Markdown files     An R Markdown file is a plain text file, with some rules and special syntax that allow you to write code and text together. When it is &amp;ldquo;knitted,&amp;rdquo; the code will be evaluated and executed and the text formatted so that it creates a reproducible report or document that is nice to read and contains all your work.
+      <description>R Markdown files     An R Markdown file is a plain text file, with some rules and special syntax that allow you to write code and text together. When it is “knitted,” the code will be evaluated and executed and the text formatted so that it creates a reproducible report or document that is nice to read and contains all your work.
 This is really critical to reproducibility since it automates the creation of a paper or report, which also has the side effect of saving time.</description>
     </item>
     
