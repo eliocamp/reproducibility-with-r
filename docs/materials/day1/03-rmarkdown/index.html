@@ -493,9 +493,9 @@ You need to have a folder in your project with these files:</p>
     <span style="color:#434f54">pandoc_args</span>: 
       - <span style="color:#7f8c8d">&#34;--wrap=none&#34;</span>
 <span style="color:#434f54">---</span>
-</code></pre></div><p>Take care to repsect the identation and that each parameter is in its own line.
-This new line will tell to knit to use the <code>agujournaltemplate.tex</code> file as template.
-The template needs some tweaking, though.</p>
+</code></pre></div><p>This new line will tell to knit to use the <code>agujournaltemplate.tex</code> file as template.
+The template needs some tweaking, though.
+Take care to repsect the identation and that each parameter is in its own line.</p>
 </li>
 <li>
 <p>Set the global option <code>echo = FALSE</code></p>
@@ -518,10 +518,6 @@ The template needs some tweaking, though.</p>
 </li>
 <li>
 <p>Let’s also include the content of the R Markdown file. In the LaTeX template, go to right before <code>\end{documnet} (around line 174) and add ``</code>$body$<code>`` (without the backticks). The special variable</code>body` will be replaced by the actual rendered contents of the R Markdown file.</p>
-</li>
-<li>
-<p>Also, change <code>knitr::opts_chunk$set(echo = TRUE)</code> to <code>knitr::opts_chunk$set(echo = FALSE)</code>. This is because the latex template doesn&rsquo;t yet define the necessary environment to display code blocks, which is generally not necessary in journal articles. If you need to show code blocks, you can add <code>$highlighting-macros$</code> (see this 
-<a href="https://stackoverflow.com/a/51630795/4909767" target="_blank" rel="noopener">StackOverflow answer</a>).</p>
 </li>
 <li>
 <p>Knit again!</p>
