@@ -65,6 +65,38 @@ format:
 
 <https://rviews.rstudio.com/2018/01/18/package-management-for-reproducible-r-code/>
 
+
+------------------------------------------------------------------------
+
+## Ejercise
+
+**Describe what these files are**
+
+
+* `data/raw/madrid-minimum_temperature.csv`
+
+* `scripts/02-compute-mean_temperature.R`
+
+* `analysis/01-madrid-minimum_temperature-descriptive_statistics.Rmd`
+
+
+
+------------------------------------------------------------------------
+
+## Ejercise
+
+**Come up with good file names and folders for**
+
+* a dataset of cats with columns for weight, length, tail length, fur colour(s), fur type and name.
+
+* a script that downloads data from Spotify.
+
+* a scripts that cleans up data.
+
+* a scripts that fits a linear discriminant model and saves it to a file.
+
+* the .Rds file in which that model is stored.
+
 ------------------------------------------------------------------------
 
 ## Do you use RStudio projects?
