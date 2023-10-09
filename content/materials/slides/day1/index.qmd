@@ -67,7 +67,7 @@ format:
 
 ------------------------------------------------------------------------
 
-## Ejercise
+## Exercise
 
 **Describe what these files are**
 
@@ -79,7 +79,7 @@ format:
 
 ------------------------------------------------------------------------
 
-## Ejercise
+## Exercise
 
 **Come up with good file names and folders for**
 
