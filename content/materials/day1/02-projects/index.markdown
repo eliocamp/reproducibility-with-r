@@ -61,11 +61,11 @@ Use slugs (short descriptions of what's inside).
 
 Describe what do you think are the contents of these files:
 
--   `data/raw/madrid-minimum_temperature.csv`
+-   `data/raw/madrid_minimum-temperature.csv`
 
--   `scripts/02-compute-mean_temperature.R`
+-   `scripts/02_compute_mean-temperature.R`
 
--   `analysis/01-madrid-minimum_temperature-descriptive_statistics.Rmd`
+-   `analysis/01_madrid_minimum-temperature_descriptive-statistics.Rmd`
 </div>
 
 <div class = activity> 

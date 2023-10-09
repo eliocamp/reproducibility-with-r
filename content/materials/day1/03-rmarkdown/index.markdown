@@ -286,7 +286,8 @@ Also, it's not always mandatory to submit your paper using the journal template.
 Adapting a template
 
 1. Create a new R Markdown file using PDF as a output format and save it into your project (for example, `paper.Rmd`). 
-1. Download the AGU Geophysical Research Letters template from [here](https://www.agu.org/-/media/files/publications/august-2022-latex-templates.zip). Inside the file there's a `Feb-3-22-latex-templates` folder with 8 files. Extract all those files into the same folder you saved the R Markdown. 
+
+2. Download the AGU Geophysical Research Letters template from [here](https://www.agu.org/-/media/files/publications/august-2022-latex-templates.zip). Inside the file there's a `Feb-3-22-latex-templates` folder with 8 files. Extract all those files into the same folder you saved the R Markdown. 
 You need to have a folder in your project with these files:
 
     ```
@@ -319,15 +320,15 @@ You need to have a folder in your project with these files:
     ---
     ```
 
+    Take care to repsect the identation and that each parameter is in its own line. 
     This new line will tell to knit to use the `agujournaltemplate.tex` file as template. 
     The template needs some tweaking, though.
-    Take care to repsect the identation and that each parameter is in its own line. 
     
 4. Set the global option `echo = FALSE` 
 
     To do this, look for the line `knitr::opts_chunk$set(echo = TRUE)` and change it to `knitr::opts_chunk$set(echo = FALSE)`
 
-4. In the `agujournaltemplate.tex` file, add `\usepackage{hyperref}` in line 63 (or anywhere before `\begin{document}`. Also, remove  remove everything from line 174 (around `%  BODY TEXT` to line 413 (right before `\end{document}`).
+5. In the `agujournaltemplate.tex` file, add `\usepackage{hyperref}` in line 63 (or anywhere before `\begin{document}`. Also, remove  remove everything from line 174 (around `%  BODY TEXT` to line 413 (right before `\end{document}`).
 
 5. Knit! 
     
@@ -340,13 +341,15 @@ You need to have a folder in your project with these files:
     Now, the title in the R Markdown file and the pdf are the same.
     `` `$title$` `` in the LaTeX template will be replaced by the value of `title` supplied by the YAML header.
   
-8. Let's also include the content of the R Markdown file. In the LaTeX template, go to right before `\end{documnet} (around line 174) and add `` `$body$` `` (without the backticks). The special variable `body` will be replaced by the actual rendered contents of the R Markdown file.
+8. Let's also include the content of the R Markdown file. In the LaTeX template, go to right before `\end{documnet} (around line 174) and add `` `$body$` `` (without the backticks). The special variable `body` will be replaced by the actual rendered contents of the R Markdown file. 
+
+9. Also, change `knitr::opts_chunk$set(echo = TRUE)` to `knitr::opts_chunk$set(echo = FALSE)`. This is because the latex template doesn't yet define the necessary environment to display code blocks, which is generally not necessary in journal articles. If you need to show code blocks, you can add `$highlighting-macros$` (see this [StackOverflow answer](https://stackoverflow.com/a/51630795/4909767)). 
 
 9. Knit again! 
    
    This time you'll see the sample R Markdown document in the PDF. 
 
-8. You can add new options to the YAML header and then use the same trick so they are used by the LaTeX template. For example, add a new option called "abstract" and write some text, like this:
+10. You can add new options to the YAML header and then use the same trick so they are used by the LaTeX template. For example, add a new option called "abstract" and write some text, like this:
 
     ```YAML
     ---
@@ -365,9 +368,9 @@ You need to have a folder in your project with these files:
     Then, in the LaTeX template search for `[ enter your Abstract here ]` (~line 166) and replace it with `` `$abstract$` `` (without backticks).
 
 
-9. One final knit to see the result!
+11. One final knit to see the result!
 
-10. (Optional) Add more variables, such as a Plain Language Summary, author, mail of the corresponding author.
+12. (Optional) Add more variables, such as a Plain Language Summary, author, mail of the corresponding author.
 
 Having problems? You can watch a video on how to solve this activity [here](https://www.youtube.com/watch?v=bk3mcRIJLqc) and follow along (the video was made with an slightly older version of the template but everything is almost the same except for the precise line numbers).
 
@@ -390,3 +393,4 @@ You can read more in [the documentation](https://pandoc.org/MANUAL.html#template
 [R Markdown: The Definitive Guide](https://bookdown.org/yihui/rmarkdown/)
 
 [rticles package documentation](https://github.com/rstudio/rticles)
+
