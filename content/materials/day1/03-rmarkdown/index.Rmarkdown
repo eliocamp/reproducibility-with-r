@@ -53,11 +53,11 @@ What about Quarto?
 
 <a href = "https://quarto.org/">Quarto</a> is a new implementation of this same concept. 
 It's billed as a "next generation version of R Markdown" because it incorporates a lot of lessons learned from its development and adds other features. 
-It also doesn't need R to run, so it's more langauge agnostic. 
+It also doesn't need R to run, so it's more language agnostic. 
 
 However, Quarto is still missing the large collection of scientific journal templates offered by the rticles package.
 
-Many of the freatuers and syntax shown here work with little or no changes in Quarto. 
+Many of the features and syntax shown here work with little or no changes in Quarto. 
 </div>
 
 ### File structure
@@ -239,6 +239,26 @@ RStudio Visual editor
 Recent versions of RStudio include a [Visual Editor](https://rstudio.github.io/visual-markdown-editing/) which allows you to write Markdown markup, add citations, tables, etc. with a friendly GUI.
 
 </div>
+
+### Managing references
+
+If you are here to use rmarkdown to write papers or reports, you may need to add references to other papers or sources. Similarly to LaTeX, you'll need a .bib file with all the references you want to include in the document. While we don't have time to explore tools to create and manage this type of file, we recommend you to explore [Zotero](https://www.zotero.org/) (open source) or [Mendeley](https://www.mendeley.com/). 
+
+Provided you have the `references.bib` file in your project, you need to include that in the yaml of the file:
+
+``` yaml
+---
+title: "My first markdown"
+output: 
+  pdf_document
+bibliography: references.bib
+---
+```
+
+Each reference will have a key that defines it. 
+To insert a reference with, use `@key`, or `[@key]` or `[@key; @key2]` to insert them inside parenthesis. 
+
+It is also possible to use the LaTeX syntax but we prefer the markdown sintax to be able to knit the report to many type of outputs. 
 
 ## R Markdown Templates
 
