@@ -45,7 +45,7 @@
 This is really critical to reproducibility since it automates the creation of a paper or report, which also has the side effect of saving time.">
 <meta itemprop="datePublished" content="2023-10-01T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2510">
+<meta itemprop="wordCount" content="2559">
 
 
 
@@ -236,7 +236,7 @@ They will be evaluated in order and any output will be inserted in the output do
 <h4 id="header">Header
   <a href="#header"></a>
 </h4>
-<p>The header is a series of instructions organized between three dashes (<code>---</code>) that define the global properties of the document, such as the title, the output format, authorship information, etc..
+<p>The header is a series of instructions organized between three dashes (<code>---</code>) that define the global properties of the document, such as the title, the output format, authorship information, etc.
 You can also change options associated with the output format, such as the style of the table of contents or index.
 The heather will grow much much larger as you start using templates and customised reports.</p>
 <p>The YAML format allows you to define hierarchical lists in a humanly readable way.
@@ -382,7 +382,9 @@ You can start typing “fig.” inside the <code>{ }</code> to explore the optio
       <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
     </svg></a>
 </h3>
-<p>If you are here to use rmarkdown to write papers or reports, you may need to add references to other papers or sources. Similarly to LaTeX, you’ll need a .bib file with all the references you want to include in the document. While we don’t have time to explore tools to create and manage this type of file, we recommend you to explore 
+<p>If you are here to use rmarkdown to write papers or reports, you may need to add references to other papers or sources.
+Similarly to LaTeX, you’ll need a .bib file with all the references you want to include in the document.
+While we don’t have time to explore tools to create and manage this type of file, we recommend you to explore 
 <a href="https://www.zotero.org/" target="_blank" rel="noopener">Zotero</a> (open source) or 
 <a href="https://www.mendeley.com/" target="_blank" rel="noopener">Mendeley</a>.</p>
 <p>Provided you have the <code>references.bib</code> file in your project, you need to include that in the yaml of the file:</p>
@@ -394,7 +396,7 @@ You can start typing “fig.” inside the <code>{ }</code> to explore the optio
 <span style="color:#434f54">---</span>
 </code></pre></div><p>Each reference will have a key that defines it.
 To insert a reference with, use <code>@key</code>, or <code>[@key]</code> or <code>[@key; @key2]</code> to insert them inside parenthesis.</p>
-<p>It is also possible to use the LaTeX syntax but we prefer the markdown sintax to be able to knit the report to many type of outputs.</p>
+<p>It is also possible to use the LaTeX syntax but we prefer the markdown syntax to be able to knit the report to many type of outputs.</p>
 
 
 
@@ -493,9 +495,9 @@ You need to have a folder in your project with these files:</p>
     <span style="color:#434f54">pandoc_args</span>: 
       - <span style="color:#7f8c8d">&#34;--wrap=none&#34;</span>
 <span style="color:#434f54">---</span>
-</code></pre></div><p>This new line will tell to knit to use the <code>agujournaltemplate.tex</code> file as template.
-The template needs some tweaking, though.
-Take care to repsect the identation and that each parameter is in its own line.</p>
+</code></pre></div><p>Take care to respect the identation and that each parameter is in its own line.
+This new line will tell to knit to use the <code>agujournaltemplate.tex</code> file as template.
+The template needs some tweaking, though.</p>
 </li>
 <li>
 <p>Set the global option <code>echo = FALSE</code></p>
@@ -517,7 +519,11 @@ Take care to repsect the identation and that each parameter is in its own line.<
 <code>`$title$`</code> in the LaTeX template will be replaced by the value of <code>title</code> supplied by the YAML header.</p>
 </li>
 <li>
-<p>Let’s also include the content of the R Markdown file. In the LaTeX template, go to right before <code>\end{documnet} (around line 174) and add ``</code>$body$<code>`` (without the backticks). The special variable</code>body` will be replaced by the actual rendered contents of the R Markdown file.</p>
+<p>Let’s also include the content of the R Markdown file. In the LaTeX template, go to right before <code>\end{docunent}</code> (around line 174) and add <code>`$body$`</code> (without the backticks). The special variable <code>body</code> will be replaced by the actual rendered contents of the R Markdown file.</p>
+</li>
+<li>
+<p>Also, change <code>knitr::opts_chunk$set(echo = TRUE)</code> to <code>knitr::opts_chunk$set(echo = FALSE)</code>. This is because the latex template doesn’t yet define the necessary environment to display code blocks, which is generally not necessary in journal articles. If you need to show code blocks, you can add <code>`$highlighting-macros$`</code> (see this 
+<a href="https://stackoverflow.com/a/51630795/4909767" target="_blank" rel="noopener">StackOverflow answer</a>).</p>
 </li>
 <li>
 <p>Knit again!</p>
