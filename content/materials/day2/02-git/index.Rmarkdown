@@ -48,7 +48,7 @@ With practice and depending on how do you work, you will find a comfortable midd
 
 So, we mentioned `add` and `commit`, these are git commands.
 If you have experience working with the command line you could use git from there, but the same commands can be executed from a GUI like [GitHub Desktop](https://desktop.github.com/) or [GitKraken](https://www.gitkraken.com/).
-RStudio also provides a basic GUI for git, which we are goint to use in this workshop.
+RStudio also provides a basic GUI for git, which we are going to use in this workshop.
 
 <div class = notes> 
 
@@ -69,7 +69,7 @@ For this workshop we are going to use [GitHub](https://www.github.com) to host r
 Let's imagine we have a local repository, we made some commits and we want to send those changes to the remote repository (we'll how to create the remote repository later).
 For that we **push** the commits to the remote repository and the two repos are "up to date".
 
-If a teammate changes a file and pushes the changes it to the remote repository, your local repo will be "outdated".
+If a team-mate changes a file and pushes the changes it to the remote repository, your local repo will be "outdated".
 To download those new commits from the remote repository you **pull** the commits.
 
 ![Concept model of a workflow using RStudio projects and git. Files are added to the staging area, and then commited to the local repository. You can push commits to the remote repository and pull new commits to your computer.](images/local_remote.png)
@@ -275,7 +275,7 @@ This will let the owner of the original repo that you made some changes that you
 The owner can then accept, reject or ask for modifications.
 Once they accept your Pull Request, your modifications will be safe in the original repository.
 
-![Concep model of the remote workflow. A foreign remote repository can be forked to an owned remote repository with a "fork". The remote repository is copied into a local repository with a "clone". Files inside the local repository and the remote repository are synced with push and pull. The owned remote repository can be merged into the foreign remote repository with a pull request.](images/pull-request.png)
+![Concept model of the remote workflow. A foreign remote repository can be forked to an owned remote repository with a "fork". The remote repository is copied into a local repository with a "clone". Files inside the local repository and the remote repository are synced with push and pull. The owned remote repository can be merged into the foreign remote repository with a pull request.](images/pull-request.png)
 
 ### Let's plant some trees
 

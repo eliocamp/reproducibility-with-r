@@ -29,7 +29,7 @@ Get the demo project
 You'll notice that R fails to render the file with an error that reads:
 
 
-```vervatin
+```default
 Quitting from lines 9-10 [setup] (report.Rmd)
 
 Error in `file()`:

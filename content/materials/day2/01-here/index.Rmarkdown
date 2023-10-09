@@ -31,7 +31,7 @@ knitr::opts_knit$set(root.dir = here::here("static/demo_project"))
 
 You'll notice that R fails to render the file with an error that reads:
 
-```{vervatin}
+```{verbatim}
 Quitting from lines 9-10 [setup] (report.Rmd)
 
 Error in `file()`:
