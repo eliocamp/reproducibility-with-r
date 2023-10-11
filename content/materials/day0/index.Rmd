@@ -149,8 +149,17 @@ The core steps are:
 
 ## Docker
 
-On the third day we show the basics of docker.
+On the fourth day we show the basics of docker.
 Instructions on how to install it depend on your operating system.
+
+On the fourth day we show the basics of docker.
+Instructions on how to install it depend on your operating system.
+
+If you're on Windows, you need to enable hardware virtualisation. 
+This needs to be enabled on the BIOS ([how to do this varies between manufacturers](https://bce.berkeley.edu/enabling-virtualization-in-your-pc-bios.html)) and as a Windows' setting. 
+Search for "Turn Windows Features on and off" and make sure that "Virtual Machine Platform",  "Windows Hypervisor Platform" and "Windows Subsystem for Linux" are enabled. 
+For more details, check [this documentation](https://docs.docker.com/desktop/troubleshoot/topics/#virtualization). 
+
 Go to <https://docs.docker.com/get-docker/> and follow the instructions.
 
 If you're on Linux, you need `sudo` to run docker unless you follow [this guide](https://docs.docker.com/engine/install/linux-postinstall/), which is recommended.
