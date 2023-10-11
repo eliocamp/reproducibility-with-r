@@ -124,13 +124,13 @@ docker run -p 8787:8787 \
 
 Some notes on this new lines:
 
--   `mkdir ~/docker-projects` creates a new folder in your machine called "docker-projects". The `~` represents the root directory, usually called "home" in Linux distributions. 
+-   `mkdir ~/docker-projects` creates a new folder in your machine called "docker-projects". The `~` represents the home directory, which is the My Documents folder in Windows and `/home/<username>` on Linux.
 
 -   `-v ~/docker-projects:/home/rstudio/projects` is the command to map a local folder (`~/docker-projects`) to a folder inside the container (`/home/rstudio/projects`). 
 
 </div>
 
-Now you can create files, projects, results, inside the container in `/home/rstudio/projects` (in this case from the File tab in Rstudio) and any change will live on in your local machine in `~/docker-projects`.
+Now you can create files, projects, results, inside the container in `/home/rstudio/projects` (in this case from the Files tab in Rstudio) and any change will live on in your local machine in `~/docker-projects`.
 
 <div class = activity>
 
@@ -139,7 +139,7 @@ Run a new container
 1. Stop the previous container with Ctrl+C or Command+C.
 2. Run in the terminal
 ``` bash
-`mkdir ~/docker-projects
+mkdir ~/docker-projects
 docker run -p 8787:8787 \
     -e DISABLE_AUTH=true \
     -v ~/docker-projects:/home/rstudio/projects \
@@ -148,7 +148,6 @@ docker run -p 8787:8787 \
 3.  Once it finishes, go to [localhost:8787](http://localhost:8787/) on your browser of choice.
 4.  Create a new file or folder suing the Files tab in RStudio and check if the new file/folder is also present in the docker-projects folder.
 </div>
-
 
 The ephemeral nature of the docker container is still not resolved, however.
 The container will not "remember" any R package you install while it's running.
@@ -223,7 +222,7 @@ The important part here is that it runs `R -e 'source("renv/activate.R"); renv::
 This image doesn't install any system dependency, but if you wanted you could install them using `apt-get`.
 For instance, if your image needed the netcdf library (a meteorology related library), you would add
 
-```
+```         
 RUN apt-get update && apt-get install netcdf-bin -y
 ```
 
@@ -277,7 +276,7 @@ docker login
 
 The terminal will show:
 
-```bash
+``` bash
 Log in with your Docker ID or email address to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com/ to create one.
 You can log in with your password or a Personal Access Token (PAT). Using a limited-scope PAT grants better security and is required for organizations using SSO. Learn more at https://docs.docker.com/go/access-tokens/
 

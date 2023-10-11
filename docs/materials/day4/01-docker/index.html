@@ -44,7 +44,7 @@
 <meta itemprop="description" content="While renv is nice, it doesn&rsquo;t solve the whole problem, because system dependencies and even the R version itself can change. Another issue is that downloading and installing all the R packages can take a while. Like an hour or more. This is not a deal-breaker, but it&#39; be great to do better. People trying to reproduce work are few and far between, so it&rsquo;s important to make their lives as easy as possible.">
 <meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2030">
+<meta itemprop="wordCount" content="2036">
 
 
 
@@ -249,7 +249,7 @@ Otherwise, don&rsquo;t.</p>
 </div>
 <div class="figure">
 <img src="images/rstudio-landing.png" alt="Screenshot of a browser in http://localhost:8787/ running RStudio." width="602" />
-<p class="caption">Figure 1: RStudio running inside docker.</p>
+<p class="caption"><span id="fig:unnamed-chunk-1"></span>Figure 1: RStudio running inside docker.</p>
 </div>
 <p>Surprise!
 You&rsquo;ve got RStudio running inside a Docker container.
@@ -270,21 +270,21 @@ docker run -p 8787:8787 <span style="color:#7f8c8d">\
 <p>Some notes on this new lines:</p>
 <ul>
 <li>
-<p><code>mkdir ~/docker-projects</code> creates a new folder in your machine called &ldquo;docker-projects&rdquo;. The <code>~</code> represents the root directory, usually called &ldquo;home&rdquo; in Linux distributions.</p>
+<p><code>mkdir ~/docker-projects</code> creates a new folder in your machine called &ldquo;docker-projects&rdquo;. The <code>~</code> represents the home directory, which is the My Documents folder in Windows and <code>/home/&lt;username&gt;</code> on Linux.</p>
 </li>
 <li>
 <p><code>-v ~/docker-projects:/home/rstudio/projects</code> is the command to map a local folder (<code>~/docker-projects</code>) to a folder inside the container (<code>/home/rstudio/projects</code>).</p>
 </li>
 </ul>
 </div>
-<p>Now you can create files, projects, results, inside the container in <code>/home/rstudio/projects</code> (in this case from the File tab in Rstudio) and any change will live on in your local machine in <code>~/docker-projects</code>.</p>
+<p>Now you can create files, projects, results, inside the container in <code>/home/rstudio/projects</code> (in this case from the Files tab in Rstudio) and any change will live on in your local machine in <code>~/docker-projects</code>.</p>
 <div class = activity>
 <p>Run a new container</p>
 <ol>
 <li>Stop the previous container with Ctrl+C or Command+C.</li>
 <li>Run in the terminal</li>
 </ol>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#7f8c8d">`</span>mkdir ~/docker-projects
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir ~/docker-projects
 docker run -p 8787:8787 <span style="color:#7f8c8d">\
 </span><span style="color:#7f8c8d"></span>    -e <span style="color:#434f54">DISABLE_AUTH</span><span style="color:#728e00">=</span><span style="color:#728e00">true</span> <span style="color:#7f8c8d">\
 </span><span style="color:#7f8c8d"></span>    -v ~/docker-projects:/home/rstudio/projects <span style="color:#7f8c8d">\
