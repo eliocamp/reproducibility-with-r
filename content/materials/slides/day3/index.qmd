@@ -30,6 +30,22 @@ format:
 
 ---- 
 
+### Excersise 
+
+#### Restore an environment
+
+1. Download this reproducible project.
+
+2. Open the project and run `renv::status()` in the R console. What’s the status of the packages?
+
+3. Run `renv::restore()` in the R console and proceed.
+
+4. Run `renv::status()` again to check that the project is in a consistent state.
+
+5. Render analysis/report.Rmd to make sure that it worked.
+
+----
+
 ## If you work with data, what’s the typical size?
 
 
