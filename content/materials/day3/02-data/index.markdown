@@ -234,7 +234,7 @@ Neither future you nor any future reproducibility enthusiast will need to worry 
 
 Improve report.Rmd
 
-1. Modify report.Rmd in the [demo project](/reproducibility-with-r/demo_project.zip) to download the data automatically. 
+1. Modify report.Rmd in the [demo project](/demo_project.zip) to download the data automatically. 
 
 </div>
 

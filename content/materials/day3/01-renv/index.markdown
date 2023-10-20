@@ -168,7 +168,7 @@ This will install everything in their local project library so they can be up an
 
 Restore an environment 
 
-1. Download this [reproducible project](/reproducibility-with-r/reproducible_project.zip). 
+1. Download this [reproducible project](/reproducible_project.zip). 
 
 2. Open the project and run `renv::status()` in the R console. What's the status of the packages?
 

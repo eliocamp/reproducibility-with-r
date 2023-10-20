@@ -35,7 +35,7 @@ If you work as a team you can take advantage of all the above and also use versi
 
 ## But what do we mean by version control?
 
-Let's imagine that we have a repository already working ([later](/reproducibility-with-r/materials/day2/01-git/#creating-a-new-repository) we'll see how to create one).
+Let's imagine that we have a repository already working ([later](/materials/day2/01-git/#creating-a-new-repository) we'll see how to create one).
 When you create a new file as part of the repository (or *repo*), that file is untracked or unversioned.
 This means that git will ignore the file and any change you make to it until you *add* it to the repo.
 At that point the file is **staged** and it ready to get into the repository.
@@ -89,7 +89,7 @@ If you want to try the command line, here are the git commands:
 ## Introduce yourself to Git
 
 Before you create your first repository you need to make sure that git and RStudio are friends and that git knows you.
-If you followed the [pre-workshop instructions](/reproducibility-with-r/materials/day0#git-and-github), RStudio, git, and GitHub are definitely talking to each other.
+If you followed the [pre-workshop instructions](/materials/day0#git-and-github), RStudio, git, and GitHub are definitely talking to each other.
 
 <div class = notes> 
 
@@ -262,7 +262,7 @@ When collaborating on a project you can find yourself in one of two scenarios
 -   You don't have write permission on the repo.
 
 The first situation is the most common when working together with an team on a long term project.
-You can clone the repo following the [these same instructions](/reproducibility-with-r/materials/day2/01-git/#creating-a-new-repository) and use the same workflow as before.
+You can clone the repo following the [these same instructions](/materials/day2/01-git/#creating-a-new-repository) and use the same workflow as before.
 When you try to push your changes to the remote repository, GitHub will check if you have the rights to modify the repo.
 The only difference between this and working on your own is that you need to communicate well so that two people are not working on the same thing.
 But this is true with or without git.
@@ -292,7 +292,7 @@ Fork the repository
 
 Now, you have a copy of the repo in your GitHub account.
 
-3. Copy the url of the repo and clone it to your computer following the [instructions to create a new repo.](/reproducibility-with-r/materials/day2/01-git/#creating-a-new-repository)
+3. Copy the url of the repo and clone it to your computer following the [instructions to create a new repo.](/materials/day2/01-git/#creating-a-new-repository)
 
 ![Screenshot of a forked repo showing where to copy the url to clone the repo.](images/clone.png)
 

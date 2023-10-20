@@ -53,7 +53,7 @@ Once build, the container can be booted up and you or anyone else can run the an
 
 All this might sound intimidating at first, but thanks to the awesome R community, spinning up your own docker instance with R and RStudio ready to use is relatively painless.
 The [rocker team](https://hub.docker.com/u/rocker) maintains a suite of docker images that came with R and RStudio pre-installed.
-Assuming that you've got docker up and running, you can spin up a virtual machine running R with this command in the terminal ([what's a terminal do you ask?](/reproducibility-with-r/materials/extras/#the-terminal)):
+Assuming that you've got docker up and running, you can spin up a virtual machine running R with this command in the terminal ([what's a terminal do you ask?](/materials/extras/#the-terminal)):
 
 ``` bash
 docker run -p 8787:8787 \

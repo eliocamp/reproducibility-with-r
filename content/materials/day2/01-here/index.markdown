@@ -20,7 +20,7 @@ To show you this, we prepared a demo project.
 
 Get the demo project
 
-1.  Download the [demo project](/reproducibility-with-r/demo_project.zip) and extract it anywhere in your computer.
+1.  Download the [demo project](/demo_project.zip) and extract it anywhere in your computer.
 1.  Open the project (double click on `demo_project.Rproj`), open `report.Rmd` and try to knit it.
 </div>
 

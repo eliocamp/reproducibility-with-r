@@ -145,7 +145,7 @@ rrtools have a helper function `rrtools::add_dependencies_to_description()` that
 When you create this file structure using this function you can choose whether you want to add your data to the repository.
 If `data_in_git = FALSE` you will exclude files in the `data/` directory from being tracked by git and prevent them from appearing on GitHub.
 You should set `data_in_git = FALSE` if your data files are large (\>100 mb is the limit for GitHub) or you do not want to make the data files publicly accessible on GitHub.
-More about sharing data in [the next section](/reproducibility-with-r/materials/day2/03-data/).
+More about sharing data in [the next section](/materials/day2/03-data/).
 
 ### Working with your own code
 
