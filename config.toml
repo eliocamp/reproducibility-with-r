@@ -1,4 +1,4 @@
-baseURL = "https://eliocamp.github.io/reproducibility-with-r/"
+baseURL = "https://reproducibility.rocks"
 theme = "hugo-apero"
 languageCode = "en"
 title = "An R reproducibility toolkit for the practical researcher"

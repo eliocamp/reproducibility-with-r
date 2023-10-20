@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>About on An R reproducibility toolkit for the practical researcher</title>
-    <link>https://eliocamp.github.io/reproducibility-with-r/about/</link>
+    <link>https://reproducibility.rocks/about/</link>
     <description>Recent content in About on An R reproducibility toolkit for the practical researcher</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language><atom:link href="https://eliocamp.github.io/reproducibility-with-r/about/index.xml" rel="self" type="application/rss+xml" />
+    <language>en</language><atom:link href="https://reproducibility.rocks/about/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
