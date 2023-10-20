@@ -192,7 +192,7 @@ Until now you've use `rocker/rstudio` docker image.
 But if you need to install system dependencies and R Packages you will need to modify this image to install them.
 This is done with the Dockerfile, a set of steps required to build an image.
 
-Since each project should have its own Dockerfile, let's create a file called `Dockerfile` at the root of the [reproducible project](/reproducibility-with-r/reproducible_project.zip) and put these lines in:
+Since each project should have its own Dockerfile, let's create a file called `Dockerfile` at the root of the [reproducible project](/reproducible_project.zip) and put these lines in:
 
 ```         
 FROM rocker/rstudio:4.1.2

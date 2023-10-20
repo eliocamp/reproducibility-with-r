@@ -327,7 +327,7 @@ You might even forget that the container is running.</p>
 But if you need to install system dependencies and R Packages you will need to modify this image to install them.
 This is done with the Dockerfile, a set of steps required to build an image.</p>
 <p>Since each project should have its own Dockerfile, let&rsquo;s create a file called <code>Dockerfile</code> at the root of the 
-<a href="/reproducibility-with-r/reproducible_project.zip">reproducible project</a> and put these lines in:</p>
+<a href="/reproducible_project.zip">reproducible project</a> and put these lines in:</p>
 <pre><code>FROM rocker/rstudio:4.1.2
 
 WORKDIR /home/rstudio/project

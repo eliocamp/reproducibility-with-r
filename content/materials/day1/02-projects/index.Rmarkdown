@@ -160,7 +160,7 @@ read.csv("data/data.csv")
 And this will run no matter where the root folder is located.
 The only catch is that you need to make sure that the working directory is set to the root of the project.
 This is easier said than done, especially due to (and assuming you use) knitr's default behaviour of setting the location of the R Markdown file as the working directory.
-We will see that a simple solution is to use the [**here** package](reproducibility-with-r/materials/day1/04-here/).
+We will see that a simple solution is to use the [**here** package](/materials/day1/04-here/).
 
 ## RStudio Projects
 

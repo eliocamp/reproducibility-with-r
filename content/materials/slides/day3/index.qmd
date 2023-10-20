@@ -4,7 +4,7 @@ format:
   revealjs:
     logo: "logo.png"
     title-slide-attributes:
-      data-background-image: "https://eliocamp.github.io/reproducibility-with-r/sheep.svg"
+      data-background-image: "https://reproducibility.rocks/sheep.svg"
       data-background-size: "35%"
       data-background-opacity: "0.5" 
       data-background-position: "98% 95%"
@@ -12,8 +12,8 @@ format:
 
 # Day 3:
 
-1.  [Managing R dependencies with renv](/reproducibility-with-r/materials/day3/01-renv/)
-2.  [Sharing your data](/reproducibility-with-r/materials/day3/02-data/)
+1.  [Managing R dependencies with renv](/materials/day3/01-renv/)
+2.  [Sharing your data](/materials/day3/02-data/)
 
 
 ---
@@ -62,7 +62,7 @@ Choose an emoji from Reactions
 
 # Preparations for day 4:
 
-1.  [Reproducible computational environment with Docker](/reproducibility-with-r/materials/day4/01-docker/)
+1.  [Reproducible computational environment with Docker](/materials/day4/01-docker/)
     - Follow the instructions [here](https://docs.docker.com/get-docker/)
     - Make sure your docker installation works!
 

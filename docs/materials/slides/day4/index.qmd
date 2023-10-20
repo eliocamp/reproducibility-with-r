@@ -4,7 +4,7 @@ format:
   revealjs:
     logo: "logo.png"
     title-slide-attributes:
-      data-background-image: "https://eliocamp.github.io/reproducibility-with-r/sheep.svg"
+      data-background-image: "https://reproducibility.rocks/sheep.svg"
       data-background-size: "35%"
       data-background-opacity: "0.5" 
       data-background-position: "98% 95%"
@@ -12,7 +12,7 @@ format:
 
 # Day 4:
 
-1.  [Reproducible computational environment with Docker](/reproducibility-with-r/materials/day4/01-docker/)
+1.  [Reproducible computational environment with Docker](/materials/day4/01-docker/)
 
 The end!
 

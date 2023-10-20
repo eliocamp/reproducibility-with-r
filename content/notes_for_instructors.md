@@ -12,9 +12,9 @@ You will also find a template for the feedback form and the shared document.
 
 ### Day 1
 
-[Slides](/reproducibility-with-r/materials/slides/day1/index.html)
+[Slides](/materials/slides/day1/index.html)
 
-[02: A tidy project is a happy project](/reproducibility-with-r/materials/day1/02-projects/)
+[02: A tidy project is a happy project](/materials/day1/02-projects/)
 
 * Do you use RStudio projects? 
 
@@ -24,7 +24,7 @@ You will also find a template for the feedback form and the shared document.
   * All the time.
 
 
-[03: Reporting with RMarkdown](/reproducibility-with-r/materials/day1/03-rmarkdown/)
+[03: Reporting with RMarkdown](/materials/day1/03-rmarkdown/)
 
 * Does RMarkdown documents sound familiar to you?
   * I don't have a clue
@@ -47,9 +47,9 @@ You will also find a template for the feedback form and the shared document.
 
 ### Day 2
 
-[Slides](/reproducibility-with-r/materials/slides/day2/index.html)
+[Slides](/materials/slides/day2/index.html)
 
-[02: Getting the most of git](/reproducibility-with-r/materials/day2/02-git/#git-and-github)
+[02: Getting the most of git](/materials/day2/02-git/#git-and-github)
 
 * Does git sound familiar to you?
   * I don't have a clue
@@ -57,7 +57,7 @@ You will also find a template for the feedback form and the shared document.
   * I've used it
   * I use it all the time
   
-[03: Research compendia with rrtools](/reproducibility-with-r/materials/day2/03-rrtools/)
+[03: Research compendia with rrtools](/materials/day2/03-rrtools/)
 
 * How familiar are you with R package development?
   * I don't have a clue
@@ -67,9 +67,9 @@ You will also find a template for the feedback form and the shared document.
 
 ### Day 3
 
-[Slides](/reproducibility-with-r/materials/slides/day3/index.html)
+[Slides](/materials/slides/day3/index.html)
 
-[01: Reproducible computational environment with renv](/reproducibility-with-r/materials/day3/01-renv/)
+[01: Reproducible computational environment with renv](/materials/day3/01-renv/)
 
 * Does the package renv sound familiar to you? 
 
@@ -80,7 +80,7 @@ You will also find a template for the feedback form and the shared document.
   
 
 
-[02: Sharing data](/reproducibility-with-r/materials/day2/02-data/)
+[02: Sharing data](/materials/day2/02-data/)
 
 * If you work with data, what's the typical size?
 
@@ -91,9 +91,9 @@ You will also find a template for the feedback form and the shared document.
 
 ### Day 4
 
-[Slides](/reproducibility-with-r/materials/slides/day4/index.html)
+[Slides](/materials/slides/day4/index.html)
   
-[01: Reproducible computational environment with Docker](/reproducibility-with-r/materials/day4/01-docker/)
+[01: Reproducible computational environment with Docker](/materials/day4/01-docker/)
 
 * Have you used docker before? 
 
