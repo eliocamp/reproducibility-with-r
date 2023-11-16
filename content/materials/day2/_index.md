@@ -14,11 +14,10 @@ cascade:
 
 ## Learning objectives
 
--   How to share data.
--   How to manage data using code.
--   Using git to track your work.
--   Using git to collaborate with others.
--   How to set the documentation of your project.
+- Using git to track your work
+- Using git to collaborate with others
+- How to set the documentation of your project
+- Organizing a project
 
 ## Homework
 
