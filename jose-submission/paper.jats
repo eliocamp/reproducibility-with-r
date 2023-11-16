@@ -23,30 +23,44 @@ researcher</article-title>
 </title-group>
 <contrib-group>
 <contrib contrib-type="author">
-<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-0872-7098</contrib-id>
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-7742-9230</contrib-id>
 <name>
-<surname>Price-Whelan</surname>
-<given-names>Adrian M.</given-names>
+<surname>Campitelli</surname>
+<given-names>Elio</given-names>
 </name>
 <xref ref-type="aff" rid="aff-1"/>
 <xref ref-type="aff" rid="aff-2"/>
+<xref ref-type="aff" rid="aff-3"/>
 </contrib>
 <contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-1923-9129</contrib-id>
 <name>
-<surname>ORCID</surname>
-<given-names>Author Without</given-names>
+<surname>Corrales</surname>
+<given-names>Paola</given-names>
 </name>
+<xref ref-type="aff" rid="aff-1"/>
 <xref ref-type="aff" rid="aff-2"/>
+<xref ref-type="aff" rid="aff-3"/>
 </contrib>
 <aff id="aff-1">
 <institution-wrap>
-<institution>Lyman Spitzer, Jr. Fellow, Princeton
-University</institution>
+<institution>Universidad de Buenos Aires, Facultad de Ciencias Exactas y
+Naturales, Departamento de Ciencias de la Atmósfera y los Océanos.
+Buenos Aires, Argentina.</institution>
 </institution-wrap>
 </aff>
 <aff id="aff-2">
 <institution-wrap>
-<institution>Institution 2</institution>
+<institution>CONICET – Universidad de Buenos Aires. Centro de
+Investigaciones del Mar y la Atmósfera (CIMA). Buenos Aires,
+Argentina.</institution>
+</institution-wrap>
+</aff>
+<aff id="aff-3">
+<institution-wrap>
+<institution>CNRS – IRD – CONICET – UBA. Instituto Franco-Argentino para
+el Estudio del Clima y sus Impactos (IRL 3351 IFAECI). Buenos Aires,
+Argentina.</institution>
 </institution-wrap>
 </aff>
 </contrib-group>
@@ -166,7 +180,7 @@ a Creative Commons Attribution 4.0 International License (CC BY
           <td><ext-link ext-link-type="uri" xlink:href="https://reproducibility.rocks/materials/day3/">Day
           3</ext-link>: Managing Dependencies and data</td>
           <td>1. Manage package dependencies inside a project; 2. How to
-          pack and share data</td>
+          pack and share data associated to a project</td>
           <td>1. Managing R dependencies with renv; 2. Sharing data</td>
         </tr>
         <tr>

@@ -8,17 +8,20 @@ tags:
 date: "15 November 2023"
 output: pdf_document
 authors:
-  - name: "Adrian M. Price-Whelan"
-    orcid: "0000-0003-0872-7098"
-    affiliation: 1, 2
-  - name: Author Without ORCID
-    affiliation: 2
+  - name: "Elio Campitelli"
+    orcid: "0000-0002-7742-9230"
+    affiliation: 1, 2, 3
+  - name: "Paola Corrales"
+    orcid: "0000-0003-1923-9129"
+    affiliation: 1, 2, 3
 bibliography: paper.bib
 affiliations:
-  - name: Lyman Spitzer, Jr. Fellow, Princeton University
+  - name:  Universidad de Buenos Aires, Facultad de Ciencias Exactas y Naturales, Departamento de Ciencias de la Atmósfera y los Océanos. Buenos Aires, Argentina.
     index: 1
-  - name: Institution 2
+  - name: CONICET – Universidad de Buenos Aires. Centro de Investigaciones del Mar y la Atmósfera (CIMA). Buenos Aires, Argentina.
     index: 2
+  - name: CNRS – IRD – CONICET – UBA. Instituto Franco-Argentino para el Estudio del Clima y sus Impactos (IRL 3351 IFAECI). Buenos Aires, Argentina.
+    index: 3
 ---
 
 # Summary
@@ -51,7 +54,7 @@ Each module has specific learning objectives (Table 1) and associated homework w
 |-----------------|--------------------------------------|-----------------|
 | [Day 1](https://reproducibility.rocks/materials/day1/): The workbench                                                | 1\. Create R project with an specific and useful structure; 2. Extend the use of RMarkdown files for reports and papers; 3. Use LaTeX templates to customize RMarkdown reports | 1\. What is reproducibility anyway?; 2. A tidy project is a happy project 3. Reporting with R Markdown |
 | [Day 2](https://reproducibility.rocks/materials/day2/): Sharing and Contributing                                     | 1\. Using git to track your work; Using git to collaborate with others; How to set the documentation of your project; Organizing a project                                     | 1\. here are the portable paths, 2. Getting the most of git; 3. Research compendia with rrtools        |
-| [Day 3](https://reproducibility.rocks/materials/day3/): Managing Dependencies and data                               | 1\. Manage package dependencies inside a project; 2. How to pack and share data                                                                                                | 1\. Managing R dependencies with renv; 2. Sharing data                                                 |
+| [Day 3](https://reproducibility.rocks/materials/day3/): Managing Dependencies and data                               | 1\. Manage package dependencies inside a project; 2. How to pack and share data associated to a project                                                                                    | 1\. Managing R dependencies with renv; 2. Sharing data                                                 |
 | [Day 4](https://reproducibility.rocks/materials/day4/): Building Reproducible Computational Environments with Docker | 1\. Using docker to share a project                                                                                                                                            | 1\. Reproducible computational environment with Docker                                                 |
 : Overview of the 4 modules and learning objectives.
 
