@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE article PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Publishing DTD v1.2 20190208//EN"
+                  "JATS-publishing1.dtd">
+<article xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" dtd-version="1.2" article-type="other">
+<front>
+<journal-meta>
+<journal-id></journal-id>
+<journal-title-group>
+<journal-title>Journal of Open Source Education</journal-title>
+<abbrev-journal-title>JOSE</abbrev-journal-title>
+</journal-title-group>
+<issn publication-format="electronic">2577-3569</issn>
+<publisher>
+<publisher-name>Open Journals</publisher-name>
+</publisher>
+</journal-meta>
+<article-meta>
+<article-id pub-id-type="publisher-id">0</article-id>
+<article-id pub-id-type="doi">N/A</article-id>
+<title-group>
+<article-title>An R reproducibility toolkit for the practical
+researcher</article-title>
+</title-group>
+<contrib-group>
+<contrib contrib-type="author">
+<contrib-id contrib-id-type="orcid">https://orcid.org/0000-0003-0872-7098</contrib-id>
+<name>
+<surname>Price-Whelan</surname>
+<given-names>Adrian M.</given-names>
+</name>
+<xref ref-type="aff" rid="aff-1"/>
+<xref ref-type="aff" rid="aff-2"/>
+</contrib>
+<contrib contrib-type="author">
+<name>
+<surname>ORCID</surname>
+<given-names>Author Without</given-names>
+</name>
+<xref ref-type="aff" rid="aff-2"/>
+</contrib>
+<aff id="aff-1">
+<institution-wrap>
+<institution>Lyman Spitzer, Jr. Fellow, Princeton
+University</institution>
+</institution-wrap>
+</aff>
+<aff id="aff-2">
+<institution-wrap>
+<institution>Institution 2</institution>
+</institution-wrap>
+</aff>
+</contrib-group>
+<pub-date date-type="pub" publication-format="electronic" iso-8601-date="2023-11-15">
+<day>15</day>
+<month>11</month>
+<year>2023</year>
+</pub-date>
+<volume>¿VOL?</volume>
+<issue>¿ISSUE?</issue>
+<fpage>¿PAGE?</fpage>
+<permissions>
+<copyright-statement>Authors of papers retain copyright and release the
+work under a Creative Commons Attribution 4.0 International License (CC
+BY 4.0)</copyright-statement>
+<copyright-year>2022</copyright-year>
+<copyright-holder>The article authors</copyright-holder>
+<license license-type="open-access" xlink:href="https://creativecommons.org/licenses/by/4.0/">
+<license-p>Authors of papers retain copyright and release the work under
+a Creative Commons Attribution 4.0 International License (CC BY
+4.0)</license-p>
+</license>
+</permissions>
+<kwd-group kwd-group-type="author">
+<kwd>R</kwd>
+<kwd>reproducibility</kwd>
+<kwd>version control</kwd>
+<kwd>docker</kwd>
+</kwd-group>
+</article-meta>
+</front>
+<body>
+<sec id="summary">
+  <title>Summary</title>
+  <p>An R reproducibility tool-kit for the practical researcher is a
+  workshop designed to teach researchers, data scientists, and anyone
+  who uses R for research open source tools to work in a reproducible
+  way. The materials are organised in four modules and can be taught or
+  followed in order or independently of each other. Each section
+  includes materials, exercises and detailed exploration of each
+  topic.</p>
+  <p>The workshop is available at
+  <ext-link ext-link-type="uri" xlink:href="http://reproducibility.rocks/">reproducibility.rocks</ext-link>
+  and licensed under the Creative Commons Attribution-ShareAlike 4.0
+  International License.</p>
+</sec>
+<sec id="statement-of-need">
+  <title>Statement of Need</title>
+  <p>Reproducibility is should be part of any data analysis work, but
+  it’s particularly important in scientific research. Achieving full
+  reproducibility is challenging and requires, time, resources and
+  specialised tools and skills
+  (<xref alt="Whitaker, 2019" rid="ref-whitaker2019" ref-type="bibr">Whitaker,
+  2019</xref>). This workshops empowers researchers so they can maximize
+  the reproducibility of their work by leveraging existing tools in the
+  R ecosystem –such as RMarkdown, renv, and others–, version control and
+  containers.</p>
+  <p>The course material is suitable for learners to follow themselves,
+  including exercises and challenges they can complete. The
+  <ext-link ext-link-type="uri" xlink:href="https://reproducibility.rocks/notes_for_instructors/">notes
+  for instructors</ext-link> has instructions intended for anyone who
+  would like to teach and/or re-use the material along with slides,
+  assessment checkpoints, and templates for shared document and feedback
+  form.</p>
+</sec>
+<sec id="description-of-learning-modules">
+  <title>Description of Learning Modules</title>
+  <p>The workshop is intended for researchers, data scientists, and
+  anyone who uses R to generate documents and who wants to collaborate
+  with other people (or themselves in the future). Basic prior
+  experience with R is highly recommended.</p>
+  <p>The materials are organized in four 3-hour modules, ideally covered
+  over a few weeks to give time to spaced practice
+  (<xref alt="Benjamin &amp; Tullis, 2010" rid="ref-benjamin2010" ref-type="bibr">Benjamin
+  &amp; Tullis, 2010</xref>) and homework assessment. Each module has
+  specific learning objectives (Table 1) and associated homework with
+  the common goal of taking an existing non-reproducible research
+  project and pushing it further in the reproducibly spectrum with each
+  step.</p>
+  <table-wrap>
+    <caption>
+      <p>Overview of the 4 modules and learning objectives.</p>
+    </caption>
+    <table>
+      <colgroup>
+        <col width="24%" />
+        <col width="53%" />
+        <col width="24%" />
+      </colgroup>
+      <thead>
+        <tr>
+          <th>Day #</th>
+          <th>Learning Objectives</th>
+          <th>Topics</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><ext-link ext-link-type="uri" xlink:href="https://reproducibility.rocks/materials/day1/">Day
+          1</ext-link>: The workbench</td>
+          <td>1. Create R project with an specific and useful structure;
+          2. Extend the use of RMarkdown files for reports and papers;
+          3. Use LaTeX templates to customize RMarkdown reports</td>
+          <td>1. What is reproducibility anyway?; 2. A tidy project is a
+          happy project 3. Reporting with R Markdown</td>
+        </tr>
+        <tr>
+          <td><ext-link ext-link-type="uri" xlink:href="https://reproducibility.rocks/materials/day2/">Day
+          2</ext-link>: Sharing and Contributing</td>
+          <td>1. Using git to track your work; Using git to collaborate
+          with others; How to set the documentation of your project;
+          Organizing a project</td>
+          <td>1. here are the portable paths, 2. Getting the most of
+          git; 3. Research compendia with rrtools</td>
+        </tr>
+        <tr>
+          <td><ext-link ext-link-type="uri" xlink:href="https://reproducibility.rocks/materials/day3/">Day
+          3</ext-link>: Managing Dependencies and data</td>
+          <td>1. Manage package dependencies inside a project; 2. How to
+          pack and share data</td>
+          <td>1. Managing R dependencies with renv; 2. Sharing data</td>
+        </tr>
+        <tr>
+          <td><ext-link ext-link-type="uri" xlink:href="https://reproducibility.rocks/materials/day4/">Day
+          4</ext-link>: Building Reproducible Computational Environments
+          with Docker</td>
+          <td>1. Using docker to share a project</td>
+          <td>1. Reproducible computational environment with Docker</td>
+        </tr>
+      </tbody>
+    </table>
+  </table-wrap>
+  <sec id="instructional-design">
+    <title>Instructional design</title>
+    <p>The workshop can be taught on-line or in person and while we
+    encourage self-thought students to study with a group, it is
+    possible to follow the material alone. The material is taught using
+    a combination of discussions, live coding, demonstration sessions,
+    and exercises (Table 2). For each topic there is a multiple choice
+    question to assess previous familiarity with the topic. Depending on
+    the answers the instructor can decide if the topic needs to be
+    covered in full or if it can be partially or entirely skipped.</p>
+    <table-wrap>
+      <caption>
+        <p>Pedagogical methods used throughout the workshop</p>
+      </caption>
+      <table>
+        <colgroup>
+          <col width="24%" />
+          <col width="76%" />
+        </colgroup>
+        <thead>
+          <tr>
+            <th>Method</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Discussions</td>
+            <td>Instructors present a topic and ask questions to the
+            students to motivate a conversation.</td>
+          </tr>
+          <tr>
+            <td>Live coding or demonstrations</td>
+            <td>Instructors write code or demonstrate how a tool works
+            and invite students to follow along.</td>
+          </tr>
+          <tr>
+            <td>Exercises</td>
+            <td>Students are invited to solve short exercises, either
+            simply repeating what the instructor just showed, doing
+            something similar, or working in groups to solve a
+            particular problem.</td>
+          </tr>
+          <tr>
+            <td>Continuous anonymous feedback</td>
+            <td>Students are asked at the end of each day to give
+            feedback on 1. Something you like and we should keep and 2.
+            Something you don’t like that we should improve.</td>
+          </tr>
+        </tbody>
+      </table>
+    </table-wrap>
+    <p>The
+    <ext-link ext-link-type="uri" xlink:href="https://reproducibility.rocks/notes_for_instructors/">Notes
+    for instructors</ext-link> section includes secondary materials and
+    templates that can help with preparing the workshop.</p>
+  </sec>
+  <sec id="experience-of-use-in-teaching-and-learning-situations">
+    <title>Experience of use in teaching and learning situations</title>
+    <p>We delivered this workshop twice on-line. Participants were
+    graduate and undergraduate students, experienced researchers, and
+    private and government sector researchers. Each time two instructors
+    where always present and shared the tasks of teaching, answering
+    questions and troubleshooting technical issues. This also helps to
+    keep the agenda on track and the general organization of the
+    workshop.</p>
+    <p>The anonymous feedback was positive and many recommendations or
+    requests from the students were include in the following days. The
+    feedback also helped to shape the materials and organisation of the
+    second edition. In particular, the first edition was divided into
+    only three modules, but this proved to be not enough time so the
+    content was reorganised into the current four modules.</p>
+    <p>Other people have used the materials to learn specific tools and
+    apply them to their work independently.</p>
+  </sec>
+</sec>
+<sec id="story-of-the-project">
+  <title>Story of the project</title>
+  <p>Elio and Paola started using R in 2014 and by the time they needed
+  to write their undergrad dissertations they rapidly started using
+  rmarkdown and git. They continued using R during their PhDs and
+  started adding new tools to their repertory to make their work easier
+  and as reproducible as possible. In 2021 Carlo Pecoraro from
+  <ext-link ext-link-type="uri" xlink:href="https://www.physalia-courses.org/">Physalia
+  courses</ext-link> contacted Elio to invite them to teach a workshop.
+  Elio and Paola took the opportunity to compile what they been learning
+  and using for years in a hands-on workshop.</p>
+</sec>
+</body>
+<back>
+<ref-list>
+  <ref id="ref-benjamin2010">
+    <element-citation publication-type="article-journal">
+      <person-group person-group-type="author">
+        <name><surname>Benjamin</surname><given-names>Aaron S.</given-names></name>
+        <name><surname>Tullis</surname><given-names>Jonathan</given-names></name>
+      </person-group>
+      <article-title>What makes distributed practice effective?</article-title>
+      <source>Cognitive psychology</source>
+      <year iso-8601-date="2010-11">2010</year><month>11</month>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2023-11-15">2023</year><month>11</month><day>15</day></date-in-citation>
+      <volume>61</volume>
+      <issue>3</issue>
+      <issn>0010-0285</issn>
+      <uri>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2930147/</uri>
+      <pub-id pub-id-type="doi">10.1016/j.cogpsych.2010.05.004</pub-id>
+      <fpage>228</fpage>
+      <lpage>247</lpage>
+    </element-citation>
+  </ref>
+  <ref id="ref-whitaker2019">
+    <element-citation publication-type="manuscript">
+      <person-group person-group-type="author">
+        <name><surname>Whitaker</surname><given-names>Whitaker</given-names><suffix>Kirstie</suffix></name>
+      </person-group>
+      <article-title>The Turing Way: Sharing the responsibility of reproducibility</article-title>
+      <year iso-8601-date="2019">2019</year>
+      <date-in-citation content-type="access-date"><year iso-8601-date="2023-11-15">2023</year><month>11</month><day>15</day></date-in-citation>
+      <uri>https://zenodo.org/records/2669548</uri>
+    </element-citation>
+  </ref>
+</ref-list>
+</back>
+</article>

@@ -5,7 +5,7 @@ tags:
   - reproducibility
   - version control
   - docker
-date: "15 Novemer 2018"
+date: "15 November 2023"
 output: pdf_document
 authors:
   - name: "Adrian M. Price-Whelan"
@@ -14,8 +14,6 @@ authors:
   - name: Author Without ORCID
     affiliation: 2
 bibliography: paper.bib
-aas-doi: "10.3847/xxxxx <- update this with the DOI from AAS once you know it."
-aas-journal: "Astrophysical Journal <- The name of the AAS journal."
 affiliations:
   - name: Lyman Spitzer, Jr. Fellow, Princeton University
     index: 1
@@ -34,7 +32,7 @@ The workshop is available at [reproducibility.rocks](http://reproducibility.rock
 # Statement of Need
 
 Reproducibility is should be part of any data analysis work, but it's particularly important in scientific research.
-Achieving full reproducibility is challenging and requires, time, resources and specialised tools and skills.
+Achieving full reproducibility is challenging and requires, time, resources and specialised tools and skills [@whitaker2019].
 This workshops empowers researchers so they can maximize the reproducibility of their work by leveraging existing tools in the R ecosystem --such as RMarkdown, renv, and others--, version control and containers.
 
 The course material is suitable for learners to follow themselves, including exercises and challenges they can complete.
@@ -45,8 +43,9 @@ The [notes for instructors](https://reproducibility.rocks/notes_for_instructors/
 The workshop is intended for researchers, data scientists, and anyone who uses R to generate documents and who wants to collaborate with other people (or themselves in the future).
 Basic prior experience with R is highly recommended.
 
-The materials are organized in four 3-hour modules, ideally covered over a few weeks to give time to spaced practice \[\@benjamin2010\] and homework assessment.
-Each module has specific learning objectives (Table \@ref(tab:xx)) and associated homework with the common goal of taking an existing non-reproducible research project and pushing it further in the reproducibly spectrum with each step.
+The materials are organized in four 3-hour modules, ideally covered over a few weeks to give time to spaced practice [@benjamin2010] and homework assessment.
+Each module has specific learning objectives (Table 1) and associated homework with the common goal of taking an existing non-reproducible research project and pushing it further in the reproducibly spectrum with each step.
+
 
 | Day \#                                                                                                               | Learning Objectives                                                                                                                                                            | Topics                                                                                                 |
 |-----------------|--------------------------------------|-----------------|
@@ -54,11 +53,12 @@ Each module has specific learning objectives (Table \@ref(tab:xx)) and associate
 | [Day 2](https://reproducibility.rocks/materials/day2/): Sharing and Contributing                                     | 1\. Using git to track your work; Using git to collaborate with others; How to set the documentation of your project; Organizing a project                                     | 1\. here are the portable paths, 2. Getting the most of git; 3. Research compendia with rrtools        |
 | [Day 3](https://reproducibility.rocks/materials/day3/): Managing Dependencies and data                               | 1\. Manage package dependencies inside a project; 2. How to pack and share data                                                                                                | 1\. Managing R dependencies with renv; 2. Sharing data                                                 |
 | [Day 4](https://reproducibility.rocks/materials/day4/): Building Reproducible Computational Environments with Docker | 1\. Using docker to share a project                                                                                                                                            | 1\. Reproducible computational environment with Docker                                                 |
+: Overview of the 4 modules and learning objectives.
 
 ## Instructional design
 
 The workshop can be taught on-line or in person and while we encourage self-thought students to study with a group, it is possible to follow the material alone.
-The material is taught using a combination of discussions, live coding, demonstration sessions, and exercises.
+The material is taught using a combination of discussions, live coding, demonstration sessions, and exercises (Table 2).
 For each topic there is a multiple choice question to assess previous familiarity with the topic.
 Depending on the answers the instructor can decide if the topic needs to be covered in full or if it can be partially or entirely skipped.
 
@@ -68,6 +68,7 @@ Depending on the answers the instructor can decide if the topic needs to be cove
 | Live coding or demonstrations | Instructors write code or demonstrate how a tool works and invite students to follow along.                                                                                          |
 | Exercises                     | Students are invited to solve short exercises, either simply repeating what the instructor just showed, doing something similar, or working in groups to solve a particular problem. |
 | Continuous anonymous feedback | Students are asked at the end of each day to give feedback on 1. Something you like and we should keep and 2. Something you don't like that we should improve.                       |
+: Pedagogical methods used throughout the workshop
 
 The [Notes for instructors](https://reproducibility.rocks/notes_for_instructors/) section includes secondary materials and templates that can help with preparing the workshop.
 
@@ -75,12 +76,12 @@ The [Notes for instructors](https://reproducibility.rocks/notes_for_instructors/
 
 We delivered this workshop twice on-line.
 Participants were graduate and undergraduate students, experienced researchers, and private and government sector researchers.
-Each time the two of us where always present and shared the tasks of teaching, answering questions and troubleshooting technical issues.
+Each time two instructors where always present and shared the tasks of teaching, answering questions and troubleshooting technical issues.
 This also helps to keep the agenda on track and the general organization of the workshop.
 
 The anonymous feedback was positive and many recommendations or requests from the students were include in the following days.
-The feedback also helped to shape the mateirals and organisation of the second edition.
-In particular, the first edition was divided into only three modules, but this proved to be not enough time so we reorganised the content into the current four modules.
+The feedback also helped to shape the materials and organisation of the second edition.
+In particular, the first edition was divided into only three modules, but this proved to be not enough time so the content was reorganised into the current four modules.
 
 Other people have used the materials to learn specific tools and apply them to their work independently.
 
