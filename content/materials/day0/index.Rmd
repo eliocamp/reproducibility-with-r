@@ -28,7 +28,7 @@ Again, try to update it to the latest version.
 The new visual editor will be particularly helpful for those without a lot of experience with markdown (and probably for the markdown experts as well).
 Also, old versions of RStudio do not work well with new versions of R (ggplot2 plots will crash your session).
 
-Go to <https://www.rstudio.com/products/rstudio/download/> and download the latest version.
+Go to <https://posit.co/download/rstudio-desktop/> and download the latest version.
 
 ## (Optional) Use RStudio Package Manager
 
