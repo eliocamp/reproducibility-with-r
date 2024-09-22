@@ -131,7 +131,7 @@ This is really critical to reproducibility since it automates the creation of a 
       
       <guid>https://reproducibility.rocks/materials/reprohack/</guid>
       <description>One of the best ways of learning what makes a reproducible project is to try to reproduce real life projects instead of toy examples. You&amp;rsquo;ll quickly learn what works and what doesn&amp;rsquo;t and pick up tools and workflows from others.
-Therefore we propose this optional homework in which you will do just that. You can do it at any moment during the workshop. Some paper require using particular packages or technologies that you might not be familiar at the start of the workshop.</description>
+Therefore we propose this optional homework in which you will do just that. You can do it at any moment during the workshop. Some papers require using particular packages or technologies that you might not be familiar at the start of the workshop.</description>
     </item>
     
     <item>

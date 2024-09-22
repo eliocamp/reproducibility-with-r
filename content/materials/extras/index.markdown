@@ -31,7 +31,7 @@ In the following example there is a plot of the price distribution for ideal dia
 If you want to change it to visualise the data for "fair" or "very good" cut diamonds, you will have to change the `filter(cut == "Ideal")` and hopefully you wont forget the plot title. 
 
 
-```r
+``` r
 library(dplyr)
 library(ggplot2)
 
@@ -58,7 +58,7 @@ Then, in the R code you will have access to a variable called `params` which is 
 
 
 
-```r
+``` r
 library(dplyr)
 library(ggplot2)
 
