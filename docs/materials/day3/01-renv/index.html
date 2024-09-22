@@ -45,7 +45,7 @@
 But actively-maintained packages will change their code-base to fix bugs, add or remove features, or change behaviour. These changes can potentially break your analysis or create subtle (or not so subtle) differences in the result.">
 <meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1584">
+<meta itemprop="wordCount" content="1571">
 
 
 
@@ -190,11 +190,12 @@ To start working with renv you first need to initialise the project-local enviro
 <pre><code>No issues found -- the project is in a consistent state.
 </code></pre><p>Also in your project root you will now see a file called <code>renv.lock</code> and a folder called <code>renv</code>.
 The former stores version and other information for your R packages (and even the version of R itself), while the latter stores your project library.</p>
-<p>If you try to knit the project, you might get a modal saying that you need &ldquo;an updated version of the markdown package&rdquo; to render R Markdown.
-This is actually 
-<a href="https://github.com/rstudio/rstudio/issues/9861" target="_blank" rel="noopener">a bug in RStudio</a>.
-renv correctly recorded and installed all the dependencies needed to render the document, but RStudio mistakenly thinks that the markdown package (not the rmarkdown package) is also necessary.
-As a work-around, install the markdown package.</p>
+<div class = notes> 
+<p>At this point, you  may get a modal saying that you need “an updated version of the markdown package” to render R Markdown.
+Older RStudio versions had 
+<a href="https://github.com/rstudio/rstudio/issues/9861" target="_blank" rel="noopener">a bug</a> that didn&rsquo;t automatically record the rmarkdown package in the renv.lock file.
+If you can&rsquo;t update your RStudio version, you can install the rmarkdown package as a work-around.</p>
+</div>
 <p>Once this is done, you can keep working on your project as usual, installing, removing and updating packages as you normally would.
 The difference is that now all of that will only affect the project library.
 If you update a package in your project, other projects will still use the global version (or their local versions if you use renv with them).
