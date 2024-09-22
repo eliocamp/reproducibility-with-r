@@ -55,9 +55,10 @@ What about Quarto?
 It's billed as a "next generation version of R Markdown" because it incorporates a lot of lessons learned from its development and adds other features. 
 It also doesn't need R to run, so it's more language agnostic. 
 
-However, Quarto is still missing the large collection of scientific journal templates offered by the rticles package.
+There is a [growing number of journal templates for Quarto](https://quarto.org/docs/extensions/listing-journals.html) --both by the quarto team and by third parties-- but the list is still not as comprehensive as the large collection offered by the rticles package.
 
-Many of the features and syntax shown here work with little or no changes in Quarto. 
+Many of the features and syntax shown here work with little or no changes in Quarto.
+
 </div>
 
 ### File structure
