@@ -26,9 +26,10 @@ Go to <https://cloud.r-project.org/> and follow the steps for your Operating Sys
 We will be using RStudio as IDE.
 Again, try to update it to the latest version.
 The new visual editor will be particularly helpful for those without a lot of experience with markdown (and probably for the markdown experts as well).
-Also, old versions of RStudio do not work well with new versions of R (ggplot2 plots will crash your session).
 
 Go to <https://posit.co/download/rstudio-desktop/> and download the latest version.
+
+If you prefer to use a different IDE, you are welcome to do it. 
 
 ## (Optional) Use RStudio Package Manager
 
@@ -58,7 +59,12 @@ install.packages(c("here", "renv", "rticles", "devtools", "roxygen2", "gitcreds"
 ```
 
 The package **rrtools** will also be useful.
-It's not on CRAN, so you need so install it from github
+It's not on CRAN, so you need so install it from github:
+
+``` r
+if (!require("remotes")) install.packages("remotes")
+remotes::install_github("benmarwick/rrtools")
+```
 
 On Linux, you might need to install these system libraries:
 
@@ -66,10 +72,7 @@ On Linux, you might need to install these system libraries:
 sudo apt install libxml2-dev libcurl4-openssl-dev libfontconfig1-dev libgit2-dev libssh2-1-dev libharfbuzz-dev libfribidi-dev lbfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev 
 ```
 
-``` r
-if (!require("remotes")) install.packages("remotes")
-remotes::install_github("benmarwick/rrtools")
-```
+
 
 ## LaTeX
 

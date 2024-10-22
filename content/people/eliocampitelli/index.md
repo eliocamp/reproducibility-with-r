@@ -2,7 +2,7 @@
 title: "Elio Campitelli"
 subtitle: "Meteorologist and Educator"
 excerpt: >
-  **Instructor**<br>PhD student in atmospheric sciences. Sometimes knit, sometimes knead.
+  **Instructor**<br>PhD in atmospheric sciences. Sometimes knit, sometimes knead.
 type: people
 show_post_image: true
 weight: 2
@@ -31,4 +31,4 @@ links:
   url: https://github.com/eiocamp
 ---
 
-I'm a Ph.D. student at the University of Buenos Aires in atmospheric sciences and an R package developer. I apply open science principles with a strong emphasis on reproducibility by publicly making all the code and data available. I'm a founding member of the R User Group in Buenos Aires and an outstanding contributor to the LatinR conference (as recognized by LatinR founding chairs). I maintain several open-source R packages (e.g., ggnewscale; metR) and contribute to other packages, such as data.table and ggplot2.
+I have aPh.D. from the University of Buenos Aires in atmospheric sciences and I'm an R package developer. I apply open science principles with a strong emphasis on reproducibility by publicly making all the code and data available. I'm a founding member of the R User Group in Buenos Aires and the LatinR conference. I maintain several open-source R packages (e.g., ggnewscale; metR) and contribute to other packages, such as data.table and ggplot2.
