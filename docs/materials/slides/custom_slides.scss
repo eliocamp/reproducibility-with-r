@@ -1,0 +1,92 @@
+/*-- scss:defaults --*/
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,200;1,9..144,200&display=swap');
+
+$font-family-sans-serif: "Commissioner", sans-serif !default;
+$font-family-monospace: "Fira+Code", monospace;
+$font-family-serif: "Fraunces", serif !default;
+
+$presentation-font-size-root: 35px;
+
+// colors
+$body-bg: white !default;
+//$body-color: $teal !default;
+
+// headings
+$presentation-heading-font: 'Fraunces', serif !default;
+
+/*-- scss:rules --*/
+/* Activities and chalenges box*/
+.alert-success {
+  padding-left: 4rem;
+  position: relative;
+}
+
+.alert-success::before {
+	content: "\f304";
+	font-family: 'font awesome 5 free';
+	font-weight: 900;
+	font-size: 1.25rem;
+	position: absolute;
+	top: 1rem;
+	left: 0;
+	width: 4rem;
+	text-align: center;
+}
+
+
+/* Side notes box*/
+.alert-info {
+  padding-left: 3.5rem;
+  position: relative;
+}
+
+
+.alert-info::before {
+	content: "\f0eb";
+	font-family: 'font awesome 5 free';
+	font-weight: 900;
+	font-size: 1.25rem;
+	position: absolute;
+	top: 1rem;
+	left: 0;
+	width: 4rem;
+	text-align: center;
+}
+
+
+/* Paths and instructions box*/
+.alert-primary {
+  padding-left: 3.5rem;
+  position: relative;
+}
+
+.alert-primary::before {
+	content: "\f0a4";
+	font-family: 'font awesome 5 free';
+	font-weight: 900;
+	font-size: 1.25rem;
+	position: absolute;
+	top: 1rem;
+	left: 0;
+	width: 4rem;
+	text-align: center;
+}
+
+.instructions ul,
+.instructions ol {
+  margin-left: -1rem;
+}
+
+.rows {
+  color:#036354
+}
+
+.columns {
+  color:#074D7F
+}
+
+.by {
+  color:#684E05
+}
