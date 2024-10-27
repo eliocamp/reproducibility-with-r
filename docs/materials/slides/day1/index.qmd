@@ -69,9 +69,9 @@ format:
 
 ------------------------------------------------------------------------
 
-## Exercise
+## Examples
 
-**Describe what these files are**
+**Good file names**
 
 -   `data/raw/madrid-minimum_temperature.csv`
 
@@ -94,6 +94,15 @@ format:
 -   a scripts that fits a linear discriminant model and saves it to a file.
 
 -   the .Rds file in which that model is stored.
+
+```{r}
+#| eval: true
+#| echo: false
+countdown::countdown(minutes = 3,  
+                     color_text = "#008080", 
+                     color_running_background = "#008080",  
+                     color_running_text = "white")
+```
 
 ------------------------------------------------------------------------
 

@@ -44,7 +44,7 @@
 <meta itemprop="description" content="While renv is nice, it doesn&rsquo;t solve the whole problem, because system dependencies and even the R version itself can change. Another issue is that downloading and installing all the R packages can take a while. Like an hour or more. This is not a deal-breaker, but it&#39; be great to do better. People trying to reproduce work are few and far between, so it&rsquo;s important to make their lives as easy as possible.">
 <meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2036">
+<meta itemprop="wordCount" content="2062">
 
 
 
@@ -385,11 +385,21 @@ You need to make it public so that anyone can pull it, exactly how you pulled <c
 <p>You need con configure your terminal to use your DockerHub account with</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker login
 </code></pre></div><p>The terminal will show:</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">Log in with your Docker ID or email address to push and pull images from Docker Hub. If you don<span style="color:#a61717">&#39;</span>t have a Docker ID, head over to https://hub.docker.com/ to create one.
-You can log in with your password or a Personal Access Token <span style="color:#728e00">(</span>PAT<span style="color:#728e00">)</span>. Using a limited-scope PAT grants better security and is required <span style="color:#728e00">for</span> organizations using SSO. Learn more at https://docs.docker.com/go/access-tokens/
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">USING WEB-BASED LOGIN
+To sign in with credentials on the <span style="color:#728e00">command</span> line, use <span style="color:#7f8c8d">&#39;docker login -u &lt;username&gt;&#39;</span>
 
-Username:
-Password:
+Your one-time device confirmation code is: HGCB-MBFK
+Press ENTER to open your browser or submit your device code here: https://login.docker.com/activate
+
+Waiting <span style="color:#728e00">for</span> authentication in the browser…
+
+</code></pre></div><p>Press enter and follow the instructions in your browser to log in or create an account.
+Once you&rsquo;re logged in, you will see something like this:</p>
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">WARNING! Your password will be stored unencrypted in /home/elio/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credential-stores
+
+Login Succeeded
 </code></pre></div><p>Then, you push your container with</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker push <span style="color:#728e00">[</span>username<span style="color:#728e00">]</span>/demo-project
 </code></pre></div><p>Once the image is uploaded, you can go to your DockerHub repositories.</p>
