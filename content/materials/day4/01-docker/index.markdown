@@ -278,11 +278,25 @@ docker login
 The terminal will show:
 
 ``` bash
-Log in with your Docker ID or email address to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com/ to create one.
-You can log in with your password or a Personal Access Token (PAT). Using a limited-scope PAT grants better security and is required for organizations using SSO. Learn more at https://docs.docker.com/go/access-tokens/
+USING WEB-BASED LOGIN
+To sign in with credentials on the command line, use 'docker login -u <username>'
 
-Username:
-Password:
+Your one-time device confirmation code is: HGCB-MBFK
+Press ENTER to open your browser or submit your device code here: https://login.docker.com/activate
+
+Waiting for authentication in the browser…
+
+```
+
+Press enter and follow the instructions in your browser to log in or create an account. 
+Once you're logged in, you will see something like this:
+
+``` bash
+WARNING! Your password will be stored unencrypted in /home/elio/.docker/config.json.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/engine/reference/commandline/login/#credential-stores
+
+Login Succeeded
 ```
 
 Then, you push your container with
