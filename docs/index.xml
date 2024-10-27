@@ -14,7 +14,7 @@
       
       <guid>https://reproducibility.rocks/materials/day2/01-here/</guid>
       <description>If you use RStudio Projects consistently, you can be sure that your working directory is always the root of the project unless you actively change it. Almost. There are two situations in which this assumption can be broken and that can lead to errors or, even worse, surprising results.
-Root directory during knitOne issue is that when RMarkdown files are knitted, the working directory in which the code is executed is the location of the .</description>
+Root directory during knit     One issue is that when RMarkdown files are knitted, the working directory in which the code is executed is the location of the .</description>
     </item>
     
     <item>
@@ -43,7 +43,7 @@ But actively-maintained packages will change their code-base to fix bugs, add or
       
       <guid>https://reproducibility.rocks/materials/day1/01-introduction/</guid>
       <description>This workshop will introduce some useful tools to help you write code that can be run anywhere with consistent results. We will focus on the practical aspects of reproducibility, but it&amp;rsquo;s still worth it to get some sense of what is reproducibility and what&amp;rsquo;s its aim.
-What reproducibility is and what it is notWe will use &amp;ldquo;reproducibility&amp;rdquo; to talk about results that can be obtained by someone else given the same data and code.</description>
+What reproducibility is and what it is not     We will use &amp;ldquo;reproducibility&amp;rdquo; to talk about results that can be obtained by someone else given the same data and code.</description>
     </item>
     
     <item>
@@ -52,8 +52,8 @@ What reproducibility is and what it is notWe will use &amp;ldquo;reproducib
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://reproducibility.rocks/materials/day0/</guid>
-      <description>Hi!In this workshop we will be introducing in many tools to help make your work as reproducible as possible.That means that you’ll need to have several programs installed and set up before we begin.Please, follow these instructions before the workshop.
-RAt the very least you need to have R installed on your computer.If possible, try to have it upgraded to the latest version.We developed the materials using R version 4.</description>
+      <description>Hi! In this workshop we will be introducing in many tools to help make your work as reproducible as possible. That means that you’ll need to have several programs installed and set up before we begin. Please, follow these instructions before the workshop.
+R At the very least you need to have R installed on your computer. If possible, try to have it upgraded to the latest version. We developed the materials using R version 4.</description>
     </item>
     
     <item>
@@ -64,7 +64,7 @@ RAt the very least you need to have R installed on your computer.If possible, 
       <guid>https://reproducibility.rocks/materials/day1/02-projects/</guid>
       <description>Imagine that you read some interesting paper or analysis. To your delight, all the code and data is available in a public repository. You then are itching to sink your teeth on it; to see how they implemented the methods, or to run it with your own similar data.
 You download the all the files and you find something like this.
-/home/dorothy/Documents/paper├── abstract.R├── correlation.png├── data.csv├── data2.csv├── fig1.</description>
+/home/dorothy/Documents/paper ├── abstract.R ├── correlation.png ├── data.csv ├── data2.csv ├── fig1.</description>
     </item>
     
     <item>
@@ -73,8 +73,8 @@ You download the all the files and you find something like this.
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://reproducibility.rocks/materials/day2/02-git/</guid>
-      <description>Why git?Do you have something like this in your computer?
-/home/pao/Documents/thesis├── abstract.R├── thesis.Rmd├── thesis_reviwed.Rmd├── thesis_reviwed2.Rmd├── thesis_final.Rmd├── thesis_finalfinal.Rmd├── this_is_it.Rmd├── now_this_is_it_for_real_this_time_i_swear.Rmd└── FINAL.RmdProbably we all have, or had something like this at one point because we didn&amp;rsquo;t use a version control system. Version control systems manage the evolution and changes of a set of files that we&amp;rsquo;ll call repository.</description>
+      <description>Why git?     Do you have something like this in your computer?
+/home/pao/Documents/thesis ├── abstract.R ├── thesis.Rmd ├── thesis_reviwed.Rmd ├── thesis_reviwed2.Rmd ├── thesis_final.Rmd ├── thesis_finalfinal.Rmd ├── this_is_it.Rmd ├── now_this_is_it_for_real_this_time_i_swear.Rmd └── FINAL.Rmd Probably we all have, or had something like this at one point because we didn&amp;rsquo;t use a version control system. Version control systems manage the evolution and changes of a set of files that we&amp;rsquo;ll call repository.</description>
     </item>
     
     <item>
@@ -84,7 +84,7 @@ You download the all the files and you find something like this.
       
       <guid>https://reproducibility.rocks/materials/day3/02-data/</guid>
       <description>The two ingredients for a reproducible project are code and data. We talked a lot about how to organise and share code, but what about data? Sharing data is far from trivial and there are a lot of things to consider.
-PermissionsBefore the technical issues of sharing data there are the bureaucratic issues. Depending on your context, you might not be allowed to share your data.</description>
+Permissions     Before the technical issues of sharing data there are the bureaucratic issues. Depending on your context, you might not be allowed to share your data.</description>
     </item>
     
     <item>
@@ -111,7 +111,7 @@ PermissionsBefore the technical issues of sharing data there are the bureau
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://reproducibility.rocks/materials/day1/03-rmarkdown/</guid>
-      <description>R Markdown filesAn R Markdown file is a plain text file, with some rules and special syntax that allow you to write code and text together. When it is “knitted,” the code will be evaluated and executed and the text formatted so that it creates a reproducible report or document that is nice to read and contains all your work.
+      <description>R Markdown files     An R Markdown file is a plain text file, with some rules and special syntax that allow you to write code and text together. When it is “knitted,” the code will be evaluated and executed and the text formatted so that it creates a reproducible report or document that is nice to read and contains all your work.
 This is really critical to reproducibility since it automates the creation of a paper or report, which also has the side effect of saving time.</description>
     </item>
     
@@ -140,7 +140,7 @@ Therefore we propose this optional homework in which you will do just that. You 
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://reproducibility.rocks/materials/extras/</guid>
-      <description>The terminalIf you use macOS or any flavour of Linux, the terminal will sound familiar. If you live in the Windows world, the terminal may be new to you. But you don&amp;rsquo;t need another workshop to work with it in the context of this workshop. For now you can use the terminal tab in RStudio or look for the Command Prompt in the list of programs you have installed.</description>
+      <description>The terminal     If you use macOS or any flavour of Linux, the terminal will sound familiar. If you live in the Windows world, the terminal may be new to you. But you don&amp;rsquo;t need another workshop to work with it in the context of this workshop. For now you can use the terminal tab in RStudio or look for the Command Prompt in the list of programs you have installed.</description>
     </item>
     
     <item>
@@ -167,7 +167,7 @@ Therefore we propose this optional homework in which you will do just that. You 
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://reproducibility.rocks/materials/slides/day1/index_files/libs/revealjs/plugin/notes/speaker-view/</guid>
-      <description>reveal.js - Speaker Viewbody {font-family: Helvetica;font-size: 18px;}#current-slide,#upcoming-slide,#speaker-controls {padding: 6px;box-sizing: border-box;-moz-box-sizing: border-box;}#current-slide iframe,#upcoming-slide iframe {width: 100%;height: 100%;border: 1px solid #ddd;}#current-slide .label,#upcoming-slide .label {position: absolute;top: 10px;left: 10px;z-index: 2;}#connection-status {position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 20;padding: 30% 20% 20% 20%;font-size: 18px;color: #222;background: #fff;text-align: center;box-sizing: border-box;line-height: 1.</description>
+      <description>reveal.js - Speaker View  body { font-family: Helvetica; font-size: 18px; } #current-slide, #upcoming-slide, #speaker-controls { padding: 6px; box-sizing: border-box; -moz-box-sizing: border-box; } #current-slide iframe, #upcoming-slide iframe { width: 100%; height: 100%; border: 1px solid #ddd; } #current-slide .label, #upcoming-slide .label { position: absolute; top: 10px; left: 10px; z-index: 2; } #connection-status { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 20; padding: 30% 20% 20% 20%; font-size: 18px; color: #222; background: #fff; text-align: center; box-sizing: border-box; line-height: 1.</description>
     </item>
     
     <item>
@@ -176,7 +176,7 @@ Therefore we propose this optional homework in which you will do just that. You 
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://reproducibility.rocks/materials/slides/day2/index_files/libs/revealjs/plugin/notes/speaker-view/</guid>
-      <description>reveal.js - Speaker Viewbody {font-family: Helvetica;font-size: 18px;}#current-slide,#upcoming-slide,#speaker-controls {padding: 6px;box-sizing: border-box;-moz-box-sizing: border-box;}#current-slide iframe,#upcoming-slide iframe {width: 100%;height: 100%;border: 1px solid #ddd;}#current-slide .label,#upcoming-slide .label {position: absolute;top: 10px;left: 10px;z-index: 2;}#connection-status {position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 20;padding: 30% 20% 20% 20%;font-size: 18px;color: #222;background: #fff;text-align: center;box-sizing: border-box;line-height: 1.</description>
+      <description>reveal.js - Speaker View  body { font-family: Helvetica; font-size: 18px; } #current-slide, #upcoming-slide, #speaker-controls { padding: 6px; box-sizing: border-box; -moz-box-sizing: border-box; } #current-slide iframe, #upcoming-slide iframe { width: 100%; height: 100%; border: 1px solid #ddd; } #current-slide .label, #upcoming-slide .label { position: absolute; top: 10px; left: 10px; z-index: 2; } #connection-status { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 20; padding: 30% 20% 20% 20%; font-size: 18px; color: #222; background: #fff; text-align: center; box-sizing: border-box; line-height: 1.</description>
     </item>
     
     <item>
@@ -185,7 +185,7 @@ Therefore we propose this optional homework in which you will do just that. You 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://reproducibility.rocks/notes_for_instructors/</guid>
-      <description>Notes for instructorsWould you like to teach this workshop/use the materials for your own course? We&amp;rsquo;ve compiled here a list of tools we usually use while we teach.
+      <description>Notes for instructors   Would you like to teach this workshop/use the materials for your own course? We&amp;rsquo;ve compiled here a list of tools we usually use while we teach.
 The check points are instances when we ask the students how familiar are with x topic. Depending on their answers we decide if we can skip the topic, explain a few things or going through it in depth.</description>
     </item>
     
@@ -208,7 +208,7 @@ Day 1 sheep: Image by OpenClipart-Vectors from Pixabay</description>
       
       <guid>https://reproducibility.rocks/license/</guid>
       <description>All materials are licensed with Creative Commons Attribution-ShareAlike 4.0 International License. Help yourself!
-</description>
+   </description>
     </item>
     
   </channel>
