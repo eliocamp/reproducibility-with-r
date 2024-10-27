@@ -95,13 +95,14 @@ format:
 
 -   the .Rds file in which that model is stored.
 
-```{r eval=TRUE, echo=FALSE}
-countdown::countdown(minutes = 15,  
+```{r}
+#| eval: true
+#| echo: false
+countdown::countdown(minutes = 3,  
                      color_text = "#008080", 
                      color_running_background = "#008080",  
                      color_running_text = "white")
 ```
-
 
 ------------------------------------------------------------------------
 

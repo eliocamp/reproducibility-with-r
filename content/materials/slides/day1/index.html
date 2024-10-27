@@ -319,6 +319,10 @@
       margin-right: 0; 
     }
   </style>
+  <link href="index_files/libs/countdown-0.4.0/countdown.css" rel="stylesheet">
+
+  <script src="index_files/libs/countdown-0.4.0/countdown.js"></script>
+
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -382,16 +386,16 @@
 
 <img data-src="spectrum-notext.png" class="r-stretch"><p><a href="https://rviews.rstudio.com/2018/01/18/package-management-for-reproducible-r-code/" class="uri">https://rviews.rstudio.com/2018/01/18/package-management-for-reproducible-r-code/</a></p>
 </section>
-<section id="exercise" class="slide level2">
-<h2>Exercise</h2>
-<p><strong>Describe what these files are</strong></p>
+<section id="examples" class="slide level2">
+<h2>Examples</h2>
+<p><strong>Good file names</strong></p>
 <ul>
 <li><p><code>data/raw/madrid-minimum_temperature.csv</code></p></li>
 <li><p><code>scripts/02-compute-mean_temperature.R</code></p></li>
 <li><p><code>analysis/01-madrid-minimum_temperature-descriptive_statistics.Rmd</code></p></li>
 </ul>
 </section>
-<section id="exercise-1" class="slide level2">
+<section id="exercise" class="slide level2">
 <h2>Exercise</h2>
 <p><strong>Come up with good file names and folders for (choose two)</strong></p>
 <ul>
@@ -401,6 +405,14 @@
 <li><p>a scripts that fits a linear discriminant model and saves it to a file.</p></li>
 <li><p>the .Rds file in which that model is stored.</p></li>
 </ul>
+<div class="cell">
+<div class="cell-output-display">
+<div class="countdown" id="timer_a108b7d4" data-update-every="1" tabindex="0" style="right:0;bottom:0;">
+<div class="countdown-controls"><button class="countdown-bump-down">−</button><button class="countdown-bump-up">+</button></div>
+<code class="countdown-time"><span class="countdown-digits minutes">03</span><span class="countdown-digits colon">:</span><span class="countdown-digits seconds">00</span></code>
+</div>
+</div>
+</div>
 </section>
 <section id="do-you-use-rstudio-projects" class="slide level2">
 <h2>Do you use RStudio projects?</h2>
@@ -672,6 +684,82 @@
         ]
       });
     </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
