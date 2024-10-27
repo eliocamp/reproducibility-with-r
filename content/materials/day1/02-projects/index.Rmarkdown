@@ -258,7 +258,7 @@ remotes::install_github("benmarwick/rrtools")
 
 rrtools provides a relatively rich and strict template which has the advantage of liberating you from some decisions but, as it usually goes with these things, it also forces some decision onto you which might not be optimal for your specific use-case.
 In any case, it provides a very solid starting point that follows some best practices.
-However, it can be a bit overwhelming because it has many moving parts, so in this course we will go over each part in [Research compendia with rrtools]().
+However, it can be a bit overwhelming because it has many moving parts, so in this course we will go over each part in [Research compendia with rrtools](/materials/day2/03-rrtools/).
 
 ### Resources
 

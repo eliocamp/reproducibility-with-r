@@ -117,7 +117,7 @@ For example, if you have
 
 
 
-```r
+``` r
 files
 ```
 
@@ -129,7 +129,7 @@ files
 You could extract cities and variable names by just
 
 
-```r
+``` r
 strsplit(files, "_")
 ```
 
@@ -163,7 +163,7 @@ Perhaps the main culprit of non-portable code is using absolute paths to manipul
 Think about this piece of code:
 
 
-```r
+``` r
 read.csv("/home/dorothy/Documents/research/black-hole/data/data.csv")
 ```
 
@@ -172,7 +172,7 @@ Even if you correctly downloaded the `myresearch` folder, this code wouldn't run
 Instead, you can use a relative path such as
 
 
-```r
+``` r
 read.csv("data/data.csv")
 ```
 
@@ -272,13 +272,13 @@ The **rrtools** package can automate a lot of these steps (and more) and the **r
 These packages are not on CRAN, so you need to install them with
 
 
-```r
+``` r
 remotes::install_github("benmarwick/rrtools")
 ```
 
 rrtools provides a relatively rich and strict template which has the advantage of liberating you from some decisions but, as it usually goes with these things, it also forces some decision onto you which might not be optimal for your specific use-case.
 In any case, it provides a very solid starting point that follows some best practices.
-However, it can be a bit overwhelming because it has many moving parts, so in this course we will go over each part in [Research compendia with rrtools]().
+However, it can be a bit overwhelming because it has many moving parts, so in this course we will go over each part in [Research compendia with rrtools](/materials/day2/03-rrtools/).
 
 ### Resources
 
