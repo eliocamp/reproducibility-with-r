@@ -242,7 +242,7 @@ Recent versions of RStudio include a [Visual Editor](https://rstudio.github.io/v
 
 If you are here to use rmarkdown to write papers or reports, you may need to add references to other papers or sources.
 Similarly to LaTeX, you’ll need a .bib file with all the references you want to include in the document.
-While we don’t have time to explore tools to create and manage this type of file, we recommend you to explore [Zotero](https://www.zotero.org/) (open source) or [Mendeley](https://www.mendeley.com/).
+While we don’t have time to explore tools to create and manage this type of file, we recommend you to explore [Zotero](https://www.zotero.org/).
 
 Provided you have the `references.bib` file in your project (you can try it with [this example](/references.bib)), you need to include that in the yaml of the file:
 
