@@ -287,7 +287,7 @@ of these situations:
 in this case you don't need to use forks.
 - Scenario 2: You do not have write permissions on the remote repository, so you will need to use forks.
 
-In both scenarios we will assume that you will work with branchs to separate
+In both scenarios we will assume that you will work with branches to separate
 your work from other people's before passing them to the main branch.
 
 ### Scenario 1

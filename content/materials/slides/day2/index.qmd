@@ -57,13 +57,13 @@ Choose an emoji from Reactions
 
 ------------------------------------------------------------------------
 
-### Branchs: main
+### Branches: main
 
 ![](/materials/day2/02-git/images/main.png)
 
 ------------------------------------------------------------------------
 
-### Branchs
+### Branches
 
 ![](/materials/day2/02-git/images/branch.png)
 
