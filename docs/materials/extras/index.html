@@ -167,7 +167,7 @@
     </svg></a>
 </h2>
 <p>Sometimes you need to re-do a report changing one variable that repeats over all the code, the best way to do this is through a parameterised report.</p>
-<p>In the following example there is a plot of the price distribution for ideal diamonds. 
+<p>In the following example there is a plot of the price distribution for ideal diamonds.
 If you want to change it to visualise the data for &ldquo;fair&rdquo; or &ldquo;very good&rdquo; cut diamonds, you will have to change the <code>filter(cut == &quot;Ideal&quot;)</code> and hopefully you wont forget the plot title.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#d35400">library</span>(<span style="color:#434f54">dplyr</span>)
 <span style="color:#d35400">library</span>(<span style="color:#434f54">ggplot2</span>)
@@ -180,7 +180,7 @@ If you want to change it to visualise the data for &ldquo;fair&rdquo; or &ldquo;
        <span style="color:#434f54">x</span> <span style="color:#728e00">=</span> <span style="color:#7f8c8d">&#34;Color&#34;</span>,
        <span style="color:#434f54">y</span> <span style="color:#728e00">=</span> <span style="color:#7f8c8d">&#34;Price [US dollars]&#34;</span>)
 </code></pre></div><p><img src="https://reproducibility.rocks/materials/extras/index_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-<p>In these situations you can create a parameterised report. 
+<p>In these situations you can create a parameterised report.
 To generate a parameterised report you have to add an element called <code>params</code> to the YAML with the list of parameters (1 or more) and their default values. It is as if the R Markdown file were a big function with its arguments!</p>
 <pre><code>params:
   this_cut: Ideal

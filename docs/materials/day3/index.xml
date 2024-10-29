@@ -24,7 +24,7 @@ But actively-maintained packages will change their code-base to fix bugs, add or
       
       <guid>https://reproducibility.rocks/materials/day3/02-data/</guid>
       <description>The two ingredients for a reproducible project are code and data. We talked a lot about how to organise and share code, but what about data? Sharing data is far from trivial and there are a lot of things to consider.
-PermissionsBefore the technical issues of sharing data there are the bureaucratic issues. Depending on your context, you might not be allowed to share your data.</description>
+Permissions     Before the technical issues of sharing data there are the bureaucratic issues. Depending on your context, you might not be allowed to share your data.</description>
     </item>
     
   </channel>

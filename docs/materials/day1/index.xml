@@ -14,7 +14,7 @@
       
       <guid>https://reproducibility.rocks/materials/day1/01-introduction/</guid>
       <description>This workshop will introduce some useful tools to help you write code that can be run anywhere with consistent results. We will focus on the practical aspects of reproducibility, but it&amp;rsquo;s still worth it to get some sense of what is reproducibility and what&amp;rsquo;s its aim.
-What reproducibility is and what it is notWe will use &amp;ldquo;reproducibility&amp;rdquo; to talk about results that can be obtained by someone else given the same data and code.</description>
+What reproducibility is and what it is not     We will use &amp;ldquo;reproducibility&amp;rdquo; to talk about results that can be obtained by someone else given the same data and code.</description>
     </item>
     
     <item>
@@ -25,7 +25,7 @@ What reproducibility is and what it is notWe will use &amp;ldquo;reproducib
       <guid>https://reproducibility.rocks/materials/day1/02-projects/</guid>
       <description>Imagine that you read some interesting paper or analysis. To your delight, all the code and data is available in a public repository. You then are itching to sink your teeth on it; to see how they implemented the methods, or to run it with your own similar data.
 You download the all the files and you find something like this.
-/home/dorothy/Documents/paper├── abstract.R├── correlation.png├── data.csv├── data2.csv├── fig1.</description>
+/home/dorothy/Documents/paper ├── abstract.R ├── correlation.png ├── data.csv ├── data2.csv ├── fig1.</description>
     </item>
     
     <item>
@@ -34,7 +34,7 @@ You download the all the files and you find something like this.
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://reproducibility.rocks/materials/day1/03-rmarkdown/</guid>
-      <description>R Markdown filesAn R Markdown file is a plain text file, with some rules and special syntax that allow you to write code and text together. When it is “knitted,” the code will be evaluated and executed and the text formatted so that it creates a reproducible report or document that is nice to read and contains all your work.
+      <description>R Markdown files     An R Markdown file is a plain text file, with some rules and special syntax that allow you to write code and text together. When it is “knitted,” the code will be evaluated and executed and the text formatted so that it creates a reproducible report or document that is nice to read and contains all your work.
 This is really critical to reproducibility since it automates the creation of a paper or report, which also has the side effect of saving time.</description>
     </item>
     
