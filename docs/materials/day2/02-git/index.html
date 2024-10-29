@@ -45,7 +45,7 @@
 /home/pao/Documents/thesis├── abstract.R├── thesis.Rmd├── thesis_reviwed.Rmd├── thesis_reviwed2.Rmd├── thesis_final.Rmd├── thesis_finalfinal.Rmd├── this_is_it.Rmd├── now_this_is_it_for_real_this_time_i_swear.Rmd└── FINAL.RmdProbably we all have, or had something like this at one point because we didn&rsquo;t use a version control system. Version control systems manage the evolution and changes of a set of files that we&rsquo;ll call repository.">
 <meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2271">
+<meta itemprop="wordCount" content="2639">
 
 
 
@@ -432,25 +432,78 @@ Github has an Code of Conduct wizard to make it easy to add one.</p>
       <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
     </svg></a>
 </h2>
-<p>When collaborating on a project you can find yourself in one of two scenarios</p>
+<p>In this section we are going to see what it looks like to use collaborative workflows
+to work with other people to do data analysis and software development.
+Previously you were working with git individually:</p>
+<pre><code>Modify a file --&gt; Add --&gt; Commit 
+</code></pre><p>You did all this in a branch of the repository that we usually call <em>main</em> because it is the main one. A <strong>branch</strong> in git is a tag that points to a specific <em>commit</em> in the repository from which other versions of the repository are created. 
+Working in a branch allows you to modify files without modifying the same files in other branches, because essentially you are working on a “parallel” set of files.
+When you want to pass the changes from your branch to the main branch, you would have to do a <strong>merge</strong> to combine the branches.</p>
+<p>Collaborative workflow includes two new concepts: <em>forks</em> and <em>pull requests</em>.</p>
 <ul>
-<li>You have write permission of the repo you are working on.</li>
-<li>You don&rsquo;t have write permission on the repo.</li>
+<li>A <strong>fork</strong> is a copy of another person&rsquo;s or team&rsquo;s repository that will be stored in your GitHub account.
+Both the original and the fork are on GitHub, the difference is that you can make
+modifications to the version that is in your account.</li>
+<li><strong>Pull Request</strong> or PR is a GitHub tool that allows you to make changes to a fork or branch and then request to the maintainer to merge those changes into the main repository.
+Pull requests can come from forks or from independent branches within the repository. They allow
+the maintainers and contributors to the project to review, discuss, request, and approve the changes and merge then to the main branch.</li>
 </ul>
-<p>The first situation is the most common when working together with an team on a long term project.
-You can clone the repo following the 
-<a href="/materials/day2/01-git/#creating-a-new-repository">these same instructions</a> and use the same workflow as before.
-When you try to push your changes to the remote repository, GitHub will check if you have the rights to modify the repo.
-The only difference between this and working on your own is that you need to communicate well so that two people are not working on the same thing.
-But this is true with or without git.</p>
-<p>The second situation is common when contributing to strangers' projects, such as fixing bugs in open source packages.
-In this case, you need to first <em>fork</em> the repository, which creates a remote repository linked to your GitHub account to which you will have complete access.
-Now you work in this fork using the normal workflow: modify, add, commit and push.
-But for your changes to integrate into the original repository, you need to create a <em>pull request</em> (or <em>PR</em>).
-This will let the owner of the original repo that you made some changes that you think should be merged.
-The owner can then accept, reject or ask for modifications.
-Once they accept your Pull Request, your modifications will be safe in the original repository.</p>
-<p><img src="images/pull-request.png" alt="Concept model of the remote workflow. A foreign remote repository can be forked to an owned remote repository with a &ldquo;fork&rdquo;. The remote repository is copied into a local repository with a &ldquo;clone&rdquo;. Files inside the local repository and the remote repository are synced with push and pull. The owned remote repository can be merged into the foreign remote repository with a pull request."></p>
+<p>Learning how to effectively use these tools and concepts can make collaborating with other people
+much easier. You may even be able to use this workflow even on an individual basis.</p>
+<p>When you are collaborating on a project, you may find yourself in one of the following situations
+of these situations:</p>
+<ul>
+<li>Scenario 1: You have write permissions on the remote repository,
+in this case you don&rsquo;t need to use forks.</li>
+<li>Scenario 2: You do not have write permissions on the remote repository, so you will need to use forks.</li>
+</ul>
+<p>In both scenarios we will assume that you will work with branchs to separate
+your work from other people&rsquo;s before passing them to the main branch.</p>
+
+
+
+
+<h3 id="scenario-1">Scenario 1
+  <a href="#scenario-1"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>This diagram shows the workflow when we <strong>don&rsquo;t</strong> need to do a fork.</p>
+<p><img src="images/no_fork.png" alt="Concept model of the workflow in scenario 1. The remote repository is copied into a local repository with a &ldquo;clone&rdquo;. Files inside the local repository and the remote repository are synced with push and pull. The owned remote repository can be merged into the foreign remote repository with a pull request."></p>
+<ol>
+<li>Clone the repository on your computer following the 
+<a href="/materials/day2/01-git/#creating-a-new-repository">these same instructions</a>.</li>
+<li>Create a new branch.</li>
+<li>Edit files, add them and make commits in that branch.</li>
+<li>When the changes are done and ready, send a pull request to the remote repository to
+to compare your changes in your branch with main branch.</li>
+<li>The pull request is accepted and merged or you have to make new changes (go back to step 3).</li>
+<li>Once the PR is accepted and merged, the main branch now has the updated changes and you can delete the branch you were working on.</li>
+<li>The process can be repeated several times, in parallel or in sequence depending on the size of the team and project.</li>
+</ol>
+
+
+
+
+<h3 id="scenario-2">Scenario 2
+  <a href="#scenario-2"><svg class="anchor-symbol" aria-hidden="true" height="26" width="26" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 0h24v24H0z" fill="currentColor"></path>
+      <path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76.0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71.0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71.0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76.0 5-2.24 5-5s-2.24-5-5-5z"></path>
+    </svg></a>
+</h3>
+<p>For fork-based workflows, the process is as follows:</p>
+<p><img src="images/si_fork.png" alt="Concept model of the workflow in scenario 2. A foreign remote repository can be forked to an owned remote repository with a &ldquo;fork&rdquo;. The remote repository is copied into a local repository with a &ldquo;clone&rdquo;. Files inside the local repository and the remote repository are synced with push and pull. The owned remote repository can be merged into the foreign remote repository with a pull request."></p>
+<ol>
+<li>Create a fork of the main repository (if you don&rsquo;t already have one).</li>
+<li>Clone the forked repository on your computer.</li>
+<li>Create a new branch in the forked repository.</li>
+<li>Make changes to the files and commit them to the branch.</li>
+<li>When everything is ready, open the pull request. If you need to make new
+changes you will have to go back to step 4.</li>
+<li>If the PR is accepted and merged, the main branch in the main repository will be updated and the new branch can be deleted.</li>
+<li>Finally you can synchronize your forked repository with the main repository.</li>
+</ol>
 
 
 
