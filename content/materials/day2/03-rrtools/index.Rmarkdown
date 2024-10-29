@@ -87,9 +87,9 @@ To use a different license, replace this line with any of the licenses mentioned
 You can read more about licences [here](https://r-pkgs.org/license.html).
 </div>
 
-### 3. `rrtools::use_readme_rmd()`
+### 3. `rrtools::use_readme_qmd()`
 
-This generates [README.Rmd](README.Rmd) and renders it to [README.md](README.md), ready to display on the repository home page on GitHub.
+This generates a README.qmd that renders to README.md, ready to display on the repository home page on GitHub.
 
 It contains:
 
