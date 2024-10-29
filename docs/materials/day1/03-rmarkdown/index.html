@@ -45,7 +45,7 @@
 This is really critical to reproducibility since it automates the creation of a paper or report, which also has the side effect of saving time.">
 <meta itemprop="datePublished" content="2023-10-01T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2578">
+<meta itemprop="wordCount" content="2576">
 
 
 
@@ -386,9 +386,9 @@ You can start typing “fig.” inside the <code>{ }</code> to explore the optio
 <p>If you are here to use rmarkdown to write papers or reports, you may need to add references to other papers or sources.
 Similarly to LaTeX, you’ll need a .bib file with all the references you want to include in the document.
 While we don’t have time to explore tools to create and manage this type of file, we recommend you to explore 
-<a href="https://www.zotero.org/" target="_blank" rel="noopener">Zotero</a> (open source) or 
-<a href="https://www.mendeley.com/" target="_blank" rel="noopener">Mendeley</a>.</p>
-<p>Provided you have the <code>references.bib</code> file in your project, you need to include that in the yaml of the file:</p>
+<a href="https://www.zotero.org/" target="_blank" rel="noopener">Zotero</a>.</p>
+<p>Provided you have the <code>references.bib</code> file in your project (you can try it with 
+<a href="/references.bib">this example</a>), you need to include that in the yaml of the file:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#434f54">---</span>
 <span style="color:#434f54">title</span>: <span style="color:#7f8c8d">&#34;My first markdown&#34;</span>
 <span style="color:#434f54">output</span>: 
@@ -469,7 +469,7 @@ Also, it’s not always mandatory to submit your paper using the journal templat
 </li>
 <li>
 <p>Download the AGU Geophysical Research Letters template from 
-<a href="https://www.agu.org/-/media/files/publications/august-2022-latex-templates.zip" target="_blank" rel="noopener">here</a>. Inside the file there’s a <code>Feb-3-22-latex-templates</code> folder with 8 files. Extract all those files into the same folder you saved the R Markdown.
+<a href="https://www.agu.org/-/media/files/publications/june-2024-latex-templates.zip" target="_blank" rel="noopener">here</a>. Inside the file there’s a folder with a bunch of files. Extract all those files into the same folder you saved the R Markdown.
 You need to have a folder in your project with these files:</p>
 <pre><code>.
 ├── agujournal2019.cls
@@ -502,10 +502,11 @@ The template needs some tweaking, though.</p>
 </li>
 <li>
 <p>Set the global option <code>echo = FALSE</code></p>
-<p>To do this, look for the line <code>knitr::opts_chunk$set(echo = TRUE)</code> and change it to <code>knitr::opts_chunk$set(echo = FALSE)</code></p>
+<p>To do this, look for the line <code>knitr::opts_chunk$set(echo = TRUE)</code> and change it to <code>knitr::opts_chunk$set(echo = FALSE)</code>. This is because the latex template doesn’t yet define the necessary environment to display code blocks, which is generally not necessary in journal articles. If you need to show code blocks, you can add <code>`$highlighting-macros$`</code> (see this 
+<a href="https://stackoverflow.com/a/51630795/4909767" target="_blank" rel="noopener">StackOverflow answer</a>).</p>
 </li>
 <li>
-<p>In the <code>agujournaltemplate.tex</code> file, add <code>\usepackage{hyperref}</code> in line 63 (or anywhere before <code>\begin{document}</code>. Also, remove remove everything from line 174 (around <code>%  BODY TEXT</code> to line 413 (right before <code>\end{document}</code>).</p>
+<p>In the <code>agujournaltemplate.tex</code> file, add <code>\usepackage{hyperref}</code> on line 63 (or anywhere before <code>\begin{document}</code>. Also, remove remove everything from line 174 (around <code>%  BODY TEXT</code> to line 420 (right before <code>\end{document}</code>).</p>
 </li>
 <li>
 <p>Knit!</p>
@@ -517,14 +518,10 @@ The template needs some tweaking, though.</p>
 <li>
 <p>Knit again!</p>
 <p>Now, the title in the R Markdown file and the pdf are the same.
-<code>`$title$`</code> in the LaTeX template will be replaced by the value of <code>title</code> supplied by the YAML header.</p>
+<code>`$title$`</code> (without the backtics) in the LaTeX template will be replaced by the value of <code>title</code> supplied by the YAML header.</p>
 </li>
 <li>
 <p>Let’s also include the content of the R Markdown file. In the LaTeX template, go to right before <code>\end{docunent}</code> (around line 174) and add <code>`$body$`</code> (without the backticks). The special variable <code>body</code> will be replaced by the actual rendered contents of the R Markdown file.</p>
-</li>
-<li>
-<p>Also, change <code>knitr::opts_chunk$set(echo = TRUE)</code> to <code>knitr::opts_chunk$set(echo = FALSE)</code>. This is because the latex template doesn’t yet define the necessary environment to display code blocks, which is generally not necessary in journal articles. If you need to show code blocks, you can add <code>`$highlighting-macros$`</code> (see this 
-<a href="https://stackoverflow.com/a/51630795/4909767" target="_blank" rel="noopener">StackOverflow answer</a>).</p>
 </li>
 <li>
 <p>Knit again!</p>

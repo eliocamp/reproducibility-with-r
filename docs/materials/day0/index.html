@@ -45,7 +45,7 @@
 R At the very least you need to have R installed on your computer. If possible, try to have it upgraded to the latest version. We developed the materials using R version 4.">
 <meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1178">
+<meta itemprop="wordCount" content="1151">
 <meta itemprop="image" content="https://reproducibility.rocks/materials/day0/featured.png">
 
 
@@ -159,9 +159,9 @@ To the best of our abilities, we don’t think there’s anything that requires 
 <h2>RStudio</h2>
 <p>We will be using RStudio as IDE.
 Again, try to update it to the latest version.
-The new visual editor will be particularly helpful for those without a lot of experience with markdown (and probably for the markdown experts as well).
-Also, old versions of RStudio do not work well with new versions of R (ggplot2 plots will crash your session).</p>
+The new visual editor will be particularly helpful for those without a lot of experience with markdown (and probably for the markdown experts as well).</p>
 <p>Go to <a href="https://posit.co/download/rstudio-desktop/" class="uri">https://posit.co/download/rstudio-desktop/</a> and download the latest version.</p>
+<p>If you prefer to use a different IDE, you are welcome to do it.</p>
 </div>
 <div id="optional-use-rstudio-package-manager" class="section level2">
 <h2>(Optional) Use RStudio Package Manager</h2>
@@ -184,11 +184,11 @@ RStudio will install the packages and then open a sample document.</p></li>
 These are on CRAN so you can install them with the usual</p>
 <pre class="r"><code>install.packages(c(&quot;here&quot;, &quot;renv&quot;, &quot;rticles&quot;, &quot;devtools&quot;, &quot;roxygen2&quot;, &quot;gitcreds&quot;))</code></pre>
 <p>The package <strong>rrtools</strong> will also be useful.
-It’s not on CRAN, so you need so install it from github</p>
-<p>On Linux, you might need to install these system libraries:</p>
-<pre class="bash"><code>sudo apt install libxml2-dev libcurl4-openssl-dev libfontconfig1-dev libgit2-dev libssh2-1-dev libharfbuzz-dev libfribidi-dev lbfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev </code></pre>
+It’s not on CRAN, so you need so install it from github:</p>
 <pre class="r"><code>if (!require(&quot;remotes&quot;)) install.packages(&quot;remotes&quot;)
 remotes::install_github(&quot;benmarwick/rrtools&quot;)</code></pre>
+<p>On Linux, you might need to install these system libraries:</p>
+<pre class="bash"><code>sudo apt install libxml2-dev libcurl4-openssl-dev libfontconfig1-dev libgit2-dev libssh2-1-dev libharfbuzz-dev libfribidi-dev lbfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev </code></pre>
 </div>
 <div id="latex" class="section level2">
 <h2>LaTeX</h2>
@@ -240,8 +240,6 @@ We like <a href="https://www.gitkraken.com/">GitKraken</a>, which is free, featu
 </div>
 <div id="docker" class="section level2">
 <h2>Docker</h2>
-<p>On the fourth day we show the basics of docker.
-Instructions on how to install it depend on your operating system.</p>
 <p>On the fourth day we show the basics of docker.
 Instructions on how to install it depend on your operating system.</p>
 <p>If you’re on Windows, you need to enable hardware virtualisation.

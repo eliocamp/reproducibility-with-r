@@ -245,9 +245,9 @@ Recent versions of RStudio include a [Visual Editor](https://rstudio.github.io/v
 
 If you are here to use rmarkdown to write papers or reports, you may need to add references to other papers or sources.
 Similarly to LaTeX, you'll need a .bib file with all the references you want to include in the document.
-While we don't have time to explore tools to create and manage this type of file, we recommend you to explore [Zotero](https://www.zotero.org/) (open source) or [Mendeley](https://www.mendeley.com/).
+While we don't have time to explore tools to create and manage this type of file, we recommend you to explore [Zotero](https://www.zotero.org/).
 
-Provided you have the `references.bib` file in your project, you need to include that in the yaml of the file:
+Provided you have the `references.bib` file in your project (you can try it with [this example](/references.bib)), you need to include that in the yaml of the file:
 
 ``` yaml
 ---
@@ -314,7 +314,7 @@ Adapting a template
 
 1. Create a new R Markdown file using PDF as a output format and save it into your project (for example, `paper.Rmd`). 
 
-2. Download the AGU Geophysical Research Letters template from [here](https://www.agu.org/-/media/files/publications/august-2022-latex-templates.zip). Inside the file there's a `Feb-3-22-latex-templates` folder with 8 files. Extract all those files into the same folder you saved the R Markdown. 
+2. Download the AGU Geophysical Research Letters template from [here](https://www.agu.org/-/media/files/publications/june-2024-latex-templates.zip). Inside the file there's a folder with a bunch of files. Extract all those files into the same folder you saved the R Markdown. 
 You need to have a folder in your project with these files:
 
     ```
@@ -353,9 +353,9 @@ You need to have a folder in your project with these files:
     
 4. Set the global option `echo = FALSE` 
 
-    To do this, look for the line `knitr::opts_chunk$set(echo = TRUE)` and change it to `knitr::opts_chunk$set(echo = FALSE)`
+    To do this, look for the line `knitr::opts_chunk$set(echo = TRUE)` and change it to `knitr::opts_chunk$set(echo = FALSE)`. This is because the latex template doesn't yet define the necessary environment to display code blocks, which is generally not necessary in journal articles. If you need to show code blocks, you can add `` `$highlighting-macros$` `` (see this [StackOverflow answer](https://stackoverflow.com/a/51630795/4909767)). 
 
-5. In the `agujournaltemplate.tex` file, add `\usepackage{hyperref}` in line 63 (or anywhere before `\begin{document}`. Also, remove  remove everything from line 174 (around `%  BODY TEXT` to line 413 (right before `\end{document}`).
+5. In the `agujournaltemplate.tex` file, add `\usepackage{hyperref}` on line 63 (or anywhere before `\begin{document}`. Also, remove  remove everything from line 174 (around `%  BODY TEXT` to line 420 (right before `\end{document}`).
 
 5. Knit! 
     
@@ -366,15 +366,14 @@ You need to have a folder in your project with these files:
 7. Knit again!
 
     Now, the title in the R Markdown file and the pdf are the same.
-    `` `$title$` `` in the LaTeX template will be replaced by the value of `title` supplied by the YAML header.
+    `` `$title$` `` (without the backtics) in the LaTeX template will be replaced by the value of `title` supplied by the YAML header.
   
 8. Let's also include the content of the R Markdown file. In the LaTeX template, go to right before `\end{docunent}` (around line 174) and add `` `$body$` `` (without the backticks). The special variable `body` will be replaced by the actual rendered contents of the R Markdown file. 
-
-9. Also, change `knitr::opts_chunk$set(echo = TRUE)` to `knitr::opts_chunk$set(echo = FALSE)`. This is because the latex template doesn't yet define the necessary environment to display code blocks, which is generally not necessary in journal articles. If you need to show code blocks, you can add `` `$highlighting-macros$` `` (see this [StackOverflow answer](https://stackoverflow.com/a/51630795/4909767)). 
 
 9. Knit again! 
    
    This time you'll see the sample R Markdown document in the PDF. 
+
 
 10. You can add new options to the YAML header and then use the same trick so they are used by the LaTeX template. For example, add a new option called "abstract" and write some text, like this:
 

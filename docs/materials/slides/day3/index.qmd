@@ -2,6 +2,8 @@
 title: "Day 3"
 format: 
   revealjs:
+    theme:
+      - ../custom_slides.scss
     logo: "logo.png"
     title-slide-attributes:
       data-background-image: "https://reproducibility.rocks/sheep.svg"

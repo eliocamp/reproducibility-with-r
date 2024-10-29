@@ -2,6 +2,8 @@
 title: "An R reproducibility toolkit for the practical researcher"
 format: 
   revealjs:
+    theme:
+      - ../custom_slides.scss
     logo: "logo.png"
     title-slide-attributes:
       data-background-image: "http://reproducibility.rocks/sheep.svg"
@@ -14,7 +16,7 @@ format:
 
 ::: {.incremental}
 
--   🗓️ The course will be held online, from 3 to 6 pm (Berlin time), in October (9th-12th).
+-   🗓️ The course will be held online, from 9 am to 12 pm (Berlin time), October (28th-31st).
     -   ⏳with pauses every hour!
 -   📚Materiales: everything lives here: <http://reproducibility.rocks/>
 -   ❓Check points (how familiar are you with \_\_\_?)
@@ -67,9 +69,9 @@ format:
 
 ------------------------------------------------------------------------
 
-## Exercise
+## Examples
 
-**Describe what these files are**
+**Good file names**
 
 -   `data/raw/madrid-minimum_temperature.csv`
 
@@ -92,6 +94,15 @@ format:
 -   a scripts that fits a linear discriminant model and saves it to a file.
 
 -   the .Rds file in which that model is stored.
+
+```{r}
+#| eval: true
+#| echo: false
+countdown::countdown(minutes = 3,  
+                     color_text = "#008080", 
+                     color_running_background = "#008080",  
+                     color_running_text = "white")
+```
 
 ------------------------------------------------------------------------
 
