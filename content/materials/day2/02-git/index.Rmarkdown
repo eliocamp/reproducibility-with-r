@@ -270,7 +270,7 @@ When you want to pass the changes from your branch to the main branch, you would
 
 Collaborative workflow includes two new concepts: *forks* and *pull requests*.
 
-- A **forks** is a copy of another person's or team's repository that will be stored in your GitHub account.
+- A **fork** is a copy of another person's or team's repository that will be stored in your GitHub account.
 Both the original and the fork are both on GitHub, the difference is that you can make
 modifications to the version that is in your account.
 - **Pull Request** or PR is a GitHub tool that allows you to make changes to a fork or branch and then request to the maintainer to merge those changes into the main repository.
