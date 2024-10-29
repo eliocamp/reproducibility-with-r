@@ -54,10 +54,23 @@ Choose an emoji from Reactions
 ------------------------------------------------------------------------
 
 ![](/materials/day2/02-git/images/local_remote.png){alt="Concept model of a workflow using RStudio projects and git. Files are added to the staging area, and then commited to the local repository. You can push commits to the remote repository and pull new commits to your computer."}
-
 ------------------------------------------------------------------------
+### Branchs: main
 
-![](/materials/day2/02-git/images/pull-request.png){alt="Concep model of the remote workflow. A foreign remote repository can be forked to an owned remote repository with a “fork”. The remote repository is copied into a local repository with a “clone”. Files inside the local repository and the remote repository are synced with push and pull. The owned remote repository can be merged into the foreign remote repository with a pull request. "}
+![](/materials/day2/02-git/images/main.png)
+------------------------------------------------------------------------
+### Branchs 
+
+![](/materials/day2/02-git/images/branch.png)
+------------------------------------------------------------------------
+### Scenario 1
+
+![](/materials/day2/02-git/images/no_fork.png){alt="Concept model of the workflow in scenario 1. The remote repository is copied into a local repository with a "clone". Files inside the local repository and the remote repository are synced with push and pull. The owned remote repository can be merged into the foreign remote repository with a pull request."}
+------------------------------------------------------------------------
+### Scenario 2
+
+![](/materials/day2/02-git/images/si_fork.png){alt="Concept model of the workflow in scenario 2. A foreign remote repository can be forked to an owned remote repository with a "fork". The remote repository is copied into a local repository with a "clone". Files inside the local repository and the remote repository are synced with push and pull. The owned remote repository can be merged into the foreign remote repository with a pull request."}
+
 
 ------------------------------------------------------------------------
 
