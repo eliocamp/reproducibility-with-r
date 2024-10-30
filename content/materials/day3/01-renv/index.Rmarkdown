@@ -34,8 +34,6 @@ Start using renv
 
 1. Create a new project and add a new R Markdown document (you can save it as paper.Rmd). 
 
-1. (Due to a recent issue with RStudio, you might need to press Enter before continuing). 
-
 2. In the console run `renv::init()`. 
 
 3. Run `renv::status()`. 
@@ -174,6 +172,8 @@ This will install everything in their local project library so they can be up an
 Restore an environment 
 
 1. Download this [reproducible project](/reproducible_project.zip). 
+
+1. (Due to a recent issue with RStudio, you might need to press Enter before continuing). 
 
 2. Open the project and run `renv::status()` in the R console. What's the status of the packages?
 
