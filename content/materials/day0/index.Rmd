@@ -21,6 +21,11 @@ To the best of our abilities, we don't think there's anything that requires this
 
 Go to <https://cloud.r-project.org/> and follow the steps for your Operating System.
 
+## RTools (only on Windows)
+
+If you are using Windows, you also will need RTools to compile source packages. 
+Go to <https://cran.r-project.org/bin/windows/Rtools/> and download and install the version of RTools for your version of R by following the instructions. 
+
 ## RStudio
 
 We will be using RStudio as IDE.
