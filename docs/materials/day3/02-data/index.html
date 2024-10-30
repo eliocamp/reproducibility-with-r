@@ -340,7 +340,7 @@ This is the button you should point people to.</p>
 For example, you could create a <code>download_penguins()</code> function</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#434f54">download_penguins</span> <span style="color:#728e00">&lt;-</span> <span style="color:#d35400">function</span>() {
   <span style="color:#434f54">file</span> <span style="color:#728e00">&lt;-</span> <span style="color:#434f54">here</span><span style="color:#728e00">::</span><span style="color:#d35400">here</span>(<span style="color:#7f8c8d">&#34;data/penguins.csv&#34;</span>)
-  <span style="color:#434f54">url</span> <span style="color:#728e00">&lt;-</span> <span style="color:#7f8c8d">&#34;https://sandbox.zenodo.org/record/1029654/files/penguins.csv?download=1&#34;</span>
+  <span style="color:#434f54">url</span> <span style="color:#728e00">&lt;-</span> <span style="color:#7f8c8d">&#34;https://zenodo.org/records/12772944/files/pinguinos.csv?download=1&#34;</span>
   <span style="color:#d35400">download.file</span>(<span style="color:#434f54">url</span>, <span style="color:#434f54">file</span>)
   <span style="color:#d35400">return</span>(<span style="color:#d35400">invisible</span>(<span style="color:#434f54">file</span>))
 }
@@ -351,7 +351,7 @@ A minimal example would be something like this</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#434f54">dataset_penguins</span> <span style="color:#728e00">&lt;-</span> <span style="color:#d35400">function</span>() {
   <span style="color:#434f54">file</span> <span style="color:#728e00">&lt;-</span> <span style="color:#434f54">here</span><span style="color:#728e00">::</span><span style="color:#d35400">here</span>(<span style="color:#7f8c8d">&#34;data/penguins.csv&#34;</span>)
   <span style="color:#d35400">if </span>(<span style="color:#728e00">!</span><span style="color:#d35400">file.exists</span>(<span style="color:#434f54">file</span>)) {
-    <span style="color:#434f54">url</span> <span style="color:#728e00">&lt;-</span> <span style="color:#7f8c8d">&#34;https://sandbox.zenodo.org/record/1029654/files/penguins.csv?download=1&#34;</span>
+    <span style="color:#434f54">url</span> <span style="color:#728e00">&lt;-</span> <span style="color:#7f8c8d">&#34;https://zenodo.org/records/12772944/files/pinguinos.csv?download=1&#34;</span>
     <span style="color:#d35400">download.file</span>(<span style="color:#434f54">url</span>, <span style="color:#434f54">file</span>)
   } 
   <span style="color:#d35400">return</span>(<span style="color:#d35400">read.csv</span>(<span style="color:#434f54">file</span>))

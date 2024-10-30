@@ -193,10 +193,10 @@ To make reproducibility much easier, you could write code that programmatically 
 For example, you could create a `download_penguins()` function
 
 
-```r
+``` r
 download_penguins <- function() {
   file <- here::here("data/penguins.csv")
-  url <- "https://sandbox.zenodo.org/record/1029654/files/penguins.csv?download=1"
+  url <- "https://zenodo.org/records/12772944/files/pinguinos.csv?download=1"
   download.file(url, file)
   return(invisible(file))
 }
@@ -210,11 +210,11 @@ An even seamless approach could be create a function that returns the dataset, d
 A minimal example would be something like this
 
 
-```r
+``` r
 dataset_penguins <- function() {
   file <- here::here("data/penguins.csv")
   if (!file.exists(file)) {
-    url <- "https://sandbox.zenodo.org/record/1029654/files/penguins.csv?download=1"
+    url <- "https://zenodo.org/records/12772944/files/pinguinos.csv?download=1"
     download.file(url, file)
   } 
   return(read.csv(file))
