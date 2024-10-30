@@ -45,7 +45,7 @@
 But actively-maintained packages will change their code-base to fix bugs, add or remove features, or change behaviour. These changes can potentially break your analysis or create subtle (or not so subtle) differences in the result.">
 <meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1571">
+<meta itemprop="wordCount" content="1572">
 
 
 
@@ -214,12 +214,10 @@ The flipside is that updating packages outside of the project won&rsquo;t affect
 <p>You will notice an error informing you that &ldquo;there is no package called &lsquo;ggplot2&rsquo;&rdquo;.
 As with markdown before, while ggplot2 is probably installed in your user library, it&rsquo;s not installed in this project library.</p>
 <p>You can now check the status of the lockfile with <code>renv::status()</code>, which will return something like this:</p>
-<pre><code>The following package(s) are missing:
+<pre><code>The following package(s) are used in this project, but are not installed:
+- ggplot2
 
- package installed recorded used
- ggplot2 n         n        y   
-
-See ?renv::status() for advice on resolving these issues.
+See `?renv::status` for advice on resolving these issues.
 </code></pre><p>This message lists packages and their status.
 Whether they are installed (in the project library), whether they are recorded in the lockfile, and whether they have been detected as being used by your project.</p>
 <p>In this case, ggplot2 is being used (due to the <code>library(ggplot2)</code> line) but is not installed (in the project library) and also not recorded in the lockfile.</p>

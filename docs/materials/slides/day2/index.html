@@ -396,6 +396,54 @@
 <p>❤️ I maintain one or more R packages.</p>
 <p>Choose an emoji from Reactions</p>
 </section>
+<section id="rrtools-level-1-project-structutre" class="slide level2">
+<h2><code>rrtools</code> level 1: project structutre</h2>
+<div>
+<ol type="1">
+<li class="fragment"><code>rrtools::use_compendium()</code></li>
+</ol>
+<ul>
+<li class="fragment">Creates the file structure for a research project</li>
+</ul>
+<ol start="2" type="1">
+<li class="fragment"><code>rrtools::use_readme_qmd()</code></li>
+</ol>
+<ul>
+<li class="fragment">Adds a README file with a very useful template
+<ul>
+<li class="fragment">DOI, How to cite, How to use/reproduce the project</li>
+</ul></li>
+</ul>
+<ol start="3" type="1">
+<li class="fragment"><code>rrtools::use_analysis()</code></li>
+</ol>
+<ul>
+<li class="fragment">Creates a folder structure inside the project with sub folders:
+<ul>
+<li class="fragment">paper, figures, data (with raw_data and derived_data sub folders) and templates</li>
+</ul></li>
+</ul>
+</div>
+</section>
+<section id="rrtools-level-2-organising-code" class="slide level2">
+<h2><code>rrtools</code> level 2: organising code</h2>
+<div>
+<ul>
+<li class="fragment"><strong>Simple solution:</strong> include everything on the <code>.Rmd</code> file.
+<ul>
+<li class="fragment">Cons: it can be a lot to include in 1 file</li>
+</ul></li>
+<li class="fragment"><strong>Another simple solution:</strong> source from 1 or more <code>.R</code> files
+<ul>
+<li class="fragment">Cons: hard to manage (documentation, dependencies, etc)</li>
+</ul></li>
+<li class="fragment"><strong><code>rrtools</code> solution:</strong> use an R package structure
+<ul>
+<li class="fragment">Cons: sounds like a lot of work at the beginning</li>
+</ul></li>
+</ul>
+</div>
+</section>
 <section class="slide level2">
 
 </section></section>

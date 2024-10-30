@@ -95,6 +95,42 @@ Choose an emoji from Reactions
 
 ------------------------------------------------------------------------
 
+## `rrtools` level 1: project structutre
+
+::: {.incremental}
+1. `rrtools::use_compendium()`
+  * Creates the file structure for a research project
+
+2. `rrtools::use_readme_qmd()`
+  * Adds a README file with a very useful template
+    * DOI, How to cite, How to use/reproduce the project
+
+3. `rrtools::use_analysis()`
+  * Creates a folder structure inside the project with sub folders:
+    * paper, figures, data (with raw_data and derived_data sub folders) and templates
+
+:::
+
+------------------------------------------------------------------------
+
+## `rrtools` level 2: organising code
+
+::: {.incremental}
+
+* **Simple solution:** include everything on the `.Rmd` file.
+  * Cons: it can be a lot to include in 1 file
+  
+* **Another simple solution:** source from 1 or more `.R` files
+  * Cons: hard to manage (documentation, dependencies, etc)
+  
+* **`rrtools` solution:** use an R package structure 
+  * Cons: sounds like a lot of work at the beginning
+
+  
+:::
+------------------------------------------------------------------------
+
+
 # Preparations for day 3:
 
 1.  [Managing R dependencies with renv](/materials/day3/01-renv/)
