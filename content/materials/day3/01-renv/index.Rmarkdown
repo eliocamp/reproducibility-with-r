@@ -79,12 +79,10 @@ As with markdown before, while ggplot2 is probably installed in your user librar
 You can now check the status of the lockfile with `renv::status()`, which will return something like this:
 
 ```         
-The following package(s) are missing:
+The following package(s) are used in this project, but are not installed:
+- ggplot2
 
- package installed recorded used
- ggplot2 n         n        y   
-
-See ?renv::status() for advice on resolving these issues.
+See `?renv::status` for advice on resolving these issues.
 ```
 
 This message lists packages and their status.
