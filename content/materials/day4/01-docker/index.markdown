@@ -117,6 +117,8 @@ So let's create a `docker-projects` folder in the local machine and map that fol
 mkdir ~/docker-projects
 docker run -p 8787:8787 \
     -e DISABLE_AUTH=true \
+    -e USERID=$UID \
+    -e GROUPID=1001 \
     -v ~/docker-projects:/home/rstudio/projects \
     rocker/rstudio:4.1.2
 ```
@@ -143,6 +145,8 @@ Run a new container
 mkdir ~/docker-projects
 docker run -p 8787:8787 \
     -e DISABLE_AUTH=true \
+    -e USERID=$UID \
+    -e GROUPID=1001 \
     -v ~/docker-projects:/home/rstudio/projects \
     rocker/rstudio:4.1.2
 ```
@@ -253,6 +257,8 @@ Now what's left to do is to run it with this command from the terminal:
 ``` bash
 docker run --rm  -p 8787:8787 \
     -e DISABLE_AUTH=true \
+    -e USERID=$UID \
+    -e GROUPID=1001 \
     -v $(pwd):/home/rstudio/project \
     -v /home/rstudio/project/renv \
     [username]/reproducible_project
@@ -312,6 +318,8 @@ Now what anyone needs to do to download and run your same exact computational en
 ``` bash
 docker run --rm  -p 8787:8787 \
     -e DISABLE_AUTH=true \
+    -e USERID=$UID \
+    -e GROUPID=1001 \
     -v $(pwd):/home/rstudio/project \
     -v /home/rstudio/project/renv \
     [username]/reproducible_project

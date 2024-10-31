@@ -44,7 +44,7 @@
 <meta itemprop="description" content="While renv is nice, it doesn&rsquo;t solve the whole problem, because system dependencies and even the R version itself can change. Another issue is that downloading and installing all the R packages can take a while. Like an hour or more. This is not a deal-breaker, but it&#39; be great to do better. People trying to reproduce work are few and far between, so it&rsquo;s important to make their lives as easy as possible.">
 <meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2062">
+<meta itemprop="wordCount" content="2086">
 
 
 
@@ -264,6 +264,8 @@ So let&rsquo;s create a <code>docker-projects</code> folder in the local machine
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir ~/docker-projects
 docker run -p 8787:8787 <span style="color:#7f8c8d">\
 </span><span style="color:#7f8c8d"></span>    -e <span style="color:#434f54">DISABLE_AUTH</span><span style="color:#728e00">=</span><span style="color:#728e00">true</span> <span style="color:#7f8c8d">\
+</span><span style="color:#7f8c8d"></span>    -e <span style="color:#434f54">USERID</span><span style="color:#728e00">=</span><span style="color:#434f54">$UID</span> <span style="color:#7f8c8d">\
+</span><span style="color:#7f8c8d"></span>    -e <span style="color:#434f54">GROUPID</span><span style="color:#728e00">=</span><span style="color:#8a7b52">1001</span> <span style="color:#7f8c8d">\
 </span><span style="color:#7f8c8d"></span>    -v ~/docker-projects:/home/rstudio/projects <span style="color:#7f8c8d">\
 </span><span style="color:#7f8c8d"></span>    rocker/rstudio:4.1.2
 </code></pre></div><div class = notes> 
@@ -287,6 +289,8 @@ docker run -p 8787:8787 <span style="color:#7f8c8d">\
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">mkdir ~/docker-projects
 docker run -p 8787:8787 <span style="color:#7f8c8d">\
 </span><span style="color:#7f8c8d"></span>    -e <span style="color:#434f54">DISABLE_AUTH</span><span style="color:#728e00">=</span><span style="color:#728e00">true</span> <span style="color:#7f8c8d">\
+</span><span style="color:#7f8c8d"></span>    -e <span style="color:#434f54">USERID</span><span style="color:#728e00">=</span><span style="color:#434f54">$UID</span> <span style="color:#7f8c8d">\
+</span><span style="color:#7f8c8d"></span>    -e <span style="color:#434f54">GROUPID</span><span style="color:#728e00">=</span><span style="color:#8a7b52">1001</span> <span style="color:#7f8c8d">\
 </span><span style="color:#7f8c8d"></span>    -v ~/docker-projects:/home/rstudio/projects <span style="color:#7f8c8d">\
 </span><span style="color:#7f8c8d"></span>    rocker/rstudio:4.1.2
 </code></pre></div><ol start="3">
@@ -362,6 +366,8 @@ You will see that R will install all the necessary packages using the informatio
 Now what&rsquo;s left to do is to run it with this command from the terminal:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run --rm  -p 8787:8787 <span style="color:#7f8c8d">\
 </span><span style="color:#7f8c8d"></span>    -e <span style="color:#434f54">DISABLE_AUTH</span><span style="color:#728e00">=</span><span style="color:#728e00">true</span> <span style="color:#7f8c8d">\
+</span><span style="color:#7f8c8d"></span>    -e <span style="color:#434f54">USERID</span><span style="color:#728e00">=</span><span style="color:#434f54">$UID</span> <span style="color:#7f8c8d">\
+</span><span style="color:#7f8c8d"></span>    -e <span style="color:#434f54">GROUPID</span><span style="color:#728e00">=</span><span style="color:#8a7b52">1001</span> <span style="color:#7f8c8d">\
 </span><span style="color:#7f8c8d"></span>    -v <span style="color:#728e00">$(</span><span style="color:#728e00">pwd</span><span style="color:#728e00">)</span>:/home/rstudio/project <span style="color:#7f8c8d">\
 </span><span style="color:#7f8c8d"></span>    -v /home/rstudio/project/renv <span style="color:#7f8c8d">\
 </span><span style="color:#7f8c8d"></span>    <span style="color:#728e00">[</span>username<span style="color:#728e00">]</span>/reproducible_project
@@ -406,6 +412,8 @@ Login Succeeded
 <p>Now what anyone needs to do to download and run your same exact computational environment is to run this code</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run --rm  -p 8787:8787 <span style="color:#7f8c8d">\
 </span><span style="color:#7f8c8d"></span>    -e <span style="color:#434f54">DISABLE_AUTH</span><span style="color:#728e00">=</span><span style="color:#728e00">true</span> <span style="color:#7f8c8d">\
+</span><span style="color:#7f8c8d"></span>    -e <span style="color:#434f54">USERID</span><span style="color:#728e00">=</span><span style="color:#434f54">$UID</span> <span style="color:#7f8c8d">\
+</span><span style="color:#7f8c8d"></span>    -e <span style="color:#434f54">GROUPID</span><span style="color:#728e00">=</span><span style="color:#8a7b52">1001</span> <span style="color:#7f8c8d">\
 </span><span style="color:#7f8c8d"></span>    -v <span style="color:#728e00">$(</span><span style="color:#728e00">pwd</span><span style="color:#728e00">)</span>:/home/rstudio/project <span style="color:#7f8c8d">\
 </span><span style="color:#7f8c8d"></span>    -v /home/rstudio/project/renv <span style="color:#7f8c8d">\
 </span><span style="color:#7f8c8d"></span>    <span style="color:#728e00">[</span>username<span style="color:#728e00">]</span>/reproducible_project
