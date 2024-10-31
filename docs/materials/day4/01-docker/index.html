@@ -407,7 +407,7 @@ https://docs.docker.com/engine/reference/commandline/login/#credential-stores
 
 Login Succeeded
 </code></pre></div><p>Then, you push your container with</p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker push <span style="color:#728e00">[</span>username<span style="color:#728e00">]</span>/demo-project
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker push <span style="color:#728e00">[</span>username<span style="color:#728e00">]</span>/reproducible_project
 </code></pre></div><p>Once the image is uploaded, you can go to your DockerHub repositories.</p>
 <p>Now what anyone needs to do to download and run your same exact computational environment is to run this code</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run --rm  -p 8787:8787 <span style="color:#7f8c8d">\

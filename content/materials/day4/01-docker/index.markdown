@@ -308,7 +308,7 @@ Login Succeeded
 Then, you push your container with
 
 ``` bash
-docker push [username]/demo-project
+docker push [username]/reproducible_project
 ```
 
 Once the image is uploaded, you can go to your DockerHub repositories.
