@@ -138,7 +138,7 @@ Now you can create files, projects, results, inside the container in `/home/rstu
 
 Run a new container
 
-1. Stop the previous container with Ctrl+C or Command+C.
+1. Stop the previous container with `Ctrl+C` or `Command+C`.
 2. Run in the terminal
 ``` bash
 mkdir ~/docker-projects
