@@ -154,6 +154,33 @@ The core steps are:
 6.  (Optional) In this workshop we will be using RStudio as a simple git GUI, but in the future you might want to use a more full-fledged client.
     Again, Happy Git with R [recommends a few](https://happygitwithr.com/git-client.html#recommended-git-clients).
     We like [GitKraken](https://www.gitkraken.com/), which is free, feature-rich, and multi-platform.
+    
+<div class = notes>
+
+To check whether the git and GitHub configuration is ready you can run the function `usethis::git_sitrep()` in the console. You'll see something similar to this:
+
+```r
+── Git global (user) 
+• Name: 'Your Name'
+• Email: 'your.email@gmail.com'
+• Global (user-level) gitignore file: <unset>
+• Vaccinated: FALSE
+ℹ See `?git_vaccinate` to learn more
+• Default Git protocol: 'https'
+• Default initial branch name: 'master'
+
+── GitHub user 
+• Default GitHub host: 'https://github.com'
+• Personal access token for 'https://github.com': '<discovered>'
+• GitHub user: 'yourusername'
+• Token scopes: 'admin:org_hook, admin:public_key, admin:repo_hook, gist, repo, user, workflow, write:discussion'
+• Email(s): 'your.email@gmail.com (primary)', 'username@users.noreply.github.com'
+
+ℹ No active usethis project
+```
+
+This means that git knows you and that it is connected to your GitHub account.
+</div>
 
 ## Docker
 
