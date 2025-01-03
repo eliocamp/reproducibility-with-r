@@ -21,6 +21,12 @@ Privacy concerns might preclude sharing data including sensitive and/or potentia
 Baring licencing barriers, you might be able to share aggregated data, or anonymised data.
 If your data comes from human subjects such as medical trials, psychological or social experiments, even surveys, you need to ask for consent before you publish the data.
 
+If you can share your data, it's also important to think about which licence to use. 
+Again, you might need to check with your institution which licence to use.
+If you're sharing data derived from another source, your licence will probably need to be compatible with the original licence. 
+For example, if the original source has a "share-alike" licence, you need to share your own data using the same licence. 
+The [Open Data Commons website](https://opendatacommons.org/licenses/) lists a few open licenses that you can use. 
+
 The bottom line is that you need to check carefully if you actually can distribute raw or derived data before doing so.
 Even if you created the data yourself, check with your institution.
 
