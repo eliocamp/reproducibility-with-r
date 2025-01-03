@@ -69,7 +69,7 @@ head(read.csv("data/penguins.csv"))
 knitr::opts_knit$set(root.dir = here::here("static/demo_project/analysis"))
 ```
 
-However, if you try to run the first chunk by setting the cursor over line 9 and pressing Ctrl + Enter, you'll get the same error:
+However, if you try to run the first chunk by setting the cursor over line 9 and pressing `Ctrl+Enter`/`Command+Return`, you'll get the same error:
 
 ```{r, error = TRUE, warning=FALSE}
 penguins <- read.csv("data/penguins.csv")
