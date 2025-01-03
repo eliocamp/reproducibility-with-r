@@ -45,7 +45,7 @@
 This is really critical to reproducibility since it automates the creation of a paper or report, which also has the side effect of saving time.">
 <meta itemprop="datePublished" content="2023-10-01T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2576">
+<meta itemprop="wordCount" content="2584">
 
 
 
@@ -217,7 +217,7 @@ It also doesn’t need R to run, so it’s more language agnostic.</p>
 <p>The top part is called the <strong>header</strong> and uses YAML syntax and includes the title and the output type (which in this case is an HTML document) and other metadata.</p>
 </li>
 <li>
-<p>Below the heather goes the document proper, which has <em>white</em> and <em>grey</em> sections.
+<p>Below the header goes the document proper, which has <em>white</em> and <em>grey</em> sections.
 These are the two main sections that make up an R Markdown file:</p>
 <ul>
 <li>
@@ -239,7 +239,7 @@ They will be evaluated in order and any output will be inserted in the output do
 </h4>
 <p>The header is a series of instructions organized between three dashes (<code>---</code>) that define the global properties of the document, such as the title, the output format, authorship information, etc.
 You can also change options associated with the output format, such as the style of the table of contents or index.
-The heather will grow much much larger as you start using templates and customised reports.</p>
+The header will grow much much larger as you start using templates and customised reports.</p>
 <p>The YAML format allows you to define hierarchical lists in a humanly readable way.
 For example:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#434f54">---</span>
@@ -270,18 +270,18 @@ Any output (graphics, tables, text, etc..) will be inserted into the final docum
 <p>You can create a new chunk with:</p>
 <ol>
 <li>The “+C” green bottom on the top right of the document</li>
-<li>A very handy shortcut: <code>Ctrl + Alt + I</code></li>
+<li>A very handy shortcut: <code>Ctrl+Alt+I</code> or <code>Command+I</code></li>
 <li>Writing ```{r} by hand (but why would you?)</li>
 </ol>
 </div>
 <p>While the code will run line by line when you knit the file, during writing it is very convenient to run individual chunks interactively as if it were in the console.</p>
 <p>To run the line where your cursor is use the shortcut:</p>
 <div class="instructions">
-<p>Ctrl + Enter</p>
+<p><code>Ctrl+Enter</code> or <code>Command+Return</code></p>
 </div>
 <p>But you can also run the code of the whole chunk with:</p>
 <div class="instructions">
-<p>Ctrl + Shift + Enter</p>
+<p><code>Ctrl+Shift+Enter</code> or <code>Shift+Command+Return</code></p>
 </div>
 <p>By default, the output will appear immediately below the chunk.</p>
 
@@ -425,6 +425,10 @@ In this section will focus on PDF files.</p>
 <a href="https://pkgs.rstudio.com/rticles/index.html" target="_blank" rel="noopener"><strong>rticles</strong></a> package very useful.
 This package includes several templates –most of them contributed by the R community– so you can create journal-specific PDFs directly from RMarkdown.
 We recommend installing the development version from GitHub, which often includes new or updated article formats.</p>
+<figure>
+<img src="images/comparison.png" alt="The same document renderd into two different article formats: JOSS and Frontiers" />
+<figcaption aria-hidden="true">The same document renderd into two different article formats: JOSS and Frontiers</figcaption>
+</figure>
 <p>After installing rticles you’ll need to restart RStudio for its templates to be available in the UI.</p>
 <p>To use rticles from RStudio, you can access the templates through <code>File -&gt; New File -&gt; R Markdown</code>.
 This will open the dialogue box where you can select from one of the available templates:</p>
@@ -746,7 +750,7 @@ You can read more in
 <footer class="site-footer pv4 bt b--transparent ph5" role="contentinfo">
   <nav class="db dt-l w-100">
     <p class="site-copyright f7 db dtc-l v-mid w-100 w-33-l tc tl-l pv2 pv0-l mv0 lh-copy">
-      &copy; 2024
+      &copy; 2025
       <span class="middot-divider"></span>
       Made with <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/hugo-apero/" rel="dct:source">Hugo Apéro</a></span>.
       <br />

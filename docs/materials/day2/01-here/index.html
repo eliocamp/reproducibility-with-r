@@ -45,7 +45,7 @@
 Root directory during knit     One issue is that when RMarkdown files are knitted, the working directory in which the code is executed is the location of the .">
 <meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="709">
+<meta itemprop="wordCount" content="707">
 
 
 
@@ -202,7 +202,7 @@ And also that <code>penguins.csv</code> is indeed located in the <code>data</cod
 ## 4   &lt;NA&gt; 2007
 ## 5 female 2007
 ## 6   male 2007
-</code></pre><p>However, if you try to run the first chunk by setting the cursor over line 9 and pressing Ctrl + Enter, you&rsquo;ll get the same error:</p>
+</code></pre><p>However, if you try to run the first chunk by setting the cursor over line 9 and pressing <code>Ctrl+Enter</code>/<code>Command+Return</code>, you&rsquo;ll get the same error:</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#434f54">penguins</span> <span style="color:#728e00">&lt;-</span> <span style="color:#d35400">read.csv</span>(<span style="color:#7f8c8d">&#34;data/penguins.csv&#34;</span>)
 </code></pre></div><pre><code>## Error in file(file, &quot;rt&quot;): cannot open the connection
 </code></pre><p>This is because when knitting, the working directory is set to the directory where the .Rmd file is located.
@@ -456,7 +456,7 @@ Importantly, it will fail if the declared location is not found in the working d
 <footer class="site-footer pv4 bt b--transparent ph5" role="contentinfo">
   <nav class="db dt-l w-100">
     <p class="site-copyright f7 db dtc-l v-mid w-100 w-33-l tc tl-l pv2 pv0-l mv0 lh-copy">
-      &copy; 2024
+      &copy; 2025
       <span class="middot-divider"></span>
       Made with <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/hugo-apero/" rel="dct:source">Hugo Apéro</a></span>.
       <br />

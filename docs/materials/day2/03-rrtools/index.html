@@ -44,7 +44,7 @@
 <meta itemprop="description" content="Of course, you can always create a file structure that suits you and your work by hand. But if you are going to do that a lot, it might be nice to automate some of the work. We are going to use the rrtools package to create a &ldquo;research compendium&rdquo; using a couple of R functions and combine it with the things we learned on the git and GitHub section.">
 <meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1525">
+<meta itemprop="wordCount" content="1517">
 
 
 
@@ -341,7 +341,7 @@ More about sharing data in
 <p>You can add small snippets of code right inside your Rmd document, but this is not optimal for code that you might want to reuse among documents associated with the same protect or in various R scripts.
 It&rsquo;s can also lead to a very long and hard to understand Rmd document.</p>
 <p>For complex functions, it&rsquo;s better to put them in the <code>R</code> sub folder and include <code>devtools::load_all(&quot;.&quot;)</code> at the top of your <code>paper.Rmd</code>.
-In an interactive session, you an use Ctrl + Shift + L (or run <code>devtools::load_all(&quot;.&quot;)</code> in the console).<br>
+In an interactive session, you an use <code>Ctrl+Shift+L</code>/<code>Shift+Command+L</code> (or run <code>devtools::load_all(&quot;.&quot;)</code> in the console).<br>
 This will make all functions and objects in that folder available in your environment.</p>
 <p>A stricter approach is to build your code as a package, install it in your system and load it with <code>library(pkgname)</code> or with <code>pkgname::</code>.
 But to do this, you need to know about documenting code.</p>
@@ -392,7 +392,7 @@ add &lt;- function(x, y) {
 </ul>
 <ol start="3">
 <li>
-<p>Run <code>devtools::document()</code> (or press <code>Ctrl/Cmd + Shift + D</code> in RStudio) to build the documentation based on these roxygen comments</p>
+<p>Run <code>devtools::document()</code> (or press <code>Ctrl+Shift+D</code>/<code>Shift+Command+D</code> in RStudio) to build the documentation based on these roxygen comments</p>
 </li>
 <li>
 <p>Preview documentation with <code>?add</code>.</p>
@@ -585,7 +585,7 @@ add &lt;- function(x, y) {
 <footer class="site-footer pv4 bt b--transparent ph5" role="contentinfo">
   <nav class="db dt-l w-100">
     <p class="site-copyright f7 db dtc-l v-mid w-100 w-33-l tc tl-l pv2 pv0-l mv0 lh-copy">
-      &copy; 2024
+      &copy; 2025
       <span class="middot-divider"></span>
       Made with <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/hugo-apero/" rel="dct:source">Hugo Apéro</a></span>.
       <br />

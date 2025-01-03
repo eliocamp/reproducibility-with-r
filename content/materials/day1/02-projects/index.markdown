@@ -236,7 +236,7 @@ The most direct way is to restart the R session and run the code again, if it gi
 
 <div class = notes> 
 
-You can restart the R session with the shortcut Ctrl+Shif+F10.
+You can restart the R session with the shortcut Ctrl+Shift+F10 on Windows/Linux and Shift+Command+0 on Mac.
 
 </div>
 
@@ -244,7 +244,7 @@ This can happen if for example you read data into memory by running a command in
 While we are working, R will have that data in memory and you will be able to make calculations and graphs, but your code will not be reproducible because it's missing the important step of reading the data.
 
 The best way of ensuring this doesn't happen is to re-run your code on a fresh R session early and often so you can be sure that your code is reproducible at every step of the analysis.
-However, be default RStudio will save the environment in a hidden file called .RData and restore it on startup, so that data will still be in memory.
+However, by default RStudio will save the environment in a hidden file called .RData and restore it on startup, so that data will still be in memory.
 And while this comes in handy so that you can boot up your work exactly where you left it each time you open your project, it might lead to a situation in which you never realise that you missed saving a key line of code in your analysis.
 
 <div class = activity> 

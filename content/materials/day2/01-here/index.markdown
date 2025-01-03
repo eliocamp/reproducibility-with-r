@@ -29,7 +29,7 @@ Get the demo project
 You'll notice that R fails to render the file with an error that reads:
 
 
-```default
+``` default
 Quitting from lines 9-10 [setup] (report.Rmd)
 
 Error in `file()`:
@@ -47,7 +47,7 @@ penguins <- read.csv("data/penguins.csv")
 You can test that the working directory is the project root by running `getwd()` in the console:
 
 
-```r
+``` r
 getwd()
 ```
 
@@ -59,7 +59,7 @@ You'll get some path in your computer.
 And also that `penguins.csv` is indeed located in the `data` folder by running
 
 
-```r
+``` r
 file.exists("data/penguins.csv")
 ```
 
@@ -70,7 +70,7 @@ file.exists("data/penguins.csv")
 You can even try to read the data in the console
 
 
-```r
+``` r
 head(read.csv("data/penguins.csv"))
 ```
 
@@ -93,10 +93,10 @@ head(read.csv("data/penguins.csv"))
 
 
 
-However, if you try to run the first chunk by setting the cursor over line 9 and pressing Ctrl + Enter, you'll get the same error:
+However, if you try to run the first chunk by setting the cursor over line 9 and pressing `Ctrl+Enter`/`Command+Return`, you'll get the same error:
 
 
-```r
+``` r
 penguins <- read.csv("data/penguins.csv")
 ```
 

@@ -153,7 +153,7 @@ You can add small snippets of code right inside your Rmd document, but this is n
 It's can also lead to a very long and hard to understand Rmd document.
 
 For complex functions, it's better to put them in the `R` sub folder and include `devtools::load_all(".")` at the top of your `paper.Rmd`.
-In an interactive session, you an use Ctrl + Shift + L (or run `devtools::load_all(".")` in the console).  
+In an interactive session, you an use `Ctrl+Shift+L`/`Shift+Command+L` (or run `devtools::load_all(".")` in the console).  
 This will make all functions and objects in that folder available in your environment.
 
 A stricter approach is to build your code as a package, install it in your system and load it with `library(pkgname)` or with `pkgname::`.
@@ -201,7 +201,7 @@ add <- function(x, y) {
 * `@examples` starts the examples sections, R will run this code when the package is build.
 * The `@export` comment is important to make the function accessible via `pkgname::add()` or `library(pkgname)`.
 
-3. Run `devtools::document()` (or press `Ctrl/Cmd + Shift + D` in RStudio) to build the documentation based on these roxygen comments 
+3. Run `devtools::document()` (or press `Ctrl+Shift+D`/`Shift+Command+D` in RStudio) to build the documentation based on these roxygen comments 
 
 4. Preview documentation with `?add`.
 

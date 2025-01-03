@@ -117,7 +117,7 @@ Any output (graphics, tables, text, etc..) will be inserted into the final docum
 You can create a new chunk with:
 
 1.  The “+C” green bottom on the top right of the document
-2.  A very handy shortcut: `Ctrl + Alt + I`
+2.  A very handy shortcut: `Ctrl+Alt+I` or `Command+I`
 3.  Writing \`\`\`{r} by hand (but why would you?)
 
 </div>
@@ -128,7 +128,7 @@ To run the line where your cursor is use the shortcut:
 
 <div class="instructions">
 
-Ctrl + Enter
+`Ctrl+Enter` or `Command+Return`
 
 </div>
 
@@ -136,7 +136,7 @@ But you can also run the code of the whole chunk with:
 
 <div class="instructions">
 
-Ctrl + Shift + Enter
+`Ctrl+Shift+Enter` or `Shift+Command+Return`
 
 </div>
 
@@ -271,6 +271,11 @@ In this section will focus on PDF files.
 For scientific journals you may find the [**rticles**](https://pkgs.rstudio.com/rticles/index.html) package very useful.
 This package includes several templates –most of them contributed by the R community– so you can create journal-specific PDFs directly from RMarkdown.
 We recommend installing the development version from GitHub, which often includes new or updated article formats.
+
+<figure>
+<img src="images/comparison.png" alt="The same document renderd into two different article formats: JOSS and Frontiers" />
+<figcaption aria-hidden="true">The same document renderd into two different article formats: JOSS and Frontiers</figcaption>
+</figure>
 
 After installing rticles you’ll need to restart RStudio for its templates to be available in the UI.
 
