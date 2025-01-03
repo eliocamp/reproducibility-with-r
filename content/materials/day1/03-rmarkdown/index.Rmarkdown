@@ -275,6 +275,8 @@ For scientific journals you may find the [**rticles**](https://pkgs.rstudio.com/
 This package includes several templates --most of them contributed by the R community-- so you can create journal-specific PDFs directly from RMarkdown.
 We recommend installing the development version from GitHub, which often includes new or updated article formats.
 
+![The same document renderd into two different article formats: JOSS and Frontiers](images/comparison.png)
+
 After installing rticles you'll need to restart RStudio for its templates to be available in the UI.
 
 To use rticles from RStudio, you can access the templates through `File -> New File -> R Markdown`.
