@@ -68,7 +68,7 @@ Any R Markdown file will have 3 sections or areas:
 
 - The top part is called the **header** and uses YAML syntax and includes the title and the output type (which in this case is an HTML document) and other metadata.
 
-- Below the heather goes the document proper, which has *white* and *grey* sections.
+- Below the header goes the document proper, which has *white* and *grey* sections.
   These are the two main sections that make up an R Markdown file:
 
   - Grey sections are **code chunks**.
@@ -80,7 +80,7 @@ Any R Markdown file will have 3 sections or areas:
 
 The header is a series of instructions organized between three dashes (`---`) that define the global properties of the document, such as the title, the output format, authorship information, etc.
 You can also change options associated with the output format, such as the style of the table of contents or index.
-The heather will grow much much larger as you start using templates and customised reports.
+The header will grow much much larger as you start using templates and customised reports.
 
 The YAML format allows you to define hierarchical lists in a humanly readable way.
 For example:
