@@ -72,7 +72,7 @@ The [piggyback](https://docs.ropensci.org/piggyback) R package provides a set of
 
 However, GitHub releases don't provide a lot of the useful features of data repositories, like versioning and Digital Object Identifier (DOI) and rich metadata.
 Some popular and reputable data repositories are [figshare](https://figshare.com/), the [Open Science Framework](https://osf.io/) and [Mendeley Data](https://data.mendeley.com/).
-Each has its own pros and cons, but in this workshop we will use [Zeonodo](https://zenodo.org/) because it's free, offers a generous 50GB limit per dataset, assigns Digital Object Identifier (DOI), supports versioning, and it integrates well with GitHub.
+Each has its own pros and cons, but in this workshop we will use [Zenodo](https://zenodo.org/) because it's free, offers a generous 50GB limit per dataset, assigns Digital Object Identifier (DOI), supports versioning, and it integrates well with GitHub.
 Also because we've used it, so we are more familiar with it.
 
 ## Using Zenodo for data hosting
@@ -84,9 +84,9 @@ This allows you or anyone else to cite these data and also allows you to upload 
 
 <div class = notes> 
 
-Zeonodo Sandbox
+Zenodo Sandbox
 
-Data uploaded to Zeonodo cannot be deleted.
+Data uploaded to Zenodo cannot be deleted.
 Since we are going to upload test data, we are going to use [Zenodo Sandbox](https://sandbox.zenodo.org/).
 </div>
 
@@ -100,8 +100,8 @@ To upload a dataset you need to click on Upload.
 
 
 <div class="figure">
-<img src="images/zenodo-upload_1.png" alt="Screenshot of Zenodo’s page after clicking Upload on the main page. It shows a list with one entry, called “PEnguins” and a green button titled “New Upload”." width="634" />
-<p class="caption"><span id="fig:zenodo-upload-1"></span>Figure 1: Zeonodo upload. As you can see, datasets are permanent and this user had already uploaded one test dataset in preparation for writing this.</p>
+<img src="images/zenodo-upload_1.png" alt="Screenshot of Zenodo’s page after clicking Upload on the main page. It shows a list with one entry, called “Penguins” and a green button titled “New Upload”." width="634" />
+<p class="caption"><span id="fig:zenodo-upload-1"></span>Figure 1: Zenodo upload. As you can see, datasets are permanent and this user had already uploaded one test dataset in preparation for writing this.</p>
 </div>
 
 You will see a list of your previously-uploaded datasets which in your case might be empty.
@@ -113,7 +113,7 @@ Now you need to click on "New Upload".
 
 <div class="figure">
 <img src="images/zenodo-upload_2.png" alt="Screenshot of Zenodo’s New Upload page. It shows a big area where to drop file with a button to Chose files." width="634" />
-<p class="caption"><span id="fig:zenodo-upload-2"></span>Figure 2: Zeonodo upload section.</p>
+<p class="caption"><span id="fig:zenodo-upload-2"></span>Figure 2: Zenodo upload section.</p>
 </div>
 
 In this new section you can drag and drop your files on the big area or click on "Choose files" to open a file chooser.
@@ -125,10 +125,10 @@ A single dataset can have multiple files.
 
 <div class="figure">
 <img src="images/zenodo-upload_3.png" alt="Screenshot of Zenodo’s New Upload page scrolled down. It shows a list of options for metadata." width="634" />
-<p class="caption"><span id="fig:zenodo-upload-3"></span>Figure 3: Zeonodo upload section.</p>
+<p class="caption"><span id="fig:zenodo-upload-3"></span>Figure 3: Zenodo upload section.</p>
 </div>
 
-Zeonodo supports multiple types of records.
+Zenodo supports multiple types of records.
 Beside datasets, you could create a DOI for your entire publication, or for individual images.
 This is the lesson about datasets, so you need to select "Dataset" as the upload type.
 
@@ -148,7 +148,7 @@ The last step is to click the "Publish" button at the bottom of the page and you
 
 <div class="figure">
 <img src="images/zenodo-upload_4.png" alt="Screenshot of Zenodo’s record viewer. It shows a record titled “Test Upload 2”, a preview of the dataset, an “Edit” button, a “New Version” button, and information on the publication date, DOI and Licence." width="634" />
-<p class="caption"><span id="fig:zenodo-upload-4"></span>Figure 4: Zeonodo upload section.</p>
+<p class="caption"><span id="fig:zenodo-upload-4"></span>Figure 4: Zenodo upload section.</p>
 </div>
 
 Once the dataset is uploaded you will be able to see the result.
@@ -183,7 +183,7 @@ If you go to a Zenodo record, below the file preview you will see a box with the
 
 <div class="figure">
 <img src="images/file_list.png" alt="Screenshot of Zenodo’s list of files in the example database. It shows one file called penguins.csv. To the right there’s a “Preview” button and a “download” button and below it an md5 checksum." width="412" />
-<p class="caption"><span id="fig:file-list"></span>Figure 5: Lis of files in the example database.</p>
+<p class="caption"><span id="fig:file-list"></span>Figure 5: List of files in the example database.</p>
 </div>
 
 The nice bit here is the "Download" button.
@@ -242,7 +242,7 @@ Improve report.Rmd
 
 Dataset functions
 
-This approach to managing data can be greately extended to add all sorts of "smarts" to `download_penguins()`. 
+This approach to managing data can be greatly extended to add all sorts of "smarts" to `download_penguins()`. 
 For example, it could ensure data integrity by matching that the data matches a known md5 hash or create a citation for the data. 
 
 </div>
