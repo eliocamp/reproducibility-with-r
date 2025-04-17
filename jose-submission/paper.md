@@ -35,11 +35,11 @@ The workshop is available at [reproducibility.rocks](http://reproducibility.rock
 # Statement of Need
 
 Reproducibility should be part of any data analysis work, but it's particularly important in scientific research.
-Achieving full reproducibility is challenging and requires, time, resources and specialised tools and skills [@whitaker2019].
-This workshops empowers researchers so they can maximize the reproducibility of their work by leveraging existing tools in the R ecosystem --such as RMarkdown, renv, and others--, version control and containers.
+Achieving full reproducibility is challenging and requires, time, resources and specialised tools and skills.
+This workshop empowers researchers so they can maximize the reproducibility of their work by leveraging existing tools in the R ecosystem --such as RMarkdown, renv, and others--, version control and containers.
 
 The course material is suitable for learners to follow themselves, including exercises and challenges they can complete.
-The [notes for instructors](https://reproducibility.rocks/notes_for_instructors/) has instructions intended for anyone who would like to teach and/or re-use the material along with slides, assessment checkpoints, and templates for shared document and feedback form.
+The [notes for instructors](https://reproducibility.rocks/notes_for_instructors/) have instructions intended for anyone who would like to teach and/or re-use the material along with slides, assessment checkpoints, and templates for shared document and feedback form.
 
 # Description of Learning Modules
 
@@ -60,7 +60,7 @@ Each module has specific learning objectives (Table 1) and associated homework w
 
 ## Instructional design
 
-The workshop can be taught on-line or in person and while we encourage self-thought students to study with a group, it is possible to follow the material alone.
+The workshop can be taught on-line or in person and while we encourage self-taught students to study with a group, it is possible to follow the material alone.
 The material is taught using a combination of discussions, live coding, demonstration sessions, and exercises (Table 2).
 For each topic there is a multiple choice question to assess previous familiarity with the topic.
 Depending on the answers the instructor can decide if the topic needs to be covered in full or if it can be partially or entirely skipped.
@@ -83,7 +83,7 @@ Participants were graduate and undergraduate students, experienced researchers, 
 Each time two instructors where always present and shared the tasks of teaching, answering questions and troubleshooting technical issues.
 This also helps to keep the agenda on track and the general organization of the workshop.
 
-The anonymous feedback was positive and many recommendations or requests from the students were include in the following days.
+The anonymous feedback was positive and many recommendations or requests from the students were included in the following days.
 The feedback also helped to shape the materials and organisation of the second edition.
 In particular, the first edition was divided into only three modules, but this proved to be not enough time so the content was reorganised into the current four modules.
 
