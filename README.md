@@ -1,3 +1,5 @@
+[![DOI](https://jose.theoj.org/papers/10.21105/jose.00260/status.svg)](https://doi.org/10.21105/jose.00260)
+
 # An R reproducibility toolkit for the practical researcher
 
 
