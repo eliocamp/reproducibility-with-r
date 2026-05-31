@@ -18,7 +18,7 @@ Of course, buying and shipping physical laptops to every one that needs to repro
 
 One class of containers are virtual machines that run in some server.
 These services will manage most of the technical complexity of setting up and spinning up the containers and offer a web-based platform to interact with it.
-[RStudio Cloud](https://rstudio.cloud/), [Binder](https://mybinder.org/) and [Code Ocean](https://codeocean.com/), [Saturn Cloud](https://saturncloud.io/) are four examples.
+[Posit Cloud](https://posit.cloud/), [Binder](https://mybinder.org/), [Code Ocean](https://codeocean.com/), [Saturn Cloud](https://saturncloud.io/) and [Code Ocean](https://www.digitalocean.com/) are some examples.
 They are generally easy to set up and use at the expense of heavily depending on external services and\...
 well, expenses.
 One important aspect for reproducibility is that since they provide an standardised hardware setup, they can empower users without powerful machines to reproduce demanding analyses.

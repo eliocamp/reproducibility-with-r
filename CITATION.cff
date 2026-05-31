@@ -1,0 +1,33 @@
+cff-version: "1.2.0"
+authors:
+- family-names: Campitelli
+  given-names: Elio
+  orcid: "https://orcid.org/0000-0002-7742-9230"
+- family-names: Corrales
+  given-names: Paola
+  orcid: "https://orcid.org/0000-0003-1923-9129"
+doi: 10.5281/zenodo.15232916
+message: If you use this software, please cite our article in the
+  Journal of Open Source Software.
+preferred-citation:
+  authors:
+  - family-names: Campitelli
+    given-names: Elio
+    orcid: "https://orcid.org/0000-0002-7742-9230"
+  - family-names: Corrales
+    given-names: Paola
+    orcid: "https://orcid.org/0000-0003-1923-9129"
+  date-published: 2025-04-29
+  doi: 10.21105/jose.00260
+  issn: 2577-3569
+  issue: 86
+  journal: Journal of Open Source Education
+  publisher:
+    name: Open Journals
+  start: 260
+  title: An R reproducibility toolkit for the practical researcher
+  type: article
+  url: "https://jose.theoj.org/papers/10.21105/jose.00260"
+  volume: 8
+title: An R reproducibility toolkit for the practical researcher
+

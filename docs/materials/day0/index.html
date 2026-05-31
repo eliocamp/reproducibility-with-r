@@ -45,7 +45,7 @@
 R At the very least you need to have R installed on your computer. If possible, try to have it upgraded to the latest version. We developed the materials using R version 4.">
 <meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1189">
+<meta itemprop="wordCount" content="1306">
 <meta itemprop="image" content="https://reproducibility.rocks/materials/day0/featured.png">
 
 
@@ -242,6 +242,27 @@ Go to the previous window, copy the token, paste it on your console and press en
 Again, Happy Git with R <a href="https://happygitwithr.com/git-client.html#recommended-git-clients">recommends a few</a>.
 We like <a href="https://www.gitkraken.com/">GitKraken</a>, which is free, feature-rich, and multi-platform.</p></li>
 </ol>
+<div class="notes">
+<p>To check whether the git and GitHub configuration is ready you can run the function <code>usethis::git_sitrep()</code> in the console. You’ll see something similar to this:</p>
+<pre class="r"><code>── Git global (user) 
+• Name: &#39;Your Name&#39;
+• Email: &#39;your.email@gmail.com&#39;
+• Global (user-level) gitignore file: &lt;unset&gt;
+• Vaccinated: FALSE
+ℹ See `?git_vaccinate` to learn more
+• Default Git protocol: &#39;https&#39;
+• Default initial branch name: &#39;master&#39;
+
+── GitHub user 
+• Default GitHub host: &#39;https://github.com&#39;
+• Personal access token for &#39;https://github.com&#39;: &#39;&lt;discovered&gt;&#39;
+• GitHub user: &#39;yourusername&#39;
+• Token scopes: &#39;admin:org_hook, admin:public_key, admin:repo_hook, gist, repo, user, workflow, write:discussion&#39;
+• Email(s): &#39;your.email@gmail.com (primary)&#39;, &#39;username@users.noreply.github.com&#39;
+
+ℹ No active usethis project</code></pre>
+<p>This means that git knows you and that it is connected to your GitHub account.</p>
+</div>
 </div>
 <div id="docker" class="section level2">
 <h2>Docker</h2>
@@ -456,7 +477,7 @@ docker.io/rocker/rstudio:4.1.2</code></pre>
 <footer class="site-footer pv4 bt b--transparent ph5" role="contentinfo">
   <nav class="db dt-l w-100">
     <p class="site-copyright f7 db dtc-l v-mid w-100 w-33-l tc tl-l pv2 pv0-l mv0 lh-copy">
-      &copy; 2024
+      &copy; 2025
       <span class="middot-divider"></span>
       Made with <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/hugo-apero/" rel="dct:source">Hugo Apéro</a></span>.
       <br />

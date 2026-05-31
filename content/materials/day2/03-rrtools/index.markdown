@@ -19,6 +19,10 @@ This is why:
 -   Here we'll cover the necessary bits to work inside a compendium.
 -   But if you want to learn more about R packages there are wonderful resources, for example: [here](https://r-pkgs.org/).
 
+This repository is [an example of a research compendium in the wild](https://github.com/annakrystalli/rrcompendiumRSE19/).
+You can see that it has got a lot of the elements we've been discussing so far, like a readme, and a tidy project structure. 
+It also has the structure of an R package, as we will see later. 
+
 The following instructions are adapted from the [rrtools GitHub repository](https://github.com/benmarwick/rrtools).
 
 ### 0. Create a Git-managed directory linked to an online repository

@@ -1,4 +1,5 @@
 Version: 1.0
+ProjectId: a87eb47c-9efc-4faa-a545-a12937bbe289
 
 RestoreWorkspace: Default
 SaveWorkspace: Default
@@ -19,4 +20,4 @@ BuildType: Website
 
 MarkdownWrap: Sentence
 
-SpellingDictionary: en_GB
+SpellingDictionary: en_AU
