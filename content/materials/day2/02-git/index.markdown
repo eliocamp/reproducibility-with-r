@@ -403,4 +403,4 @@ When that happen the changes you made will appear in the repo.
 
 [Happy git with R, by Jenny Bryan](https://happygitwithr.com)
 
-[Taller de git developed by Yanina Bellini Saibene and Marysol Gatti (in Spanish)](https://master--yabellini.netlify.app/es/courses/tallerdegitconr%3E)
+[Version Control. Primeros pasos de Git con R by Yanina Bellini Saibene and Marysol Gatti (in Spanish)](https://yabellini.github.io/Intro_to_Git_with_Rstudio/)

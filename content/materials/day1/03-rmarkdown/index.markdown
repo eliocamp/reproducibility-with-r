@@ -117,7 +117,7 @@ Any output (graphics, tables, text, etc..) will be inserted into the final docum
 You can create a new chunk with:
 
 1.  The “+C” green bottom on the top right of the document
-2.  A very handy shortcut: `Ctrl + Alt + I`
+2.  A very handy shortcut: `Ctrl+Alt+I` or `Command+I`
 3.  Writing \`\`\`{r} by hand (but why would you?)
 
 </div>
@@ -128,7 +128,7 @@ To run the line where your cursor is use the shortcut:
 
 <div class="instructions">
 
-Ctrl + Enter
+`Ctrl+Enter` or `Command+Return`
 
 </div>
 
@@ -136,7 +136,7 @@ But you can also run the code of the whole chunk with:
 
 <div class="instructions">
 
-Ctrl + Shift + Enter
+`Ctrl+Shift+Enter` or `Shift+Command+Return`
 
 </div>
 

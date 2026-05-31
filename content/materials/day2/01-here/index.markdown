@@ -52,7 +52,7 @@ getwd()
 ```
 
 ```
-## [1] "/home/elio/Documents/cursos/reproducibility-with-r/static/demo_project"
+## [1] "C:/Users/tonin/Documents/Courses/reproducibility-with-r/static/demo_project"
 ```
 
 You'll get some path in your computer.
@@ -93,7 +93,7 @@ head(read.csv("data/penguins.csv"))
 
 
 
-However, if you try to run the first chunk by setting the cursor over line 9 and pressing Ctrl + Enter, you'll get the same error:
+However, if you try to run the first chunk by setting the cursor over line 9 and pressing `Ctrl+Enter`/`Command+Return`, you'll get the same error:
 
 
 ```r
