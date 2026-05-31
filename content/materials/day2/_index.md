@@ -26,9 +26,8 @@ cascade:
 Create a research compendium. 
 
 Turn [the project you created on day 1](/materials/day1/#homework) into a research compendium. 
-Use rrtools to create the compendium skeleton, add a suitable licence, modify the DESCRIPTION file and add a README.Rmd. 
+Create a folder structure, add a suitable licence, and add a README.Rmd. 
 Put your custom functions in the `R` folder and document them. 
-Create the `analysis` folder and put your RMarkdown file(s) there. 
 
 Use git to track changes. 
 Create multiple commits, one for each important change (e.g. one commit creates the skeleton, another that adds the licence, un so forth) and use meaningful commit messages. 
