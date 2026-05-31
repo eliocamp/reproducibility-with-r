@@ -86,9 +86,7 @@ Let say you have a very interesting function that add 2 numbers, we'll save it i
 
 ```r
 add_numbers -> function(x, y) {
-
    x + y
-
 }
 ```
 
@@ -112,6 +110,8 @@ If your project is more complex, you may also need to use scripts will code is n
 Those scripts should go in `scripts/` in the root directory of the project. Similarly to qmd files, you can also source your functions and use them in a script. 
 
 <div class = notes> 
+
+Other options to organise your code
 
 There are other options to organise your functions. One is to create an R package either as part of your research compendium or in a separate project. This option has the advantage of making your code very easy to share and re-use. Creating an R package is not hard but it not may be your main goal while during your research.
 
@@ -157,12 +157,12 @@ add <- function(x, y) {
 * `@params` are the function arguments, in this case `x` and `y`.
 * `@examples` starts the examples sections, R will run this code when the package is build.
 
-This is exactly how functions are documented inside an R package. So if you ever decide to conver your project into a package your are half way there!
+This is exactly how functions are documented inside an R package. So if you ever decide to convert your project into a package your are half way there!
 
 
-<div class = instructions>  
+<div class = activity>  
 
-Practice
+Practice organising and documenting your code
 
 1. Create a dummy function.
 
