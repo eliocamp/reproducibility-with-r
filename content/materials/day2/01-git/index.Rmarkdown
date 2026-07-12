@@ -234,25 +234,7 @@ Pull from GitHub
 
 </div>
 
-## Anatomy of GitHub Repo
 
--   *Readme files.* Use a `README.md` file to explain what your project is, and how use it.
-    `README.md` is the file that is automatically displayed when you open a GitHub repo.
-
--   *License.* The license tell people how they can use the content of your repo.
-    Generally, we use permissive licences and people can do almost anything with the materials.
-    Examples are the MIT Licence or Apache.
-    Some extra resources:
-
-    -   [Choose an open source license](https://choosealicense.com/) does what it says on the tin and helps you choose a licence.
-    -   [Software Licenses in Plain English](https://tldrlegal.com/) explains licences' legalese in simple terms
-
--   *Contributing guide.* A file called `CONTRIBUTING.md` and guidelines for contributors so they know what they should do if they want to help you out.
-
--   *Code of Conduct.* Good projects have codes of conduct to make sure that people are treated well.
-    Github has an Code of Conduct wizard to make it easy to add one.
-
--   *Issues.* Allows you to manage the project.
 
 ## Collaborating with others
 

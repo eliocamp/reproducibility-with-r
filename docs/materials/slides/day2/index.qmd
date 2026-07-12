@@ -108,8 +108,8 @@ research_project/
 │     └── 01_plot.png
 │
 ├── data/
-│   ├── raw_data/       # data obtained from elsewhere
-│   └── derived_data/   # data generated during the analysis
+│   ├── raw/            # data obtained from elsewhere
+│   └── derived/        # data generated during the analysis
 |
 ├── LICENSE
 ├── R
@@ -123,9 +123,9 @@ research_project/
 
 ::: {.incremental}
 
-- **Readme files.** Use a `README.md` file to explain what your project is, and how use it.
+- **Readme files.** Use a `README.md` file to explain what your project is, and how to use it.
 
-- **License.** The license tell people how they can use the content of your repo.
+- **License.** The license tells people how they can use the content of your repo.
   Examples are the MIT Licence or Apache.
   Some extra resources:
 
@@ -134,7 +134,7 @@ research_project/
 
 - **Contributing guide.** A file called `CONTRIBUTING.md` and guidelines for contributors so they know what they should do if they want to help you out.
 
-- **Code of Conduct.** Good projects have codes of conduct to make sure that people are treated well.
+- **Code of Conduct.** Good projects have code of conduct to make sure that people are treated well.
 :::
 
 # Preparations for day 3:

@@ -18,12 +18,13 @@
     </item>
     
     <item>
-      <title>03: Research compendia with rrtools</title>
-      <link>https://reproducibility.rocks/materials/day2/02-rrtools/</link>
+      <title>02: Creating a Research compendium</title>
+      <link>https://reproducibility.rocks/materials/day2/02-research-compendia/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://reproducibility.rocks/materials/day2/02-rrtools/</guid>
-      <description>Of course, you can always create a file structure that suits you and your work by hand. But if you are going to do that a lot, it might be nice to automate some of the work. We are going to use the rrtools package to create a &amp;ldquo;research compendium&amp;rdquo; using a couple of R functions and combine it with the things we learned on the git and GitHub section.</description>
+      <guid>https://reproducibility.rocks/materials/day2/02-research-compendia/</guid>
+      <description>On Day 1 we discussed how to create a tidy project, choose meaningful names for files and folders and some of the tools RStudio has to offer. In this section we&amp;rsquo;ll go one step forward and create a research compendium that organise your data, code and results.
+There are different elements that make up a research compendium, from the folder structure, specific files to document the project, how you organise your code and analysis to how to re-create the same working environment.</description>
     </item>
     
   </channel>
