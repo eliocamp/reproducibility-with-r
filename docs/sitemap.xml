@@ -3,12 +3,12 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://reproducibility.rocks/materials/day2/01-here/</loc>
+    <loc>https://reproducibility.rocks/materials/day3/01-here/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://reproducibility.rocks/materials/day3/01-renv/</loc>
+    <loc>https://reproducibility.rocks/materials/day3/02-renv/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -33,12 +33,12 @@
   </url>
   
   <url>
-    <loc>https://reproducibility.rocks/materials/day2/02-git/</loc>
+    <loc>https://reproducibility.rocks/materials/day2/01-git/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://reproducibility.rocks/materials/day3/02-data/</loc>
+    <loc>https://reproducibility.rocks/materials/day3/03-data/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -61,7 +61,7 @@
   </url>
   
   <url>
-    <loc>https://reproducibility.rocks/materials/day2/03-rrtools/</loc>
+    <loc>https://reproducibility.rocks/materials/day2/02-rrtools/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
   </url>
   
