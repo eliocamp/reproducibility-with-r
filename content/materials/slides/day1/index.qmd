@@ -16,14 +16,14 @@ format:
 
 ::: {.incremental}
 
--   🗓️ The course will be held online, from 9 am to 12 pm (Berlin time), October (28th-31st).
-    -   ⏳with pauses every hour!
--   📚Materiales: everything lives here: <http://reproducibility.rocks/>
--   ❓Check points (how familiar are you with \_\_\_?)
--   🏃Exercises:
-    -   Follow along
-    -   breakout rooms
--   📑Homework + mini reprohack challenges (optional)
+- 🗓️ The course will be held online, from 9 am to 12 pm (Berlin time), July 20-23rd.
+  - ⏳with pauses every hour!
+- 📚Materiales: everything lives here: <http://reproducibility.rocks/>
+- ❓Check points (how familiar are you with \_\_\_?)
+- 🏃Exercises:
+  - Follow along
+  - breakout rooms
+- 📑Homework + mini reprohack challenges (optional)
 
 :::
 
@@ -37,7 +37,7 @@ format:
 
 1.  [Introduction](/materials/day1/01-introduction/)
 2.  [Project structure](/materials/day1/02-projects/)
-3.  [RMarkdown](/materials/day1/03-rmarkdown/)
+3.  [Quarto documents](/materials/day1/03-quarto/)
 
 :::
 
@@ -73,11 +73,11 @@ format:
 
 **Good file names**
 
--   `data/raw/madrid-minimum_temperature.csv`
+- `data/raw/madrid-minimum_temperature.csv`
 
--   `scripts/02-compute-mean_temperature.R`
+- `scripts/02-compute-mean_temperature.R`
 
--   `analysis/01-madrid-minimum_temperature-descriptive_statistics.Rmd`
+- `analysis/01-madrid-minimum_temperature-descriptive_statistics.Rmd`
 
 ------------------------------------------------------------------------
 
@@ -85,15 +85,15 @@ format:
 
 **Come up with good file names and folders for (choose two)**
 
--   a dataset of cats with columns for weight, length, tail length, fur colour(s), fur type and name.
+- a dataset of cats with columns for weight, length, tail length, fur colour(s), fur type and name.
 
--   a script that downloads data from Spotify.
+- a script that downloads data from Spotify.
 
--   a scripts that cleans up data.
+- a scripts that cleans up data.
 
--   a scripts that fits a linear discriminant model and saves it to a file.
+- a scripts that fits a linear discriminant model and saves it to a file.
 
--   the .Rds file in which that model is stored.
+- the .Rds file in which that model is stored.
 
 ```{r}
 #| eval: true
@@ -120,7 +120,7 @@ countdown::countdown(minutes = 3,
 
 ------------------------------------------------------------------------
 
-## Does RMarkdown documents sound familiar to you?
+## Does Quarto documents sound familiar to you?
 
 😯 I don't have a clue.
 
@@ -164,11 +164,9 @@ countdown::countdown(minutes = 3,
 
 # Preparations for day 2:
 
-1.  [Portable file paths with here](/materials/day2/01-here/)
-    -   Install the here package.
-2.  [Using git and GitHub](/materials/day2/02-git/) ([setup instructions](/materials/day0/#git-and-github))
-    -   Install git
-    -   Create GitHub account
-    -   Configure your system to use RStudio with GitHub
-3.  [Creating a research compendium](/materials/day2/03-rrtools/)
-    -   Install the rrtools package.
+1.  [Using git and GitHub](/materials/day2/01-git/) ([setup instructions](/materials/day0/#git-and-github))
+    - Install git
+    - Create GitHub account
+    - Configure your system to use RStudio with GitHub
+2.  [Creating a research compendium](/materials/day2/02-research-compedia/)
+
