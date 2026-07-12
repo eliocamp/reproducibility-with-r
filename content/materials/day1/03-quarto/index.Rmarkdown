@@ -306,7 +306,7 @@ This will ask you a couple of questions to configure the location of the templat
 
 ![Sample copernicus template on the left and the rendered version on the right.](images/copernicus_template.png)
 
-<div class = activity> 
+::: {.activity}
 
 Your turn! 
 
@@ -315,7 +315,7 @@ Your turn!
 2. Check the options in the YAML and change a few of the fields. It doesn't have to be real information! 
 3. Render the document to see the output.
 
-</div>
+:::
 
 ### Beyond the usual templates
 
@@ -333,16 +333,166 @@ Also, it's not always mandatory to submit your paper using the journal template.
 
 We are going to adapt the AGU Geophysical Research Letters LaTeX template to use it with Quarto. 
 
-TODO: Add first an overview of what we will do. 
-TODO: Remove the activity div. 
+The way rendering to LaTeX work is that we have a LaTeX template with special notation to reference to variables in our document. 
+So, for example, the template might have a section with
 
-<div class = activity>  
+```
+$if(abstract)$
+\begin{abstract}
+$abstract$
+\end{abstract}
+$endif$
+```
 
+This means that if there is a section in the yaml named "abstract" it will insert "\\begin{abstract}", the contents of `abstract` and "\\end{abstract}".
+We can do this with any variable in our yaml to customise the LaTeX output, but the only variable that we really must add is `body`, which has the actual content of the document. 
+We can, in theory, hardcode the rest of the information, such as title, authors, etc in the template and choose how complex you want to make it. 
+
+It's easiest to see how this works with a simple, barebones example. 
+This quarto document has a title, an author, and simple content. 
+The yaml also specifies that the pdf format will use the file "template.text" as template and will not delete the intermediate LaTeX file after rendering. 
+
+```
+---
+title: "A very nice title"
+author: My name
+format: 
+  pdf:
+    template: template.tex
+    keep-tex: true
+---
+
+## Introduction
+
+This is the introduction of the manuscript. 
+
+```
+
+The file `template.tex` is this:
+
+```tex
+\documentclass{article}
+
+\begin{document}
+
+$body$
+
+\end{document}
+```
+
+When rendering, Quarto is going to replace <code> \$body\$</code> with the body of the document and output this LaTeX document:
+
+```tex
+\documentclass{article}
+
+\begin{document}
+
+\subsection{Introduction}\label{introduction}
+
+This is the introduction of the manuscript.
+
+\end{document}
+```
+
+Because our template doesn't use the `title` variable from our header, our final PDF doesn't have the correct title. 
+We can use the title variable by using <code> \$title\$</code>.
+The template now becomes
+
+```tex
+\documentclass{article}
+
+\title{$title$}
+
+\begin{document}
+
+\maketitle
+
+$body$
+
+\end{document}
+```
+
+And after render, the resulting LaTeX document looks like this
+
+```tex
+\documentclass{article}
+
+\title{A very nice title}
+
+\begin{document}
+
+\maketitle
+
+\subsection{Introduction}\label{introduction}
+
+This is the introduction of the manuscript.
+
+\end{document}
+```
+
+One final element to make templates work are *partials*. 
+Many Quarto and Pandoc features depend on code that comes with the built-in templates.
+These won't work in our template, which lacks that code. 
+For example, if we wanted to add code blocks that render in our document like this:
+
+````
+---
+title: "A very nice title"
+author: My name
+format: 
+  pdf:
+    template: template.tex
+    keep-tex: true
+---
+
+## Introduction
+
+This is the introduction of the manuscript. 
+
+```{r}
+plot(pressure)
+```
+
+````
+
+the document will fail to render with error 
+
+```
+LaTeX Error: Environment Shaded undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.13 \begin{Shaded}
+```
+
+This is because Quarto uses the "Shaded" LaTeX environment, that our template doesn't define, to display code highlighting. 
+But we don't need to define it, we can insert the pandoc.tex partial, which includes that (and many other) definitions
+
+```tex
+\documentclass{article}
+$pandoc.tex()$
+\title{$title$}
+
+\begin{document}
+
+\maketitle
+
+$body$
+
+\end{document}
+```
+
+You can read what partials are available for Quarto in the [LaTeX templates documentation](https://quarto.org/docs/journals/templates.html#latex-partials). 
+
+::: {.activity}
 
 1. Create a new Quarto file using PDF as a output format and save it into your project (for example, `paper.qmd`). 
 
-2. Download the AGU Geophysical Research Letters template from [here](our locatoin). Inside the file there's a folder with a bunch of files. Extract all those files into the same folder you saved the Quarto file. 
-You need to have a folder in your project with these files:
+2. Download the AGU Geophysical Research Letters template from [here](/agujournal2025-latex-template-main.zip). 
+   Inside the file there's a folder with a bunch of files. Extract all those files into the same folder you saved the Quarto file. 
+   You need to have a folder in your project with these files:
 
     ```
     .
@@ -353,8 +503,6 @@ You need to have a folder in your project with these files:
     ├── paper.qmd
     ├── tweaklist-git-moderncv-fixed.sty
     └── wiley-macros.tex
-      
-
     ```
 
 3. Change the YAML of the R Markdown file to include the following:
@@ -371,60 +519,52 @@ You need to have a folder in your project with these files:
     ```
 
     Take care to respect the identation and that each parameter is in its own line. 
-    This new line will tell to render to use the `agujournaltemplate.tex` file as template. 
-    The template needs some tweaking, though.
 
-4. To make sure that Quarto is using the template and that the template works, render the file. You should get a PDF with the contents of the AGU template and not your document. 
 
-5. Add `$pandoc.tex()$` before `\begin{document}`. This syntax adds a "partial" which adds support for a lot of Quarto output.
+4. **Render the file**. 
+   You should get a PDF with the contents of the AGU template and not your document. 
+   This is to make sure that Quarto is using the template and that the template works.
 
-6. Let's now include the content of the R Markdown file. First, delete all the sample content from the original template; everything between `\end{abstract}` and `\end{document}` (without removing those lines!). Now let's add ours: go to right before `\end{document}` (around line XXX) and add `` `$body$` `` (without the backticks). The special variable `body` will be replaced by the actual rendered contents of the R Markdown file. 
+5. Add <code> \$pandoc.tex()\$</code> before `\begin{document}` to add support for Quarto and Pandoc features.
+  You only need to do this if you use those features, such as code highlighting.
 
-7. Now when you render the document 
+6. Let's now include the content of the R Markdown file. 
+   First, delete all the sample content from the original template; everything between `\end{abstract}` and `\end{document}` (without removing those lines!) and replace it with <code> \$body\$</code>.
+
+7. **Render the file**. 
+   You should get a PDF with the contents of the Quarto document but with the title, abstract, authors, etc. from the template. 
+
+6. Now let's add some customisation. 
+   Again in the `agujournaltemplate.tex` file, change `\title{=enter title here=}` (line 78) for `\title{$title$}` 
+
+7. **Render the file**.
+    Now, the title in the R Markdown file and the PDF should match.
   
-TODO: continue from here
-
-6. Again in the `agujournaltemplate.tex` file, change `\title{=enter title here=}` (line 78) for `\title{$title$}` 
-
-7. Render again!
-
-    Now, the title in the R Markdown file and the pdf are the same.
-    `` `$title$` `` (without the backtics) in the LaTeX template will be replaced by the value of `title` supplied by the YAML header.
-  
-8. Let's also include the content of the R Markdown file. In the LaTeX template, go to right before `\end{docunent}` (around line 174) and add `` `$body$` `` (without the backticks). The special variable `body` will be replaced by the actual rendered contents of the R Markdown file. 
-
-9. Render again! 
-   
-   This time you'll see the sample R Markdown document in the PDF. 
-
-
 10. You can add new options to the YAML header and then use the same trick so they are used by the LaTeX template. For example, add a new option called "abstract" and write some text, like this:
 
     ```YAML
     ---
-    title: "A very nice Title"
-    author: "Pao Corrales"
-    date: "3/1/2022"
-    output: 
-      pdf_document:
-        template: "agujournaltemplate.tex"
-        pandoc_args: 
-          - "--wrap=none"        
+    title: "A very nice title"
+    author: My name
+    format: 
+      pdf:
+        template: agujournaltemplate.tex
+        keep-tex: true
     abstract: "This is the very interesting abstract." 
     ---
     ```
+  
+    Then, in the LaTeX template search for `[ enter your Abstract here ]` and replace it with <code> \$abstract\$</code>.
 
-    Then, in the LaTeX template search for `[ enter your Abstract here ]` (~line 166) and replace it with `` `$abstract$` `` (without backticks).
 
+11. **Render the file**. 
+   The abstract in the PDF should now match the abstract in your yaml header.
 
-11. One final knit to see the result!
-
-12. (Optional) Add more variables, such as a Plain Language Summary, author, mail of the corresponding author.
+12. (Optional) Add more variables, such as a Plain Language Summary, author, mail of the corresponding author to the yaml heather and modify the LaTeX template to use them.
 
 Having problems? You can watch a video on how to solve this activity [here](https://www.youtube.com/watch?v=bk3mcRIJLqc) and follow along (the video was made with an slightly older version of the template but everything is almost the same except for the precise line numbers).
 
-
-</div>
+:::
 
 <div class=notes> 
 
