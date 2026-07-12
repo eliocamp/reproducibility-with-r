@@ -25,7 +25,7 @@ Get the demo project
 </div>
 
 ```{r include=FALSE}
-here::i_am("content/materials/day2/01-here/index.Rmarkdown")
+here::i_am("content/materials/day3/01-here/index.Rmarkdown")
 knitr::opts_knit$set(root.dir = here::here("static/demo_project"))
 ```
 

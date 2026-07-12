@@ -1,5 +1,5 @@
 ---
-title: "02: Getting the most of git"
+title: "01: Getting the most of git"
 weight: 2
 show_post_date: false
 publishDate: 2022-02-19

@@ -1,6 +1,6 @@
 ---
-title: "01: Managing R dependencies with renv"
-weight: 1
+title: "02: Managing R dependencies with renv"
+weight: 2
 show_post_date: false
 publishDate: 2022-02-19
 excerpt: ""
