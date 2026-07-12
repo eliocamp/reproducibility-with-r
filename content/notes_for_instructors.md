@@ -24,14 +24,13 @@ You will also find a template for the feedback form and the shared document.
   * All the time.
 
 
-[03: Reporting with RMarkdown](/materials/day1/03-rmarkdown/)
+[03: Reporting with Quarto](/materials/day1/03-quarto/)
 
-* Does RMarkdown documents sound familiar to you?
+* Does Quarto documents sound familiar to you?
   * I don't have a clue
   * I've heard of it
   * I've used it
   * I use it all the time
-
 
 * Does YAML sound familiar to you?
   * I don't have a clue
@@ -49,27 +48,19 @@ You will also find a template for the feedback form and the shared document.
 
 [Slides](/materials/slides/day2/index.html)
 
-[02: Getting the most of git](/materials/day2/02-git/#git-and-github)
+[01: Getting the most of git](/materials/day2/01-git/#git-and-github)
 
 * Does git sound familiar to you?
   * I don't have a clue
   * I've heard of it
   * I've used it
   * I use it all the time
-  
-[03: Research compendia with rrtools](/materials/day2/03-rrtools/)
-
-* How familiar are you with R package development?
-  * I don't have a clue
-  * I've created a few functions
-  * I've use the R package structure
-  * I maintain one or more R packages
 
 ### Day 3
 
 [Slides](/materials/slides/day3/index.html)
 
-[01: Reproducible computational environment with renv](/materials/day3/01-renv/)
+[02: Reproducible computational environment with renv](/materials/day3/02-renv/)
 
 * Does the package renv sound familiar to you? 
 
@@ -80,7 +71,7 @@ You will also find a template for the feedback form and the shared document.
   
 
 
-[02: Sharing data](/materials/day2/02-data/)
+[03: Sharing data](/materials/day3/03-data/)
 
 * If you work with data, what's the typical size?
 

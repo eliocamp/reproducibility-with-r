@@ -167,7 +167,7 @@
     </svg></a>
 </h2>
 <p>Sometimes you need to re-do a report changing one variable that repeats over all the code, the best way to do this is through a parameterised report.</p>
-<p>In the following example there is a plot of the price distribution for ideal diamonds.
+<p>In the following example there is a plot of the price distribution for ideal diamonds. 
 If you want to change it to visualise the data for &ldquo;fair&rdquo; or &ldquo;very good&rdquo; cut diamonds, you will have to change the <code>filter(cut == &quot;Ideal&quot;)</code> and hopefully you wont forget the plot title.</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#d35400">library</span>(<span style="color:#434f54">dplyr</span>)
 <span style="color:#d35400">library</span>(<span style="color:#434f54">ggplot2</span>)
@@ -180,7 +180,7 @@ If you want to change it to visualise the data for &ldquo;fair&rdquo; or &ldquo;
        <span style="color:#434f54">x</span> <span style="color:#728e00">=</span> <span style="color:#7f8c8d">&#34;Color&#34;</span>,
        <span style="color:#434f54">y</span> <span style="color:#728e00">=</span> <span style="color:#7f8c8d">&#34;Price [US dollars]&#34;</span>)
 </code></pre></div><p><img src="https://reproducibility.rocks/materials/extras/index_files/figure-html/unnamed-chunk-2-1.png" width="672" /></p>
-<p>In these situations you can create a parameterised report.
+<p>In these situations you can create a parameterised report. 
 To generate a parameterised report you have to add an element called <code>params</code> to the YAML with the list of parameters (1 or more) and their default values. It is as if the R Markdown file were a big function with its arguments!</p>
 <pre><code>params:
   this_cut: Ideal
@@ -279,13 +279,10 @@ To generate a parameterised report you have to add an element called <code>param
             <summary class="" hugo-nav="/materials/day2/"><a href="https://reproducibility.rocks/materials/day2/">Day 2</a></summary>
             
               
-              <li class="" hugo-nav="/materials/day2/01-here/"><a href="https://reproducibility.rocks/materials/day2/01-here/">01: here are the portable paths</a></li>
+              <li class="" hugo-nav="/materials/day2/01-git/"><a href="https://reproducibility.rocks/materials/day2/01-git/">01: Getting the most of git</a></li>
             
               
-              <li class="" hugo-nav="/materials/day2/02-git/"><a href="https://reproducibility.rocks/materials/day2/02-git/">02: Getting the most of git</a></li>
-            
-              
-              <li class="" hugo-nav="/materials/day2/03-rrtools/"><a href="https://reproducibility.rocks/materials/day2/03-rrtools/">03: Research compendia with rrtools</a></li>
+              <li class="" hugo-nav="/materials/day2/02-research-compendia/"><a href="https://reproducibility.rocks/materials/day2/02-research-compendia/">02: Creating a Research compendium</a></li>
             
           </details>
           
@@ -298,10 +295,13 @@ To generate a parameterised report you have to add an element called <code>param
             <summary class="" hugo-nav="/materials/day3/"><a href="https://reproducibility.rocks/materials/day3/">Day 3</a></summary>
             
               
-              <li class="" hugo-nav="/materials/day3/01-renv/"><a href="https://reproducibility.rocks/materials/day3/01-renv/">01: Managing R dependencies with renv</a></li>
+              <li class="" hugo-nav="/materials/day3/01-here/"><a href="https://reproducibility.rocks/materials/day3/01-here/">01: here are the portable paths</a></li>
             
               
-              <li class="" hugo-nav="/materials/day3/02-data/"><a href="https://reproducibility.rocks/materials/day3/02-data/">02: Sharing data</a></li>
+              <li class="" hugo-nav="/materials/day3/02-renv/"><a href="https://reproducibility.rocks/materials/day3/02-renv/">02: Managing R dependencies with renv</a></li>
+            
+              
+              <li class="" hugo-nav="/materials/day3/03-data/"><a href="https://reproducibility.rocks/materials/day3/03-data/">03: Sharing data</a></li>
             
           </details>
           
@@ -348,6 +348,20 @@ To generate a parameterised report you have to add an element called <code>param
           
           </li>
         
+          
+          
+          <li class="" hugo-nav="/materials/slides/day3/index_files/libs/revealjs/plugin/notes/speaker-view/">
+            <a href="https://reproducibility.rocks/materials/slides/day3/index_files/libs/revealjs/plugin/notes/speaker-view/"></a></li>
+          
+          </li>
+        
+          
+          
+          <li class="" hugo-nav="/materials/slides/day4/index_files/libs/revealjs/plugin/notes/speaker-view/">
+            <a href="https://reproducibility.rocks/materials/slides/day4/index_files/libs/revealjs/plugin/notes/speaker-view/"></a></li>
+          
+          </li>
+        
         </ul>
     </nav>
   </div>
@@ -370,7 +384,7 @@ To generate a parameterised report you have to add an element called <code>param
 <footer class="site-footer pv4 bt b--transparent ph5" role="contentinfo">
   <nav class="db dt-l w-100">
     <p class="site-copyright f7 db dtc-l v-mid w-100 w-33-l tc tl-l pv2 pv0-l mv0 lh-copy">
-      &copy; 2025
+      &copy; 2026
       <span class="middot-divider"></span>
       Made with <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/hugo-apero/" rel="dct:source">Hugo Apéro</a></span>.
       <br />

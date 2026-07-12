@@ -8,32 +8,23 @@
     <language>en</language>
     <lastBuildDate>Tue, 15 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://reproducibility.rocks/materials/day2/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>01: here are the portable paths</title>
-      <link>https://reproducibility.rocks/materials/day2/01-here/</link>
+      <title>01: Getting the most of git</title>
+      <link>https://reproducibility.rocks/materials/day2/01-git/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://reproducibility.rocks/materials/day2/01-here/</guid>
-      <description>If you use RStudio Projects consistently, you can be sure that your working directory is always the root of the project unless you actively change it. Almost. There are two situations in which this assumption can be broken and that can lead to errors or, even worse, surprising results.
-Root directory during knit     One issue is that when RMarkdown files are knitted, the working directory in which the code is executed is the location of the .</description>
+      <guid>https://reproducibility.rocks/materials/day2/01-git/</guid>
+      <description>Why git?Do you have something like this in your computer?
+/home/pao/Documents/thesis├── abstract.R├── thesis.Rmd├── thesis_reviwed.Rmd├── thesis_reviwed2.Rmd├── thesis_final.Rmd├── thesis_finalfinal.Rmd├── this_is_it.Rmd├── now_this_is_it_for_real_this_time_i_swear.Rmd└── FINAL.RmdProbably we all have, or had something like this at one point because we didn&amp;rsquo;t use a version control system. Version control systems manage the evolution and changes of a set of files that we&amp;rsquo;ll call repository.</description>
     </item>
     
     <item>
-      <title>02: Getting the most of git</title>
-      <link>https://reproducibility.rocks/materials/day2/02-git/</link>
+      <title>02: Creating a Research compendium</title>
+      <link>https://reproducibility.rocks/materials/day2/02-research-compendia/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://reproducibility.rocks/materials/day2/02-git/</guid>
-      <description>Why git?     Do you have something like this in your computer?
-/home/pao/Documents/thesis ├── abstract.R ├── thesis.Rmd ├── thesis_reviwed.Rmd ├── thesis_reviwed2.Rmd ├── thesis_final.Rmd ├── thesis_finalfinal.Rmd ├── this_is_it.Rmd ├── now_this_is_it_for_real_this_time_i_swear.Rmd └── FINAL.Rmd Probably we all have, or had something like this at one point because we didn&amp;rsquo;t use a version control system. Version control systems manage the evolution and changes of a set of files that we&amp;rsquo;ll call repository.</description>
-    </item>
-    
-    <item>
-      <title>03: Research compendia with rrtools</title>
-      <link>https://reproducibility.rocks/materials/day2/03-rrtools/</link>
-      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://reproducibility.rocks/materials/day2/03-rrtools/</guid>
-      <description>Of course, you can always create a file structure that suits you and your work by hand. But if you are going to do that a lot, it might be nice to automate some of the work. We are going to use the rrtools package to create a &amp;ldquo;research compendium&amp;rdquo; using a couple of R functions and combine it with the things we learned on the git and GitHub section.</description>
+      <guid>https://reproducibility.rocks/materials/day2/02-research-compendia/</guid>
+      <description>On Day 1 we discussed how to create a tidy project, choose meaningful names for files and folders and some of the tools RStudio has to offer. In this section we&amp;rsquo;ll go one step forward and create a research compendium that organise your data, code and results.
+There are different elements that make up a research compendium, from the folder structure, specific files to document the project, how you organise your code and analysis to how to re-create the same working environment.</description>
     </item>
     
   </channel>

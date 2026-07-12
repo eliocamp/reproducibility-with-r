@@ -13,9 +13,10 @@ format:
 ---
 
 # Day 3:
-.
-1.  [Managing R dependencies with renv](/materials/day3/01-renv/)
-2.  [Sharing your data](/materials/day3/02-data/)
+
+1.  [Portable file paths with here](/materials/day3/01-here/)
+2.  [Managing R dependencies with renv](/materials/day3/02-renv/)
+3.  [Sharing your data](/materials/day3/03-data/)
 
 
 ---
@@ -32,7 +33,7 @@ format:
 
 ---- 
 
-### Excersise 
+### Excercise 
 
 #### Restore an environment
 

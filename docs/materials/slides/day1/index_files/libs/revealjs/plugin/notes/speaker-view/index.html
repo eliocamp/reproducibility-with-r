@@ -40,10 +40,10 @@
           <meta name="twitter:image" content="https://reproducibility.rocks/img/papillons.jpg" >
       
   <meta itemprop="name" content="">
-<meta itemprop="description" content="reveal.js - Speaker View  body { font-family: Helvetica; font-size: 18px; } #current-slide, #upcoming-slide, #speaker-controls { padding: 6px; box-sizing: border-box; -moz-box-sizing: border-box; } #current-slide iframe, #upcoming-slide iframe { width: 100%; height: 100%; border: 1px solid #ddd; } #current-slide .label, #upcoming-slide .label { position: absolute; top: 10px; left: 10px; z-index: 2; } #connection-status { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 20; padding: 30% 20% 20% 20%; font-size: 18px; color: #222; background: #fff; text-align: center; box-sizing: border-box; line-height: 1.">
+<meta itemprop="description" content="reveal.js - Speaker Viewbody {font-family: Helvetica;font-size: 18px;}#current-slide,#upcoming-slide,#speaker-controls {padding: 6px;box-sizing: border-box;-moz-box-sizing: border-box;}#current-slide iframe,#upcoming-slide iframe {width: 100%;height: 100%;border: 1px solid #ddd;}#current-slide .label,#upcoming-slide .label {position: absolute;top: 10px;left: 10px;z-index: 2;}#connection-status {position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 20;padding: 30% 20% 20% 20%;font-size: 18px;color: #222;background: #fff;text-align: center;box-sizing: border-box;line-height: 1.">
 <meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="1631">
+<meta itemprop="wordCount" content="1709">
 
 
 
@@ -487,8 +487,9 @@
 					layoutDropdown,
 					pendingCalls = {},
 					lastRevealApiCallId = 0,
-					connected = false,
-					whitelistedWindows = [window.opener];
+					connected = false
+
+				var connectionStatus = document.querySelector( '#connection-status' );
 
 				var SPEAKER_LAYOUTS = {
 					'default': 'Default',
@@ -499,16 +500,31 @@
 
 				setupLayout();
 
-				var connectionStatus = document.querySelector( '#connection-status' );
+				let openerOrigin;
+
+				try {
+					openerOrigin = window.opener.location.origin;
+				}
+				catch ( error ) { console.warn( error ) }
+
+				// In order to prevent XSS, the speaker view will only run if its
+				// opener has the same origin as itself
+				if( window.location.origin !== openerOrigin ) {
+					connectionStatus.innerHTML = 'Cross origin error.<br>The speaker window can only be opened from the same origin.';
+					return;
+				}
+
 				var connectionTimeout = setTimeout( function() {
 					connectionStatus.innerHTML = 'Error connecting to main window.<br>Please try closing and reopening the speaker view.';
 				}, 5000 );
-;
+
 				window.addEventListener( 'message', function( event ) {
 
-					// Validate the origin of this message to prevent XSS
-					if( window.location.origin !== event.origin && whitelistedWindows.indexOf( event.source ) === -1 ) {
-						return;
+					// Validate the origin of all messages to avoid parsing messages
+					// that aren't meant for us. Ignore when running off file:// so
+					// that the speaker view continues to work without a web server.
+					if( window.location.origin !== event.origin && window.location.origin !== 'file://' ) {
+						return
 					}
 
 					clearTimeout( connectionTimeout );
@@ -661,8 +677,8 @@
 
 					var urlSeparator = /\?/.test(data.url) ? '&' : '?';
 					var hash = '#/' + data.state.indexh + '/' + data.state.indexv;
-					var currentURL = data.url + urlSeparator + params + '&postMessageEvents=true' + hash;
-					var upcomingURL = data.url + urlSeparator + params + '&controls=false' + hash;
+					var currentURL = data.url + urlSeparator + params + '&scrollActivationWidth=false&postMessageEvents=true' + hash;
+					var upcomingURL = data.url + urlSeparator + params + '&scrollActivationWidth=false&controls=false' + hash;
 
 					currentSlide = document.createElement( 'iframe' );
 					currentSlide.setAttribute( 'width', 1280 );
@@ -675,8 +691,6 @@
 					upcomingSlide.setAttribute( 'height', 512 );
 					upcomingSlide.setAttribute( 'src', upcomingURL );
 					document.querySelector( '#upcoming-slide' ).appendChild( upcomingSlide );
-
-					whitelistedWindows.push( currentSlide.contentWindow, upcomingSlide.contentWindow );
 
 				}
 
@@ -1099,13 +1113,10 @@
             <summary class="" hugo-nav="/materials/day2/"><a href="https://reproducibility.rocks/materials/day2/">Day 2</a></summary>
             
               
-              <li class="" hugo-nav="/materials/day2/01-here/"><a href="https://reproducibility.rocks/materials/day2/01-here/">01: here are the portable paths</a></li>
+              <li class="" hugo-nav="/materials/day2/01-git/"><a href="https://reproducibility.rocks/materials/day2/01-git/">01: Getting the most of git</a></li>
             
               
-              <li class="" hugo-nav="/materials/day2/02-git/"><a href="https://reproducibility.rocks/materials/day2/02-git/">02: Getting the most of git</a></li>
-            
-              
-              <li class="" hugo-nav="/materials/day2/03-rrtools/"><a href="https://reproducibility.rocks/materials/day2/03-rrtools/">03: Research compendia with rrtools</a></li>
+              <li class="" hugo-nav="/materials/day2/02-research-compendia/"><a href="https://reproducibility.rocks/materials/day2/02-research-compendia/">02: Creating a Research compendium</a></li>
             
           </details>
           
@@ -1118,10 +1129,13 @@
             <summary class="" hugo-nav="/materials/day3/"><a href="https://reproducibility.rocks/materials/day3/">Day 3</a></summary>
             
               
-              <li class="" hugo-nav="/materials/day3/01-renv/"><a href="https://reproducibility.rocks/materials/day3/01-renv/">01: Managing R dependencies with renv</a></li>
+              <li class="" hugo-nav="/materials/day3/01-here/"><a href="https://reproducibility.rocks/materials/day3/01-here/">01: here are the portable paths</a></li>
             
               
-              <li class="" hugo-nav="/materials/day3/02-data/"><a href="https://reproducibility.rocks/materials/day3/02-data/">02: Sharing data</a></li>
+              <li class="" hugo-nav="/materials/day3/02-renv/"><a href="https://reproducibility.rocks/materials/day3/02-renv/">02: Managing R dependencies with renv</a></li>
+            
+              
+              <li class="" hugo-nav="/materials/day3/03-data/"><a href="https://reproducibility.rocks/materials/day3/03-data/">03: Sharing data</a></li>
             
           </details>
           
@@ -1168,6 +1182,20 @@
           
           </li>
         
+          
+          
+          <li class="" hugo-nav="/materials/slides/day3/index_files/libs/revealjs/plugin/notes/speaker-view/">
+            <a href="https://reproducibility.rocks/materials/slides/day3/index_files/libs/revealjs/plugin/notes/speaker-view/"></a></li>
+          
+          </li>
+        
+          
+          
+          <li class="" hugo-nav="/materials/slides/day4/index_files/libs/revealjs/plugin/notes/speaker-view/">
+            <a href="https://reproducibility.rocks/materials/slides/day4/index_files/libs/revealjs/plugin/notes/speaker-view/"></a></li>
+          
+          </li>
+        
         </ul>
     </nav>
   </div>
@@ -1179,7 +1207,7 @@
 <footer class="site-footer pv4 bt b--transparent ph5" role="contentinfo">
   <nav class="db dt-l w-100">
     <p class="site-copyright f7 db dtc-l v-mid w-100 w-33-l tc tl-l pv2 pv0-l mv0 lh-copy">
-      &copy; 2025
+      &copy; 2026
       <span class="middot-divider"></span>
       Made with <span xmlns:dct="http://purl.org/dc/terms/" property="dct:title"><a xmlns:dct="http://purl.org/dc/terms/" href="https://github.com/hugo-apero/" rel="dct:source">Hugo Apéro</a></span>.
       <br />

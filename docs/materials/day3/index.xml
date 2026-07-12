@@ -8,23 +8,33 @@
     <language>en</language>
     <lastBuildDate>Tue, 15 Mar 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://reproducibility.rocks/materials/day3/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>01: Managing R dependencies with renv</title>
-      <link>https://reproducibility.rocks/materials/day3/01-renv/</link>
+      <title>01: here are the portable paths</title>
+      <link>https://reproducibility.rocks/materials/day3/01-here/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://reproducibility.rocks/materials/day3/01-renv/</guid>
+      <guid>https://reproducibility.rocks/materials/day3/01-here/</guid>
+      <description>If you use RStudio Projects consistently, you can be sure that your working directory is always the root of the project unless you actively change it. Almost. There are two situations in which this assumption can be broken and that can lead to errors or, even worse, surprising results.
+Root directory during knitOne issue is that when RMarkdown files are knitted, the working directory in which the code is executed is the location of the .</description>
+    </item>
+    
+    <item>
+      <title>02: Managing R dependencies with renv</title>
+      <link>https://reproducibility.rocks/materials/day3/02-renv/</link>
+      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://reproducibility.rocks/materials/day3/02-renv/</guid>
       <description>No code is its own isolated bubble. Almost every analysis will depend on a number of external packages, such as ggplot2 for plotting, data.table for data wrangling, knitr for rendering a report, and so on.
 But actively-maintained packages will change their code-base to fix bugs, add or remove features, or change behaviour. These changes can potentially break your analysis or create subtle (or not so subtle) differences in the result.</description>
     </item>
     
     <item>
-      <title>02: Sharing data</title>
-      <link>https://reproducibility.rocks/materials/day3/02-data/</link>
+      <title>03: Sharing data</title>
+      <link>https://reproducibility.rocks/materials/day3/03-data/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://reproducibility.rocks/materials/day3/02-data/</guid>
+      <guid>https://reproducibility.rocks/materials/day3/03-data/</guid>
       <description>The two ingredients for a reproducible project are code and data. We talked a lot about how to organise and share code, but what about data? Sharing data is far from trivial and there are a lot of things to consider.
-Permissions     Before the technical issues of sharing data there are the bureaucratic issues. Depending on your context, you might not be allowed to share your data.</description>
+PermissionsBefore the technical issues of sharing data there are the bureaucratic issues. Depending on your context, you might not be allowed to share your data.</description>
     </item>
     
   </channel>
