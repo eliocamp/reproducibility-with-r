@@ -1,24 +1,26 @@
 ---
-title: "03: Creating a Research compendia"
+title: "03: Creating a Research compendium"
 weight: 3
 show_post_date: false
 publishDate: 2022-02-19
 excerpt: ""
 ---
 
-During the Day 1 we discussed [how to create a tidy project](/materials/day1/02-projects/), choose meaningful names for files and folders and some of the tools RStudio has to offer. In this section we'll go one step forward to create a research compendia that organise your data, code and results. 
+On Day 1 we discussed [how to create a tidy project](/materials/day1/02-projects/), choose meaningful names for files and folders and some of the tools RStudio has to offer.
+In this section we'll go one step forward and create a research compendium that organise your data, code and results.
 
-There are different elements that make to a research compendia, from the folder structure, specific files to document the project, how you organise your code and analysis to how to re-create the same working environment. Yes, adding all this to your workflow can be time consuming. But, it will save you time and more that one headache in the future when you want to share your project, re use it or simple try to understand what you did. 
-
-
+There are different elements that make up a research compendium, from the folder structure, specific files to document the project, how you organise your code and analysis to how to re-create the same working environment.
+Yes, adding all this to your workflow can be time consuming.
+But it will save you time and more that one headache in the future when you want to share your project, re-use it or simple try to understand what you did.
 
 ## Project structure
 
-The main characteristic of a research compendia is the folder structure. There are no hard rules to organise the content of your project but [it should be easy to follow and navigate](materials/day1/02-projects/#files-that-document-themselves). 
+The main characteristic of a research compendium is the folder structure.
+There are no hard rules to organise the content of your project but [it should be easy to follow and navigate](materials/day1/02-projects/#files-that-document-themselves).
 
 We propose this file structure
 
-```   
+```         
 research_project/
 ├── .gitignore
 │
@@ -29,73 +31,73 @@ research_project/
 │     └── 01_plot.png
 │
 ├── data/
-│   ├── raw_data/       # data obtained from elsewhere
-│   └── derived_data/   # data generated during the analysis
+│   ├── raw/            # data obtained from elsewhere
+│   └── derived/        # data generated during the analysis
 |
 ├── LICENSE
 ├── R
 │   └── add_numbers.R   # R functions 
 └── README.md
-
 ```
 
-* `analysis/` folder:
+- `analysis/` folder:
 
-   -   `paper.qmd` will include the code and text that makes your analysis and results. Here you can use a template to produce a manuscript following a specific journal requirements. 
-   -   `references.bib` will include the references needed in `paper.qmd`. We usually don't edit this file by hand, we use a Reference Manager tools like Zotero.
-   - `paper_figures/` will be created automatically by quarto when you render the paper. 
+  - `paper.qmd` will include the code and text that makes your analysis and results. Here you can use a template to produce a manuscript following a specific journal requirements.
+  - `references.bib` will include the references needed in `paper.qmd`. We usually don't edit this file by hand, we use a Reference Manager tools like Zotero.
+  - `paper_figures/` will be created automatically by quarto when you render the paper.
 
-* `data/` folder:
+- `data/` folder: We strongly suggest to separate your raw data from the data you have cleaned, processed or produced in `derived/`.
+  Nothing inside `raw/` should be edited at all; ideally it should be read-only.
 
-We strongly suggest to separate your raw data from the data you have cleaned, processed or produced in `derived_data/`. Everything inside `raw_data/` should not be edited by hand and should be read-only. 
-
-If you use git in your project, we also recommend including `data/` in your `.gitignore` file. This is particularly important if your files are big  (\>100 mb is the limit for GitHub) or you do not want to make the data files publicly accessible on GitHub.
+If you use git in your project, we also recommend including `data/` in your `.gitignore` file.
+This is particularly important if your files are big (\>100 mb is the limit for GitHub) or you do not want to make the data files publicly accessible on GitHub.
 More about sharing data in [the next section](/materials/day2/03-data/).
 
 ## Document your project
 
 This example includes a few extra files that aims to document your project:
 
--   *Readme files.* Use a `README.md` file to explain what your project is, and how use it.
-    `README.md` is the file that is automatically displayed when you open a GitHub repo. For a research project, the README will also include information on how to cite the associated paper and the code or data used in the process. If if you need inspiration here are a few examples of READMES:
-    - [The importance of initial conditions in seasonal predictions of Antarctic sea ice](https://github.com/eliocamp/access-s2_ice-eval).
-    - [Using rapid temperature falls to estimate future strong cold front frequency in CMIP6 climate projections](https://github.com/paocorrales/t-drop-trends).
+- *Readme files.* Use a `README.md` file to explain what your project is, and how use it.
+  `README.md` is the file that is automatically displayed when you open a GitHub repo.
+  For a research project, the README will also include information on how to cite the associated paper and the code or data used in the process.
+  If if you need inspiration here are a few examples of READMES:
 
--   *License.* The license tell people how they can use the content of your repo.
-    Generally, we use permissive licences and people can do almost anything with the materials.
-    Examples are the MIT Licence or Apache.
-    Some extra resources:
+  - [The importance of initial conditions in seasonal predictions of Antarctic sea ice](https://github.com/eliocamp/access-s2_ice-eval).
+  - [Using rapid temperature falls to estimate future strong cold front frequency in CMIP6 climate projections](https://github.com/paocorrales/t-drop-trends).
 
-    -   [Choose an open source license](https://choosealicense.com/) does what it says on the tin and helps you choose a licence.
-    -   [Software Licenses in Plain English](https://tldrlegal.com/) explains licences' legalese in simple terms
+- *License.* The license tells people how they can use the content of your repo.
+  Generally, we use permissive licences so people can do almost anything with the materials.
+  Examples are the MIT Licence or Apache.
+  Some extra resources:
 
--   *Contributing guide.* A file called `CONTRIBUTING.md` and guidelines for contributors so they know what they should do if they want to help you out.
+  - [Choose an open source license](https://choosealicense.com/) does what it says on the tin and helps you choose a licence.
+  - [Software Licenses in Plain English](https://tldrlegal.com/) explains licences' legalese in simple terms
 
--   *Code of Conduct.* Good projects have codes of conduct to make sure that people are treated well.
-    Github has an Code of Conduct wizard to make it easy to add one.
+- *Contributing guide.* A file called `CONTRIBUTING.md` and guidelines for contributors so they know what they should do if they want to help you out.
 
+- *Code of Conduct.* Good projects have a code of conduct to make sure that people are treated well.
+  Github has an Code of Conduct wizard to make it easy to add one.
 
 <div class = activity> 
 
-Create your research compendia
+Create your research compendium
 
-1. Check again the elements in our example:
-  1. Does it include everything you need in your projects?
-  2. Is there anything missing?
-2. Using the RStudio project you created at  the beginning of the course, create and organise the files and folder you need your research compendia. 
+1. Check again the elements in our example:  
+   1. Does it include everything you need in your projects?
+   2. Is there anything missing?
+2. Using the RStudio project you created at  the beginning of the course, create and organise the files and folder you need your research compendium. 
 
 </div>
 
+## Organising your code
 
-## Organising your code 
+Usually we include all the code (functions, figures, tables) in the same file.
+This can be ok for very short scripts or analysis, but for a paper, this will make your code to long, messy and difficult to follow.
+A simple solution to this is separate functions in individual files inside the `R/` folder and source those functions from the main manuscript file.
 
-Usually we'll include all the code, (functions, figures, tables) in the same file. This can be ok for very short scripts or analysis. But for a paper, including all the code in the same qmd file will make it to long, messy and difficult to follow.
+Let say you have a very interesting function that adds 2 numbers together, we'll save it in `R/add_numbers.R`
 
-A simple solution to this is separate functions in individual files inside the `R/` folder and source those functions from the main qmd file. 
-
-Let say you have a very interesting function that add 2 numbers, we'll save it in `R/add_numbers.R`
-
-```r
+``` r
 add_numbers -> function(x, y) {
    x + y
 }
@@ -114,39 +116,41 @@ add_numbers(1, 1)
 ```
 ````
 
-By doing this, you can reuse your functions in more that one qmd file in the same project. You won't need to copy and paste the same code making it more easy to maintain. 
+By doing this, you can reuse your functions other files in the same project.
+You won't need to copy and paste the same code making it, more easy to maintain.
 
-If your project is more complex, you may also need to use scripts will code is not directly related to the main analysis and figures but it's necessary for things like downloading data, cleaning the data, etc.
-
-Those scripts should go in `scripts/` in the root directory of the project. Similarly to qmd files, you can also source your functions and use them in a script. 
+If your project is more complex, you may also need to use scripts will code that doesn't run with the manuscript, but it's necessary for things like downloading data, cleaning the data, etc.
+Those scripts should go in `scripts/` in the root directory of the project.
+Similarly to Quarto files, you can also source your functions and use them in a script.
 
 <div class = notes> 
 
 Other options to organise your code
 
-There are other options to organise your functions. One is to create an R package either as part of your research compendium or in a separate project. This option has the advantage of making your code very easy to share and re-use. Creating an R package is not hard but it not may be your main goal while during your research.
+There are other options to organise your functions.
+One is to create an R package either as part of your research compendium or in a separate project. This option has the advantage of making your code very easy to share and re-use. 
+Creating an R package is not hard but it not may be your main goal while during your research.
 
-Another option is the [**box** package](https://klmr.me/box/). box allows you to load functions inside a folder to make them available as you were running `library(my_package)`. 
+Another option is the [**box** package](https://klmr.me/box/). 
+box allows you to load functions inside a folder to make them available as you were running `library(my_package)`. 
 
 
 </div>
 
-
 ## Documenting code
 
-Whether you choose to write code in chunks, script files or as functions, it important to your future self and others to document your code.
+Whether you choose to write code in chunks, script files or as functions, it is important for your future self and others to document your code.
 If you are not used to doing it, the easiest way to start is by commenting everything without much thinking.
 With time you can decide if you need commenting every single line or maybe only the key decisions you made when you where writing the code.
 
-If you decide to work with functions there are a few tools that can help you to document them without forgetting any aspect. 
-
-Each function will live in a .R file (there are some exceptions but we won't worry about that at this point) and will have a header with the name, descriptions and more information.
+If you decide to work with functions there are a few tools that can help you to document them without forgetting any aspect.
+As mentioned before, you would organise functions in files inside the `R/` folder. 
+Each function will have a header with the name, descriptions and more information.
 You can use simple `#` to comment or you can use *roxygen2* comments using `#'`.
 
 Coming back to our example function, the documentation should look like this:
 
-
-```
+```         
 #' Add together two numbers
 #' 
 #' @param x A number.
@@ -157,19 +161,18 @@ Coming back to our example function, the documentation should look like this:
 #' @examples
 #' add(1, 1)
 #' add(10, 1)
-
 add <- function(x, y) {
   x + y
 }
 ```
 
-* The first line is the title
-* You can also add a description after the title
-* `@params` are the function arguments, in this case `x` and `y`.
-* `@examples` starts the examples sections, R will run this code when the package is build.
+- The first line is the title
+- You can also add a description after the title
+- `@params` are the function arguments, in this case `x` and `y`.
+- `@examples` starts the examples sections.
 
-This is exactly how functions are documented inside an R package. So if you ever decide to convert your project into a package your are half way there!
-
+This is exactly how functions are documented inside an R package.
+So if you ever decide to convert your project into a package your are half way there!
 
 <div class = activity>  
 
@@ -186,13 +189,13 @@ Practice organising and documenting your code
 
 </div>
 
-
 ## Automatic project structure
 
 There's a tool to automate a lot of this so you don't need to think about it so much.
-The **rrtools** package can automate a lot of these steps (and more) and the **rrtools.addin** package offers a GUI for the main functionality. rrtools provides a relatively rich and strict template which has the advantage of liberating you from some decisions but, as it usually goes with these things, it also forces some decision onto you which might not be optimal for your specific use-case.
+The **rrtools** package can automate a lot of these steps (and more) and the **rrtools.addin** package offers a GUI for the main functionality.
+rrtools provides a relatively rich and strict template which has the advantage of liberating you from some decisions but, as it usually goes with these things, it also forces some decision onto you which might not be optimal for your specific use-case.
 In any case, it provides a very solid starting point that follows some best practices.
-However, it can be a bit overwhelming because it has many moving parts, so in this course we will go over each part in [Research compendia with rrtools](/materials/extras/).
+However, it can be a bit overwhelming because it has many moving parts, you can check the [Research compendia with rrtools](/materials/extras/) in the extras section for more information. 
 
 ## Resources
 
