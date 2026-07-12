@@ -8,11 +8,6 @@
   </url>
   
   <url>
-    <loc>https://reproducibility.rocks/materials/day3/02-renv/</loc>
-    <lastmod>2022-03-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://reproducibility.rocks/materials/day4/01-docker/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
   </url>
@@ -28,17 +23,17 @@
   </url>
   
   <url>
-    <loc>https://reproducibility.rocks/materials/day1/02-projects/</loc>
-    <lastmod>2022-03-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://reproducibility.rocks/materials/day2/01-git/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://reproducibility.rocks/materials/day3/03-data/</loc>
+    <loc>https://reproducibility.rocks/materials/day1/02-projects/</loc>
+    <lastmod>2022-03-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://reproducibility.rocks/materials/day3/02-renv/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -62,6 +57,11 @@
   
   <url>
     <loc>https://reproducibility.rocks/materials/day2/02-rrtools/</loc>
+    <lastmod>2022-03-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://reproducibility.rocks/materials/day3/03-data/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
   </url>
   
@@ -105,6 +105,16 @@
   
   <url>
     <loc>https://reproducibility.rocks/materials/slides/day2/index_files/libs/revealjs/plugin/notes/speaker-view/</loc>
+    <lastmod>2022-03-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://reproducibility.rocks/materials/slides/day3/index_files/libs/revealjs/plugin/notes/speaker-view/</loc>
+    <lastmod>2022-03-15T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://reproducibility.rocks/materials/slides/day4/index_files/libs/revealjs/plugin/notes/speaker-view/</loc>
     <lastmod>2022-03-15T00:00:00+00:00</lastmod>
   </url>
   

@@ -18,7 +18,7 @@ Root directory during knitOne issue is that when RMarkdown files are knitte
     </item>
     
     <item>
-      <title>01: Managing R dependencies with renv</title>
+      <title>02: Managing R dependencies with renv</title>
       <link>https://reproducibility.rocks/materials/day3/02-renv/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
@@ -28,7 +28,7 @@ But actively-maintained packages will change their code-base to fix bugs, add or
     </item>
     
     <item>
-      <title>02: Sharing data</title>
+      <title>03: Sharing data</title>
       <link>https://reproducibility.rocks/materials/day3/03-data/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       

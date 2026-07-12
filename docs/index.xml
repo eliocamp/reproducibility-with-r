@@ -18,16 +18,6 @@ Root directory during knitOne issue is that when RMarkdown files are knitte
     </item>
     
     <item>
-      <title>01: Managing R dependencies with renv</title>
-      <link>https://reproducibility.rocks/materials/day3/02-renv/</link>
-      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://reproducibility.rocks/materials/day3/02-renv/</guid>
-      <description>No code is its own isolated bubble. Almost every analysis will depend on a number of external packages, such as ggplot2 for plotting, data.table for data wrangling, knitr for rendering a report, and so on.
-But actively-maintained packages will change their code-base to fix bugs, add or remove features, or change behaviour. These changes can potentially break your analysis or create subtle (or not so subtle) differences in the result.</description>
-    </item>
-    
-    <item>
       <title>01: Reproducible computational environment with Docker</title>
       <link>https://reproducibility.rocks/materials/day4/01-docker/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
@@ -57,6 +47,16 @@ RAt the very least you need to have R installed on your computer.If possible, 
     </item>
     
     <item>
+      <title>01: Getting the most of git</title>
+      <link>https://reproducibility.rocks/materials/day2/01-git/</link>
+      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://reproducibility.rocks/materials/day2/01-git/</guid>
+      <description>Why git?Do you have something like this in your computer?
+/home/pao/Documents/thesis├── abstract.R├── thesis.Rmd├── thesis_reviwed.Rmd├── thesis_reviwed2.Rmd├── thesis_final.Rmd├── thesis_finalfinal.Rmd├── this_is_it.Rmd├── now_this_is_it_for_real_this_time_i_swear.Rmd└── FINAL.RmdProbably we all have, or had something like this at one point because we didn&amp;rsquo;t use a version control system. Version control systems manage the evolution and changes of a set of files that we&amp;rsquo;ll call repository.</description>
+    </item>
+    
+    <item>
       <title>02: A tidy project is a happy project</title>
       <link>https://reproducibility.rocks/materials/day1/02-projects/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
@@ -68,23 +68,13 @@ You download the all the files and you find something like this.
     </item>
     
     <item>
-      <title>02: Getting the most of git</title>
-      <link>https://reproducibility.rocks/materials/day2/01-git/</link>
+      <title>02: Managing R dependencies with renv</title>
+      <link>https://reproducibility.rocks/materials/day3/02-renv/</link>
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
-      <guid>https://reproducibility.rocks/materials/day2/01-git/</guid>
-      <description>Why git?Do you have something like this in your computer?
-/home/pao/Documents/thesis├── abstract.R├── thesis.Rmd├── thesis_reviwed.Rmd├── thesis_reviwed2.Rmd├── thesis_final.Rmd├── thesis_finalfinal.Rmd├── this_is_it.Rmd├── now_this_is_it_for_real_this_time_i_swear.Rmd└── FINAL.RmdProbably we all have, or had something like this at one point because we didn&amp;rsquo;t use a version control system. Version control systems manage the evolution and changes of a set of files that we&amp;rsquo;ll call repository.</description>
-    </item>
-    
-    <item>
-      <title>02: Sharing data</title>
-      <link>https://reproducibility.rocks/materials/day3/03-data/</link>
-      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
-      
-      <guid>https://reproducibility.rocks/materials/day3/03-data/</guid>
-      <description>The two ingredients for a reproducible project are code and data. We talked a lot about how to organise and share code, but what about data? Sharing data is far from trivial and there are a lot of things to consider.
-PermissionsBefore the technical issues of sharing data there are the bureaucratic issues. Depending on your context, you might not be allowed to share your data.</description>
+      <guid>https://reproducibility.rocks/materials/day3/02-renv/</guid>
+      <description>No code is its own isolated bubble. Almost every analysis will depend on a number of external packages, such as ggplot2 for plotting, data.table for data wrangling, knitr for rendering a report, and so on.
+But actively-maintained packages will change their code-base to fix bugs, add or remove features, or change behaviour. These changes can potentially break your analysis or create subtle (or not so subtle) differences in the result.</description>
     </item>
     
     <item>
@@ -122,6 +112,16 @@ This is really critical to reproducibility since it automates the creation of a 
       
       <guid>https://reproducibility.rocks/materials/day2/02-rrtools/</guid>
       <description>Of course, you can always create a file structure that suits you and your work by hand. But if you are going to do that a lot, it might be nice to automate some of the work. We are going to use the rrtools package to create a &amp;ldquo;research compendium&amp;rdquo; using a couple of R functions and combine it with the things we learned on the git and GitHub section.</description>
+    </item>
+    
+    <item>
+      <title>03: Sharing data</title>
+      <link>https://reproducibility.rocks/materials/day3/03-data/</link>
+      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://reproducibility.rocks/materials/day3/03-data/</guid>
+      <description>The two ingredients for a reproducible project are code and data. We talked a lot about how to organise and share code, but what about data? Sharing data is far from trivial and there are a lot of things to consider.
+PermissionsBefore the technical issues of sharing data there are the bureaucratic issues. Depending on your context, you might not be allowed to share your data.</description>
     </item>
     
     <item>
@@ -167,7 +167,7 @@ Therefore we propose this optional homework in which you will do just that. You 
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://reproducibility.rocks/materials/slides/day1/index_files/libs/revealjs/plugin/notes/speaker-view/</guid>
-      <description>reveal.js - Speaker Viewbody {font-family: Helvetica;font-size: 18px;}#current-slide,#upcoming-slide,#speaker-controls {padding: 6px;box-sizing: border-box;-moz-box-sizing: border-box;}#current-slide iframe,#upcoming-slide iframe {width: 100%;height: 100%;border: 1px solid #ddd;}#current-slide .label,#upcoming-slide .label {position: absolute;top: 10px;left: 10px;z-index: 2;}#connection-status {position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 20;padding: 30% 20% 20% 20%;font-size: 18px;color: #222;background: #fff;text-align: center;box-sizing: border-box;line-height: 1.</description>
+      <description>reveal.js - Speaker View  body { font-family: Helvetica; font-size: 18px; } #current-slide, #upcoming-slide, #speaker-controls { padding: 6px; box-sizing: border-box; -moz-box-sizing: border-box; } #current-slide iframe, #upcoming-slide iframe { width: 100%; height: 100%; border: 1px solid #ddd; } #current-slide .label, #upcoming-slide .label { position: absolute; top: 10px; left: 10px; z-index: 2; } #connection-status { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 20; padding: 30% 20% 20% 20%; font-size: 18px; color: #222; background: #fff; text-align: center; box-sizing: border-box; line-height: 1.</description>
     </item>
     
     <item>
@@ -176,7 +176,25 @@ Therefore we propose this optional homework in which you will do just that. You 
       <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
       
       <guid>https://reproducibility.rocks/materials/slides/day2/index_files/libs/revealjs/plugin/notes/speaker-view/</guid>
-      <description>reveal.js - Speaker Viewbody {font-family: Helvetica;font-size: 18px;}#current-slide,#upcoming-slide,#speaker-controls {padding: 6px;box-sizing: border-box;-moz-box-sizing: border-box;}#current-slide iframe,#upcoming-slide iframe {width: 100%;height: 100%;border: 1px solid #ddd;}#current-slide .label,#upcoming-slide .label {position: absolute;top: 10px;left: 10px;z-index: 2;}#connection-status {position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 20;padding: 30% 20% 20% 20%;font-size: 18px;color: #222;background: #fff;text-align: center;box-sizing: border-box;line-height: 1.</description>
+      <description>reveal.js - Speaker View  body { font-family: Helvetica; font-size: 18px; } #current-slide, #upcoming-slide, #speaker-controls { padding: 6px; box-sizing: border-box; -moz-box-sizing: border-box; } #current-slide iframe, #upcoming-slide iframe { width: 100%; height: 100%; border: 1px solid #ddd; } #current-slide .label, #upcoming-slide .label { position: absolute; top: 10px; left: 10px; z-index: 2; } #connection-status { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 20; padding: 30% 20% 20% 20%; font-size: 18px; color: #222; background: #fff; text-align: center; box-sizing: border-box; line-height: 1.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://reproducibility.rocks/materials/slides/day3/index_files/libs/revealjs/plugin/notes/speaker-view/</link>
+      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://reproducibility.rocks/materials/slides/day3/index_files/libs/revealjs/plugin/notes/speaker-view/</guid>
+      <description>reveal.js - Speaker View  body { font-family: Helvetica; font-size: 18px; } #current-slide, #upcoming-slide, #speaker-controls { padding: 6px; box-sizing: border-box; -moz-box-sizing: border-box; } #current-slide iframe, #upcoming-slide iframe { width: 100%; height: 100%; border: 1px solid #ddd; } #current-slide .label, #upcoming-slide .label { position: absolute; top: 10px; left: 10px; z-index: 2; } #connection-status { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 20; padding: 30% 20% 20% 20%; font-size: 18px; color: #222; background: #fff; text-align: center; box-sizing: border-box; line-height: 1.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://reproducibility.rocks/materials/slides/day4/index_files/libs/revealjs/plugin/notes/speaker-view/</link>
+      <pubDate>Tue, 15 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://reproducibility.rocks/materials/slides/day4/index_files/libs/revealjs/plugin/notes/speaker-view/</guid>
+      <description>reveal.js - Speaker View  body { font-family: Helvetica; font-size: 18px; } #current-slide, #upcoming-slide, #speaker-controls { padding: 6px; box-sizing: border-box; -moz-box-sizing: border-box; } #current-slide iframe, #upcoming-slide iframe { width: 100%; height: 100%; border: 1px solid #ddd; } #current-slide .label, #upcoming-slide .label { position: absolute; top: 10px; left: 10px; z-index: 2; } #connection-status { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 20; padding: 30% 20% 20% 20%; font-size: 18px; color: #222; background: #fff; text-align: center; box-sizing: border-box; line-height: 1.</description>
     </item>
     
     <item>
