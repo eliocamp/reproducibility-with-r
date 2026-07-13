@@ -2,7 +2,7 @@
 title: "Elio Campitelli"
 subtitle: "Meteorologist and Educator"
 excerpt: >
-  **Instructor**<br>PhD in atmospheric sciences. Sometimes knit, sometimes knead.
+  **Instructor**<br>PhD in atmospheric sciences. Sometimes knits, sometimes kneads.
 type: people
 show_post_image: true
 weight: 2

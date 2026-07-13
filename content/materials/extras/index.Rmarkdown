@@ -148,7 +148,7 @@ Create the compendium
 2.  Edit the `DESCRIPTION` file (located in your `pkgname` directory) to include accurate metadata, e.g. your [ORCID](https://orcid.org/).
     This is one of the files that makes a regular folder an "R package".
 
-3.  Periodically update the `Imports:` section of the `DESCRIPTION` file with the names of packages used in the code we write in the .Rmd document(s) by running `rrtools::add_dependencies_to_description()`
+3.  Periodically update the `Imports:` section of the `DESCRIPTION` file with the names of packages used in the code we write in the qmd document(s) by running `rrtools::add_dependencies_to_description()`
 </div>
 
 ### 2. `usethis::use_mit_license(copyright_holder = "My Name")`
@@ -187,10 +187,10 @@ This folder will have the following structure:
 analysis/
 |
 ├── paper/
-│   ├── paper.Rmd       # this is the main document to edit
+│   ├── paper.qmd       # this is the main document to edit
 │   └── references.bib  # this contains the reference list information
 
-├── figures/            # location of the figures produced by the Rmd
+├── figures/            # location of the figures produced by the qmd
 |
 ├── data/
 │   ├── raw_data/       # data obtained from elsewhere
@@ -199,11 +199,11 @@ analysis/
 └── templates
     ├── journal-of-archaeological-science.csl
     |                   # this sets the style of citations & reference list
-    ├── template.docx   # used to style the output of the paper.Rmd
-    └── template.Rmd
+    ├── template.docx   # used to style the output of the paper.qmd
+    └── template.qmd
 ```
 
--   the `paper.Rmd` is ready to write in and render with bookdown.
+-   the `paper.qmd` is ready to write in and render with bookdown.
     It includes:
 
     -   a YAML header that identifies the `references.bib` file and the supplied `csl` file (to style the reference list).
@@ -214,8 +214,8 @@ analysis/
 
 -   you can replace the supplied `csl` file with a different citation style from <https://github.com/citation-style-language/>
 
-Remember that the `Imports:` field in the `DESCRIPTION` file must include the names of all packages used in analysis documents (e.g. `paper.Rmd`).
-rrtools have a helper function `rrtools::add_dependencies_to_description()` that will scan the Rmd file, identify libraries used in there, and add them to the `DESCRIPTION` file.
+Remember that the `Imports:` field in the `DESCRIPTION` file must include the names of all packages used in analysis documents (e.g. `paper.qmd`).
+rrtools have a helper function `rrtools::add_dependencies_to_description()` that will scan the qmd file, identify libraries used in there, and add them to the `DESCRIPTION` file.
 
 When you create this file structure using this function you can choose whether you want to add your data to the repository.
 If `data_in_git = FALSE` you will exclude files in the `data/` directory from being tracked by git and prevent them from appearing on GitHub.
@@ -224,10 +224,10 @@ More about sharing data in [the next section](/materials/day2/03-data/).
 
 ### Working with your own code
 
-You can add small snippets of code right inside your Rmd document, but this is not optimal for code that you might want to reuse among documents associated with the same protect or in various R scripts.
-It's can also lead to a very long and hard to understand Rmd document.
+You can add small snippets of code right inside your qmd document, but this is not optimal for code that you might want to reuse among documents associated with the same protect or in various R scripts.
+It's can also lead to a very long and hard to understand qmd document.
 
-For complex functions, it's better to put them in the `R` sub folder and include `devtools::load_all(".")` at the top of your `paper.Rmd`.
+For complex functions, it's better to put them in the `R` sub folder and include `devtools::load_all(".")` at the top of your `paper.qmd`.
 In an interactive session, you an use `Ctrl+Shift+L`/`Shift+Command+L` (or run `devtools::load_all(".")` in the console).  
 This will make all functions and objects in that folder available in your environment.
 

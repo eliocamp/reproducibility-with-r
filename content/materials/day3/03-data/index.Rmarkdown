@@ -231,9 +231,9 @@ Neither future you nor any future reproducibility enthusiast will need to worry 
 
 <div class = activity> 
 
-Improve report.Rmd
+Improve report.qmd
 
-1. Modify report.Rmd in the [demo project](/demo_project.zip) to download the data automatically. 
+1. Modify report.qmd in the [demo project](/demo_project.zip) to download the data automatically. 
 
 </div>
 

@@ -77,7 +77,7 @@ format:
 
 - `scripts/02-compute-mean_temperature.R`
 
-- `analysis/01-madrid-minimum_temperature-descriptive_statistics.Rmd`
+- `analysis/01-madrid-minimum_temperature-descriptive_statistics.qmd`
 
 ------------------------------------------------------------------------
 

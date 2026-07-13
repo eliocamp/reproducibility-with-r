@@ -65,7 +65,7 @@ Describe what do you think are the contents of these files:
 
 -   `scripts/02_compute_mean-temperature.R`
 
--   `analysis/01_madrid_minimum-temperature_descriptive-statistics.Rmd`
+-   `analysis/01_madrid_minimum-temperature_descriptive-statistics.qmd`
 </div>
 
 <div class = activity> 
@@ -159,7 +159,7 @@ read.csv("data/data.csv")
 
 And this will run no matter where the root folder is located.
 The only catch is that you need to make sure that the working directory is set to the root of the project.
-This is easier said than done, especially due to (and assuming you use) knitr's default behaviour of setting the location of the R Markdown file as the working directory.
+This is easier said than done, especially due to (and assuming you use) quarto's default behaviour of setting the location of the quarto file as the working directory.
 We will see that a simple solution is to use the [**here** package](/materials/day1/04-here/).
 
 ## RStudio Projects
