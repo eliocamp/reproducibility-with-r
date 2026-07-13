@@ -42,6 +42,11 @@ If you're a Linux user, you can add the RStudio Package Manager repository.
 This can speed up package installation tremendously, as it provides pre-compiled versions of R packages.
 To enable it, follow the instructions in [their setup guide](https://packagemanager.posit.co/client/#/repos/cran/setup) and be sure to select your Linux distribution to get the binary packages.
 
+## Quarto
+
+We will use Quarto to render documents. 
+Follow the [install instructions on their website](https://quarto.org/docs/get-started/).
+
 ## R Packages
 
 You will need to install the packages required to use **knitr**.
@@ -49,26 +54,18 @@ The easiest way to do this is to let RStudio do that for you.
 
 -   Open RStudio
 
--   Go to to File -\> New File -\> R Markdown.
+-   Go to to File -\> New File -\> Quarto Document...
 
 -   If you get a pop up saying that you need to install some packages, click "Ok".
     RStudio will install the packages and then open a sample document.
 
--   Click on the "Knit" button (the blue yarn) to test your installation; everything went well, you should see a new window with an HTML file.
+-   Click on the "Render" button (the blue arrow) to test your installation; everything went well, you should see a new window with an HTML file.
 
-Other important packages are **here**, **renv**, **rticles**, and **devtools** and **roxygen2**.
+Other important packages are **here**, **renv**, and **devtools**, **roxygen2** and **gitcreds**.
 These are on CRAN so you can install them with the usual
 
 ``` r
-install.packages(c("here", "renv", "rticles", "devtools", "roxygen2", "gitcreds"))
-```
-
-The package **rrtools** will also be useful.
-It's not on CRAN, so you need so install it from github:
-
-``` r
-if (!require("remotes")) install.packages("remotes")
-remotes::install_github("benmarwick/rrtools")
+install.packages(c("here", "renv", "devtools", "roxygen2", "gitcreds"))
 ```
 
 On Linux, you might need to install these system libraries:
@@ -77,20 +74,25 @@ On Linux, you might need to install these system libraries:
 sudo apt install libxml2-dev libcurl4-openssl-dev libfontconfig1-dev libgit2-dev libssh2-1-dev libharfbuzz-dev libfribidi-dev lbfreetype6-dev libpng-dev libtiff5-dev libjpeg-dev 
 ```
 
-
-
 ## LaTeX
 
 You'll need a working LaTeX installation to render PDFs.
 If you didn't feel chills down your spine at the sight of that sentence, consider yourself lucky!
 
-The easiest (and painless) way to do this is to use the [tinytex](https://yihui.org/tinytex/) R package.
-You should be up and running with these two commands:
+The easiest (and most painless) way to do this is to install  [tinytex](ttps://yihui.org/tinytex/) with quarto. 
+On a terminal (not your R console), run this command:
 
-``` r
-install.packages('tinytex')
-tinytex::install_tinytex()
+```sh
+quarto install tinytex
 ```
+
+You can then run 
+
+```sh
+quarto check
+```
+
+To get an overview of your quarto installation and what's missing. 
 
 ## Git and GitHub
 
