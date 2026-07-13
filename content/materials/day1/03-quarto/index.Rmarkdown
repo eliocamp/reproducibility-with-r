@@ -256,10 +256,9 @@ Figure control
 If the output of the chunk is a figure, you have a ton of options to control its aspect. 
 From its size, resolution, etc.. 
 You can start typing "fig-" inside the `#| ` to explore the options.
-
+For tables, you need to use "tbl-". 
 </div>
 
-For tables, you need to use "tbl-". 
 
 
 ### Managing references
