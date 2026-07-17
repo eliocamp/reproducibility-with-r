@@ -12,7 +12,7 @@ An [Quarto](https://quarto.org/) file is a plain text file, with some rules and 
 When rendered, code will be evaluated and executed and text formatted into a reproducible report or document that is nice to read and contains all your work.
 
 This is really critical to reproducibility since it automates the creation of a paper or report, which also has the side effect of saving time.
-Since the document will recreate the figures and text each time you knit it, you won’t need to copy-paste plots between R and Word, LaTeX or whatever tool you are using to write your report each time you make some trivial change.
+Since the document will recreate the figures and text each time you render it, you won’t need to copy-paste plots between R and Word, LaTeX or whatever tool you are using to write your report each time you make some trivial change.
 
 Now let’s create a new Quarto file.
 In RStudio you can use the menu bar:
@@ -104,8 +104,8 @@ Many of the errors you’ll find when rendering will be rooted in indentation is
 
 R code is written inside code “chunks”.
 Code chunks start with ```` ```{r} ```` and end with ```` ``` ````.
-Everything you include between these delimiters will be interpreted by R as code and will be executed it when the file is knitted.
-Any output (graphics, tables, text, etc.) will be inserted into the final document in the same order as they are in the Quarto file (or “roughly in the same order” if you’re knitting to PDF).
+Everything you include between these delimiters will be interpreted by R as code and will be executed it when the file is rendered
+Any output (graphics, tables, text, etc.) will be inserted into the final document in the same order as they are in the Quarto file (or “roughly in the same order” if you’re rendering to PDF).
 
 <div class="instructions">
 
@@ -117,7 +117,7 @@ You can create a new chunk with:
 
 </div>
 
-While the code will run line by line when you knit the file, during writing it is very convenient to run individual chunks interactively as if it were in the console.
+While the code will run line by line when you render the file, during writing it is very convenient to run individual chunks interactively as if it were in the console.
 
 To run the line where your cursor is use the shortcut:
 
@@ -253,10 +253,9 @@ Figure control
 If the output of the chunk is a figure, you have a ton of options to control its aspect.
 From its size, resolution, etc..
 You can start typing “fig-” inside the `#|` to explore the options.
+For tables, you need to use “tbl-”.
 
 </div>
-
-For tables, you need to use “tbl-”.
 
 ### Managing references
 
