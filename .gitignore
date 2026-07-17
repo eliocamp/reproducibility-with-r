@@ -64,3 +64,5 @@ rsconnect/
 
 /.quarto/
 videos/
+
+**/*.quarto_ipynb
