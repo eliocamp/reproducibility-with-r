@@ -249,7 +249,7 @@ Otherwise, don&rsquo;t.</p>
 </ul>
 </div>
 <div class="figure">
-<img src="images/rstudio-landing.png" alt="Screenshot of a browser in http://localhost:8787/ running RStudio." width="602" />
+<img src="images/rstudio-landing.png" alt="Screenshot of a browser in http://localhost:8787/ running RStudio."  />
 <p class="caption"><span id="fig:unnamed-chunk-1"></span>Figure 1: RStudio running inside docker.</p>
 </div>
 <p>Surprise!
@@ -375,7 +375,7 @@ Now what&rsquo;s left to do is to run it with this command from the terminal:</p
 </code></pre></div><p>You&rsquo;ll notice that this is very similar to the command used to launch the <code>rocker/rstudio</code> container.
 The new bit here is that the line <code>-v /home/rstudio/project/renv</code> makes sure that the container does not mount the local <code>renv</code> folder.</p>
 <p>Now you can go to 
-<a href="http://localhost:8787/" target="_blank" rel="noopener">localhost:8787</a>, open the reproducible_project and knit <code>report.Rmd</code>.</p>
+<a href="http://localhost:8787/" target="_blank" rel="noopener">localhost:8787</a>, open the reproducible_project and render <code>report.qmd</code>.</p>
 
 
 

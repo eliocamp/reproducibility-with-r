@@ -96,7 +96,7 @@ Some notes on this command:
 </div>
 
 <div class="figure">
-<img src="images/rstudio-landing.png" alt="Screenshot of a browser in http://localhost:8787/ running RStudio." width="602" />
+<img src="images/rstudio-landing.png" alt="Screenshot of a browser in http://localhost:8787/ running RStudio."  />
 <p class="caption"><span id="fig:unnamed-chunk-1"></span>Figure 1: RStudio running inside docker.</p>
 </div>
 
@@ -267,7 +267,7 @@ docker run --rm  -p 8787:8787 \
 You'll notice that this is very similar to the command used to launch the `rocker/rstudio` container.
 The new bit here is that the line `-v /home/rstudio/project/renv` makes sure that the container does not mount the local `renv` folder.
 
-Now you can go to [localhost:8787](http://localhost:8787/), open the reproducible_project and knit `report.Rmd`.
+Now you can go to [localhost:8787](http://localhost:8787/), open the reproducible_project and render `report.qmd`.
 
 ## Sharing docker
 

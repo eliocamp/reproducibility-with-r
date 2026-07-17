@@ -162,7 +162,7 @@ This is really critical to reproducibility since it automates the creation of a 
 <a href="https://quarto.org/" target="_blank" rel="noopener">Quarto</a> file is a plain text file, with some rules and special syntax that allow you to write code and text together.
 When rendered, code will be evaluated and executed and text formatted into a reproducible report or document that is nice to read and contains all your work.</p>
 <p>This is really critical to reproducibility since it automates the creation of a paper or report, which also has the side effect of saving time.
-Since the document will recreate the figures and text each time you knit it, you won’t need to copy-paste plots between R and Word, LaTeX or whatever tool you are using to write your report each time you make some trivial change.</p>
+Since the document will recreate the figures and text each time you render it, you won’t need to copy-paste plots between R and Word, LaTeX or whatever tool you are using to write your report each time you make some trivial change.</p>
 <p>Now let’s create a new Quarto file.
 In RStudio you can use the menu bar:</p>
 <div class="instructions">
@@ -262,8 +262,8 @@ Many of the errors you’ll find when rendering will be rooted in indentation is
 </h4>
 <p>R code is written inside code “chunks”.
 Code chunks start with <code>```{r}</code> and end with <code>```</code>.
-Everything you include between these delimiters will be interpreted by R as code and will be executed it when the file is knitted.
-Any output (graphics, tables, text, etc.) will be inserted into the final document in the same order as they are in the Quarto file (or “roughly in the same order” if you’re knitting to PDF).</p>
+Everything you include between these delimiters will be interpreted by R as code and will be executed it when the file is rendered
+Any output (graphics, tables, text, etc.) will be inserted into the final document in the same order as they are in the Quarto file (or “roughly in the same order” if you’re rendering to PDF).</p>
 <div class="instructions">
 <p>You can create a new chunk with:</p>
 <ol>
@@ -272,7 +272,7 @@ Any output (graphics, tables, text, etc.) will be inserted into the final docume
 <li>Writing ```{r} by hand (but why would you?)</li>
 </ol>
 </div>
-<p>While the code will run line by line when you knit the file, during writing it is very convenient to run individual chunks interactively as if it were in the console.</p>
+<p>While the code will run line by line when you render the file, during writing it is very convenient to run individual chunks interactively as if it were in the console.</p>
 <p>To run the line where your cursor is use the shortcut:</p>
 <div class="instructions">
 <p><code>Ctrl+Enter</code> or <code>Command+Return</code></p>
@@ -392,9 +392,9 @@ In @fig-pressure, we can see that pressure increases non-linearly as temperature
 <p>Figure control</p>
 <p>If the output of the chunk is a figure, you have a ton of options to control its aspect.
 From its size, resolution, etc..
-You can start typing “fig-” inside the <code>#|</code> to explore the options.</p>
+You can start typing “fig-” inside the <code>#|</code> to explore the options.
+For tables, you need to use “tbl-”.</p>
 </div>
-<p>For tables, you need to use “tbl-”.</p>
 
 
 
