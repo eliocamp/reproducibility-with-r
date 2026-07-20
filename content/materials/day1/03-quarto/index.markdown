@@ -516,7 +516,7 @@ You can read what partials are available for Quarto in the [LaTeX templates docu
     You only need to do this if you use those features, such as code highlighting.
 
 6.  Let’s now include the content of the R Markdown file.
-    First, delete all the sample content from the original template; everything between `\end{abstract}` and `\end{document}` (without removing those lines!) and replace it with <code> \$body\$</code>.
+    First, delete all the sample content from the original template; everything between `\end{abstract}` and `\bibliography{wiley}` (without removing those lines!) and replace it with <code> \$body\$</code>.
 
 7.  **Render the file**.
     You should get a PDF with the contents of the Quarto document but with the title, abstract, authors, etc. from the template.
