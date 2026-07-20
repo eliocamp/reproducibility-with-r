@@ -6,8 +6,8 @@
 <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-845c23b38eaddc0f92fda52bfe77a8c8.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.9.36">
 
   <title>An R reproducibility toolkit for the practical researcher</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -16,6 +16,9 @@
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/reset.css">
   <link rel="stylesheet" href="index_files/libs/revealjs/dist/reveal.css">
   <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     div.columns{display: flex; gap: min(4vw, 1.5em);}
@@ -28,7 +31,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-49ab5f243b9bfcff2014dfe0f8c2ca16.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-68b0c852cff55db665fd2046964e8e6b.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -121,9 +124,7 @@
     }
   </style>
   <link href="index_files/libs/countdown-0.6.0/countdown.css" rel="stylesheet">
-
   <script src="index_files/libs/countdown-0.6.0/countdown.js"></script>
-
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -162,9 +163,9 @@
 <div class="columns">
 <div class="column" style="width:50%;">
 <ol type="1">
-<li><a href="../../../..\materials/day1/01-introduction/">Introduction</a></li>
-<li><a href="../../../..\materials/day1/02-projects/">Project structure</a></li>
-<li><a href="../../../..\materials/day1/03-quarto/">Quarto documents</a></li>
+<li><a href="../../../../materials/day1/01-introduction/">Introduction</a></li>
+<li><a href="../../../../materials/day1/02-projects/">Project structure</a></li>
+<li><a href="../../../../materials/day1/03-quarto/">Quarto documents</a></li>
 </ol>
 </div><div class="column" style="width:50%;">
 <p><img data-src="logo.png"></p>
@@ -175,15 +176,8 @@
 
 <img data-src="reproducible-matrix.jpg" class="r-stretch"><p><a href="https://the-turing-way.netlify.app/reproducible-research/reproducible-research.html" class="uri">https://the-turing-way.netlify.app/reproducible-research/reproducible-research.html</a></p>
 </section>
-<section class="slide level2">
-
-
-<img data-src="repro-spectrum.png" class="r-stretch"><p><a href="https://towardsdatascience.com/scientific-data-analysis-pipelines-and-reproducibility-75ff9df5b4c5" class="uri">https://towardsdatascience.com/scientific-data-analysis-pipelines-and-reproducibility-75ff9df5b4c5</a></p>
-</section>
-<section class="slide level2">
-
-
-<img data-src="spectrum-notext.png" class="r-stretch"><p><a href="https://rviews.rstudio.com/2018/01/18/package-management-for-reproducible-r-code/" class="uri">https://rviews.rstudio.com/2018/01/18/package-management-for-reproducible-r-code/</a></p>
+<section id="section" class="slide level2">
+<h2><img data-src="repro-spectrum.jpg"></h2>
 </section>
 <section id="examples" class="slide level2">
 <h2>Examples</h2>
@@ -191,7 +185,7 @@
 <ul>
 <li><p><code>data/raw/madrid-minimum_temperature.csv</code></p></li>
 <li><p><code>scripts/02-compute-mean_temperature.R</code></p></li>
-<li><p><code>analysis/01-madrid-minimum_temperature-descriptive_statistics.Rmd</code></p></li>
+<li><p><code>analysis/01-madrid-minimum_temperature-descriptive_statistics.qmd</code></p></li>
 </ul>
 </section>
 <section id="exercise" class="slide level2">
@@ -206,7 +200,7 @@
 </ul>
 <div class="cell">
 <div class="cell-output-display">
-<countdown-timer class="countdown" id="timer_915eef2f" minutes="3" seconds="0" update-every="1" tabindex="0" style="right:0;bottom:0;--countdown-color-text:#008080;--countdown-color-running-background:#008080;--countdown-color-running-text:white;"></countdown-timer>
+<countdown-timer class="countdown" id="timer_bad93635" minutes="3" seconds="0" update-every="1" tabindex="0" style="right:0;bottom:0;--countdown-color-text:#008080;--countdown-color-running-background:#008080;--countdown-color-running-text:white;"></countdown-timer>
 </div>
 </div>
 </section>
@@ -248,13 +242,13 @@
 <section id="preparations-for-day-2" class="title-slide slide level1 center">
 <h1>Preparations for day 2:</h1>
 <ol type="1">
-<li><a href="../../../..\materials/day2/01-git/">Using git and GitHub</a> (<a href="../../../..\materials/day0/#git-and-github">setup instructions</a>)
+<li><a href="../../../../materials/day2/01-git/">Using git and GitHub</a> (<a href="../../../../materials/day0/#git-and-github">setup instructions</a>)
 <ul>
 <li>Install git</li>
 <li>Create GitHub account</li>
 <li>Configure your system to use RStudio with GitHub</li>
 </ul></li>
-<li><a href="../../../..\materials/day2/02-research-compedia/">Creating a research compendium</a></li>
+<li><a href="../../../../materials/day2/02-research-compedia/">Creating a research compendium</a></li>
 </ol>
 
 </section>
@@ -448,7 +442,7 @@
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -475,80 +469,42 @@
       });
     </script>
     
-
     <script>
-
       // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-
       // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-
       // slide changes (different for each slide format).
-
       (function () {
-
         // dispatch for htmlwidgets
-
         function fireSlideEnter() {
-
           const event = window.document.createEvent("Event");
-
           event.initEvent("slideenter", true, true);
-
           window.document.dispatchEvent(event);
-
         }
-
-    
 
         function fireSlideChanged(previousSlide, currentSlide) {
-
           fireSlideEnter();
 
-    
-
           // dispatch for shiny
-
           if (window.jQuery) {
-
             if (previousSlide) {
-
               window.jQuery(previousSlide).trigger("hidden");
-
             }
-
             if (currentSlide) {
-
               window.jQuery(currentSlide).trigger("shown");
-
             }
-
           }
-
         }
-
-    
 
         // hookup for slidy
-
         if (window.w3c_slidy) {
-
           window.w3c_slidy.add_observer(function (slide_num) {
-
             // slide_num starts at position 1
-
             fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-
           });
-
         }
 
-    
-
       })();
-
     </script>
-
-    
 
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
@@ -598,13 +554,14 @@
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

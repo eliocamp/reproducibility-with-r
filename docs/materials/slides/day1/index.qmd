@@ -57,16 +57,7 @@ format:
 
 ------------------------------------------------------------------------
 
-![](repro-spectrum.png)
-
-<https://towardsdatascience.com/scientific-data-analysis-pipelines-and-reproducibility-75ff9df5b4c5>
-
-------------------------------------------------------------------------
-
-![](spectrum-notext.png)
-
-<https://rviews.rstudio.com/2018/01/18/package-management-for-reproducible-r-code/>
-
+![](repro-spectrum.jpg)
 ------------------------------------------------------------------------
 
 ## Examples
