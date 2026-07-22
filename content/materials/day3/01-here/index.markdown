@@ -10,9 +10,9 @@ If you use RStudio Projects consistently, you can be sure that your working dire
 Almost.
 There are two situations in which this assumption can be broken and that can lead to errors or, even worse, surprising results.
 
-## Root directory during knit
+## Root directory during render
 
-One issue is that when RMarkdown files are knitted, the working directory in which the code is executed is the location of the .Rmd file, which is not always the root of the project.
+One issue is that when Quarto files are rendered, the working directory in which the code is executed is the location of the .qmd file, which is not always the root of the project.
 
 To show you this, we prepared a demo project.
 
@@ -21,7 +21,7 @@ To show you this, we prepared a demo project.
 Get the demo project
 
 1.  Download the [demo project](/demo_project.zip) and extract it anywhere in your computer.
-1.  Open the project (double click on `demo_project.Rproj`), open `report.Rmd` and try to knit it.
+1.  Open the project (double click on `demo_project.Rproj`), open `report.qmd` and try to render it.
 </div>
 
 
@@ -30,7 +30,7 @@ You'll notice that R fails to render the file with an error that reads:
 
 
 ``` default
-Quitting from lines 9-10 [setup] (report.Rmd)
+Quitting from lines 9-10 [setup] (report.qmd)
 
 Error in `file()`:
 ! cannot open the connection
@@ -52,7 +52,7 @@ getwd()
 ```
 
 ```
-## [1] "C:/Users/tonin/Documents/Courses/reproducibility-with-r/static/demo_project"
+## [1] "/home/user1/Documents/courses/reproducibility-with-r/static/demo_project"
 ```
 
 You'll get some path in your computer.
@@ -101,12 +101,13 @@ penguins <- read.csv("data/penguins.csv")
 ```
 
 ```
-## Error in file(file, "rt"): cannot open the connection
+## Error in `file()`:
+## ! cannot open the connection
 ```
 
-This is because when knitting, the working directory is set to the directory where the .Rmd file is located.
+This is because when rendering, the working directory is set to the directory where the qmd file is located.
 For consistency, RStudio runs code inside chunks with the same setup.
-This inconsistency between the working directory of your session and that of the knitting process can be a source of a lot of headaches.
+This inconsistency between the working directory of your session and that of the render process can be a source of a lot of headaches.
 
 A possible solution would be to use absolute paths, so the current working directory is irrelevant.
 But we saw that using absolute paths leads to code that runs only in one machine.
@@ -118,13 +119,13 @@ The way you use the package is to always use paths relative to the root project 
 
 Fix one error
 
-1.   Change line 9 in `report.Rmd` to
+1.   Change line 9 in `report.qmd` to
 
     ``` r
     penguins <- read.csv(here::here("data/penguins.csv"))
     ```
 
-1.  Try to knitr again.
+1.  Try to render again.
 </div>
 
 ## Defensive programming with here
@@ -138,7 +139,7 @@ Find a new error
 
 1.  Close demo_project.
 
-1. Open `report.Rmd` in a new RStudio window. Make sure that you are **not** on the demo_project project. 
+1. Open `report.qmd` in a new RStudio window. Make sure that you are **not** on the demo_project project. 
 
 1.  Try to run line 9.
 
@@ -152,13 +153,13 @@ A more robust approach is to define the working directory by asserting the relat
 
 Fix the new error
 
-1.  Add a new chunk at the beginning of the file that reads `here::i_am("analysis/report.Rmd")`.
+1.  Add a new chunk at the beginning of the file that reads `here::i_am("analysis/report.qmd")`.
 
 1.  Run this new chunk and the one after. 
 
 </div>
 
-With `here::i_am("analysis/report.Rmd")`, you are declaring the location of the current script relative to the project root.
+With `here::i_am("analysis/report.qmd")`, you are declaring the location of the current script relative to the project root.
 This will set the project root that is consistent with this location and emit a message.
 Importantly, it will fail if the declared location is not found in the working directory or any of the parent directories.
 

@@ -1,0 +1,16 @@
+---
+title: "Palmer penguins"
+author: "Kirill Müller"
+date: "11/12/2020"
+format: pdf
+---
+
+```{r setup, include=FALSE}
+penguins <- read.csv("data/penguins.csv")
+```
+
+## Linear model
+
+```{r}
+lm(flipper_length_mm ~ body_mass_g + species, penguins)
+```
