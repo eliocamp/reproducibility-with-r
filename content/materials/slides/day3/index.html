@@ -6,8 +6,8 @@
 <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
 <link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.7.32">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.26">
 
   <title>Day 3</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -28,7 +28,7 @@
       vertical-align: middle;
     }
   </style>
-  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-49ab5f243b9bfcff2014dfe0f8c2ca16.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-f7183baa0df053351493f5e970d7f0b4.css">
   <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -136,9 +136,9 @@
 <section id="day-3" class="title-slide slide level1 center">
 <h1>Day 3:</h1>
 <ol type="1">
-<li><a href="../../../..\materials/day3/01-here/">Portable file paths with here</a></li>
-<li><a href="../../../..\materials/day3/02-renv/">Managing R dependencies with renv</a></li>
-<li><a href="../../../..\materials/day3/03-data/">Sharing your data</a></li>
+<li><a href="../../../../materials/day3/01-here/">Portable file paths with here</a></li>
+<li><a href="../../../../materials/day3/02-renv/">Managing R dependencies with renv</a></li>
+<li><a href="../../../../materials/day3/03-data/">Sharing your data</a></li>
 </ol>
 </section>
 <section id="does-the-package-renv-sound-familiar-to-you" class="slide level2">
@@ -167,13 +167,46 @@
 <p>👏 Chunky files (more than 100 Mb).</p>
 <p>Choose an emoji from Reactions</p>
 </section>
-<section class="slide level2">
-
+<section id="permissions" class="slide level2">
+<h2>Permissions</h2>
+<ul>
+<li><p>Are you even allowed to share your data?</p></li>
+<li><p>Proprietary information / licences</p></li>
+<li><p>Privacy (personally identifiable information)</p></li>
+<li><p>If sharing derived data only. What is the licence of the original data?</p></li>
+</ul>
+</section>
+<section id="small-data" class="slide level2">
+<h2>Small data</h2>
+<ul>
+<li><p>A few megabytes.</p></li>
+<li><p>You can keep it inside the git repository.</p></li>
+<li><p>If on GitHub:</p>
+<ul>
+<li>No more than 100Mb per file</li>
+<li>No more than 5Gb in total</li>
+</ul></li>
+<li><p>Warning: size of the repo &gt;&gt; size of the data</p></li>
+</ul>
+</section>
+<section id="larger-data" class="slide level2">
+<h2>Larger data</h2>
+<ul>
+<li><p>GitHub release (see <a href="https://docs.ropensci.org/piggyback">piggyback</a> package)</p></li>
+<li><p>External data repositories:</p>
+<ul>
+<li>Provide DOI</li>
+<li>Data versioning</li>
+</ul></li>
+<li><p>figshare</p></li>
+<li><p>Open Science Framework</p></li>
+<li><p>Zenodo</p></li>
+</ul>
 </section></section>
 <section id="preparations-for-day-4" class="title-slide slide level1 center">
 <h1>Preparations for day 4:</h1>
 <ol type="1">
-<li><a href="../../../..\materials/day4/01-docker/">Reproducible computational environment with Docker</a>
+<li><a href="../../../../materials/day4/01-docker/">Reproducible computational environment with Docker</a>
 <ul>
 <li>Follow the instructions <a href="https://docs.docker.com/get-docker/">here</a></li>
 <li>Make sure your docker installation works!</li>
@@ -371,7 +404,7 @@
         margin: 0.1,
 
         math: {
-          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
           config: 'TeX-AMS_HTML-full',
           tex2jax: {
             inlineMath: [['\\(','\\)']],
@@ -445,13 +478,14 @@
           e.clearSelection();
         }
         const getTextToCopy = function(trigger) {
-            const codeEl = trigger.previousElementSibling.cloneNode(true);
-            for (const childEl of codeEl.children) {
-              if (isCodeAnnotation(childEl)) {
-                childEl.remove();
-              }
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
             }
-            return codeEl.innerText;
+          }
+          return codeEl.innerText;
         }
         const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
           text: getTextToCopy

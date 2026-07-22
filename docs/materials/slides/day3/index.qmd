@@ -63,6 +63,49 @@ Choose an emoji from Reactions
 
 ---
 
+
+## Permissions 
+
+* Are you even allowed to share your data?
+
+* Proprietary information / licences
+
+* Privacy (personally identifiable information)
+
+* If sharing derived data only. What is the licence of the original data?
+
+---
+
+## Small data
+
+* A few megabytes. 
+
+* You can keep it inside the git repository. 
+
+* If on GitHub:
+  * No more than 100Mb per file
+  * No more than 5Gb in total
+  
+* Warning: size of the repo >> size of the data
+
+
+---
+
+## Larger data
+
+* GitHub release (see [piggyback](https://docs.ropensci.org/piggyback) package)
+
+* External data repositories:
+  * Provide DOI
+  * Data versioning
+
+* figshare
+
+* Open Science Framework 
+
+* Zenodo
+
+
 # Preparations for day 4:
 
 1.  [Reproducible computational environment with Docker](/materials/day4/01-docker/)
