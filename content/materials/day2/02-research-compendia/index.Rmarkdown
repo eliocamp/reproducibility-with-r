@@ -98,7 +98,7 @@ A simple solution to this is separate functions in individual files inside the `
 Let say you have a very interesting function that adds 2 numbers together, we'll save it in `R/add_numbers.R`
 
 ``` r
-add_numbers -> function(x, y) {
+add_numbers <- function(x, y) {
    x + y
 }
 ```
@@ -161,7 +161,7 @@ Coming back to our example function, the documentation should look like this:
 #' @examples
 #' add(1, 1)
 #' add(10, 1)
-add <- function(x, y) {
+add_numbers <- function(x, y) {
   x + y
 }
 ```

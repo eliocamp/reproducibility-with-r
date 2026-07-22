@@ -26,13 +26,13 @@ This file will be used by renv to restore the project library to its correct sta
 The nice thing about renv is that it automates a lot and gets out of your way as much as it can.
 To start working with renv you first need to initialise the project-local environment with `renv::init()`.
 
-This will automatically scan all your R scripts and RMarkdown files, discover their dependencies, and store the versions of the currently-installed packages in the lockfile and install them in the project library.
+This will automatically scan all your R scripts and Quarto files, discover their dependencies, and store the versions of the currently-installed packages in the lockfile and install them in the project library.
 
 <div class = activity> 
 
 Start using renv
 
-1. Create a new project and add a new R Markdown document (you can save it as paper.Rmd). 
+1. Create a new project and add a new R Markdown document (you can save it as paper.qmd). 
 
 2. In the console run `renv::init()`. 
 
@@ -67,7 +67,7 @@ The flipside is that updating packages outside of the project won't affect the p
 
 Use ggplot2
 
-1. Add a new chunk that loads ggplot2 with `library(ggplot2)` in paper.Rmd.
+1. Add a new chunk that loads ggplot2 with `library(ggplot2)` in paper.qmd.
 
 2. Try to render the file. 
 
@@ -96,7 +96,7 @@ Install ggplot2
 
 1. Install ggplot2 with `install.packages("ggplot2")` in the console. 
 
-2. Knit `paper.Rmd`.
+2. Render `paper.qmd`.
 
 3. Run `renv::status()` in the console. 
 
@@ -181,7 +181,7 @@ Restore an environment
 
 4. Run `renv::status()` again to check that the project is in a consistent state. 
 
-3. Render `analysis/report.Rmd` to make sure that it worked.
+3. Render `analysis/report.qmd` to make sure that it worked.
 
 </div>
 

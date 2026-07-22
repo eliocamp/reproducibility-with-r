@@ -273,7 +273,7 @@ Github has an Code of Conduct wizard to make it easy to add one.</p>
 This can be ok for very short scripts or analysis, but for a paper, this will make your code to long, messy and difficult to follow.
 A simple solution to this is separate functions in individual files inside the <code>R/</code> folder and source those functions from the main manuscript file.</p>
 <p>Let say you have a very interesting function that adds 2 numbers together, we&rsquo;ll save it in <code>R/add_numbers.R</code></p>
-<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#434f54">add_numbers</span> <span style="color:#728e00">-&gt;</span> <span style="color:#d35400">function</span>(<span style="color:#434f54">x</span>, <span style="color:#434f54">y</span>) {
+<div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#434f54">add_numbers</span> <span style="color:#728e00">&lt;-</span> <span style="color:#d35400">function</span>(<span style="color:#434f54">x</span>, <span style="color:#434f54">y</span>) {
    <span style="color:#434f54">x</span> <span style="color:#728e00">+</span> <span style="color:#434f54">y</span>
 }
 </code></pre></div><p>Then, we can source it from our <code>paper.qmd</code> file with:</p>
@@ -327,7 +327,7 @@ You can use simple <code>#</code> to comment or you can use <em>roxygen2</em> co
 #' @examples
 #' add(1, 1)
 #' add(10, 1)
-add &lt;- function(x, y) {
+add_numbers &lt;- function(x, y) {
   x + y
 }
 </code></pre><ul>
