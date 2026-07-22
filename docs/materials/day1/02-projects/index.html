@@ -204,7 +204,7 @@ That anyone will want to do that is nothing short of a miracle, so you want to m
 Also use sub-folders, such as <code>data/raw</code> for raw data from the source and <code>data/derived</code> for pre-processed, cleaned-up data.</p>
 <p>Name your files so that you can know what they are even if you came home at 3am after drinking a few beers.</p>
 <p>Use slugs (short descriptions of what&rsquo;s inside).</p>
-<div class = activity> 
+<div class = activity>
 <p>Describe what do you think are the contents of these files:</p>
 <ul>
 <li>
@@ -218,7 +218,7 @@ Also use sub-folders, such as <code>data/raw</code> for raw data from the source
 </li>
 </ul>
 </div>
-<div class = activity> 
+<div class = activity>
 <p>Come up with good file names and folders for:</p>
 <ul>
 <li>
@@ -238,7 +238,7 @@ Also use sub-folders, such as <code>data/raw</code> for raw data from the source
 </li>
 </ul>
 </div>
-<div class = notes> 
+<div class = notes>
 <p>Use a familiar folder structure</p>
 <p>There is no single one objectively best folder structure.
 When in doubt, try to follow the conventions of your research community.
@@ -264,7 +264,7 @@ Some symbols (&quot;.&quot;, &ldquo;*&rdquo;, an others) are also best avoided b
 You can use &ldquo;-&rdquo; to separate words that are part of the same concept and &ldquo;_&rdquo; to separate concepts.
 For instance <code>buenos-aires_minimum-temperature.csv</code>.
 We recommend this convention and not the other way around, because it&rsquo;s compatible with the ISO date format (&ldquo;YYYY-MM-DD&rdquo;).</p>
-<div class = notes> 
+<div class = notes>
 <p>By using separators consistently and smartly you can parse file names programmatically very easily.
 For example, if you have</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#434f54">files</span>
@@ -274,13 +274,13 @@ For example, if you have</p>
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#d35400">strsplit</span>(<span style="color:#434f54">files</span>, <span style="color:#7f8c8d">&#34;_&#34;</span>)
 </code></pre></div><pre><code>## [[1]]
 ## [1] &quot;madrid&quot;              &quot;minimum-temperature&quot;
-## 
+##
 ## [[2]]
 ## [1] &quot;buenos-aires&quot;        &quot;minimum-temperature&quot;
-## 
+##
 ## [[3]]
 ## [1] &quot;madrid&quot;              &quot;maximum-temperature&quot;
-## 
+##
 ## [[4]]
 ## [1] &quot;buenos-aires&quot;        &quot;maximum-temperature&quot;
 </code></pre></div>
@@ -308,7 +308,7 @@ Perhaps the main culprit of non-portable code is using absolute paths to manipul
 <div class="highlight"><pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#d35400">read.csv</span>(<span style="color:#7f8c8d">&#34;data/data.csv&#34;</span>)
 </code></pre></div><p>And this will run no matter where the root folder is located.
 The only catch is that you need to make sure that the working directory is set to the root of the project.
-This is easier said than done, especially due to (and assuming you use) knitr&rsquo;s default behaviour of setting the location of the R Markdown file as the working directory.
+This is easier said than done, especially due to (and assuming you use) quarto&rsquo;s default behaviour of setting the location of the R Markdown file as the working directory.
 We will see that a simple solution is to use the 
 <a href="/materials/day1/04-here/"><strong>here</strong> package</a>.</p>
 
@@ -324,7 +324,7 @@ We will see that a simple solution is to use the
 <p>RStudio provides a neat, structured way of separating your projects into different contexts.
 They don&rsquo;t strictly help with reproducibility of the final product, but they will help you streamline your workflow by encapsulating things like the list of open files, R command history and RStudio settings for each project.</p>
 <p>Opening an RStudio Project also ensures that you start a new R session every time and sets your working directory to the project root directory.</p>
-<div class = activity> 
+<div class = activity>
 <p>Create a new RStudio Project</p>
 <ol>
 <li>Click on &ldquo;File&rdquo; and then in &ldquo;New Project&hellip;&rdquo;.</li>
@@ -355,7 +355,7 @@ It will even preserve changes not saved.
 This helps keep your work tidy and makes it easy to pick up or share what you&rsquo;ve done later.</p>
 <p>RStudio allows you to have multiple projects open, and this is possible because each project has its own folder.
 You can work with multiple projects in parallel without code or results of one analysis interfering with the other&rsquo;s.</p>
-<div class = activity> 
+<div class = activity>
 <p>Open your project</p>
 <ol>
 <li>On your new project, create a new file (any file) and write some code on it (e.g. <code>print(&quot;Hello world&quot;)</code>).</li>
@@ -378,7 +378,7 @@ This is quite a broad question and there are many tools to solve this problem.
 For now we are going to concentrate on at least on your computer being able to repeat the calculations or analysis from scratch.
 And besides organising projects and not modifying the original data, how can you make sure that you saved all the code you were writing and used?
 The most direct way is to restart the R session and run the code again, if it gives an error or doesn&rsquo;t return what you expected it means you missed a step.</p>
-<div class = notes> 
+<div class = notes>
 <p>You can restart the R session with the shortcut Ctrl+Shift+F10 on Windows/Linux and Shift+Command+0 on Mac.</p>
 </div>
 <p>This can happen if for example you read data into memory by running a command in the console.
@@ -386,7 +386,7 @@ While we are working, R will have that data in memory and you will be able to ma
 <p>The best way of ensuring this doesn&rsquo;t happen is to re-run your code on a fresh R session early and often so you can be sure that your code is reproducible at every step of the analysis.
 However, by default RStudio will save the environment in a hidden file called .RData and restore it on startup, so that data will still be in memory.
 And while this comes in handy so that you can boot up your work exactly where you left it each time you open your project, it might lead to a situation in which you never realise that you missed saving a key line of code in your analysis.</p>
-<div class = activity> 
+<div class = activity>
 <p>Configure your project</p>
 <ol>
 <li>
@@ -405,7 +405,7 @@ And while this comes in handy so that you can boot up your work exactly where yo
 </li>
 </ol>
 </div>
-<div class = notes> 
+<div class = notes>
 <p>You can change these preferences at the global level with &ldquo;Tools&rdquo; -&gt; &ldquo;Global options&rdquo; in the &ldquo;General&rdquo; subheading</p>
 </div>
 

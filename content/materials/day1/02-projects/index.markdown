@@ -12,7 +12,7 @@ You then are itching to sink your teeth on it; to see how they implemented the m
 
 You download the all the files and you find something like this.
 
-```         
+```
 /home/dorothy/Documents/paper
 ├── abstract.R
 ├── correlation.png
@@ -57,7 +57,7 @@ Name your files so that you can know what they are even if you came home at 3am 
 
 Use slugs (short descriptions of what's inside).
 
-<div class = activity> 
+<div class = activity>
 
 Describe what do you think are the contents of these files:
 
@@ -68,7 +68,7 @@ Describe what do you think are the contents of these files:
 -   `analysis/01_madrid_minimum-temperature_descriptive-statistics.Rmd`
 </div>
 
-<div class = activity> 
+<div class = activity>
 
 Come up with good file names and folders for:
 
@@ -83,7 +83,7 @@ Come up with good file names and folders for:
 -   the .Rds file in which that model is stored.
 </div>
 
-<div class = notes> 
+<div class = notes>
 
 Use a familiar folder structure
 
@@ -109,7 +109,7 @@ You can use "-" to separate words that are part of the same concept and "\_" to 
 For instance `buenos-aires_minimum-temperature.csv`.
 We recommend this convention and not the other way around, because it's compatible with the ISO date format ("YYYY-MM-DD").
 
-<div class = notes> 
+<div class = notes>
 
 By using separators consistently and smartly you can parse file names programmatically very easily.
 For example, if you have
@@ -136,13 +136,13 @@ strsplit(files, "_")
 ```
 ## [[1]]
 ## [1] "madrid"              "minimum-temperature"
-## 
+##
 ## [[2]]
 ## [1] "buenos-aires"        "minimum-temperature"
-## 
+##
 ## [[3]]
 ## [1] "madrid"              "maximum-temperature"
-## 
+##
 ## [[4]]
 ## [1] "buenos-aires"        "maximum-temperature"
 ```
@@ -178,7 +178,7 @@ read.csv("data/data.csv")
 
 And this will run no matter where the root folder is located.
 The only catch is that you need to make sure that the working directory is set to the root of the project.
-This is easier said than done, especially due to (and assuming you use) knitr's default behaviour of setting the location of the R Markdown file as the working directory.
+This is easier said than done, especially due to (and assuming you use) quarto's default behaviour of setting the location of the R Markdown file as the working directory.
 We will see that a simple solution is to use the [**here** package](/materials/day1/04-here/).
 
 ## RStudio Projects
@@ -188,7 +188,7 @@ They don't strictly help with reproducibility of the final product, but they wil
 
 Opening an RStudio Project also ensures that you start a new R session every time and sets your working directory to the project root directory.
 
-<div class = activity> 
+<div class = activity>
 
 Create a new RStudio Project
 
@@ -217,7 +217,7 @@ This helps keep your work tidy and makes it easy to pick up or share what you've
 RStudio allows you to have multiple projects open, and this is possible because each project has its own folder.
 You can work with multiple projects in parallel without code or results of one analysis interfering with the other's.
 
-<div class = activity> 
+<div class = activity>
 
 Open your project
 
@@ -234,7 +234,7 @@ For now we are going to concentrate on at least on your computer being able to r
 And besides organising projects and not modifying the original data, how can you make sure that you saved all the code you were writing and used?
 The most direct way is to restart the R session and run the code again, if it gives an error or doesn't return what you expected it means you missed a step.
 
-<div class = notes> 
+<div class = notes>
 
 You can restart the R session with the shortcut Ctrl+Shift+F10 on Windows/Linux and Shift+Command+0 on Mac.
 
@@ -247,7 +247,7 @@ The best way of ensuring this doesn't happen is to re-run your code on a fresh R
 However, by default RStudio will save the environment in a hidden file called .RData and restore it on startup, so that data will still be in memory.
 And while this comes in handy so that you can boot up your work exactly where you left it each time you open your project, it might lead to a situation in which you never realise that you missed saving a key line of code in your analysis.
 
-<div class = activity> 
+<div class = activity>
 
 Configure your project
 
@@ -260,7 +260,7 @@ Configure your project
     -   "Save workspace to .RData on exit": Select "No" from the dropdown menu
 </div>
 
-<div class = notes> 
+<div class = notes>
 
 You can change these preferences at the global level with "Tools" -> "Global options" in the "General" subheading
 </div>
