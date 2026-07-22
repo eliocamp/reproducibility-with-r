@@ -14,7 +14,7 @@
       
       <guid>https://reproducibility.rocks/materials/day3/01-here/</guid>
       <description>If you use RStudio Projects consistently, you can be sure that your working directory is always the root of the project unless you actively change it. Almost. There are two situations in which this assumption can be broken and that can lead to errors or, even worse, surprising results.
-Root directory during knit     One issue is that when RMarkdown files are knitted, the working directory in which the code is executed is the location of the .</description>
+Root directory during render     One issue is that when Quarto files are rendered, the working directory in which the code is executed is the location of the .</description>
     </item>
     
     <item>
