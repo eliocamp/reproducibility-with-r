@@ -16,12 +16,14 @@ format:
 
 1.  [Reproducible computational environment with Docker](/materials/day4/01-docker/)
 
+2.  Let's apply everything.
+
 The end!
 
 
 ---
 
-## Have you used docker before? 
+## Have you used Docker before? 
 
 👍 Yes!
 
