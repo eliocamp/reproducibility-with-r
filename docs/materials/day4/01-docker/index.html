@@ -44,7 +44,7 @@
 <meta itemprop="description" content="While renv is nice, it doesn&rsquo;t solve the whole problem, because system dependencies and even the R version itself can change. Another issue is that downloading and installing all the R packages can take a while. Like an hour or more. This is not a deal-breaker, but it&#39; be great to do better. People trying to reproduce work are few and far between, so it&rsquo;s important to make their lives as easy as possible.">
 <meta itemprop="datePublished" content="2022-02-19T00:00:00+00:00" />
 <meta itemprop="dateModified" content="2022-03-15T00:00:00+00:00" />
-<meta itemprop="wordCount" content="2088">
+<meta itemprop="wordCount" content="2092">
 
 
 
@@ -249,7 +249,7 @@ Otherwise, don&rsquo;t.</p>
 </ul>
 </div>
 <div class="figure">
-<img src="images/rstudio-landing.png" alt="Screenshot of a browser in http://localhost:8787/ running RStudio."  />
+<img src="images/rstudio-landing.png" alt="Screenshot of a browser in http://localhost:8787/ running RStudio." width="602" />
 <p class="caption"><span id="fig:unnamed-chunk-1"></span>Figure 1: RStudio running inside docker.</p>
 </div>
 <p>Surprise!
@@ -331,8 +331,9 @@ You might even forget that the container is running.</p>
 <p>Until now you&rsquo;ve use <code>rocker/rstudio</code> docker image.
 But if you need to install system dependencies and R Packages you will need to modify this image to install them.
 This is done with the Dockerfile, a set of steps required to build an image.</p>
-<p>Since each project should have its own Dockerfile, let&rsquo;s create a file called <code>Dockerfile</code> at the root of the 
-<a href="/reproducible_project.zip">reproducible project</a> and put these lines in:</p>
+<p>Download this 
+<a href="/old_reproducible_project.zip">old reproducible project</a>.
+Since each project should have its own Dockerfile, let&rsquo;s create a file called <code>Dockerfile</code> at the root of the project and put these lines in:</p>
 <pre><code>FROM rocker/rstudio:4.1.2
 
 WORKDIR /home/rstudio/project

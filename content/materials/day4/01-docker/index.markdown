@@ -96,7 +96,7 @@ Some notes on this command:
 </div>
 
 <div class="figure">
-<img src="images/rstudio-landing.png" alt="Screenshot of a browser in http://localhost:8787/ running RStudio."  />
+<img src="images/rstudio-landing.png" alt="Screenshot of a browser in http://localhost:8787/ running RStudio." width="602" />
 <p class="caption"><span id="fig:unnamed-chunk-1"></span>Figure 1: RStudio running inside docker.</p>
 </div>
 
@@ -197,7 +197,8 @@ Until now you've use `rocker/rstudio` docker image.
 But if you need to install system dependencies and R Packages you will need to modify this image to install them.
 This is done with the Dockerfile, a set of steps required to build an image.
 
-Since each project should have its own Dockerfile, let's create a file called `Dockerfile` at the root of the [reproducible project](/reproducible_project.zip) and put these lines in:
+Download this [old reproducible project](/old_reproducible_project.zip).
+Since each project should have its own Dockerfile, let's create a file called `Dockerfile` at the root of the project and put these lines in:
 
 ```         
 FROM rocker/rstudio:4.1.2
